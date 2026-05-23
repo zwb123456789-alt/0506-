@@ -1,0 +1,2 @@
+C:\Users\97466\.conda\envs\ocs_sim\python.exe: can't open file 'd:\我的文件\研究生学术\光学项目\0506新\summarize_paper_results.py': [Errno 2] No such file or directory
+Exit code: 2 

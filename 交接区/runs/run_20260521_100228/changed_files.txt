@@ -1,0 +1,19 @@
+# 变更文件清单 · run_20260521_100228
+
+## 修改的文件
+1. `ocs_project/02_blender/brdf_postprocess.py`（7 处编辑，新增 --ggx）
+   - L71: import 增加 eval_ggx_cook_torrance, MATERIAL_DB_GGX
+   - L170: compute_radiance_image 签名增加 use_ggx=False
+   - L229-240: BRDF 调用分派（if use_ggx → eval_ggx_cook_torrance else → eval_legacy_phong）
+   - L258: parse_args 增加 --ggx 参数
+   - L318: process() materials 支持 GGX 覆盖（从 MATERIAL_DB_GGX）
+   - L357: compute_radiance_image 调用透传 use_ggx
+   - L461: main() 透传 use_ggx=args.ggx
+
+2. `ocs_project/02_blender/render_geometry_passes.py`（1 处编辑）
+   - L428: out_dir = os.path.abspath(out_dir)  防 Blender Compositor 相对路径解析到 C:\
+
+3. `ocs_project/03_inversion/inv_image.py`（3 处编辑）
+   - L51: load_render_log 签名增加 image_dir="images"；body 适配 out_prefix → _brdf.png
+   - L256: parse_args 增加 --image-dir 参数
+   - L264: main() 透传 image_dir

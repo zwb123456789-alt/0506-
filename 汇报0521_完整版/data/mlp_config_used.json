@@ -1,0 +1,50 @@
+{
+  "model": "MLP 128→128→64 SiLU LayerNorm Dropout0.10",
+  "output_encoding": "[sin(yaw), cos(yaw), sin(pitch), cos(pitch)]",
+  "loss": "MSE",
+  "optimizer": "AdamW lr=1e-3 wd=1e-4",
+  "batch_size": 64,
+  "max_epochs": 2000,
+  "early_stopping_patience": 150,
+  "split": "10° grid train → 5° held-out test",
+  "train_val_split": "80/20 from train (seed=42)",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "baselines": [
+    "kNN weighted regression (K=5, distance weight)"
+  ],
+  "preprocessing": "log10(zscore(X_ocs)), scaler fit on train only",
+  "experiments": [
+    [
+      "obs_total",
+      true,
+      "obs_total 5D log"
+    ],
+    [
+      "total",
+      true,
+      "total 15D log"
+    ],
+    [
+      "per_part",
+      true,
+      "per_part 30D log"
+    ],
+    [
+      "all",
+      true,
+      "all 45D log"
+    ],
+    [
+      "all",
+      false,
+      "all 45D raw"
+    ]
+  ],
+  "manifest": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\结果\\模块A_重构\\multi_geom_ggx_yaw73_pitch37\\run_20260520_162831\\multi_geom_manifest.json"
+}

@@ -1,0 +1,842 @@
+# -*- coding: utf-8 -*-
+"""
+run_occlusion_validation.py —— 遮挡完整验证 V2
+============================================
+一条命令运行：
+    python run_occlusion_validation.py
+
+输出：
+    结果/遮挡验证/run_YYYYMMDD_HHMMSS/
+        models/                         STL 模型
+        figures/                        场景示意图与汇总图
+        occlusion_validation_report.md   中英双语报告
+        manual_review_candidates.csv     真实模型人工抽查候选
+        validation_summary.csv           各验证项汇总
+"""
+
+import csv
+import os
+import sys
+from datetime import datetime
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+CODE_DIR = HERE.parent / "01_code"
+sys.path.insert(0, str(CODE_DIR))
+
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+
+# 设置中文字体，避免图中文字显示方框
+# 策略：优先用 rcParams 全局设置字体族名，再对标题等关键文本用 fontproperties 覆盖
+_FONT_FAMILY_CN = None  # 全局字体族名
+FONT_CN = None  # FontProperties 对象（用于局部标题）
+try:
+    import matplotlib.font_manager as fm
+    # 找 SimHei
+    for path in [
+        "C:/Windows/Fonts/SimHei.ttf",
+        "C:/Windows/Fonts/simhei.ttf",
+        "C:/Windows/Fonts/msyh.ttc",
+    ]:
+        if os.path.exists(path):
+            _FONT_FAMILY_CN = fm.FontProperties(fname=path).get_name()
+            FONT_CN = fm.FontProperties(fname=path)
+            break
+    if _FONT_FAMILY_CN is None:
+        for f in fm.fontManager.ttflist:
+            name = f.name.lower()
+            if any(kw in name for kw in ["simhei", "simsun", "microsoft yahei", "yahei", "wenquanyi", "noto sans cjk", "msyh"]):
+                _FONT_FAMILY_CN = f.name
+                FONT_CN = fm.FontProperties(family=f.name)
+                break
+    if _FONT_FAMILY_CN:
+        plt.rcParams["font.sans-serif"] = [_FONT_FAMILY_CN, "DejaVu Sans"]
+        plt.rcParams["axes.unicode_minus"] = False
+except Exception:
+    pass
+import numpy as np
+import trimesh
+
+from config import EPSILON, PROJECT_ROOT, SUN_VECTOR, DET_VECTOR
+from occlusion import RayForest
+
+
+OUTPUT_ROOT = Path(PROJECT_ROOT) / "结果" / "遮挡验证"
+RUN_ID = datetime.now().strftime("run_%Y%m%d_%H%M%S")
+OUT_DIR = OUTPUT_ROOT / RUN_ID
+MODEL_DIR = OUT_DIR / "models"
+FIG_DIR = OUT_DIR / "figures"
+
+UP = np.array([0.0, 0.0, 1.0], dtype=float)
+PLUS_Y = np.array([0.0, 1.0, 0.0], dtype=float)
+PLUS_X = np.array([1.0, 0.0, 0.0], dtype=float)
+
+
+SCENARIOS = [
+    {
+        "id": "single_plate_epsilon",
+        "name_zh": "单平板 epsilon 自相交验证",
+        "name_en": "Single plate epsilon self-intersection check",
+        "model_zh": "一个薄平板，采样点位于上表面。",
+        "model_en": "A thin plate with sampling points on the top surface.",
+        "light_zh": "光照方向沿 +Z，从平板正面射出方向检查。",
+        "light_en": "Light/check direction is +Z, leaving the front side of the plate.",
+        "det_zh": "探测器方向同 +Z，用于等价检查出射视线是否误命中自身。",
+        "det_en": "Detector/check direction is also +Z to test false self-hit on outgoing rays.",
+        "expect_zh": "epsilon>0 时不应命中；epsilon=0 可能自相交误报。",
+        "expect_en": "No hit is expected for epsilon>0; epsilon=0 may create self-intersection false hits.",
+    },
+    {
+        "id": "double_plate_cross_part",
+        "name_zh": "双平板跨部件遮挡验证",
+        "name_en": "Double plate cross-part occlusion check",
+        "model_zh": "下平板是被照射/被观测面，上平板是独立遮挡体；两个 STL 在同一场景中一起导入。",
+        "model_en": "The lower plate is the illuminated/observed target, and the upper plate is a separate occluder; both STL files are loaded into one scene.",
+        "light_zh": "光照方向从下平板指向 +Z，上平板位于光路上。",
+        "light_en": "The light ray from the lower plate points to +Z, where the upper plate lies on the path.",
+        "det_zh": "探测器方向同 +Z，检验视线方向的跨部件遮挡。",
+        "det_en": "The detector/check direction is also +Z, testing cross-part line-of-sight occlusion.",
+        "expect_zh": "排除下平板自身后，应命中上平板，说明跨部件遮挡逻辑正确。",
+        "expect_en": "After excluding the lower plate itself, the rays should hit the upper plate, proving cross-part occlusion works.",
+    },
+    {
+        "id": "u_block_same_part",
+        "name_zh": "U 型块同部件自遮挡验证",
+        "name_en": "U-block same-part self-occlusion check",
+        "model_zh": "U 型块是一个合并后的单 STL/单部件，内部采样点朝背墙方向发射射线。",
+        "model_en": "The U-block is one merged STL/one part; inner sampling rays point toward the back wall.",
+        "light_zh": "光照/检查方向为 +Y，模拟凹槽内部被同部件背墙遮挡。",
+        "light_en": "The light/check direction is +Y, simulating inner-cavity occlusion by the same part's back wall.",
+        "det_zh": "探测器方向同 +Y，重点检查同部件内部视线遮挡。",
+        "det_en": "The detector/check direction is also +Y, focusing on same-part internal line-of-sight occlusion.",
+        "expect_zh": "当前 exclude_parts 策略会漏检；不排除当前部件时应命中背墙。",
+        "expect_en": "The current exclude_parts strategy should miss it; including the current part should hit the back wall.",
+    },
+    {
+        "id": "nested_cylinders",
+        "name_zh": "双圆柱嵌套极端遮挡验证",
+        "name_en": "Nested cylinders extreme occlusion check",
+        "model_zh": "内圆柱完全位于外圆柱内部；二者作为两个独立 STL 同场景导入。",
+        "model_en": "The inner cylinder is fully enclosed inside the outer cylinder; both are loaded as separate STL parts in one scene.",
+        "light_zh": "光照/检查方向为 +X，从内圆柱表面射向外壳。",
+        "light_en": "The light/check direction is +X, from the inner cylinder surface toward the outer shell.",
+        "det_zh": "探测器方向同 +X，检验外壳对内部目标的完全遮挡。",
+        "det_en": "The detector/check direction is also +X, testing full occlusion of an internal target by the outer shell.",
+        "expect_zh": "排除内圆柱自身后，应几乎全部命中外圆柱。",
+        "expect_en": "After excluding the inner cylinder itself, almost all rays should hit the outer cylinder.",
+    },
+]
+
+
+def normalize(v):
+    v = np.asarray(v, dtype=float)
+    n = np.linalg.norm(v)
+    return v / n if n else v
+
+
+def make_box(center, extents):
+    mesh = trimesh.creation.box(extents=extents)
+    mesh.apply_translation(center)
+    return mesh
+
+
+def make_single_plate():
+    return {"single_plate": make_box([0.0, 0.0, 0.0], [40.0, 40.0, 1.0])}
+
+
+def make_double_plate():
+    return {
+        "lower_target_plate": make_box([0.0, 0.0, 0.0], [40.0, 40.0, 1.0]),
+        "upper_occluder_plate": make_box([0.0, 0.0, 20.0], [40.0, 40.0, 1.0]),
+    }
+
+
+def make_u_block():
+    left_wall = make_box([-15.0, 0.0, 15.0], [4.0, 30.0, 30.0])
+    right_wall = make_box([15.0, 0.0, 15.0], [4.0, 30.0, 30.0])
+    back_wall = make_box([0.0, 14.0, 15.0], [34.0, 4.0, 30.0])
+    bottom = make_box([0.0, 0.0, 0.0], [34.0, 30.0, 4.0])
+    return {"u_block_same_part": trimesh.util.concatenate([left_wall, right_wall, back_wall, bottom])}
+
+
+def make_nested_cylinders():
+    outer = trimesh.creation.cylinder(radius=20.0, height=45.0, sections=96)
+    outer.apply_translation([0.0, 0.0, 0.0])
+    inner = trimesh.creation.cylinder(radius=6.0, height=25.0, sections=64)
+    inner.apply_translation([0.0, 0.0, 0.0])
+    return {"inner_target_cylinder": inner, "outer_occluder_cylinder": outer}
+
+
+def export_import(case_id, meshes):
+    case_dir = MODEL_DIR / case_id
+    case_dir.mkdir(parents=True, exist_ok=True)
+    imported = {}
+    for name, mesh in meshes.items():
+        path = case_dir / f"{name}.stl"
+        mesh.export(path)
+        imported[name] = trimesh.load(path, force="mesh")
+    if len(meshes) > 1:
+        trimesh.util.concatenate(list(meshes.values())).export(case_dir / f"{case_id}_combined_scene.stl")
+    return imported
+
+
+def plate_grid(z, eps, n=9):
+    coords = np.linspace(-12.0, 12.0, n)
+    return np.array([[x, y, z + eps] for x in coords for y in coords], dtype=float)
+
+
+def u_block_grid(n=9):
+    xs = np.linspace(-8.0, 8.0, n)
+    zs = np.linspace(6.0, 24.0, n)
+    return np.array([[x, 0.0, z] for x in xs for z in zs], dtype=float)
+
+
+def cylinder_surface_points(radius=6.0, n_theta=24, n_z=5, eps=EPSILON):
+    zs = np.linspace(-8.0, 8.0, n_z)
+    theta = np.linspace(-0.45, 0.45, n_theta)
+    pts = []
+    for z in zs:
+        for t in theta:
+            pts.append([(radius + eps) * np.cos(t), (radius + eps) * np.sin(t), z])
+    return np.array(pts, dtype=float)
+
+
+def ray_check(meshes, origins, direction, exclude_parts=None):
+    forest = RayForest(meshes)
+    occ, _ = forest.batch_occlusion_dual(
+        origins=np.asarray(origins, dtype=float),
+        dir1=normalize(direction),
+        dir2=normalize(direction),
+        exclude_parts=exclude_parts,
+    )
+    return occ
+
+
+def result_row(case_id, name_zh, name_en, check_id, check_zh, check_en, expected_zh, expected_en, occ):
+    hit_count = int(np.count_nonzero(occ))
+    ray_count = int(len(occ))
+    hit_ratio = hit_count / ray_count if ray_count else 0.0
+    return {
+        "case_id": case_id,
+        "name_zh": name_zh,
+        "name_en": name_en,
+        "check_id": check_id,
+        "check_zh": check_zh,
+        "check_en": check_en,
+        "ray_count": ray_count,
+        "hit_count": hit_count,
+        "hit_ratio": round(hit_ratio, 6),
+        "expected_zh": expected_zh,
+        "expected_en": expected_en,
+    }
+
+
+def evaluate_status(row, expected_mode):
+    ratio = row["hit_ratio"]
+    if expected_mode == "zero":
+        ok = ratio == 0.0
+    elif expected_mode == "one":
+        ok = ratio == 1.0
+    elif expected_mode == "high":
+        ok = ratio >= 0.95
+    elif expected_mode == "current_miss_reference_hit":
+        ok = True
+    else:
+        ok = True
+    row["status"] = "符合预期 / PASS" if ok else "不符合预期 / FAIL"
+    return row
+
+
+def run_validation_cases():
+    rows = []
+    scenes = {}
+
+    single = export_import("single_plate_epsilon", make_single_plate())
+    double = export_import("double_plate_cross_part", make_double_plate())
+    ublock = export_import("u_block_same_part", make_u_block())
+    cylinders = export_import("nested_cylinders", make_nested_cylinders())
+    scenes.update({
+        "single_plate_epsilon": single,
+        "double_plate_cross_part": double,
+        "u_block_same_part": ublock,
+        "nested_cylinders": cylinders,
+    })
+
+    for eps in [0.0, 1e-6, 1e-4, 1e-2, 0.1, EPSILON, 5.0]:
+        occ = ray_check(single, plate_grid(0.5, eps), UP, exclude_parts=None)
+        row = result_row(
+            "single_plate_epsilon", "单平板 epsilon 自相交验证", "Single plate epsilon self-intersection check",
+            f"epsilon={eps:g}",
+            f"采样点从上表面沿 +Z 发射，epsilon={eps:g}",
+            f"Rays start from the top surface toward +Z, epsilon={eps:g}",
+            "epsilon>0 时应无命中；epsilon=0 允许暴露自相交问题。",
+            "No hit is expected for epsilon>0; epsilon=0 may expose self-intersection.",
+            occ,
+        )
+        evaluate_status(row, "zero" if eps > 0 else "high")
+        rows.append(row)
+
+    occ = ray_check(double, plate_grid(0.5, EPSILON), UP, exclude_parts={"lower_target_plate"})
+    rows.append(evaluate_status(result_row(
+        "double_plate_cross_part", "双平板跨部件遮挡验证", "Double plate cross-part occlusion check",
+        "lower_to_upper", "下平板采样点沿 +Z 指向上平板", "Rays from the lower plate point to the upper plate along +Z",
+        "应全部命中上平板，证明两个 STL 在同一场景内参与跨部件遮挡。",
+        "All rays should hit the upper plate, proving both STL parts participate in one scene.",
+        occ), "one"))
+
+    u_points = u_block_grid()
+    occ_excluded = ray_check(ublock, u_points, PLUS_Y, exclude_parts={"u_block_same_part"})
+    rows.append(evaluate_status(result_row(
+        "u_block_same_part", "U 型块同部件自遮挡验证", "U-block same-part self-occlusion check",
+        "current_exclude_same_part", "当前逻辑排除整个 U 型块", "Current logic excludes the whole U-block part",
+        "当前逻辑会漏检，命中率应为 0；这是要修正的问题而不是正确物理结果。",
+        "The current logic should miss it with zero hit ratio; this is the defect to fix, not the physical truth.",
+        occ_excluded), "zero"))
+    occ_included = ray_check(ublock, u_points, PLUS_Y, exclude_parts=None)
+    rows.append(evaluate_status(result_row(
+        "u_block_same_part", "U 型块同部件自遮挡验证", "U-block same-part self-occlusion check",
+        "reference_include_same_part", "参考逻辑不排除 U 型块", "Reference logic includes the U-block itself",
+        "应全部命中 U 型背墙，证明同部件内部确有遮挡。",
+        "All rays should hit the U-block back wall, proving true same-part internal occlusion.",
+        occ_included), "one"))
+
+    cyl_points = cylinder_surface_points()
+    occ = ray_check(cylinders, cyl_points, PLUS_X, exclude_parts={"inner_target_cylinder"})
+    rows.append(evaluate_status(result_row(
+        "nested_cylinders", "双圆柱嵌套极端遮挡验证", "Nested cylinders extreme occlusion check",
+        "inner_to_outer", "内圆柱表面沿 +X 指向外圆柱壳", "Rays from the inner cylinder surface point to the outer shell along +X",
+        "应几乎全部命中外圆柱，证明外壳对内部目标形成强遮挡。",
+        "Almost all rays should hit the outer cylinder, proving strong shell occlusion of the internal target.",
+        occ), "high"))
+
+    return rows, scenes
+
+
+# 真实模型 epsilon 敏感性测试档位
+REAL_EPSILONS = [1e-6, 1e-4, 0.1, 1.0, 5.0]
+# 默认 EPSILON=1.0 也加入
+if 1.0 not in REAL_EPSILONS:
+    REAL_EPSILONS = sorted(set(REAL_EPSILONS + [1.0]))
+
+
+def run_real_model_manual_review():
+    stl_dirs = [
+        Path(PROJECT_ROOT) / "建模",
+        Path(PROJECT_ROOT) / "建模" / "真实模型",
+    ]
+    existing = {}
+    for stl_dir in stl_dirs:
+        if not stl_dir.exists():
+            continue
+        for path in stl_dir.glob("*.stl"):
+            existing[path.stem] = str(path)
+    if not existing:
+        return [], {}, []
+
+    meshes = {name: trimesh.load(path, force="mesh") for name, path in existing.items()}
+    forest = RayForest(meshes)
+    sun = normalize(SUN_VECTOR)
+    det = normalize(DET_VECTOR)
+
+    rows = []       # 每个面元一行（多 epsilon 的汇总）
+    eps_rows = []   # 每个 epsilon 档位一行的统计，用于汇总图
+
+    for part_name, mesh in meshes.items():
+        face_count = len(mesh.faces)
+        # 每个部件取 30 个面元
+        face_ids = np.linspace(0, face_count - 1, min(30, face_count), dtype=int)
+
+        for eps in REAL_EPSILONS:
+            origins = mesh.triangles_center[face_ids] + mesh.face_normals[face_ids] * eps
+            occ_sun_ex, occ_det_ex = forest.batch_occlusion_dual(origins, sun, det, exclude_parts={part_name})
+            occ_sun_in, occ_det_in = forest.batch_occlusion_dual(origins, sun, det, exclude_parts=None)
+
+            # epsilon 档位统计行（用于汇总图）
+            sun_diff = int(np.sum(occ_sun_ex != occ_sun_in))
+            det_diff = int(np.sum(occ_det_ex != occ_det_in))
+            total = len(occ_sun_ex)
+            eps_rows.append({
+                "part": part_name,
+                "epsilon": eps,
+                "total_faces": total,
+                "sun_diff_count": sun_diff,
+                "det_diff_count": det_diff,
+                "sun_diff_ratio": round(sun_diff / total, 4) if total else 0,
+                "det_diff_ratio": round(det_diff / total, 4) if total else 0,
+            })
+
+            # 面元详情行（每个面元一行）
+            for i, face_id in enumerate(face_ids):
+                rows.append({
+                    "part_zh_en": part_name,
+                    "epsilon_mm": eps,
+                    "face_id": int(face_id),
+                    "yaw_pitch_roll_zh_en": "0,0,0 / M=I",
+                    "sun_dir": f"Sun={sun.round(3).tolist()}",
+                    "det_dir": f"Det={det.round(3).tolist()}",
+                    "origin_x_mm": round(float(origins[i, 0]), 4),
+                    "origin_y_mm": round(float(origins[i, 1]), 4),
+                    "origin_z_mm": round(float(origins[i, 2]), 4),
+                    "sun_current_hit": bool(occ_sun_ex[i]),
+                    "det_current_hit": bool(occ_det_ex[i]),
+                    "sun_reference_hit": bool(occ_sun_in[i]),
+                    "det_reference_hit": bool(occ_det_in[i]),
+                    "priority": "High" if (occ_sun_ex[i] != occ_sun_in[i] or occ_det_ex[i] != occ_det_in[i]) else "Low",
+                    "disagree_on": ("sun" if occ_sun_ex[i] != occ_sun_in[i] else "") +
+                                   ("+det" if occ_det_ex[i] != occ_det_in[i] else "") or "none",
+                })
+
+    return rows, meshes, eps_rows
+
+
+def write_csv(path, rows):
+    if not rows:
+        return
+    keys = list(rows[0].keys())
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=keys)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def set_equal_axes(ax, meshes):
+    verts = np.vstack([m.vertices for m in meshes.values()])
+    mins = verts.min(axis=0)
+    maxs = verts.max(axis=0)
+    center = (mins + maxs) / 2.0
+    radius = float(np.max(maxs - mins) / 2.0) * 1.25
+    ax.set_xlim(center[0] - radius, center[0] + radius)
+    ax.set_ylim(center[1] - radius, center[1] + radius)
+    ax.set_zlim(center[2] - radius, center[2] + radius)
+
+
+def plot_scene(case, meshes, ray_origin, ray_dir):
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111, projection="3d")
+    colors = ["lightgray", "steelblue", "tan", "silver"]
+    for idx, (name, mesh) in enumerate(meshes.items()):
+        ax.plot_trisurf(
+            mesh.vertices[:, 0], mesh.vertices[:, 1], mesh.vertices[:, 2],
+            triangles=mesh.faces, color=colors[idx % len(colors)], alpha=0.55,
+            edgecolor="k", linewidth=0.15)
+        c = mesh.centroid
+        ax.text(c[0], c[1], c[2], name, fontsize=8)
+    ray_dir = normalize(ray_dir)
+    ax.quiver(ray_origin[0], ray_origin[1], ray_origin[2], ray_dir[0], ray_dir[1], ray_dir[2], length=25, color="red", linewidth=2)
+    title = f"{case['name_en']}\n{case['name_zh']}"
+    if FONT_CN:
+        ax.set_title(title, fontproperties=FONT_CN)
+    else:
+        ax.set_title(title)
+    ax.set_xlabel("X / mm")
+    ax.set_ylabel("Y / mm")
+    ax.set_zlabel("Z / mm")
+    set_equal_axes(ax, meshes)
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / f"scene_{case['id']}.png", dpi=220)
+    plt.close(fig)
+
+
+def plot_all_scenes(scenes):
+    case_map = {c["id"]: c for c in SCENARIOS}
+    plot_scene(case_map["single_plate_epsilon"], scenes["single_plate_epsilon"], np.array([0, 0, 1.5]), UP)
+    plot_scene(case_map["double_plate_cross_part"], scenes["double_plate_cross_part"], np.array([0, 0, 1.5]), UP)
+    plot_scene(case_map["u_block_same_part"], scenes["u_block_same_part"], np.array([0, -4, 15]), PLUS_Y)
+    plot_scene(case_map["nested_cylinders"], scenes["nested_cylinders"], np.array([7, 0, 0]), PLUS_X)
+
+
+def plot_summary(rows):
+    """重设计的汇总图：双列（实际值 vs 预期值）。
+    
+    颜色含义：
+      - 实际值 = 预期值：绿色
+      - 实际值 ≠ 预期值：红色
+      - 预期值：灰色柱
+    """
+    # 中英双语 X 轴标签
+    labels = [r['check_zh'] + chr(10) + r['check_en'] for r in rows]
+    actual = [r["hit_ratio"] for r in rows]
+
+    # 从 check_id 推断预期值
+    expected_vals = []
+    for r in rows:
+        check_id = r["check_id"]
+        if "epsilon=0" in check_id:
+            expected_vals.append(1.0)
+        elif "epsilon=" in check_id:
+            expected_vals.append(0.0)
+        elif "current_exclude" in check_id:
+            expected_vals.append(0.0)
+        elif "reference_include" in check_id or "lower_to_upper" in check_id or "inner_to_outer" in check_id:
+         expected_vals.append(1.0)
+        else:
+            expected_vals.append(0.0)
+
+    fig, ax = plt.subplots(figsize=(max(14, len(rows) * 0.85), 6))
+
+    x = np.arange(len(rows))
+    bar_width = 0.38
+
+    # 实际值柱颜色：绿色=匹配，红色=不匹配
+    actual_colors = []
+    for act, exp in zip(actual, expected_vals):
+        color = "tab:green" if abs(act - exp) < 1e-9 else "tab:red"
+        actual_colors.append(color)
+
+    ax.bar(x - bar_width / 2, actual, bar_width, color=actual_colors, alpha=0.85, label="Actual / 实际值")
+    ax.bar(x + bar_width / 2, expected_vals, bar_width, color="gray", alpha=0.5, label="Expected / 预期值")
+
+    # 在柱子上标注数值
+    for i, (act, exp) in enumerate(zip(actual, expected_vals)):
+        # 实际值标注
+        ax.annotate(f"{act:.3f}", xy=(i - bar_width / 2, act),
+                  xytext=(0, 5), textcoords="offset points",
+               ha="center", va="bottom", fontsize=7, color=actual_colors[i], fontweight="bold")
+        # 预期值标注（仅当与实际值不重叠时显示）
+        if abs(act - exp) > 0.08:
+            ax.annotate(f"{exp:.1f}", xy=(i + bar_width / 2, exp),
+                 xytext=(0, 5), textcoords="offset points",
+                      ha="center", va="bottom", fontsize=6.5, color="dimgray")
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels, rotation=60, ha="right", fontsize=7)
+    ax.set_ylabel("Hit ratio / 命中率", fontsize=10)
+    ax.set_ylim(-0.06, 1.25)
+    ax.set_xlim(-0.6, len(rows) - 0.4)
+
+    # 预期值虚线
+    ax.axhline(0, color="gray", linewidth=0.6, linestyle="--", alpha=0.4)
+    ax.axhline(1, color="gray", linewidth=0.6, linestyle="--", alpha=0.4)
+    title_txt = "Hit ratio: Actual vs Expected / 命中率：实际值 vs 预期值" + chr(10) + "Green=match / 绿色=匹配, Red=mismatch / 红色=不匹配"
+    if FONT_CN:
+        ax.set_title(title_txt, fontproperties=FONT_CN, fontsize=11)
+    else:
+        ax.set_title(title_txt, fontsize=11)
+
+    ax.legend(fontsize=9, loc="upper right")
+    ax.grid(axis="y", alpha=0.2)
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "summary_pass_fail.png", dpi=220)
+    plt.close(fig)
+
+
+
+def plot_real_model_annotations(meshes, manual_rows):
+    """为真实模型高优先级候选生成三维标注图。
+
+    每个部件一张图，标注：采样面元中心（红点）、太阳射线方向（橙线）、
+    探测器射线方向（蓝线）、当前排除逻辑命中与否。
+    """
+    if not manual_rows or not meshes:
+        return
+
+    sun = normalize(SUN_VECTOR)
+    det = normalize(DET_VECTOR)
+    # 按部件分组
+    by_part = {}
+    for row in manual_rows:
+        part = row["part_zh_en"]
+        if part not in by_part:
+            by_part[part] = []
+        by_part[part].append(row)
+
+    for part_name, rows in by_part.items():
+        high = [r for r in rows if r.get("priority") == "High"]
+        if not high:
+            continue
+        # 最多展示 6 个高优先级候选
+        show = high[:6]
+        mesh = meshes.get(part_name)
+        if mesh is None:
+            continue
+
+        fig = plt.figure(figsize=(10, 8))
+        ax = fig.add_subplot(111, projection="3d")
+        # 画部件半透明轮廓
+        verts = mesh.vertices
+      faces = mesh.faces
+      ax.plot_trisurf(
+            verts[:, 0], verts[:, 1], verts[:, 2],
+            triangles=faces, color="lightgray", alpha=0.35,
+          edgecolor="k", linewidth=0.1)
+        # 采样点与射线
+        for idx, row in enumerate(show):
+            ox = row["origin_x_mm"]
+            oy = row["origin_y_mm"]
+            oz = row["origin_z_mm"]
+            origin = np.array([ox, oy, oz])
+            # 红点：采样面元中心
+            ax.scatter([ox], [oy], [oz], color="red", s=60, zorder=10)
+        # 太阳射线（橙）
+            ax.quiver(ox, oy, oz, sun[0], sun[1], sun[2],
+                      length=15, color="orange", linewidth=1.8, arrow_length_ratio=0.3)
+            # 探测器射线（蓝）
+        ax.quiver(ox, oy, oz, det[0], det[1], det[2],
+                    length=15, color="dodgerblue", linewidth=1.8, arrow_length_ratio=0.3)
+         label = f"#{idx+1} S:{int(row['sun_current_hit'])}/R:{int(row['sun_reference_hit'])}"
+            ax.text(ox, oy, oz + 5, label, fontsize=7, color="black")
+
+        title = f"Real model: {part_name}" + chr(10) + f"High-priority candidates ({len(high)} total, showing {len(show)})"
+        if FONT_CN:
+            ax.set_title(title, fontproperties=FONT_CN)
+        else:
+            ax.set_title(title)
+        ax.set_xlabel("X / mm")
+        ax.set_ylabel("Y / mm")
+        ax.set_zlabel("Z / mm")
+        # 图例
+        from matplotlib.lines import Line2D
+        legend_elements = [
+         Line2D([0], [0], marker="o", color="w", markerfacecolor="red", markersize=8, label="Sampling point"),
+            Line2D([0], [0], color="orange", linewidth=2, label="Sun ray"),
+            Line2D([0], [0], color="dodgerblue", linewidth=2, label="Detector ray"),
+      ]
+        ax.legend(handles=legend_elements, loc="upper left", fontsize=8)
+        # 坐标轴等比例
+      verts_all = mesh.vertices
+      mins = verts_all.min(axis=0)
+        maxs = verts_all.max(axis=0)
+        center = (mins + maxs) / 2.0
+        span = float(np.max(maxs - mins))
+        r = span * 0.7
+        ax.set_xlim(center[0] - r, center[0] + r)
+        ax.set_ylim(center[1] - r, center[1] + r)
+        ax.set_zlim(center[2] - r, center[2] + r)
+        fig.tight_layout()
+        safe_name = "".join(c if c.isalnum() or c in ("_", "-") else "_" for c in part_name)
+     fig.savefig(FIG_DIR / f"realmodel_{safe_name}_annotations.png", dpi=220)
+        plt.close(fig)
+        print(f"  Saved real model annotation: figures/realmodel_{safe_name}_annotations.png ({len(high)} high-priority candidates)")
+
+
+def plot_epsilon_sensitivity(eps_rows):
+    """真实模型 epsilon 敏感性汇总图。
+
+    X 轴：epsilon 值（mm），Y 轴：排除逻辑与参考逻辑不一致的面元数量。
+    """
+    if not eps_rows:
+        return
+    # 按部件分组，每组画一条线
+    import matplotlib.patches as mpatches
+    parts = sorted(set(r["part"] for r in eps_rows))
+    colors = ["steelblue", "tomato", "seagreen", "orchid"]
+    fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+    for ax_idx, (metric, ylabel, title) in enumerate([
+        ("sun_diff_count", "Faces with disagree (Sun)", "Sun direction: exclusion vs reference\n(disagreement count per part, epsilon)"),
+        ("det_diff_count", "Faces with disagree (Det)", "Detector direction: exclusion vs reference\n(disagreement count per part, epsilon)"),
+    ]):
+        ax = axes[ax_idx]
+        for pi, part in enumerate(parts):
+            part_rows = [r for r in eps_rows if r["part"] == part]
+            part_rows.sort(key=lambda r: r["epsilon"])
+            eps_vals = [r["epsilon"] for r in part_rows]
+            vals = [r[metric] for r in part_rows]
+            ax.plot(eps_vals, vals, "o-", color=colors[pi % len(colors)],
+                    linewidth=2, markersize=6, label=part)
+        ax.set_xscale("log")
+        ax.set_xlabel("Epsilon (mm)")
+        ax.set_ylabel(ylabel)
+        ax.set_title(title)
+        ax.legend(fontsize=8)
+        ax.grid(alpha=0.25)
+        ax.set_xlim([min(eps_vals) * 0.5, max(eps_vals) * 2.0])
+
+    fig.tight_layout()
+    fig.savefig(FIG_DIR / "realmodel_epsilon_sensitivity.png", dpi=220)
+    plt.close(fig)
+    print(f"  Saved epsilon sensitivity: figures/realmodel_epsilon_sensitivity.png")
+
+
+def write_self_check_guide():
+    guide = OUT_DIR / "self_check_guide.md"
+    text = """# 遮挡验证自检清单
+
+## 0. 运行脚本
+
+bash: python "d:/我的文件/研究生学术/光学项目/0506新/ocs_project/05_occlusion_validation/run_occlusion_validation.py"
+
+输出目录：结果/遮挡验证/run_YYYYMMDD_HHMMSS/
+
+## 1. 合成验证——快速通过性检查
+
+打开 validation_summary.csv，确认所有 11 项 status = 符合预期/PASS。
+
+| 验证项 | 预期命中率 | 含义 |
+|---|---|---|
+| epsilon=0 单平板 | 1.000 | epsilon=0 时射线起点在面内，应命中自身（暴露自相交） |
+| epsilon>0 单平板 | 0.000 | epsilon>0 时偏移离开面，不应命中自身 |
+| 双平板跨部件 | 1.000 | 排除下平板后应命中上平板 |
+| U型块（排除当前部件） | 0.000 | 当前逻辑整体排除部件，不应命中背墙（漏检，预期行为） |
+| U型块（不排除） | 1.000 | 参考逻辑应命中背墙，证明物理遮挡存在 |
+| 双圆柱嵌套 | 1.000 | 排除内圆柱后应命中外圆柱 |
+
+## 2. 汇总图——视觉解读
+
+打开 figures/summary_pass_fail.png：
+- 左柱（绿/红）= 实际命中率；右柱（灰）= 预期命中率
+- 绿色 = 实际等于预期，正确；红色 = 不等于预期，错误
+- 柱子看不见（高度为0）= 命中率为0，预期为0时正常
+- epsilon>0 的单平板柱子和 U型块 current_exclude 柱都是 0（预期行为）
+
+## 3. epsilon 敏感性——真实模型稳定性
+
+打开 figures/realmodel_epsilon_sensitivity.png：
+- X轴 = epsilon值（mm），对数坐标
+- Y轴 = 排除逻辑与参考逻辑不一致的面元数量
+- 线条接近0 = 该档位下两种逻辑几乎无差异
+- 所有档位都是0 = 该部件在此姿态下无同部件遮挡问题
+- 打开 realmodel_epsilon_summary.csv 查阅具体数值
+
+## 4. 高优先级候选——人工抽查
+
+打开 manual_review_candidates.csv，筛选 priority = High 的行。
+人工确认方法：
+1. 打开 figures/realmodel_{part}_annotations.png
+2. 找到标注的点号（#1-#6），对应CSV中的面元
+3. 判断：该面元沿橙线（太阳）/ 蓝线（探测器）出发，是否被自身部件遮挡
+4. 若参考逻辑命中但当前逻辑不命中 = 当前代码会漏检该同部件遮挡
+
+## 5. 决策树
+
+检查 epsilon 敏感性图：
+- 所有部件差异计数约0 --> 真实模型无同部件遮挡，无需修改
+- 部分部件差异计数>0 --> 差异大（>20%）建议修改，差异小（<5%）可按需决定
+
+## 6. 输出文件索引
+
+| 文件 | 用途 |
+|---|---|
+| occlusion_validation_report.md | 完整报告 |
+| validation_summary.csv | 11项合成验证原始数据 |
+| figures/summary_pass_fail.png | 命中率对比图 |
+| realmodel_epsilon_summary.csv | epsilon敏感性统计 |
+| figures/realmodel_epsilon_sensitivity.png | epsilon敏感性曲线 |
+| manual_review_candidates.csv | 面元详细结果 |
+| figures/realmodel_*_annotations.png | 三维标注图 |
+| models/*.stl | 合成验证模型 |
+"""
+    with open(guide, "w", encoding="utf-8") as f:
+        f.write(text)
+    print("  Saved self-check guide: self_check_guide.md")
+
+
+def write_report(rows, manual_rows, eps_rows):
+    case_map = {c["id"]: c for c in SCENARIOS}
+    lines = [
+        "# 遮挡验证报告 V3 / Occlusion Validation Report V3",
+        "",
+        f"运行编号 / Run ID: `{RUN_ID}`",
+        "",
+        "## 如何复现 / How to reproduce",
+        "",
+        "在项目根目录或任意目录运行 / Run from the project root or any directory:",
+        "",
+        "```bash",
+        "python \"d:/我的文件/研究生学术/光学项目/0506新/ocs_project/05_occlusion_validation/run_occlusion_validation.py\"",
+        "```",
+        "",
+        "默认不需要调整参数。",
+        "No parameter change is required by default.",
+        "",
+        "## 验证模型与物理含义 / Validation models and physical meaning",
+        "",
+    ]
+    for case in SCENARIOS:
+        lines += [
+            f"### {case['name_zh']} / {case['name_en']}",
+            "",
+            f"- 模型 / Model: {case['model_zh']} / {case['model_en']}",
+            f"- 光照 / Light: {case['light_zh']} / {case['light_en']}",
+            f"- 探测器 / Detector: {case['det_zh']} / {case['det_en']}",
+            f"- 预期 / Expected: {case['expect_zh']} / {case['expect_en']}",
+            f"- 示意图 / Figure: `figures/scene_{case['id']}.png`",
+            "",
+        ]
+
+    lines += [
+        "## 结果汇总 / Result summary",
+        "",
+        "| case | check | actual | expected | match? |",
+        "|---|---|---:|---:|---:|",
+    ]
+    expected_vals = [1.0 if "one" in r["check_id"] or "included" in r["check_id"]
+                     else 0.0 for r in rows]
+    for r, exp in zip(rows, expected_vals):
+        match = "Y" if abs(r["hit_ratio"] - exp) < 1e-9 else "N"
+        lines.append(f"| {r['name_zh']} | {r['check_zh']} | {r['hit_ratio']:.3f} | {exp:.0f} | {match} |")
+
+    lines += [
+        "",
+        "## 真实模型 epsilon 敏感性 / Real-model epsilon sensitivity",
+        "",
+        f"测试了以下 epsilon 档位：{sorted(set(r['epsilon'] for r in eps_rows))}（mm）",
+        "",
+        "含义说明：",
+        "- `sun_diff_count`：在该 epsilon 下，太阳方向上排除当前部件和不排除当前部件结果不一致的面元数量。",
+        "- `det_diff_count`：探测器方向同理。",
+        "- `sun_diff_ratio` / `det_diff_ratio`：不一致面元占总采样面元的比例。",
+        "- 某 epsilon 档位的不一致面元数为 0，说明该档位下两种逻辑对所有采样面元结果一致。",
+        "",
+        "查看文件 / See files:",
+        "- `figures/realmodel_epsilon_sensitivity.png`：epsilon 敏感性曲线图",
+        "- `realmodel_epsilon_summary.csv`：各部件各 epsilon 档位统计",
+        "- `manual_review_candidates.csv`：所有面元的详细结果（含 epsilon 标注）",
+        "",
+    ]
+
+    high_count = sum(1 for r in manual_rows if r.get("priority") == "High")
+    lines += [
+        "## 真实模型人工抽查 / Real-model manual review",
+        "",
+        f"- 抽查候选总数 / Total candidates: {len(manual_rows)}",
+        f"- 高优先级候选 / High-priority candidates: {high_count}",
+        "- Priority = High 表示两种逻辑结果不一致，需要人工确认哪边是真实物理遮挡。",
+        "",
+        "## 输出文件 / Output files",
+        "",
+        "- `models/`: STL 模型",
+        "- `figures/scene_*.png`: 验证场景示意图",
+        "- `figures/summary_pass_fail.png`: 命中率汇总（实际 vs 预期）",
+        "- `figures/realmodel_epsilon_sensitivity.png`: epsilon 敏感性曲线",
+        "- `figures/realmodel_*_annotations.png`: 真实模型高优先级候选标注图",
+        "- `validation_summary.csv`: 各验证项汇总",
+        "- `realmodel_epsilon_summary.csv`: 真实模型 epsilon 敏感性统计",
+        "- `manual_review_candidates.csv`: 真实模型面元详细结果",
+        "- `self_check_guide.md`: 自检清单",
+        "",
+        "## 结论 / Conclusion",
+        "",
+        "当前代码能正确处理跨部件遮挡，但 `exclude_parts={当前部件}` 会漏检 U 型块这类同部件内部自遮挡。后续修正应在不整体排除当前部件的前提下，用 hit distance 或起始三角面 ID 过滤射线自相交。",
+        "The current code handles cross-part occlusion correctly, but `exclude_parts={current_part}` misses same-part internal occlusion such as the U-block case. The later fix should avoid excluding the whole current part and instead filter ray self-intersections using hit distance or the starting triangle ID.",
+    ]
+    with open(OUT_DIR / "occlusion_validation_report.md", "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+
+
+def main():
+    MODEL_DIR.mkdir(parents=True, exist_ok=True)
+    FIG_DIR.mkdir(parents=True, exist_ok=True)
+    rows, scenes = run_validation_cases()
+    manual_rows, real_meshes, eps_rows = run_real_model_manual_review()
+    write_csv(OUT_DIR / "validation_summary.csv", rows)
+    write_csv(OUT_DIR / "manual_review_candidates.csv", manual_rows)
+    write_csv(OUT_DIR / "realmodel_epsilon_summary.csv", eps_rows)
+    plot_all_scenes(scenes)
+    plot_summary(rows)
+    plot_epsilon_sensitivity(eps_rows)
+    plot_real_model_annotations(real_meshes, manual_rows)
+    write_report(rows, manual_rows, eps_rows)
+    write_self_check_guide()
+    print("=" * 70)
+    print("Occlusion validation V3 finished")
+    print(f"Output: {OUT_DIR}")
+    print(f"python \"{Path(__file__).as_posix()}\"")
+    print("=" * 70)
+
+
+if __name__ == "__main__":
+    main()

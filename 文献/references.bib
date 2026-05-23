@@ -1,0 +1,607 @@
+% ============================================================
+% OCS + 图像联合仿真 · 完整文献库 (2015-2025)
+% 生成日期: 2026-05-20
+% 研究方向: 空间目标 OCS / BRDF 建模 / 物理渲染 / 姿态反演
+% 总条目: ~53 篇
+% 编码: UTF-8
+% ============================================================
+
+% ============================================================
+% 主题一: BRDF 与材料表征
+% ============================================================
+
+@book{li2024_space_object_optics,
+  title     = {空间目标光学特性原理与应用},
+  author    = {李智 and 徐灿 and 霍俞蓉 and 方宇强},
+  publisher = {清华大学出版社},
+  year      = {2024},
+  isbn      = {9787302658672},
+  keywords  = {OCS, BRDF, 姿态估计, 深度学习, 空间目标, 专著},
+  relevance = {国内首部空间目标光学特性系统专著，第2-7章直接对标本项目}
+}
+
+@article{yang2024_goniopolarimetric,
+  title     = {Goniopolarimetric Properties of Typical Satellite Material Surfaces: Intercomparison with Semi-Empirical pBRDF Modeled Results},
+  author    = {Yang, Min and Mao, Hongxia and Wu, Jun and Zheng, Chong and Wang, Li},
+  journal   = {Photonics},
+  volume    = {11},
+  number    = {1},
+  pages     = {17},
+  year      = {2024},
+  publisher = {MDPI},
+  doi       = {10.3390/photonics11010017},
+  keywords  = {Cook-Torrance, Kubelka-Munk, Maxwell-Beard, Priest-Germer, polarized BRDF, satellite material},
+  relevance = {直接对比5种pBRDF在卫星材料上的表现，验证Cook-Torrance适用性，与GGX Step 7直接相关}
+}
+
+@article{lu2024_brdf_starlink,
+  title     = {BRDF-Based Photometric Modeling of LEO Constellation Satellite from Massive Observations},
+  author    = {Lu, Yao},
+  journal   = {Universe},
+  volume    = {10},
+  number    = {5},
+  pages     = {215},
+  year      = {2024},
+  publisher = {MDPI},
+  doi       = {10.3390/universe10050215},
+  keywords  = {Starlink, Phong BRDF, photometric modeling, earthshine, solar array occlusion},
+  relevance = {Phong BRDF+海量观测数据建模星链，方法论与模块A一致}
+}
+
+@article{shah2024_brdf_aged,
+  title     = {Bidirectional Reflectance Distribution Function (BRDF) Measurement of Materials Aged Under Simulated Space Environment},
+  author    = {Shah, Jainisha and Badura, Gregory and Engelhart, Daniel and others},
+  journal   = {The Journal of the Astronautical Sciences},
+  volume    = {71},
+  number    = {1},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/s40295-023-00404-9},
+  keywords  = {BRDF measurement, space weathering, LEO environment, material aging},
+  relevance = {航天材料BRDF实验室测量+空间老化数据，论文材料参数来源支撑}
+}
+
+@article{opticaltech2024_polarization_cooktorrance,
+  title     = {Polarization Microfacet BRDF Model Based on Cook-Torrance Framework},
+  author    = {{Institute of Optics and Electronics, CAS}},
+  journal   = {Optical Technique (光学技术)},
+  volume    = {50},
+  number    = {5},
+  pages     = {560},
+  year      = {2024},
+  keywords  = {Cook-Torrance, microfacet, polarization BRDF, PSO fitting, Fresnel},
+  relevance = {Cook-Torrance+偏振BRDF，与GGX验证技术路线一致}
+}
+
+@article{shi2022_material_inversion,
+  title     = {Inversion of Object Materials and Their Proportions Based on Scattering Spectra},
+  author    = {Shi, H. and others},
+  journal   = {Spectroscopy and Spectral Analysis},
+  volume    = {42},
+  year      = {2022},
+  keywords  = {BRDF, material inversion, scattering spectra, multimodal fusion},
+  relevance = {BRDF材料反演，与OCS→材料参数链路互补}
+}
+
+@inproceedings{ceniceros2015_brdf_comparison,
+  title     = {Comparison of BRDF-Predicted and Observed Light Curves of GEO Satellites},
+  author    = {Ceniceros, A. and others},
+  booktitle = {Advanced Maui Optical and Space Surveillance Technologies Conference (AMOS)},
+  year      = {2015},
+  keywords  = {Cook-Torrance, Ashikhmin-Shirley, Ashikhmin-Premoze, GEO, light curve},
+  relevance = {三种BRDF vs AFRL实测GEO光变经典对比，基础参考}
+}
+
+@article{brdf_multispectral_inversion_2025,
+  title     = {基于BRDF的多角度光谱曲线反演模型},
+  journal   = {中国空间科学技术(中英文)},
+  number    = {4},
+  year      = {2025},
+  keywords  = {BRDF, 光谱反演, 多角度, 高光谱, 核驱动模型},
+  relevance = {核驱动BRDF倾斜光谱曲线反演，解决不同探测倾角高光谱匹配精度}
+}
+
+% ============================================================
+% 主题二: 光变曲线反演与姿态估计
+% ============================================================
+
+@article{aerospace2025_joint_estimation,
+  title     = {Joint Estimation of Attitude and Optical Properties of Uncontrolled Space Objects from Light Curves Considering Atmospheric Effects},
+  author    = {{AISwarm-LS Authors}},
+  journal   = {Aerospace},
+  volume    = {12},
+  number    = {10},
+  pages     = {942},
+  year      = {2025},
+  publisher = {MDPI},
+  doi       = {10.3390/aerospace12100942},
+  keywords  = {light curve inversion, attitude estimation, joint estimation, PSO, atmospheric effects},
+  relevance = {联合估计姿态+光学参数，方法论与模块C joint inversion高度一致}
+}
+
+@article{kumar2025_leo_lightcurve,
+  title     = {Light Curves Sequential Comparison Strategy for Improved Understanding of LEO Uncontrolled Objects},
+  author    = {Kumar, A. and others},
+  journal   = {Acta Astronautica},
+  volume    = {232},
+  pages     = {1--15},
+  year      = {2025},
+  doi       = {10.1016/j.actaastro.2025.02.019},
+  keywords  = {LEO, light curve, digital twin, attitude evolution, tumbling},
+  relevance = {数字孪生+光变反演闭环，与OCS仿真→渲染→反演框架类似}
+}
+
+@article{wang2024_attitude_inversion_debris,
+  title     = {Attitude Inversion of Space Debris Based on the Laboratory-Tested Photometry Dataset},
+  author    = {Wang, X. and others},
+  journal   = {Advances in Space Research},
+  volume    = {74},
+  number    = {2},
+  pages     = {949--963},
+  year      = {2024},
+  doi       = {10.1016/j.asr.2024.04.009},
+  keywords  = {space debris, light curve inversion, genetic algorithm, photometry, lab dataset},
+  relevance = {实验室光度数据集+GA反演姿态，方法论直接可对比}
+}
+
+@article{advspaceres2024_pso_lightcurve,
+  title     = {Light Curve Attitude Estimation Using Particle Swarm Optimizers},
+  author    = {Hanada, T. and others},
+  journal   = {Advances in Space Research},
+  volume    = {74},
+  number    = {11},
+  pages     = {5619--5638},
+  year      = {2024},
+  doi       = {10.1016/j.asr.2024.10.008},
+  keywords  = {PSO, light curve, attitude estimation, no initial guess},
+  relevance = {PSO无初值姿态估计，对比检索式反演方法}
+}
+
+@article{marto2024_hyperspectral_lightcurve,
+  title     = {Hyperspectral Lightcurve Inversion for Attitude Determination},
+  author    = {Marto, S. and Vasile, M. and others},
+  journal   = {arXiv preprint},
+  volume    = {arXiv:2401.05397},
+  year      = {2024},
+  note      = {Accepted at AIAA SciTech 2024},
+  keywords  = {hyperspectral, light curve, attitude, neural network, regularized least squares},
+  relevance = {高光谱光变+NN姿态反演，多模态思路可借鉴}
+}
+
+@article{yoshimura2024_glint,
+  title     = {Conceptual Study of Improved Photometric Attitude Estimation Using Glint},
+  author    = {Yoshimura, Y. and Hanada, T.},
+  journal   = {Transactions of the JSASS Aerospace Technology Japan},
+  volume    = {22},
+  pages     = {59--65},
+  year      = {2024},
+  doi       = {10.2322/tastj.22.59},
+  keywords  = {glint, Kalman filter, photometric attitude estimation, specular reflection},
+  relevance = {Glint镜面闪光约束姿态，与specular BRDF研究高度相关}
+}
+
+@article{valenta2022_cnn_attitude,
+  title     = {Convolutional Neural Networks for Inference of Space Object Attitude Status},
+  author    = {Valenta, C. and Gunter, B.},
+  journal   = {The Journal of the Astronautical Sciences},
+  volume    = {69},
+  pages     = {769--792},
+  year      = {2022},
+  doi       = {10.1007/s40295-022-00309-z},
+  keywords  = {CNN, light curve, attitude classification, BRDF, Beard-Maxwell},
+  relevance = {CNN+BRDF光变曲线姿态分类(86.2%)，与模块C CNN反演直接对齐}
+}
+
+@article{advspaceres2022_illumination,
+  title     = {Identifying Illumination Conditions Most Suitable for Attitude Detection in Light Curves of Simple Geometries},
+  author    = {Muinonen, K. and others},
+  journal   = {Advances in Space Research},
+  volume    = {69},
+  number    = {3},
+  pages     = {1357--1373},
+  year      = {2022},
+  doi       = {10.1016/j.asr.2021.11.014},
+  keywords  = {light curve, illumination geometry, BRDF, attitude detection, phase angle},
+  relevance = {光照几何对姿态检测影响，指导yaw×pitch网格设计}
+}
+
+@article{groves2025_selfsupervised_ssa,
+  title     = {A Self-Supervised Framework for Space Object Behaviour Characterisation},
+  author    = {Groves, L. and Campbell, A. and Fernandes, M. and others},
+  journal   = {arXiv preprint},
+  volume    = {arXiv:2504.06176},
+  year      = {2025},
+  keywords  = {self-supervised learning, Perceiver-VAE, light curve, anomaly detection, SSA},
+  relevance = {22.7万条MMT-9光度曲线自监督预训练，异常检测/运动预测82-88%}
+}
+
+@article{physics_guided_ml_spin_2024,
+  title     = {Physics-Guided Machine Learning for Satellite Spin Property Estimation from Light Curves},
+  author    = {{Anonymous}},
+  journal   = {The Journal of the Astronautical Sciences},
+  volume    = {71},
+  number    = {5},
+  year      = {2024},
+  keywords  = {physics-guided ML, light curve, spin estimation, space debris},
+  relevance = {物理引导ML混合方法，优于纯黑箱CNN，方法论参考}
+}
+
+@inproceedings{deep_metric_rotation_2023,
+  title     = {Deep Metric Learning for Abnormal Rotation Detection of Satellites from Irregularly Sampled Light Curve},
+  author    = {{Anonymous}},
+  booktitle = {Proceedings of the PHM Society},
+  year      = {2023},
+  keywords  = {deep metric learning, LSTM, light curve, anomaly detection, satellite},
+  relevance = {非均匀采样光变LSTM异常检测，真实卫星验证}
+}
+
+@inproceedings{rubio2025_robust_lightcurve,
+  title     = {A High-Performance and Robust Light Curve Inversion Method for Attitude Monitoring of Three-Axis Stabilised Satellites},
+  author    = {Rubio, J. and de Andr\'{e}s, A. and others},
+  booktitle = {AMOS Conference},
+  year      = {2025},
+  note      = {GMV / UC3M},
+  keywords  = {light curve inversion, three-axis stabilised, attitude monitoring},
+  relevance = {三轴稳定卫星光变反演姿态监测}
+}
+
+@inproceedings{maxwell2025_efficient_photometric,
+  title     = {Efficient Photometric Modeling of Complex Spacecraft Geometries toward Next-Generation Light Curve Analysis},
+  author    = {Maxwell, Jordan},
+  booktitle = {AMOS Conference},
+  year      = {2025},
+  note      = {SCOUT Space},
+  keywords  = {photometric modeling, shape reconstruction, ML, light curve inversion},
+  relevance = {ML+复杂航天器光度建模，与模块B复杂几何渲染相关}
+}
+
+@inproceedings{hara2024_gpr_attitude,
+  title     = {Photometric Attitude Estimation Using Gaussian Process Regression},
+  author    = {Hara, R. and Yoshimura, Y. and Hanada, T.},
+  booktitle = {AMOS Conference},
+  year      = {2024},
+  note      = {Kyushu University},
+  keywords  = {Gaussian process regression, light curve, attitude estimation},
+  relevance = {GPR非参数姿态估计，为CNN方案提供baseline}
+}
+
+@inproceedings{meyer2024_lightcurve_validation,
+  title     = {High-Fidelity Light Curve Simulation and Validation Using Empirical Data},
+  author    = {Meyer, Tristan and others},
+  booktitle = {AMOS Conference},
+  year      = {2024},
+  note      = {DLR},
+  keywords  = {light curve simulation, validation, empirical data, high-fidelity},
+  relevance = {高保真光变仿真+实测交叉验证，与A/B交叉验证思路一致}
+}
+
+@article{liang2020_multi_station,
+  title     = {基于光度曲线的弱特征空间目标姿态估计},
+  author    = {梁勇奇 and 韩凌峰 and 李恒年},
+  journal   = {宇航学报},
+  volume    = {41},
+  number    = {12},
+  pages     = {1544--1552},
+  year      = {2020},
+  keywords  = {光度观测, 多站观测, 并行融合, 姿态估计, 弱特征目标},
+  relevance = {多站联合光度观测并行融合，与你多观测几何设计直接对应}
+}
+
+@article{tan2020_spectral_temporal,
+  title     = {基于时谱信号分析的在轨空间目标姿态感知},
+  author    = {谭凡教 and 苏金宇 and 侯晴宇 and 王佳轩 and 王一惠},
+  journal   = {物理学报},
+  year      = {2020},
+  keywords  = {空间目标, 姿态估计, 时谱信号, 可见光, BRDF, 多级融合},
+  relevance = {BRDF多级融合模型+时谱信号+LM姿态反演，BRDF驱动反演}
+}
+
+@mastersthesis{su2020_spectral_inversion,
+  title     = {基于时谱分析的空间目标姿态反演方法及实验研究},
+  author    = {苏金宇},
+  school    = {哈尔滨工业大学},
+  year      = {2020},
+  keywords  = {空间目标, 时序光谱信号, 姿态反演, 材料损伤, 遗传算法, BRDF},
+  relevance = {材料辐照退化BRDF+遗传算法反演，含实测BRDF数据}
+}
+
+@mastersthesis{ge2017_contour_attitude,
+  title     = {基于轮廓特征的中远距离空间目标姿态测量},
+  author    = {葛丰增},
+  school    = {重庆大学},
+  year      = {2017},
+  keywords  = {单目视觉, 姿态测量, 轮廓匹配, 傅里叶描述子, 粒子滤波},
+  relevance = {傅里叶描述子轮廓匹配+粒子滤波，图像baseline}
+}
+
+@article{shan2017_photometric_attitude,
+  title     = {基于光度观测的空间目标姿态与角速度估计},
+  author    = {单斌 and 梁勇奇 and 李恒年},
+  journal   = {光学学报},
+  volume    = {37},
+  year      = {2017},
+  keywords  = {测量, 光度观测, 姿态估计, 角速度估计, 量测建模},
+  relevance = {光度姿态估计最直接前驱，被引15次}
+}
+
+@inproceedings{reid2025_photometric_fingerprinting,
+  title     = {Evaluating Photometric Fingerprinting and Change Detection at Scale},
+  author    = {Reid, Clarice and others},
+  booktitle = {AMOS Conference},
+  year      = {2025},
+  note      = {Slingshot Aerospace},
+  keywords  = {photometric fingerprinting, ML, change detection, attitude},
+  relevance = {光度指纹+ML变化检测，与姿态检索思路互补}
+}
+
+% ============================================================
+% 主题三: 物理渲染与仿真
+% ============================================================
+
+@article{lu2025_fractal_imaging,
+  title     = {Elaborate Imaging Simulation and Validation of the Space Target Based on Surface Fractal Features},
+  author    = {Lu, Yinxi and Wang, Hongyuan and Zang, Yunzhao and others},
+  journal   = {Optics Express},
+  volume    = {33},
+  number    = {12},
+  pages     = {24813--24830},
+  year      = {2025},
+  doi       = {10.1364/OE.562238},
+  keywords  = {physics-based rendering, fractal, BRDF, ray tracing, space target imaging, SSIM},
+  relevance = {分形表面+BRDF+光线追踪SSIM>85%，与模块B渲染+后处理链路对齐}
+}
+
+@article{zhang2025_ocs_gpu,
+  title     = {空间目标光学散射特性计算方法研究},
+  author    = {张玉双 and 谢晓钢 and 苏华 and others},
+  journal   = {强激光与粒子束},
+  volume    = {37},
+  number    = {9},
+  pages     = {099002},
+  year      = {2025},
+  doi       = {10.11884/HPLPB202537.250133},
+  keywords  = {OCS, GPU加速, 五参数Phong, BRDF, 星等, 探测概率},
+  relevance = {GPU加速OCS框架(~58fps)，五参数Phong BRDF，与模块A架构高度相似}
+}
+
+@article{jmo2023_close_range_imaging,
+  title     = {Research on Elaborate Image Simulation Method for Close-Range Space Target},
+  author    = {{HIT Research Center for Space Optical Engineering}},
+  journal   = {Journal of Modern Optics},
+  volume    = {70},
+  number    = {4},
+  pages     = {205--216},
+  year      = {2023},
+  doi       = {10.1080/09500340.2023.2219776},
+  keywords  = {Phong BRDF, five-parameter BRDF, ray tracing, Embree, image simulation},
+  relevance = {Phong+5参数BRDF+Embree仿真，与模块A/B架构高度相似}
+}
+
+@article{irla2023_digital_imaging_link,
+  title     = {The Construction Method of Space-Based Digital Imaging Link Mathematical Model},
+  author    = {Li, X. and others},
+  journal   = {Infrared and Laser Engineering},
+  volume    = {52},
+  number    = {12},
+  pages     = {20230351},
+  year      = {2023},
+  doi       = {10.3788/IRLA20230351},
+  keywords  = {five-parameter BRDF, path tracing, global illumination, digital twin, imaging link},
+  relevance = {5参数BRDF+路径追踪全链路成像模型，为A→B统一框架提供架构参考}
+}
+
+@inproceedings{sirius2024_hyperspectral_rso,
+  title     = {Hyperspectral Optical Modeling of Resident Space Objects at High Spatial Resolution},
+  author    = {{SIRIUS Team}},
+  booktitle = {SPIE Proceedings},
+  volume    = {13031},
+  pages     = {130310A},
+  year      = {2024},
+  keywords  = {SIRIUS, GPU rendering, sBRDF, MLI, ENVISAT, light curve validation},
+  relevance = {GPU加速高光谱RSO渲染，验证ENVISAT光变，与模块B目标一致}
+}
+
+@article{cjss2022_magnitude_curves,
+  title     = {Simulation of Apparent Magnitude Curves of Space Objects},
+  author    = {Liu, Y. and others},
+  journal   = {Chinese Journal of Space Science},
+  volume    = {42},
+  number    = {3},
+  pages     = {485--491},
+  year      = {2022},
+  doi       = {10.11728/cjss2022.03.210721079},
+  keywords  = {Phong BRDF, attitude quaternion, apparent magnitude, light curve simulation},
+  relevance = {Phong BRDF+四元数仿真光度曲线，与模块A OCS扫描类似}
+}
+
+@inproceedings{behari2023_sundial,
+  title     = {SUNDIAL: 3D Satellite Understanding through Direct, Ambient, and Complex Lighting Decomposition},
+  author    = {Behari, N. and Dave, A. and others},
+  booktitle = {CVPR Workshop},
+  year      = {2024},
+  note      = {arXiv:2312.16215},
+  keywords  = {NeRF, satellite 3D reconstruction, lighting decomposition, BRDF},
+  relevance = {NeRF卫星3D+光照分解，可拓展渲染→新视角合成}
+}
+
+@article{imaging_simulation_orbits_2025,
+  title     = {Imaging Simulation Analysis of Space Targets by Different Observed Orbits},
+  journal   = {Journal of Physics: Conference Series},
+  volume    = {2882},
+  pages     = {012071},
+  year      = {2025},
+  keywords  = {space target, imaging simulation, observation orbit},
+  relevance = {不同轨道空间目标成像仿真分析}
+}
+
+% ============================================================
+% 主题四: 深度学习与多模态融合
+% ============================================================
+
+@phdthesis{dickinson2025_sim2real_6dof,
+  title     = {From Sim to 6DOF: Deep Learning for Real-Time Satellite Pose Estimation from Resolved Ground-Based Imagery},
+  author    = {Dickinson, Thomas},
+  school    = {Rochester Institute of Technology},
+  year      = {2025},
+  keywords  = {6DOF pose estimation, Sim2Real, deep learning, adaptive optics, satellite},
+  relevance = {首个实用化6DOF姿态估计(5°误差/7.1Hz)，与模块C图像反演直接对标}
+}
+
+@article{sosa2025_vit_6dof,
+  title     = {Motion Aware ViT-based Framework for Monocular 6-DoF Spacecraft Pose Estimation},
+  author    = {Sosa, Jose and others},
+  journal   = {arXiv preprint},
+  volume    = {arXiv:2509.06000},
+  year      = {2025},
+  note      = {ASTRA 2025},
+  keywords  = {Vision Transformer, optical flow, 6DOF, PnP, spacecraft pose},
+  relevance = {ViT+光流6DOF姿态估计，SPADES-RGB/SPARK-2024验证}
+}
+
+@article{remote2024_visual_inertial_fusion,
+  title     = {Tightly Coupled Visual--Inertial Fusion for Attitude Estimation of Spacecraft},
+  author    = {Liu, H. and others},
+  journal   = {Remote Sensing},
+  volume    = {16},
+  number    = {16},
+  pages     = {3063},
+  year      = {2024},
+  publisher = {MDPI},
+  doi       = {10.3390/rs16163063},
+  keywords  = {visual-inertial fusion, attitude estimation, star sensor, gyroscope, optimization},
+  relevance = {视觉+惯性紧耦合姿态估计(精度提升50%)，融合思路可迁移到OCS+图像}
+}
+
+@article{zhang2025_brdf_nerf,
+  title     = {BRDF-NeRF: Neural Radiance Fields with Optical Satellite Images and BRDF Modelling},
+  author    = {Zhang, Y. and others},
+  journal   = {International Journal of Applied Earth Observation and Geoinformation},
+  volume    = {143},
+  year      = {2025},
+  doi       = {10.1016/j.jag.2025.104394},
+  keywords  = {NeRF, BRDF, RPV model, satellite imaging, novel view synthesis},
+  relevance = {BRDF嵌入NeRF任意光照/视角合成，可拓展渲染框架}
+}
+
+@article{xiong2025_sfda_mef,
+  title     = {SFDA-MEF: An Unsupervised Spacecraft Feature Deformable Alignment Network for Multi-Exposure Image Fusion},
+  author    = {Xiong, Qianwen and others},
+  journal   = {arXiv preprint},
+  year      = {2025},
+  keywords  = {deep learning, image fusion, spacecraft, deformable convolution, unsupervised},
+  relevance = {航天器多曝光图像融合，前处理服务于姿态估计}
+}
+
+@article{soufi2024_dl_attitude,
+  title     = {An Intelligent Deep Learning Approach to Spacecraft Attitude Control: The Case of Satellites},
+  author    = {Soufi, Omar and others},
+  journal   = {Advances in Space Research},
+  volume    = {74},
+  year      = {2024},
+  doi       = {10.1016/j.asr.2024.05.004},
+  keywords  = {deep learning, CNN, attitude determination, star sensor},
+  relevance = {双CNN星图增强+姿态确定}
+}
+
+@article{tang2025_asteroid_deep,
+  title     = {Asteroid Shape Inversion with Light Curves Using Deep Learning},
+  author    = {Tang, YiJun and others},
+  journal   = {Astronomy \& Astrophysics},
+  volume    = {696},
+  pages     = {A55},
+  year      = {2025},
+  keywords  = {asteroid, light curve, deep learning, 3D reconstruction, CNN+Transformer},
+  relevance = {光度曲线→3D点云卷积+Transformer，毫秒级反演，方法可迁移}
+}
+
+@inproceedings{peng2024_fusionrf,
+  title     = {FusionRF: High-Fidelity Satellite Neural Radiance Fields from Multispectral and Panchromatic Acquisitions},
+  author    = {Peng, Z. and others},
+  booktitle = {Kavli Meetings Preprint},
+  year      = {2024},
+  keywords  = {NeRF, multispectral fusion, 3D reconstruction, satellite imagery},
+  relevance = {多光谱+全色融合NeRF，深度误差降低~17%}
+}
+
+@inproceedings{dickinson2024_6dof_pose,
+  title     = {Automated 6DOF Satellite Pose Estimation From Resolved Ground-Based Imagery},
+  author    = {Dickinson, Thomas and others},
+  booktitle = {AMOS Conference},
+  year      = {2024},
+  keywords  = {6DOF pose estimation, deep learning, resolved imagery, ground-based},
+  relevance = {6DOF卫星姿态估计+深度学习，与图像反演方向对齐}
+}
+
+@inproceedings{yoshida2025_unsupervised_metric,
+  title     = {Unsupervised Metric Learning for Satellite Attitude Estimation},
+  author    = {Yoshida, Jun and others},
+  booktitle = {AMOS Conference},
+  year      = {2025},
+  note      = {NEC},
+  keywords  = {unsupervised learning, metric learning, attitude estimation, SAR},
+  relevance = {无监督度量学习姿态估计，与检索式反演互补}
+}
+
+% ============================================================
+% 主题五: SSA 综合观测与实测数据
+% ============================================================
+
+@article{zhi2024_multicolor_leo,
+  title     = {Multicolour Photometry of LEO Mega-Constellations Starlink and OneWeb},
+  author    = {Zhi, Q. and Jiang, B. and Wang, J.},
+  journal   = {Monthly Notices of the Royal Astronomical Society},
+  volume    = {529},
+  number    = {4},
+  pages     = {5006--5015},
+  year      = {2024},
+  doi       = {10.1093/mnras/stae828},
+  keywords  = {Starlink, OneWeb, multi-color photometry, BRDF, phase angle},
+  relevance = {1447条光变/404颗卫星最大LEO光度数据集，BRDF验证基准}
+}
+
+@article{horiuchi2023_visorsat,
+  title     = {Multicolor and Multi-Spot Observations of Starlink's Visorsat},
+  author    = {Horiuchi, T. and Hanayama, H. and Ohishi, M. and others},
+  journal   = {Publications of the Astronomical Society of Japan},
+  volume    = {75},
+  number    = {3},
+  pages     = {584--606},
+  year      = {2023},
+  doi       = {10.1093/pasj/psad021},
+  keywords  = {Starlink, VisorSat, multi-color photometry, BRDF, covering factor},
+  relevance = {星链多色测光(UBVRI+JHK)+BRDF建模}
+}
+
+@article{fankhauser2023_satellite_brightness,
+  title     = {Satellite Optical Brightness},
+  author    = {Fankhauser, F. and Tyson, J. A. and Askari, J.},
+  journal   = {The Astronomical Journal},
+  volume    = {166},
+  pages     = {59},
+  year      = {2023},
+  doi       = {10.3847/1538-3881/ace047},
+  keywords  = {satellite brightness, BRDF, earthshine, Starlink, SSA},
+  relevance = {卫星视亮度完整模型(太阳直射+地球反照+BRDF)，模块B后续参考}
+}
+
+@article{rees2023_material_discrimination,
+  title     = {Analysis of Spacecraft Materials Discrimination Using Color Indices for Remote Sensing for Space Situational Awareness},
+  author    = {Reyes, C. and Cowardin, H. and Velez-Reyes, M.},
+  journal   = {The Journal of the Astronautical Sciences (VOLTRON Collection)},
+  year      = {2023},
+  publisher = {Springer},
+  keywords  = {material discrimination, color indices, SSA, multi-color photometry},
+  relevance = {多色测光材料判别，与三部件材料参数差异化相关}
+}
+
+@article{ir_satellite_3d_2024,
+  title     = {Infrared Radiation Properties of a Satellite on the Basis of 3D Reconstruction},
+  journal   = {Applied Optics},
+  volume    = {63},
+  number    = {3},
+  pages     = {721},
+  year      = {2024},
+  doi       = {10.1364/AO.507504},
+  keywords  = {3D reconstruction, infrared radiation, satellite, thermal analysis, attitude},
+  relevance = {深度学习3D重建+ANSYS热分析，三轴稳定vs自旋姿态红外特性对比}
+}

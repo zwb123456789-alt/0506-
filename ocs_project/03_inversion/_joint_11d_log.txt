@@ -1,0 +1,83 @@
+============================================================
+[11d] Starting run_joint_11d ...
+[inv_joint] 加载 OCS：d:\我的文件\研究生学术\光学项目\0506新\结果\模块A_重构\multi_geom_ggx_yaw73_pitch37\run_20260520_162831
+            geom_set=concat5  feat=all  transform=raw
+  [OK] 加载 phase63_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase24_near_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase120_forward_scatter: 2701 样本, 9 维特征
+  [OK] 加载 phase90_side: 2701 样本, 9 维特征
+  [OK] 加载 phase45_overhead: 2701 样本, 9 维特征
+            OCS 特征维度=45  样本数=2701
+[inv_joint] 加载图像：d:\我的文件\研究生学术\光学项目\0506新\结果\模块B_渲染\run_20260521_phase63_ggx
+            subdir=brdf_images
+            图像样本数=2701
+[inv_joint] 样本对齐检查 ...
+            [OK] OCS=2701  Image=2701  Matched=2701
+[inv_joint] 提取 HOG ...
+          HOG 200/2701  (235.9 图/秒)
+          HOG 400/2701  (240.4 图/秒)
+          HOG 600/2701  (244.9 图/秒)
+          HOG 800/2701  (246.5 图/秒)
+          HOG 1000/2701  (247.7 图/秒)
+          HOG 1200/2701  (248.2 图/秒)
+          HOG 1400/2701  (248.3 图/秒)
+          HOG 1600/2701  (248.2 图/秒)
+          HOG 1800/2701  (248.0 图/秒)
+          HOG 2000/2701  (247.8 图/秒)
+          HOG 2200/2701  (247.7 图/秒)
+          HOG 2400/2701  (248.0 图/秒)
+          HOG 2600/2701  (248.0 图/秒)
+          HOG 完成：2701 图，10.9s，维度=8100  dtype=float32  nbytes=83.5 MB
+[inv_joint] 计算距离矩阵 ...
+            HOG 端: float32 zscore + chunked pairwise (N=2701, D=8100, nbytes=83.5 MB)
+            HOG zscore 完成: dtype=float32  nbytes=83.5 MB
+            HOG D 完成: shape=(2701, 2701)  dtype=float32  nbytes=27.8 MB
+            OCS 距离范围: [0.0000, 1.0000]
+            Image 距离范围: [0.0000, 1.0000]
+[inv_joint] 粗扫 alpha: 21 个值 (0.0:0.05:1.0)
+          a=0.00  mean=4.31°  med=4.83°  p90=6.54°  Top1@5°=81.30%  Top5@5°=99.15%
+          a=0.05  mean=4.27°  med=4.83°  p90=6.38°  Top1@5°=82.01%  Top5@5°=99.30%
+          a=0.10  mean=4.20°  med=4.83°  p90=6.21°  Top1@5°=82.71%  Top5@5°=99.41%
+          a=0.15  mean=4.16°  med=4.83°  p90=6.21°  Top1@5°=83.27%  Top5@5°=99.41%
+          a=0.20  mean=4.12°  med=4.83°  p90=6.03°  Top1@5°=84.08%  Top5@5°=99.48%
+          a=0.25  mean=4.13°  med=4.83°  p90=5.85°  Top1@5°=84.71%  Top5@5°=99.52%
+          a=0.30  mean=4.32°  med=4.83°  p90=5.85°  Top1@5°=85.23%  Top5@5°=99.56%
+          a=0.35  mean=4.44°  med=4.70°  p90=5.73°  Top1@5°=85.52%  Top5@5°=99.63%
+          a=0.40  mean=4.66°  med=4.70°  p90=5.67°  Top1@5°=85.97%  Top5@5°=99.67%
+          a=0.45  mean=4.65°  med=4.70°  p90=5.50°  Top1@5°=86.38%  Top5@5°=99.63%
+          a=0.50  mean=4.65°  med=4.70°  p90=5.43°  Top1@5°=86.97%  Top5@5°=99.63%
+          a=0.55  mean=4.62°  med=4.70°  p90=5.22°  Top1@5°=87.56%  Top5@5°=99.67%
+          a=0.60  mean=4.60°  med=4.70°  p90=5.22°  Top1@5°=87.86%  Top5@5°=99.70%
+          a=0.65  mean=4.59°  med=4.70°  p90=5.11°  Top1@5°=88.23%  Top5@5°=99.67%
+          a=0.70  mean=4.55°  med=4.70°  p90=5.11°  Top1@5°=88.52%  Top5@5°=99.74%
+          a=0.75  mean=4.54°  med=4.70°  p90=5.11°  Top1@5°=88.63%  Top5@5°=99.74%
+          a=0.80  mean=4.60°  med=4.70°  p90=5.11°  Top1@5°=88.97%  Top5@5°=99.67%
+          a=0.85  mean=4.65°  med=4.70°  p90=5.11°  Top1@5°=89.12%  Top5@5°=99.59%
+          a=0.90  mean=4.81°  med=4.70°  p90=5.11°  Top1@5°=88.45%  Top5@5°=99.33%
+          a=0.95  mean=5.83°  med=4.92°  p90=5.35°  Top1@5°=86.71%  Top5@5°=98.63%
+          a=1.00  mean=12.28°  med=5.00°  p90=10.00°  Top1@5°=77.42%  Top5@5°=97.37%
+
+[inv_joint] 粗扫最佳 a=0.20  mean=4.12°  Top1@5°=84.08%
+[inv_joint] 局部精扫 alpha: 8 个值 (0.15000000000000002:0.01:0.25)
+          a=0.16  mean=4.16°  med=4.83°  p90=6.21°  Top1@5°=83.38%  Top5@5°=99.41%
+          a=0.17  mean=4.15°  med=4.83°  p90=6.03°  Top1@5°=83.60%  Top5@5°=99.44%
+          a=0.18  mean=4.15°  med=4.83°  p90=6.03°  Top1@5°=83.64%  Top5@5°=99.44%
+          a=0.19  mean=4.13°  med=4.83°  p90=6.03°  Top1@5°=83.93%  Top5@5°=99.48%
+          a=0.21  mean=4.12°  med=4.83°  p90=6.03°  Top1@5°=84.15%  Top5@5°=99.48%
+          a=0.22  mean=4.11°  med=4.83°  p90=5.85°  Top1@5°=84.41%  Top5@5°=99.48%
+          a=0.23  mean=4.11°  med=4.83°  p90=5.85°  Top1@5°=84.56%  Top5@5°=99.48%
+          a=0.24  mean=4.10°  med=4.83°  p90=5.85°  Top1@5°=84.64%  Top5@5°=99.48%
+
+[inv_joint] 最终最佳 a=0.2400  mean=4.10°  med=4.83°  p90=5.85°  Top1@5°=84.64%  Top5@5°=99.48%
+
+[inv_joint] Sanity check — 端点对比：
+  a=0.00 (image-only): Top1@5°=81.30%  Top5@5°=99.15%  mean=4.31°
+  a=1.00 (OCS-only kNN): Top1@5°=77.42%  Top5@5°=97.37%  mean=12.28°
+  [OK] alpha_sweep.csv
+  [OK] summary.json
+  [OK] predictions_best.csv
+  [OK] config_used.json
+  [OK] ablation_table.md
+
+[inv_joint] 输出已写入：d:\我的文件\研究生学术\光学项目\0506新\结果\模块C_反演\inv_joint\run_20260521_155144
+[11d] DONE.

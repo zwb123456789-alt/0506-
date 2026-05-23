@@ -1,0 +1,7 @@
+OCS loaded: 1998
+FF loaded: 1998
+CNN loaded: 1998
+OCS mean: 6.24
+FF mean: 3.56
+CNN mean: 11.07
+ALL DONE

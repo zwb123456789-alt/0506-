@@ -1,0 +1,82 @@
+给 gpt
+请先读：
+1. `CLAUDE.md`
+2. `交接区/latest_run.txt`
+3. `交接区/work_log.md`
+
+然后只读取 `latest_run.txt` 指向的最新 `交接区/runs/run_*`，读取其中：
+- task.md
+- result.md
+- changed_files.txt
+- commands.txt
+- next_step.md
+
+要求：
+1. 不要扫描整个目录，不要读旧 run。
+2. 判断 Claude 是否符合 CLAUDE.md。
+3. 判断本轮是否完成 §六 当前最靠前的一项。
+4. 如有必要，补写该 run 下的 `gpt_review.md`。
+5. 追加更新 `交接区/work_log.md`，只写压缩版：思路 / 复核 / 风险 / 下一步。
+6. 追加更新根目录 `codex_progress.md`，它是“项目进展记录”口径，重点写：
+当前项目状态
+复现要点
+验证结论
+风险
+下一步
+不再写成具体智能体操作流水。记录你的连续工作过程与验证结论。
+7. 给出下一条可直接发给 Claude 的简短指令，写入 `next_step.md`。
+8. 先暂停，等我确认再继续。
+
+给claude
+
+
+请先读取 CLAUDE.md、交接区/latest_run.txt，以及 latest_run 指向 run 下的 task.md、gpt_review.md、next_step.md，然后按 next_step.md 执行。
+
+
+你现在处于项目第一次交接启动阶段。
+
+环境：
+- 先执行：conda activate ocs_sim
+
+目录规则：
+1. 若项目根目录下不存在 `交接区/`，先创建：
+   - `交接区/runs/`
+   - `交接区/work_log.md`
+   - `交接区/latest_run.txt`
+2. 本轮新建目录：
+   `交接区/runs/run_YYYYMMDD_HHMMSS/`
+3. `交接区/runs/run_*` 只放本轮交接材料；真实代码/图表/数据继续落到 `ocs_project/` 和 `结果/`。
+4. `work_log.md` 只写压缩版连续工作日志；不要写大段原始输出。
+5. `latest_run.txt` 只写当前 run 的绝对路径。
+
+约束：
+1. 当前上下文以 CLAUDE.md 为准。
+2. 先只读 CLAUDE.md。
+3. 以下文件已预授权读取，不要再申请：
+   - `ocs_project/03_inversion/inv_image.py`
+   - `ocs_project/03_inversion/inv_joint.py`
+   - `ocs_project/03_inversion/inv_common.py`
+   - `ocs_project/02_blender/render_geometry_passes.py`
+   - `ocs_project/02_blender/brdf_postprocess.py`
+4. 只以 §六「下一步」作为任务队列；§八 只作历史背景。
+5. 只执行 §六 中当前排序最靠前、尚未完成的一项。
+6. 默认不改代码、不改配置；如必须改其它文件，先申请：
+   [改动申请] 路径｜目的｜摘要｜风险
+   等我确认。
+7. 不改 `config.py` 默认值。
+8. 每完成 §六 一个步骤，立即更新 `CLAUDE.md`，记录：总体思路/已完成/关键命令/输出位置/问题/下一步。
+9. 每轮必须写入：
+   - `task.md`
+   - `result.md`
+   - `changed_files.txt`
+   - `commands.txt`
+   - `next_step.md`
+10. 同时把压缩版过程追加到 `交接区/work_log.md`。
+11. 更新 `交接区/latest_run.txt` 为当前 run 目录。
+12. 完成后立即暂停，等待下一条指令，不要自动推进下一步。
+13. 全程中文、简洁；执行前先给简短计划。
+
+现在先做三件事：
+- 读 `CLAUDE.md`
+- 读以上已授权文件
+- 输出本轮简短执行计划
