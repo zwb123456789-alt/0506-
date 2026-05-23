@@ -1,0 +1,54 @@
+# 执行命令 · run_20260521_100228
+
+## 子任务 A：3 帧 GGX 验证
+
+### 渲染测试 EXR
+```
+"D:/Program Files/Blender Foundation/Blender 4.2/blender.exe" --background \
+  --python ocs_project/02_blender/render_geometry_passes.py -- \
+  --scan-json "D:/我的文件/研究生学术/光学项目/0506新/结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260520_162831/phase63_backscatter/ocs_scan.json" \
+  --out-dir "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_ggx_test3" \
+  --limit 3 --res 256 --samples 1
+```
+
+### GGX 后处理
+```
+python ocs_project/02_blender/brdf_postprocess.py \
+  "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_ggx_test3" --ggx
+```
+
+## 子任务 B：phase63 全量 2701 帧
+
+### 批量渲染（863.2s, 0.32s/帧）
+```
+"D:/Program Files/Blender Foundation/Blender 4.2/blender.exe" --background \
+  --python ocs_project/02_blender/render_geometry_passes.py -- \
+  --scan-json "D:/我的文件/研究生学术/光学项目/0506新/结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260520_162831/phase63_backscatter/ocs_scan.json" \
+  --out-dir "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_phase63_ggx" \
+  --res 256 --samples 1
+```
+
+### GGX 后处理（~60s）
+```
+python ocs_project/02_blender/brdf_postprocess.py \
+  "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_phase63_ggx" --ggx
+```
+
+## 子任务 C：HOG image-only baseline
+
+### 安装依赖
+```
+conda install -y -c conda-forge scikit-image
+```
+
+### 运行 HOG
+```
+python ocs_project/03_inversion/inv_image.py \
+  --render-run "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_phase63_ggx" \
+  --image-dir brdf_images
+```
+
+## 注意
+- 必须使用绝对路径 --out-dir（Blender 4.2 Compositor 相对路径解析到 C:\）
+- conda activate ocs_sim（仅后处理；Blender 用系统 Python）
+- GGX 管线图像在 brdf_images/ 子目录，需 --image-dir brdf_images

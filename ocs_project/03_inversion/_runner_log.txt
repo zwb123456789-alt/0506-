@@ -1,0 +1,20 @@
+[22:53:25] === Runner starting ===
+[22:53:25] matplotlib Agg ok
+[22:53:25] numpy ok
+[22:53:25] import ok
+[22:53:25] Building main table...
+[22:53:25]   Sanity check: ALL PASSED
+[22:53:25]   Main table: 10 rows
+[22:53:25] Building fusion ablation...
+[22:53:25]   Ablation table done
+[22:53:25] Generating figures...
+[22:55:27] === Runner starting ===
+[22:55:27] matplotlib Agg ok
+[22:55:27] numpy ok
+[22:55:28] import ok
+[22:55:28] Building main table...
+[22:55:28]   Sanity check: ALL PASSED
+[22:55:28]   Main table: 10 rows
+[22:55:28] Building fusion ablation...
+[22:55:28]   Ablation table done
+[22:55:28] Generating figures...

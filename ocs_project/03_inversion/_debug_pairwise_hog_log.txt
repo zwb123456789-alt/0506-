@@ -1,0 +1,38 @@
+======================================================================
+[debug] log: D:\我的文件\研究生学术\光学项目\0506新\ocs_project\03_inversion\_debug_pairwise_hog_log.txt
+[debug] argv: ['debug_pairwise_hog.py']
+======================================================================
+[A] 加载图像目录: d:\我的文件\研究生学术\光学项目\0506新\结果\模块B_渲染\run_20260521_phase63_ggx
+    yaw[N]=2701  pitch[N]=2701  rows=2701
+[A] 提取 HOG ...
+          HOG 200/2701  (229.1 图/秒)
+          HOG 400/2701  (233.3 图/秒)
+          HOG 600/2701  (237.3 图/秒)
+          HOG 800/2701  (239.1 图/秒)
+          HOG 1000/2701  (239.4 图/秒)
+          HOG 1200/2701  (239.9 图/秒)
+          HOG 1400/2701  (239.9 图/秒)
+          HOG 1600/2701  (240.0 图/秒)
+          HOG 1800/2701  (240.1 图/秒)
+          HOG 2000/2701  (240.8 图/秒)
+          HOG 2200/2701  (241.2 图/秒)
+          HOG 2400/2701  (241.9 图/秒)
+          HOG 2600/2701  (241.9 图/秒)
+          HOG 完成：2701 图，11.2s，维度=8100  dtype=float32  nbytes=83.5 MB
+    HOG 完成 in 11.2s
+[B] X.shape=(2701, 8100)  dtype=float32  nbytes=83.46 MB
+    finite_count = 21878100 / 21878100
+    min=0.000000  max=1.000000
+[C] 转 float32 ...
+    X32.shape=(2701, 8100)  dtype=float32  nbytes=83.46 MB
+[C] zscore_float32 ...
+    Xz.shape=(2701, 8100)  dtype=float32  nbytes=83.46 MB  in 0.12s
+    finite_count = 21878100 / 21878100
+    mean(col0)=0.0000e+00  std(col0)=0.0000
+[D] pairwise_euclidean_chunked ...
+    D.shape=(2701, 2701)  dtype=float32  nbytes=27.83 MB  in 1.06s
+[E] diag.min=inf  diag.max=inf
+    off.shape=(7292700,)  finite=7292700/7292700
+    off.min=0.000000  off.max=299.123810  off.mean=104.733856
+======================================================================
+[debug] D_img 生成成功 — pairwise 问题已隔离修复

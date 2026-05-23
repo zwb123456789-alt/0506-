@@ -1,0 +1,26 @@
+{
+  "scan_json": "D:/我的文件/研究生学术/光学项目/0506新/结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260520_162831/phase63_backscatter/ocs_scan.json",
+  "image_dir": "D:/我的文件/研究生学术/光学项目/0506新/结果/模块B_渲染/run_20260521_phase63_ggx",
+  "out_root": "D:/我的文件/研究生学术/光学项目/0506新/结果/模块C_反演/cnn_image",
+  "split": "10to5",
+  "image_size": 128,
+  "intensity": "log1p",
+  "batch_size": 32,
+  "epochs": 500,
+  "patience": 100,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "num_workers": 0,
+  "device": "auto",
+  "tag": "final_log1p",
+  "output_encoding": "[sin(yaw),cos(yaw),sin(pitch),cos(pitch)]",
+  "loss": "MSE",
+  "model": "TinyCNN: Conv/GN/SiLU/Pool×4 → AdaptiveAvgPool → MLP→4"
+}

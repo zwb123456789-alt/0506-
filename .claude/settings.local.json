@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash([ -d \"$SRC/docx\" ])",
+      "Bash(mv D:/skills/claude-scientific-skills-main/claude-scientific-skills-main/scientific-skills/docx D:/skills/_backup_optional/scientific-skills/)",
+      "Read(//d/skills/claude-scientific-skills-main/claude-scientific-skills-main/scientific-skills/**)"
+    ]
+  }
+}
