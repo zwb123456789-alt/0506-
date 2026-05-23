@@ -1,0 +1,14 @@
+# 运行产物 - 大文件
+结果/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Blender
+*.blend1
+
+# 系统文件
+.DS_Store
+Thumbs.db
