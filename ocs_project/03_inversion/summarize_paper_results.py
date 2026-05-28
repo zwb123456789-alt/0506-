@@ -24,17 +24,17 @@ ROOT = Path(r"D:\我的文件\研究生学术\光学项目\0506新")
 RESULT_C = ROOT / "结果" / "模块C_反演"
 
 RUNS = {
-    "ocs_mlp": RESULT_C / "mlp_ocs" / "run_20260521_084723",
-    "cnn_image": RESULT_C / "cnn_image" / "run_20260521_164437_final_log1p",
+    "ocs_mlp": RESULT_C / "mlp_ocs" / "run_20260527_202735",
+    "cnn_image": RESULT_C / "cnn_image" / "run_20260528_105418",
     "late_fusion": {
-        "all_raw": RESULT_C / "cnn_ocs_late_fusion" / "run_20260522_220850_all_raw",
-        "per_part_log": RESULT_C / "cnn_ocs_late_fusion" / "run_20260522_220945_per_part_log",
-        "total_log": RESULT_C / "cnn_ocs_late_fusion" / "run_20260522_220946_total_log",
+        "all_raw": RESULT_C / "cnn_ocs_late_fusion" / "run_20260528_160248_all_raw",
+        "per_part_log": RESULT_C / "cnn_ocs_late_fusion" / "run_20260528_160346_per_part_log",
+        "total_log": RESULT_C / "cnn_ocs_late_fusion" / "run_20260528_160427_total_log",
     },
     "feature_fusion": {
-        "all_raw": RESULT_C / "cnn_ocs_fusion" / "run_20260522_221756_all_raw",
-        "per_part_log": RESULT_C / "cnn_ocs_fusion" / "run_20260522_222227_per_part_log",
-        "total_log": RESULT_C / "cnn_ocs_fusion" / "run_20260522_222731_total_log",
+        "all_raw": RESULT_C / "cnn_ocs_fusion" / "run_20260528_145640",
+        "per_part_log": RESULT_C / "cnn_ocs_fusion" / "run_20260528_150817",
+        "total_log": RESULT_C / "cnn_ocs_fusion" / "run_20260528_151759",
     },
 }
 
