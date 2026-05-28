@@ -18,3 +18,53 @@
 [22:55:28] Building fusion ablation...
 [22:55:28]   Ablation table done
 [22:55:28] Generating figures...
+[16:21:24] === Runner starting ===
+[16:21:25] matplotlib Agg ok
+[16:21:25] numpy ok
+[16:21:25] ERROR: invalid syntax (summarize_paper_results.py, line 27)
+[16:21:25] Traceback (most recent call last):
+  File "D:\我的文件\研究生学术\光学项目\0506新\ocs_project\03_inversion\_runner_summarize.py", line 26, in <module>
+    import summarize_paper_results as spr
+  File "D:\我的文件\研究生学术\光学项目\0506新\ocs_project\03_inversion\.\summarize_paper_results.py", line 27
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+
+[16:21:25] === Runner starting ===
+[16:21:25] matplotlib Agg ok
+[16:21:25] numpy ok
+[16:21:25] ERROR: invalid syntax (summarize_paper_results.py, line 27)
+[16:21:25] Traceback (most recent call last):
+  File "D:\我的文件\研究生学术\光学项目\0506新\ocs_project\03_inversion\_runner_summarize.py", line 26, in <module>
+    import summarize_paper_results as spr
+  File "D:\我的文件\研究生学术\光学项目\0506新\ocs_project\03_inversion\.\summarize_paper_results.py", line 27
+    <<<<<<< HEAD
+    ^
+SyntaxError: invalid syntax
+
+[16:24:17] === Runner starting ===
+[16:24:17] matplotlib Agg ok
+[16:24:17] numpy ok
+[16:24:18] import ok
+[16:24:18] Building main table...
+[16:24:18]   SANITY: [WARN] CNN image-only / -: mean=11.87 expected=12.38 (tol=0.50)
+[16:24:18]   Main table: 10 rows
+[16:24:18] Building fusion ablation...
+[16:24:18]   Ablation table done
+[16:24:18] Generating figures...
+[16:24:18]   fig01 bar chart done
+[16:24:18]   fig02 hit5 bar chart done
+[16:24:19]   fig03 cdf done
+[16:24:19]   fig04 beta sweep done
+[16:24:19]   Skipping fig05 heatmap (slow)
+[16:24:19]   All figures done
+[16:24:19] Complementarity diagnosis...
+[16:24:19]   Done: 1998 aligned samples
+[16:24:19] Case gallery...
+[16:24:19]   Done
+[16:24:19] Paper claims...
+[16:24:19]   Done
+[16:24:19] Summary JSON...
+[16:24:19]   Done
+[16:24:19] === ALL DONE ===
+[16:24:19] Output: D:\我的文件\研究生学术\光学项目\0506新\结果\模块C_反演\paper_summary\run_20260528_162418
