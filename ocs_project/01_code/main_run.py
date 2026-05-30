@@ -133,6 +133,10 @@ def _parse_args():
         "--num-pitch", type=int, default=None,
         help="pitch 点数（默认 NUM_PITCH=19，5° 网格用 37）"
     )
+    p.add_argument(
+        "--accuracy", choices=["fast", "full"], default=None,
+        help="精度级别（默认 ACCURACY_LEVEL=config值）"
+    )
     return p.parse_args()
 
 
@@ -147,7 +151,10 @@ def _resolve_workers(n: int) -> int:
 # 主流程
 # ============================================================
 def main():
+    global ACCURACY_LEVEL
     args = _parse_args()
+    if args.accuracy is not None:
+        ACCURACY_LEVEL = args.accuracy
     n_workers = _resolve_workers(args.workers)
     num_yaw   = args.num_yaw if args.num_yaw is not None else NUM_YAW
     num_pitch = args.num_pitch if args.num_pitch is not None else NUM_PITCH
@@ -179,7 +186,7 @@ def main():
     # ---- 步骤 1: 加载 STL ----
     print("\n【步骤 1/4】加载 STL 模型 (本体坐标系)...")
     print("-" * 70)
-    meshes, total_faces = load_meshes()
+    meshes, total_faces = load_meshes(accuracy_level=ACCURACY_LEVEL)
 
     # ---- 步骤 2: 卫星 3D 模型示意（fig06） ----
     print("\n【步骤 2/4】卫星模型示意图...")
