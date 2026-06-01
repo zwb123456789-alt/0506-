@@ -1,0 +1,82 @@
+======================================================================
+  ResNet-branch Fusion (Task A)
+  Image dir: D:\我的文件\研究生学术\光学项目\0506新\结果\模块B_渲染\run_20260528_101944_exact_brdf
+  Manifest:  D:\我的文件\研究生学术\光学项目\0506新\结果\模块A_重构\multi_geom_ggx_yaw73_pitch37\run_20260527_195122\multi_geom_manifest.json
+  Cases: ['A1', 'A2', 'A3', 'A4', 'A5']
+  Output: D:\我的文件\研究生学术\光学项目\0506新\论文改进\补充实验\结果\resnet_fusion\run_20260601_111208
+======================================================================
+    images loaded: 2701, 2.8s, shape=(2701, 1, 128, 128)
+  Image split: train_pool=703 test=1998
+
+============================================================
+  A1: ResNet image-only
+============================================================
+    [A1] seed=0 mean=1.66° Hit5=97.1% worst=11.4°
+    [A1] seed=1 mean=1.59° Hit5=98.3% worst=9.0°
+    [A1] seed=2 mean=1.66° Hit5=97.7% worst=10.7°
+    [A1] seed=3 mean=1.78° Hit5=97.3% worst=10.4°
+    [A1] seed=4 mean=1.74° Hit5=97.3% worst=8.0°
+
+============================================================
+  A2: ResNet-fusion + concat5 per_part_log 30D
+============================================================
+  [OK] 加载 phase63_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase24_near_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase120_forward_scatter: 2701 样本, 9 维特征
+  [OK] 加载 phase90_side: 2701 样本, 9 维特征
+  [OK] 加载 phase45_overhead: 2701 样本, 9 维特征
+    [A2] seed=0 mean=1.35° Hit5=99.9% worst=5.2°
+    [A2] seed=1 mean=1.52° Hit5=99.6% worst=9.4°
+    [A2] seed=2 mean=1.46° Hit5=99.4% worst=6.1°
+    [A2] seed=3 mean=1.46° Hit5=99.8% worst=6.6°
+    [A2] seed=4 mean=1.56° Hit5=99.7% worst=5.7°
+
+============================================================
+  A3: ResNet-fusion + phase63 per_part_log 6D
+============================================================
+  [OK] 加载 phase63_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase24_near_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase120_forward_scatter: 2701 样本, 9 维特征
+  [OK] 加载 phase90_side: 2701 样本, 9 维特征
+  [OK] 加载 phase45_overhead: 2701 样本, 9 维特征
+    [A3] seed=0 mean=1.57° Hit5=99.3% worst=9.2°
+    [A3] seed=1 mean=1.61° Hit5=99.3% worst=7.1°
+    [A3] seed=2 mean=1.63° Hit5=99.0% worst=6.6°
+    [A3] seed=3 mean=1.72° Hit5=98.8% worst=7.6°
+    [A3] seed=4 mean=1.51° Hit5=99.3% worst=6.4°
+
+============================================================
+  A4: ResNet-fusion + concat5 all_raw 45D
+============================================================
+  [OK] 加载 phase63_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase24_near_backscatter: 2701 样本, 9 维特征
+  [OK] 加载 phase120_forward_scatter: 2701 样本, 9 维特征
+  [OK] 加载 phase90_side: 2701 样本, 9 维特征
+  [OK] 加载 phase45_overhead: 2701 样本, 9 维特征
+    [A4] seed=0 mean=1.36° Hit5=99.0% worst=19.7°
+    [A4] seed=1 mean=1.47° Hit5=99.1% worst=26.8°
+    [A4] seed=2 mean=1.47° Hit5=99.4% worst=23.4°
+    [A4] seed=3 mean=1.47° Hit5=99.5% worst=15.4°
+    [A4] seed=4 mean=1.67° Hit5=99.0% worst=8.4°
+
+============================================================
+  A5: Late fusion (ResNet pred + OCS MLP pred)
+============================================================
+    [A5] 使用 OCS MLP 预测: 结果\模块C_反演\mlp_ocs\run_20260527_202735\predictions_test_all_raw.csv
+    A5 best beta=0.14 mean=1.58±0.06°
+
+  Summary table:
+# ResNet-branch Fusion 结果 (Task A)
+
+> Image dir: `结果\模块B_渲染\run_20260528_101944_exact_brdf`
+> Split: 10°→5°, 5 seeds, log1p 128×128
+
+| Case | Model | mean±std | median | p90 | worst | Hit@5° | Hit@10° |
+|---|---|---|---:|---:|---:|---:|---:|
+| A1 | ResNet image-only | 1.69±0.07° | 1.42° | 3.31° | 9.9° | 97.6% | 99.9% |
+| A2 | ResNet-fusion (concat5 per_part_log 30D) | 1.47±0.07° | 1.33° | 2.71° | 6.6° | 99.7% | 100.0% |
+| A3 | ResNet-fusion (phase63 per_part_log 6D) | 1.61±0.07° | 1.42° | 2.97° | 7.4° | 99.2% | 100.0% |
+| A4 | ResNet-fusion (concat5 all_raw 45D) | 1.49±0.10° | 1.31° | 2.70° | 18.7° | 99.2% | 99.9% |
+| A5 | Late fusion ResNet+OCS-MLP (β=0.14) | 1.58±0.06° | nan° | nan° | nan° | nan% | nan% |
+
+  Output: D:\我的文件\研究生学术\光学项目\0506新\论文改进\补充实验\结果\resnet_fusion\run_20260601_111208

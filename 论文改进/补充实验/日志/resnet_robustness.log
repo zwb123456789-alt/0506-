@@ -1,0 +1,11 @@
+======================================================================
+  ResNet Image Degradation Robustness (Task B)
+  Image dir: D:\我的文件\研究生学术\光学项目\0506新\结果\模块B_渲染\run_20260528_101944_exact_brdf
+  Output: D:\我的文件\研究生学术\光学项目\0506新\论文改进\补充实验\结果\resnet_robustness\run_20260601_143519
+======================================================================
+    images loaded: 2701, shape=(2701, 1, 128, 128)
+  Split: train_pool=703 test=1998
+
+  [1/2] Training ResNet on clean images (5 seeds)...
+    train seed=0 done (ep=411, best_va=0.000905)
+    train seed=1 done (ep=500, best_va=0.000937)
