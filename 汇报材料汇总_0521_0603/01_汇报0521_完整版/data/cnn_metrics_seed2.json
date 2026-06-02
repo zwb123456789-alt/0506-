@@ -1,0 +1,17 @@
+{
+  "seed": 2,
+  "train_time_s": 62.8,
+  "best_epoch": 500,
+  "best_val_loss": 0.051581469178199765,
+  "test_loss": 0.04791237576282,
+  "n_params": 106148,
+  "n_samples": 1998,
+  "angular_err_mean": 12.630829636058639,
+  "angular_err_median": 8.731532739003303,
+  "angular_err_p90": 26.060113343623986,
+  "angular_err_p95": 35.02845969604478,
+  "hit@5deg": 0.26226226226226224,
+  "hit@10deg": 0.5605605605605606,
+  "yaw_err_mean": 11.511775432048259,
+  "pitch_err_mean": 8.60400807973952
+}

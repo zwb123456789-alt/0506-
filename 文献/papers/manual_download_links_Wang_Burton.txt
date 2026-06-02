@@ -1,0 +1,19 @@
+﻿Restricted / manual download links
+
+1. Wang 2024 — Attitude inversion of space debris based on the laboratory-tested photometry dataset
+DOI: https://doi.org/10.1016/j.asr.2024.04.005
+ScienceDirect article page: https://www.sciencedirect.com/science/article/abs/pii/S0273117724003375
+Possible ScienceDirect PDF endpoint (requires entitled access; may redirect/block): https://www.sciencedirect.com/science/article/pii/S0273117724003375/pdfft?download=true
+Publisher PII: S0273117724003375
+
+2. Burton 2024 — Light curve attitude estimation using particle swarm optimizers
+DOI: https://doi.org/10.1016/j.asr.2024.09.008
+ScienceDirect full article page: https://www.sciencedirect.com/science/article/pii/S0273117724009281
+ScienceDirect View PDF endpoint seen on page: https://www.sciencedirect.com/science/article/pii/S0273117724009281/pdfft?md5=0dcff6aa4bcbfed972e00aa5ef5f033a&pid=1-s2.0-S0273117724009281-main.pdf
+Fallback PDF endpoint: https://www.sciencedirect.com/science/article/pii/S0273117724009281/pdfft?download=true
+Publisher PII: S0273117724009281
+
+Related earlier conference version for Burton:
+DOI: https://doi.org/10.2514/6.2024-0199
+AIAA page: https://arc.aiaa.org/doi/10.2514/6.2024-0199
+AIAA PDF endpoint (Cloudflare/paywall may block): https://arc.aiaa.org/doi/pdf/10.2514/6.2024-0199

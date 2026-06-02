@@ -24,14 +24,14 @@
   title     = {Goniopolarimetric Properties of Typical Satellite Material Surfaces: Intercomparison with Semi-Empirical pBRDF Modeled Results},
   author    = {Yang, Min and Mao, Hongxia and Wu, Jun and Zheng, Chong and Wang, Li},
   journal   = {Photonics},
-  volume    = {11},
+  volume    = {12},
   number    = {1},
   pages     = {17},
-  year      = {2024},
+  year      = {2025},
   publisher = {MDPI},
-  doi       = {10.3390/photonics11010017},
+  doi       = {10.3390/photonics12010017},
   keywords  = {Cook-Torrance, Kubelka-Munk, Maxwell-Beard, Priest-Germer, polarized BRDF, satellite material},
-  relevance = {直接对比5种pBRDF在卫星材料上的表现，验证Cook-Torrance适用性，与GGX Step 7直接相关}
+  relevance = {卫星材料表面偏振反射与半经验pBRDF模型对比，可支撑材料反射建模背景；与本文GGX/Cook-Torrance的直接对应关系需在正文中谨慎表述}
 }
 
 @article{lu2024_brdf_starlink,
@@ -71,6 +71,67 @@
   year      = {2024},
   keywords  = {Cook-Torrance, microfacet, polarization BRDF, PSO fitting, Fresnel},
   relevance = {Cook-Torrance+偏振BRDF，与GGX验证技术路线一致}
+}
+
+% ---- 材料参数来源支撑（Q9 标称值出处） ----
+
+@book{palik1985_optical_constants,
+  title     = {Handbook of Optical Constants of Solids},
+  author    = {Palik, Edward D.},
+  publisher = {Academic Press},
+  year      = {1985},
+  isbn      = {9780125444156},
+  keywords  = {optical constants, refractive index, aluminum, Fresnel reflectance},
+  relevance = {铝复折射率(n,k)标准光学常数手册，支撑金属主体 F0=0.91 的物理来源（法向 Fresnel 反射率）}
+}
+
+@misc{filament_pbr_materials,
+  title        = {Filament: Physically Based Rendering — Material System (Reflectance / F0 values)},
+  author       = {{Google}},
+  howpublished = {\url{https://google.github.io/filament/Filament.md}},
+  year         = {2024},
+  note         = {Aluminum F0 = (0.91, 0.92, 0.92)},
+  keywords     = {PBR, GGX, F0, reflectance, metallic, aluminum},
+  relevance    = {工业级 PBR 权威文档，列铝 F0=0.91，支撑金属主体镜面反射参数；作脚注/补充引用}
+}
+
+@misc{physicallybased_database,
+  title        = {Physically Based — A database of physically based values for CG artists},
+  author       = {{physicallybased.info}},
+  howpublished = {\url{https://physicallybased.info/}},
+  year         = {2024},
+  keywords     = {PBR, IOR, F0, reflectance database},
+  relevance    = {PBR 物理参数数据库（金属 F0 / 介质 IOR），支撑标称值量级合理性}
+}
+
+@misc{nasa2022_goniometric_brdf,
+  title        = {Goniometric and Polarized Imaging Spectroscopic Lab Measurements of Spacecraft Materials},
+  author       = {{NASA}},
+  howpublished = {NASA Technical Reports Server (NTRS) 20220002699},
+  year         = {2022},
+  url          = {https://ntrs.nasa.gov/citations/20220002699},
+  keywords     = {spacecraft materials, BRDF, goniometric, polarized imaging spectroscopy},
+  relevance    = {卫星材料实验室 BRDF 测量，作为材料反射参数类别合理性背书 + 未来反标定方法指向}
+}
+
+@article{cently2017_homogeneous_materials,
+  title     = {Laboratory Characterization of Homogeneous Spacecraft Materials},
+  author    = {Bengtson, Michael and Cox, Marcus and Wilkins, Matthew and others},
+  journal   = {Journal of Spacecraft and Rockets},
+  year      = {2017},
+  doi       = {10.2514/1.A33079},
+  keywords  = {spacecraft materials, spectral BRDF, laboratory characterization},
+  relevance = {实验室表征卫星均质材料 spectral BRDF，支撑分部件材料反射特性的合理性}
+}
+
+@misc{caltech_spacecraft_materials,
+  title        = {Photometric and Spectral Characterization of Spacecraft Materials With Application to Lunar Trailblazer},
+  author       = {{Caltech}},
+  howpublished = {\url{https://authors.library.caltech.edu/records/bka10-psm67}},
+  year         = {2024},
+  note         = {Spacecraft materials are dark with reflectances < 0.2 in most scattering geometries},
+  keywords     = {spacecraft materials, reflectance, dark coatings, photometric characterization},
+  relevance    = {卫星材料反射率 <0.2 的实测背景，支撑遮光板 base_color=0.08 / 太阳能板 0.15 的低反射标称值}
 }
 
 @article{shi2022_material_inversion,
@@ -121,38 +182,38 @@
 
 @article{kumar2025_leo_lightcurve,
   title     = {Light Curves Sequential Comparison Strategy for Improved Understanding of LEO Uncontrolled Objects},
-  author    = {Kumar, A. and others},
+  author    = {Kumar, S. and Chiavari, L. and Cimino, L. and Varanese, S. and Mariani, L. and Rossetti, M. and Zarcone, G. and Schildknecht, T. and Nasuti, F. and Piergentili, F.},
   journal   = {Acta Astronautica},
   volume    = {232},
-  pages     = {1--15},
+  pages     = {654--665},
   year      = {2025},
-  doi       = {10.1016/j.actaastro.2025.02.019},
+  doi       = {10.1016/j.actaastro.2025.04.018},
   keywords  = {LEO, light curve, digital twin, attitude evolution, tumbling},
   relevance = {数字孪生+光变反演闭环，与OCS仿真→渲染→反演框架类似}
 }
 
 @article{wang2024_attitude_inversion_debris,
   title     = {Attitude Inversion of Space Debris Based on the Laboratory-Tested Photometry Dataset},
-  author    = {Wang, X. and others},
+  author    = {Wang, Shu-Shu and Lin, Hou-Yuan and Kang, An-Ming and Men, Jin-Rui and Zhao, Chang-Yin},
   journal   = {Advances in Space Research},
   volume    = {74},
   number    = {2},
   pages     = {949--963},
   year      = {2024},
-  doi       = {10.1016/j.asr.2024.04.009},
+  doi       = {10.1016/j.asr.2024.04.005},
   keywords  = {space debris, light curve inversion, genetic algorithm, photometry, lab dataset},
   relevance = {实验室光度数据集+GA反演姿态，方法论直接可对比}
 }
 
 @article{advspaceres2024_pso_lightcurve,
   title     = {Light Curve Attitude Estimation Using Particle Swarm Optimizers},
-  author    = {Hanada, T. and others},
+  author    = {Burton, Alexander and Robinson, Liam and Frueh, Carolin},
   journal   = {Advances in Space Research},
   volume    = {74},
   number    = {11},
   pages     = {5619--5638},
   year      = {2024},
-  doi       = {10.1016/j.asr.2024.10.008},
+  doi       = {10.1016/j.asr.2024.09.008},
   keywords  = {PSO, light curve, attitude estimation, no initial guess},
   relevance = {PSO无初值姿态估计，对比检索式反演方法}
 }
@@ -460,7 +521,7 @@
 
 @article{remote2024_visual_inertial_fusion,
   title     = {Tightly Coupled Visual--Inertial Fusion for Attitude Estimation of Spacecraft},
-  author    = {Liu, H. and others},
+  author    = {Yi, Jinhui and Ma, Yuebo and Long, Hongfeng and Zhu, Zijian and Zhao, Rujin},
   journal   = {Remote Sensing},
   volume    = {16},
   number    = {16},
@@ -525,9 +586,11 @@
 
 @inproceedings{dickinson2024_6dof_pose,
   title     = {Automated 6DOF Satellite Pose Estimation From Resolved Ground-Based Imagery},
-  author    = {Dickinson, Thomas and others},
-  booktitle = {AMOS Conference},
+  author    = {Dickinson, Thomas and Walvoord, Derek and Gartley, Michael},
+  booktitle = {Advanced Maui Optical and Space Surveillance Technologies Conference},
   year      = {2024},
+  doi       = {10.64861/XCUS5673},
+  url       = {https://amostech.space/year/2024/automated-6dof-satellite-pose-estimation-from-resolved-ground-based-imagery/},
   keywords  = {6DOF pose estimation, deep learning, resolved imagery, ground-based},
   relevance = {6DOF卫星姿态估计+深度学习，与图像反演方向对齐}
 }
@@ -574,9 +637,10 @@
 
 @article{fankhauser2023_satellite_brightness,
   title     = {Satellite Optical Brightness},
-  author    = {Fankhauser, F. and Tyson, J. A. and Askari, J.},
+  author    = {Fankhauser, Forrest and Tyson, J. Anthony and Askari, Jacob},
   journal   = {The Astronomical Journal},
   volume    = {166},
+  number    = {2},
   pages     = {59},
   year      = {2023},
   doi       = {10.3847/1538-3881/ace047},

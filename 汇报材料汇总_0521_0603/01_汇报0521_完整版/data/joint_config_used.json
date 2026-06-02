@@ -1,0 +1,31 @@
+{
+  "fusion_formula": "D_joint = alpha * D_ocs + (1-alpha) * D_img",
+  "distance_normalization": "each D min-max over non-diagonal → [0,1]",
+  "ocs_root": "d:\\我的文件\\研究生学术\\光学项目\\0506新\\结果\\模块A_重构\\multi_geom_ggx_yaw73_pitch37\\run_20260520_162831",
+  "geom_set": "concat5",
+  "ocs_feat": "all",
+  "ocs_transform": "raw",
+  "ocs_dim": 45,
+  "image_dir": "d:\\我的文件\\研究生学术\\光学项目\\0506新\\结果\\模块B_渲染\\run_20260521_phase63_ggx",
+  "image_subdir": "brdf_images",
+  "image_feature": "HOG",
+  "image_dim": 8100,
+  "hog_params": {
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys"
+  },
+  "feature_normalization": "zscore before pairwise euclidean distance",
+  "split": "loo",
+  "coarse_sweep": "0.0:0.05:1.0",
+  "fine_sweep": "0.0:0.05:1.0",
+  "n_geometries": 5,
+  "n_samples": 2701
+}

@@ -12,3 +12,8 @@ __pycache__/
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# Codex 工具与临时目录
+.codex/
+.codex_tmp/
+node_modules/

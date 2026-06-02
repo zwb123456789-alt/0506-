@@ -1,0 +1,52 @@
+{
+  "project_root": "D:\\我的文件\\研究生学术\\光学项目\\0506新",
+  "stl_dir": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\建模",
+  "output_dir": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\结果\\模块A_重构",
+  "blender_exe": "D:\\Program Files\\Blender Foundation\\Blender 5.0\\blender.exe",
+  "unit_scale": 0.001,
+  "epsilon": 1.0,
+  "ray_batch": 5000,
+  "sun_vector": [
+    1.0,
+    0.0,
+    0.3
+  ],
+  "det_vector": [
+    0.5,
+    -1.0,
+    0.1
+  ],
+  "scan_2d": true,
+  "yaw_range": [
+    0,
+    360
+  ],
+  "num_yaw": 37,
+  "pitch_range": [
+    -90,
+    90
+  ],
+  "num_pitch": 19,
+  "accuracy_level": "fast",
+  "enable_render": false,
+  "lang_mode": "bilingual",
+  "fig_dpi": 300,
+  "sun_vector_normalized": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "det_vector_normalized": [
+    0.0,
+    1.0,
+    0.0
+  ],
+  "n_workers": 8,
+  "embree_backend": true,
+  "materials": {
+    "jinshuzhuti": "卫星金属主体（铝合金/镀铝外壳）",
+    "taiyangnengban": "太阳能电池板（玻璃盖片+半导体）",
+    "yinshenban": "隐身/暗表面涂层（低反射率黑色涂层）"
+  },
+  "brdf_model": "ggx"
+}

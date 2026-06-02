@@ -1,0 +1,22 @@
+{
+  "seeds": 5,
+  "intensity": "log1p",
+  "image_size": 128,
+  "tag": "final_log1p",
+  "angular_err_mean_mean": 12.37754050700342,
+  "angular_err_mean_std": 0.7424864422316059,
+  "angular_err_median_mean": 8.840594616666815,
+  "angular_err_median_std": 0.31320721484369096,
+  "angular_err_p90_mean": 24.840668279461468,
+  "angular_err_p90_std": 1.579342488137424,
+  "angular_err_p95_mean": 33.74018385732644,
+  "angular_err_p95_std": 2.7923980544631366,
+  "hit@5deg_mean": 0.26126126126126126,
+  "hit@5deg_std": 0.009496329309814946,
+  "hit@10deg_mean": 0.5582582582582581,
+  "hit@10deg_std": 0.01892024294798638,
+  "yaw_err_mean_mean": 10.788146109671683,
+  "yaw_err_mean_std": 0.6584279480114633,
+  "pitch_err_mean_mean": 8.763929561081458,
+  "pitch_err_mean_std": 0.728348895790175
+}
