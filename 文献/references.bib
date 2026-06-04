@@ -669,3 +669,47 @@
   keywords  = {3D reconstruction, infrared radiation, satellite, thermal analysis, attitude},
   relevance = {深度学习3D重建+ANSYS热分析，三轴稳定vs自旋姿态红外特性对比}
 }
+
+% ============================================================
+% 主题六: 地基观测退化与综述 (Q10 Introduction 引用补充)
+% ============================================================
+
+@article{yang2026_photometric_review,
+  title     = {Photometric Characterization of Space Objects: From Classical BRDF Models to Data-Driven Prediction},
+  author    = {Yang, Liu and Xu, Can and Zhang, Yasheng},
+  journal   = {Aerospace},
+  volume    = {13},
+  number    = {5},
+  pages     = {418},
+  year      = {2026},
+  publisher = {MDPI},
+  doi       = {10.3390/aerospace13050418},
+  keywords  = {space situational awareness, photometric prediction, light curves, BRDF, machine learning, deep learning, review},
+  relevance = {空间目标光度表征综述（经典BRDF→数据驱动），串联散射表征/形状姿态反演/ML-DL分析；明确指出公开基准缺失，支撑本文 controlled benchmark 定位；Introduction 开篇泛述引用}
+}
+
+@article{wang2023_leo_turbulence,
+  title     = {On-Earth Observation of Low Earth Orbit Targets through Phase Disturbances by Atmospheric Turbulence},
+  author    = {Wang, Kainan and Yu, Yian and Gong, Yuxuan and Yi, Yang and Zhang, Xuemin},
+  journal   = {Remote Sensing},
+  volume    = {15},
+  number    = {19},
+  pages     = {4718},
+  year      = {2023},
+  publisher = {MDPI},
+  doi       = {10.3390/rs15194718},
+  keywords  = {ground-based observation, atmospheric turbulence, Low Earth Orbit object, adaptive optics, image degradation},
+  relevance = {地基望远镜观测 LEO 目标受大气湍流像差/模糊/平台抖动；AO 校正使 MSE 降 38%；支撑 Introduction 地基光学退化论据（承重墙）}
+}
+
+@inproceedings{kuhn2025_rso_scintillation,
+  title     = {Atmospheric Scintillation in Resident Space Object Photometry},
+  author    = {Kuhn, M. and Kieboom, B. and Cirillo, G. and Michel, M. and Dekorsy, T.},
+  booktitle = {Proceedings of the 9th European Conference on Space Debris (SDC9)},
+  address   = {Bonn, Germany},
+  year      = {2025},
+  note      = {Paper 344, 1--4 April 2025, ESA Space Debris Office; Eds. S. Lemmens, T. Flohrer, F. Schmitz},
+  url       = {https://conference.sdo.esoc.esa.int/proceedings/sdc9/paper/344},
+  keywords  = {photometry, light curves, scintillation, atmospheric turbulence, resident space object, angular velocity},
+  relevance = {首次研究大气闪烁噪声对运动 RSO 测光的影响，推导随角速度变化的噪声方差，Airbus Robotic Telescope 实测验证；精准支撑 OCS-noise 实验的真实物理依据}
+}
