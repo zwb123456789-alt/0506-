@@ -1,0 +1,4 @@
+claim_id,claim_text,evidence_type,evidence_path,value_or_result,condition,confidence,status,notes
+CL001,常规GEO卫星视星等范围,文献调研,01_调研_常规卫星光度范围/卫星光度调研表.csv,,待定义,low,planned,需调研后填写
+CL002,OCS动态范围对应相对星等差,现有仿真,04_STL实验判断/outputs/phase63_delta_mag_summary.md,最亮相对中位约7.948 mag；最亮相对最暗约9.559 mag,phase63_backscatter,medium,done,仅为相对星等差；未做绝对星等标定
+CL003,最亮部件判定,现有仿真,04_STL实验判断/outputs/phase63_component_contribution.csv,total top-20中jinshuzhuti平均贡献约99.5%,phase63_backscatter,medium,done,仅限当前几何和材料口径
