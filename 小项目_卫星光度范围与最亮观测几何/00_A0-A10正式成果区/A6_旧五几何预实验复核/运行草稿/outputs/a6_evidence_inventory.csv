@@ -1,0 +1,9 @@
+geometry_label,phase_angle_deg,data_file_type,original_path,fixed_in_project,record_count,口径,运行批次,说明
+phase63_backscatter,63.0,top-20姿态,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase63_backscatter/ocs_scan.csv,TRUE,20,face-center (legacy),run_20260527_195122,已固定到小项目：90_旧结构与支撑材料归档/04_STL实验判断/outputs/phase63_topk_brightness.csv
+phase63_backscatter,63.0,部件贡献,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase63_backscatter/ocs_scan.csv,TRUE,3,face-center (legacy),run_20260527_195122,已固定到小项目：90_旧结构与支撑材料归档/04_STL实验判断/outputs/phase63_component_contribution.csv
+phase63_backscatter,63.0,Delta m摘要,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase63_backscatter/ocs_scan.csv,TRUE,1,face-center (legacy),run_20260527_195122,已固定到小项目：90_旧结构与支撑材料归档/04_STL实验判断/outputs/phase63_delta_mag_summary.md
+phase63_backscatter,63.0,完整ocs_scan,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase63_backscatter/ocs_scan.csv,FALSE,2701,face-center (legacy),run_20260527_195122,原始数据在原大项目中，未复制到小项目
+phase24_near_backscatter,24.0,完整ocs_scan,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase24_near_backscatter/ocs_scan.csv,FALSE,2701,face-center (legacy),run_20260527_195122,已定位但未复制到小项目
+phase45_overhead,45.0,完整ocs_scan,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase45_overhead/ocs_scan.csv,FALSE,2701,face-center (legacy),run_20260527_195122,已定位但未复制到小项目
+phase90_side,90.0,完整ocs_scan,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase90_side/ocs_scan.csv,FALSE,2701,face-center (legacy),run_20260527_195122,已定位但未复制到小项目
+phase120_forward_scatter,120.0,完整ocs_scan,结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/run_20260527_195122/phase120_forward_scatter/ocs_scan.csv,FALSE,2701,face-center (legacy),run_20260527_195122,已定位但未复制到小项目

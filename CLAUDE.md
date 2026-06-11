@@ -1,20 +1,70 @@
 # OCS + 图像联合仿真与姿态反演项目
 
 > 完整实验历史已归档至 `进度档案_仿真与反演_full.md`（923 行），本文件仅保留索引级信息。
-> **当前焦点：论文写作 — 第一档（Acta/ASR）v0.3 已完成并通过 Codex 复审，准备启动第二档（CJA/AST）冲刺版本。**
+> **当前焦点：v0.4 BlenderOCS 重启 — v0.3 论文写作已封存，转向 model-known 条件下 OCS/图像双读出可观测性研究。**
+> **v0.4 工作区有独立 CLAUDE.md 与完整定位文件，本文件只做高层索引与跳转，细节以 `项目重启_v0.4_BlenderOCS/CLAUDE.md` 为权威。**
 
 ---
 
-## 一、项目两阶段总览
+## 一、项目三阶段总览
 
 | 阶段 | 状态 | 说明 |
 |---|---|---|
 | **I · 仿真与反演实验** | ✅ 已完成 | 模块 A/B/C + BRDF 验证 + 三端闭合 + 所有反演实验（1-12g）|
-| **II · 论文写作** | 🔄 进行中 | 第一档 v0.3 已完成，准备第二档 CJA/AST 冲刺版 |
+| **II · v0.3 论文写作** | ⏸️ 已封存 | 第一档 Acta/ASR v0.3 已完稿并过 Codex 复审，但因 OCS 数据源口径问题封存，不再投稿工程化 |
+| **III · v0.4 BlenderOCS 重启** | 🔄 进行中 | 重建统一前向物理模型，研究定位与代码阶段准备已冻结，停在代码实施前确认完成 |
 
 ---
 
-## 二、模块 A/B/C（阶段 I 产物，已冻结）
+## 二、v0.4 当前状态与入口（当前焦点）
+
+### 2.1 v0.4 定位（一句话）
+
+放弃"真实未知非合作目标姿态反演系统"强主张，转向 **model-known（几何已知、不配合）** 条件下，OCS 独立光度通道与图像成像通道共享同一物理前向模型时，二者对姿态信息的**可观测性、互补性、置信一致性**研究。
+
+### 2.2 v0.4 工作区入口
+
+```
+项目重启_v0.4_BlenderOCS/CLAUDE.md                    ← v0.4 权威启动文件（必读）
+项目重启_v0.4_BlenderOCS/00_只打开本文件夹时的启动说明.md
+项目重启_v0.4_BlenderOCS/00_v0.4总控流程.md
+```
+
+### 2.3 v0.4 定位冻结稿谱系
+
+定位文件迭代至 24 号（OCS 口径、形态与 mismatch 账面对齐版）；主入口待作者最终确认，以 v0.4 子目录 CLAUDE.md 同步为准。
+
+```
+21 号：OCS 口径并入版（口径 A = independent photometric channel）
+22 号：OCS 信号形态决策（单点 vs 多样本，L1 跨几何向量进主线、L2 光变曲线留 Future Work）
+23 号：OCS 口径与形态并入版
+24 号：OCS 口径形态与 mismatch 账面对齐版 ← 最新候选主入口
+```
+
+### 2.4 v0.4 方法冻结与代码阶段准备（已通过 Codex 复审）
+
+项目重启_v0.4_BlenderOCS/04_BlenderOCS方法重建/13_v0.4前向模型冻结规范_最终冻结版.md
+项目重启_v0.4_BlenderOCS/04_BlenderOCS方法重建/14_v0.4数据与manifest字段规范_最终冻结版.md
+项目重启_v0.4_BlenderOCS/05_全链路重跑/00_重跑任务清单.md
+项目重启_v0.4_BlenderOCS/05_全链路重跑/01_代码阶段资产盘点与实施计划_Claude.md
+项目重启_v0.4_BlenderOCS/05_全链路重跑/02_第一批最小验证任务清单_Claude.md
+```
+
+### 2.5 v0.4 核心方法口径
+
+统一前向物理模型：Blender 负责"看见哪里"（STL/姿态/正交投影/depth/normal/part ID/pixel-level visibility），Python/公式负责"如何反光"（显式 GGX/Cook-Torrance BRDF/NoL·NoV/OCS 积分/clean image linear response）。新 canonical OCS 数据源为 Blender-derived OCS，不再用旧模块 A face-center 扫描表。
+
+### 2.6 v0.4 当前停点与下一步
+
+停在"代码实施前文档确认完成"。下一步进入 `项目重启_v0.4_BlenderOCS/06_v0.4_code/` 代码实施：搭代码骨架 → 记录环境依赖 → 单姿态 smoke test → depth round-trip sanity check → camera/sun geometry pass → 20 姿态 shadow validation → 全量生成。**不要直接全量重跑或训练模型。**
+
+### 2.7 v0.4 阶段同步硬约束
+
+Codex 复审判定某阶段通过后，**只能由 Codex 审阅端**同步 v0.4 的 CLAUDE.md / 启动说明 / 总控 / 阶段入口 / 归档索引。Claude 执行端只在 `项目重启_v0.4_BlenderOCS/97_交互审阅记录/01_Claude输出/` 产出方案、候选稿、修订稿，不擅改 v0.4 启动集与定位主线正文。
+
+---
+
+## 三、模块 A/B/C（阶段 I 产物，已冻结）
 
 | 模块 | 职责 | 关键产物 |
 |---|---|---|
@@ -26,223 +76,74 @@
 
 **关键决策**：图表双语 / Yaw×Pitch 网格 / Blender 4.2.3 LTS / GGX 论文主 BRDF / 5° 网格论文必需。
 
----
-
-## 三、论文写作（阶段 II — 当前）
-
-### 3.1 三模型分工
-
-- **Codex**（总控 + 审阅）：生成指导 → 审阅 → 整合维护版本线（不自己写正文）
-- **GPT** + **Claude**（本文档所在端）：双线并行写手，各自产出，不直接覆盖主稿
-
-### 3.2 版本线与投稿三档策略
-
-**已完成版本**：
-- **v0.1**（初稿）: `论文改进/论文写作/01_初稿生成与整合/最终整合/最终整合版_v0.1_基于GPT吸收Claude.md`
-- **v0.2**（第一档工作稿）: `论文改进/论文写作/03_投稿定稿/manuscript_md/主稿_v0.2_Acta_ASR主投优先版.md`
-- **v0.3**（第一档润色稿）: `论文改进/论文写作/03_投稿定稿/manuscript_md/主稿_v0.3_Acta_ASR润色版.md` ✅ 已通过 Codex 复审
-
-**投稿三档策略**（详见 `论文改进/论文写作/03_投稿定稿/submission_checklist/投稿策略_三档路线_v20260604.md`）：
-1. **第一档（主投优先）**：Acta Astronautica / Advances in Space Research → v0.3 已完成，待投稿工程化
-2. **第二档（冲刺优先）**：Chinese Journal of Aeronautics / Aerospace Science and Technology → **当前准备启动**
-3. **第三档（高风险冲刺）**：IEEE TAES / JGCD → 暂缓，等第一档投稿结果
-
-### 3.3 后整合与补充实验完成状态
-
-| 阶段 | 任务 | 状态 |
-|---|---|---|
-| 01 | 作者确认与数值审计 | ✅ |
-| 02 | 引用核验与 Related Work | ✅（含 references.bib 修订） |
-| 03 | 图表制作与 Caption 定稿 | ✅ |
-| 04 | 全文压缩与期刊风格 | ✅ |
-| 05 | 模拟审稿与返修 | ✅ |
-| 06 | 投稿材料 | ✅ |
-| 07 | 融合机制诊断与鲁棒融合升级（实验12） | ✅ |
-| 07b | 融合 fallback 因果隔离（实验12b） | ✅ |
-| 07c | 投稿前非真实数据补实验总包（实验12c-12g） | ✅ |
-| 投稿定稿 | v0.2 Acta/ASR 主投优先版 | ✅ |
-| 投稿定稿 | v0.3 Acta/ASR 润色版 | ✅ 已通过 Codex 复审 |
+> ⚠️ 阶段 I 的 OCS 来自模块 A face-center 扫描，与图像 pixel-level 采样口径不统一——这正是 v0.3 封存、v0.4 重建统一前向模型的根因。阶段 I 成果仅作历史证据、机制假设与代码结构参考。
 
 ---
 
-## 四、论文核心证据与主线（实验 1-12g 已完成）
+## 四、v0.3 论文写作（阶段 II — 已封存）
 
-### 4.1 核心实验结果
+第一档 Acta/ASR 主稿迭代至 v0.3 润色版并通过 Codex 复审，但**已封存，不再进入投稿工程化**。
 
-**基准性能（clean synthetic images）**：
-| 方法 | mean error | Hit@5° | worst-case |
-|---|---|---|---|
-| ResNet-18 image-only | **1.69±0.07°** | 97.6% | 9.9° |
-| OCS MLP per_part_log 30D | 5.91±0.22° | 73.8% | — |
-| ResNet + OCS feature fusion (concat5) | **1.47±0.07°** | **99.7%** | **6.6°** |
+封存原因不是写作问题，而是 OCS 数据源定义级问题：旧主反演与补充实验用模块 A face-level/face-center OCS 扫描表，图像端用 Blender pixel-level pass，二者采样口径不统一，可能影响 OCS-only / fusion / OCS noise / branch masking / 12b / 12c / 12f / 12g 等结果。因此 v0.3 数字不能作为 v0.4 主结果。
 
-**图像退化鲁棒性（实验11）**：
-| 条件 | ResNet image-only | OCS MLP | Feature Fusion |
-|---|---|---|---|
-| clean | 1.69° | 5.91° | 1.47° |
-| **noise σ=0.01** | **85.85°** ❌ | **5.91°** ✅ | **73.36°** ❌ |
-| noise σ=0.10 | 87.92° | 5.91° | 73.57° |
-
-**退化增强融合（实验12 U1）**：
-| 条件 | U1 aug fusion | image-only+aug | 判读 |
-|---|---|---|---|
-| clean | 1.95±0.21° | 2.63° | U1 更优 |
-| noise σ=0.10 | **2.31±0.26°** | 9.55° | U1 显著更优 |
-| worst-case | 164° outliers | — | 不能写 fully robust |
-
-**关键机制发现（实验12b）**：
-- U1 优于 image-only same augmentation，说明 OCS 在联合表示中活跃
-- 但 image-masked 后仍约 30°（远高于 OCS-only 5.91°），不是 OCS-standalone fallback
-- OCS 噪声会单调拉低 U1 性能，支持 **OCS-image co-utilization**
-
-**观测风格退化（实验12c）**：
-- U1 在 read/background/starfield/combined_medium 下约 2°
-- combined_severe 下退至 13.88°，不能写 fully robust
-
-**其他边界（实验12d-12g）**：
-- phase120 下 image-only/fusion 均约 80°，不支持跨 phase 鲁棒泛化
-- 居中控制后 ResNet 从 1.69° 退至 2.88°，质心贡献存在但不是唯一因素
-- U1 rare outliers 为 42/49,950 (0.084%)，50% 位于 |pitch|>75°
-
-### 4.2 论文主线
-
-> **Clean synthetic images provide an idealized upper bound** where strong CNNs achieve high accuracy. **OCS provides a physically interpretable, degradation-immune photometric constraint** with different failure modes. **Naive feature fusion inherits image-branch fragility** under degradation, but **degradation-aware training forms OCS-image co-utilization** that stabilizes fusion under tested synthetic perturbations. **No real telescope validation** has been conducted.
-
-中文总结：
-> 干净仿真图像是理想上界（ResNet 1.69°），OCS 是物理可解释、对图像退化免疫的光度约束。Naive fusion 在图像退化下继承图像分支脆弱性，但退化感知训练能形成 OCS-image 协同利用，在已测试合成扰动下稳定融合性能。无真实望远镜验证。
-
-### 4.3 写作红线（v0.3 后更新）
-
-0. 禁止编造实验结果、文献、方法或作者未确认的事实
-1. 不把 clean rendered images 写成真实外场性能（无真实望远镜验证）
-2. 不写 "fusion 永远最优" / "OCS 永远鲁棒"
-3. 不把 `all_raw` 45D（含遮挡率）写成可运营特征（semi-oracle 上界）
-4. 不写 U1 是 OCS-standalone fallback 或图像失效后自动切换到 OCS（实验12b 已证伪）
-5. 不写 U1 为 near-perfect / fully robust（实验12g rare outliers 0.084%）
-6. 不把 12c 写成真实望远镜验证（仅为 observation-chain-inspired synthetic stress test）
-7. 不写 phase120/combined_severe 为成功案例（均为失效边界）
-8. Q12-Q14（Data/Code/Author/Funding/COI）不代填
-9. 第二档/第三档写作必须等第一档作者确认完结
-
----
-
-## 五、第二档（CJA/AST）冲刺版准备
-
-### 5.1 当前状态
-
-第一档 v0.3 已完成并通过 Codex 复审，作者已确认可以启动第二档写作。
-
-### 5.2 第二档与第一档的差异
-
-| 维度 | 第一档 Acta/ASR | 第二档 CJA/AST |
-|---|---|---|
-| **定位** | 受控仿真基准研究 | 工程问题导向 + 观测链退化压力测试 |
-| **叙事重心** | physically consistent simulation benchmark | 地基光学观测质量不稳定导致图像姿态反演脆弱 |
-| **12c-12g 作用** | 防御性审稿材料，部分进 Results | 更强调观测链退化（PSF/noise/background/saturation/resolution）|
-| **融合机制** | OCS-image co-utilization | 退化感知训练与 OCS-image co-utilization |
-| **边界强调** | no real telescope validation | synthetic observation-style stress test, not field validation |
-
-### 5.3 第二档可以强化的内容
-
-1. **工程问题背景**：
-   - 地基光学望远镜观测条件不稳定（大气、探测器、背景污染）
-   - 图像质量退化导致纯图像方法脆弱
-   - 需要多模态融合增强鲁棒性
-
-2. **观测链退化模拟**（实验12c）：
-   - U1 在 read noise / background / starfield / combined_medium 下约 2°
-   - 优于 clean-trained image-only 和 image-only+aug
-   - combined_severe 仍为 13.88°（诚实边界）
-
-3. **OCS 作为退化免疫约束**：
-   - OCS 对图像质量退化天然免疫
-   - U1 证明退化感知训练能让 OCS 在联合表示中活跃
-   - 但不是自动 fallback，而是协同利用
-
-4. **跨 phase 边界**（实验12d）：
-   - phase120 约 80°，说明训练分布外泛化有限
-   - 诚实报告失效案例
-
-### 5.4 第二档不能写的内容
-
-- ❌ 真实望远镜验证
-- ❌ 自动 OCS fallback
-- ❌ fully robust / near-perfect
-- ❌ operational deployment ready
-- ❌ 隐瞒 phase120 / combined_severe 失效
-- ❌ 把 obs-aug (U2) 写成有效方法（本轮表现不佳）
-
-### 5.5 第二档写作启动条件
-
-✅ 第一档 v0.3 已完成并通过 Codex 复审  
-✅ 实验 12c-12g 已完成并通过 Codex 审阅  
-✅ 作者已确认启动第二档写作
-
-**下一步**：Codex 生成第二档 CJA/AST 冲刺版 GPT/Claude 指导文件
-
----
-
-## 六、断点恢复关键路径
-
-### 6.1 新对话必读（按顺序）
+封存材料位置：
 
 ```
-论文改进/20260529_论文写作完整规划.md       ← 论文写作规划 v2
-论文改进/20260529_补充实验进度.md           ← 实验 1-12g 完整状态
-论文改进/论文写作/00_总控流程.md             ← 总控 + 断点恢复
-论文改进/论文写作/02_后整合双线修订/00_后整合双线总览.md  ← 后整合路线
-论文改进/论文写作/03_投稿定稿/submission_checklist/投稿策略_三档路线_v20260604.md  ← 投稿策略
-论文改进/论文写作/03_投稿定稿/manuscript_md/主稿_v0.3_Acta_ASR润色版.md  ← 当前最新主稿
-论文改进/论文写作/03_投稿定稿/Codex审阅/02_v0.3_Acta_ASR润色版作者审计后Codex审阅.md  ← v0.3 复审
-论文项目总览 copy.md                       ← 全局参考（部分旧口径，以 20260529 文件为准）
+论文改进/论文写作/03_投稿定稿/manuscript_md/主稿_v0.3_Acta_ASR润色版.md
+项目重启_v0.4_BlenderOCS/01_v0.3封存/
 ```
 
-### 6.2 核心脚本与数据
+> v0.3 阶段的核心实验结果、论文主线与写作红线已随阶段封存，完整内容见上述封存目录与 `进度档案_仿真与反演_full.md`，不在本文件展开（避免与 v0.4 口径混读）。
+
+---
+
+## 五、断点恢复关键路径
+
+### 5.1 新对话必读（按顺序）
+
+```
+CLAUDE.md（本文件）                                    ← 三阶段总览与跳转
+项目重启_v0.4_BlenderOCS/CLAUDE.md                    ← v0.4 权威启动文件
+项目重启_v0.4_BlenderOCS/00_只打开本文件夹时的启动说明.md
+项目重启_v0.4_BlenderOCS/00_v0.4总控流程.md
+```
+
+当前焦点在 v0.4，进入 v0.4 工作区后按其 CLAUDE.md 的默认启动规则读取，不要一次性全文读取定位文件与备份材料。
+
+### 5.2 核心脚本与数据（阶段 I 资产，可复用为 v0.4 参考）
 
 | 类别 | 路径 |
 |---|---|
-| 补充实验脚本 | `论文改进/补充实验/代码/run_*.py`（实验1-12g全部完成）|
-| 反演核心代码 | `ocs_project/03_inversion/` |
-| 模块 A OCS 数据 | `结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/` |
+| 反演核心代码（旧） | `ocs_project/03_inversion/` |
+| 模块 A OCS 数据（旧口径） | `结果/模块A_重构/multi_geom_ggx_yaw73_pitch37/` |
 | 模块 B 渲染 | `结果/模块B_渲染/run_20260528_101944_exact_brdf/` |
-| 补充实验结果 | `论文改进/补充实验/结果/`（含实验12/12b/12c-12g）|
-| 第一档主稿 v0.3 | `论文改进/论文写作/03_投稿定稿/manuscript_md/主稿_v0.3_Acta_ASR润色版.md` |
+| 补充实验脚本（v0.3） | `论文改进/补充实验/代码/run_*.py` |
+| 补充实验结果（v0.3） | `论文改进/补充实验/结果/`（含实验12/12b/12c-12g）|
 
-### 6.3 实验完成状态
+### 5.3 阶段 I 实验完成状态（已封存为历史）
 
-✅ 实验 1-7：Phase63 ablation / Random split / BRDF sensitivity / Occlusion / ResNet baseline / Noise robustness / Roll sensitivity  
-✅ 实验 8-10：ResNet 问题排查（fusion 重测 / 图像退化 / 数据集审计）  
-✅ 实验 11：ResNet-fusion 图像退化鲁棒性（证明 naive fusion 不会自动回退到 OCS）  
-✅ 实验 12：融合主导性诊断与鲁棒融合升级（U1 图像退化增强成功）  
-✅ 实验 12b：融合 fallback 因果隔离（证明 OCS-image co-utilization，非 OCS-standalone fallback）  
-✅ 实验 12c：Observation-style 图像退化压力测试  
-✅ 实验 12d：跨 phase 图像泛化 sanity test  
-✅ 实验 12e：质心居中控制实验  
-✅ 实验 12f：Late-fusion beta sweep 图像退化对照  
-✅ 实验 12g：U1/12b 离群案例画廊与审计包
+✅ 实验 1-7：Phase63 ablation / Random split / BRDF sensitivity / Occlusion / ResNet baseline / Noise robustness / Roll sensitivity
+✅ 实验 8-10：ResNet 问题排查（fusion 重测 / 图像退化 / 数据集审计）
+✅ 实验 11：ResNet-fusion 图像退化鲁棒性
+✅ 实验 12 / 12b：融合机制诊断与 fallback 因果隔离（OCS-image co-utilization）
+✅ 实验 12c-12g：观测风格退化 / 跨 phase / 质心居中 / late-fusion beta sweep / 离群画廊
 
 ---
 
-## 七、目录结构（精简）
+## 六、目录结构（精简）
 
 ```
 0506新/
 ├── 建模/真实模型/              真实 STL
-├── 结果/                       所有运行产物（模块A_重构/模块B_渲染/BRDF验证/模块C_反演）
-├── ocs_project/                代码工程
-│   ├── 01_code/                config / materials / ocs_core / occlusion
-│   ├── 02_blender/             render_geometry_passes + brdf_postprocess + 诊断
-│   ├── 03_inversion/           inv_common / train_mlp / train_cnn / train_fusion
-│   ├── 06_brdf_validation/     三端闭合验证
-│   └── 07_brdf/                brdf_models.py
-├── 论文改进/
-│   ├── 20260529_论文写作完整规划.md
-│   ├── 20260529_补充实验进度.md
-│   ├── 论文写作/                01 初稿 / 02 后整合 / 03 定稿
-│   │   ├── 01_初稿生成与整合/最终整合/最终整合版_v0.1_基于GPT吸收Claude.md
-│   │   ├── 03_投稿定稿/manuscript_md/主稿_v0.3_Acta_ASR润色版.md  ← 当前最新
-│   │   └── 03_投稿定稿/submission_checklist/投稿策略_三档路线_v20260604.md
-│   └── 补充实验/代码/ + 结果/  ← 实验1-12g全部完成
+├── 结果/                       阶段 I 运行产物（模块A_重构/模块B_渲染/BRDF验证/模块C_反演）
+├── ocs_project/                阶段 I 代码工程（01_code / 02_blender / 03_inversion / 06_brdf_validation / 07_brdf）
+├── 论文改进/                   阶段 II（v0.3）论文写作与补充实验（已封存）
+├── 项目重启_v0.4_BlenderOCS/   ★ 阶段 III v0.4 工作区（当前焦点，有独立 CLAUDE.md）
+│   ├── CLAUDE.md
+│   ├── 00_* 启动集 / 01_v0.3封存 / 02_重大分支路线图 / 03_项目审计与方法说明
+│   ├── 04_BlenderOCS方法重建 / 05_全链路重跑 / 06_论文v0.4重写接入
+│   ├── 15~24_* v0.4 定位与冻结稿谱系
+│   └── 97_交互审阅记录 / 98_外部材料备份 / 99_归档索引
 ├── 论文项目总览 copy.md         全局参考（注意旧口径）
 ├── 进度档案_仿真与反演_full.md  阶段 I 完整历史（923 行，按需查阅）
 └── 文献/ + 汇报材料/
@@ -250,7 +151,7 @@
 
 ---
 
-## 八、已知坑
+## 七、已知坑
 
 - **Windows Git Bash + 中文路径**：长命令行可能 exit 127，用 `cmd.exe //c` 包装
 - **Python GBK 控制台**：用 `[OK]` 代替 Unicode ✓

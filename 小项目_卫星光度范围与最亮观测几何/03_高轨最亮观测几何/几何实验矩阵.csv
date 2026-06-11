@@ -1,4 +1,0 @@
-id,orbit_regime,range_km,phase_angle_deg,sun_direction,observer_direction,attitude_scan,roll_scan,expected_bright_component,metric,status,notes
-G001,GEO,35786,small/near-backscatter,待定义,待定义,yaw-pitch existing,no,solar panel or metal body,total OCS + per-part OCS,planned,先复用 phase63_backscatter
-G002,GEO,35786,medium,待定义,待定义,yaw-pitch + roll,yes,solar panel glint,total OCS + per-part OCS,planned,需要新增roll扫描
-G003,GEO,35786,large/forward-scatter,待定义,待定义,yaw-pitch existing,no,material-dependent,total OCS + per-part OCS,planned,对比 phase120 等已有几何

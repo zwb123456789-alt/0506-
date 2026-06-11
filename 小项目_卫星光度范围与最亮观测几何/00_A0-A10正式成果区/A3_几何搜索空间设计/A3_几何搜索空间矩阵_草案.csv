@@ -1,0 +1,13 @@
+geometry_id,geometry_label,phase_angle_deg,sun_direction_I_x,sun_direction_I_y,sun_direction_I_z,det_direction_I_x,det_direction_I_y,det_direction_I_z,range_km,orbit_context,scenario_label,legacy_geometry_label,collection_tag,notes
+g01,phase00_backscatter,0.0,1.0,0.0,0.0,1.0,0.0,0.0,36000.0,GEO_nominal,full_phase_backscatter,,G1_coarse,满相/后向散射峰值（文献常见最亮方向）
+g02,phase15_near_backscatter,15.0,1.0,0.0,0.0,0.9659258263,0.2588190451,0.0,36000.0,GEO_nominal,near_backscatter,,G1_coarse,小相位角/后向散射过渡
+g03,phase30_small_mid,30.0,1.0,0.0,0.0,0.8660254038,0.5,0.0,36000.0,GEO_nominal,small_to_mid_phase,,G1_coarse,小-中相位角过渡
+g04,phase45_mid,45.0,1.0,0.0,0.0,0.7071067812,0.7071067812,0.0,36000.0,GEO_nominal,mid_phase,phase45,G1_coarse,中相位角（旧五几何对照点）
+g05,phase63_mid,63.0,1.0,0.0,0.0,0.4539904997,0.8910065242,0.0,36000.0,GEO_nominal,mid_phase_phase63,phase63_backscatter,G1_coarse,中相位角（旧phase63对照点；当前预实验关键几何）
+g06,phase75_mid_large,75.0,1.0,0.0,0.0,0.2588190451,0.9659258263,0.0,36000.0,GEO_nominal,mid_to_large_phase,,G1_coarse,中-大相位角过渡
+g07,phase90_perpendicular,90.0,1.0,0.0,0.0,0.0,1.0,0.0,36000.0,GEO_nominal,perpendicular_observation,phase90,G1_coarse,垂直观测（旧五几何对照点）
+g08,phase105_large,105.0,1.0,0.0,0.0,-0.2588190451,0.9659258263,0.0,36000.0,GEO_nominal,large_phase,,G1_coarse,大相位角
+g09,phase120_large,120.0,1.0,0.0,0.0,-0.5,0.8660254038,0.0,36000.0,GEO_nominal,large_phase,phase120,G1_coarse,大相位角（旧五几何对照点）
+g10,phase135_large_forward,135.0,1.0,0.0,0.0,-0.7071067812,0.7071067812,0.0,36000.0,GEO_nominal,large_to_forward_phase,,G1_coarse,大相位角/前向散射过渡
+g11,phase150_forward_weak,150.0,1.0,0.0,0.0,-0.8660254038,0.5,0.0,36000.0,GEO_nominal,forward_scatter_weak,,G1_coarse,前向散射弱区
+g12,phase165_near_forward,165.0,1.0,0.0,0.0,-0.9659258263,0.2588190451,0.0,36000.0,GEO_nominal,near_forward_scatter,,G1_coarse,接近前向散射（弱区边缘）

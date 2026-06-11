@@ -1,4 +1,0 @@
-id,ocs_source,ocs_value,ocs_unit,range_km,band,m_sun_or_Kcal,formula,apparent_mag,delta_mag,calibrated,notes
-C001,Fig_3_ocs_heatmaps.csv,,,,V?,待确认,m=m_sun-2.5log10(OCS/R^2),,,no,待从现有数据计算
-C002,ocs_scan.csv max total,,,,V?,待确认,m=m_sun-2.5log10(OCS/R^2),,,no,待从现有数据计算
-C003,ocs_scan.csv min total,,,,V?,待确认,m=m_sun-2.5log10(OCS/R^2),,,no,待从现有数据计算
