@@ -1,0 +1,1437 @@
+                                              Available online at www.sciencedirect.com
+
+                                                         ScienceDirect
+                                              Advances in Space Research 74 (2024) 5619–5638
+                                                                                                                          www.elsevier.com/locate/asr
+
+
+
+
+        Light curve attitude estimation using particle swarm optimizers
+                                 Alexander Burton ⇑, Liam Robinson, Carolin Frueh
+               Purdue University, School of Aeronautics and Astronautics, 701 W. Stadium Ave, West Lafayette, IN 47907, United States
+
+                            Received 26 January 2024; received in revised form 8 August 2024; accepted 7 September 2024
+                                                        Available online 11 September 2024
+
+
+
+
+Abstract
+
+    Knowledge of the attitude of a space object is useful in space situational awareness for independently evaluating a satellite’s health
+and characterizing unknown objects. In cases where only non-resolved optical observations are available, the object’s attitude may be
+estimated using a time sequence of brightness observations, also known as the light curve. This attitude estimation problem is plagued
+with multiple diﬃculties: even in the absence of noise and when all other relevant factors are perfectly known, the non-uniqueness of the
+problem means that multiple attitude time histories may ﬁt the light curve equally well. In addition, there is often insuﬃcient information
+about the object to generate an initial state guess for an estimator. This paper presents a method that estimates an observed object’s
+attitude and angular velocity while accounting for ambiguities and without needing any initial state guess. The only inputs are the light
+curve, the object’s albedo shape, and the object’s position relative to the Sun and the observer. The ability of the estimator to resolve
+attitude time histories is demonstrated using simulated light curves by comparing state estimates against known true states.
+Ó 2024 COSPAR. Published by Elsevier B.V. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/
+by-nc-nd/4.0/).
+
+Keywords: Attitude determination; Light curve; Particle swarm optimizer; Photometry
+
+
+
+
+1. Introduction                                                               to the Sun and observer. The problem of estimating an
+                                                                              object’s attitude over time from its light curve is also
+   Space object characterization is a crucial component of                    referred to as the attitude inversion problem.
+space situational awareness. Knowledge of an object’s type,                      Light curve inversion to estimate a space object’s
+shape, reﬂective properties, and attitude dynamics is useful                  shape and attitude has been studied for over a century
+for identifying the space object, judging its operational                     (Russell, 1906; Williams, 1967; Kaasalainen et al., 1992;
+state, and predicting its future orbital motion. Optical sys-                 Kaasalainen and Torppa, 2001a; Kaasalainen and
+tems may be used for characterization, but space objects                      Torppa, 2001b; Kaasalainen et al., 2001; Ďurech and
+are often too far from an observer for a resolved image                       Kaasalainen, 2003) but, with some exceptions (Williams,
+to be obtained. In such cases where a resolved image is                       1967), was initially focused on natural bodies such as aster-
+unavailable, the total brightness of the light from the Sun                   oids. When analyzing the light curve of a natural body, cer-
+reﬂected oﬀ the observed object can still be measured. A                      tain simplifying assumptions can be made, such as that the
+series of brightness measurements taken over time is called                   body is undergoing stable single-axis rotation and its sur-
+a light curve. Light curves are inﬂuenced by the object’s                     face is smooth and diﬀusely reﬂective (Kaasalainen and
+shape, material properties, attitude, and position relative                   Torppa, 2001b; Kaasalainen et al., 2001).
+                                                                                 More recently, light curve inversion began to be studied
+ ⇑ Corresponding author.                                                      for artiﬁcial objects in Earth orbit (Hall et al., 2006; Hall
+   E-mail addresses: burton30@purdue.edu (A. Burton), robin502@pur-           et al., 2007; Wetterer and Jah, 2009; Linares et al., 2014;
+due.edu (L. Robinson), cfrueh@purdue.edu (C. Frueh).                          Benson et al., 2018; Cabrera et al., 2023). However, the
+
+https://doi.org/10.1016/j.asr.2024.09.008
+0273-1177/Ó 2024 COSPAR. Published by Elsevier B.V.
+This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+A. Burton et al.                                                                                 Advances in Space Research 74 (2024) 5619–5638
+
+simplifying assumptions used when investigating natural                      curves obtained by space-based observers. A PSO searches
+bodies do not apply to artiﬁcial satellites. Satellites are                  the solution space of an optimization problem using parti-
+made up of various materials with diﬀerent reﬂective prop-                   cle motion modeled on the social behavior of animals
+erties, their shapes are generally angular rather than                       (Eberhart and Kennedy, 1995). The attitude inversion
+smooth, and they are frequently shiny instead of purely dif-                 approach developed in these papers (Clark et al., 2022,
+fusely reﬂecting (Hall et al., 2007). Furthermore, satellites                2020) uses a PSO to identify possible attitudes at each time
+cannot always be assumed to be undergoing stable single-                     step. A ﬁrst derivative test is used to eliminate impossible
+axis rotation (Hall et al., 2007). Even if a satellite is initially          transitions between attitudes. However, this method does
+spin-stabilized, its rotation will slow due to the presence of               not take the rotational dynamics of the object into account.
+eddy currents (Balster et al., 2023), and other eﬀects such as               Instead, a heuristic limitation is placed on the maximum
+solar radiation pressure and shadowing eﬀects will eventu-                   angular speed and acceleration of the object between mea-
+ally lead to unstable attitude motion (Benson et al., 2018;                  surements. The method has also only been demonstrated
+Früh and Jah, 2014). Because of the increased complexity                    for slowly rotating objects. For example, in Clark et al.
+of the light curve inversion problem for artiﬁcial objects,                  (2022), a maximum angular speed of 5 deg/s and a maxi-
+it is not uncommon for the shape estimation and attitude                     mum angular acceleration of 0.5 deg/s2 is used.
+estimation components of the inversion process to be                            The method in this study was developed independently
+examined separately (Hall et al., 2007; Wetterer and Jah,                    of the above method (Clark et al., 2022, 2020) and, unlike
+2009; Fan and Frueh, 2019; Burton and Frueh, 2021;                           that method, fully models torque-free rotational dynamics
+Robinson and Frueh, 2022).                                                   instead of using a heuristic to restrict the number of possi-
+    Current attitude inversion methods often require an ini-                 ble attitude time histories. Analytic expressions are used to
+tial guess for the observed object’s attitude and angular                    quickly propagate attitude motion, and it is able to resolve
+velocity (Wetterer and Jah, 2009; Linares et al., 2014;                      attitude time histories even for rapidly tumbling objects, as
+Dianetti, 2020; Cabrera et al., 2023). However, initial guesses              demonstrated in Section 5. The method in this study uses
+are not always available, particularly for objects such as                   two PSOs to estimate the attitude and angular velocity of
+space debris or a tumbling satellite, and many attitude esti-                an observed object. The ﬁrst PSO is a non-social PSO
+mation methods can only converge to the correct state if                     (nsPSO) that locates attitudes that could correspond to
+the initial state guess is suﬃciently good (Dianetti, 2020).                 one measurement in the light curve. It is called ‘‘non-
+Convergence is particularly sensitive to errors in the initial               social” because the particles do not communicate with each
+angular velocity guess, with multiple authors (Wetterer                      other, unlike in a standard PSO. The possible attitudes
+and Jah, 2009; Dianetti and Crassidis, 2023) ﬁnding that                     found by the nsPSO are then passed to the second PSO,
+an unscented Kalman ﬁlter (UKF) will only converge for                       which uses them as a starting point to search for combined
+angular velocity errors below 2 deg/s. Using polarized light                 attitude and angular velocity states that ﬁt the light curve
+curve measurements allows convergence for 2 deg/s of angu-                   as a whole. Only the object’s shape, reﬂective properties,
+lar velocity error, but only if the attitude guess is within 0.6°            and position relative to the Sun and observer are assumed
+of the truth (Dianetti and Crassidis, 2023).                                 to be known. The projected use case is for a known piece of
+    If no a priori attitude information is available, then                   space debris or a satellite that is no longer communicating
+another diﬃculty is encountered in addition to conver-                       with its operators. Such situations where there is no a priori
+gence: the ambiguity of the light curve measurements them-                   information about the object’s attitude and rotational
+selves with respect to attitude. Even in the absence of noise                motion are particularly envisioned.
+and when the observed object’s shape, reﬂective properties,                     The structure of the remainder of the paper is as follows:
+and position relative to the Sun and the observer are per-                   Section 2 describes the analytic attitude solutions used for
+fectly known, each individual measurement in a light curve                   torque-free attitude propagation, then the two PSOs are
+generally corresponds to many diﬀerent attitudes (Burton                     outlined in Section 3. The phenomenon of ‘‘ﬂipped” atti-
+and Frueh, 2020; Clark et al., 2020; Dianetti, 2020;                         tude estimates and how they can be leveraged to generate
+Burton and Frueh, 2021; Gagnon and Crassidis, 2022),                         new estimates is discussed in Section 4. Section 5 discusses
+and the entire light curve might ﬁt multiple attitude time                   the state estimates generated by applying the PSO inversion
+histories (Clark et al., 2020; Burton and Frueh, 2023;                       method to noiseless simulated light curves of both simple
+Cabrera et al., 2023; Linares et al., 2014). Methods such                    and complex objects. This publication expands upon previ-
+as the particle ﬁlter (Linares et al., 2014) or adaptive Gaus-               ously published work by the authors (Burton and Frueh,
+sian ﬁlter (Cabrera et al., 2023) are capable of describing                  2023; Burton et al., 2023; Burton et al., 2024). Its primary
+the attitude estimate’s multimodal probability distribution                  contributions are a more detailed description of the attitude
+but still require an initial guess and do not take the entirety              inversion process outlined in previous publications, new
+of the solution space into account.                                          simulated test case results, and a listing of complete analytic
+    One method that does not require an initial state guess                  attitude expressions for torque-free rotation. These attitude
+has been developed in Clark et al. (2020) and Clark et al.                   expressions are seldom listed in full due to their length
+(2022). This method uses a particle swarm optimizer                          (Fukushima, 2008) and have been adapted speciﬁcally to
+(PSO) to estimate attitude and optical properties from light                 the attitude representation used in this publication.
+                                                                      5620
+A. Burton et al.                                                                                  Advances in Space Research 74 (2024) 5619–5638
+
+2. Analytic torque-free motion                                                The object’s angular momentum and kinetic energy are cal-
+                                                                              culated separately for each estimated attitude time history
+2.1. Motivation and attitude representation                                   using the estimated angular velocity vector. If I d > I y , the
+                                                                              object is rotating principally about ^bz and undergoing
+   The proposed attitude inversion method requires propa-                     SAM rotation. On the other hand, if I d < I y , the object is
+gating thousands of attitude time histories in parallel, mak-                 undergoing LAM rotation principally about ^bx . If I d is
+ing numeric integration of the rotational equations of                        equal to any of the moments of inertia I i , then the object
+motion computationally expensive. Instead, analytic solu-
+                                                                              is undergoing a single-axis rotation about ^bi .
+tions for the torque-free case are used to propagate attitude
+                                                                                 In this study, the attitude of the object is represented
+quickly in the context of a PSO. Note that rotations are
+                                                                              using the rotation quaternion q ¼ ðs; vÞ from a space-
+approximately torque-free only over short intervals. For
+long observation windows, the torques acting on the                           ﬁxed inertial frame to the body-ﬁxed frame ^b, where s is
+observed object need to be taken into account. The object’s                   the scalar component and v is the vector component of
+attitude may be described using its precession /, nutation                    the quaternion (Vince, 2021). The attitude over time qðtÞ
+h, and spin w angles relative to the angular momentum                         is computed as follows:
+vector:                                                                       qðtÞ ¼ DqSAM=LAM  q0                                         ð4Þ
+H ¼ ½Ix                                                         ð1Þ          where q0 is the quaternion rotating from the space-ﬁxed
+where ½I is the inertia tensor of the object, and the angular                frame to the body-ﬁxed frame at the initial time t0 and
+                                             T
+velocity of the object x ¼ ½xx xy xz  is written in the                      DqSAM=LAM represents the change in attitude from t0 .
+body-ﬁxed coordinate frame ^     b. The expressions described                 Because of the form of the torque-free attitude solution,
+in this section apply to any torque-free rotation, including                  the DqSAM=LAM unit quaternion is, in turn, related to an
+multi-axis tumbling. They may be used for an object with                      Euler angle sequence formed out of the precession /, nuta-
+three distinct moments of inertia (MOI) or repeated MOI.                      tion h, and spin w angles. A 313 ð/; h; wÞ Euler angle
+   Analytic expressions for the torque-free angular velocity                  sequence is used for SAM rotations, and a 131 ð/; h; wÞ
+xðtÞ are readily available (Thomson, 1986; Samarasinha                        Euler angle sequence is used for LAM rotations.
+and A’Hearn, 1991; Murakami, 2021). However, the                                 In the case of torque-free rotation, Euler angles may be
+expressions for /ðtÞ; hðtÞ, and wðtÞ are not often listed, even               safely used to propagate attitude analytically without
+in textbooks, likely because of the length and complexity of                  encountering singularities. For the 313 and 131 sequences,
+the expressions (Fukushima, 2008). As such, the torque-                       gimbal lock only occurs if sin h ¼ 0. However, h is just the
+free attitude expressions used by the light curve inversion                   angle between H and either ^bz or ^bx , meaning that if
+PSO method are fully written out in this section.                             sin h ¼ 0 then the object is undergoing single-axis rotation
+   Torque-free attitude motion can be divided into short-                     such that x ¼ x^bz for SAM or x ¼ x^bx for LAM. Because
+axis mode (SAM) and long-axis mode (LAM) rotations.                           no torque is applied to the object, it will never encounter an
+Let the body-ﬁxed coordinate system ^    b be a principal axis                analytic singularity unless it is initially rotating about only
+system such that I x 6 I y 6 I z , where I i is the moment of                 one axis. For objects that start out rotating about a body
+inertia about ^bi . SAM and LAM rotations can be distin-                      frame unit vector ^bi , i.e., I d ¼ I i , a simpliﬁed attitude
+guished mathematically using the dynamic moment of iner-                      expression can be used that eliminates the need for Euler
+tia I d (Benson et al., 2020):                                                angles:
+                                                                                           xt          xt 
+    H2                                                                        Dqi ðtÞ ¼ cos       ;  sin       ^bi                       ð5Þ
+Id ¼                                                ð2Þ                                       2            2
+    2T
+where H is the magnitude of the angular momentum vector                       For the general torque-free case, expressions for
+from (1) and T is the rotational kinetic energy:                              DqSAM=LAM are used that involve the Euler angles /; h,
+                                                                              and w and the initial body-frame angular momentum unit
+   1
+T ¼ xT ½Ix                                                      ð3Þ          vector ^h ¼ H=H . For SAM rotations, the DqSAM quater-
+   2
+                                                                              nion is as follows:
+
+
+                                                                                        
+ DqSAM ð/; h; wÞ ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                       1
+                                    ðhz þ 1Þ cos h2 cos /þw
+                                                         2
+                                                              þ sin h2 hy cos /w
+                                                                                2
+                                                                                     hx sin /w
+                                                                                               2
+                                                                                                   ;
+                        2ðhz þ1Þ
+                                   2                                                         31
+                                     ðhz þ 1Þ sin h2 cos /w     cos h2 hx sin /þw    hy cos /þw
+                                   6                      2
+                                                                                 2
+                                                                                              2  7C                                    ð6Þ
+                                   6 ðhz þ 1Þ sin h sin /w  cos h hx cos /þw þ hy sin /þw 7C
+                                   4                 2      2           2         2              2     5A
+                                                         /þw                 /w          /w 
+                                     ðhz þ 1Þ cos 2 sin 2 þ sin 2 hx cos 2 þ hy sin 2
+                                                      h                 h
+
+
+
+                                                                       5621
+A. Burton et al.                                                                                                Advances in Space Research 74 (2024) 5619–5638
+
+For LAM rotations, DqLAM is:
+
+
+
+                                                                                                  
+ DqLAM ð/; h; wÞ ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                       1
+                                           ðhx þ 1Þ cos h2 cos /þw
+                                                                2
+                                                                       sin h2 hz sin /w
+                                                                                        2
+                                                                                              þ hy cos /w2
+                               2ðhx þ1Þ
+                                          2                                                            3 1
+                                            ðhx þ 1Þ cos h2 sin /þw     þ sin h2 hz cos /w      hy sin /w
+                                          6                       2
+                                                                                          2
+                                                                                                          2  7 C                                       ð7Þ
+                                          6 ðhx þ 1Þ sin h sin /w þ cos h hz cos /þw  hy sin /þw                7C
+                                          4                2      2            2                                  5A
+                                                                /w                    2/þw            2
+                                                                                                           /þw
+                                            ðhx þ 1Þ sin 2 cos 2  cos 2 hy cos 2 þ hz sin 2
+                                                            h                    h
+
+
+
+
+The expressions in (6) and (7) are derived in the Appendix.                            The analytic expressions for torque-free SAM rotation fol-
+                                                                                       low Murakami (2021). The nutation angle hðtÞ and spin
+2.2. Short-Axis Mode (SAM) Expressions                                                 angle wðtÞ are found by relating the angular momentum
+                                                                                       unit vector to the Euler angle sequence. Note that the nuta-
+   The analytic expressions for SAM angular velocity xðtÞ                              tion angle hðtÞ is limited to the range ½0; p.
+are taken from Benson et al. (2020). The same solution is                                                      
+found in Samarasinha and A’Hearn (1991), and similar                                                 I z xz ðtÞ
+                                                                                       hðtÞ ¼ cos1                                                      ð12Þ
+ones are derived in Thomson (1986) and Murakami (2021):                                                   H
+               qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                                                   
+ xx ðtÞ ¼ xe IIdx ðIðI zz I dÞ
+                           I x Þ
+                                  cnðs; kÞ                                                        1 I x xx ðtÞ
+               qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                          wðtÞ ¼ tan                                                        ð13Þ
+                                                                                                      I y xy ðtÞ
+ xy ðtÞ ¼ xe IIdy ðIðI zz I dÞ
+                           I y Þ
+                                  snðs; kÞ            ð8Þ
+               qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                          The precession angle /ðtÞ is found using the relation
+ xz ðtÞ ¼ xe IIdz ðIðI dz I
+                           I x Þ
+                              xÞ
+                                  dnðs; kÞ                                             between the Euler angle derivative and the body-frame
+                                                                                       angular velocity (Longuski and Frueh, 2019):
+where snðs; kÞ; cnðs; kÞ, and dnðs; kÞ are the Jacobi elliptic
+functions (Abramowitz and Stegun, 1948), and I d is the                                       1                      
+                                                                                       /_ ¼       xx sin w þ xy cos w                                    ð14Þ
+dynamic moment of inertia deﬁned in (2). If the body frame                                  sin h
+^
+b is not deﬁned such that I x 6 I y 6 I z , then it may be trans-
+formed such that the MOI are properly ordered before                                   After integrating, the solution is found to be (Murakami,
+propagating and transformed back afterward.                                            2021):
+   The sign of each xi component is chosen based on the                                         H              H ðI x  I z Þ
+initial angular velocity xðt0 Þ. All terms take the positive                           /ðtÞ ¼      ðt  t0 Þ 
+                                                                                                Iz               ns I x I z
+sign if xz ðt0 Þ P 0. If xz ðt0 Þ < 0, then xz and xy take the                                                                                   
+                                                                                                                              I z ðI y  I x Þ
+negative sign unless xy ðt0 Þ ¼ 0. In that case, xz and xx                                       P amðns t þ s0 Þ;                           ;k
+are given the negative sign (Burton and Frueh, 2023).                                                                         I x ðI z  I y Þ
+                                                                                                                                       
+   The constant k is the elliptic modulus, s is a timelike                                                         I z ðI y  I x Þ
+                                                                                                 P amðs0 Þ;                        ;k                  ð15Þ
+parameter, and xe is the eﬀective spin rate. The constants                                                         I x ðI z  I y Þ
+k and xe are calculated as follows (Benson et al., 2020):
+                                                                                       where amðs; kÞ is the Jacobi amplitude function
+    ðI y  I x ÞðI z  I d Þ                    2T                                     (Abramowitz and Stegun, 1948). The constants k; ns , and
+k ¼
+ 2
+                                    xe        ¼                           ð9Þ
+    ðI z  I y ÞðI d  I x Þ                    H                                      s0 are deﬁned in (9) and (10).
+And the parameter s is:                                                                    The P function is the Jacobi incomplete elliptic integral
+                                                                                       of the third kind (Zill and Carlson, 1970). While P is useful
+ s    ¼ ns ðt  t0 Þ þ s0                                                              for the mathematical derivation, the equivalent symmetric
+            qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+              I ðI I ÞðI I Þ                                                         elliptic integrals are more convenient when numerically
+ ns   ¼ xe d d I x Ixy I z z y                                          ð10Þ
+        RU                                                                             computing the integral (Carlson, 1963; Zill and Carlson,
+ s0   ¼ 0 pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                   1
+                    2    2
+                             dx ¼ F ðUjk 2 Þ                                           1970).
+                   1k sin x
+
+where F ðUjk 2 Þ is the incomplete elliptic integral of the ﬁrst                       2.3. Long-Axis Mode (LAM) Expressions
+kind (Abramowitz and Stegun, 1948). The angle U in (10) is
+an angle based on the initial angular velocity xðt0 Þ:                                    An alternate set of angular velocity and attitude equa-
+            sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ         !                                            tions is used if the object is undergoing LAM rotation.
+        1      I y ðI z  I y Þ xy ðt0 Þ                                              The LAM angular velocity functions (Benson et al.,
+U ¼ tan                                                     ð11Þ
+                I x ðI z  I x Þ xx ðt0 Þ                                              2020) are as follows:
+                                                                                5622
+A. Burton et al.                                                                                            Advances in Space Research 74 (2024) 5619–5638
+                       qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+ xx ðtÞ    ¼ xe           I d ðI z I d Þ
+                                           dnðs; kÞ                           2.4. Initial Euler angles
+                           I x ðI z I x Þ
+                       qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+ xy ðtÞ    ¼ xe           I d ðI d I x Þ
+                                           snðs; kÞ             ð16Þ              At the initial time step, qðtÞ ¼ q0 , so the quaternion rep-
+                           I y ðI y I x Þ
+                       qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                         resenting the change in orientation, DqSAM=LAM , must be
+                           I d ðI d I x Þ
+ xz ðtÞ    ¼ xe           I z ðI z I x Þ
+                                           cnðs; kÞ                           equal to the identity quaternion per (4). The Euler angles
+                                                                              /; h, and w for both the SAM and LAM cases are com-
+where the sign of each term is chosen based on the initial                    puted from the body-frame angular momentum unit vector
+angular velocity xðt0 Þ. All terms take the positive sign if                  ^h, which is computed separately for each estimated attitude
+xx ðt0 Þ P 0. If xx ðt0 Þ < 0, then xx and either xy or xz are
+                                                                               time history. The initial angles are found using similar
+given the negative sign. If xy ðt0 Þ ¼ 0, then xz takes the neg-
+                                                                               expressions in both the SAM and LAM regimes, so they
+ative sign; otherwise, xy is given it (Burton and Frueh,
+                                                                               are discussed together. First, the initial nutation angle h0
+2023). The parameter s is deﬁned as in (10) except that ns                    is computed (Burton and Frueh, 2023).
+and s0 are given diﬀerent expressions. The new values for                           (
+the elliptic modulus k and ns are given below:                                         cos1 ðhx Þ ifI d < I y
+                                                                               h0 ¼                                                       ð23Þ
+ k2
+          ðI I ÞðI I Þ
+      ¼ ðI yy I zx ÞðIxz I dd Þ                                                      cos1 ðhz Þ ifI d > I y
+               qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                         ð17Þ
+                     I ðI I ÞðI I Þ                                         Recall that if I d ¼ I i , the object is undergoing single-axis
+ ns   ¼ xe d z I x dI y I z y x
+                                                                              rotation about the axis ^bi and attitude is propagated using
+and s0 is computed as in (10) with U for the LAM case now                     (5). Next, the initial spin angle w0 is found that satisﬁes the
+satisfying the following expression:                                          following relations (Burton and Frueh, 2023):
+             sﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ            !                              8
+                                                                                                                     hy
+                I   ðI      I   Þ  x   ðt   Þ                                >
+                                                                              < sin w0 ¼ pﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                hz
+                                                                                                        cos w0 ¼ pﬃﬃﬃﬃﬃﬃﬃﬃ    ifI d < I y
+                                                                                               h2y þh2z              h2y þh2z
+U ¼ tan1
+                  y    y       x      y    0
+                                                      ð18Þ                                                                                ð24Þ
+                I z ðI z  I x Þ xz ðt0 Þ                                     >
+                                                                              : sin w0 ¼ pﬃﬃﬃﬃﬃﬃﬃﬃ      cos w0 ¼ pﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                                     hy
+                                                                                                hx
+                                                                                                                              ifI d P I y
+                                                                                                 2
+                                                                                                      hx þhy
+                                                                                                      2                2    2
+                                                                                                                                     hx þhy
+The LAM attitude solution is found in a similar way to the
+one in Murakami (2021); however, it uses a 131 Euler angle                    Finally, the initial precession angle /0 is computed (Burton
+sequence so that /; h, and w are still the precession, nuta-                  and Frueh, 2023).
+tion, and spin angles, respectively. Because of this change,                                    pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ!
+                                                                                         1    ðcos h0 þ 1Þð1  cos w0 Þ
+the expressions are slightly diﬀerent.                                        /0 ¼ 4 tan                  pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ              ð25Þ
+                                                                                                 A þ 2ðcos h0 þ 1Þ
+              I x xx ðtÞ
+hðtÞ ¼ cos1                                            ð19Þ                  where
+                   H
+                                                                                  ( pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                   ðcos h0 þ 1Þðcos w0 þ 1Þ                            if sin w0 P 0
+                 I z xz ðtÞ                                                   A¼     pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                   ð26Þ
+wðtÞ ¼ tan1                                            ð20Þ                         ðcos h0 þ 1Þðcos w0 þ 1Þ                           if sin w0 < 0
+               I y xy ðtÞ
+A negative sign is included in the denominator of (20) so                     The expressions for the initial Euler angle values in (23),
+that the quadrant of wðtÞ can be accurately determined.                       (24), and (25) are derived in the Appendix.
+   The precession angle / is found by integrating the rela-                      The analytic attitude expressions derived above are used
+tionship between the precession rate and the angular veloc-                   to quickly propagate particles’ attitude states in the PSO
+ity components:                                                               method described in the following section.
+
+       1                      
+/_ ¼       xz sin w  xy cos w                                  ð21Þ          3. Attitude inversion method
+     sin h
+                                                                                 The attitude inversion method used in this study is out-
+After integration, the /ðtÞ expression is found:
+                                                                              lined in Fig. 1 (Burton et al., 2023). The ﬁrst ‘‘possible atti-
+          H              H ðI x  I z Þ                                       tude” non-social PSO ﬁnds attitudes that could correspond
+/ðtÞ ¼       ðt  t0 Þ þ                                                      to the light curve measurement at an epoch time. This
+          Ix               ns I x I z
+                                                                            epoch time is generally the time of the ﬁrst measurement.
+                                        I x ðI z  I y Þ 2
+           P amðns t þ s0 Þ;                           ;k                   The second ‘‘full state” PSO searches the space of initial
+                                        I z ðI y  I x Þ                      attitudes and angular velocities to ﬁnd an initial state cor-
+                                                 
+                             I x ðI z  I y Þ 2                               responding to the light curve as a whole. This second PSO
+           P amðs0 Þ;                        ;k               ð22Þ
+                             I z ðI y  I x Þ                                 uses the possible attitudes found by the ﬁrst as the starting
+                                                                              point for its search and propagates attitude time histories
+where k and ns are deﬁned in (17), and s0 is found with (10)                  using the attitude expressions derived in Section 2. The esti-
+using U from (18). Again, it is recommended that the sym-                     mated states that best ﬁt the measurements are then reﬁned
+metric elliptic integrals be used to numerically evaluate P                   using a quasi-Newton optimizer (Wright, 2006). The only
+(Carlson, 1963; Zill and Carlson, 1970).                                      inputs required for the attitude inversion process are the
+                                                                       5623
+A. Burton et al.                                                                                       Advances in Space Research 74 (2024) 5619–5638
+
+                                                                                 3.1.2. Initialization
+                                                                                      The structure of the two PSOs used in this study is out-
+                                                                                 lined in Fig. 2. First, the PSO is initialized with particles
+                                                                                 (yellow). Second, the particles are moved through the solu-
+                                                                                 tion space for a set number of iterations (blue). Finally, the
+                                                                                 best state estimates found by each particle are output
+                                                                                 (gray).
+                                                                                      The initialization phase of a PSO consists of four steps:
+                                                                                 ﬁrst, the set of particles is created; second, the cost function
+                                                                                 at each particle’s location is evaluated; third, each particle
+                                                                                 is assigned the neighbors it will communicate with during
+                                                                                 the optimization process; ﬁnally, the best solutions seen
+                                                                                 by each particle and its neighbors are stored.
+                                                                                      For the possible attitude nsPSO, particles are created in
+                                                                                 a three-dimensional attitude space. Ultimately, the inver-
+Fig. 1. A ﬂowchart giving an overview of the attitude inversion process
+                                                                                 sion method outputs solutions in the form of unit quater-
+(Burton et al., 2023).                                                           nions ^qk (Vince, 2021). However, the attitude quaternions
+                                                                                 are      internally    represented       using   three     angles
+                                                                                 a; b; c 2 ½p; p that may be converted into a unit quater-
+                                                                                 nion as follows:
+light curve measurements, the problem geometry, and the                                                                                            
+observed object’s shape and reﬂective properties. An initial                      ^qk ¼ sin a sin b sin c; ½ cos a sin a cos b sin a sin b cos c T
+state guess is not required because of how the PSOs search                                                                                       ð29Þ
+the solution space. The method makes no assumptions                              These angles are used by the PSOs instead of the Euler
+about the object’s motion apart from it being approxi-                           angles described in Section 2 because the estimated initial
+mately torque-free during the observation period.                                attitude ^q0 is distinct from the Dq term as seen in (4)
+                                                                                 (Burton and Frueh, 2023).
+3.1. Possible attitude non-social particle swarm optimizer                           The particles are initialized as evenly spaced in attitude
+                                                                                 space with coordinates x  ^i ¼ ½ai bi ci T , where i is the par-
+3.1.1. Cost Function
+                                                                                 ticle’s index. Each particle is also assigned a random initial
+   The goal of the ﬁrst, or ‘‘possible attitude,” non-social                                                      T
+PSO is to identify possible attitudes of the object at an                        velocity vi ¼ ½vi;a vi;b vi;c  in the solution space. This
+epoch measurement time. The measured light curve is                              step corresponds to Block (1) in Fig. 2.
+deﬁned as a vector z of intensity measurements:                                      The initialization process continues with the evaluation
+                                                                                 of the cost function J att at each particle’s location x   ^i . Each
+z ¼ ½ Im;0      Im;1   ...   Im;N 1   Im;N 1                  ð27Þ            particle stores its current position and the corresponding
+where N is the number of measurements in the light curve                         cost as the best solution x  ^B;i it has seen with cost J B;i .
+and Im;j is the intensity measurement observed at time tj .                          The PSO may also allow particles to communicate with
+The time tj is referred to as the j-th measurement time or                       each other. If this is the case, then in Block (3), each parti-
+the j-th time step. As z is the measured light curve, it is a                    cle is assigned other particles as ‘‘neighbors,” and the
+function of the true object attitude at each measurement                         lowest-cost solution seen by each particle and its neighbors
+time.                                                                                                        ^l;i with cost J l;i . The possible atti-
+                                                                                 is stored as its local best x
+    The ﬁt of a particular attitude to the initial measurement                   tude nsPSO does not use neighbors for reasons discussed in
+is described using the cost function J att (Burton and Frueh,                    Section 3.1.3. The assignment of neighbors in the full state
+2023):                                                                           PSO is discussed in Section 3.2.2. The best solution seen by
+                                                                                 any particle in the swarm may also be recorded as the glob-
+          jIm;k  IL ð^
+                      qÞj                                                        ally best solution x ^g with cost J g . Allowing particles to be
+J att ¼                                                          ð28Þ
+               Im;k                                                              informed by what other swarm members have seen makes
+where Im;k is the measured light curve intensity at the                          it more likely that the swarm will converge on a global min-
+epoch time step tk in Watts per meter squared. The epoch                         imum rather than many local minima.
+time is generally that of the initial measurement, Im;0 ,
+but a diﬀerent epoch time is sometimes chosen to restrict                        3.1.3. Iterations
+the solution space if many attitudes could correspond to                            After initializing the PSO, the particles are moved
+the initial measurement. IL is the simulated intensity for                       through solution space a set number of times to look for
+a given attitude, and ^
+                      q is the estimated quaternion rotating                     the minima of J att in Blocks (5) through (8) of the ﬂowchart
+from a space-ﬁxed coordinate frame, which is taken to be                         in Fig. 2. Before moving the particles, their velocities
+inertial, to a body-ﬁxed frame in the object of interest.                        are updated based on the best solutions found so far.
+                                                                          5624
+A. Burton et al.                                                                                    Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                            Fig. 2. A ﬂowchart of the structure of the two PSOs used in the attitude inversion method.
+
+In Block (5), each particle is accelerated by a random                          possible, so particles settling into many local minima is
+amount according to the following expression:                                   desirable in this context.
+                                                                                    Once the particle velocities have been updated, the par-
+vþ    
+ i ¼ vi þ cv Rb ð^      ^i Þ þ wl Rl ð^
+                 xB;i  x                    ^i Þ þ wg Rg ð^
+                                      xl;i  x                  ^i Þ ;
+                                                           xg  x               ticles are moved through the solution space in Block (6)
+       Rx  U ð0; 1Þ                                            ð30Þ            using the expression shown below:
+                                                                                ^þ
+                                                                                x    ^
+                                                                                 i ¼ x
+                                                                                            þ
+                                                                                       i þ vi                                                ð32Þ
+       =þ
+where vi     is the velocity of the i-th particle before and                            =þ
+after the update, cv is a positive constant, and the Rx terms                   where x ^i   is the position of the i-th particle before and
+are random numbers between 0 and 1. The non-negative                            after being updated.
+weights wl and wg control how much importance is given                             Next, the cost function J att is evaluated at each particle’s
+to the local best and globally best solutions, respectively.                    new location in Block (7). The particles’ personal and local
+The magnitude of vþ                                                             best solutions and the swarm’s global best solution are then
+                      i is capped at a set value vmax .
+   For the possible attitude non-social PSO, wl and wg are                      updated in Block (8). A particle’s neighbors do not change
+set to zero. As a result, the acceleration expression in (30) is                after they are initially assigned in Block (3). If the PSO has
+rewritten as follows:                                                           run for the desired number of iterations, it outputs the per-
+                                                                                sonal best solutions x ^i;B found by each particle. If not, the
+vþ    
+ i ¼ vi þ cv ½Rb ð^      ^i Þ þ dv;
+                  xB;i  x              Rb     U ð0; 1Þ         ð31Þ           PSO returns to Block (5), and the particles are accelerated
+                                                                                and moved again per (30) and (32).
+where dv is a random perturbing vector used to ensure that
+the particles search more of the solution space than they                       3.1.4. Motion in angle space
+otherwise would. The components of dv are uniformly dis-                           The deﬁnition of the attitude space representation in
+tributed, and their maximum magnitude is scaled to the                          (29) is periodic in terms of the three angles fa; b; cg. The
+distance between the particle’s current location x ^i and the                   position update expression (32) allows unbounded move-
+location of the best solution it has seen x ^B;i .                              ment of the particles through solution space, which may
+    These modiﬁcations force each particle to consider only                     result in two particles converging to the same attitude
+the best solutions it has personally encountered, removing                      quaternion but being widely separated in attitude space.
+the communication between particles that is usually char-                       If those particles are neighbors in the full state PSO, dis-
+acteristic of PSOs. It is still referred to as a PSO because                    cussed below in Section 3.2, such a situation may cause
+it is built using that framework, but it is a ‘‘non-social”                     both particles to accelerate away from their common solu-
+variation of the method.                                                        tion. Therefore, the periodic nature of ^qða; b; cÞ in (29) is
+    The lack of communication between particles means                           leveraged to keep the particles within the range of p to
+that the possible attitude nsPSO will ﬁnd a larger number                       p. This modiﬁcation to the position update is also imple-
+of local minima than it otherwise would. In many contexts,                      mented for the possible attitude nsPSO to keep the internal
+this would not be desirable behavior. However, the possible                     attitude representation consistent through all steps of the
+attitude nsPSO aims to locate as many attitudes as                              inversion process.
+                                                                         5625
+A. Burton et al.                                                                                    Advances in Space Research 74 (2024) 5619–5638
+
+   Let n 2 fa; b; cg be one of the angles that map onto an                 by the magnitude of the measurement vector (Burton et al.,
+attitude quaternion according to (29). The periodicity of                  2024):
+the attitude representation means that changing n by 2p                                 pﬃﬃﬃﬃﬃﬃﬃ jjz  ^zi jj
+results in the same attitude representation. The addition                  Efrac ð^yi Þ ¼ J LC ¼                               ð36Þ
+                                                                                                     jjzjj
+and subtraction operations in (30) and (32) are therefore
+calculated as follows (Burton and Frueh, 2023):                            where J LC is deﬁned as in (35) and z is the vector of light
+           8                                                               curve measurements.
+           < nA  nB  2p ifðnA  nB Þ > p
+           >
+nA  nB ¼ nA  nB þ 2p ifðnA  nB Þ < p              ð33Þ                 3.2.2. Full State PSO particle creation
+           >
+           :
+              nA  nB        otherwise                                        The states ^yi in (34) are divided into two kinds: the atti-
+                                                                           tude states x                                    ^ i . When ini-
+                                                                                       ^i , and the angular velocity states x
+As a result of these operations, whenever a particle’s loca-
+                                                                           tializing the PSO, the attitude and angular velocity states
+tion is updated, any angle coordinates that would fall out-
+                                                                           are generated separately, and then a particle is initialized
+side the allowed range are shifted by 2p so that they fall
+                                                                           for each attitude-angular-velocity pairing.
+inside it.
+                                                                              The attitude states are the possible attitudes found using
+                                                                           the possible attitude nsPSO, and the angular velocity states
+3.2. Full state particle swarm optimizer
+                                                                           are selected with a ﬁxed maximum magnitude that is gener-
+                                                                           ally equal to the Nyquist frequency of the input light curve.
+3.2.1. State and cost function
+                                                                           These angular velocity states may be either randomly gen-
+   Once a set of possible attitudes is found at the epoch
+                                                                           erated as in Burton and Frueh (2023) or distributed
+measurement time, a second ‘‘full state” PSO is used to ﬁnd
+                                                                           approximately evenly within the sphere (Burton et al.,
+epoch time attitude and angular velocity states ^
+                                                yi matching
+                                                                           2024). Assuming that the light curve measurements are Dt
+the measured light curve (Burton and Frueh, 2023):
+                  2 3        2      3                                      seconds apart, then this maximum magnitude is as follows
+                    ai         xi;x                                        (Burton and Frueh, 2023):
+        ^i
+        x         6 7^       6      7
+^
+yi :¼       ^i :¼ 4 bi 5x
+            x            i ¼ 4 xi;y 5                   ð34Þ                        p
+        ^i
+        x                                                                  xmax ¼ rad=s                                               ð37Þ
+                    ci         xi;z                                                 Dt
+                                                                           The maximum magnitude may also be set manually.
+where ai ; bi , and ci correspond to the same angles in (29),
+                                                                             Once n initial attitudes x                               ^ ðkÞ
+                                                                                                        ^ðkÞ and m angular velocities x
+and xi;x ; xi;y , and xi;z are the components of the object’s
+estimated angular velocity x    ^ i.                                       have been generated, they are combined to form the set of
+   The cost function J LC of the full state inversion PSO is               nm initial state guesses ^yi where:
+based on how well a propagated light curve ^zi matches                     f^y1 ; ^y2 ; . . . ; ^ym ; ^ymþ1 ; . . . ; ^ynm g
+the measured light curve z. This cost function is distinct                                                                                          
+                                                                                       ^ð1Þ
+                                                                                       x              ^ð1Þ
+                                                                                                      x                   ^ð1Þ
+                                                                                                                          x       ^ð2Þ
+                                                                                                                                  x           ^ðnÞ
+                                                                                                                                              x
+from the possible attitude nsPSO cost function (28), which                  ¼                    ;           ;...;              ;       ;...;
+                                                                                      x^ ð1Þ         x^ ð2Þ              x^ ðmÞ   ^ ð1Þ
+                                                                                                                                  x           ^ ðmÞ
+                                                                                                                                              x
+only compares the two light curves at the epoch time step
+(Burton and Frueh, 2023).                                                                                                                               ð38Þ
+
+                1    X
+                     N 1
+                                         2 jjz  ^zi jj2                  The initial velocities of the particles are then randomly gen-
+J LC ð^
+      yi Þ ¼        2
+                           Im;j  IL ð^
+                                      qj Þ ¼          2
+                                                             ð35Þ           erated. The velocities of each particle in the attitude state
+               jjzjj j¼0                        jjzjj
+                                                                            space vi;x and angular velocity state space vi;x are generated
+where N is the number of measurements in the input light                   and updated separately.
+curve, Im;j is the measured light curve intensity at time tj ,                  For the full state PSO, the local weight wl and global
+and ^qj is the attitude at tj found by propagating the epoch               weight wg in (30) are not necessarily set to zero. Therefore,
+state ^
+      yi using (12), (13), and (15) for SAM rotations, or                  particles are assigned neighbors at initialization, which are
+(19), (20), and (22) for LAM rotations. The rotational                     used to obtain the x   ^l;i solutions. Each particle’s neighbors
+mode is determined for each particle individually using                    are the nl particles with the same initial attitude estimate
+the dynamic moment of inertia, I d , for its estimate as                   x^i and the angular velocities closest to x    ^ i . Therefore, the
+deﬁned in (2). Therefore, for a given iteration, the full state             particle ^yi ¼ ½^   ^
+                                                                                            xi xi  may be assigned ^yj ¼ ½^
+                                                                                                   T
+                                                                                                                                 xj x ^ j T as a
+PSO generally propagates attitude time histories using the                  neighbor if two conditions are met. First, x        ^i must equal
+SAM expressions for some particles and the LAM expres-                     x^j . Second, the angular velocity distance jjx      ^i  x
+                                                                                                                                     ^ j jj must
+sions for others.                                                           be among the lowest nl angular velocity distances between
+   Because the cost J LC increases quadratically, a linear                 ^yi and all particles meeting the ﬁrst condition. A particle’s
+error Efrac is used to report how well a state estimate                    neighbors do not change after they have been initialized.
+matches the light curve to make comparing multiple
+estimates more intuitive for human operators. Efrac is the                 3.2.3. Motion in the solution spaces
+ratio between the magnitude of the diﬀerence between the                      After initialization, the full state PSO is run as described
+estimate’s light curve and the measured light curve, divided               in Section 3.1.3. However, because the attitude and angular
+
+                                                                    5626
+A. Burton et al.                                                                            Advances in Space Research 74 (2024) 5619–5638
+
+velocity estimate spaces have diﬀerent properties, the state             lated measurements taken over 40 s, corresponding to a
+components x  ^i and x^ i are updated separately.                        Nyquist frequency of 1.885 rad/s. For a set number of mea-
+   The angles representing the attitude quaternion are                   surements, the Nyquist frequency is coupled to the obser-
+bounded on ½p; p just as for the possible attitude nsPSO.              vation window’s length and puts a constraint on the
+Therefore, the diﬀerences between a particle’s attitude esti-            maximum angular velocity that can be resolved. The set
+mate x^i and its best solutions x ^B=l=g;i are calculated using          of angular velocities used to initialize the full state PSO is
+(33). The position of a particle in attitude space is also               evenly spaced in a sphere with a radius equal to the
+updated according to (33) to ensure the angle coordinates                Nyquist frequency. The spacing between angular velocity
+stay in the allowed range.                                               guesses is controlled by the parameter xspace .
+   The angular velocity space is treated as a Cartesian                     The positions of the object, observer, and Sun are
+space and updated using (30) and (32). Any particles whose               assumed to be perfectly known, along with the object’s
+angular velocity estimate magnitude exceeds xmax from (37)               shape and reﬂective properties. For each case, the observed
+have their velocities vi;x reversed and are moved so that                object is in a circular geostationary orbit over the 106° W
+they lie on the sphere with radius xmax .                                line of longitude (semi-major axis 42,241 km, eccentricity
+   Note that the attitude and angular velocity estimates                 0, inclination 0). The inversion method may be used in
+may use diﬀerent maximum velocities vmax;x and vmax;x ,                  any orbital regime. However, objects in lower orbits expe-
+and acceleration constants cv;x and cv;x when updating a                 rience more external torques, so their rotational motion
+particle’s velocity in their respective spaces using (30).               can be approximated as torque-free only over short mea-
+                                                                         surement windows. The measurements are taken by a
+4. The ﬂip problem                                                       ground-based observer at 106° W, 45° N.
+                                                                            In each case, the object’s total angular velocity magni-
+   Symmetries in the propagation of light (Hapke, 2012;                  tude is 1.5 rad/s. This angular velocity magnitude is chosen
+Minnaert, 1941) signiﬁcantly impact the results found by                 to demonstrate the inversion process’s ability to resolve the
+any attitude inversion method. The quantity Im ð^u; ^sÞ is               attitude of rapidly rotating objects. Pieces of space debris
+deﬁned as the light measured from a uniform surface by                   have been observed with comparable apparent rotation
+an observer in the direction ^ u given a light source in the             rates (Schildknecht et al., 2015).
+direction ^s. The symmetries in the propagation of light                    Total run times are provided along with the results for
+mean that the same amount of light will be seen if the light             each test case. The test cases are run and timed on a Win-
+source and observer directions are swapped.                              dows laptop with a 4-core 2.2 GHz processor and 8 GB of
+   Furthermore, assuming torque-free rotation and that                   RAM. The exact run times vary depending on what other
+the relative positions of the observer and Sun remain con-               processes are being run and whether or not the laptop is
+stant relative to the observer, then there is always at least            plugged in. As a result, the times provided assume that
+one attitude time history that produces identical measure-               the laptop is plugged in and other memory-intensive pro-
+ments to the true attitude motion. This attitude time his-               cesses are not being run.
+tory is found by rotating the object 180° about the                         In Case 1, a cylindrical object reﬂecting light purely dif-
+bisector of ^ u and ^s so that the two unit vectors are                  fusely is observed. In Case 2, a regular tetrahedron reﬂect-
+‘‘ﬂipped.” Because torque-free attitude motion expressions               ing light according to a Cook-Torrance model is observed.
+in Section 2 only depend on the initial angular momentum                 Case 3 uses a model of the Landsat 8 satellite (Meaney,
+vector, the two unit vectors remain ‘‘ﬂipped” at all times,              2016) instead of the regular tetrahedron. A second observer
+resulting in an unchanged light curve.                                   is also added that takes 25 additional measurements oﬀset
+   This phenomenon explains the attitude estimates 180°                  2.2 s from the originals. The attitude time history of the
+from the truth identiﬁed in previously published research                Landsat 8 model is identical to that of the tetrahedron in
+on the PSO attitude inversion method (Burton and                         Case 2. These diﬀerences are summarized in Table 1.
+Frueh, 2023). As discussed in Section 5, the truth may be                   The light curve measurements are simulated in diﬀerent
+distinguished from the ‘‘ﬂipped” estimate by taking                      ways for the three objects. For the regular cylinder, the
+another set of measurements with a diﬀerent problem                      light reﬂecting oﬀ of each surface is calculated directly
+geometry. In addition, to ensure that more of the solution               using a Lambertian reﬂection model (Robinson and
+space is searched when the best estimates from the full state            Frueh, 2022). Since the reﬂection model assumes that the
+PSO are reﬁned, the ‘‘ﬂipped” counterparts of the estimates              object is made of ﬂat facets, the cylinder’s curved sides
+are also reﬁned.                                                         are approximated as being made up of 32 rectangular faces.
+                                                                         For the tetrahedron, a Cook-Torrance reﬂection model
+5. Results                                                               (Duvenhage et al., 2013) with a diﬀuse reﬂection coeﬃcient
+                                                                         of 0.8, a specular coeﬃcient of 0.2, and a roughness param-
+   The PSO attitude inversion method is demonstrated by                  eter of 10 is used for all surfaces. The same reﬂection model
+estimating the attitude of space objects using noiseless sim-            is used for the Landsat 8 model. In order to model reﬂec-
+ulated light curves. Each light curve consists of 25 simu-               tions quickly for the more complex satellite, however, the
+
+                                                                  5627
+A. Burton et al.                                                                                         Advances in Space Research 74 (2024) 5619–5638
+
+Table 1                                                                              cases. The spacing between angular velocity guesses, xspace ,
+A summary of the setup for each test case.                                           is smaller for Case 1 than for Cases 2 and 3. The spacing
+Case         Object   Observers    Light Curves      Oﬀset    Measurements           parameter controls how many angular velocity guesses
+ 1       Cylinder          1             1             —          25                 are generated and thereby controls the number of particles
+ 2      Tetrahedron        1             1             —          25                 used by the full state PSO. The spacing parameter and the
+ 3       Landsat 8         2             2            2.2 s       50                 possible attitude nsPSO settings are iteratively tuned until
+                                                                                     attitude estimates with error fractions on the order of
+                                                                                     103 or lower are located. For well-behaved test cases, such
+measurements used in Case 3 are generated using a neural
+                                                                                     as Case 1 and Case 2, even lower error fractions may be
+network model (Pedregosa et al., 2011) trained using high-
+                                                                                     sought.
+ﬁdelity simulated measurements (Robinson and Frueh,
+2022).
+                                                                                     5.2. Case 1: Spinning GEO cylinder with one observer
+   Portions of the discussion accompanying these results
+were originally published in Burton et al. (2024).
+                                                                                        The light curve analyzed in Case 1 is produced by a
+                                                                                     diﬀusely-reﬂecting cylinder (Robinson and Frueh, 2022)
+5.1. Particle swarm optimizer parameters
+                                                                                     that is meant to approximate a rocket upper stage tumbling
+                                                                                     end over end. The cylinder has a diameter of 3.05 m and a
+   The parameters used in the possible attitude nsPSO for
+                                                                                     height of 7 m. The cylinder’s moments of inertia are
+each test are given in Table 2. The possible attitude nsPSO
+                                                                                     calculated by assuming a 2000 kg mass that is unevenly dis-
+outputs all the personal best attitudes x ^B;i found by parti-
+                                                                                     tributed through the cylinder’s volume: I x;cyl ¼ I z;cyl ¼
+cles with a cost J att below the threshold J thresh according
+                                                                                     4923:2 kg  m2 ; I y;cyl ¼ 2325:6 kg  m2 .
+to (28). The maximum velocity vmax and acceleration con-
+stant cv from (31) are constant across all three test cases.                            The cylinder is shown in Fig. 3a, and as discussed above,
+   The parameters used in the full state PSO are shown in                            the sides are made up of 32 rectangular faces for the pur-
+Table 3. In all three test cases, each particle is assigned                          poses of simulating reﬂections. The cylinder’s surfaces all
+twelve neighbors. For Cases 1 and 2, the full state PSO                              have a diﬀuse reﬂection coeﬃcient of 0.8.
+runs for 50 iterations; for Case 3, it runs for 100 iterations.                         The initial attitude of the cylinder is chosen such that its
+The extra iterations are oﬀset by halving the velocity vmax;x                        axis of symmetry is 30° from the inertial x-axis, and the
+                                                                                     angular velocity x0 is primarily along the body-ﬁxed z-
+and acceleration cv;x of the particles in angular velocity
+                                                                                     axis to induce an end-over-end tumble.
+space. These settings result in a higher-resolution search                                                                
+of the solution space in Case 3. The local weight wl in                               q0 ¼ 0:2588; ½ 0 0 0:9659 T
+(30) is 0:5, and the global weight wg is zero for all test cases.                                                           T
+                                                                                                                                               ð39Þ
+                                                                                      x0 ¼ ½ 0:2000 0:2000 1:4731  rad=s
+The maximum velocity ^vmax;v and acceleration constant cv;x
+of the particles in attitude space are the same across all test                      The observed light curve is shown in Fig. 3b. The light
+                                                                                     curve measurements correspond to the true attitude time
+                                                                                     history in Fig. 4a, which shows the components of the true
+Table 2
+                                                                                     attitude quaternion q over time. The angular velocity com-
+The parameters used to run the possible attitude nsPSO for each test case.
+                                                                                     ponents are shown in Fig. 4b. As expected for an axisym-
+                        Case 1               Case 2                 Case 3
+                                                                                     metric object, the angular velocity component along the
+                          3                   3
+J thresh                10                   10                     103             axis of symmetry remains constant, while the transverse
+Particles               17,576               17,576                 314,432
+                                                                                     components vary over time.
+Iterations              10                   10                     10
+vmax [rad]              0:05                 0:05                   0:05                Using the light curve measurements, the possible atti-
+cv [rad]                0:2                  0:2                    0:2              tude nsPSO ﬁnds 97 possible initial attitudes after running
+                                                                                     for ten iterations with 2,744 particles. Each iteration of the
+                                                                                     possible attitude nsPSO takes about 0.2 s. The full state
+                                                                                     PSO is initialized using these possible attitudes, resulting
+Table 3                                                                              in 74,593 particles. After running for 50 iterations, the best
+The parameters used to run the full state PSO for each test case.                    250 solutions output by the full state PSO and their
+                          Case 1              Case 2                Case 3           ‘‘ﬂipped” counterparts are reﬁned using the quasi-
+Neighbors                 12                  12                    12               Newton method. The complete inversion process takes
+Iterations                50                  50                    100              about 6.5 h to run.
+wl                        0.5                 0.5                   0.5                 The ﬁve estimates which best ﬁt the input measurements
+wg                        0                   0                     0                are shown in Table 4. The error Efrac in the estimated light
+vmax;x [rad]              0:05                0:05                  0:05
+                                                                                     curves is deﬁned as in (36), and the average errors in the
+cv;x [rad]                0:1                 0:1                   0:1
+vmax;x [rad/s]            0:2                 0:2                   0:1              estimated direction of the axis of symmetry and angular
+cv;x [rad/s]              0:4                 0:4                   0:2              momentum vector are calculated using the diﬀerence
+xspace [rad/s]            0.35                0.45                  0.45             between the true and estimated object state at each
+                                                                              5628
+A. Burton et al.                                                                                      Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                                        Fig. 3. The cylinder model and measurements for the Case 1 object.
+
+
+
+
+                                        Fig. 4. The cylinder’s true attitude and angular velocity time history.
+
+
+Table 4
+Errors in the Case 1 cylinder axis pointing direction and inertial frame angular momentum vector estimates.
+                                                Axis Estimate Error [deg]                                            Angular Momentum Error
+Rank                  Efrac                  Initial                  Average                               Magnitude [%]             Direction [deg]
+  1                2:426  105              129:291                  91:272                                  4:861  103            180  0:5936
+  2                9:961  105              50:711                   88:736                                  4:689  103            180  0:5819
+  3                1:126  104              13:381                    9:823                                  1:296  104                13:191
+  4                1:870  104              131:333                  94:000                                  5:154  103              166:568
+  5                2:455  104              166:618                  170:236                                 1:420  104                13:058
+
+
+
+measurement time. Only the error in the estimated direc-                        mate’s light curve is only 2:4  105 . The axis error is likely
+tion of the cylinder’s axis is reported because rotations                       due to unobservable ambiguities introduced by the object’s
+about the axis of a completely symmetric cylinder would                         shape and rotational motion. The true rotation’s angular
+not aﬀect the observed brightness Im . For similar reasons,                     momentum vector is 87.3° away from the object-observer
+the error in the inertia-frame angular momentum vector is                       ^u vector. As a result, the observer is viewing the cylinder’s
+used instead of the body-frame angular velocity error. The                       end-over-end tumble edge-on, which may be responsible
+bold Rank 1 estimate is the one that best ﬁts the input mea-                     for ambiguities in the attitude estimate beyond what is usu-
+surements and is, therefore, most likely to be the actual                        ally present in the light curve inversion problem.
+object state, according to the estimator.                                           The Rank 2 estimate in Table 4 has similar characteris-
+   The best-ﬁtting estimate for the cylinder case has an axis                    tics to the Rank 1 estimate. The remaining three estimates
+pointing error of 91.2° on average. The estimate’s angular                       all have higher amounts of error in their light curves and
+momentum vector has a magnitude within 0:005% of the                             are related by various symmetries. The Rank 2 and 4 esti-
+truth and is rotated nearly 180° away from it. Despite the                       mates both have angular momentum vectors pointing
+axis direction errors, the error fraction Efrac of the esti-                     about 13° from the truth, while the Rank 3 estimate’s
+                                                                         5629
+A. Burton et al.                                                                               Advances in Space Research 74 (2024) 5619–5638
+
+angular momentum vector has a direction error of 167°                      component of the attitude quaternion q. The true angular
+indicating that it is likely a reﬂection of the Rank 2 and                 velocity of the tetrahedron over time is shown in Fig. 6b.
+4 vectors. In addition, the Rank 2 estimate’s axis has a                   Because the tetrahedron is not axisymmetric, the angular
+pointing direction error of about 10° and the Rank 4 esti-                 velocity components do not follow strictly sinusoidal pat-
+mate’s axis has an error of about 170°. This fact, combined                terns, and the quaternion components sometimes change
+with their near-identical angular momentum vector errors,                  abruptly, for example, at around 25 s in Fig. 6a.
+makes it likely that the main diﬀerence between the two is                    The PSO attitude inversion process attempts to ﬁnd the
+that the Rank 4 estimate’s axis of symmetry is reversed. It                true attitude time history using only the light curve mea-
+is of note that the angular momentum vector for all ﬁve                    surements in Fig. 5b. The possible attitude nsPSO ﬁnds
+listed estimates is very close to the true magnitude.                      139 attitudes after running for ten iterations with 17,576
+    Despite the ambiguities introduced by the cylinder’s                   particles. The full state PSO generates 59,631 particles by
+symmetry, the PSO attitude estimator is able to identify                   pairing the attitudes with 429 sampled angular velocity
+candidates for the true attitude time history that match                   guesses. After 50 iterations, the 250 best-ﬁtting attitude
+the measurements well. Although there is signiﬁcant error                  estimates are reﬁned by the quasi-Newton method. The
+in the direction of the cylinder’s axis, the angular momen-                complete inversion process takes about 1.5 h to complete.
+tum vector is estimated accurately within the limits of sym-               Table 5 shows the best of these automatically reﬁned esti-
+metries in the problem. Additional analysis is required to                 mates. For Cases 2 and 3, the total diﬀerence between the
+test the hypothesis that the observation geometry con-                     true and estimated attitudes is reported.
+tributed additional ambiguity to the estimation process.                      The Rank 1 through 7 estimates are all approximately
+                                                                           equal to the true attitude time history. The Rank 1 estimate
+5.3. Case 2: GEO uniformly-reflecting regular tetrahedron                  has a mean attitude error of only 0.3 arcsec and a mean
+                                                                           angular velocity error of 0.3 arcsec/s. This low level of
+   The second test case involves a uniformly-reﬂecting reg-                error indicates that an asymmetric moment of inertia is suf-
+ular tetrahedron is shown in Fig. 5a with side lengths of                  ﬁcient for the true attitude of the object to be observable,
+1.63 m. The observed brightness measurements in Fig. 5b                    even if, visually, it is completely symmetric. The estimated
+are simulated using a Cook-Torrance reﬂection model                        light curve and its normalized errors at each measurement
+(Duvenhage et al., 2013) with a 0.8 diﬀuse reﬂection coeﬃ-                 time are shown in Fig. 7. The errors in Fig. 7b are normal-
+cient and a 0.2 specular reﬂection coeﬃcient for each                      ized using the magnitude of the observed measurement vec-
+surface. The roughness parameter is 10. The mass of the                    tor jjzjj. The error in the estimated light curve at each
+tetrahedron is not evenly distributed, and it has the                      measurement time is at most ð5:409  107 Þ  jjzjj, for a total
+following moments of inertia: I x;tet ¼ 1:0 kg  m2 ; I y;tet ¼            Efrac of 1:225  106 .
+1:5 kg  m2 ; I z;tet ¼ 2:0 kg  m2 .                                         The Rank 8 through 23 estimates are an average of
+   The initial state of the tetrahedron is randomly gener-                 116.4° away from the true attitude time history and have
+ated with the magnitude of the angular velocity vector set                 an average angular velocity error of 2.803 rad/s. These atti-
+to 1.5 rad/s.                                                              tude time histories generally have an Efrac of about
+                                                                         1:7  105 and likely ﬁt the measurements so well because
+ q0 ¼ 0:1005; ½ 0:3015 0:5025 0:8040 T
+                                      T
+                                                          ð40Þ             of the symmetries in the object shape. However, their
+ x0 ¼ ½ 0:8566 1:1271 0:4959  rad=s                                      Efrac value is an order of magnitude higher than the Rank
+These initial states correspond to the true attitude time his-             1 estimate, meaning that the accurate attitude estimates
+tory shown in Fig. 6a where each line corresponds to a                     are still identiﬁable for noiseless measurements.
+
+
+
+
+                             Fig. 5. The Case 2 observed object and measured light curve (Burton et al., 2024).
+
+                                                                    5630
+A. Burton et al.                                                                                           Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                                       Fig. 6. The tetrahedron’s true attitude and angular velocity time history.
+
+
+Table 5
+Errors in the Case 2 tetrahedron attitude and angular velocity estimates.
+                                                        Initial Estimate Error                                            Average Estimate Error
+Rank                  Efrac               Attitude [deg]               Ang. Vel. [rad/s]                         Attitude [deg]          Ang. Vel. [rad/s]
+                              6                        4                              6                                 5
+ 1.                1:225  10              1:005  10                     2:071  10                              7:841  10               1:340  106
+   ..
+ 8.                1:665  105              157:250                         2:831                                  116:388                   2:803
+  ..
+ 24                8:233  104           180  0:02302                   7:463  104                           180  0:06394             3:839  104
+
+
+
+
+                          Fig. 7. The best estimated light curve and its normalized error at each measurement time for Case 2.
+
+
+   The Rank 24 through 33 estimates are approximations                                  to examine the eﬀect of an object’s shape and reﬂection
+of the ‘‘ﬂipped” attitude time history discussed in Section 4.                          model on the attitude estimate. Hence, the new object
+Note that a completely ‘‘ﬂipped” attitude time history for                              retains the same initial conditions as in (40), and its true
+this light curve would have an Efrac of 2:0  103 , higher                             attitude time history is identical to that shown in Fig. 6.
+than any of the estimates listed in Table 5. The Rank 24                                    As in Case 2, the model reﬂects light according to a
+through 33 estimates are ‘‘nearly-ﬂipped” attitude time his-                            Cook-Torrance model (Duvenhage et al., 2013) with a
+tories with a lower Efrac . However, as was the case for the                            0.8 diﬀuse reﬂection coeﬃcient, a 0.2 specular reﬂection
+Rank 8 through 23 estimates, these Efrac values are orders                              coeﬃcient, and a roughness parameter of 10 on each sur-
+of magnitude higher than the accurate attitude estimate’s                               face. However, because the shape of the Landsat 8 model
+Efrac , meaning that the two can be distinguished.                                      is complex and self-shadowing must be taken into account,
+                                                                                        accurately simulating reﬂections for the millions of mea-
+5.4. Case 3: Full satellite model                                                       surements generated by the PSOs is extremely computa-
+                                                                                        tionally intensive. Therefore, the reﬂections are
+   The third test case involves the same attitude proﬁle and                            approximated using a neural network to reduce computa-
+problem geometry as Case 2, but the observed object’s                                   tion time.
+shape is changed to that of the Landsat 8 satellite                                         The network is trained using one million measurements
+(Meaney, 2016) as shown in Fig. 8a. This test case aims                                 generated using a high-quality simulator. The network
+                                                                                 5631
+A. Burton et al.                                                                                          Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                    Fig. 8. The Landsat 8 object model and two-observer light curve for Case 3 (Meaney, 2016; Burton et al., 2024).
+
+
+takes the body-frame components of the ^     u and ^s vectors as                         The possible attitude nsPSO is run for ten iterations
+inputs and outputs the measurement as a ﬂoating point                                 using 314,432 particles and ﬁnds 227 possible attitudes.
+number. It has three fully connected convolutional hidden                             These initial attitudes are then given to the full state
+layers with 150 nodes in the ﬁrst and third hidden layers                             PSO. The second PSO is run for 50 iterations, and the
+and 50 nodes in the second layer. The nodes’ activation                               250 best state estimates and their ‘‘ﬂipped” counterparts
+function is ReLu (Nijhawan and Dhar Choudhury,                                        are reﬁned using the quasi-Newton method. Unlike Cases
+1999), and the network’s weights are optimized using                                  1 and 2, the epoch time used by the two PSOs is the ﬁnal
+stochastic gradient descent using Adam (Kingma and Ba,                                measurement taken by the 45° N observer. This time is
+2017). The resulting neural network is used to produce                                chosen because it corresponds to the dimmest measure-
+both the observed measurements z and the estimated mea-                               ments in the light curve and, therefore, restricts the space
+surements ^z.                                                                         of possible attitudes more than the ﬁrst measurement.
+   Using this approximation for the reﬂection model                                   The complete inversion process takes about 5.6 h to run.
+results in decreased estimate accuracy, even though the                                  The ﬁve estimates that best ﬁt the input light curves are
+same model is used both to compute the measurements                                   shown in Table 6. The Rank 1 estimate has an Efrac of only
+and by the estimator. If a similarly-trained neural network                           7:617  103 and an average attitude error of 0:5905 . The
+is used to approximate the light curve for the tetrahedron                            light curves corresponding to the Rank 1 estimate, as seen
+in Case 2, then the attitude estimate that best ﬁts the mea-                          by the two observers, are shown in Fig. 9. From the plot of
+sured light curves has an Efrac of 0:1096 compared to an                              measurement errors in Fig. 9b, the largest normalized error
+Efrac of 1:225  106 for the actual Case 2. This estimate                            in any single estimated measurement is ð3:264  103 Þ  jjzjj.
+has an average attitude error of 115:2 , compared to an                                  The Rank 2 through 5 estimates all have an average atti-
+error of ð1:34  106 Þ° for the original test case.                                  tude error that ranges between 2.322° and 9.565°. These
+   This increased estimate error caused by the reﬂection                              estimates also have low errors in their angular velocity esti-
+approximations can be compensated for by using multiple                               mates, never exceeding an average error of 0.03856 rad/s
+observers to increase the attitude’s observability. Case 3                            out of a true angular velocity magnitude of 1.5 rad/s.
+uses two near-simultaneous light curves measured by two                                  Unlike the single-observer attitude estimates for the
+observers to ﬁnd the attitude estimate of the Landsat 8                               tetrahedron, the two-observer estimates reported in Table 6
+model. The ﬁrst light curve is measured by an observer at                             do not include any ‘‘ﬂipped” attitude time histories.
+45° N latitude, as in the previous two test cases. The sec-                           ‘‘Flipped” attitude time histories are not present because
+ond light curve is oﬀset by 2.2 s relative to the ﬁrst and is                         they cannot easily ﬁt light curves measured by multiple
+measured from a point directly south of the ﬁrst observer                             observers simultaneously. Therefore, having multiple
+on the equator.                                                                       observers may be useful when estimating attitude using real
+
+Table 6
+Errors in the Case 3 Landsat 8 attitude and angular velocity estimates.
+                                                      Initial Estimate Error                                             Average Estimate Error
+Rank                  Efrac              Attitude [deg]              Ang. Vel. [rad/s]                          Attitude [deg]          Ang. Vel. [rad/s]
+  1                7:617  103              0:7852                       0:01386                                   0:5905                7:139  103
+  2                  0:01222                 4:389                      6:782  103                                4:616                 3:677  103
+  3                  0:01558                 4:449                      5:125  103                                4:486                 3:075  103
+  4                  0:02230                 1:979                        0:07731                                   2:322                   0:03856
+  5                  0:02676                 9:178                      4:774  103                                9:565                 7:117  103
+
+                                                                               5632
+A. Burton et al.                                                                                Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                   Fig. 9. The best estimated light curves and their normalized errors at each measurement time for Case 3.
+
+
+
+measurements whose noise might otherwise make it diﬃ-                       swarm optimizer (PSO) inversion method addresses these
+cult to distinguish accurate attitude estimates from                        diﬃculties by estimating an object’s attitude and angular
+‘‘ﬂipped” ones.                                                             velocity using only its light curve without needing any a
+   Further testing also shows that the accuracy and consis-                 priori information about the object’s rotation or an initial
+tency of the attitude estimator for this case varies depend-                guess for its state. Arbitrary torque-free attitude motion
+ing on the observed object’s initial attitude and angular                   can be quickly simulated using analytic expressions for atti-
+velocity. Therefore, additional work must be done to tune                   tude. The PSO inversion method only assumes that the
+the estimator properly for cases involving approximated                     problem geometry and the object’s shape and reﬂective
+measurements. Since more accurate estimates are corre-                      properties are known. Using PSOs to search the space of
+lated with lower Efrac values, such tuning can be done using                possible attitude and angular velocity states allows the
+only the light curve measurements, even if the true state of                method to account for the ambiguity of the estimation
+the object is unknown.                                                      problem.
+                                                                                The results of the inversion process are shown for three
+6. Discussion of potential application to real data                         test cases using noiseless simulated measurements. In the
+                                                                            ﬁrst test case, multiple attitude time histories are found that
+   The simulated light curve test cases in Section 5 demon-                 closely match 25 simulated measurements of a tumbling
+strate the ability of the method to account for inherent                    cylinder in geosynchronous equatorial orbit. Symmetries
+ambiguities present in the light curve inversion problem.                   in the object and its tumbling attitude proﬁle may con-
+Future applications of the method to real measurements                      tribute to the attitude ambiguity.
+will need to address the challenges of uncertainties in the                     In the second test case, the correct attitude time history
+object’s shape and reﬂection properties, among other areas.                 is found for a visually symmetric regular tetrahedron. The
+In particular, diﬀerences between the observed object’s true                solver can identify the attitude time histories closest to the
+shape and the inversion method’s shape model have been                      truth because of the asymmetries in the tetrahedron’s
+shown to degrade the quality of the attitude inversion                      moments of inertia.
+method’s output. Similarly, incorrect parameters in the                         The third test case applies the attitude inversion process
+object’s reﬂection model can lead to large discrepancies                    to a more complex Landsat 8 satellite model using near-
+between the observed and estimated light curve. Append-                     simultaneous measurements from two observers at diﬀerent
+ing simple shape and reﬂection model parameters as addi-                    locations. A neural network approximates a Cook-
+tional states to the PSOs is one possible way to account for                Torrance reﬂection model, making the attitude estimation
+these uncertainties (Burton, 2024). The eﬀect of measure-                   process computationally tractable. The best estimate found
+ment noise on the attitude inversion process must also be                   by the PSO method for the Landsat 8 model has an average
+investigated and accounted for. Incorporating statistical                   attitude error of less than 1°. This performance is not con-
+measures into the cost functions in (28) and (35) may be                    sistent for all initial states, however. Additional tuning of
+one way of accounting for measurement noise.                                the solver or a more robust reﬂection approximation
+                                                                            method may improve the consistency of the attitude esti-
+7. Conclusions                                                              mate for complex non-convex shapes.
+
+   Artiﬁcial space objects may have stable or tumbling atti-                Declaration of Competing Interest
+tude proﬁles and cannot be assumed to rotate at a constant
+rate about one axis. Similarly, when performing a light                       The authors declare that they have no known competing
+curve inversion, there is not always any a priori informa-                  ﬁnancial interests or personal relationships that could have
+tion about an observed object’s attitude state. The particle                appeared to inﬂuence the work reported in this paper.
+                                                                     5633
+A. Burton et al.                                                                                   Advances in Space Research 74 (2024) 5619–5638
+
+Acknowledgments                                                             The expression in (A.4) can be further simpliﬁed using the
+                                                                            sum and diﬀerence trigonometric identities (Falduto et al.,
+   This work was partly supported by the Air Force Oﬃce                     2015) to reach the form shown below:
+of Scientiﬁc Research through the grant AFOSR FA9950-                                         0               2           /w 31
+19–1-0407 and by the European Space Agency.                                                                        h
+                                                                                                            sin 2 cos 2
+                                                                                             B    h      /þw 6              7C
+                                                                            q313 ð/; h; wÞ ¼ B
+                                                                                             @cos 2 cos      ;6
+                                                                                                              4 sin h2 sin /w
+                                                                                                                            2
+                                                                                                                                 7C
+                                                                                                                                 5A
+Appendix A. Attitude representation derivation                                                            2                   
+                                                                                                                cos h2 sin /þw
+                                                                                                                            2
+   The expressions for DqSAM and DqLAM in (6) and (7) are                                                                                 ðA:5Þ
+derived. First, the quaternions q313 and q131 relating Euler
+angles to a quaternion are derived, then the quaternions
+are used to describe the attitude of the rotating object.                   A.2. 131 Sequence quaternion
+Finally, the initial Euler angle expressions (23), (24), and
+(25) are derived.                                                              The quaternion q131 ð/; h; wÞ corresponding to a 131
+                                                                            ð/; h; wÞ Euler angle sequence is calculated in a similar
+A.1. 313 Sequence quaternion                                                way to the 313 sequence quaternion. The quaternion
+                                                                            q131 ð/; h; wÞ is equivalent to the following product:
+  The rotation corresponding to a 313 ð/; h; wÞ Euler
+                                                                            q131 ð/; h; wÞ ¼ q1 ðwÞ  q3 ðhÞ  q1 ð/Þ                     ðA:6Þ
+angle sequence is written in quaternion form as follows:
+q313 ¼ ðs313 ; v313 Þ ¼ q3 ðwÞ  q1 ðhÞ  q3 ð/Þ             ðA:1Þ          where qi ð#Þ are deﬁned as in (A.2) and  is deﬁned as in
+                                                                            (A.3). The product of the three quaternions is shown
+where q1 ð#Þ or q3 ð#Þ represents rotation about a single axis              below:
+by an angle #.
+
+
+
+
+                   0                                         2                                                 31
+                                                                 sin /2 cos h2 cos w2 þ cos /2 cos h2 sin w2
+                 B    /     h     w       /     h     w 6                                               7C
+q131 ð/; h; wÞ ¼ B                                        6
+                 @cos 2 cos 2 cos 2  sin 2 cos 2 sin 2 ; 4 cos 2 sin 2 sin 2  sin 2 sin 2 cos 2 5A
+                                                                /       h    w        /      h       w 7C
+                                                                                                                                          ðA:7Þ
+                                                            cos /2 sin h2 cos w2 þ sin /2 sin h2 sin w2
+
+
+
+                          
+            #      #     T                                                  Simplifying (A.7) with the sum and diﬀerence trigonomet-
+q1 ð#Þ ¼ cos ; sin 2 0 0
+            2                                                               ric identities (Falduto et al., 2015) results in the following
+                                                           ðA:2Þ          expression:
+            #          # T
+q3 ð#Þ ¼ cos ; 0 0 sin 2                                                                     0                      2              31
+            2                                                                                                        cos h2 sin /þw
+                                                                                             B     h      /þw 6                     7C
+                                                                                                                                   2
+The quaternion multiplication  is deﬁned as follows                        q131 ð/; h; wÞ ¼ B
+                                                                                             @ cos   cos          ; 6  sin h sin /w 7C
+                                                                                                                    4         2       5A
+(Markley and Crassidis, 2014):                                                                     2         2                    2
+                                                                                                                       sin h2 cos /w
+                                                                                                                                   2
+ qC ¼ ðsC ; vC Þ ¼ qA  qB ¼ ðsA ; vA Þ  ðsB ; vB Þ
+                                                                                                                                          ðA:8Þ
+ sC ¼ sA sB  vA  vB                                        ðA:3Þ
+ vC ¼ sA vB þ sB vA  vA  vB
+Multiplying the three quaternions in (A.1) results in the fol-
+lowing expression for q313 :
+
+
+
+
+                   0                                         2                                                 31
+                                                                 cos /2 sin h2 cos w2 þ sin /2 sin h2 sin w2
+                 B    /     h     w       /     h     w 6                                               7C
+q313 ð/; h; wÞ ¼ B                                        6
+                 @cos 2 cos 2 cos 2  sin 2 cos 2 sin 2 ; 4 sin 2 sin 2 cos 2  cos 2 sin 2 sin 2 5A
+                                                                /     h       w         /      h    w 7C
+                                                                                                                                          ðA:4Þ
+                                                            cos /2 cos h2 sin w2 þ sin /2 cos h2 cos w2
+
+
+                                                                     5634
+A. Burton et al.                                                                                    Advances in Space Research 74 (2024) 5619–5638
+
+A.3. Short-axis mode attitude representation                                Substituting (A.12)–(A.14) into (A.10) results in the ﬁnal
+                                                                            expression for qH ;SAM for SAM rotations:
+    In SAM rotation, the object is rotating principally about                                                                                      !
+                                                                                        rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+its short axis ^
+               bz . Therefore, in a 313 ð/; h; wÞ Euler angle                            hz þ 1               1
+                                                                                                      ; pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ ½ hy
+                                                                                                                                             T
+sequence, the ﬁrst angle / is the precession angle of the                   qH ;SAM ¼                                                hx   0           ðA:15Þ
+                                                                                              2          2ðhz þ 1Þ
+object about the angular momentum unit vector ^     h, the sec-
+                                                                            Multiplying q313 by qH ;SAM and taking the conjugate results
+ond angle h is the nutation angle between ^  h and ^
+                                                   bz , and the
+                                                                            in the following expression for attitude:
+third angle w is the spin angle about ^ bz .
+
+
+
+
+                                                                                       
+ DqSAM ð/; h; wÞ ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                       1
+                                    ðhz þ 1Þ cos h2 cos /þw
+                                                         2
+                                                              þ sin h2 hy cos /w
+                                                                               2
+                                                                                     hx sin /w
+                                                                                              2
+                                                                                                   ;
+                        2ðhz þ1Þ
+                                   2                                                        31
+                                     ðhz þ 1Þ sin h2 cos /w    cos h2 hx sin /þw    hy cos /þw
+                                   6                      2
+                                                                               2
+                                                                                               2  7C                                                ðA:16Þ
+                                   6 ðhz þ 1Þ sin h sin /w  cos h hx cos /þw þ hy sin /þw 7C
+                                   4                 2      2           2         2              2   5A
+                                                         /þw                /w          /w
+                                     ðhz þ 1Þ cos 2 sin 2 þ sin 2 hx cos 2 þ hy sin 2
+                                                      h                 h
+
+
+
+
+   The attitude of an object undergoing SAM rotation can                    If the initial Euler angles are chosen such that (A.16) is
+be represented by ﬁrst making a rotation to align ^
+                                                  bz with ^h,               equal to the identity quaternion ð1; 0Þ, then (A.16) repre-
+then multiplying by q313 .                                                  sents the change in attitude from the initial time step,
+                                                                          and the SAM attitude representation can be written as
+DqSAM ¼ q313 ð/; h; wÞ  qH ;SAM                      ðA:9Þ                 follows:
+where qH ;SAM corresponds to a rotation that aligns ^bz and ^h.
+Since q313 and qH ;SAM rotate from the body-ﬁxed frame to                   qSAM ¼ DqSAM  q0                                                          ðA:17Þ
+the inertial frame, their conjugate must be taken before
+they can be used to represent attitude with qSAM .                          where DqSAM is as in (6) and q0 is the attitude quaternion at
+    The quaternion qH ;SAM is written as follows:                           the initial time step.
+                                   !
+               hH      hH ^bz  ^
+                                h
+qH ;SAM ¼ cos ; sin                                    ðA:10Þ               A.4. Long-axis mode attitude representation
+                2          bz  ^
+                        2 j^    hj
+
+where hH is the angle between ^h and ^bz . If, at the initial                  The expression for LAM attitude change DqLAM is
+time, the angular momentum unit vector written using                        derived in a similar way to DqSAM . For LAM motion, the
+                                                                            three angles of a 131 ð/; h; wÞ Euler angle sequence corre-
+body-frame coordinates is equal to ^
+                                                     T
+                                   h ¼ ½hx hy hz  , then
+                                                                            spond to the precession /, nutation h, and spin w angles
+cos hH ¼ ^
+         h^
+           bz ¼ hz                                          ðA:11Þ          of an object relative to the ^h as it rotates primarily about
+The scalar component of (A.10) is found using the cosine                    the body-ﬁxed ^bx axis. The quaternion DqLAM is therefore
+half-angle formula.                                                         equal to the following:
+         rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+    hH      cos hH þ 1           hz þ 1                                                                     
+cos    ¼                       ¼                  ðA:12Þ                    DqLAM ¼ q131 ð/; h; wÞ  qH ;LAM                                           ðA:18Þ
+     2             2                  2
+The factor sinðhH =2Þ is found in a similar way:                            where qH ;LAM represents a rotation aligning ^bx with ^
+                                                                                                                                  h. It is
+         rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+    hH     1  cos hH            1  hz                                     found using a similar method to qH;SAM .
+sin    ¼                       ¼                            ðA:13Þ
+     2             2                  2                                                                                                            !
+                                                                                        rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+The magnitude of the cross-product is:                                                   hx þ 1                1
+                                                                                                      ; pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ ½ 0
+                                                                                                                                               T
+                                                                            qH ;LAM ¼                                               hz   hy          ðA:19Þ
+          qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ qﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                       2          2ðhx þ 1Þ
+ bz  ^
+j^    hj ¼ h2x þ h2y ¼ 1  h2z
+          pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+         ¼ ð1  hz Þð1 þ hz Þ                               ðA:14Þ          The product in (A.18) is then used to calculate DqLAM .
+
+                                                                            Choosing the initial Euler angles such that (A.20) is equal
+                                                                     5635
+A. Burton et al.                                                                                                                       Advances in Space Research 74 (2024) 5619–5638
+
+
+
+
+                                                                                                       
+ DqLAM ð/; h; wÞ ¼ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                       1
+                                               ðhx þ 1Þ cos h2 cos /þw
+                                                                    2
+                                                                           sin h2 hz sin /w
+                                                                                            2
+                                                                                                   þ hy cos /w2
+                                  2ðhx þ1Þ
+                                              2                                                             3 1
+                                                ðhx þ 1Þ cos h2 sin /þw     þ sin h2 hz cos /w       hy sin /w
+                                              6                       2
+                                                                                               2
+                                                                                                               2  7 C                                                                  ðA:20Þ
+                                              6 ðhx þ 1Þ sin h sin /w þ cos h hz cos /þw  hy sin /þw                   7C
+                                              4                2      2            2            2                 2      5A
+                                                                                                                
+                                                ðhx þ 1Þ sin h2 cos 2  cos h2 hy cos 2 þ hz sin 2
+                                                                      /w                       /þw               /þw
+
+
+
+
+                                                                                                                                                                   
+to the identity quaternion ð1; 0Þ at the initial time t0 allows                                              ðhz þ 1Þ      cos h20 cos /20 cos w20  sin /20 sin w20 þ
+qLAM to be written as follows:                                                                                                                                        
+                                                                                                                           sin h20 hy cos /20 cos w20 þ sin /20 sin w20 
+qLAM ¼ DqLAM  q0                                                                      ðA:21Þ                                                                       pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                                           hx sin /20 cos w20  cos /20 sin w20 ¼ 2ðhz þ 1Þ
+where DqLAM is equal to (7).                                                                                                                                                              ðA:26Þ
+A.5. Short-axis mode initial euler angles                                                                    After rearranging the terms, (A.26) is rewritten as an equa-
+                                                                                                             tion in the following form:
+   At the initial time step, the Euler angles /0 ; h0 , and w0                                                    /0        /
+are chosen such that DqSAM ðt0 Þ ¼ ð1; 0Þ. The initial nuta-                                                 A cos   þ B sin 0 ¼ C                                                        ðA:27Þ
+                                                                                                                  2          2
+tion angle h0 and spin angle w0 for SAM rotations are
+                                                                                                             where A; B, and C are constants:
+found using the initial angular momentum unit vector
+                                                                                                                                                                              
+^                T
+h ¼ ½hx hy hz  written in the body-ﬁxed frame. An                                                           A    ¼ ðhz þ 1Þ cos h20 cos w20 þ sin h20 hy cos w20 þ hx sin w20
+object is undergoing SAM rotation if the dynamic moment                                                                                                                         
+                                                                                                             B    ¼ ðhz þ 1Þ cos h20 sin w20  sin h20 hx cos w20  hy sin w20
+of inertia I d from (2) is greater than the intermediate                                                            pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+moment of inertia I y . The components of the unit vector                                                    C    ¼ 2ðhz þ 1Þ
+^
+h can be written in terms of the 313 Euler angles as follows:                                                                                                                             ðA:28Þ
+hx ¼ sin h0 sin w0             hy ¼ sin h0 cos w0              hz ¼ cos h0             ðA:22Þ                The constants in (A.28) can be rewritten solely in terms of
+                                                                                                             h0 and w0 using the relations in (A.22).
+From (A.22) it is obvious that the initial nutation angle h0                                                                                                                                    
+is equal to the following:                                                                                   A   ¼ ðcos h0 þ 1Þ cos h20 cos w20 þ sin h0 sin h20 cos w0 cos w20 þ sin w0 sin w20
+                                                                                                                                                                                                  
+                                                                                                             B   ¼ ðcos h0 þ 1Þ cos h20 sin w20  sin h0 sin h20 sin w0 cos w20  cos w0 sin w20
+h0 ¼ cos1 ðhz Þ                                                                       ðA:23Þ                      pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                             C   ¼ 2ðcos h0 þ 1Þ
+The above expression is identical to (23) for I d > I y . The                                                                                                                             ðA:29Þ
+initial nutation angle h0 is always chosen such that
+h0 2 ½0; p.                                                                                                 The half angles in (A.29) can be further rewritten using the
+   The initial value of the spin angle w0 can also be found:                                                 half-angle formulas (Falduto et al., 2015).
+                                                                                                                     rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ         rﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+               hz = sin h0                                                                                       #        1 þ cos #           #     1  cos #
+w0 ¼ tan1                                            ðA:24Þ                                                 cos ¼                        sin ¼                      ðA:30Þ
+               hy = sin h0                                                                                       2              2             2             2
+This expression is equivalent to (24) for I d > I y .                                                        where # is some angle. Recalling that h0 2 ½0; p and
+   Since the precession angle / does not appear in (A.22),                                                   w0 2 ½0; 2p, it follows that cosðh0 =2Þ; sinðh0 =2Þ, and
+the initial precession angle /0 is found by setting                                                          sinðw0 =2Þ are always positive, and cosðw0 =2Þ is negative
+DqSAM ¼ ð1; 0Þ. Since DqSAM is a unit quaternion, it will                                                    everywhere that sin w0 is negative. By inspection of
+be suﬃcient to ﬁnd a /0 that results in the scalar compo-                                                    (A.29), it can be seen that A will be negative if sin w0 and
+nent of (6) equalling 1.                                                                                     cosðw0 =2Þ are negative. It can also be demonstrated that
+                                                                                                      B is always negative, though the proof is omitted.
+       1                        h0     /0 þ w0         h0          /0  w0              /0  w0
+pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ ðhz þ 1Þ cos cos             þ sin    hy cos              hx sin
+ 2ðhz þ 1Þ                      2         2            2              2                    2
+                                                                                                             Simpliﬁed forms for A and B in (A.31) are derived by ﬁnd-
+  ¼1
+                                                                                                             ing expressions for A2 and B2 . After simplifying, the follow-
+                                                                                       ðA:25Þ                ing expressions are reached:
+The sine and cosine sum and diﬀerence formulas (Falduto                                                      A2 ¼ ðcos h0 þ 1Þðcos w0 þ 1Þ B2
+et al., 2015) are used to expand (A.25) so that /0 can be
+separated from the other Euler angles.                                                                           ¼ ðcos h0 þ 1Þð1  cos w0 Þ                                              ðA:32Þ
+
+
+
+                                                                                                      5636
+A. Burton et al.                                                                                                               Advances in Space Research 74 (2024) 5619–5638
+
+Note that the same forms are reached whether sin w0 is pos-                                         hx ¼ cos h0        hy ¼  sin h0 cos w0           hz
+itive or negative. The constant A from (A.27) can now be
+                                                                                                       ¼ sin h0 sin w0                                                           ðA:38Þ
+written in a form corresponding to (26). The simpliﬁed
+forms of both A and B are given below:
+
+
+
+
+                              pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ         pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ             pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ  pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                 ð1þcos h0 Þð1þcos w0 Þ                 1cos h0
+ A     ¼  ðcos h0 þ 1Þ                  2
+                                                        þ sin h0          2
+                                                                                       cos w0    1 þ cos w0 þ j sin w0 j 1  cos w0
+                              pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ         pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                                                              ðA:31Þ
+                                 ð1þcos h0 Þð1cos w0 Þ                 1cos h0                    pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+ B     ¼  ðcos h0 þ 1Þ                  2
+                                                        þ sin h0          2
+                                                                                       j sin w0 j    1 þ cos w0  cos w0 1  cos w0
+
+
+
+    ( pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+       ðcos h0 þ 1Þðcos w0 þ 1Þ                          if sin w0 P 0                              The initial nutation angle h0 and spin angle w0 can there-
+A¼     pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                            fore be written as shown below:
+       ðcos h0 þ 1Þðcos w0 þ 1Þ if sin w0 < 0                                                                                                
+     pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ                                                      1               1    hz = sin h0
+B ¼  ðcos h0 þ 1Þð1  cos w0 Þ                                                                     h0 ¼ cos ðhx Þ w0 ¼ tan                            ðA:39Þ
+                                                                                                                                  hy = sin h0
+                                                                              ðA:33Þ
+                                                                                                    The expressions in (A.39) are equivalent to (23) and (24)
+The expression in (A.27) can now be used to ﬁnd /0 by per-                                          for I d < I y .
+forming a Weierstrass substitution (Merlet, 2004) to turn                                              By setting the scalar component of DqLAM in (A.20)
+the equation into a quadratic polynomial.                                                           equal to 1, it is found that the LAM initial precession angle
+      /0     2r               /0 1  r 2                        /0                                  /0 relates to the other initial Euler angles using the same
+sin      ¼              cos     ¼                     r ¼ tan                 ðA:34Þ                relations as found for SAM rotations. The LAM equiva-
+      2    1 þ r2             2   1 þ r2                        4
+                                                                                                    lent to (A.27) is as follows:
+After performing this substitution, it can be shown that
+(A.27) is equivalent to the following:                                                                      /0        /
+                                                                                                    D cos      þ E sin 0 ¼ F                                                     ðA:40Þ
+                                                                                                            2          2
+                                                                                                    where
+ ðA þ CÞr2 þ 2Br þ ðA  CÞ ¼ 0                                               ðA:35Þ                                                                                                  
+                                                                                                     D ¼ ðcos h0 þ 1Þ cos h20 cos w20 þ sin h0 sin h20 cos w0 cos w20 þ sin w0 sin w20
+Since A þ C is never zero, the roots of (A.35) can be found                                                                                                                             
+                                                                                                     E ¼ ðcos h0 þ 1Þ cos h20 sin w20  sin h0 sin h20 sin w0 cos w20  cos w0 sin w20
+using the quadratic formula.                                                                             pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+                                                                                                     F ¼ 2ðcos h0 þ 1Þ
+                 pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+    /0       B      A2 þ B2  C 2                                                                                                                                                ðA:41Þ
+tan ¼ r ¼                                            ðA:36Þ
+    4               AþC                                                                             In (A.41), D; E, and F are all identical to the A; B, and C
+From (26), it is simple to show that A2 þ B2  C 2 ¼ 0.                                             expressions in (A.29). Therefore, the initial precession
+Therefore, /0 can be written as follows:                                                            angle /0 expressions in (25) and (26) are valid for both
+                                                                                                  SAM and LAM rotations.
+                B
+/0 ¼ 4 tan1                                    ðA:37Þ
+               AþC                                                                                  References
+where A and B are deﬁned in (A.33), and C is deﬁned in
+                                                                                                    Abramowitz, M., Stegun, I.A., 1948. Handbook of mathematical
+(A.29). The expression in (A.37) is equivalent to (25).
+                                                                                                       functions with formulas, graphs, and mathematical tables volume 55.
+                                                                                                       US Government printing oﬃce.
+A.6. Long-axis mode initial angles                                                                  Balster, P., Jones, G., Hofer, G. et al., 2023. Object characteristic
+                                                                                                       determination using brightness measurements. In: Proceedings of the
+                                                                                                       Advanced Maui Optical and Space Surveillance (AMOS) Technologies
+   The initial Euler angle values for long-axis mode (LAM)                                             Conference (p. 72).
+rotations are found in a similar way to the SAM initial                                             Benson, C.J., Scheeres, D.J., Moskovitz, N.A., 2020. Spin state evolution
+angles. LAM rotation occurs when the dynamic moment                                                    of asteroid (367943) duende during its 2013 earth ﬂyby. Icarus 340,
+of inertia I d in (2) is less than the intermediate moment                                             113518.
+                                                                                                    Benson, C.J., Scheeres, D.J., Ryan, W.H. et al., 2018. Cyclic complex spin
+of inertia I y . For LAM rotation, the initial body-frame                                              state evolution of defunct geo satellites. In: Proceedings of the
+angular moment unit vector ^
+                                               T
+                                h ¼ ½hx hy hz  components                                             Advanced Maui Optical and Space Surveillance Technologies
+are related to the nutation and spin angles as follows:                                                Conference, Maui, HI.
+
+
+                                                                                            5637
+A. Burton et al.                                                                                                Advances in Space Research 74 (2024) 5619–5638
+
+Burton, A., Frueh, C., 2020. Light curve attitude estimation using the                      Conference Proceedings (pp. 464–475). Maui Economic Development
+    viewing sphere. In: Astrodynamics Specialist Conference 2020.                           Board, Inc. Kihei, Maui, HI.
+Burton, A., Frueh, C., 2021. Two methods for light curve inversion for                  Hapke, B., 2012. Theory of reﬂectance and emittance spectroscopy.
+    space object attitude determination. In: 8th European Conference on                     chapter 10.3 Reciprocity. Cambridge University Press, pp. 264–265.
+    Space Debris.                                                                       Kaasalainen, M., Lamberg, L., Lumme, K., et al., 1992. Interpretation of
+Burton, A., Frueh, C., 2023. Fast light curve inversion for all - regular and               lightcurves of atmosphereless bodies. i-general theory and new
+    tumbling - attitudes. In: Advanced Maui Optical and Space Surveil-                      inversion schemes. Astron. Astrophys. 259, 318–332.
+    lance Technologies Conference 2023.                                                 Kaasalainen, M., Torppa, J., 2001a. Optimization methods for asteroid
+Burton, A., Robinson, L., Frueh, C., 2023. Simultaneous attitude and                        lightcurve inversion: I. shape determination. Icarus 153 (1), 24–36.
+    shape estimation from scratch using light curves for human-                             https://doi.org/10.1006/icar.2001.6673, URL: https://www.sciencedi-
+    made space objects. In: The Second International Orbital Debris                         rect.com/science/article/pii/S0019103501966734.
+    Conference.                                                                         Kaasalainen, M., Torppa, J., 2001b. Optimization methods for asteroid
+Burton, A., Robinson, L., Frueh, C., 2024. Attitude estimation using light                  lightcurve inversion: I. shape determination. Icarus 153 (1), 24–36.
+    curves: A particle swarm approach. In: AIAA SciTech 2024 Forum.                         https://doi.org/10.1006/icar.2001.6673, URL: https://www.sciencedi-
+Burton, A., 2024. Attitude Estimation using Light Curves. Ph.D. thesis                      rect.com/science/article/pii/S0019103501966734.
+    Purdue University.                                                                  Kaasalainen, M., Torppa, J., Muinonen, K., 2001. Optimization methods
+Cabrera, D.V., Utzmann, J., Förstner, R., 2023. The adaptive gaussian                      for asteroid lightcurve inversion: Ii. the complete inverse problem.
+    mixtures unscented kalman ﬁlter for attitude determination using light                  Icarus 153 (1), 37–51. https://doi.org/10.1006/icar.2001.6674, URL:
+    curves. Adv. Space Res. 71 (6), 2609–2628.                                              https://www.sciencedirect.com/science/article/pii/S0019103501966746.
+Carlson, B.C. (1963). Normal elliptic integrals of the ﬁrst and second                  Kingma, D., Ba, J., 2017. Adam: A method for stochastic optimization.
+    kinds. University of North Texas Libraries, UNT Digital Library.                        arXiv preprint arXiv:1412.6980. URL: https://arxiv.org/abs/1412.6980
+    URL: https://digital.library.unt.edu/ark:/67531/metadc1201580/ last                     doi:https://doi.org/10.48550/arXiv.1412.6980.
+    accessed June 8, 2023.                                                              Linares, R., Crassidis, J., Jah, M., 2014. Particle ﬁltering light curve based
+Clark, R., Dave, S., Wawrow, J. et al., 2020. Performance of parameter-                     attitude estimation for non-resolved space objects. Adv. Astronaut.
+    ization algorithms for resident space object (rso) attitude estimates. In:              Sci. 152, 119–130.
+    Proceedings of the Advanced Maui Optical and Space Surveillance                     Longuski, J., Frueh, C., 2019. Aae 340 dynamics and vibrations. Purdue
+    Technologies, Maui, HI, USA, pp. 15–18.                                                 University Lecture Notes.
+Clark, R., Fu, Y., Dave, S., et al., 2022. Resident space object (rso)                  Markley, F.L., Crassidis, J.L., 2014. Fundamentals of spacecraft attitude
+    attitude and optical property estimation from space-based light curves.                 determination and control, volume 1286. Springer.
+    Adv. Space Res. 70 (11), 3271–3280. https://doi.org/10.1016/j.                      Meaney, C. (2016). Landsat 8 (ldcm). NASA 3D Resources. URL:
+    asr.2022.08.068, URL: https://www.sciencedirect.com/science/article/                    https://nasa3d.arc.nasa.gov/detail/landsat-8 last accessed on 10/25/23.
+    pii/S0273117722008043.                                                              Merlet, J.-P., 2004. A note on the history of trigonometric functions and
+Dianetti, A.D., 2020. Resident Space Object Characterization Using                          substitutions. Proceedings of HMM.
+    Polarized and Multispectral Light Curves. State University of New                   Minnaert, M., 1941. The reciprocity principle in lunar photometry.
+    York at Buﬀalo, Ph.D. thesis.                                                           Astrophysical Journal, vol. 93, p. 403–410 (1941)., 93, 403–410.
+Dianetti, A.D., Crassidis, J.L., 2023. Resident space object characterization           Murakami, C., 2021. Analytical solution of the euler-poinsot problem. J.
+    using polarized light curves. J. Guid., Control, Dynam. 46 (2), 246–263.                Geometry Symmet. Phys. 60, 25–46.
+Ďurech, J., Kaasalainen, M., 2003. Photometric signatures of highly                    Nijhawan, N., Dhar Choudhury, S., 1999. Training neural networks
+    nonconvex and binary asteroids. Astron. Astrophys. 404 (2), 709–714.                    with multi-activations. Int. J. Eng. Res. Technol. (IJERT) 10,
+    https://doi.org/10.1051/0004-6361:20030505.                                             434–438.
+Duvenhage, B., Bouatouch, K., Kourie, D., 2013. Numerical veriﬁcation                   Pedregosa, F., Varoquaux, G., Gramfort, A., et al., 2011. Scikit-learn:
+    of bidirectional reﬂectance distribution functions for physical plausi-                 Machine learning in Python. J. Mach. Learn. Res. 12, 2825–2830.
+    bility. In: SAICSIT ’13: Proceedings of the South African Institute for             Robinson, L., Frueh, C., 2022. Light curve inversion for reliable shape
+    Computer Scientists and Information Technologists Conference (pp.                       reconstruction of human-made space objects. In: Proceedings of the
+    200–208). doi:10.1145/2513456.2513499.                                                  32nd AIAA/AAS Astrodynamics Specialist Conference, pp. 1–19.
+Eberhart, R., Kennedy, J., 1995. A new optimizer using particle swarm                   Russell, H.N., 1906. On the light-variations of asteroids and satellites.
+    theory. In: MHS’95. Proceedings of the sixth international symposium                    Astrophys. J. 24 (1), 1–18.
+    on micro machine and human science, pp. 39–43. Ieee.                                Samarasinha, N.H., A’Hearn, M.F., 1991. Observational and dynamical
+Falduto, V., Lippman, D., Norwood, R. et al., 2015. Algebra and                             constraints on the rotation of comet p/halley. Icarus 93 (2), 194–225.
+    trigonometry.                                                                       Schildknecht, T., Linder, E., Silha, J. et al., 2015. Photometric monitoring
+Fan, S., Frueh, C., 2019. A direct light curve inversion scheme in the                      of non-resolved space debris and databases of optical light curves. In:
+    presence of measurement noise. J. Astronaut. Sci. 67. https://doi.org/                  Advanced Maui Optical and Space Surveillance Technologies Confer-
+    10.1007/s40295-019-00190-3.                                                             ence 25.
+Früh, C., Jah, M.K., 2014. Coupled orbit attitude motion of high area-to-              Thomson, W., 1986. Introduction to space dynamics. Dover Publications
+    mass ratio (hamr) objects including eﬃcient self-shadowing. Acta                        Inc.
+    Astronaut. 95, 227–241. https://doi.org/10.1016/j.actaastro.2013.11.                Vince, J., 2021. Quaternion algebra. In Quaternions for Computer
+    017.                                                                                    Graphics (pp. 77–103). London: Springer, London. doi:10.1007/978-
+Fukushima, T., 2008. Simple, regular, and eﬃcient numerical integration                     1-4471-7509-4_6.
+    of rotational motion. Astron. J. 135 (6), 2298.                                     Wetterer, C.J., Jah, M., 2009. Attitude determination from light curves. J.
+Gagnon, S.R., Crassidis, J.L., 2022. Augmenting light curve based attitude                  Guid., Control, Dynam. 32 (5), 1648–1651.
+    estimation with geometric information. In: AIAA SCITECH 2022                        Williams, J., 1967. The determination of the orientation of a tumbling
+    Forum (p. 1767).                                                                        cylinder from the shape of the light curve. Oﬃce of Aerospace
+Hall, D., Africano, J., Archambeault, D. et al., 2006. Amos observations                    Research, (p. 31).
+    of nasa’s image satellite. In: The 2006 AMOS Technical Conference                   Wright, S.J., 2006. Numerical optimization. chapter Quasi-Newton
+    Proceedings (pp. 10–14).                                                                Methods. (pp. 136–143).
+Hall, D., Calef, B., Knox, K. et al., 2007. Separating attitude and shape               Zill, D., Carlson, B., 1970. Symmetric elliptic integrals of the third kind.
+    eﬀects for non-resolved objects. In: The 2007 AMOS Technical                            Math. Comput. 24 (109), 199–214.
+
+
+                                                                                 5638
+

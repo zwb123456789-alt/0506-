@@ -1,14 +1,14 @@
 # 代码前待决：是否加入 roll 轴与更多观测几何
 
-最后更新：2026-06-12
+最后更新：2026-06-18
 
 ## 状态
 
-本文件是代码实施前的待决讨论记录，不是方法冻结结论。
+本文件是代码实施前关于 roll 轴与更多观测几何的历史讨论记录，不再作为阻塞路线一代码回归的待决项。
 
-下次继续大项目时，必须先讨论本文件中的问题，再决定是否继续沿当前 fixed-roll v0.4 代码路线推进，或解冻方法规范并改为 roll-aware / 3-DOF 路线。
+四路线综合审阅与最终路线裁决 R01 已确认：路线一 fixed-roll yaw-pitch controlled benchmark 作为 v0.4 必选主干成立，roll sensitivity 为主线必做探针；3-DOF / roll-aware 作为后续扩展或路线三暗室条件增强方向，不反向阻塞路线一 Phase 0 代码回归。
 
-## 为什么暂缓直接进代码
+## 历史问题来源
 
 当前冻结路线把姿态定义为 `(yaw, pitch)`，`roll = 0`。这条路线可以支撑 fixed-roll yaw-pitch benchmark，但不能支撑完整三轴姿态反演。
 
@@ -77,7 +77,7 @@ real unknown target attitude recovery
 
 小项目关注最亮构型搜索，最终必须考虑 roll；否则只能得到 `roll = 0` 二维切片的最亮点，不能说明三维姿态空间最亮。
 
-## 下次必须先讨论的问题
+## 后续若解冻 3-DOF 时再讨论的问题
 
 1. 大项目是否仍接受 fixed-roll yaw-pitch benchmark 作为主线？
 2. 如果不接受，是否正式改为 3-DOF roll-aware benchmark？
@@ -87,18 +87,19 @@ real unknown target attitude recovery
 6. 是否先做一个小规模资源评估：若单姿态耗时和存储量过高，则不进入全量 3D。
 7. 若不加入 roll，论文标题、摘要、方法、结果和 limitation 中如何明确 fixed-roll 边界？
 
-## 临时执行门槛
+## 当前执行门槛
 
-在作者明确上述方向前，不应直接进入既有 fixed-roll 全量生成或训练。
+R01 已明确路线一可沿 fixed-roll 主干推进，但仍不得直接进入全量生成或训练。当前只允许回到 Phase 0 gate：
 
 允许做的事情：
 
-- 阅读和讨论本文件。
-- 做资源估算或单姿态 smoke test 设计。
-- 起草 fixed-roll 路线与 3-DOF 路线的对比方案。
+- 搭建 `06_v0.4_code/` 骨架。
+- 记录环境依赖和硬件信息。
+- 做单姿态 smoke test、资源估算、depth round-trip、20 姿态 shadow validation。
+- 按路线一主线执行 roll sensitivity 探针设计。
 
 不应做的事情：
 
-- 直接按旧 `roll = 0` 路线全量生成数据。
+- 跳过 Phase 0 gate，直接按 `roll = 0` 路线全量生成数据。
 - 直接训练 OCS-only / image-only / fusion。
 - 直接修改方法冻结文件 `13` / `14` 为 3-DOF，除非作者确认改线。

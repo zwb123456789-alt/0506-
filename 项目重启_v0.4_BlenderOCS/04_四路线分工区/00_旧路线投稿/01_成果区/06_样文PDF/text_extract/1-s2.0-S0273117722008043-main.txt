@@ -1,0 +1,597 @@
+                                                Available online at www.sciencedirect.com
+
+                                                           ScienceDirect
+                                               Advances in Space Research 70 (2022) 3271–3280
+                                                                                                                       www.elsevier.com/locate/asr
+
+
+
+
+             Resident space object (RSO) attitude and optical property
+                      estimation from space-based light curves
+                          Ryan Clark ⇑, Yanchun Fu, Siddharth Dave, Regina S K Lee
+                                         York University, 4700 Keele Street, M1J 1P3, Toronto, Ontario, Canada
+
+                            Received 17 September 2021; received in revised form 13 August 2022; accepted 24 August 2022
+                                                        Available online 14 September 2022
+
+
+
+
+Abstract
+
+   With the increase in the number of objects orbiting Earth, Space Situational Awareness (SSA) has becoming an important area of
+research in the space sector. Currently most sensors that contribute to SSA are large dedicated optical or radar stations, such as space
+fence (Pechkis, et al., 2015). With the increase in low resolution sensors in LEO there is a growing potential to utilize these to augment
+current SSA eﬀorts. Star trackers are readily available and used in space for attitude determination, with recent work performed to
+demonstrate the beneﬁt of using spaced-based optical measurements for Resident Space Object (RSO) detection. In this paper, we
+describe the interpretation of space-based measurement for light curve of an RSOs to estimate the RSOs shape, attitude and optical
+properties. In this model, two Bidirectional Reﬂectance Distribution Functions (BDRF’s) are compared, namely a deﬁned facet model
+and an anthropic Phong model. From the initial results an RSOs shape, attitude, optical properties can be estimated with basic a-priory
+information on the shape of the RSO with both models.
+Ó 2022 COSPAR. Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+
+
+Keywords: Space Situational Awareness; Light Curve Inversion; Attitude Estimation; Bidirectional Reﬂectance Distribution; Resident Space Object
+
+
+
+
+1. Introduction                                                                  assets, such as the International Space Station. While there
+                                                                                 are continuing and collaborative.
+   Damage to space systems has a signiﬁcant and immedi-                             eﬀorts among various space agencies and research com-
+ate impact on technologies we rely on every day, including                       munities to monitor the resident space objects from the
+navigation, communication, resource management and                               ground and on-orbit, there still remains many uncertainties
+weather forecasting. The 2009 collision of Iridium 33 and                        in RSO numbers and characteristics.
+Kosmos 2251 destroyed both satellites and created thou-                             In (Lambour, et al., 2000), we demonstrated RSO iden-
+sands of debris, which resulted in a loss of service (Baur,                      tiﬁcation from space-based observations using low-
+et al., 2014). As such, it is imperative to enhance technolo-                    resolution imager spacecraft such as the Fast Auroral Ima-
+gies and further develop capabilities that identify both                         ger (FAI) onboard the CASSIOPE satellite. A sample FAI
+active satellites and inactive resident space objects (RSO’s)                    image compared to a simulated image is illustrated in
+such as debris. According to NASA (Clemens et al., 2019),                        Fig. 1, with the RCM satellites being labeled in both
+there are more than 500,000 objects above 1 cm size in                           images. In order to interpret the low-resolution spaceborne
+Earth’s orbit. It is still unclear how many hundreds of                          images further study of the light curve is required to infer
+thousands of uncatalogued objects pose threats to space                          the parameters of the RSO. A light curve is a representa-
+                                                                                 tion of the brightness of an object as a function of time.
+ ⇑ Corresponding author.
+                                                                                 In the context of this paper the parameters include; optical
+   E-mail address: rwclark@my.yorku.ca (R. Clark).                               properties, shape and attitude of the RSO. Knowledge of
+
+https://doi.org/10.1016/j.asr.2022.08.068
+0273-1177/Ó 2022 COSPAR. Published by Elsevier B.V.
+This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+R. Clark et al.                                                                                     Advances in Space Research 70 (2022) 3271–3280
+
+
+
+
+Fig. 1. Sample Scaled Images of RCM constellation from FAI on-orbit observation (left), image credit (University of Calgary, Department of Physics and
+Astronomy, 2019), simulated images of the same RCM constellation using SBOIS (Right) take on June15, 2019, 23:36:05.
+
+
+these parameters gives satellite operators and diﬀerent                         the rate of rotation (also referred to as spin-rate) of the
+agencies more information on targeted debris and active                         object. In (Lambour, et al., 2000) (and many articles with
+objects giving more information than just position infor-                       similar analysis), the authors present an overview of how
+mation increasing SSA knowledge. Knowledge of these                             light curve analysis is used for RSO characterisation using
+parameters versus just position information gives the                           low- resolution images. More generally, light curve inver-
+required information for performing active debris removal,                      sion is a mathematical technique used to estimate diﬀerent
+improved RSO correlation, and conﬁrming that satellite                          states of an objects from its brightness and brightness vari-
+ahead to current international regulations. Recent research                     ation over a series of timed measurements, which provides
+has been focused on techniques that allow the interpreta-                       more information than spin rate analysis.
+tion of light curves from the images of debris objects, such                       Light curve inversion is frequently used for the detection
+as in (Gasdia, 2016) (Gasdia, et al., 2017) (Bernander,                         of exoplanets and the shape and spin estimation of aster-
+2014) (Payne, et al., 2009). Other research in this ﬁeld                        oids, such as in (Cowan & Agol, 2008) and (Clark, et al.,
+focuses on complex modeling techniques to simulate                              2020). To invert the light curve to determine more informa-
+space-based surveillance images and photometric light                           tion than just the temporal spin rate of the object, simu-
+curves (Fulcoy, et al., 2012) (Kaasalainen, 2001). These                        lated environments are commonly used. They determine
+algorithms provide a baseline for the current study for                         how the variation of brightness corresponds to a change
+image simulation of the space-based images for RSO iden-                        in parameters which are used to generate the simulated
+tiﬁcation, tracking, and characterization. The majority of                      light curve. To perform a light curve inversion an optical
+other image processing research focuses on ground-based                         image simulator, in the case of this paper the Space Based
+observations with limited applicability for space-based                         Optical Image Simulator (SBOIS), is used to replicate the
+images. Space-based research is still in its early stage; the                   brightness of the RSO with estimated states that consists
+design and implementation processes require further opti-                       of shape, attitude and optical properties. The complexity
+mization. In this paper, we address the rising need for bet-                    of the light curve inversion problem stems from the bright-
+ter SSA by comparing two diﬀerent bidirectional                                 ness giving non-unique solutions for state estimation,
+reﬂectance distribution functions (BRDF) in a simulated                         where hundreds to thousands of solutions are plausible
+environment. The goal of this research is to the develop-                       for one brightness measurement. To overcome the chal-
+ment a suitable algorithm to estimate parameters from                           lenge of non unique answers a time series of brightness
+light curves extracted from low-resolution space-based                          (the light curve) is used. The time series allows for higher
+images. This is accomplished through the generation of                          derivatives of data to be used to reduce the number of
+simulated light curves with known parameters then com-                          potential solutions, or local optimum, present. The higher
+paring the generated light curve, commonly called synthetic                     derivative data limits the solution space by ignoring solu-
+light curve, to the observed light curve of the object.                         tions with large discrepancies in state parameters that
+   Light curves are used to interpret various physical                          would not be physically possible. One example of this is
+parameters of the object under investigation, mentioned                         large attitude jumps that can sometime be larger than 30
+previously. In the case of RSO characterization, the fre-                       degrees a second. It is unlikely to leave only the ideal solu-
+quency analysis of light curves is often used to estimate                       tion, even after higher derivative ﬁtting, requiring opti-
+                                                                         3272
+R. Clark et al.                                                                            Advances in Space Research 70 (2022) 3271–3280
+
+mization to ﬁnd better estimated states. It was demon-                  distance to the object. This does not accurately represent
+strated in previous research that Particle Swarm Optimiza-              real RSO light curves or allow for light curve inversion
+tion performs eﬀectively for attitude estimation; thus, it is           to be performed. To simulate accurate reﬂections and light
+implemented in the current study to calculate the optimal               curves oﬀ of a complex 3D RSO, facet models are used to
+state estimates (Snell, 2010). It is worthwhile to note that            replicate the RSO’s reﬂective surfaces. A facet model of an
+any optimization algorithm in theory can be implemented                 RSO takes the 3D shape of the object and models it as a
+to retrieve an optimal state estimate. In this paper, the               superposition of 2D surfaces called facets. The facets cho-
+methodology for generation of simulated images, as well                 sen have well known BRDF functions allowing for the
+as, simulated environment used is described. Followed by                complex 3D shape to be modeled from the sum of simpler
+the results and discussion of the simulation tests and con-             2D surfaces. With the implementations of facet models, the
+cluded with a summary of the results and areas of future                phase function becomes a function of more than just solar
+research mentioned.                                                     phase angle, U. This is shown in the rest of this paper by
+                                                                        representing the phase function as F for both facet models
+                                                                        examined. As SBOIS is not the focus of this paper more
+2. Methodology
+                                                                        information on SBOIS is available upon request, with
+                                                                        upcoming studies being performed on the comparison of
+2.1. Simulated RSO images
+                                                                        SBOIS to STK’s EOIR toolkit.
+   In order to estimate RSO’s physical properties; attitude,
+                                                                        2.2. RSO facet models of bidirectional reﬂectance
+shape, and optical properties, from a time-series of images,
+                                                                        distribution function (BRDF)
+light curve inversion is applied. It is implemented itera-
+tively to check for optimal solutions by generating the sim-
+                                                                            To simulate the brightness of an RSO, its shape, size,
+ulated light curve, then updating the sim- ulated light curve
+                                                                        and optical properties need to be accurately deﬁned and
+until it matches the brightness of the observed light curve.
+                                                                        modeled. As mentioned above for RSO orbit determina-
+Where the observed light curve represents the light curve
+                                                                        tion or detection algorithms, it is often modeled as a per-
+extracted from real images of the object. The simulated
+                                                                        fectly spherical reﬂecting object with a known radius. For
+light curve represents the light curve of the RSO generated
+                                                                        light curve representation, more complex models of RSO’s
+in a simulated environment from estimated parameters. To
+                                                                        are required, where the 3D shape is modeled as a series of
+generate the simulated light curves SBOIS was used.
+                                                                        facets or 2D surfaces. Facet models allow for the estima-
+SBOIS was tailored to generate thousands of images, or
+                                                                        tion of the light reﬂected oﬀ of complex shapes by approx-
+in this case light curves, in an eﬃcent manor which is then
+                                                                        imating the complex shape as many simpler surfaces with
+fed into an optimization algorithm for the state update.
+                                                                        well known Bidirectional Reﬂectance Distribution Func-
+SBOIS is a simulated optical environment, fully coded in
+                                                                        tions (BRDF) called facets. BRDFs calculate the amount
+MATLAB. SBOIS is used to generate the Earth, Moon,
+                                                                        of light that is reﬂected oﬀ of a facet in the direction of
+Sun, Star Field, Zodiac Background Light and RSOs for
+                                                                        the observer. BRDFs calculates this from the observer, tar-
+space based instruments. Diﬀerent types of environmental
+                                                                        get, light source geometry, which in the case of observing
+and instrument noise are included in the simulator in the
+                                                                        RSOs represents: host, RSO, Sun respectively. BRDF also
+form of shot noise, dark noise, Multi Pixel Radiation
+                                                                        depends on the optical parameters of the facet such as
+events, Point Spread Function and hot pixels.
+                                                                        reﬂectivity and diﬀuse vs specular reﬂection weighting.
+   The optical environment considers all light from RSO’s
+                                                                        The diﬀerent optical parameters that are used depend on
+to be attributed to reﬂected solar radiation, which is calcu-
+                                                                        the BRDF model that is used, with two examples of this
+lated with the relative brightness Equation (1) (McCue,
+                                                                        being the Standard model and Anisotropic Phong model
+et al., 1971).
+                                                                        explored in this paper. Diﬀerent BRDF models for the
+       148              qAF ðuÞ                                         facets are available with the ﬁrst facet models for satellites
+mv ¼       m0  2:5 log                                   ð1Þ
+       149               R151                                           being introduced in the early 19700 s (Krag, 1974), (Hejduk,
+                          2
+                                                                        2011). Table 1 illustrates the diﬀuse verses specular condi-
+   In equation (1); mv and mo refer to the visual magnitude             tions for reﬂection and the respective BRDF model for
+of the target and reference source, respectively. q represents          each facet. Three facets are used in this paper to represent
+the reﬂectivity of the object. A represents the eﬀective area           all 3D shapes; they represent the varying degrees of curva-
+of the target object. F (U) represents the phase function. R            ture across a facet (also outlined in Table 1.) Diﬀuse reﬂec-
+represents the distance between the observer and object.                tion refers to the reﬂection where the angle of incidence is
+   Normally, only spherical RSO models are considered;                  not the angle of reﬂection. Specular, or mirror like, reﬂec-
+therefore, only the phase angle is required. However, sim-              tion happens when the angle of incidence is equal to the
+ulating objects as perfectly spherical reﬂectors does not               angle of reﬂection. Generally, specular reﬂections are
+give the diﬀerent specular and diﬀuse reﬂections across                 orders of magnitude brighter than diﬀuse reﬂection. Both
+the many surfaces of an RSO. Spherically modeling RSO’s                 these reﬂections need to conserve the reﬂected radiation
+leads to the light curve being a smooth curve based on the              oﬀ of the surface; to represent this the Hejduk Weighting
+                                                                 3273
+R. Clark et al.                                                                                                       Advances in Space Research 70 (2022) 3271–3280
+
+Table 1
+Standard Facet Dependent Phase Functions (Linares, et al., 2014).
+Facet Type (Degrees of Curvature)       Sphere (2)                              Flat Surface (0)                                    Cylinder (1)
+Diﬀuse Phase Condition                  None                                    /obs and /sun are the same sign                     None
+                                                                                                                                    cos ð/obs Þcosðwsun Þ
+Diﬀuse Phase Equation F diff             2
+                                        3p2
+                                            ½ðp  UÞ cos ðUÞ þ sin ðUÞ         p sin ð/obs Þsinð/sun Þ
+                                                                                1
+                                                                                                                                             4p           ½ðp  hÞ cos ðhÞ þ sin ðhÞ
+Specular Phase Condition                None                                    j/obs  /sun j  D2 &jhsun  hobs j ¼ p             j/obs  /sun j  D2
+                                         1                                      4cosðU=2Þ                                           cosðU=2ÞaðtÞ
+Specular Phase Equation F spec          4p2                                        pD2                                                   4D
+
+
+
+                                                                                                pﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃﬃ
+Coeﬃcients, Bspec and Bdiﬀ, are used. These coeﬃcients                                           ðnu þ 1Þðnv þ 1Þ
+deﬁne the ratio of reﬂected light from specular and diﬀuse                             F spec ¼
+                                                                                                            8p
+reﬂections, illustrated in equations (2) to (3) (Linares, et al.,                                                                       2            2
+                                                                                                             ðun  uh Þnu ðuh uu Þ þnv ðuh uv Þ
+2014). The viewing geometry for Table 1 is shown in Fig. 2.                                                                                         F ref                      ð4Þ
+   In Table 1, D represents the reﬂected fan of light set to                                       un  usun þ un  uobs  ðun  usun Þðun  uobs Þ
+be the diameter of the sun 0.0093 rad at Earth’s distance.                                                                                 5
+                                                                                       F ref ¼ Bspec þ 1  Bspec ð1  usun  uh Þ                                               ð5Þ
+a(t) is a time dependent function that calculates the inte-
+                                                                                                                           
+                                                                                                                        u  u 5     u  u 5 
+grated light across a chord of the sun’s disk.                                                  28Bdiff                 n   sun         n   obs
+                                                                                       F diff ¼           1  Bspec 1               1
+                                                                                                 23p                        2               2
+1 ¼ BSpec þ BDiff þ Babs                                                  ð2Þ
+                                                                                                                                                                                ð6Þ
+F ¼ FdiffBdiff þ FSpecBSpec                                               ð3Þ
+                                                                                       F ¼ F spec þ F diff                                                                      ð7Þ
+   Since the initial facet model for satellites were ﬁrst devel-
+oped in the 700 s, diﬀerent BRDF models have been exam-                                   In equations (4) to (6): Fspec represents the specular
+ined and implemented to represent the satellites in orbit.                             reﬂection; Fdiﬀ is the diﬀuse reﬂection; Freﬂect is the Fresnel
+An exam- ple that has been widely accepted in recent years                             reﬂectance; Bspec and Bdiﬀ represent the Hejduk Weighting
+is the Anisotropic Phong model (Linares, et al., 2014)                                 Coeﬃcients; nu and nv represent the directional distribution
+(Ashikhmin & Shirley, 2000). The Anisotropic Phong                                     of the specular reﬂection; un represents the facet normal
+model uses empirically found values, nu and nv, which                                  vector normalized, represented in Fig. 3 as n; uh represents
+accounts for the reﬂection across the diﬀerent axis of the                             the normalized half- vector between the light source and
+facet. The Anisotropic Phong model is proposed for RSO’s                               observer, represented in Fig. 3 as h; uu represents the local
+image simulation because it has the possibility of reducing                            horizontal normalized vector, represented in Fig. 3 as u; uv
+the possible state estimations due to the reducing ambigu-                             represent the local vertical normalized vector, represented
+ity in the facet orientation. The Phong model is a much                                in Fig. 3 as v; usun represent the normalized sun vector, rep-
+more complex example, with a simpliﬁcation for ﬂat facets                              resented in Fig. 3 as k1; and uobs represents the normalized
+shown in equations (4) through (7). Flat facets suﬃciently                             observer vector, represented in Fig. 3 as k 2.
+represent active satellites with large ﬂat surfaces, such as                              The comparison between Phong and Deﬁned BRDF
+solar panels and reﬂective antennas. For this current study,                           models for computational eﬃciency and accuracy of light
+we have applied ﬂat facet model to represent the RADAR-                                curve inversion is performed to determine the preferred
+SAT Constellation Mission (RCM) satellites. Fig. 3 shows                               BRDF model for accurate light curve inversion procedure.
+the observation geometry of the Phong model.
+                                                                                       2.3. Low-resolution RSO images
+
+                                                                                          The low-resolution images used in this paper are mod-
+                                                                                       eled after the Fast Auroral Imager (FAI), a camera module
+                                                                                       onboard the CASSIOPE satellite, NORAD ID 39265. Its
+                                                                                       purpose is to observe the auroral activities on Earth and
+                                                                                       has very similar properties compared to commercial-
+                                                                                       grade star trackers onboard typical LEO satellites. The
+                                                                                       camera has an imaging frequency of one image per second,
+                                                                                       during which it captures infrared lights within 630 mm to
+                                                                                       1100 mm wavelength range. Images generated are
+                                                                                       256  256 pixels in dimension and has a fundamental res-
+                                                                                       olution of 0.101 degree. For the purpose of light curve
+                                                                                       analysis, the reﬂections of RSOs appear as multiple lit-
+                                                                                       pixels and clearly observable, representative of typical
+                                                                                       low-resolution images from commercial-grade star-tracker
+                                                                                       in low-earth orbit. More information on the FAI sensors
+           Fig. 2. Illumination Geometry (Pesce, et al., 2019).                        as well as the available images can be also found at:
+                                                                                3274
+R. Clark et al.                                                                                   Advances in Space Research 70 (2022) 3271–3280
+
+
+
+
+                                           Fig. 3. Observation Geometry for Phong Facet Model.
+
+(University of Calgary, Department of Physics and Astron-
+omy, 2019).
+                                                                            Table 3
+    The speciﬁc sequences of images used for this paper                     Fast Auroral Imager Parameters.
+were taken between July 15th, 2019, to July 19th, 2019. 6
+                                                                            Fast Auroral Imager Parameters
+unique sequences were found in the seen from the FAI dur-
+                                                                            FOV                                                   26 degrees
+ing this time, the start point of the sequences and the dura-
+                                                                            Aperture Diameter                                     1.7 cm
+tion of each of the sequences is shown in Table 4. With the                 Focal Length                                          6.89 cm
+observations coming right after the launch all 3 RCM satel-                 Integration Time                                      0.1 s
+lites (NORAD IDs 44,322 – 44324) retain their distinctive                   Image Frequency                                       1 Hz
+formation and move across the sequence in tandem. The                       Spectral Band                                         650 – 1100 nm
+                                                                            Pixels                                                256  256
+latest RCM satellites (Fig. 4) were launched in June 2019,
+                                                                            Pixel Size                                            26 mm
+following the highly successful RADARSAT-1, launched                        Quantum Eﬃciency                                      0.66
+by NASA in 1995, and RADARSAT-2, in 2007.
+    RCM satellites have a unique geometry with a rectangu-
+lar prism bus, large solar panel, and large SAR panels. To
+generate an accurate 3D model of RCM only the largest                       Table 4
+facets were chosen to be modeled as shown in Fig. 5. The                    Sequence Star Time and Duration.
+smaller features, such as surface irregularities or patch                   Sequence Start Time and Duration
+antennas, are approximated by there eﬀect on the optical
+                                                                            2019–06–15 23:35:49                                      27 Seconds
+parameters of the larger facet. Simplifying the complex                     2019–06–16 01:14:33                                      40 Seconds
+3D shape into the largest facets simpliﬁes the problem                      2019–06–16 02:53:16                                      33 Seconds
+allowing the light curves to be easily generated with a facet               2019–06–17 12:37:11                                      37 Seconds
+model, with the draw back of possibly missing contribu-                     2019–06–17 14:16:03                                      34 Seconds
+tions from small components. In future work the genera-                     2019–06–17 15:54:44                                      42 Seconds
+tion of RSOs 3D models should look into the trade oﬀ
+between accuracy of the facet model and the smallest facet
+modeled. Note that the sequences that were chosen because
+their path is close to center of the ﬁeld of view (FOV) of
+FAI, compared to later sequences which captures oﬀ-
+centered paths, resulting in a shorter and comparatively
+
+
+Table 2
+Particle Swarm Optimization Parameters Particle Swarm Optimization
+Parameters.
+Total Iterations                                            100
+Number of Points                                            20,000
+Max Velocity Attitude                                       30
+Max Velocity Phong Parameters                               1000
+Max Velocity Standard Parameters                            0.5
+Current Velocity Weight                                     0.9
+Local Optimum Velocity Weight                               1.2
+Global Optimum Velocity Weight                              1.2
+Beta                                                        0.99
+                                                                            Fig. 4. The RCM, (RADARSAT Constellation Mission) Image Credit:
+Cooling Factor                                              5
+                                                                            MacDonald, Dettwiler and Associates ltd.(MDA).
+                                                                     3275
+R. Clark et al.                                                                               Advances in Space Research 70 (2022) 3271–3280
+
+
+
+
+Fig. 5. The RCM, (RADARSAT Constellation Mission) Facet Model.
+
+less ideal sequence due to there being less data points. Sam-
+ple images of RCM constellation seen from FAI and equiv-
+alent simulated images are illustrated in Fig. 1.
+
+2.4. Simulation parameters
+
+   Due to the lack of access to real world data for RCM’s
+attitude information the tests performed in the paper were
+all done in the simulated environment SBOIS outlined in
+(Clark, et al., 2020), (Clark, et al., 2021), (Clemens, 2019)
+with a ﬂowchart of optimization method shown in Fig. 6.
+The optimization algorithm, the same implementation of
+particle swarm optimization was used as in (Clark, et al.,                     Fig. 6. The ﬂow of the Light Curve Inversion Algorithm.
+2020), with the number of iterations and parameters in
+Table 2. There are three unique tests being performed on
+the simulated data a) Attitude only, b) Optical Property                Table 5
+only, c) Attitude and optical property estimates. In each               Simulated Attitude Estimation.
+unique test all the other information is known with only                Parameter                                     Phong        Standard
+the parameter being analyzed being unknown. Each of                                                                   Model        Model
+the test will run a sequence 10 times in a simulated environ-           Average Best Brightness RMSE (Relative        3.6  10-7   2.2  10-6
+ment with diﬀerent observed attitude and optical properties                Magnitude)
+with the results being averaged to get the results for each             Average Best Attitude RMSE (Degrees)          1.6          1.2
+test. The simulated optical properties are randomly gener-              Average Computation Time (Seconds per         11           8.2
+                                                                           Iteration)
+ated and constrained from physical limitations. One exam-
+                                                                        Iteration Convergence Rate (#Iterations per   10           10
+ple of this is the generated reﬂectivity number needs to be                Half Life)
+between 0 and 1 as it is impossible to have a reﬂectivity less          Convergence Rate (Seconds per Half Life)      108          81
+than zero or greater than one. The simulated attitude
+sequences are generated from a cubic function with a ran-
+dom constrained coeﬃcients. The constraints limit the                   Table 6, and Table 7, respectively. Fig. 7 and Fig. 8 illus-
+angular speed to a maximum magnitude of 5 degrees per                   trate only the convergence rate for optical estimation. Each
+second and the maximum angular acceleration to 0.5                      of the ﬁgure of merits used in the comparison of the models
+degree per second. From the results of the three unique                 are also discussed below.
+tests, a comparison was performed on the convergence rate                  The ﬁrst ﬁgure of merit used in all three tests is the Aver-
+to an optimal brightness estimates as well as the accuracy              age Best Brightness RMSE (ABB RMSE), deﬁned as the
+of the optimal estimated parameters.(See Table 5)                       root mean squared error between the best estimated light
+                                                                        curve and the true light curve. ABB is then averaged across
+3. Results                                                              each of the true values and detections. Secondly, computa-
+                                                                        tion time is used as a second ﬁgure of merit, which includes
+  The results from the (a) Attitude, (b) Optical, and (c)               the average computation time, the iteration convergence
+Optical and Attitude estimate tests are shown in Table 5,               rate, and the convergence rate. The average computation
+                                                                 3276
+R. Clark et al.                                                                                     Advances in Space Research 70 (2022) 3271–3280
+
+Table 6                                                                        time is the average time taken to perform on iteration of
+Simulated Optical Parameters Estimation.                                       parameter estimation for the given model and test. The
+Parameter                                     Phong        Standard            iteration convergence rate refers to the number of itera-
+                                              Model        Model               tions it takes for the ABB RMSE to drop by one half-life
+Average Best Brightness RMSE (Relative        2.2  105   1.7  103          (drop by 50 %). The convergence Rate is deﬁned as the
+   Magnitude)                                                                  average time it takes to converge one half-life. The third
+Specular Weighting RMSE (Reﬂectivity)         7.1  103   9.6  103
+Diﬀuse Weighting RMSE (Reﬂectivity)           7.1  103   9.6  103
+                                                                               ﬁgure of merit, Average Best Attitude RMSE (ABA
+Reﬂectance RMSE (Reﬂectivity)                 N/A          5.4  103          RMSE), is used to compare the diﬀerent estimated atti-
+Nu RMSE                                       1.1  103    N/A                 tudes. ABA RMSE is the RMSE of the yaw, pitch, roll
+Nv RMSE                                       1.2  103    N/A                 residual which is then averaged across all true values and
+Optical RMSE (Percent)                        2.1          23                  detections. For the optical ﬁgure of merit, due to the diﬀer-
+Average Computation Time (Seconds per         3.7          6.7
+   Iteration)
+                                                                               ent scales and parameter used for Phong and Deﬁned
+Iteration Convergence Rate (#Iterations per   8.5          1.5                 model, a direct comparison is not possible. Instead, a mean
+   Half Life)                                                                  absolute percentage error (MAPE) is produced for each
+Convergence Rate (Seconds per Half Life)      32           10                  test to give a comparable ﬁgure of merit. MAPE is a stan-
+                                                                               dard technique in statistical analysis and regression models
+                                                                               (Guo, et al., 2019). This is calculated by taking the absolute
+                                                                               present error of the optical parameters then averaging it
+                                                                               across all true values and detections.
+Table 7                                                                           Attitude optimal estimates in both the attitude, as well
+Simulated RSO Parameter Estimation Test Results.                               as, attitude and optical properties tests are optimized for
+Parameter                                     Phong        Standard            each sequence independently. This is due to the assumption
+                                              Model        Model               that the attitude changes enough between sequences that
+Average Best Brightness RMSE                  0.51         0.27                the attitude from a previous sequence has little eﬀect on
+Average Best Attitude RMSE                    5.3          0.66                the attitude of the current sequence. In the current research
+Specular Weighting RMSE (Reﬂectivity)         8.8  104   5.0  103
+                                                                               study this assumption is applicable as this research focuses
+Diﬀuse Weighting RMSE (Reﬂectivity)           8.8  104   5.0  103
+Reﬂectance RMSE (Reﬂectivity)                 N/A          2.2  102          on the comparison of the two diﬀerent facet models. Opti-
+Nu RMSE                                       4.5  103    N/A                 cal properties optimal estimates in both the optimal prop-
+Nv RMSE                                       3.3  103    N/A                 erties, as well as, attitude and optical properties are
+Optical RMSE (Percent)                        0.9          8.5                 optimized for each satellite across all 6 sequences. This is
+Average Computation Time (Seconds per         34           27
+                                                                               possible as the optical properties of the target RSO
+   Iteration)
+Iteration Convergence Rate (#Iterations per   277          160                 (RCM 1, 2 and 3 in this case) are assumed to be constant
+   Half Life)                                                                  across the few days that the sequences were taken on.
+Convergence Rate (Minutes per Half Life)      159          73                     The results from the attitude only simulated test shows
+                                                                               that the Phong model outper- formed the Deﬁned model
+                                                                               in ABB RMSE, but not in ABA RMSE. These FOM indi-
+
+
+
+
+Fig. 7. Convergence Rate of Optical Parameters for the Phong Model.            Fig. 8. Convergence Rate of Optical Parameters for the Deﬁned Model.
+
+
+
+                                                                        3277
+R. Clark et al.                                                                            Advances in Space Research 70 (2022) 3271–3280
+
+cates that the Phong model’s complex design space leads to                 Both methods performed well in determining the optical
+the particle swarm optimization algorithm to converge bet-              properties and attitude; the Deﬁned model determining the
+ter on local optimum but not on the global optimum which                ABA with less than one degree RMSE across the full se-
+is represented by the true attitude. The Phong and Deﬁned               quence of images. The comparison of the optical parameter
+models have approximately the same iteration convergence                MAPE has 11 % accuracy for the Deﬁned model and 28 %
+rate the Phong model has a longer average computation                   for the Phong model. The Deﬁned model outperformed the
+time compared to the Deﬁned model. In summary, the                      Phong model, which matches the results from the optical
+Deﬁned model yields more accurate attitude estimates in                 property and attitude only test. The largest change in the
+less time; thus, it is a preferred modeling technique over              parameter test is observed when looking at the convergence
+the Phong model with particle swarm optimization. Just                  rate, which increased over an order of magnitude com-
+like the Deﬁned model, the Phong model performance                      pared to the attitude and optical parame- ters only tests.
+changes based on the optimization algorithm, indicating                 The increase in parameterization accounts for a majority
+that implementing other optimization algo- rithms may                   of the increased iteration convergence rate, which is largely
+lead to improved performance both in accuracy and com-                  attributed to the local optimum distribution becoming
+putation speed.                                                         more complex with the more parameters. Another factor
+    The results from the optical parameter estimates show               in larger parameteriza- tion is that more information needs
+that the Phong model had better convergence in ABB                      to be calculated and updated each time, leading to (at best)
+magnitude, but not as good Optical MAPE as the deﬁned                   approximately 2 times increase in the computation time for
+model. This is similar to the attitude only tests, the results          both models. The Deﬁned model outperformed the Phong
+showed greater convergence to local minimum, but had                    model in both the convergence rate and computation time,
+problems converging to the global optimum. By compar-                   allowing it to converge around twice as fast as the Phong
+ing the optical parameter results, the same trend can be                model. With better accuracy and computation speed, the
+seen with the Deﬁned and Phong model. The MAPE                          Deﬁned model was found to perform better than the Phong
+for all optical parameters is 12 % for the Deﬁned model,                model for parameter estimation of RSO’s in the current
+compared to the Phong model, which has a 53 % MAPE.                     implementation for light curves from low resolution space
+The Phong model requiring 5 inputs versus the Deﬁned                    based imagers.
+models 4 leads to a larger response surface that will con-                 Comparing the proposed RSO attitude and optical
+tain more local optimum. The eﬀect of the large response                property estimation technique to other techniques the
+surface is not just reﬂected in the accuracy, but also in the           strengths of the currently implemented models and areas
+iteration convergence rate between the two models, with                 to further research can be seen. The (Guo, et al., 2019)
+the Deﬁned model converging about 5.5 times faster. It                  implementation of light curve inversion follows a similar
+is observed from the convergence rates (Fig. 7 and                      methodology, as well as the results (Wetterer & Jah,
+Fig. 8) that the Deﬁned model converges before 20 itera-                2009). In this publication, the attitude is determined from
+tions, whereas it takes more than 80 iterations for the                 the orthographic projection of the target with an iterative
+Phong model. The results from the attitude and optical                  attitude estimation. This algorithm was implemented in a
+parameter estimation test (Table 6) show that increased                 lab set up with a known target and a distinct and non-
+number of parameters greatly reduces the ABB RMSE                       homogeneous circular pattern; the results for single image
+convergence for both mod- els. The Deﬁned model per-                    attitude estimation shows that the attitude of the object
+formed better than the Phong model in ABA RMSE;                         can be found to within 1 degree. These results are similar
+however, the two methods have diﬀerent convergence                      to the ones found in the paper with two large diﬀerences
+rates compared to the attitude estimation test. The diﬀer-              between the methodologies. First, the iterative method is
+ence in convergence rates is attributed to the deﬁned                   used for singular images, not requiring image sequences.
+model converging quicker and having a slightly faster                   The driving factor behind the ability to only use one image
+computation time. Comparing the attitude to attitude                    for attitude estimation is the second major diﬀerence
+and op- tical parameter test shows that the Deﬁned model                between these two methodologies. The second diﬀerence
+had a decrease in ABA RMSE, while the Phong model                       is that the target object is a signiﬁcant portion of the
+had an increase of ABA RMSE. The increase in ABA                        FOV, unlike with low resolution RSO detections which
+RMSE was predictable in the Phong model as the                          are commonly subpixel or few pixel-sized objects. The
+response surface greatly increased in size. In comparison,              smaller size of RSO’s in low resolution space based images
+the ABA RMSE in the Deﬁned model decreased with the                     limits the applicability that this method has in this papers
+increase in response surface. It is theorized with the                  context. Having both a relatively high spatial resolution
+Deﬁned model converging quicker than the Phong model,                   and low spatial resolutions sensor for attitude determina-
+the increase in parameters allows for more sensitivity in               tion of RSO’s can lead to leveraging the strength of both
+the solution and a larger number of sub-optimal solutions               types of sensors in current SSA applications, leading to bet-
+being rejected in the optimization process. If the Phong                ter estimated attitude states.
+model was run through more iteration a similar trend                       Comparing more similar methodologies for light curve
+should emerge.                                                          inversion techniques we look at results such as presented
+                                                                 3278
+R. Clark et al.                                                                            Advances in Space Research 70 (2022) 3271–3280
+
+in (Wetterer & Jah, 2009) (Pesce, et al., 2019). A similar              4. Conclusion and future work
+methodology was followed to methodology presented in
+this paper, but with the implementation of an unscented                    We have compared the Deﬁned model with the Phong
+Kalman ﬁlter (UKF) as an optimization algorithm. In                     model of an RSO for three types of parameter estimation
+(Wetterer & Jah, 2009) a simpliﬁed Cook and Torrance                    using low-resolution images in a simulated environment.
+reﬂectance model is used in contrast with the Deﬁned                    The re- sults indicate that, with particle swarm optimiza-
+model used in this paper. The target objects were rocket                tion, the Deﬁned model outperforms the Phong model in
+bodies, which give easy shapes for simulated environment                almost all metrics; accuracy, computation time, and con-
+tests. The simulated environment tests give preliminary                 vergence rate. The Phong model was examined due to
+results that the UKF and light curve model was able to                  the directionality of incoming light eﬀecting the specular
+estimate both the attitude and optical properties within                and diﬀuse reﬂections oﬀ the facet, which is not consid-
+reasonable accuracy. When moving to real data, it was                   ered in the Deﬁned model. It was expected to increase
+found that the simpliﬁed reﬂection model would not be suf-              the accuracy of the estimated states due to the additional
+ﬁcient for the more complex RSO shapes. The Deﬁned                      parameters (nu, nv), reducing the number of geometries
+model implemented in this paper has shown the ability in                that provide the same brightness. Instead, the results indi-
+a simulated environment to overcome the higher ﬁdelity                  cate that the increase in number of parameters exponen-
+model requirements. The implementation of the UKF                       tially increased the size of the response surface, making
+shows impressive results with more complex methods, such                convergence to the local optimum require more iterations.
+as Multiplicative Extended Kalman Filter (MEKF) being                   Furthermore, the increase in response surface leads to
+implemented in (Pesce, et al., 2019) and (Ashikhmin &                   more local optima present when com- pared to the
+Shirley, 2000). The power of the UKF and other Kalman                   Deﬁned model. The increase in number of local optima
+ﬁltering methods, highlighted in (Wetterer & Jah, 2009)                 leads to the Phong model requiring more iterations and
+(Pesce, et al., 2019), should be compared to the currently              data points, making it signiﬁcantly more computation-
+implemented optimization algorithm (PSO) to see the accu-               ally intensive to achieve a similar accuracy. The imple-
+racy and computation speed diﬀerences between the two.                  mentation of diﬀerent, more intelligent optimization algo-
+   In a recent study performed by (Pesce, et al., 2019), a              rithms in the future could lead to an increase in
+comparison of diﬀerent ﬁlter techniques for state estima-               performance of the Phong model.
+tion of uncooperative objects was performed on MEKF                        In conclusion, the Deﬁned model form the foundation
+and diﬀerent minimum energy ﬁlter models. The results                   in characterization of unidentiﬁed RSO attitude and opti-
+showed similar performance on the estimation of targets                 cal properties. In the future this technology will lead to
+attitude from both MEKF and a second order minimum                      better remote sensing of RSO’s health and operation sta-
+energy ﬁlter. The MEKF was able to estimate attitude with               tus. Future work looks to take this method from being
+a transient error RMSE of 1.21 degrees and steady state                 performed in a simulated environment to using real data.
+error RMSE of 0.35 degrees, with a given priory and iner-               To perform a real world feasibility test the light curve
+tial matrix of the target. With no priory estimate and iner-            analysis for attitude estimation and optical characteriza-
+tial matrix, it was mentioned that the second order                     tion will be performed using on-orbit images of opera-
+minimum energy ﬁlter does perform better, giving an error               tional spacecraft with known health status. Currently
+rate of less than one degree after convergence. Comparing               this is being performed on NEOSSAT images from their
+the results found from this paper shows that the method                 Early Orbit Phase (EOP) taken from a ground-based tele-
+for attitude estimation from light curve inversion and                  scope provided by DRDC Canada. While ideally the
+PSO give similar accuracy as other currently used tech-                 images would be from an space based sensor, due to the
+niques. From (Pesce, et al., 2019), it can also be seen that            lack of labeled space based images with auxiliary informa-
+the choice of state estimator greatly eﬀects the accuracy               tion ground based observations were chosen. By compar-
+of the attitude estimate depending on the scenario and                  ing the results from the proposed estimation technique to
+information available to the ﬁlter. The results of diﬀerent             on-orbit NEOSSAT data (truth data), we can validate the
+state estimators means that it is highly unlikely there will            accuracy of the proposed light curve inversion methodol-
+be one optimum RSO attitude estimation algorithm for                    ogy. The current methodology still has area of improve-
+all situations. Instead, it is much more probable that the              ment that will be further enhanced such as: including
+optimization algorithms will be chosen based on the spatial             intelligent optimization, improved BRDF modeling, and
+resolution, sensitivity, and temporal resolution available,             eﬃcient parameterization.
+much like with orbital propagators. Identifying which algo-
+rithms perform optimally in diﬀerent scenarios will allow               Declaration of Competing Interest
+for better attitude estimation and high-ﬁdelity attitude esti-
+mation. Some of those scenarios include terrestrial verses                The authors declare that they have no known competing
+space-based detections, low vs high spatial resolution cam-             ﬁnancial interests or personal relationships that could have
+eras, and tracking vs stare mode.                                       appeared to inﬂuence the work reported in this paper
+
+                                                                 3279
+R. Clark et al.                                                                                            Advances in Space Research 70 (2022) 3271–3280
+
+References                                                                          Guo, X., Tang, J., Li, J., Shen, C., Liu, J., 2019. Attitude measurement
+                                                                                       based on imaging ray tracking model and orthographic projection with
+Ashikhmin, M., Shirley, P., 2000. An anisotropic phong brdf model. J.                  iteration algorithm. ISA Trans. 95, 379–391.
+   Graph. Tools 5 (2), 25–32.                                                       Hejduk, M.D., 2011. Specular and diﬀuse components in spherical satellite
+Baur, W., Romberg, O., Carsten, W., Gerhard, D., 2014. Development of                  photometric modeling. Proceedings of the Advanced Maui Optical and
+   in-situ space debris detector. Advances in Space Research 54, 1858–                 Space Surveillance Technologies Conference.
+   1869.                                                                            Kaasalainen, M., Johanna, T., Karri, M., 2001. Optimization Methods for
+Bernander, K.B., 2014. A Method for Detecting Resident Space Objects                   Asteroid Lightcurve Inversion:II. The complete inverse problem.
+   and Orbit Determination Based on Star Trackers and Image                            Icarus 153, 37–51.
+   Analysis..                                                                       Krag, W.E., 1974. Visible magnitude of typical satellites in synchronous
+Clark, R., Dave, S., Wawrow, J., Lee, R., 2020. Performance of                         orbits. Massachusetts inst of tech lexington Lincoln Lab.
+   Parameterization Algorithms for Resident Space Object (RSO) Atti-                Lambour, R., Bergemann, R., Braun, C., Gaposchkin, E.M., 2000. Space-
+   tude Estimates, in: Advanced Maui Optical and Space Surveillance                    Based Visible Space Object Photometry: Initial Results. JOURNAL
+   Technologies.                                                                       OF GUIDANCE, CONTROL, AND DYNAMICS, p. 23.
+Clemens, Samuel, 2019. On-Orbit Resident Space Object (RSO) Detection               Linares, R., Jah, M.K., Crassidis, J.L., Nebelecky, C.K., 2014. Space
+   Using Commercial Grade Star Trackers. York University Thesis                        object shape characterization and tracking using light curve and angles
+   https://yorkspace.library.yorku.ca/xmlui/bitstream/handle/10315/                    data. J. Guid., Control Dyn.
+   36799/Clemens_Samuel_D_2019_MSc.pdf?sequence=2&isAllowed=                        Mccue, G.A., Williams, J.G., Morford, J.M., 1971. Optical characteristics
+   y.                                                                                  of artiﬁcial satellites. Planet Space Sci.
+Clemens, S., Lee, R., Harrison, P., Soh, W., 2019. Feasibility of Using             Payne, T., Chaudhary, A., Gregory, S., Brown, J., Nosek, M., 2009.
+   Commercial Star Trackers for On-Orbit Resident Space Object                         Signature intensity derivative and its application to resident space
+   Detection.                                                                          object typing. AIR FORCE RESEARCH LAB HANSCOM AFB
+Cowan, N.B., E, 2008. Inverting phase functions to map exoplanets. The                 MA SPACE VEHICLES DIRECTORATE.
+   astrophysical Journal Letters 678, 129–129.                                      Pesce, V., Haydar, M.F., Lavagna, M., Lovera, M., 2019. Comparison of
+Fulcoy, D.O., Kalamaroﬀ, K.I., Chen, F.K., 2012. Determining basic                     ﬁltering techniques for relative attitude estimation of uncooperative
+   satellite shape from photometric light curves. J. Spacecraft Rockets                space objects. Aerosp. Sci. Technol. 84, 318–328.
+   49.                                                                              Snell, J.R., 2010. Optimizing orbital debris monitoring with optical
+Gasdia, F., Barjatya, A., Bilardi, S., 2017. Multi-site simultaneous time-             telescopes. AIR FORCE SPACE INNOVATION AND DEVELOP-
+   resolved photometry with a low cost electro-optics system. Sensors.                 MENT CENTER SCHRIEVER AFB CO.
+Gasdia, F., 2016. Optical Tracking and Spectral Characterization of                 Wetterer, C.J., Jah, M., 2009. Attitude estimation form light curves. J.
+   Cubesats for Operational Missions.                                                  Guid., Control, Dyn. 32.
+
+
+
+
+                                                                             3280
+

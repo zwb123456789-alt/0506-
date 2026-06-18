@@ -1,0 +1,18 @@
+# Fdb version 4
+["xdvipdfmx"] 1781778541.17932 "codex_minimal.xdv" "codex_minimal.pdf" "codex_minimal" 1781778541.42897 0
+  "codex_minimal.xdv" 1781778540 716 2f2f21535a1f2dc1f83a5af698aa2f27 "xelatex"
+  (generated)
+  "codex_minimal.pdf"
+  (rewritten before read)
+["xelatex"] 1781778531.47611 "codex_minimal.tex" "codex_minimal.xdv" "codex_minimal" 1781778541.42778 0
+  "C:/Users/97466/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1781778540 27215818 29c9befb199841f17cfef3d373e8ceb1 ""
+  "C:/Users/97466/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1780057299 20144 e6010938fb17dfbae90a243ad7cf351d ""
+  "C:/Users/97466/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1780057299 8448 f7d8bfe7b7a3986fbf9022b21b7800cc ""
+  "C:/Users/97466/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-xetex.def" 1774811737 32929 8929da7784ca1ec53648274ffd1aaee1 ""
+  "codex_minimal.aux" 1781778540 32 3985256e7290058c681f74d7a3565a19 "xelatex"
+  "codex_minimal.tex" 1781777359 84 0491a9cc163ddb529031169c8a9ab453 ""
+  (generated)
+  "codex_minimal.aux"
+  "codex_minimal.log"
+  "codex_minimal.xdv"
+  (rewritten before read)

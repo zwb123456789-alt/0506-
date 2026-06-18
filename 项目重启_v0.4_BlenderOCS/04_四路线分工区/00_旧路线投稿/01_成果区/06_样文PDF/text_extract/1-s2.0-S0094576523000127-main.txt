@@ -1,0 +1,756 @@
+                                                                    Acta Astronautica 204 (2023) 358–369
+
+
+                                                                  Contents lists available at ScienceDirect
+
+
+                                                                       Acta Astronautica
+                                                      journal homepage: www.elsevier.com/locate/actaastro
+
+
+Research paper
+
+Dataset generation and validation for spacecraft pose estimation via
+monocular images processing
+Michele Bechini ∗, Michèle Lavagna, Paolo Lunghi
+Politecnico di Milano, Dept. of Aerospace Science & Technology, via La Masa 34, 20156 Milano, Italy
+
+
+
+ARTICLE               INFO                               ABSTRACT
+
+Keywords:                                                Recent studies demonstrate the possibility of navigating in proximity of uncooperative space resident objects
+Image generation                                         by using only monocular images. Despite the results achieved, the development and testing of new algorithms
+Synthetic image datasets                                 are strongly constrained by the availability of spaceborne image datasets. To overcome this, a new algorithm
+Relative pose
+                                                         embedded in a tool to generate synthetic high-fidelity spaceborne image datasets is presented here. The
+Vision-based navigation
+                                                         architecture developed can be tailored to a wide range of scenarios and it is based on an open-source
+                                                         ray-tracing software. All assumptions and simplifications adopted are discussed in detail for the different
+                                                         models considered, including a trade-off between accuracy and rendering time. The new method described
+                                                         is subsequently adapted to a baseline scenario where the optical properties of a reference spacecraft model are
+                                                         tuned. Both qualitative and quantitative validations are detailed and successfully carried out for the baseline
+                                                         case, demonstrating the high photo-realism achievable with the proposed method. As a consequence of this
+                                                         main outcome, the paper details the generation of labeled spaceborne image datasets publicly available and
+                                                         reports the analyses that confirm the high level of representativeness, making them suitable for training and
+                                                         testing image-based navigation algorithms. As another outcome, the most comprehensive multi-purpose labeled
+                                                         dataset of validated spaceborne synthetic images currently publicly available is presented.
+
+
+
+1. Introduction                                                                              are widely considered as one of the most attractive solutions to acquire
+                                                                                             measurements for the onboard GNC chain [2,3]. In fact, solutions that
+    New classes of missions that envision a prominent role for au-                           include cameras operating in the visible spectrum have been exten-
+tonomous close proximity operations, with a particular interest in                           sively studied [4] and applied in the context of both cooperative [5]
+cooperative and non-cooperative artificial objects, like formation flying                    and uncooperative [6] rendezvous.
+missions (FF) with fractionated scientific payloads, on-orbit servicing                          ‘‘Classical’’ solutions to deal with the pose estimation via monocular
+demonstrators (OOS), and active debris removal, gained increasing                            images of known uncooperative targets include the extraction of hand-
+attention in the last few years, aiming to perform regular in-orbit                          crafted features of the target (corner [7], edges [8], etc.) via dedicated
+services [1]. Significant technology development is still needed to make                     image processing algorithms [9]. The relative pose of the chaser camera
+these missions feasible. The proximity operations and maneuvering                            with respect to the target is hence retrieved by solving the Perspective-
+impose a high level of reactivity of the chaser, leading to the need for                     n-Points (PnP) problem between the 2D features extracted from the
+guidance, navigation, and control (GNC) chains solved autonomously
+                                                                                             image and the features of the 3D CAD model of the target available on-
+onboard to ensure timeliness, reactivity, effectiveness, and robustness
+                                                                                             board. Among the algorithms proposed, the Sharma–Ventura–D’Amico
+in both nominal and off-nominal operations. The first ring of that
+                                                                                             (SVD) [10] achieved state-of-the-art (SOTA) performance by exploiting
+chain is the autonomous relative navigation, hence the estimation of
+                                                                                             the edges of the target extracted via Hough Transform [11]. More
+the relative pose (position and attitude) of the chaser with respect to
+                                                                                             recently, Artificial Neural Networks (ANNs) revealed to be a valuable
+the target. Dealing with an uncooperative target represents the most
+                                                                                             tool to process acquired images in many different contexts [12,13].
+challenging scenario for the relative pose estimation task since no
+information is shared between the two spacecraft (except for the a                           Hence, the wide range of ‘‘modern’’ approaches for relative pose esti-
+priori knowledge of geometry in the case of a known target), reducing                        mation involving the usage of ANNs, mostly Deep Convolutional Neural
+the possibilities to only those that exploit only the capabilities of the                    Networks (CNNs), can be classified into two branches: direct CNN
+chaser. Among others, sensor suites that include monocular cameras                           regression [14,15], and PnP solvers aided by CNN [16,17]. The former
+
+
+  ∗ Corresponding author.
+     E-mail addresses: michele.bechini@polimi.it (M. Bechini), michelle.lavagna@polimi.it (M. Lavagna), paolo.lunghi@polimi.it (P. Lunghi).
+
+https://doi.org/10.1016/j.actaastro.2023.01.012
+Received 2 December 2022; Received in revised form 1 January 2023; Accepted 10 January 2023
+Available online 11 January 2023
+0094-5765/© 2023 The Authors.            Published by Elsevier Ltd on behalf of IAA. This is an open access article under the CC BY license
+(http://creativecommons.org/licenses/by/4.0/).
+M. Bechini et al.                                                                                                            Acta Astronautica 204 (2023) 358–369
+
+
+approach aims to recover the relative pose via directly convolving the             objects in the scene. Coupling this with the simulated light rays from
+input image with a CNN (usually split into two branches) that outputs              the light sources to the virtual object enables the evaluation of the
+the relative position and the relative quaternion. The latter approach             shadows and the calculation of the color intensity of the associated
+includes a first step in which the CNN takes the image as an input and             pixels. Physically based ray-tracers, which simulate the physics of the
+outputs the 2D features that subsequently are fed to the PnP solver.               light, allow the generation of synthetic images with a high degree
+    The results of the 2019 ESA’s Kelvins Pose Estimation Challenge                of accuracy [25], and also to fully control the scene to be rendered.
+[18] demonstrate that the most effective approach to deal with relative            Currently, there are several tools, mostly based on OpenGL, ray-tracing,
+pose estimation via monocular images is to use CNNs-aided PnP solvers.             or path-tracing, that offer the possibility to create 3D scenes to be
+The robustness and effectiveness of this approach rely on the parame-              rendered with various degrees of photo-realism. Among them, the
+ters learned by the CNN during the training phase hence, labeled image             available commercial solutions comprise PANGU (Planet and Asteroid
+datasets are needed to correctly train CNNs. Despite that, currently,              Natural Scene Generation Utility) [26], and Airbus SurRender [27].
+there is a lack of publicly available spaceborne image datasets, strongly          The former was developed to create synthetic planetary surface images,
+limiting the applicability of CNNs-aided PnP solvers to a small range of           then the possibility of generating also images of artificial objects was
+possible scenarios, acting also as a bottleneck for the development of             implemented in the software. The latter can handle various space
+new algorithms. A spaceborne image dataset generation tool is here                 objects such as planets, asteroids, satellites, and spacecraft by providing
+proposed to overcome this limitation. The method adopted allows                    both a fast real-time and a more accurate but slower rendering scheme.
+the generation of synthetic noiseless images that have been validated              Some well-known simulators widely adopted for video games and ani-
+successfully by taking the Spacecraft Pose Estimation Dataset (SPEED)              mations, like Blender [28] and Unreal Engine [29], have been used to
+Dataset [19] as reference. The tool developed has been used to generate            render space-related scenes but, despite the visually impressive images
+fully-synthetic spaceborne noiseless image datasets using a simplified             generated, these simulators lack the realism needed, being devoted to
+3D CAD model of Tango from PRISMA mission [20] reconstructed                       cope with human vision [27]. Among the open-source software, POV-
+from a previous work [10], since the official 3D CAD model is not                  Ray (Persistence of Vision Raytracer) [30] and PBRT (Physically Based
+publicly available. The datasets generated are made publicly available             Ray-Tracing) [31] are the most promising, offering the possibility of
+and comprise a Pose Estimation Dataset [21], a dataset tailored to                 directly accessing the code and eventually patching it to tailor the
+bounding box extraction and semantic segmentation [22], and a dataset              software to the user’s needs.
+labeled with Tango edges in view at the current relative pose [23].                    Concerning the spaceborne synthetic image datasets, the only ones
+    The main contributions of the proposed work are threefold. First, a            publicly available are URSO (Unreal Rendered Spacecraft On-Orbit)
+pipeline to generate spaceborne synthetic noiseless image datasets via             [14], SPEED (Spacecraft Pose Estimation Dataset) [19], and SPEED+
+physically-based ray tracing is defined. It can be applied to a wide range         [32] (improved version of SPEED). URSO is a synthetic dataset of
+of scenarios including different spacecraft models, space resident ob-             5000 RGB images of both Soyuz and Dragon spacecraft models with
+jects as background (airless or with an atmosphere layer), and multiple            Earth as background, rendered with a simulator based on Unreal En-
+camera models. Then, a qualitative and quantitative validation scheme              gine 4 with a resolution of 1080 × 960 pixels. Game engines have
+is defined and applied successfully to the images generated by the                 been criticized for the lack of photometric accuracy of the camera
+proposed tool using Tango as spacecraft and the SPEED dataset as refer-            sensors [27], but the author of URSO claims that efforts have been
+ence. Lastly, spaceborne synthetic image datasets have been generated              put to implement physically-based shading models and cameras in such
+and made publicly available. Note that the datasets generated can be               engines (e.g. by using path-tracing) and that the custom simulator
+combined among them (through the different labels associated with the              used to synthesize URSO obtains photorealistic images. Despite that, no
+same images common to all the datasets) to constitute a multi-purpose              validation of the images in URSO is provided. The SPEED dataset and
+dataset that can be applied to a wide range of tasks exploitable via               its improved version, the SPEED+, are used for the ESA’s Kelvins Pose
+training of CNNs. Notice that the image noise level can be dependent               Estimation Challenges, with SPEED being the first publicly available
+on the application scenario (e.g. for spacecraft orbiting airless bodies,          dataset of spaceborne labeled images ever released. SPEED comprises
+the electric field generated by the interaction between the plasma and             15,000 synthetic grayscale images of Tango obtained using the Optical
+the body can be not negligible [24] and this can increase the electronic           Simulator [33], based on an OpenGL rendering pipeline, and 300
+noise in the images). Thus, to increase the flexibility of the tool, the           grayscale images obtained using a mock-up. The SPEED+ contains
+images generated by the tool are noiseless. Notice that the noises that            60,000 synthetic grayscale images of Tango generated like in SPEED,
+usually affect images can be easily added to the synthetic images in               6740 grayscale mock-up images obtained by introducing hardware-in-
+post-processing.                                                                   the-loop to simulate the Earth albedo, and 2791 grayscale mock-up
+    The remainder of the paper is organized as follows: Section 2 reports          images with sun-lamps used to simulate effects like flares and satura-
+an overview of the available software solutions for image generation               tion [34]. All the images have a resolution of 1920 × 1200 pixels and
+via ray-tracing and the already publicly available datasets. The tool              are validated against real images of Tango from the PRISMA mission
+proposed is then described in detail in Section 3, while the validation            by employing histogram comparison [18]. Further details regarding
+of the images generated is discussed in Section 4. The analysis of the             SPEED and SPEED+ are available in the related articles [18,34] for the
+datasets generated and an overview of their labels are provided in                 interested reader.
+Section 5. Conclusions resuming the main outcomes of this work and
+hints for possible future developments are finally reported in Section 6.          3. Image dataset generation via ray-tracing
+
+2. Available rendering software and image datasets                                     The possibility of using PBRT as a ray-tracer, the core of the im-
+                                                                                   age generation algorithm implemented, has been evaluated. The main
+    Although of a strong interest in spaceborne images for training and            advantage offered by PBRT is the possibility of directly simulating the
+testing algorithms for relative GNC, the availability of real spacecraft           entire lens set of real cameras [31] in a physically-based way, making
+images captured during space missions and properly labeled is lim-                 it possible to model more realistically the image acquisition device and
+ited. Hence, the need to generate realistic images synthetically arises.           the sensor characteristics. Despite that, the main issue identified in
+Generating realistic synthetic images is a well-studied task that usually          PBRT is the simulation of the Earth’s atmosphere and the scattering
+is achieved via ray-tracing. Ray-tracing is a rendering technique that             properties. The density of the atmosphere layer can be defined in
+relies on the evaluation and simulation of the paths of view lines                 PBRT only on a regular grid that is then interpolated to retrieve the
+that start from the observer camera and interact with generic virtual              scattering effects on the light rays. This leads to artifacts in the image,
+
+                                                                             359
+M. Bechini et al.                                                                                                               Acta Astronautica 204 (2023) 358–369
+
+
+                                                                                     by modeling it as a sphere and then applying a scale factor, to improve
+                                                                                     the realism of the images. The scale factor used to simulate the Earth’s
+                                                                                     oblateness is equal to 0.9967 applied along the 𝑧-axis of the Earth-
+                                                                                     centered inertial (ECI) reference frame. For more complex bodies such
+                                                                                     as asteroids, the ellipsoidal approximations could be excessively rough
+                                                                                     hence, to properly handle the complex geometries, it is here preferred
+                                                                                     to import into the scene a dedicated external file, named ‘‘include file’’,
+                                                                                     that contains the refined mesh of the object. Please refer to Section 3.2
+                                                                                     for a step-by-step discussion on the generation of mesh files compatible
+                                                                                     with POV-Ray. The next step toward photo-realistic synthetic images is
+                                                                                     the definition of textures. For airless bodies with regular shape, like
+                                                                                     the Moon, the only step needed is to apply a realistic surface texture
+                                                                                     by using in POV-Ray the option ‘‘map_type 1’’ that directly attaches
+                                                                                     the 2D texture over a 3D sphere, with the relative latitude-dependent
+                                                                                     shrinking. This process could apply even to the more complex case of
+                                                                                     celestial bodies with atmosphere and clouds since texture maps that
+                                                                                     include both the surface and the clouds map in a single image are
+                                                                                     available such as for the Earth case. This approach leads to good-
+                                                                                     quality images, but this approach is still not well suited to build datasets
+                                                                                     for CNN training. The following main issues have been observed: the
+                                                                                     clouds are stuck over the same regions of the Earth for all images, the
+                                                                                     optical properties of clouds, seas, and terrains are all the same, and the
+                                                                                     diffusion of sunlight through the atmosphere is not considered.
+                                                                                         In the image generation pipeline adopted here, a clouds-only texture
+                                                                                     is used here and applied over a shell defined to have a random thickness
+                                                                                     between 625 m and 1250 m and an altitude from 650 m to 3150 m at
+        Fig. 1. Example of artifacts in atmosphere layer rendered with PBRT.         most. Since the cloud map is a grayscale image, with black associated
+                                                                                     with regions where there are no clouds and white where there are
+                                                                                     thick and dense clouds, it is possible to tune the channel related to
+as shown in Fig. 1 (notice the brighter regular dots, more evident                   the transparency of the texture in POV-Ray such that it is mapped
+over the seas), also for a highly refined mesh with a grid resolution of             following the density of the cloud layer. This makes it possible to have
+1 km. It is acknowledged that this issue could be overcome by patching               the Earth’s surface still visible under low-density clouds (see Fig. 2
+the source code, but here it has been preferred to use a ray-tracing                 where the semi-transparent clouds are evident). Notice that the cloud
+software that more easily handles the atmosphere scattering evaluation,              texture is detached and independent from the Earth, allowing the user
+due to its crucial role in achieving realistic and representative images.            to independently tune their optical properties and orientation in the
+Due to this issue, and although PBRT offers in its latest release the                scene, overcoming the issue related to the fixed clouds and common
+possibility of performing ray-tracing via GPU acceleration, here it has              optical properties. A random rotation angle with respect to the 𝑧-axis
+been decided to adopt POV-Ray as ray-tracer, despite a few well-known                of the ECI frame is defined at each image generation step and applied
+limitations [35] (no GPU acceleration, long parsing time, etc.). POV-                to the cloud texture to make the clouds rotate with respect to the
+Ray has been already successfully employed to render via ray-tracing                 ground. Concerning the Earth’s surface, a differentiation of the optical
+both spaceborne natural landscapes, like the Moon’s craters [35,36],                 parameters of the lands with respect to the seas has been included in
+and spacecraft [37,38]. The POV-Ray release used for this tool is a                  the Earth’s model, similarly to [35,38]. A binary map of the Earth is
+patched version of POV-Ray 3.7 made available in [38] that restores                  adopted to split the waters from the lands. The splitting allows the
+the possibility to exclude the computation of the bounding box around                definition of different optical properties (especially for the reflection
+each object, avoiding errors in the rendering of scenes with space-scale             of light over the seas) making the images more photorealistic.
+distances (notice that the unit of measure used here is the km).                         The possibility of including the simulation of the topography of
+    The remainder of this section is devoted to the modeling assump-                 the terrain has been evaluated to further improve the accuracy of the
+tions used to render spaceborne synthetic images, with a particular                  images. There are two options available to deal with topography in
+focus on Earth modeling, including the atmosphere simulation, in                     POV-Ray:
+Section 3.1, and on the spacecraft model adopted and the pipeline                        • Bump-map approximation: the irregularities of the surface are
+to feed the mesh to POV-Ray in Section 3.2. It is worth pointing                           emulated by modifying the normal vector of each surface, hence
+out that the assumptions introduced in the following sections can be                       by altering the light reflection. Notice that this approach gener-
+easily generalized to several celestial bodies and target spacecraft by                    ates irregularities (i.e. bumps) by modifying only the reflection of
+simply changing a few hyperparameters or the ‘‘include file’’ for the                      the light, while the geometry is not affected. Hence, the original
+3D model of the target spacecraft but keeping the core of the tool                         shape is preserved.
+unchanged. Hence, the image generation pipeline is well suited to                        • Isosurface function: the isosurface object mathematically
+simulate several scenarios of interest as Mars and its atmosphere as                       describes the topography of the terrain in POV-Ray. In this case,
+background, airless celestial bodies, and multiple target spacecraft with                  the geometry of the object is modified according to a model
+different geometries.
+                                                                                           defined by the user. Hence, the accuracy is high also in terms
+                                                                                           of shadows in the image.
+3.1. Earth and atmosphere modeling
+                                                                                     Both the bump-map approximation and the isosurface can be defined
+   The first step in modeling a celestial body is to retrieve its shape.             starting from a grayscale texture. The texture has the altitude mapped
+Concerning objects like the planets of the Solar System and most                     into the intensity of each pixel. The output map is here scaled to have
+of their moons, they could be represented in first approximation as                  a maximum altitude of about 9 km over the sea level, corresponding to
+spheres. It is possible to recover the correct ellipsoidal shape of a planet         the altitude of Mount Everest. A comparison between the same scene
+
+                                                                               360
+M. Bechini et al.                                                                                                             Acta Astronautica 204 (2023) 358–369
+
+
+
+
+                                         Fig. 2. Comparison of images rendered with and without topography information.
+
+
+rendered without topography (Fig. 2(a)), with bumpmap approxima-                    Instead, by using the isosurface, the rendering time is highly increased.
+tion (Fig. 2(b)), and with isosurface function (Fig. 2(c)) is reported              Hence, due to the reduced computational time and the high quality of
+in Fig. 2. All images in Fig. 2 are overexposed and rendered without                the output images, the bumpmap approximation is clearly selected as
+considering the atmosphere to make more evident the differences in the              the default method in the image generation pipeline.
+topography. The reported images show that excluding the topography                      The last part considered in the background modeling is the at-
+leads to unrealistic images and poor quality. The image obtained using              mosphere. The colors assumed by the atmosphere (from dark blue to
+the bumpmap approximation has a higher quality than the ‘‘flat’’ image,             red close to the terminator) are due to light scattering. The scattering
+with mountains visible (due to the correct shadowing). The image                    depends on the spectrum of the light emitted by the Sun (here modeled
+achieved using the isosurface is almost identical to the one rendered               as a white light), the density of the particles in the atmosphere, their
+by including the bumpmap approximation. The only exception is the                   kind, and on the length of the light path through the atmosphere.
+region close to the terminator, where the shadows are better evaluated              Concerning the interaction between the particles and the light, it is well
+and defined in the case of the isosurface option.                                   known that the incident light over particles scatters in all directions
+    From this, it is clear that it is mandatory to include topography               by following given laws. The Rayleigh scattering well approximates
+information in the image generation pipeline to achieve highly pho-                 the interaction between the sunlight and the atmospheric particles.
+torealistic images. This result holds for any celestial body used as                Following this model, the quantity of scattered light depends on the
+background for spaceborne images. Moreover, the improvement in                      angle of the incident light. The scattering is higher when the incident
+photorealism is as high as the relative distance between the camera and             light is parallel or antiparallel to the direction of observation and
+the celestial body is reduced (e.g. for Low Earth Orbit missions). Despite          smaller when the incident light is perpendicular to the direction of
+the comparable results in terms of quality of the images rendered with              observation. To implement a high-fidelity model, it must be included
+topography taken into account during the rendering process, it should               that the Rayleigh scattering in the atmosphere is also proportional to
+be noticed that using the bumpmap approximation gives a computa-                    1∕𝜆4 , where 𝜆 is the light wavelength. Hence, the scattering is higher for
+tional burden almost null compared to the case without topography.                  short wavelengths (blue color) than for long wavelengths (red color).
+
+                                                                              361
+M. Bechini et al.                                                                                                                       Acta Astronautica 204 (2023) 358–369
+
+
+
+
+                                Fig. 3. Comparison of images rendered with different atmospheric models against a true Earth picture.
+
+
+The Rayleigh scattering model already available in POV-Ray includes                   transition region between the atmosphere and deep space. As a conse-
+the dependency from the direction of the incoming light, while it does                quence, here it is applied the accurate model only for camera altitudes
+not consider the wavelengths. As a consequence, two different models                  below 1000 km, while the simplified model is the default choice. It is
+are considered here: the first is a simple but computationally efficient              worth remarking that the models discussed above are all included in
+model based on the simplified Rayleigh scattering available in POV-                   the image generation algorithm, and they can be selected and combined
+Ray with scattering color hand-tuned to achieve photorealistic results,               by the user. By changing a few parameters in the atmospheric model
+while the second is a high-fidelity model that uses a custom function                 (i.e. the density model and the wavelength dependency), it is possible
+to restore the dependency also from the wavelength. The high-fidelity                 to simulate different atmospheres from different celestial bodies. The
+model uses the exponential law for the variation of the atmospheric                   same holds for the texture and the topography map applied to more
+density of the atmosphere with the height: 𝜌 = 𝜌0 exp (−ℎ∕𝐻), where                   complex bodies such as asteroids. Therefore, the tool can generate
+𝜌0 = 1.225 kg/m3 is the density at sea level for the International                    images for a wide range of natural space resident objects ranging from
+Standard Atmosphere (ISA) [39], ℎ is the altitude above sea level of                  regularly shaped objects with an atmosphere layer (e.g. the Earth) to
+the point considered, and 𝐻 is the scale height. The scale height is                  highly irregularly shaped airless bodies, such as asteroids. Fig. 4 reports
+the height at which the density falls to a value of 1/e of the surface                an example of 162173 Ryugu rendered in POV-Ray with the proposed
+density [40]. The scale height can be defined as 𝐻 = 𝑘𝑇 ∕𝑚𝑔, where 𝑘                  pipeline. Notice that, in contrast to the SPEED and SPEED+ datasets,
+is the Boltzmann’s constant, 𝑇 is the atmospheric temperature, 𝑚 is the               where the background is not rendered with the spacecraft in the same
+mean molecular mass, and 𝑔 is the gravitational acceleration [40,41].                 scene but is added in post-processing, here the background is included
+The average composition of the atmosphere can be assumed to be                        in the scene and rendered together with the spacecraft, making it
+almost constant up to about 90 km [39]. Thus, the scale height is                     possible to directly evaluate in the images the effect of the albedo on
+affected only by the temperature as a function of the altitude above sea              the spacecraft itself, without using other light sources to simulate it.
+level. Therefore, by using the given equation for the computation of the
+scale height, it is possible to compute 𝐻 at sea level for ISA (𝑇 = 288 K),
+resulting in 𝐻 = 8.4 km. In the same way, the temperature at h = 90 km
+above sea level is about 190 K [40,41] hence, it is possible to get 𝐻 =
+5.5 km at h = 90 km. The scale height value adopted in the high-fidelity
+model is the mean value between 5.5 km and 8.4 km. We acknowledge
+that more complex models for the variations of the scale height and
+the atmospheric density as a function of the altitude above sea level
+could be adopted, but the improvements in the quality of the rendered
+images will be small despite the computational overhead introduced.
+A comparison of images rendered with the Earth fully in view, with a
+simplified and accurate atmosphere model respectively against a true
+picture of the Earth from the Apollo 17 mission [42], is provided in
+Fig. 3. Notice that, although both the synthetic images in Figs 3(b)–
+3(c) cannot perfectly replicate the ground truth image in Fig. 3(a) due
+to a difference in image resolution, optical parameters of the actual
+camera not modeled, and different exposure or light conditions, the
+synthetic images have both a high degree of similarity with the real
+one. It should be also taken into account that the iconic real image
+used in Fig. 3 just for comparison was extensively post-processed on                                     Fig. 4. 162173 Ryugu rendered in POV-Ray.
+
+ground to optimize the color and contrast. As for the case of topography
+mapping, also for the atmosphere, the high-fidelity method has an                     3.2. Spacecraft modeling
+extremely high computational burden compared to the simpler model.
+Despite that, the results are comparable, as it can be noticed from                       The spacecraft (or any other object) can be included in the ren-
+Fig. 3, for altitudes above 1000 km. This outcome also confirms that                  dered scene by modeling it directly in POV-Ray with primitive shapes.
+the simple exponential model adopted here for the atmosphere density                  This method is simple but not efficient, especially for spacecraft with
+is well suited, confirming that more complex atmospheric models are                   complex geometries. The pipeline adopted here uses input files named
+not needed for the range of scenarios considered. For lower altitudes,                ‘‘include files’’ compatible with POV-Ray that already contain all the in-
+the results achieved by the low-fidelity model are poor, mainly in the                formation about the target, from its geometry to all the needed textures.
+
+                                                                                362
+M. Bechini et al.                                                                                                                  Acta Astronautica 204 (2023) 358–369
+
+
+The input files can be exported in a POV-Ray compatible format directly                         Table 1
+from Blender, as already used in [38]. The input to the entire pipeline                         Parameters of the camera used for the SPEED dataset.
+
+is a 3D CAD model representative of the target spacecraft. The 3D CAD                            Parameter                                Value
+
+model is exported in Standard Triangle Language (STL) and directly                               Number of horizontal pixels              1920 px
+imported into Blender, where the optical properties and the textures                             Number of vertical pixels                1200 px
+                                                                                                 Focal length                             17.6 mm
+can be easily defined and applied. Notice that, to assign to each surface                        Pixel length                             5.86 × 10−3 mm
+different optical properties or textures, it is needed to import the STL
+generated by a 3D CAD assembly, hence composed of parts bonded in
+a final assembly, that are interpreted in Blender as children objects. An
+equivalent but more time-consuming process consists in splitting the                  pixel intensity histograms of synthetic images with respect to the real
+parent object into children objects in Blender (by selecting the faces of             ones [18]. The validation of the synthetic rendered scenes is carried out
+the mesh belonging to each child) and then defining for each child the                here by considering only the case without background. This constraint
+optical properties. After that, by using the POV-Ray add-on available                 for the validation is set because the information about the rotation of
+for Blender, it is possible to both add custom code to assign textures and            the Earth with respect to the 𝑧-axis of the ECI frame and the position of
+optical properties to the objects and to render the scene in Blender with             the light source is missing for the SPEED images annotations. Moreover,
+POV-Ray as the rendering engine. Optionally, it is possible to export                 the clouds in the SPEED images are not reproduced by textures since
+also the file used to render the scene in Scene Descriptor Language                   they are taken from actual pictures of the Earth [18], making the exact
+(SDL). The SDL exported contains indeed all the information about the                 reproduction of the SPEED images with background not possible, jeop-
+textures and the custom code previously added, together with all the                  ardizing the validation procedure. Concerning the spacecraft model,
+children objects, but treated as split entities. To ease working with the             the official CAD used for the SPEED dataset is not publicly available,
+exported spacecraft model, the SDL file is hand-modified by merging                   hence a simplified 3D CAD model has been reconstructed from the
+all children objects in a single general parent object representative of              dimensions of the main components available in [10]: the single body-
+the entire spacecraft, which is then converted into a POV-Ray include                 mounted solar panel is a polygon of 560 × 750 mm, the main body
+file. Note that all children’s optical properties are preserved also once             is a polyhedron of 560 × 550 × 300 mm, and all appendages have
+they are merged into a single parent object. The ‘‘include file’’ is then             a length of 204 mm. Concerning the camera parameters used for the
+used as an external object to be added to the scene description file when             SPEED dataset [18], they are reported in Table 1. These parameters are
+needed at the desired location and attitude with respect to the POV-Ray               defined to tailor the perspective pinhole camera model used in POV-Ray
+reference frame. It is important to point out that the process previously             to generate the images for validation. Notice that in POV-Ray, it is also
+detailed must be accomplished only once per spacecraft model when                     needed to specify the aspect ratio, equal to 𝐴𝑅 = 1920∕1200 = 1.6 for
+the target object is modeled for the first time. Once the ‘‘include file’’ is         the SPEED images, and the angular field of view of the camera that is
+defined, it can be called and added to each scene in POV-Ray without                  computed for a pinhole camera with squared pixels as:
+any modification needed, for all positions and attitudes wanted. This                              (          )
+                                                                                                     𝐶𝐶𝐷𝑠𝑖𝑧𝑒
+procedure will be tailored to a simplified model of the Tango spacecraft              𝛼 = 2 arctan                                                          (1)
+                                                                                                        2𝑓
+from the PRISMA mission in Section 4, to validate the tool, but it can
+be generalized to all spacecraft models available, as it can be noticed               where 𝐶𝐶𝐷𝑠𝑖𝑧𝑒 is the size of the sensor and 𝑓 is the focal length.
+from Fig. 5 where the tool has been successfully adopted to render an                 For the SPEED camera 𝛼 ≈ 35.45◦ . To properly recover the relative
+artificial space resident object. The optical properties of the surfaces of           pose associated with each image of the SPEED dataset, the left-handed
+the simplified Tango model are tuned during the validation phase.                     reference frame in POV-Ray is shifted to a right-handed reference frame
+                                                                                      by defining in the camera specifications a right vector (the vector
+                                                                                      used in POV-Ray to describe the direction to the right of the camera)
+                                                                                      equal to [−𝐴𝑅, 0, 0]𝑇 and the sky vector to [0, 0, 1]𝑇 . In doing so, the
+                                                                                      POV-Ray global reference frame coincides with the ECI frame [38].
+                                                                                      The last parameters to be specified to reproduce the images in the
+                                                                                      SPEED dataset are the location and pointing direction (boresight axis)
+                                                                                      for the camera, the position of the arealight used to approximate the
+                                                                                      Sun, and the location and attitude of the spacecraft. Having available
+                                                                                      only the relative position between the spacecraft and the camera per
+                                                                                      each SPEED image, the camera has been placed in the origin of the
+                                                                                      POV-Ray global reference frame, with pointing direction coincident
+                                                                                      with the 𝑧-axis in the ECI frame, the relative pose annotated has been
+                                                                                      then used to locate and rotate the Tango model properly in the scene.
+                                                                                      The position of the Sun has been hand-tuned to have shadows in the
+                                                                                      rendered image as close as possible to the SPEED image considered.
+                                                                                      Notice that to compare the SPEED images with those generated by
+                                                                                      the proposed tool, the noiseless images are processed to add the same
+                                                                                      noise level as the SPEED images before performing the validation. In
+                                                                                      agreement with [18], the images are blurred by applying a Gaussian
+            Fig. 5. Vega Secondary Payload Adapter rendered in POV-Ray.               blurring with 𝜎 = 1 and then an additive white Gaussian noise with
+                                                                                      variance 𝜎 2 = 0.0022 is added to the blurred grayscale image.
+4. Synthetic images validation                                                            Since the size of the spacecraft reported in [10] and used here for
+                                                                                      the simplified model is not perfectly the one of the Tango spacecraft
+   The SPEED dataset has been used as a reference to validate the                     (whose size is not publicly available, up to our knowledge) and since
+images generated with the method previously described. The optical                    the 3D model is a simplified version that lacks the details of the official
+properties of the spacecraft surfaces have been tuned during the vali-                mock-up used for the SPEED dataset, the images are firstly preliminarily
+dation phase. The validation of the SPEED dataset with respect to actual              validated by performing the histogram comparison as in [18] by using
+images from the PRISMA mission has been achieved by comparing the                     the SPEED images as ground truth. Then, to have quantitative indexes,
+
+                                                                                363
+M. Bechini et al.                                                                                                                            Acta Astronautica 204 (2023) 358–369
+
+
+the validation is carried out also by considering the shadow index and                             Table 3
+                                                                                                   𝐽𝑠 and 𝐹 𝑄𝐼 indexes evaluated for the tested images.
+the feature quality index [43]. The shadow index 𝐽𝑠 is computed as:
+                                                                                                    SPEED image number                𝐽𝑠 > 0.90                𝐹 𝑄𝐼 > 0.80
+            𝐷𝑠
+𝐽𝑠 = 1 −                                                                         (2)                img000012                         0.93                     0.83
+           𝑆𝑟𝑒𝑎𝑙                                                                                    img000043                         0.99                     0.83
+where 𝐷𝑠 is the sum of non-zero pixels in the disparity map and 𝑆𝑟𝑒𝑎𝑙 is                            img000059                         0.99                     0.85
+                                                                                                    img000114                         0.99                     0.81
+the number of pixels classified as ‘‘in shadow’’ in the reference SPEED
+                                                                                                    img000138                         0.99                     0.84
+image. The disparity map is defined by subtracting the binary images                                img000324                         0.97                     0.86
+obtained by applying the Otsu thresholding [44] to both the tested and                              img000388                         0.99                     0.84
+the reference image in all validation pairs. The threshold level auto-                              img000468                         0.96                     0.81
+                                                                                                    img000486                         0.97                     0.81
+matically identified to discriminate between shadowed and illuminated
+                                                                                                    img002122                         0.99                     0.81
+pixels in the SPEED image is used to define 𝑆𝑟𝑒𝑎𝑙 . Therefore, the index                            img002156                         0.99                     0.87
+𝐽𝑠 represents the number of pixels in shadow correctly reproduced in                                img002350                         0.99                     0.85
+the rendered image. The feature quality index 𝐹 𝑄𝐼 is computed as:                                  img003271                         0.99                     0.82
+                                                                                                    img003849                         0.99                     0.83
+               𝜇(𝐻𝑑 )                                                                               img004386                         0.99                     0.86
+𝐹 𝑄𝐼 = 1 −                                                                       (3)
+               𝐻𝑑,𝑚𝑎𝑥                                                                               img005964                         0.98                     0.81
+                                                                                                    img006967                         0.99                     0.82
+where 𝐻𝑑 is the Hamming distance between two corresponding feature                                  img007408                         0.99                     0.83
+descriptors extracted and matched in both images and 𝐻𝑑,𝑚𝑎𝑥 is the                                  img007461                         0.99                     0.83
+maximum possible Hamming distance. The mean value 𝜇(𝐻𝑑 ) is com-                                    img007485                         0.92                     0.84
+puted from 10 matched features extracted using ORB [7]. This index                                  Average value                     0.98                     0.83
+is adopted since several algorithms rely on feature extraction. Thus,
+comparing the features extracted in the reference image with those
+coming from the synthetic rendered image offers an evaluation of the
+                                                                                             hence, both the illumination and the material of the original image are
+similarity of the images at the features level. Both 𝐽𝑠 and 𝐹 𝑄𝐼 are
+                                                                                             reproduced correctly in the rendered image. From the results obtained,
+such that the closer to 1, the higher the similarities between images.
+                                                                                             since both indexes satisfy the requirements 𝐽𝑠 > 0.90 and 𝐹 𝑄𝐼 > 0.80
+In agreement with [43], the validation is successful if 𝐽𝑠 > 0.90 and
+                                                                                             for all random images taken into account, the validation campaign is
+𝐹 𝑄𝐼 > 0.80.
+                                                                                             considered concluded and performed successfully. The successful vali-
+    The validation is performed by replicating 20 random images from
+                                                                                             dation demonstrates that with the proposed image generation pipeline,
+the SPEED dataset with the proposed method. Table 2 reports the
+                                                                                             it is possible to generate photo-realistic images, paving the way to the
+coefficients of the optical parameters used for the spacecraft model
+                                                                                             generation of validated synthetic image datasets with the simplified
+and tuned during the validation steps. Fig. 6 gives an example of
+                                                                                             Tango model as the target.
+the comparison of the histograms computed for a couple of images
+during the validation phase, where Fig. 6(a) shows the reference SPEED
+                                                                                             5. Multi-purpose labeled spacecraft dataset
+image, Fig. 6(b) shows the noised image reproduced with the presented
+tool, and Fig. 6(c) shows the two histograms compared. By comparing
+                                                                                                 The image generation pipeline described and validated above has
+Fig. 6(a) and Fig. 6(b), it can be noticed that, visually, the two images
+                                                                                             been used as the main core in an algorithm to produce sets of images
+are close, even if the dimensions given in [18] and used here only
+                                                                                             of the simplified and validated Tango model with the Earth in the
+approximate the actual shape of the Tango spacecraft, and despite that
+                                                                                             background. The parameters of the camera model adopted for the
+the simplified CAD model used in Fig. 6(b) does not include all the
+                                                                                             dataset generation are reported in Table 4. The camera is modeled from
+details included in the official CAD, like the support structures for the
+                                                                                             the parameters of the Chameleon 3 by FLIR, with a reduced array size.
+antennas.
+                                                                                             The aspect ratio is equal to 1 and, from Eq. (1), the angular field of view
+Table 2
+Optical parameters scaling coefficients of the spacecraft main components.                   results to be 𝛼 ≈ 45.55◦ . The dataset produced contains about 30,000
+ Parameter               Solar panel             Antennas                Main body           synthetic noiseless images for training and 3000 for testing, partitioned
+                                                                                             with a 10:1 ratio between the train and test set. About 1/6 of the images
+ Ambient                 0.0001                  0.2                     0.2
+ Roughness               0.15                    0.0005                  0.0005              for each split show the Earth in the background, while the others have
+ Brillance               0                       3.15                    3.15                the background perfectly black, representing deep space. All images are
+ Diffuse                 0.3                     0.95                    0.99                16-bit grayscale in PNG format with 1024 × 1024 pixels resolution. The
+ Reflection              0.25 – 0.5              0.65 – 1.0              0.65 – 1.0
+                                                                                             scenes are such that the target spacecraft altitude ranges from 1500 km
+ Specular                0.005                   0.95                    0.95
+ Phong                   0                       0.43                    0.43                to 6500 km with respect to the Earth’s surface. The relative distance
+ Phong size              0                       0.25                    0.25                between the target and the camera is uniformly distributed in the range
+                                                                                             from 5 m to 30 m. Fig. 7 reports examples of random images with Earth
+   The histograms in Fig. 6(c) show that, even if they are not perfectly
+                                                                                             in the background extracted from the dataset.
+matching, the trends are close. The differences between the two his-
+                                                                                                       Table 4
+tograms are given mainly by a bias in the black region that is due                                     Parameters of the camera used for datasets generation.
+to a slightly different illumination condition between the two images                                   Parameter                                      Value
+and a lack of details that are darker in the original SPEED image,                                      Number of horizontal pixels                    1024 px
+explaining why this bias has been obtained in all the images. Notice                                    Number of vertical pixels                      1024 px
+that the light-source position has been hand-tuned by taking the SPEED                                  Focal length                                   6 mm
+images as references. Table 3 contains the 𝐽𝑠 and 𝐹 𝑄𝐼 indexes for                                      Pixel length                                   4.8×10−3 mm
+
+the 20 random images compared during the validation process. The                                 The main algorithm places the Earth in the scene at the origin of
+results show that with an average value of 𝐽𝑠 = 0.98, the rendered                           the ECI frame. After that, the position of the target around the Earth is
+images have a shadow distribution extremely close to the reference                           prescribed by randomly picking the altitude in the previously defined
+SPEED images. The same holds for the quality of the features extracted,                      range. Then the 3D coordinates in ECI of the target are selected by
+with an average score of 𝐹 𝑄𝐼 = 0.83. Notice that scoring a high 𝐹 𝑄𝐼                        following a uniform distribution over a shell around the Earth of thick-
+means that the ORB descriptors extracted in the two images are similar                       ness equal to the altitude randomly picked in the previously defined
+
+                                                                                       364
+M. Bechini et al.                                                                                                                Acta Astronautica 204 (2023) 358–369
+
+
+
+
+                              Fig. 6. Histogram comparison between SPEED image ‘‘img002350.jpg ’’ and the reproduced noised image.
+
+
+range (see Fig. 8(a)). The attitude of the target, i.e. the orientation             the target in the scene inside the field of view of the selected camera.
+of the target reference frame (TRG), with respect to the ECI frame,                 The components of the attitude of the camera, i.e. the orientation of the
+named 𝑅𝐸𝐶𝐼→𝑇 𝑅𝐺 , is randomly defined and used to correctly place the               camera reference frame (CAM), with respect to the ECI frame, named
+Tango model in the POV-Ray scene. As it can be noticed from Fig. 8(b),              𝑅𝐸𝐶𝐼→𝐶𝐴𝑀 , can be defined as:
+the attitude of the target, with respect to the ECI frame, is uniformly                             𝑝𝑐𝑎𝑚 − 𝑙𝑐𝑎𝑚
+distributed in roll, pitch, and yaw angles.                                         𝑧̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 =                                                                 (4)
+                                                                                                   ‖𝑝𝑐𝑎𝑚 − 𝑙𝑐𝑎𝑚 ‖
+    The camera is located in the scene by randomly selecting a position
+                                                                                                    𝑧̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 × 𝑠𝑐𝑎𝑚
+in a sphere centered at the target position with a radius ranging from              𝑥̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 =                                                                 (5)
+                                                                                                   ‖𝑧̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 × 𝑠𝑐𝑎𝑚 ‖
+5 m to 30 m. The pointing direction (i.e. the ‘‘look_at ’’ parameter in
+POV-Ray) is needed to fully define the attitude of the camera with                                  𝑧̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 × 𝑥̂ 𝐸𝐶𝐼→𝐶𝐴𝑀
+                                                                                    𝑦̂𝐸𝐶𝐼→𝐶𝐴𝑀 =                                                                  (6)
+respect to the ECI frame. The pointing vector has been computed by                                 ‖𝑧̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 × 𝑥̂ 𝐸𝐶𝐼→𝐶𝐴𝑀 ‖
+adding a random displacement vector to the target position vector in                where 𝑝𝑐𝑎𝑚 is the camera pointing vector in the ECI frame, 𝑙𝑐𝑎𝑚 is the
+the ECI frame to avoid having the target always located at the center of            camera location vector in the ECI frame, and 𝑠𝑐𝑎𝑚 = [0, 0, 1]𝑇 is the
+the image. The displacement vector magnitude is constrained to keep                 ‘‘sky’’ vector in POV-Ray. Note that now it is possible to define the
+
+                                                                              365
+M. Bechini et al.                                                                                                               Acta Astronautica 204 (2023) 358–369
+
+
+
+
+                                       Fig. 7. Random images with background from the generated dataset.
+
+
+
+
+                          Fig. 8. Target position and attitude distribution with respect to ECI reference frame in test set.
+
+
+
+
+                    Fig. 9. Target relative position and attitude distribution with respect to camera reference frame in test set.
+
+
+
+
+                                                                         366
+M. Bechini et al.                                                                                                                           Acta Astronautica 204 (2023) 358–369
+
+
+ground truth relative pose, i.e. the attitude of the target with respect                         been obtained with the same tool just by increasing the number of the
+to the camera in camera reference frame 𝑅𝑇 𝑅𝐺→𝐶𝐴𝑀 and the relative                               desired output images. The output pose labels coupled with the images
+position of the target with respect to the camera in camera reference                            have been collected in a dataset named Tango Spacecraft Dataset for
+frame 𝑡𝐶𝐴𝑀→𝑇 𝑅𝐺 as:                                                                              Monocular Pose Estimation that has been made publicly available [21].
+                          (            )𝑇                                                            The same pipeline discussed above has also been exploited to create
+𝑅𝑇 𝑅𝐺→𝐶𝐴𝑀 = 𝑅𝐸𝐶𝐼→𝐶𝐴𝑀 𝑅𝐸𝐶𝐼→𝑇 𝑅𝐺                                       (7)
+                                                                                                 RGB masks for each scene. The RGB images are such that the R-
+                    (            )                                                               channel (red) corresponds to the spacecraft, the G-channel (green) to
+𝑡𝐶𝐴𝑀→𝑇 𝑅𝐺 = 𝑅𝐸𝐶𝐼→𝐶𝐴𝑀 𝑙𝑡𝑟𝑔 − 𝑙𝑐𝑎𝑚                                                    (8)          the Earth (if present), and the B-channel (blue) to the background
+where 𝑙𝑡𝑟𝑔 is the location vector of the target in the ECI frame. By                             (deep space). Per each channel, the pixels have non-zero values only
+following the steps formulated above, it is possible to obtain a uni-                            in correspondence with the object they represent (Tango, Earth, Deep
+form random distribution of the relative attitude and position of the                            Space). The scene is rendered by adopting a properly tuned single-color
+target with respect to the camera. Fig. 9 shows the relative position                            texture for both the spacecraft and the total volume occupied by the
+distribution (Fig. 9(a)) and the relative attitude distribution (Fig. 9(b))                      Earth and the atmosphere. Fig. 11(a) shows an example of a RGB mask.
+in the test set. Notice that the distribution in Fig. 9(a) has a conical                         Notice that the RGB masks can be exploited for semantic segmentation
+shape because the target is constrained to be inside the field of view                           tasks. In addition, by using the spacecraft-related channel, it is possible
+of the selected camera. Finally, to correctly render the image, the light                        to extract the associated bounding box for each image. This task has
+source (i.e. the Sun model) is placed in the scene on the ecliptic plane                         been accomplished, and both the RGB masks and the bounding box
+by following a random uniform distribution to ensure a complete range                            annotations have been collected together with the related grayscale
+of illumination conditions inside the dataset. Notice that the position                          images (shared with the dataset in [21]) in a dataset that has been made
+of the Sun is constrained to be out of the field of view of the camera.                          publicly available [22], named Tango Spacecraft Dataset for Region of
+Moreover, imposing that neither the camera nor the target can be in                              Interest Estimation and Semantic Segmentation. Concerning the bounding
+eclipse avoids having black images in the dataset. From all previous                             box annotations, they are taken in the image reference frame, with the
+information, by exploiting simple geometric relations, it is possible to                         origin located in the top-left corner of the image. The bounding box
+define before the rendering if the Earth is in the scene and if it is                            is labeled through the top-left corner, the bottom-right corner, and the
+in light or shadow. To speed up the image generation, the Earth is                               center coordinates in pixels . To prove the correctness of the relative
+modeled as in Section 3.1 only if it is visible and in light. Otherwise,                         pose annotations, they have been exploited to project a simplified
+it is substituted by an equivalent sphere with equivalent reflection                             wireframe model of the Tango spacecraft in the image space, by using
+properties to take always into account the albedo. Note that this step                           the following transformation:
+is highly advantageous in terms of computational time because both
+the parsing time and the rendering time strongly increase if the full                            𝑥𝑝𝑥 = 𝐾 [ 𝑅𝑇 𝑅𝐺→𝐶𝐴𝑀 | 𝑡𝐶𝐴𝑀→𝑇 𝑅𝐺 ] 𝑥𝐻
+                                                                                                                                    𝑇 𝑅𝐺                                    (9)
+Earth model has to be rendered. With the current implementation, the                             where 𝑥𝑝𝑥 = [𝑥𝑝𝑥 ∕𝑧𝑝𝑥 , 𝑦𝑝𝑥 ∕𝑧𝑝𝑥 , 1]𝑇 is the position vector in the image
+parsing time and rendering time for an image without background are                              frame in pixels of the projected point, 𝐾 ∈ R3×3 is the camera
+in the order of 0.5 s and 0.4 s, respectively, while in the case the Earth is                    intrinsic matrix, and 𝑥𝐻       = [𝑥𝑇 𝑅𝐺 , 𝑦𝑇 𝑅𝐺 , 𝑧𝑇 𝑅𝐺 , 1]𝑇 is the position
+                                                                                                                          𝑇 𝑅𝐺
+visible the parsing time is about 5 s per image, while the rendering time                        homogeneous vector in the target reference frame of a specific point. By
+has a high variance, but on average it takes about 2 min per image. The                          using a properly defined simplified mesh of the target spacecraft and ex-
+parsing time is evaluated on a single-thread single-CPU process, while                           ploiting the Möller–Trumbore ray-triangle intersection algorithm [45],
+the rendering time is on a 16-threads 8-CPUs process. The CPUs used                              it is possible to extract the line-segment portions that are in view
+are Intel® Core™ i7-9700 CPU, clocked at 3.00 GHz.
+                                                                                                 per each image (see Fig. 11(b) for an example). Another dataset has
+    The plots shown in Figs. 8 and 9, together with the normalized Sun
+                                                                                                 been created to include this additional information. Hence, the same
+position distribution with respect to the target reference frame shown in
+                                                                                                 images of the two datasets previously discussed (both in full-scale and
+Fig. 10, confirm the uniform distribution of all main parameters of the
+                                                                                                 in a bounding-box cropped version) have been labeled with the line
+image dataset generated and confirm the representativeness of a wide
+                                                                                                 segments in view per each image. This dataset, named Tango Spacecraft
+range of orbital scenarios and illumination conditions for the given
+                                                                                                 Wireframe Dataset Model for Line Segments Detection, has been made
+target, making the dataset itself well suited for GNC algorithms testing
+                                                                                                 publicly available [23].
+and development. Notice that the images in Figs. 8–10 are reported
+                                                                                                     It is here remarked that these datasets [21–23] contain the same
+only for the test set but also hold for the training set since it has
+                                                                                                 fullscale images, hence they can be used together by combining the
+                                                                                                 annotations of the relative pose, the reprojected wireframe model of
+                                                                                                 Tango, and also the region of interest. These three datasets constitute
+                                                                                                 together the most comprehensive multi-purpose labeled dataset of vali-
+                                                                                                 dated spaceborne synthetic images publicly available, at least up to our
+                                                                                                 knowledge.
+
+                                                                                                 6. Conclusions and future works
+
+                                                                                                     The paper presented here highlighted the necessity of a viable
+                                                                                                 method to generate high-quality spaceborne synthetic images to sup-
+                                                                                                 port the development of new algorithms for relative navigation and to
+                                                                                                 serve as a starting point through new missions with a high level of au-
+                                                                                                 tonomy required. This need is addressed with a new image generation
+                                                                                                 tool based on POV-Ray, an open-source ray-tracing software, exploited
+                                                                                                 here as the core of the dataset rendering chain developed. The main
+                                                                                                 assumptions and simplifications adopted for creating representative
+                                                                                                 space-related images in POV-Ray are discussed in detail, leading to
+                                                                                                 models for both the target spacecraft and the celestial body (used here
+Fig. 10. Normalized Sun position distribution in the test set in Target reference frame.         as background) with a high degree of photo-realism. The simplifications
+
+                                                                                           367
+M. Bechini et al.                                                                                                                              Acta Astronautica 204 (2023) 358–369
+
+
+
+
+  Fig. 11. Examples of additional annotations generated. (For interpretation of the references to color in this figure, the reader is referred to the web version of this article.)
+
+
+used to model a celestial body with an atmospheric layer and a well-                          RGB masks for each scene and the in-view wireframe reprojections in
+defined topography have been analyzed both in terms of accuracy                               the image reference frame, have been discussed. The datasets created
+and rendering time, leading to a trade-off selection of the default                           have been made publicly available. Since the datasets share the same
+functionality implemented in the tool. The implementation for the                             fullscale images, but with different annotations, they can be combined
+background object, which can be chosen by the user to be included or                          to constitute the most comprehensive multi-purpose labeled dataset of
+not in the scene, can be used to model several celestial bodies by tuning                     validated spaceborne synthetic images publicly available, at least up to
+a few hyperparameters, making the tool proposed highly flexible. The                          our knowledge.
+full pipeline to generate a spacecraft model compatible with POV-Ray
+has been explained in detail, from the 3D CAD model to the textured                           Declaration of competing interest
+POV-Ray readable ‘‘include file’’ that can be handled easily by the
+image generation tool. It is here acknowledged that having a highly                               The authors declare that they have no known competing finan-
+detailed CAD model is mandatory for some applications such as image                           cial interests or personal relationships that could have appeared to
+segmentation and neural networks training since a strong drift between                        influence the work reported in this paper.
+the training set and the actual application scenario, commonly named
+domain gap, can jeopardize the entire image processing pipeline. The                          Acknowledgments
+pipeline discussed has been applied to a simplified model of the Tango
+spacecraft from PRISMA mission. The optical properties of the space-                              The authors want to acknowledge Francescodario Cuzzocrea for
+craft have been tuned during the validation phase. The validation of                          his extremely appreciated support in the development of the synthetic
+the proposed tool tailored to the generation of spaceborne synthetic                          image generation tool presented here.
+noiseless image dataset via physically-based ray-tracing has been car-                            This research did not receive any specific grant from funding agen-
+ried out qualitatively via histogram comparison, and quantitatively by                        cies in the public, commercial, or not-for-profit sectors.
+evaluating two different indexes with respect to the SPEED dataset
+images. Despite the assumptions made and the simplified CAD model
+                                                                                              References
+used, the validation phase highlighted the high level of accuracy of the
+synthetic images rendered with the proposed tool. In conclusion, the                           [1] D.K. Geller, Orbital rendezvous: When is autonomy required? J. Guid. Control
+successful validation phase carried out by using the SPEED dataset as                              Dyn. 30 (4) (2007) 974–981, http://dx.doi.org/10.2514/1.27052.
+ground truth demonstrates that the proposed image generation chain                             [2] R. Opromolla, G. Fasano, G. Rufino, M. Grassi, A review of cooperative
+can generate high-fidelity spaceborne images. The last part of the paper                           and uncooperative spacecraft pose determination techniques for close-proximity
+                                                                                                   operations, Prog. Aerosp. Sci. 93 (2017) 53–72, http://dx.doi.org/10.1016/j.
+delves into the details of the datasets that have been created by using
+                                                                                                   paerosci.2017.07.001.
+the previously discussed image generation pipeline and further delving                         [3] R. Volpe, C. Circi, M. Sabatini, G.B. Palmerini, GNC architecture for an optimal
+into the details of the image dataset generation algorithm. In particular,                         rendezvous to an uncooperative tumbling target using passive monocular cam-
+the distributions of the relative pose and the illumination conditions                             era, Acta Astronaut. 196 (2022) 380–393, http://dx.doi.org/10.1016/j.actaastro.
+                                                                                                   2020.10.038.
+of the target through the datasets show that the images included are
+                                                                                               [4] V. Capuano, K. Kim, A. Harvard, S.-J. Chung, Monocular-based pose determi-
+representative of a wide range of scenarios. It is worth remarking that                            nation of uncooperative space objects, Acta Astronaut. 166 (2020) 493–506,
+the images are noiseless to increase the flexibility of the datasets since                         http://dx.doi.org/10.1016/j.actaastro.2019.09.027.
+the noises can be easily added in the postprocessing phase to properly                         [5] M.R. Leinz, C.T. Chen, M.W. Beaven, T.P. Weismuller, D.L. Caballero, W.B.
+tailor the images to the final application scenario. We acknowledge                                Gaumer, P.W. Sabasteanski, P.A. Scott, M.A. Lundgren, Orbital express au-
+                                                                                                   tonomous rendezvous and capture sensor system (ARCSS) flight test results, in:
+here that some disturbances in the images, such as flares and stray
+                                                                                                   R.T. Howard, P. Motaghedi (Eds.), Sensors and Systems for Space Applications II,
+lights, are due to the refraction and reflection of the light inside the                           in: Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series,
+lens set of a real camera. Hence, algorithms to simulate the physics of                            vol. 6958, 2008, p. 69580A, http://dx.doi.org/10.1117/12.779595.
+the light inside a complete set of lenses during ray-tracing still need                        [6] F. Castellini, D. Antal-Wokes, R.P. de Santayana, K. Vantournhout, Far approach
+to be developed to include these effects in the synthetic images. The                              optical navigation and comet photometry for the Rosetta mission, in: Proceedings
+                                                                                                   of 25𝑇 ℎ International Symposium on Space Flight Dynamics, 25𝑇 ℎ ISSFD, 2015.
+annotations of the images are extracted automatically during the image                         [7] E. Rublee, V. Rabaud, K. Konolige, G. Bradski, ORB: An efficient alternative to
+generation and, in particular, the equations and algorithms needed to                              SIFT or SURF, in: 2011 International Conference on Computer Vision, Vol. 1,
+extract the relative pose annotations, as well as additional labels as the                         2011, pp. 2564–2571, http://dx.doi.org/10.1109/ICCV.2011.6126544.
+
+
+                                                                                        368
+M. Bechini et al.                                                                                                                                  Acta Astronautica 204 (2023) 358–369
+
+
+ [8] J. Canny, A computational approach to edge detection, IEEE Trans. Pattern Anal.             [27] R. Brochard, J. Lebreton, C. Robin, K. Kanani, G. Jonniaux, A. Masson, N. Despré,
+     Mach. Intell. PAMI-8 (6) (1986) 679–698, http://dx.doi.org/10.1109/TPAMI.                        A. Berjaoui, Scientific image rendering for space scenes with the SurRender
+     1986.4767851.                                                                                    software, 2018, arXiv preprint arXiv:1810.01423.
+ [9] S. Sharma, S. D’Amico, Comparative assessment of techniques for initial pose                [28] B.O. Community, Blender - a 3D Modelling and Rendering Package, Blender
+     estimation using monocular vision, Acta Astronaut. 123 (2016) 435–445, http:                     Foundation, 2018.
+     //dx.doi.org/10.1016/j.actaastro.2015.12.032.                                               [29] B. Karis, Epic Games, Real shading in Unreal Engine 4, in: Proc. Physically Based
+[10] S. Sharma, J. Ventura, S. D’Amico, Robust model-based monocular pose initial-                    Shading Theory Practice, Vol. 4, No. 3, 2013, p. 1.
+     ization for noncooperative spacecraft rendezvous, AIAA J. Spacecr. Rockets 55               [30] T. Plachetka, POV Ray: Persistence of vision parallel raytracer, in: Proc. of Spring
+     (6) (2018) 1414–1429, http://dx.doi.org/10.2514/1.A34124.                                        Conf. on Computer Graphics, Budmerice, Slovakia, Vol. 123, 1998, p. 129.
+[11] R.O. Duda, P.E. Hart, Use of the Hough transformation to detect lines and curves            [31] M. Pharr, W. Jakob, G. Humphreys, Physically Based Rendering: From Theory
+     in pictures, Commun. ACM 15 (1) (1972) 11–15, http://dx.doi.org/10.1145/                         to Implementation, Morgan Kaufmann, 2016.
+     361237.361242.                                                                              [32] T.H. Park, M. Märtens, G. Lecuyer, D. Izzo, S. D’Amico, Next Generation
+[12] L. Pasqualetto Cassinis, R. Fonod, E. Gill, I. Ahrns, J. Gil-Fernández, Evaluation               Spacecraft Pose Estimation Dataset (SPEED+), 2021, http://dx.doi.org/10.25740/
+     of tightly- and loosely-coupled approaches in CNN-based pose estimation systems                  wv398fc4383, Zenodo.
+     for uncooperative spacecraft, Acta Astronaut. 182 (2021) 189–202, http://dx.doi.            [33] C. Beierle, S. D’Amico, Variable-magnification optical stimulator for training and
+     org/10.1016/j.actaastro.2021.01.035.                                                             validation of spaceborne vision-based navigation, AIAA J. Spacecr. Rockets 56
+[13] J. Song, D. Rondao, N. Aouf, Deep learning-based spacecraft relative navigation                  (4) (2019) 1060–1072, http://dx.doi.org/10.2514/1.A34337.
+     methods: A survey, Acta Astronaut. 191 (2022) 22–40, http://dx.doi.org/10.                  [34] T.H. Park, M. Märtens, G. Lecuyer, D. Izzo, S. D’Amico, SPEED+: Next genera-
+     1016/j.actaastro.2021.10.025.                                                                    tion dataset for spacecraft pose estimation across domain gap, in: 2022 IEEE
+[14] P.F. Proença, Y. Gao, Deep learning for spacecraft pose estimation from                          Aerospace Conference, AERO, 2022, http://dx.doi.org/10.1109/AERO53065.
+     photorealistic rendering, in: 2020 IEEE International Conference on Robotics                     2022.9843439.
+     and Automation, ICRA, IEEE, 2020, pp. 6007–6013, http://dx.doi.org/10.1109/                 [35] J. Guarneri, Autonomous Optical Navigation and Attitude Estimation System
+     ICRA40945.2020.9197244.                                                                          Tested on Artificially Generated Images (MSc Thesis), Politecnico Di Milano,
+[15] S. Sonawani, R. Alimo, R. Detry, D. Jeong, A. Hess, H.B. Amor, Assistive relative                2020.
+     pose estimation for on-orbit assembly using convolutional neural networks, in:              [36] P. Lunghi, M. Ciarambino, M. Lavagna, A multilayer perceptron hazard detector
+     AIAA Scitech Forum, 2020, American Institute of Aeronautics and Astronautics                     for vision-based autonomous planetary landing, Adv. Space Res. 58 (1) (2016)
+     Inc, AIAA, 2020, pp. 1–11, http://dx.doi.org/10.2514/6.2020-2096.                                131–144, http://dx.doi.org/10.1016/j.asr.2016.04.012.
+[16] B. Chen, J. Cao, A. Parra, T.-J. Chin, Satellite pose estimation with deep land-            [37] A. Rivolta, P. Lunghi, M. Lavagna, GNC & robotics for on orbit servicing
+     mark regression and nonlinear pose refinement, in: 2019 IEEE/CVF International                   with simulated vision in the loop, Acta Astronaut. 162 (2019) 327–335, http:
+     Conference on Computer Vision Workshop, ICCVW, IEEE Computer Society,                            //dx.doi.org/10.1016/j.actaastro.2019.06.005.
+     2019, pp. 2816–2824, http://dx.doi.org/10.1109/ICCVW.2019.00343.                            [38] F. Cuzzocrea, Analysis and Validation of Spaceborne Synthetic Imagery Using a
+[17] M. Piazza, M. Maestrini, P. Di Lizia, Monocular relative pose estimation pipeline                Vision-Based Pose Initialization Algorithm for Non-Cooperative Spacecrafts (MSc
+     for uncooperative resident space objects, J. Aerosp. Inf. Syst. 19 (9) (2022)                    Thesis), Politecnico Di Milano, 2020.
+     613–632, http://dx.doi.org/10.2514/1.I011064.                                               [39] N.E. Daidzic, et al., Efficient general computational method for estimation of
+[18] M. Kisantal, S. Sharma, T.H. Park, D. Izzo, M. Märtens, S. D’Amico, Satellite                    standard atmosphere parameters, Int. J. Aviat. Aeronaut. Aerosp. 2 (1) (2015)
+     pose estimation challenge: Dataset, competition design, and results, IEEE Trans.                 3, http://dx.doi.org/10.15394/ijaaa.2015.1053.
+     Aerosp. Electron. Syst. 56 (5) (2020) 4083–4098, http://dx.doi.org/10.1109/                 [40] A.S. Jursa, Handbook of Geophysics and the Space Environment, fourth ed., Final
+     TAES.2020.2989063.                                                                               Report Air Force Geophysics Lab, Hanscom AFB, MA, 1985.
+[19] M. Kisantal, S. Sharma, T.H. Park, D. Izzo, M. Märtens, S. D’Amico, Space-                  [41] United States Committee on Extension to the Standard Atmosphere and United
+     craft Pose Estimation Dataset (SPEED), 2019, http://dx.doi.org/10.5281/zenodo.                   States. Environmental Science Services Administration, US Standard Atmosphere,
+     6327546, Zenodo.                                                                                 1962: ICAO Standard Atmosphere to 20 kilometers; Proposed ICAO Extension
+[20] S. D’Amico, P. Bodin, M. Delpech, R. Noteborn, PRISMA, in: M. D’Errico (Ed.),                    to 32 kilometers; Tables and Data to 700 kilometers, US Government Printing
+     Distributed Space Missions for Earth System Monitoring, Springer New York, New                   Office, 1962.
+     York, NY, 2013, pp. 599–637, http://dx.doi.org/10.1007/978-1-4614-4541-8-                   [42] NASA, Earth from space - Apollo 17. this image or video was catalogued
+     21.                                                                                              by Langley Research Center of the United States National Aeronautics and
+[21] M. Bechini, P. Lunghi, M. Lavagna, Tango Spacecraft Dataset for Monocular Pose                   Space Administration (NASA) under photo ID: EL-1996-00155 and alternate
+     Estimation, 2022, http://dx.doi.org/10.5281/zenodo.6499008, Zenodo.                              ID: L86-5815, 1996, https://web.archive.org/web/20080617152411/http://lisar.
+[22] M. Bechini, P. Lunghi, M. Lavagna, Tango Spacecraft Dataset for Region of                        larc.nasa.gov/UTILS/info.cgi?id=EL-1996-00155. (Accessed 18 January 2022).
+     Interest Estimation and Semantic Segmentation, 2022, http://dx.doi.org/10.                  [43] M. Piccinin, S. Silvestrini, G. Zanotti, A. Brandonisio, P. Lunghi, M. Lavagna,
+     5281/zenodo.6507863, Zenodo.                                                                     ARGOS: calibrated facility for image based relative navigation technologies on
+[23] M. Bechini, P. Lunghi, M. Lavagna, Tango Spacecraft Wireframe Dataset Model                      ground verification and testing, in: 72𝑁𝑑 International Astronautical Congress,
+     for Line Segments Detection, 2022, http://dx.doi.org/10.5281/zenodo.6372848,                     IAC 2021, International Astronautical Federation, IAF, Dubai, United Arab
+     Zenodo.                                                                                          Emirates, 2021, pp. 1–12.
+[24] M. Bechini, M.B. Quadrelli, M. Lavagna, J.J. Wang, Hovering of an electrically              [44] N. Otsu, A threshold selection method from gray-level histograms, IEEE Trans.
+     actuated spacecraft in a small-body plasma field, AIAA J. Spacecr. Rockets 58                    Syst. Man Cybern. 9 (1) (1979) 62–66, http://dx.doi.org/10.1109/TSMC.1979.
+     (5) (2021) 1461–1476, http://dx.doi.org/10.2514/1.A34954.                                        4310076.
+[25] P. Shirley, R.K. Morley, Realistic Ray Tracing, second ed., Taylor & Francis, 2008.         [45] T. Möller, B. Trumbore, Fast, minimum storage ray-triangle intersection, J.
+[26] S. Parkes, I. Martin, M. Dunstan, D. Matthews, Planet surface simulation with                    Graph. Tools 2 (1) (1997) 21–28, http://dx.doi.org/10.1080/10867651.1997.
+     PANGU, in: Space OPS 2004 Conference, 2004, p. 389, http://dx.doi.org/10.                        10487468.
+     2514/6.2004-592-389.
+
+
+
+
+                                                                                           369
+

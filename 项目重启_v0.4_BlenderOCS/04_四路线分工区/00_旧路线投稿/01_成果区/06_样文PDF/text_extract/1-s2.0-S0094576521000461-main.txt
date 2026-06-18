@@ -1,0 +1,992 @@
+                                                                       Acta Astronautica 182 (2021) 189–202
+
+
+                                                                     Contents lists available at ScienceDirect
+
+
+                                                                          Acta Astronautica
+                                                         journal homepage: www.elsevier.com/locate/actaastro
+
+
+Research paper
+
+Evaluation of tightly- and loosely-coupled approaches in CNN-based pose
+estimation systems for uncooperative spacecraft
+Lorenzo Pasqualetto Cassinis a ,∗, Robert Fonod a , Eberhard Gill a , Ingo Ahrns b ,
+Jesús Gil-Fernández c
+a
+    Delft University of Technology, Kluyverweg 1 2629 HS, Delft, The Netherlands
+b Airbus DS GmbH, Airbusallee 1, 28199, Bremen, Germany
+c ESTEC, Keplerlaan 1, 2201 AZ, Noordwijk, The Netherlands
+
+
+
+
+ARTICLE                           INFO                      ABSTRACT
+
+MSC:                                                        The relative pose estimation of an inactive spacecraft by an active servicer spacecraft is a critical task
+00-01                                                       in the design of current and planned space missions, due to its relevance for close-proximity operations,
+99-00                                                       such as In-Orbit Servicing and Active Debris Removal. This paper introduces a novel framework to enable
+Keywords:                                                   robust monocular pose estimation for close-proximity operations around an uncooperative spacecraft, which
+Relative pose estimation                                    combines a Convolutional Neural Network (CNN) for feature detection with a Covariant Efficient Procrustes
+Active Debris Removal                                       Perspective-n-Points (CEPPnP) solver and a Multiplicative Extended Kalman Filter (MEKF). The performance
+In-Orbit Servicing
+                                                            of the proposed method is evaluated at different levels of the pose estimation system. A Single-stack Hourglass
+Monocular-based navigation filters
+                                                            CNN is proposed for the feature detection step in order to decrease the computational load of the Image
+Convolutional Neural Networks
+                                                            Processing (IP), and its accuracy is compared to the standard, more complex High-Resolution Net (HRNet).
+                                                            Subsequently, heatmaps-derived covariance matrices are included in the CEPPnP solver to assess the pose
+                                                            estimation accuracy prior to the navigation filter. This is done in order to support the performance evaluation
+                                                            of the proposed tightly-coupled approach against a loosely-coupled approach, in which the detected features
+                                                            are converted into pseudomeasurements of the relative pose prior to the filter. The performance results of the
+                                                            proposed system indicate that a tightly-coupled approach can guarantee an advantageous coupling between the
+                                                            rotational and translational states within the filter, whilst reflecting a representative measurements covariance.
+                                                            This suggest a promising scheme to cope with the challenging demand for robust navigation in close-proximity
+                                                            scenarios. Synthetic 2D images of the European Space Agency’s Envisat spacecraft are used to generate datasets
+                                                            for training, validation and testing of the CNN. Likewise, the images are used to recreate a representative
+                                                            close-proximity scenario for the validation of the proposed filter.
+
+
+
+1. Introduction                                                                              fact that the target satellite is not functional and/or not able to aid the
+                                                                                             relative navigation. Hence, optical sensors shall be preferred over Radio
+    Nowadays, key Earth-based applications such as remote sensing,                           Frequency (RF) sensors to cope with a lack of navigation devices such
+navigation, and telecommunication, rely on satellite technology on a                         as Global Positioning System (GPS) sensors and/or antennas onboard
+daily basis. To ensure a high reliability of these services, the safety and                  the target.
+operations of satellites in orbit has to be guaranteed. In this context,                         From a high-level perspective, optical sensors can be divided into
+advancements in the field of Guidance, Navigation, and Control (GNC)                         active and passive devices, depending on whether they require power
+were made in the past years to cope with the challenges involved in In-                      to function, i.e. LIght Detection And Ranging (LIDAR) sensors and
+Orbit Servicing (IOS) and Active Debris Removal (ADR) missions [1,2].                        Time-Of-Flight (TOF) cameras, or if they passively acquire radiation,
+For such scenarios, the estimation of the relative pose (position and                        i.e. monocular and stereo cameras. Spacecraft relative navigation usu-
+attitude) of an uncooperative spacecraft by an active servicer spacecraft                    ally exploits Electro-Optical (EO) sensors such as stereo cameras [3,4]
+represents a critical task. Compared to cooperative close-proximity                          and/or a LIDAR sensor [5] in combination with one or more monocular
+                                                                                             cameras, in order to overcome the partial observability that results from
+missions, the pose estimation problem is indeed complicated by the
+
+
+     ∗ Corresponding author.
+     E-mail addresses: L.PasqualettoCassinis@tudelft.nl (L. Pasqualetto Cassinis), Robert.Fonod@ieee.org (R. Fonod), E.K.A.Gill@tudelft.nl (E. Gill),
+ingo.ahrns@airbus.com (I. Ahrns), Jesus.Gil.Fernandez@esa.int (J. Gil-Fernández).
+
+https://doi.org/10.1016/j.actaastro.2021.01.035
+Received 13 June 2020; Received in revised form 2 December 2020; Accepted 21 January 2021
+Available online 15 February 2021
+0094-5765/© 2021 The Authors.            Published by Elsevier Ltd on behalf of IAA. This is an open access article under the CC BY license
+(http://creativecommons.org/licenses/by/4.0/).
+L. Pasqualetto Cassinis et al.                                                                                               Acta Astronautica 182 (2021) 189–202
+
+
+the lack of range information in these latter [6]. In this framework, pose         perform keypoint localization prior to the actual pose estimation [23–
+estimation systems based solely on a monocular camera are recently                 26]. The output of these networks is a set of so called heatmaps around
+becoming an attractive alternative to systems based on active sensors              pre-trained features. The coordinates of the heatmap’s peak intensity
+or stereo cameras, due to their reduced mass, power consumption                    characterize the predicted feature location, with the intensity and the
+and system complexity [7]. However, given the low Signal-To-Noise                  shape indicating the confidence of locating the corresponding keypoint
+Ratio (SNR) and the high contrast which characterize space images, a               at this position [23]. Additionally, due to the fact that the trainable
+significant effort is still required to comply with most of the demanding          features can be selected offline prior to the training, the matching of
+requirements for a robust and accurate monocular-based navigation                  the extracted feature points with the features of the wireframe model
+system. Interested readers are referred to Pasqualetto Cassinis et al. [8]         can be performed without the need of a large search space for the
+for a recent overview of the current trends in monocular-based pose                image-model correspondences, which usually characterizes most of the
+estimation systems. Notably, the aforementioned navigation system                  edges/corners-based methods [27]. In this context, the High-Resolution
+cannot rely on known visual markers, as they are typically not installed           Net (HRNet) [28] already proved to be a reliable and accurate keypoint
+on an uncooperative target. Since the extraction of visual features                detector prior to pose estimation, due to its capability of maintaining
+is an essential step in the pose estimation process, advanced Image                a high-resolution representation of the heatmaps through the whole
+Processing (IP) techniques are required to extract keypoints (or interest          detection process.
+points), corners, and/or edges on the target body. In model-based                       To the best of the authors’ knowledge, the reviewed implementa-
+methods, the detected features are then matched with pre-defined                   tions of CNNs feed solely the heatmap’s peak location into the pose
+features on an offline wireframe 3D model of the target to solve for               estimation solver, despite multiple information could be extracted from
+the relative pose. In other words, a reliable detection of key features            the detected heatmaps. Only in Pavlakos et al. [23], the pose estimation
+under adverse orbital conditions is highly desirable to guarantee safe             is solved by assigning weights to each feature based on their heatmap’s
+operations around an uncooperative spacecraft. Moreover, it would be               peak intensities, in order to penalize inaccurate detections. Yet, there is
+beneficial from a different standpoint to obtain a model of feature                another aspect related to the heatmaps which has not been considered.
+detection uncertainties. This would provide the navigation system with             It is in fact hardly acknowledged how the overall shape of the detected
+additional statistical information about the measurements, which could             heatmaps returned by CNN can be translated into a statistical distri-
+in turn improve the robustness of the entire estimation process.                   bution around the peak, allowing reliable feature covariances and, in
+    Unfortunately, standard pose estimation solvers such as the Efficient          turn, a robust navigation performance. As already investigated by the
+Perspective-n-Point (EPnP) [9], the Efficient Procrustes Perspective-n-            authors in earlier works [29,30], deriving an accurate representation
+Point (EPPnP) [10], or the multi-dimensional Newton Raphson Method                 of the measurements uncertainty from feature heatmaps can in fact not
+(NRM) [11] do not have the capability to include features uncertainties.           only improve the pose estimation, but it can also benefit the estimation
+Only recently, the Maximum-Likelihood PnP (MLPnP) [12] and the                     of the full relative state vector, which would include the relative pose
+Covariant EPPnP (CEPPnP) [13] solvers were introduced to exploit                   as well as the relative translational and rotational velocities.
+statistical information by including feature covariances in the pose                    From a high level perspective, two different navigation architectures
+estimation. Ferraz et al. [13] proposed a method for computing the                 are normally exploited in the framework of relative pose estimation.
+covariance which takes different camera poses to create a fictitious               A tightly-coupled architecture, where the extracted features are directly
+distribution around each detected keypoint. Other authors proposed                 processed by the navigation filter as measurements, and a loosely-
+an improved pose estimation method based on projection vector, in                  coupled architecture, in which the relative pose is computed by a pose
+which the covariance is associated to the image gradient magnitude                 solver prior to the navigation filter, in order to derive pseudomea-
+and direction at each feature location [14], or a method in which                  surements from the target features [31]. Usually, a loosely-coupled
+covariance information is derived for each feature based on feature’s              approach is preferred for an uncooperative tumbling target, due to the
+visibility and robustness against illumination changes [15]. However,              fact that the fast relative dynamics could jeopardize feature tracking
+in all these methods the derivation of features covariance matrices is             and return highly-variable measurements to the filter. However, one
+a lengthy process which generally cannot be directly related to the                shortcoming of this approach is that it is generally hard to obtain a
+actual detection uncertainty. Moreover, this procedure could not be                representative covariance matrix for the pseudomeasurements. This can
+easily applied if Convolutional Neural Networks (CNNs) are used in                 be quite challenging when filter robustness is demanded. Remarkably,
+the feature detection step, due to the difficulty to associate statistical         the adoption of a CNN in the feature detection step can overcome
+meaning to the IP tasks performed within the network. In this context,             the challenges in feature tracking by guaranteeing the detection of
+another procedure should be followed in which the output of the CNNs               a constant, pre-defined set of features. At the same time, the CNN
+is directly exploited to return relevant statistical information about the         heatmaps can be used to derive a measurements covariance matrix and
+detection step. This could, in turn, provide a reliable representation of          improve filter robustness. Following this line of reasoning, a tightly-
+the detection uncertainty.                                                         coupled filter is expected to interface well with a CNN-based IP and to
+    The implementation of CNNs for monocular pose estimation in                    outperform its loosely-coupled counterpart.
+space has already become an attractive solution in recent years, also                   In this framework, the objective of this paper is to combine a
+thanks to the creation of the Spacecraft PosE Estimation Dataset                   CNN-based feature detector with a CEPPnP solver whilst evaluating
+(SPEED) [16], a database of highly representative synthetic images                 the performance of a proposed tightly-coupled navigation filter against
+of PRISMA’s TANGO spacecraft made publicly available by Stanford’s                 the performance of a loosely-coupled filter. Specifically, the novelty of
+Space Rendezvous Laboratory (SLAB) and applicable to train and                     this work stands in extending the authors’ previous findings [29,30]
+test different network architectures. One of the main advantages of                by further linking the current research on CNN-based feature detec-
+CNNs over standard feature-based algorithms for relative pose estima-              tion, covariant-based PnP solvers, and navigation filters. The main
+tion [7,17,18] is an increase in robustness under adverse illumination             contributions of this work are:
+conditions, as well as a reduction in the computational complexity.
+Initially, end-to-end CNNs were exploited to map a 2D input image                     1. To assess the feasibility of a simplified CNN for feature detection
+directly into a relative pose by means of learning complex non-linear                    within the IP
+functions [19–22]. However, since the pose accuracies of these end-to-                2. To improve the pose estimation by incorporating heatmaps-
+end CNNs proved to be lower than the accuracies returned by common                       derived covariance matrices in the CEPPnP
+pose estimation solvers, especially in the estimation of the relative                 3. To compare the performance of tightly- and loosely-coupled
+attitude [19], recent efforts investigated the capability of CNNs to                     navigation filters.
+
+                                                                             190
+L. Pasqualetto Cassinis et al.                                                                                                       Acta Astronautica 182 (2021) 189–202
+
+
+    The paper is organized as follows. The overall pose estimation
+framework is illustrated in Section 2. Section 3 introduces the proposed
+CNN architecture together with the adopted training, validation, and
+testing datasets. In Section 4, special focus is given to the derivation
+of covariance matrices from the CNN heatmaps, whereas Section 5
+describes the CEPPnP solver. Besides, Section 6 provides a description
+of the tightly- and loosely-coupled filters adopted. The simulation envi-
+ronment is presented in Section 7 together with the simulation results.
+Finally, Section 8 provides the main conclusions and recommendations.
+
+2. Pose estimation framework
+
+    This work considers a servicer spacecraft flying in relative motion
+around a target spacecraft located in a Low Earth Orbit (LEO), with
+the relative motion being described in a Local Vertical Local Hori-
+zontal (LVLH) reference frame co-moving with the servicer (Fig. 1a).
+Furthermore, it is assumed that the servicer is equipped with a single
+monocular camera. The relative attitude of the target with respect to
+the servicer can then be defined as the rotation of the target body-
+fixed frame B with respect to the servicer camera frame C, where these
+frames are tied to each spacecraft’s body. The distance between the
+origins of these two frames defines their relative position. Together,
+these two quantities characterize the relative pose. This information
+can then be transferred from the camera frame to the servicer’s centre
+of mass by accounting for the relative pose of the camera with respect
+to the LVLH frame.
+    From a high-level perspective, a model-based monocular pose es-
+timation system receives as input a 2D image and matches it with
+an existing wireframe 3D model of the target spacecraft to estimate
+the pose of such target with respect to the servicer camera. Referring
+to Fig. 1b, the pose estimation problem consists in determining the
+position of the target’s centre of mass 𝐭 𝐶 and its orientation with respect
+to the camera frame C, represented by the rotation matrix 𝐑𝐶         𝐵
+                                                                       . The
+Perspective-n-Points (PnP) equations,
+       (             )𝑇
+𝐫 𝐶 = 𝑥𝐶 𝑦𝐶 𝑧𝐶 = 𝐑𝐶             𝐵
+                             𝐵𝐫 + 𝐭
+                                    𝐶
+                                                                          (1)
+              ( 𝐶                       )
+     (     )     𝑥           𝑦 𝐶
+𝐩 = 𝑢𝑖 , 𝑣𝑖 =       𝑓𝑥 + 𝐶𝑥 , 𝐶 𝑓𝑦 + 𝐶𝑦 ,                                 (2)
+                 𝑧𝐶          𝑧
+relate the unknown pose with a feature point 𝐩 in the image plane via                 Fig. 1. Representation of the relative motion framework (left) and schematic of the
+                                                                                      pose estimation problem using a monocular image (right) [32].
+the relative position 𝐫 𝐶 of the feature with respect to the camera frame.
+Here, 𝐫 𝐵 is the point location in the 3D model, expressed in the body-
+frame coordinate system B, whereas 𝑓𝑥 and 𝑓𝑦 denote the focal lengths
+of the camera and (𝐶𝑥 , 𝐶𝑦 ) is the principal point of the image.                     the relative pose as well as the relative translational and rotational
+    From these equations, it can already be seen that an important                    velocities. The filter is initialized by the CEPPnP block, which takes
+aspect of estimating the pose resides in the capability of the IP system
+                                                                                      peak location and covariance matrix of each feature as input and
+to extract features 𝒑 from a 2D image of the target spacecraft, which in
+                                                                                      outputs the initial relative pose by solving the PnP problem in Eqs.
+turn need to be matched with pre-selected features 𝒓𝐵 in the wireframe
+                                                                                      (1)–(2). Thanks to the availability of a covariance matrix of the detected
+3D model. Notably, such wireframe model of the target needs to be
+made available prior to the estimation. Notice also that the problem                  features, this architecture can guarantee a more accurate representation
+is not well defined for 𝑛 < 3 feature points, and can have up to four                 of feature uncertainties, especially in case of inaccurate detection of
+positive solutions for 𝑛 = 3 [33]. Generally, more features are required              the CNN due to adverse illumination conditions and/or unfavourable
+in presence of large noise and/or symmetric objects. Besides, it can                  relative geometries between servicer and target. Together with the
+also be expected that the time variation of the relative pose plays                   CEPPnP initialization, this aspect can return a robust and accurate
+a crucial role while navigating around the target spacecraft, e.g. if                 estimation of the relative pose and velocities and assure a safe approach
+rotational synchronization with the target spacecraft is required in the              of the target spacecraft.
+final approach phase. As such, it is clear that the estimation of both the                In this work, a rectilinear VBAR approach of the servicer spacecraft
+relative translational and angular velocities represent an essential step
+                                                                                      towards the target spacecraft is considered, as this typically occurs
+within the navigation system.
+                                                                                      during the final stages of close-proximity operations in rendezvous and
+    The proposed tightly-coupled architecture combines the above key
+                                                                                      docking missions [1,2]. This assumption is justified by the fact that
+ingredients in three main stages, which are shown in Fig. 2 and
+described in more detail in the following sections. In the CNN-based                  the proposed method needs to be first validated on simplified relative
+IP block, a CNN is used to extract features from a 2D image of the                    trajectories before assessing its feasibility under more complex relative
+target spacecraft. Statistical information is derived by computing a                  geometries. Following the same line of reasoning, the relative attitude is
+covariance matrix for each features using the information included in                 also simplified by considering a perturbation-free rotational dynamics
+the output heatmaps. In the Navigation block, both the peak locations                 between the servicer and the target. This is described in more detail in
+and the covariances are fed into the navigation filter, which estimates               Section 6.
+
+                                                                                191
+L. Pasqualetto Cassinis et al.                                                                                                         Acta Astronautica 182 (2021) 189–202
+
+
+
+
+                                        Fig. 2. Functional flow of the proposed tightly-coupled pose estimation architecture.
+
+
+3. Convolutional neural network
+
+    CNNs are currently emerging as a promising features extraction
+method, mostly due to the capability of their convolutional layers to
+extract high-level features of objects with improved robustness against
+image noise and illumination conditions. In order to optimize CNNs
+for the features extraction process, a stacked hourglass architecture has
+been proposed [23,24], and other architectures such as the U-net [34]
+and the HRNet [28] were tested in recent years.
+    Compared to the network proposed by Pavlakos et al. [23], the
+architecture proposed in this work is composed of only one encoder/
+decoder block, constituting a single hourglass module. This was chosen
+in order to reduce the network size and comply with the limita-
+tions in computing power which characterizes space-grade processors.
+The encoder includes six blocks, each including a convolutional layer
+formed by a fixed number of filter kernels of size 3 × 3, a batch
+normalization module and max pooling layer, whereas the six decoder                   Fig. 3. Overview of the single hourglass architecture. Downsampling is performed
+blocks accommodate an up-sampling block in spite of max pooling. In                   in the encoder stage, in which the image size is decrease after each block, whereas
+                                                                                      upsampling occurs in the decoder stage. The output of the network consists of heatmap
+the encoder stage, the initial image resolution is decreased by a factor
+                                                                                      responses, and is used for keypoints localization.
+of two, with this downsampling process continuing until reaching the
+lowest resolution of 4 × 4 pixels. An upsampling process follows in the
+decoder with each layer increasing the resolution by a factor of two and
+returning output heatmaps at the same resolution as the input image.
+Fig. 3 shows the high-level architecture of the network layers, together
+with the corresponding input and output.
+    Overall, the size of the 2D input image and the number of kernels
+per convolutional layer drive the total number of parameters. In the
+current analysis, an input size of 256 × 256 pixels is chosen, and 128
+kernels are considered per convolutional layer, leading to a total of
+∼ 1,800,000 trainable parameters. Compared to the CNNs analysed
+by Sun et al. [28], this represents a reduction of more than an order
+of magnitude in network size.
+    As already mentioned, the output of the network is a set of heatmaps
+around the selected features. Ideally, the heatmap’s peak intensity
+associated to a wrong detection should be relatively small compared
+to the correctly detected features, highlighting that the network is not
+                                                                                              Fig. 4. Illustration of the selected features for a given Envisat pose.
+confident about that particular wrongly-detected feature. At the same
+time, the heatmap’s amplitude should provide an additional insight into
+the confidence level of each detection, a large amplitude being related
+to large uncertainty about the detection. The network is trained with                 3.1. Training, validation and test
+the 𝑥- and 𝑦- image coordinates of the feature points, computed offline
+based on the intrinsic camera parameters as well as on the feature                        For the training, validation, and test datasets, synthetic images
+coordinates in the target body frame, which were extracted from the                   of the Envisat spacecraft were rendered in the Cinema 4D©software.
+wireframe 3D model prior to the training. During training, the network                Table 1 lists the main camera parameters adopted. Constant Sun el-
+is optimized to locate 16 features of the Envisat spacecraft, consisting              evation and azimuth angles of 30 degrees were chosen in order to
+of the corners of the main body, the Synthetic-Aperture Radar (SAR)                   recreate favourable as well as adverse illumination conditions. Relative
+antenna, and the solar panel, respectively. Fig. 4 illustrates the selected           distances between camera and target were discretized every 30 m in
+features for a specific target pose.                                                  the interval 90 m - 180 m, with the Envisat always located in the
+
+                                                                                192
+L. Pasqualetto Cassinis et al.                                                                                                                Acta Astronautica 182 (2021) 189–202
+
+Table 1                                                                                       Table 2
+Parameters of the camera used to generate the synthetic images in Cinema 4D©.                 Mean 𝜇 and Standard Deviation 𝜎 of the adopted networks over the Envisat test dataset.
+ Parameter                                Value                               Unit             Network                           No. Params            𝜇 [pxl]            𝜎 [pxl]
+ Image resolution                         512 × 512                           pixels           Single-stack Hourglass            1.8M                  3.4                4.3
+ Focal length                             3.9 ⋅ 10−3                          m                HRNet                             25M                   2.4                1.4
+ Pixel size                               1.1 ⋅ 10−5                          m
+
+
+
+                                                                                              a variety of relative poses present in the training. As a result, both
+                                                                                              features which are not visible due to adverse illumination and features
+                                                                                              occulted by other parts of the target can be detected. Besides, a chal-
+                                                                                              lenge was identified in the specific selection of the trainable features.
+                                                                                              Since the features selected in this work represent highly symmetrical
+                                                                                              points of the Envisat spacecraft, such as corners of the solar panel,
+                                                                                              SAR antenna or main body, the network could be unable to distinguish
+                                                                                              between similar features, and return multiple heatmaps for a single
+                                                                                              feature output. Fig. 7 illustrates these findings. Notably, the detection
+                                                                                              of wrong features results in weak heatmaps, which can be filtered out
+                                                                                              by selecting a proper threshold on their total brightness.
+                                                                                                  In order to compare the feature detection accuracy of the proposed
+                                                                                              Single-stack Hourglass with a more complex CNN architecture, the
+                                                                                              HRNet proposed by Sun et al. [28] has been selected and trained on
+                                                                                              the same Envisat datasets. This architecture had already been tested on
+                                                                                              the SPEED dataset [25] and already proved to return highly accurate
+Fig. 5. Illustration of the pose space discretization in the training dataset. The
+                                                                                              features of the TANGO spacecraft. The performance is assessed in terms
+concentric spheres represent the discretization of the relative distance in the range
+90 m–180 m. Only 100 random relative camera poses are shown for clarity.                      of Root Mean Squared Error (RMSE) between the ground truth (GT) and
+                                                                                              the 𝑥, 𝑦 coordinates of the extracted features, which is computed as
+                                                                                                        √
+                                                                                                        √𝑛
+                                                                                                        √∑  𝑡𝑜𝑡
+                                                                                                        √       [                                   ]
+                                                                                                        √         (𝑥𝐺𝑇 ,𝑖 − 𝑥𝑖 )2 + (𝑦𝐺𝑇 ,𝑖 − 𝑦𝑖 )2
+                                                                                                        √
+                                                                                                        √
+                                                                                                        √ 𝑖=1
+                                                                                              𝐸RMSE =                                                 .             (3)
+                                                                                                                             𝑛𝑡𝑜𝑡
+
+                                                                                                  Fig. 8 shows the RMSE error over the test dataset for the two CNNs,
+                                                                                              whereas Table 2 reports the mean 𝜇 and standard deviation 𝜎 of the
+                                                                                              associated histograms. As expected, the added complexity of HRNet,
+                                                                                              translates into a more accurate detection of the selected features, thanks
+                                                                                              to the higher number of parameters: only 4% of the test images are
+                                                                                              characterized by a RMSE above 5 pixels, as opposed to the 15% in the
+                                                                                              Single-stack Hourglass case.
+                                                                                                  Although HRNet proves to return more accurate features, it is also
+     Fig. 6. A montage of eight synthetic images selected from the training set.              believed that the larger RMSE scenarios returned by the Single-stack
+                                                                                              Hourglass can be properly handled, if a larger uncertainty can be
+                                                                                              associated to their corresponding heatmaps. As an example, a large
+camera boresight direction in order to prevent some of the Envisat                            RMSE could be associated to the inaccurate detection of only a few
+features from falling outside the camera field of view. Although be-                          features which, if properly weighted, could not have a severe impact
+ing a conservative assumption, this allows to test the CNN detection                          on the pose estimation step. This task can be performed by deriving a
+under ideal servicer-target geometries during a rectilinear approach.                         covariance matrix for each detected feature, in order to represent its
+Subsequently, relative attitudes were generated by discretizing the yaw,                      detection uncertainty. Above all, this may prevent the pose solver and
+pitch, and roll angles of the target with respect to the camera by                            the navigation filter from trusting wrong detections by relying more
+10 degrees each. Together, these two choices were made in order to                            on other accurate features. In this way, the navigation filter can cope
+recreate several relative attitudes between the servicer and the target.                      with poorly accurate heatmaps while at the same time relying on a
+The resulting database was then shuffled to randomize the images, and                         computationally-low CNN.
+was ultimately split into training (18,000 images), validation (6,000
+images), and test (6,000 images) datasets. Fig. 5 shows a subset of                           4. Covariance computation
+the camera pose distribution for 100 representative training images,
+whereas Fig. 6 illustrates some of the images included in the training                           Compared to the methods discussed in Section 1 [13–15], the
+dataset.                                                                                      proposed method derives a covariance matrix associated to each feature
+    During training, the validation dataset is used beside the training                       directly from the heatmaps detected by the CNN, rather than from the
+one to compute the validation losses and avoid overfitting. The Adam                          computation of the image gradient around each feature. In order to
+optimizer [35] is used with a learning rate of 10−3 for a total number of                     do so, the first step is to obtain a statistical population around the
+50 epochs. Finally, the network performance after training is assessed                        heatmap’s peak. This is done by thresholding each heatmap image
+with the test dataset.                                                                        so that only the 𝑥- and 𝑦- location of heatmap’s pixels are extracted.
+    Preliminary results on the single-stack network performance were                          Secondly, each pixel within the population is given a normalized weight
+already reported by Pasqualetto Cassinis et al. [29]. Above all, one                          𝑤𝑖 based on the grey intensity 𝐼𝑖 at its location,
+key advantage of relying on CNNs for feature detection was found in
+the capability of learning the relative position between features under                       𝑤𝑖 = 𝑤𝑅 𝑅𝑖 + 𝑤𝐺 𝐺𝑖 + 𝑤𝐵 𝐵𝑖 ,                                                      (4)
+
+                                                                                        193
+L. Pasqualetto Cassinis et al.                                                                                                               Acta Astronautica 182 (2021) 189–202
+
+
+
+
+Fig. 7. Robustness and challenges of feature detection with the proposed CNN. On the left-hand side, the network has been trained to recognize the pattern of the features, and
+can correctly locate the body features which are not visible, i.e. parts occulted by the solar panel and corners of the SAR antenna. Conversely, the right-hand side shows the
+detection of multiple heatmaps for a single corner of the solar panel. As can be seen, the network can have difficulties in distinguishing similar features, such as the corners of
+the solar panel.
+
+
+
+                                                                                                  Fig. 9 shows the overall flow to obtain the covariance matrix for
+                                                                                              three different heatmap shapes. The ellipse associated to each features
+                                                                                              covariance is obtained by computing the eigenvalues 𝜆𝑥 and 𝜆𝑦 of the
+                                                                                              covariance matrix,
+                                                                                              ( )2 ( )2
+                                                                                                 𝑥         𝑦
+                                                                                                       +        = 𝑠,                                              (7)
+                                                                                                𝜆𝑥         𝜆𝑦
+                                                                                              where 𝑠 defines the scale of the ellipse and is derived from the con-
+                                                                                              fidence interval of interest, e.g. 𝑠 = 2.2173 for a 68% confidence
+                                                                                              interval. As can be seen, different heatmaps can result in very dif-
+                                                                                              ferent covariance matrices. Above all, the computed covariance can
+                                                                                              capture the different CNN uncertainty over 𝑥, 𝑦. Notice that, due to its
+                                                                                              symmetric nature, the covariance matrix can only represent bivariate
+                                                                                              normal distributions. As a result, asymmetrical heatmaps such as the
+                                                                                              one in the third scenario are approximated by Gaussian distributions
+                                                                                              characterized by an ellipse which might overestimate the heatmap’s
+                                                                                              dispersion over some directions.
+
+                                                                                              5. Pose estimation
+  Fig. 8. RMSE over the test dataset for the HRNet and the Single-stack Hourglass.
+                                                                                                  The CEPPnP method proposed by Ferraz et al. [13] was selected
+                                                                                              to estimate the relative pose from the detected features as well as from
+                                                                                              their covariance matrices. The first step of this method is to rewrite the
+where 𝑅, 𝐺, 𝐵 are the components of the coloured image and 𝑤𝑅 , 𝑤𝐺 , 𝑤𝐵
+                                                                                              PnP problem in Eqs. (1)–(2) as a function of a 12-dimensional vector
+are the weights assigned to each channel in order to get the greyscale
+                                                                                              𝒚 containing the control point coordinates in the camera reference
+intensity. This is done in order to give more weight to pixels which
+                                                                                              system,
+are particularly bright and close to the peak, and less weight to pixels
+which are very faint and far from the peak. Finally, the obtained                             𝑴𝒚 = 𝟎,                                                                          (8)
+statistical population of each feature is used to compute the weighted
+covariance between 𝑥, 𝑦 and consequently the covariance matrix 𝑪 𝑖 ,                          where 𝑴 is a 2𝑛×12 known matrix. This is the fundamental equation in
+      (                     )                                                                 the EPnP problem [9]. The likelihood of each observed feature location
+        cov(𝑥, 𝑥) cov(𝑥, 𝑦)                                                                   𝒖𝑖 is then represented as
+𝑪𝑖 =                          ,                                      (5)
+        cov(𝑦, 𝑥) cov(𝑦, 𝑦)
+                                                                                                            − 1 𝛥𝒖𝑇𝑖 𝑪 −1
+                                                                                                                       𝒖 𝛥𝒖𝑖
+where                                                                                         𝑃 (𝒖𝑖 ) = 𝑘 ⋅ 𝑒 2        𝑖       ,                                               (9)
+              ∑
+              𝑛
+                                                                                              where 𝛥𝒖𝑖 is a small, independent and unbiased noise with expectation
+cov(𝑥, 𝑦) =          𝑤𝑖 (𝑥𝑖 − 𝑝𝑥 ) ⋅ (𝑦𝑖 − 𝑝𝑦 )                                   (6)
+                                                                                              𝐸[𝛥𝒖𝑖 ] = 𝟎 and covariance 𝐸[𝛥𝒖𝑖 𝛥𝒖𝑇𝑖 ] = 𝜎 2 𝑪 𝒖𝑖 and 𝑘 is a normalization
+               𝑖=1
+                                                                                              constant. Here, 𝜎 2 represents the global uncertainty in the image,
+and 𝑛 is the number of pixels in each feature’s heatmap. In this work,
+                                                                                              whereas 𝑪 𝒖𝑖 is the 2 × 2 unnormalized covariance matrix representing
+the mean is replaced by the peak location 𝒑 = (𝑝𝑥 , 𝑝𝑦 ) in order to
+                                                                                              the Gaussian distribution of each detected feature, computed from the
+represent a distribution around the peak of the detected feature, rather
+                                                                                              CNN heatmaps. After some calculations [13], the EPnP formulation can
+than around the heatmap’s mean. This is particularly relevant when the
+                                                                                              be rewritten as
+heatmaps are asymmetric and their mean does not coincide with their
+peak.                                                                                         (𝑵 − 𝑳)𝒚 = 𝜆𝒚.                                                                 (10)
+
+                                                                                        194
+L. Pasqualetto Cassinis et al.                                                                                                                Acta Astronautica 182 (2021) 189–202
+
+
+                                                                                          6.1. Propagation step
+
+                                                                                              A standard EKF state vector for relative pose estimation is composed
+                                                                                          of the relative pose between the servicer and the target, as well as
+                                                                                          the relative translational and rotational velocities 𝒗 and 𝝎. Under the
+                                                                                          assumption that the camera frame onboard the servicer is co-moving
+                                                                                          with the LVLH frame, with the camera boresight aligned with the
+                                                                                          along-track direction, this translates into
+                                                                                               (               )𝑇
+                                                                                          𝒙 = 𝒕𝐶 𝒗 𝒒 𝝎 ,                                                         (11)
+                                                                                                       (       )
+                                                                                          where 𝒒 = 𝑞0 𝒒 𝒗 is the quaternion set that represents the relative
+                                                                                          attitude. Notice that the assumption of the camera co-moving with the
+                                                                                          LVLH is made only to focus on the navigation aspects rather than on
+                                                                                          the attitude control of the servicer. Therefore, the application of the
+                                                                                          filter can be extended to other scenarios, if attitude control is included
+                                                                                          in the system.
+                                                                                              In the MEKF, the modified state vector propagated inside the filter
+                                                                                          becomes
+                                                                                               (               )𝑇
+                                                                                          𝒙̃ = 𝒕𝐶 𝒗 𝒂 𝝎 ,                                                        (12)
+
+                                                                                          where 𝒂 is four times the Modified Rodrigues Parameters (MRP) 𝝈,
+                                                                                                       𝒒
+                                                                                          𝒂 = 4𝝈 = 4 𝒗 .                                                 (13)
+                                                                                                     1 + 𝑞0
+                                                                                          The discrete attitude propagation step is derived by linearizing 𝒂̇
+Fig. 9. Schematic of the procedure followed to derive covariance matrices from
+                                                                                          around 𝒂 = 𝟎3×1 and assuming small angle rotations [36],
+CNN heatmaps. The displayed ellipses are derived from the computed covariances by              1
+assuming the confidence intervals 𝟏𝝈 = 𝟎.𝟔𝟖 and 𝟑𝝈 = 𝟎.𝟗𝟗.                                𝒂̇ =   [𝝎×]𝒂 + 𝝎.                                                      (14)
+                                                                                               2
+                                                                                          As a result, the discrete linearized propagation of the full state becomes
+
+This is an eigenvalue problem in which both 𝑵 and 𝑳 matrices are a                        𝒙̃ 𝑘 = 𝜱𝑘 𝒙̃ 𝑘−1 + 𝜞 𝑘 𝑸𝑘 ,                                                       (15)
+function of 𝒚 and 𝑪 𝒖𝑖 . The problem is solved iteratively by means of                    where 𝑸𝑘 represents the process noise and
+the closed-loop EPPnP solution for the four control points, assuming                           (             )
+no feature uncertainty.                                                                          𝜱𝐶𝑊    𝟎6×6
+                                                                                          𝜱𝑘 =                                                                              (16)
+   Once 𝒚 is estimated, the relative pose is computed by solving the                             𝟎6×6   𝜱𝑎,𝜔
+                                                                                                 (           )
+generalized Orthogonal Procrustes problem used in the EPPnP [10].                                  𝜱𝑟𝑟 𝜱𝑟𝑣
+                                                                                          𝜱𝐶𝑊 =                                                                             (17)
+                                                                                                   𝜱𝑣𝑟 𝜱𝑣𝑣
+6. Navigation filter                                                                            ⎛1        0         6(𝛥𝜃 − sin 𝛥𝜃)⎞
+                                                                                          𝜱𝑟𝑟 = ⎜0      cos 𝛥𝜃            0       ⎟                                         (18)
+                                                                                                ⎜                                 ⎟
+    Several navigation filters for close-proximity operations were inves-                       ⎝0        0          4 − 3 cos 𝛥𝜃 ⎠
+tigated in recent years in the context of relative pose estimation. The                         ⎛1∕𝜔𝑠 (4 sin 𝛥𝜃 − 3𝛥𝜃)              0             2∕𝜔𝑠 (1 − cos 𝛥𝜃)⎞
+reader is referred to Pasqualetto Cassinis et al. [8] for a comprehensive                 𝜱𝑟𝑣 = ⎜           0                   1∕𝜔𝑠 sin 𝛥𝜃               0        ⎟        (19)
+                                                                                                ⎜                                                                  ⎟
+overview that goes beyond the scope of this work. In the proposed                               ⎝ 2∕𝜔𝑠 (cos 𝛥𝜃 − 1)                 0                sin 𝛥𝜃∕𝜔      ⎠
+navigation system, the so-called Multiplicative Extended Kalman Filter                          ⎛0          0            6𝜔𝑠 (1 − cos 𝛥𝜃)⎞
+(MEKF) is used. Remarkably, other works [15,30] adopted a standard                        𝜱𝑣𝑟 = ⎜0      𝜔𝑠 sin 𝛥𝜃                0       ⎟                                  (20)
+formulation of the EKF that propagates the relative pose, expressed                             ⎜                                        ⎟
+                                                                                                ⎝0          0              3𝜔𝑠 sin 𝛥𝜃 ⎠
+in terms of relative position and quaternions, as well as the relative
+                                                                                                ⎛4 cos 𝛥𝜃 − 3      0       2 sin 𝛥𝜃 ⎞
+translational and rotational velocities (prediction step), correcting the
+                                                                                          𝜱𝑣𝑣 = ⎜      0        cos 𝛥𝜃         0 ⎟                                          (21)
+prediction with the measurements obtained from the monocular cam-                               ⎜                                   ⎟
+                                                                                                ⎝ −2 sin 𝛥𝜃        0        cos 𝛥𝜃 ⎠
+era (correction step). However, the quaternion set consists of four                              ( 1                          )
+                                                                                                      [𝜔×]𝛥𝑡    𝛥𝑡 1
+parameters to describe the 3DOF attitude, hence one of its parame-
+                                                                                          𝜱𝑎,𝜔 = 𝒆
+                                                                                                    2         ∫0 𝒆 2 [𝜔×]𝜏 𝑑𝜏                                               (22)
+ters is deterministic. As reported by Tweddle and Saenz-Otero [36]                                   𝟎3×3          𝑰 3×3
+and Sharma and D’Amico [31], this makes the covariance matrix of                                     1
+                                                                                                  ⎛ 2𝑚 𝑰 3×3 𝛥𝑡2                𝟎3×3         ⎞
+a quaternion have one eigenvalue that is exactly zero. As a result,                               ⎜ 1 𝑰 𝛥𝑡                                   ⎟
+                                                                                                                                𝟎3×3
+the entire state covariance propagated by the filter may become non-                      𝜞 𝑘+1 = ⎜ 𝑚 3×3                    𝛥𝑡 1 [𝜔×]𝜏 −1
+                                                                                                                                             ⎟.                             (23)
+                                                                                                  ⎜ 𝟎                   𝛥𝑡 ∫0 𝒆 2       𝑱 𝑑𝜏 ⎟
+positive-definite and lead to the divergence of the filter. The MEKF,                             ⎜      3×3                                 ⎟
+introduced for the first time by Lefferts et al. [37], aims at solving                            ⎝ 𝟎3×3                        𝑱 −1 𝛥𝑡      ⎠
+the above issue by using two different parametrizations of the relative                   The terms 𝜔𝑠 and 𝛥𝜃 in Eq. (17) represent the servicer argument of
+attitude. A three element error parametrization, expressed in terms                       perigee and true anomaly variation from time 𝑡0 to 𝑡, respectively,
+of quaternions, is propagated and corrected inside the filter to return                   whereas the term 𝑱 in Eq. (23) is the inertia matrix of the target
+an estimate of the attitude error. At each estimation step, this error                    spacecraft. In Tweddle and Saenz-Otero [36], the integral terms ins
+estimate is used to update a reference quaternion and is reset to zero                    Eqs. (22)–(23) are solved by creating a temporary linear system from
+for the next iteration. Notably, the reset step prevents the attitude error               Eq. (14), augmented with the angular velocity and the process noise.
+parametrization from reaching singularities, which generally occur for                    The State Transition Matrix of this system is then solved numerically
+large angles.                                                                             with the matrix exponential.
+
+                                                                                    195
+L. Pasqualetto Cassinis et al.                                                                                                                   Acta Astronautica 182 (2021) 189–202
+
+
+6.2. Correction step                                                                                       In the tightly-coupled filter, the measurement covariance matrix 𝑹
+                                                                                                       is a time-varying block diagonal matrix constructed with the heatmaps-
+    At this stage, the propagated state 𝒙̃ 𝑘 is corrected with the mea-                                derived covariances 𝑪 𝑖 in Eq. (5),
+surements 𝒛 to return an update of the state 𝒙̂ 𝑘 . In a loosely-coupled                                 ⎛𝑪 1                  ⎞
+filter, these measurements are represented by the relative pose between                                𝑹=⎜             ⋱       ⎟.                                              (38)
+                                                                                                         ⎜                     ⎟
+the servicer and the target spacecraft, obtained by solving the PnP                                      ⎝                  𝑪 𝑛⎠
+problem with the CEPPnP solver described in Section 5. In this case,
+                                                                                                       Notice that 𝑪 𝑖 can differ for each feature in a given frame as well as
+a pseudomeasurements vector is derived by transforming the relative
+                                                                                                       vary over time. Preliminary navigation results [30] already showed that
+quaternion set into the desired attitude error 𝒂,
+                                                                                                       such heatmaps-derived covariance matrix can capture the statistical
+                                   𝛿𝒒 𝒗                                                                distribution of the measured features and improve the measurements
+𝛿𝒒 𝑧 = 𝒒 𝑧 ⊗ 𝒒 ref∗ → 𝒂 = 4                                                               (24)
+                   𝑘             1 + 𝛿𝑞0                                                               update step of the navigation filter. Conversely, in the loosely-coupled
+                                                                      ) ⎛𝒕 ⎞ ( )                       filter 𝑹 represents the uncertainty in the pose estimation step and hence
+                                                                         𝐶
+     ( )                  (
+      𝒕𝐶                   𝑰 3×3               𝟎3×3    𝟎3×3    𝟎3×3     ⎜𝒗⎟                            it is not directly related to the CNN heatmaps. A constant value is
+𝒛𝑘 =     = 𝑯 𝑘 𝒙𝑘 + 𝑽 𝑘 =                                               ⎜ ⎟ + 𝑽𝑟    . (25)
+       𝒂                    𝟎3×3               𝟎3×3    𝑰 3×3   𝟎3×3     ⎜𝒂⎟    𝑽𝑎                      therefore chosen based on the pose estimation accuracy observed for
+                                                                        ⎜ ⎟       𝑘
+                                                                        ⎝ 𝝎 ⎠𝑘                         the test dataset.
+                                                                                                           Finally, the updated state estimate 𝒙̂ 𝑘 is obtained from the propa-
+In Eq. (24), ⊗ denotes the quaternion product. Conversely, in a tightly-
+                                                                                                       gated state 𝒙̃ 𝑘 , the residuals 𝒚,
+                                                                                                                                        ̃ and the Kalman Gain 𝑲,
+coupled filter the measurements are represented by the pixel coordi-
+nates of the detected features,                                                                        𝒚̃ = 𝒛 − 𝒉(𝒙̃ 𝑘 )                                                       (39)
+    (                   )𝑇
+𝒛 = 𝑥1 , 𝑦1 … 𝑥𝑛 , 𝑦𝑛 .                                            (26)                                𝑲 = 𝑷 𝑘 𝑯 𝑇𝑘 (𝑯 𝑘 𝑷 𝑘 𝑯 𝑇𝑘 + 𝑹𝑘 )−1                                     (40)
+
+    Referring to Eqs. (1)–(2), this translates into the following equations                            𝒙̂ 𝑘 = 𝒙̃ 𝑘 + 𝑲 𝒚.
+                                                                                                                       ̃                                                       (41)
+for each detected point 𝒑𝑖 :
+                                                                                                       6.3. Reset step
+     ( 𝐶                         )𝑇
+       𝑥𝑖            𝑦𝐶
+                      𝑖
+𝒉𝑖 =       𝑓 𝑥 + 𝐶𝑥 , 𝐶 𝑓 𝑦 + 𝐶𝑦                                       (27)                                In the reset step, the reference quaternion 𝒒 ref is updated with the
+       𝑧𝐶
+        𝑖            𝑧𝑖
+                                                                                                       attitude error estimate 𝒂̂ 𝒑 and the new attitude error is set to zero,
+               ∗
+𝐫 𝐶 = 𝒒 ⊗ 𝒓𝐵      𝐶
+           𝑖 ⊗𝒒 +𝐭 ,                                                                      (28)
+                                                                                                       𝒒̂ 𝑘 = 𝛿𝒒(𝒂)
+                                                                                                                 ̂ ⊗ 𝒒 ref𝑘                                                    (42)
+where 𝒒 ∗ is the quaternion conjugate. As a result, the measurements
+update equation can be written as                                                                      𝒂̂ = 𝟎3×1                                                               (43)
+
+                                                                   ⎛𝒕𝐶 ⎞                               𝒒 ref𝑘+1 = 𝒒̂ 𝑘 .                                                       (44)
+                   ⎛ 𝑯 𝒕𝐶 ,𝑖           𝟎2𝑛×3     𝑯 𝒂,𝑖     𝟎2𝑛×3 ⎞ ⎜ ⎟   ( )
+                                                                     𝒗    𝑽𝑟
+𝒛 𝑘 = 𝑯 𝑘 𝒙𝑘 + 𝑽 = ⎜ ⋮                   ⋮        ⋮          ⋮ ⎟⎜ ⎟ +                     (29)            The obtained estimated quaternion set 𝒒̂ 𝑘 is then compared to the
+                   ⎜                                             ⎟⎜𝒂⎟     𝑽𝑎                           real quaternion set to assess the angle accuracy of the filter.
+                   ⎝𝑯 𝒕𝐶 ,𝑛            𝟎2𝑛×3     𝑯 𝒂,𝑛     𝟎2𝑛×3 ⎠ ⎜ ⎟
+                                                                   ⎝𝒘⎠   𝑘
+                                                                                                       7. Simulations
+and the Jacobian 𝑯 𝑘 of the observation model with respect of the state
+vector is a 2𝑛×13 matrix whose elements are
+                                                                                                           In this section, the simulation environment and the results are
+𝑯 𝑟,𝑖 = 𝑯 int ext
+          𝑖 ⋅𝑯 𝐶                                                                          (30)         presented. Firstly, the impact of including a heatmaps-derived co-
+                    𝒕 ,𝑖
+                                                 𝒒
+                                                                                                       variance in the pose estimation step is addressed by comparing the
+𝑯 𝒂,𝑖 = 𝑯 int   ext     int   ext
+          𝑖 ⋅ 𝑯 𝒂,𝑖 = 𝑯 𝑖 ⋅ 𝑯 𝒒,𝑖 ⋅ 𝑯 𝒂                                                   (31)         CEPPnP method with a standard solver which does not account for
+                   ⎛ 𝑓𝑥    0     − 𝐶 2 𝑥𝐶
+                                         𝑓𝑥    ⎞                                                       feature uncertainty. The weights in Eq. (4) are selected based on the
+          𝜕𝒉𝑖      ⎜ 𝑧𝐶𝑖             (𝑧𝑖 )
+                                             𝑖 ⎟
+                                                                                                       standard RGB-to-greyscale conversion (𝑤𝑅 = 0.299, 𝑤𝐺 = 0.587, 𝑤𝐵 =
+𝑯 int
+  𝑖 =         = ⎜         𝑓𝑦           𝑓       ⎟                                          (32)
+         𝜕𝒓𝐶    ⎜0                − 𝐶𝑦 2 𝑦𝐶  𝑖 ⎟                                                       0.114). Secondly, the performance of the MEKF is evaluated by com-
+           𝑖              𝑧𝐶
+                ⎝           𝑖        (𝑧𝑖 )     ⎠                                                       paring the convergence profiles with a heatmaps-derived covariance
+           𝐶
+                   (        𝐵 ⊗ 𝒒∗
+                                      )
+         𝜕𝒓𝑖     𝜕  𝒒   ⊗ 𝒓 𝑖                          𝜕𝒓𝐶                                             matrix against covariance matrices with arbitrary selected covariances.
+𝑯 ext
+  𝒒,𝑖 = 𝜕𝒒 =                            ; 𝑯 ext 𝐶   = 𝐶𝑖 = 𝑰 3                            (33)
+                          𝜕𝒒                   𝒕 ,𝑖    𝜕𝒕                                              Initialization is provided by the CEPPnP for all the scenarios.
+         (            )       (          )            ( )
+       𝜕  𝛿𝒒 ⊗  𝒒 ref       𝜕  𝑸 ref 𝛿𝒒             𝜕  𝛿𝒒                                                  Two separate error metrics are adopted in the evaluation, in accor-
+  𝒒
+𝑯𝒂 =                    =                  = 𝑸ref                                         (34)         dance with Sharma and D’Amico [20]. Firstly, the translational error
+             𝜕𝒂                 𝜕𝒂                    𝜕𝒂                                                                                         𝐶
+       ⎛𝑞0 −𝑞1 −𝑞2 −𝑞3 ⎞                                                                               between the estimated relative position 𝒕̂ and the ground truth 𝒕 is
+       ⎜                              ⎟                                                                computed as
+         𝑞     𝑞0        𝑞3     −𝑞2 ⎟
+𝑸ref = ⎜ 1                                 .                                              (35)
+       ⎜𝑞2 −𝑞3           𝑞0      𝑞1 ⎟                                                                               𝐶
+                                                                                                       𝐸𝑇 = |𝒕𝐶 − 𝒕̂ |.                                                        (45)
+       ⎜𝑞      𝑞2       −𝑞1      𝑞0 ⎠ ⎟
+       ⎝ 3                               ref
+                                                                                                       This metric is also applied for the translational and rotational velocities
+The partial derivatives of the differential quaternion set with respect to                             estimated in the navigation filter. Secondly, the attitude accuracy is
+the attitude error are computed from the relation between the attitude                                 measured in terms of the Euler axis–angle error between the estimated
+error 𝒂 and the differential quaternion set 𝛿𝒒,                                                        quaternion 𝒒̂ and the ground truth 𝒒,
+                                                                                                           (        )
+        16 − ‖𝒂‖2                         𝒂                                                            𝜷 = 𝛽𝑠 𝜷 𝒗 = 𝒒 ⊗ 𝒒̂                                                   (46)
+𝛿𝑞0 =                      𝛿𝒒 𝒗 = 8                                                       (36)
+        16 + ‖𝒂‖2                     16 + ‖𝒂‖2
+                                                                                                       𝐸𝑅 = 2 arccos (|𝛽𝑠 |).                                                  (47)
+ ( )                ⎛      −8𝑎1                            −8𝑎2                   −8𝑎3      ⎞
+𝜕 𝛿𝒒                ⎜          2                                                            ⎟
+             8      ⎜ 16 + ‖𝒂‖   − 2𝑎21                   −2𝑎1 𝑎2                −2𝑎1 𝑎3    ⎟.         7.1. Pose estimation
+     = (         )
+ 𝜕𝒂             2 2 ⎜     −2𝑎   𝑎                     16 + ‖𝒂‖2 − 2𝑎22           −2𝑎2 𝑎3    ⎟
+        16 + ‖𝒂‖    ⎜
+                              2 1
+                                                                                     2    2⎟
+                    ⎝     −2𝑎3 𝑎1                         −2𝑎3 𝑎2            16 + ‖𝒂‖ − 2𝑎3 ⎠
+                                                                                                          Three representative scenarios are selected from the CNN test
+                                                                                          (37)         dataset for a preliminary evaluation of the Single-stack Hourglass
+
+                                                                                                 196
+L. Pasqualetto Cassinis et al.                                                                                                                Acta Astronautica 182 (2021) 189–202
+
+
+
+
+                                  Fig. 10. Characteristics of the ellipses derived from the covariance matrices for the three selected scenarios.
+
+
+
+
+       Fig. 11. Pose Estimation Results - The standard deviation of the position error 𝐸𝑇 is depicted as the length of each error bar above and below the mean error 𝐸𝑇 .
+
+
+performance. These scenarios were chosen in order to analyse different                       Notably, interesting relations can be established between the three
+heatmaps’ distributions around the detected features. A comparison is                        quantities reported in the figure. In the first scenario, the correlation
+made between the proposed CEPPnP and the EPPnP. Fig. 10 shows                                between the sub-pixel RMSE and the large eigenvalues ratio suggests
+the characteristics of the covariance matrices derived from the pre-                         that a very accurate CNN detection can be associated with circular-
+dicted heatmaps. Here, the ratio between the minimum and maximum                             shaped heatmaps. Moreover, the relatively low ellipse’s areas indicate
+eigenvalues of the associated covariances is represented against the                         that, in general, small heatmaps are expected for an accurate detection.
+ellipse’s area and the RMSE between the Ground Truth (GT) and the                            Conversely, in the second scenario the larger ellipses’ area correlates
+x, y coordinates of the extracted features,                                                  with a larger RMSE. Furthermore, it can be seen that the largest differ-
+           √                                                                                 ence between the 𝑥- and 𝑦- components of the RMSE occurs either for
+𝐸RMSE,𝑖 = (𝑥𝐺𝑇 ,𝑖 − 𝑥𝑖 )2 + (𝑦𝐺𝑇 ,𝑖 − 𝑦𝑖 )2 .                     (48)
+
+                                                                                       197
+L. Pasqualetto Cassinis et al.                                                                                                             Acta Astronautica 182 (2021) 189–202
+
+
+
+
+       Fig. 12. Pose Estimation Results - The standard deviation of the attitude error 𝐸𝑅 is depicted as the length of each error bar above and below the mean error 𝐸𝑅 .
+
+
+Table 3                                                                                     Table 4
+Single-stack Hourglass Pose Estimation performance results for the selected three           VBAR approach scenario. The attitude is represented in terms of ZYX Euler angles for
+representative scenarios.                                                                   clarity. Note that the camera boresight is the Y-axis of the LVLH frame.
+ Metric                Scenario         CEPPnP                     EPPnP                     𝜽0 [deg]                𝝎0 [deg/s]                 𝒕𝐶0 [m]             𝒗0 [mm/s]
+                       1                [0.18 0.22 0.24]           [0.17 0.22 0.24]          [−180 30 -80]𝑇          [−2.5 −4.3 0.75]𝑇          [0 150 0]𝑇          [0 0 0]𝑇
+ 𝐸𝑇 [m]                2                [0.35 0.41 0.59]           [0.14 0.4 22.8]
+                       3                [0.49 0.12 1.41]           [0.56 0.16 5.01]
+                       1                0.36                       0.35
+ 𝐸𝑅 [deg]              2                0.75                       6.08                         Furthermore, it can be seen from a different comparison level that
+                       3                1.99                       2.72                     both the mean and standard deviation of the estimated relative pose
+                                                                                            are improved, when HRNet is used prior to the PnP solver (Figs. 11b-
+                                                                                            12b). Again, this is a direct consequence of the smaller RMSE reported
+the most eccentric heatmap (ID 13) or for the one with the largest area                     in Fig. 8. As a result, the above-mentioned degradation of the pose
+(ID 6). The same behaviour can be observed in the last scenario, where                      estimation accuracy for increasing relative ranges is less critical for
+the largest RMSE coincides with a large, highly eccentric heatmap.                          HRNet. Notice also that, despite an actual improvement of CEPPnP
+    Table 3 lists the pose estimation results for the three scenarios.                      over EPPnP can be seen in the HRNet scenario, the improvements
+As anticipated in Fig. 10, the statistical information derived from the                     in both the mean and standard deviation of the estimation error are
+heatmaps in the first scenario is uniform for all the features, due to                      relatively small at large relative distances. This is considered to be
+the very accurate CNN detection. As a result, the inclusion of features                     related to the fact that HRNet returns circular heatmaps for most of
+covariance in the CEPPnP solver does not help refining the estimated                        the detected features, due to its higher detection accuracy compared to
+pose. Both solvers are characterized by the same pose accuracy.                             the Single-stack Hourglass.
+    Not surprisingly, the situation changes as soon as the heatmaps are                         Notably, it is important to assess how well the pose estimation
+not uniform across the feature IDs. Due to its capability of accom-                         system can scale when tested on datasets different than the Envisat one.
+modating feature uncertainties in the estimation, the CEPPnP method                         To this aim, the proposed heatmaps-based scheme was benchmarked
+outperforms the EPPnP for the remaining scenarios. In other words,                          on the SPEED dataset, in order to compare its pose accuracy against
+the CEPPnP solver proves to be more robust against inaccurate CNN                           standard as well as CNN-based systems [19,25,26]. The reader is re-
+detections by accounting for a reliable representation of the features                      ferred to Barad [38, p. 115] for a comprehensive quantitative analysis
+covariance.                                                                                 of such comparison. The results demonstrated that the performance
+    Next, the previous comparison is extended to the entire test dataset                    of the proposed pipeline, based on extracting feature heatmaps and
+as well as to HRNet, by computing the mean and standard deviation                           using the CEPPnP solver, compares well with the state-of-the-art pose
+of the estimated relative position and attitude as a function of the                        estimation systems.
+relative range, respectively. This is represented in Figs. 11–12. First
+of all, it can be seen that the pose accuracy of the CEPPnP solver in
+                                                                                            7.2. Navigation filter
+the Single-stack Hourglass scenario does not improve compared to the
+EPPnP, as opposed to the ideal behaviour reported in Table 3. There
+are two potential causes of this behaviour. On the one hand, most of                              To assess the performance of the proposed MEKF, a rendezvous sce-
+the test images characterized by a large RMSE (Fig. 8) could not return                     narios with Envisat is rendered in Cinema 4D©. This is a perturbation-
+statistically-meaningful heatmaps that would help the CEPPnP solver.                        free VBAR trajectory characterized by a relative velocity ‖𝒗‖ = 0 m∕s.
+This could be due to multiple heatmaps or highly inaccurate detections                      The Envisat performs a roll rotation of ‖𝝎‖ = 5 deg/s, with the
+in which two different corners are confused with each other. On the                         servicer camera frame aligned with the LVLH frame. Table 4 lists the
+other hand, this could be a direct consequence of the large relative                        initial conditions of the trajectory, whereas Fig. 13 shows some of the
+ranges considered in this work. As already reported by Park et al. [26]                     associated rendered 2D images. It is assumed that the images are made
+and Sharma and D’Amico [31], a decreasing performance of EPPnP is                           available to the filter every 2 s for the measurement update step, with
+indeed expected for increasing relative distances, due to the nonlinear                     the propagation step running at 1 Hz. In both scenarios, the MEKF is
+relation between the pixel location of the detected features and 𝑧𝐶                         initialized with the CEPPnP pose solution at time 𝑡0 . The other elements
+in Eq. (2). In other words, relatively large pixel errors could lead to                     of the initial state vector are randomly chosen assuming a standard
+inaccurate pose estimates for large relative distances, independently of                    deviation of 1 mm/s and 1 deg/s for all the axes of terms (𝒗̂ 0 − 𝒗) and
+the use of either CEPPnP or EPPnP.                                                          (𝝎̂ 0 − 𝝎), respectively. Table 5 reports the initial conditions of the filter.
+
+                                                                                      198
+L. Pasqualetto Cassinis et al.                                                                                                                   Acta Astronautica 182 (2021) 189–202
+
+
+
+
+                                          Fig. 13. Montage of the selected VBAR approach scenario. Images are shown every 6 s for clarity.
+
+
+                                     Table 5
+                                     Initial state vector in the MEKF. Here, HG refers to the Single-stack Hourglass architecture.
+                                                                                                         𝐶
+                                         CNN        𝜽̂ 0 [deg]                  𝝎̂ 0 [deg/s]           𝒕̂0 [m]                   𝒗̂ 0 [mm/s]
+                                         HG         [−180.2 28.7 −80.6]𝑇        [−2.1 −4.1 0.1]𝑇       [0.1 149.7 0.1]𝑇          [2.8 −1.3 3]𝑇
+                                         HRNet      [−179.5 33.5 −79.7]𝑇        [−2.1 −4.1 0.1]𝑇       [−0.1 149.8 −0.1]𝑇        [2.8 −1.3 3]𝑇
+
+
+Table 6                                                                                         standard deviation, highlighting a better robustness with respect to the
+Standard deviation of Monte Carlo variables.
+                                                                                                initial conditions of the filter when compared to the loosely-coupled
+ 𝜎𝛥𝜙0 [deg]                𝜎𝝎0 [deg/s]              𝜎𝒕𝐶 [m]                𝜎𝒗0 [mm/s]           MEKF. Note that, due to the higher accuracy of HRNet in the feature
+                                                      0
+
+ 10                        1                        [1 10 1]𝑇              10                   detection step — and hence also in the pose estimation step, this
+                                                                                                is not observed for the latter CNN. In conclusion, a tightly-coupled
+                                                                                                architecture is expected to return higher pose accuracies if simplified
+                                                                                                CNNs, such as the proposed single-stack hourglass, are implemented at
+    Figs. 14–15 show the convergence profiles for the translational and
+                                                                                                a feature detection level.
+rotational states in the tightly- and loosely-coupled MEKF, respectively.
+Besides, a Monte Carlo simulation with 1,000 runs was performed to
+                                                                                                8. Conclusions and recommendations
+assess the robustness of the filter estimate against varying the initial
+state 𝒙̂ 0 . Table 6 lists the standard deviation chosen for the deviation
+                                                                                                    This paper introduces a novel framework to estimate the relative
+from the true initial state of the filter. The distribution follows a
+                                                                                                pose of an uncooperative target spacecraft with a single monocular
+Gaussian profile with true-state mean. For the attitude initial error, the
+                                                                                                camera onboard a servicer spacecraft. A method is proposed in which
+initial reference quaternion 𝒒 ref0 is perturbed by introducing a random
+                                                                                                a CNN-based IP algorithm is combined with a CEPPnP solver and a
+angular error around the correct Euler axis [39, p. 44],
+                                                                                                tightly-coupled MEKF to return a robust estimate of the relative pose
+𝛥𝝓0 = 𝛥𝜙0 𝒒 𝒗                                                                      (49)         as well as of the relative translational and rotational velocities. The
+             (             )                                                                    performance of the proposed method is evaluated at different levels of
+                     1
+𝒒 ref0 = 𝒒 0 ⊗     1           .                                                   (50)         the pose estimation system, by comparing the detection accuracy of two
+                   2
+                     𝛥𝝓0
+                                                                                                different CNNs (feature detection step and pose estimation step) whilst
+Table 7 reports the mean of the steady-state pose estimates together                            assessing the accuracy and robustness of the selected tightly-coupled
+with their standard deviation. From these results, important insights                           filter against a loosely-coupled filter (navigation filter step).
+can be gained on two different levels of the comparison.                                            The main novelty of the proposed CNN-based pose estimation sys-
+    On a CNN performance level, the results in Fig. 14 show that                                tem is to introduce a heatmaps-derived covariance representation of the
+a slightly worse cross-track estimate of the Single-stack Hourglass is                          detected features and to exploit this information in a tightly-coupled,
+compensated by a more accurate estimate of the relative attitude. Given                         Single-stack Hourglass-based MEKF. On a feature detection level, the
+the limited impact of these estimation errors at the relatively large                           performance of the proposed Single-stack Hourglass is compared to the
+inter-satellite range of 150 m, these results suggest that the Single-                          more complex HRNet to assess the feasibility of a reduced-parameters
+stack Hourglass has a comparable performance with the HRNet for                                 CNN within the IP. Results on the selected test dataset suggest a
+the selected scenario. Next, on a filter architecture level, a compari-                         comparable mean detection accuracy, despite a larger standard devi-
+son between Figs. 14–15 illustrate the different convergence pattern                            ation of the former network. Notably, this latter aspect is found to
+between the tightly- and loosely-coupled MEKF. Most importantly, it                             decrease the pose estimation accuracy of the proposed CNN compared
+can be seen that the loosely-coupled estimate of the relative along-track                       to HRNet, despite the adoption of CEPPnP to capture features uncer-
+position is characterized by a bias which is not present in the tightly-                        tainty. However, important insights are gained at a navigation filter
+coupled estimate. This occurs due to the decoupling of the translational                        level, delineating two major benefits of the proposed tightly-coupled
+and rotational states, reflected in the Jacobian 𝑯 𝑘 in Eq. (25). As a                          MEKF. First of all, the capability of deriving a measurements covariance
+result, the relative position is estimated without accounting for the                           matrix directly from the CNN heatmaps allows to capture a more
+attitude measurements and vice versa. In other words, the creation of                           representative statistical distribution of the measurements in the filter.
+pseudomeasurements of the relative pose prior to the loosely-coupled                            Notably, this is expected to be a more complex task if a loosely-coupled
+filter leads to two separate translational and rotational estimates. Con-                       filter is used, due to the need to convert the heatmaps distribution
+versely, in the tightly-coupled filter the full statistical information is                      into a pose estimation uncertainty through a linear transformation.
+enclosed in the detected features, and can be used to simultaneously                            Secondly, the coupling between the rotational and translational states
+refine both the translational and the rotational states. Moreover, a close                      within the filter guarantees a mutual interaction which is expected
+inspection of the Single-stack Hourglass attitude estimates in Table 7                          to improve the global accuracy of the filter, especially in the along-
+suggests that the tightly-coupled MEKF is characterized by a lower                              track estimate. Besides, the navigation results for the selected VBAR
+
+                                                                                          199
+L. Pasqualetto Cassinis et al.                                                                                                                  Acta Astronautica 182 (2021) 189–202
+
+
+
+
+                                 Fig. 14. Navigation Filter Results — Tightly-coupled MEKF. The dashed lines represent the 1𝜎 of the estimated quantities.
+
+
+
+
+                                 Fig. 15. Navigation Filter Results — Loosely-coupled MEKF. The dashed lines represent the 1𝜎 of the estimated quantities.
+
+
+
+                                                                                           200
+L. Pasqualetto Cassinis et al.                                                                                                                Acta Astronautica 182 (2021) 189–202
+
+                             Table 7
+                             Monte Carlo Simulation Results. The mean and standard deviation of the relative pose errors are taken from the absolute
+                             errors at filter steady state for each Monte Carlo run.
+                             Single-stack Hourglass
+                                 MEKF                  𝐸𝑇1 [m]                    𝐸𝑇2 [m]                    𝐸𝑇3 [m]                    𝐸𝑅 [deg]
+                                 Tightly-coupled       0.1182 ± 6.3E−4            0.03 ± 0.0024              0.096 ± 5.4E−4             1.33 ± 0.03
+                                 Loosely-coupled       0.1 ± 2E−7                 0.33 ± 3E−7                0.01 ± 1E−4                4.7 ± 12.6
+                             HRNet
+                                 MEKF                  𝐸𝑇1 [m]                    𝐸𝑇2 [m]                    𝐸𝑇3 [m]                    𝐸𝑅 [deg]
+                                 Tightly-coupled       0.0683 ± 5.2E−4            0.03 ± 0.014               0.01 ± 3.4E−5              4.3 ± 0.03
+                                 Loosely-coupled       0.0075 ± 1E−4              0.36 ± 6.3E−5              0.002 ± 4E−4               0.93 ± 3.2E−7
+
+
+
+scenario demonstrated that the proposed Single-stack Hourglass could                           [8] L. Pasqualetto Cassinis, R. Fonod, E. Gill, Review of the robustness and
+represent a valid alternative to the more complex HRNet, provided                                  applicability of monocular pose estimation systems for relative navigation with
+                                                                                                   an uncooperative spacecraft, Prog. Aerosp. Sci. 110 (2019).
+that its larger detection uncertainty is reflected in the measurements
+                                                                                               [9] Lepetit, F. Moreno-Noguer, P. Fua, EPnP: an accurate O(n) solution to the PnP
+covariance matrix. Together, these improvements suggest a promising                                problem, Int. J. Comput. Vis. 81 (2009) 155–166.
+scheme to cope with the challenging demand for robust navigation in                           [10] L. Ferraz, X. Binefa, F. Moreno-Noguer, Very fast solution to the PnP problem
+close-proximity scenarios.                                                                         with algebraic outlier rejection, in: IEEE Conference on Computer Vision and
+    However, further work is required in several directions. First of                              Pattern Recognition, Columbus, OH, USA, 2014, http://dx.doi.org/10.1109/
+                                                                                                   CVPR.2014.71.
+all, more recent CNN architectures shall be investigated to assess
+                                                                                              [11] A. Ostrowsky, Solution of Equations and Systems of Equations, second ed.,
+the achievable robustness and accuracy in the feature detection step.                              Academic Press, New York, 1966, pp. 183–188.
+Secondly, the impact of a reduction in the number of CNN parameter on                         [12] S. Urban, J. Leitloff, S. Hinz, MLPnP: A rel-time maximum likelihood solution to
+the computational complexity shall be assessed by testing the CNNs in                              the perspective-n-point problem, in: Proceedings of the British Machine Vision
+space-representative processors. Moreover, broader relative ranges be-                             Conference, vol. 3, 2016.
+                                                                                              [13] L. Ferraz, X. Binefa, F. Moreno-Noguer, Leveraging feature uncertainty in the PnP
+tween the servicer camera and the target spacecraft shall be considered,
+                                                                                                   problem, in: Proceedings of the British Machine Vision Conference, Nottingham,
+most importantly to allow a thorough investigation of the 3D depth                                 UK, 2014, http://dx.doi.org/10.5244/C.28.83.
+perception challenges when approaching the target spacecraft with a                           [14] J. Cui, C. Min, X. Bai, J. Cui, An improved pose estimation method based on
+single monocular camera. Besides, more close-proximity scenarios shall                             projection vector with noise error uncertainty, IEEE Photonics J. 11 (2) (2019).
+be recreated to assess the impact of perturbations on the accuracy and                        [15] A. Harvard, V. Capuano, E. Shao, S.-J. Chung, Spacecraft pose estimation from
+                                                                                                   monocular images using neural network based keypoints and visibility maps, in:
+robustness of the navigation filter. In this context, other navigation
+                                                                                                   AIAA Scitech 2020 Forum, Orlando, FL, USA, 2020, http://dx.doi.org/10.1109/
+filters such as the Unscented Kalman Filter shall be investigated.                                 AERO.2018.8396425.
+                                                                                              [16] M. Kisantal, S. Sharma, T. Park, D. Izzo, M. Martens, S. D’Amico, Satellite
+Declaration of competing interest                                                                  pose estimation challenge: Dataset, competition design and results, IEEE Trans.
+                                                                                                   Aerosp. Electron. Syst. (2020).
+                                                                                              [17] D. Rondao, N. Aouf, Multi-view monocular pose estimation for spacecraft relative
+    The authors declare that they have no known competing finan-
+                                                                                                   navigation, in: 2018 AIAA Guidance, Navigation, and Control Conference,
+cial interests or personal relationships that could have appeared to                               Kissimmee, FL, USA, 2018, http://dx.doi.org/10.2514/6.2018-2100.
+influence the work reported in this paper.                                                    [18] V. Capuano, S. Alimo, A. Ho, S. Chung, Robust features extraction for on-board
+                                                                                                   monocular-based spacecraft pose acquisition, in: AIAA Scitech 2019 Forum, San
+Acknowledgements                                                                                   Diego, CA, USA, 2019, http://dx.doi.org/10.2514/6.2019-2005.
+                                                                                              [19] S. Sharma, C. Beierle, S. D’Amico, Pose estimation for non-cooperative spacecraft
+                                                                                                   rendezvous using convolutional neural networks, in: IEEE Aerospace Conference,
+   This study is funded and supported by the European Space Agency                                 Big Sky, MT, USA, 2018, http://dx.doi.org/10.1109/AERO.2018.8396425.
+and Airbus Defence and Space under Network/Partnering Initiative                              [20] S. Sharma, S. D’Amico, Pose estimation for non-cooperative spacecraft ren-
+(NPI) program with grant number NPI 577–2017. The first author                                     dezvous using neural networks, in: 29th AAS/AIAA Space Flight Mechanics
+would like to thank Christoph Haskampf for the rendering of the images                             Meeting, Ka’anapali, HI, USA, 2019, http://dx.doi.org/10.1109/AERO.2018.
+                                                                                                   8396425.
+in Cinema 4D©and Kuldeep Barad for the adaptation of HRNet to the
+                                                                                              [21] J. Shi, S. Ulrich, S. Ruel, CubeSat simulation and detection using monocular
+Envisat scenario.                                                                                  camera images and convolutional neural networks, in: 2018 AIAA Guidance,
+                                                                                                   Navigation, and Control Conference, Kissimmee, FL, USA, 2018, http://dx.doi.
+References                                                                                         org/10.2514/6.2018-1604.
+                                                                                              [22] S. Sonawani, R. Alimo, R. Detry, D. Jeong, A. Hess, H. Ben Amor, Assistive rela-
+ [1] A. Tatsch, N. Fitz-Coy, S. Gladun, On-orbit servicing: A brief survey, in:                    tive pose estimation for on-orbit assembly using convolutional neural networks,
+     Proceedings of the 2006 Performance Metrics for Intelligent Systems Workshop,                 in: AIAA Scitech 2020 Forum, Orlando, FL, USA, 2020, http://dx.doi.org/10.
+     2006, pp. 21–23.                                                                              1109/AERO.2018.8396425.
+ [2] M. Wieser, H. Richard, G. Hausmann, J.-C. Meyer, S. Jaekel, M. Lavagna, R.               [23] G. Pavlakos, X. Zhou, A. Chan, K. Derpanis, K. Daniilidis, 6-DoF object pose
+     Biesbroek, e.Deorbit mission: OHB Debris removal concepts, in: ASTRA 2015-                    from semantic keypoints, in: IEEE International Conference on Robotics and
+     13th Symposium on Advanced Space Technologies in Robotics and Automation,                     Automation, 2017.
+     Noordwijk, The Netherlands, 2015.                                                        [24] A. Newell, K. Yang, J. Deng, Stacked hourglass networks for human pose
+ [3] J. Davis, H. Pernicka, Proximity operations about and identification of non-                  estimation, in: B. Leibe, J. Matas, N. Sebe, M. Welling (Eds.), Computer Vision
+     cooperative resident space objects using stereo imaging, Acta Astronaut. 155                  - ECCV 2016, vol. 9912, Springer, Cham, 2016, pp. 483–499.
+     (2019) 418–425.                                                                          [25] B. Chen, J. Cao, A. Parra, T. Chin, Satellite pose estimation with deep land-
+ [4] V. Pesce, M. Lavagna, R. Bevilacqua, Stereovision-based pose and inertia estima-              mark regression and nonlinear pose refinement, in: International Conference on
+     tion of unknown and uncooperative space objects, Adv. Space Res. 59 (2017)                    Computer Vision, Seoul, South Korea, 2019.
+     236–251.                                                                                 [26] T. Park, S. Sharma, S. D’Amico, Towards robust learning-based pose estimation
+ [5] R. Opromolla, G. Fasano, G. Rufino, M. Grassi, Uncooperative pose estimation                  of noncooperative spacecraft, in: AAS/AIAA Astrodynamics Specialist Conference,
+     with a LIDAR-based system, Acta Astronaut. 110 (2015) 287–297.                                Portland, ME, USA, 2019.
+ [6] S. Segal, P. Gurfil, K. Shahid, In-orbit tracking of resident space objects: A           [27] S. D’Amico, M. Benn, J. Jorgensen, Pose estimation of an uncooperative
+     comparison of monocular and stereoscopic vision, IEEE Trans. Aerosp. Electron.                spacecraft from actual space imagery, Int. J. Space Sci. Eng. 2 (2) (2014)
+     Syst. 50 (1) (2014) 676–688.                                                                  171–189.
+ [7] S. Sharma, J. Ventura, S. D’Amico, Robust model-based monocular pose initializa-         [28] K. Sun, B. Xiao, D. Liu, J. Wang, Deep high-resolution representation learning
+     tion for noncooperative spacecraft rendezvous, J. Spacecr. Rockets 55 (6) (2018)              for human pose estimation, in: 2019 IEEE Conference on Computer Vision and
+     1–16.                                                                                         Pattern Recognition, Long Beach, CA, USA, 2019.
+
+
+                                                                                        201
+L. Pasqualetto Cassinis et al.                                                                                         Acta Astronautica 182 (2021) 189–202
+
+
+[29] L. Pasqualetto Cassinis, R. Fonod, E. Gill, I. Ahrns, J. Gil Fernandez, Comparative         of Aerospace Engineering at the Technion - Israel Institute
+     assessment of image processing algorithms for the pose estimation of an                     of Technology, Israel. His research interests are in the area
+     uncooperative spacecraft, in: International Workshop on Satellite Constellations            of guidance and estimation of aerospace vehicles, bearings-
+     & Formation Flying, Glasgow, UK, 2019.                                                      only target tracking, and model-based fault diagnosis. Dr.
+[30] L. Pasqualetto Cassinis, R. Fonod, E. Gill, I. Ahrns, J. Gil Fernandez, CNN-based           Fonod is an Associated Editor for the IEEE Transactions on
+     pose estimation system for close-proximity operations around uncooperative                  Aerospace and Electronic Systems.
+     spacecraft, in: AIAA Scitech 2019 Forum, Orlando, FL, USA, 2020, http://dx.
+     doi.org/10.2514/6.2020-1457.
+[31] S. Sharma, S. D’Amico, Reduced-dynamics pose estimation for non-cooperative                 Dr. Eberhard Gill received a diploma in physics and holds
+     spacecraft rendezvous using monocular vision, in: 38th AAS Guidance and                     a Ph.D. in theoretical astrophysics from the Eberhard-Karls-
+     Control Conference, Breckenridge, CO, USA, 2017.                                            University of Tuebingen, Germany. He holds a M.Sc. of
+[32] H. Curtis, Orbital Mechanics for Engineering Students, Elsevier, 2005.                      Space Systems Engineering from the Delft University of
+[33] M.A. Fischer, R. Bolles, Random sample consensus: A paradigm for model fitting              Technology. He has been working as researcher at the
+     with applications to image analysis and automated cartography, Commun. ACM                  German Aerospace Center (DLR) from 1989 to 2006 in the
+     24 (6) (1981) 381–395.                                                                      field of precise satellite orbit determination, autonomous
+[34] O. Ronneberger, P. Fischer, T. Brox, U-Net: Convolutional networks for biomed-              navigation and formation flying. He has developed a
+     ical image segmentation, in: Medical Image Computing and Computer-Assisted                  GPS-based onboard navigation system for the BIRD mi-
+     Intervention, Springer, 2015, pp. 234–241.                                                  crosatellite. Dr. Gill has been Co-Investigator on several
+[35] D. Kingma, J. Ba, Adam: A method for stochastic optimization, in: 3rd Inter-                international missions, including Mars94-96, Mars-Express,
+     national Conference for Learning Representations, San Diego, CA, USA, 2015,                 Rosetta, Equator-S and Champ, and acted as Principal In-
+     http://dx.doi.org/10.2514/6.2018-2100.                                                      vestigator on the PRISMA mission. Since 2007, he holds
+[36] B. Tweddle, A. Saenz-Otero, Relative computer vision based navigation for small             the Chair of Space Systems Engineering at the Faculty of
+     inspection spacecraft, J. Guid. Control Dyn. 38 (5) (2015) 969–978.                         Aerospace Engineering of the Delft University of Technol-
+[37] E. Lefferts, F. Markley, M. Shuster, Kalman filtering for spacecraft attitude               ogy. In 2013, he has been appointed also as department
+     estimation, J. Guid. Control Dyn. 5 (5) (1982) 417–429.                                     head Space Engineering at the faculty. Since 2015, he is
+[38] K. Barad, Robust Navigation Framework for Proximity Operations around Un-                   founding Director of the TU Delft Space Institute.
+     cooperative Spacecraft (M.Sc. thesis), Delft University of Technology, Delft, The
+     Netherlands, 2020.
+[39] J. Solà, Quaternion kinematics for the error-state Kalman filter, 2017, arXiv               Dr. Ingo Ahrns received his diploma in computer science in
+     e-prints arXiv:1711.02508.                                                                  1996 from the University of Kiel, Germany, and his doctoral
+                                                                                                 thesis in 2000 from the Daimler research center in Ulm,
+                                                                                                 Germany, on the topic of biologically-inspired robot vision.
+                                                                                                 In 2000, he joined the space-robotics department of Airbus
+                             Lorenzo Pasqualetto Cassinis is a Ph.D. candidate in the            Defence and Space. Among many research and development
+                             Space System Engineering section of TU Delft and currently          projects, he worked on EUROBOT, DEOS, and the Euro-
+                             a researcher in the GNC section of ESA’s European Space             pean Lunar Lander, mainly on camera- and LIDAR-based
+                             Research and Technology Centre. He graduated with a M.Sc.           navigation and robot vision activities. In 2018, he started
+                             in Aerospace Engineering in 2017 from TU Delft, and prior           to investigate the use of Deep Learning in space-robotics
+                             to that with a B.Sc. in Aerospace Engineering from the              activities, with focus on CNN based pose-estimation. Since
+                             University of Padua in 2015. During his M.Sc., he worked            2013, he became a robot vision expert at Airbus Defence
+                             as systems engineer on flight correlation of the DIDO-II            and Space. He currently leads the Autonomous Systems
+                             CubeSat From December 2017 until May 2018, he also                  team at Airbus Defence and Space in Bremen, Germany,
+                             worked at GMV on the validation of the GNC software for             and coordinates the Airbus Defence and Space robotics R&T
+                             the PROBA-3 Mission. His current Ph.D. research relates             cluster.
+                             to monocular-based navigation in debris removal scenarios,
+                             with special focus on CNN-based systems. This research is
+                             a collaboration between TU Delft, ESA, and Airbus Defence           Dr. Jesús Gil-Fernández received a M.Sc. in Aerospace
+                             and Space.                                                          Engineering from Technical University of Madrid (UPM),
+                                                                                                 another M.Sc. in Theoretical Physics from Universidad Au-
+                                                                                                 tonoma de Madrid, and a Ph.D. in Aerospace Engineering
+                             Dr. Robert Fonod received the B.Sc. and M.Sc. degrees               from UPM. He is GNC engineer at the Guidance, Navigation
+                             in Cybernetics from the Technical University of Košice,             and Control section in the European Space Agency (ESA) at
+                             Slovakia, in 2009 and 2011, respectively, and the Ph.D. de-         ESTEC (European Space and Technology Research Center).
+                             gree in Automatic Control from the University of Bordeaux,          Prior to ESA he was GNC engineer in GMV for 16 years,
+                             France, in 2014. He is currently a Research Scientist with          the last 4 years he was Head of Interplanetary and NEO
+                             the Department of Guidance, Navigation, and Control at the          missions section.
+                             French–German Research Institute of Saint-Louis. He was an
+                             Assistant Professor with the Department of Space Engineer-
+                             ing at the Delft University of Technology, the Netherlands,
+                             and a Postdoctoral Research Fellow with the Department
+
+
+
+
+                                                                                           202
+
