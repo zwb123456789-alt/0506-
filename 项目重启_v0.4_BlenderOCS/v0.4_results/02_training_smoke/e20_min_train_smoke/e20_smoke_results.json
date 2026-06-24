@@ -1,0 +1,223 @@
+{
+  "task": "1C-E20-FIX01 training smoke with separated checks",
+  "timestamp": "2026-06-24T15:37:51",
+  "config": {
+    "max_epochs": 1,
+    "subset_size": 200,
+    "batch_size": 32,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cpu",
+    "modes": [
+      "image_only",
+      "ocs_only",
+      "joint"
+    ]
+  },
+  "smoke_summary": {
+    "image_only": {
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": false,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 88.4000015258789,
+        "val_pitch_mae_deg": 50.39999961853027,
+        "val_yaw_acc": 0.004999999888241291,
+        "val_pitch_acc": 0.014999999664723873
+      },
+      "performance_notes": [
+        "yaw_acc (0.0050) below random baseline (1/72=0.0139); expected for low-sample CNN smoke",
+        "pitch_acc (0.0150) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ],
+      "final_loss": 8.527074132646833,
+      "val_yaw_acc": 0.004999999888241291,
+      "val_pitch_acc": 0.014999999664723873,
+      "val_yaw_circular_mae_deg": 88.4000015258789,
+      "val_pitch_mae_deg": 50.39999961853027,
+      "elapsed_s": 2.0541915893554688,
+      "n_params": 3865613
+    },
+    "ocs_only": {
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": true,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 92.55000114440918,
+        "val_pitch_mae_deg": 47.60000228881836,
+        "val_yaw_acc": 0.019999999552965164,
+        "val_pitch_acc": 0.019999999552965164
+      },
+      "performance_notes": [
+        "pitch_acc (0.0200) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ],
+      "final_loss": 7.907420294625418,
+      "val_yaw_acc": 0.019999999552965164,
+      "val_pitch_acc": 0.019999999552965164,
+      "val_yaw_circular_mae_deg": 92.55000114440918,
+      "val_pitch_mae_deg": 47.60000228881836,
+      "elapsed_s": 0.23910784721374512,
+      "n_params": 47725
+    },
+    "joint": {
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": false,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 90.10000228881836,
+        "val_pitch_mae_deg": 71.5999984741211,
+        "val_yaw_acc": 0.009999999776482582,
+        "val_pitch_acc": 0.014999999664723873
+      },
+      "performance_notes": [
+        "yaw_acc (0.0100) below random baseline (1/72=0.0139); expected for low-sample CNN smoke",
+        "pitch_acc (0.0150) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ],
+      "final_loss": 8.380885532924108,
+      "val_yaw_acc": 0.009999999776482582,
+      "val_pitch_acc": 0.014999999664723873,
+      "val_yaw_circular_mae_deg": 90.10000228881836,
+      "val_pitch_mae_deg": 71.5999984741211,
+      "elapsed_s": 1.9977576732635498,
+      "n_params": 3913229
+    }
+  },
+  "details": {
+    "image_only": {
+      "mode": "image_only",
+      "n_params": 3865613,
+      "max_epochs": 1,
+      "lr": 0.001,
+      "seed": 42,
+      "elapsed_s": 2.0541915893554688,
+      "final_train_loss": 8.527074132646833,
+      "final_val_yaw_acc": 0.004999999888241291,
+      "final_val_pitch_acc": 0.014999999664723873,
+      "final_val_yaw_circular_mae_deg": 88.4000015258789,
+      "final_val_pitch_mae_deg": 50.39999961853027,
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": false,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 88.4000015258789,
+        "val_pitch_mae_deg": 50.39999961853027,
+        "val_yaw_acc": 0.004999999888241291,
+        "val_pitch_acc": 0.014999999664723873
+      },
+      "performance_notes": [
+        "yaw_acc (0.0050) below random baseline (1/72=0.0139); expected for low-sample CNN smoke",
+        "pitch_acc (0.0150) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ]
+    },
+    "ocs_only": {
+      "mode": "ocs_only",
+      "n_params": 47725,
+      "max_epochs": 1,
+      "lr": 0.001,
+      "seed": 42,
+      "elapsed_s": 0.23910784721374512,
+      "final_train_loss": 7.907420294625418,
+      "final_val_yaw_acc": 0.019999999552965164,
+      "final_val_pitch_acc": 0.019999999552965164,
+      "final_val_yaw_circular_mae_deg": 92.55000114440918,
+      "final_val_pitch_mae_deg": 47.60000228881836,
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": true,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 92.55000114440918,
+        "val_pitch_mae_deg": 47.60000228881836,
+        "val_yaw_acc": 0.019999999552965164,
+        "val_pitch_acc": 0.019999999552965164
+      },
+      "performance_notes": [
+        "pitch_acc (0.0200) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ]
+    },
+    "joint": {
+      "mode": "joint",
+      "n_params": 3913229,
+      "max_epochs": 1,
+      "lr": 0.001,
+      "seed": 42,
+      "elapsed_s": 1.9977576732635498,
+      "final_train_loss": 8.380885532924108,
+      "final_val_yaw_acc": 0.009999999776482582,
+      "final_val_pitch_acc": 0.014999999664723873,
+      "final_val_yaw_circular_mae_deg": 90.10000228881836,
+      "final_val_pitch_mae_deg": 71.5999984741211,
+      "infrastructure_checks": {
+        "loss_finite": true,
+        "grad_finite_all": true,
+        "param_updated": true,
+        "loss_decreasing": null,
+        "val_metric_finite": true
+      },
+      "infrastructure_pass": true,
+      "overall_infrastructure_status": "INFRA_PASS",
+      "performance_diagnostics": {
+        "val_yaw_acc_gt_random": false,
+        "val_pitch_acc_gt_random": false,
+        "val_yaw_circular_mae_deg": 90.10000228881836,
+        "val_pitch_mae_deg": 71.5999984741211,
+        "val_yaw_acc": 0.009999999776482582,
+        "val_pitch_acc": 0.014999999664723873
+      },
+      "performance_notes": [
+        "yaw_acc (0.0100) below random baseline (1/72=0.0139); expected for low-sample CNN smoke",
+        "pitch_acc (0.0150) below random baseline (1/37=0.0270)",
+        "single-epoch smoke: loss_decreasing=None, all diagnostics are informational only",
+        "fewer than 10 batches in training; diagnostics are preliminary"
+      ]
+    }
+  }
+}

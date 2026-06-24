@@ -1,0 +1,25 @@
+{
+  "train": [
+    {
+      "loss": 8.527074132646833,
+      "loss_yaw": 4.484620571136475,
+      "loss_pitch": 4.042453459330967,
+      "grad_norm_mean": 12.412091334352096,
+      "grad_norm_max": 14.900000847790258,
+      "grad_norm_min": 8.36252950518302,
+      "grad_finite": true,
+      "param_update_total": 15.585151645354927,
+      "n_batches": 7,
+      "epoch": 1
+    }
+  ],
+  "val": [
+    {
+      "yaw_acc": 0.004999999888241291,
+      "pitch_acc": 0.014999999664723873,
+      "yaw_mae_circular_deg": 88.4000015258789,
+      "pitch_mae_deg": 50.39999961853027,
+      "epoch": 1
+    }
+  ]
+}

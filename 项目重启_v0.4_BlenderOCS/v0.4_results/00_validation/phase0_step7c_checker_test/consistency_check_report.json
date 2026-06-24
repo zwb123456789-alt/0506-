@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-06-24T10:28:13.356290",
+  "task": "1C-E13 Phase 0 Step 7a manifest consistency check",
+  "overall_status": "NOT_COMPLETE",
+  "ocs_manifest_path": "v0.4_results\\00_validation\\phase0_step7a_manifest_trial\\ocs_manifest_v0_4_step6trial.json",
+  "image_manifest_path": "v0.4_results\\00_validation\\phase0_step7a_manifest_trial\\image_manifest_v0_4_step6trial.json",
+  "step6_summary_path": "v0.4_results\\00_validation\\phase0_step6_small_trial\\phase0_step6_small_trial_summary.json",
+  "checks": [
+    {
+      "check": "geometry_version_match",
+      "status": "PASS",
+      "ocs_value": "v0.4_phase0_step6_smallrun",
+      "image_value": "v0.4_phase0_step6_smallrun"
+    },
+    {
+      "check": "brdf_version_match",
+      "status": "PASS",
+      "ocs_value": "v0.4_B0_phong_like_provisional",
+      "image_value": "v0.4_B0_phong_like_provisional"
+    },
+    {
+      "check": "visibility_version_match",
+      "status": "PASS",
+      "ocs_value": "v0.4_level2_sun_shadow_reprojection_step6",
+      "image_value": "v0.4_level2_sun_shadow_reprojection_step6"
+    },
+    {
+      "check": "sun_visibility_match",
+      "status": "PASS",
+      "ocs_value": "camera_visible_nol_plus_sun_shadow_pass",
+      "image_value": "camera_visible_nol_plus_sun_shadow_pass"
+    },
+    {
+      "check": "shadow_mapping_method_match",
+      "status": "PASS",
+      "ocs_value": "sun_view_depth_reprojection",
+      "image_value": "sun_view_depth_reprojection"
+    },
+    {
+      "check": "brdf_model_match",
+      "status": "PASS",
+      "ocs_value": "phong_like_provisional_baseline",
+      "image_value": "phong_like_provisional_baseline"
+    },
+    {
+      "check": "brdf_model_vs_brdf_version_consistency",
+      "status": "PASS",
+      "ocs_consistency": true,
+      "ocs_issue": null,
+      "img_consistency": true,
+      "img_issue": null
+    },
+    {
+      "check": "v_sun_macro_mode_consistency",
+      "status": "PASS",
+      "sun_visibility": "camera_visible_nol_plus_sun_shadow_pass",
+      "v_sun_macro_mode": "shadow_mask",
+      "expected_mode": "shadow_mask",
+      "v_sun_macro_applied_to_image": true
+    },
+    {
+      "check": "i_scale_match",
+      "status": "PASS",
+      "image_i_scale": 0.5444863931551639,
+      "step6_i_scale": 0.5444863931551639
+    },
+    {
+      "check": "record_id_set_match",
+      "status": "PASS",
+      "ocs_record_ids": [
+        "phase63_yaw000_pitch+000",
+        "phase63_yaw090_pitch+000",
+        "phase63_yaw150_pitch+025",
+        "phase63_yaw180_pitch+000",
+        "phase63_yaw300_pitch-025"
+      ],
+      "image_record_ids": [
+        "phase63_yaw000_pitch+000",
+        "phase63_yaw090_pitch+000",
+        "phase63_yaw150_pitch+025",
+        "phase63_yaw180_pitch+000",
+        "phase63_yaw300_pitch-025"
+      ],
+      "only_in_ocs": [],
+      "only_in_image": []
+    },
+    {
+      "check": "per_record_consistency",
+      "status": "PASS",
+      "per_record_details": [
+        {
+          "record_id": "phase63_yaw090_pitch+000",
+          "status": "PASS",
+          "yaw_match": true,
+          "pitch_match": true,
+          "geom_match": true
+        },
+        {
+          "record_id": "phase63_yaw000_pitch+000",
+          "status": "PASS",
+          "yaw_match": true,
+          "pitch_match": true,
+          "geom_match": true
+        },
+        {
+          "record_id": "phase63_yaw150_pitch+025",
+          "status": "PASS",
+          "yaw_match": true,
+          "pitch_match": true,
+          "geom_match": true
+        },
+        {
+          "record_id": "phase63_yaw300_pitch-025",
+          "status": "PASS",
+          "yaw_match": true,
+          "pitch_match": true,
+          "geom_match": true
+        },
+        {
+          "record_id": "phase63_yaw180_pitch+000",
+          "status": "PASS",
+          "yaw_match": true,
+          "pitch_match": true,
+          "geom_match": true
+        }
+      ]
+    },
+    {
+      "check": "path_base_consistency",
+      "status": "FAIL",
+      "inconsistent_paths": [
+        "OCS phase63_yaw180_pitch+000: camera_exr_path=00_validation/shadow_passes/yaw180_pitch+000_roll+000_camera.exr",
+        "OCS phase63_yaw180_pitch+000: sun_depth_exr_path=00_validation/shadow_passes/yaw180_pitch+000_roll+000_sun.exr",
+        "OCS phase63_yaw150_pitch+025: camera_exr_path=00_validation/shadow_passes/yaw150_pitch+025_roll+000_camera.exr",
+        "OCS phase63_yaw150_pitch+025: sun_depth_exr_path=00_validation/shadow_passes/yaw150_pitch+025_roll+000_sun.exr",
+        "OCS phase63_yaw000_pitch+000: camera_exr_path=00_validation/shadow_passes/yaw000_pitch+000_roll+000_camera.exr",
+        "OCS phase63_yaw000_pitch+000: sun_depth_exr_path=00_validation/shadow_passes/yaw000_pitch+000_roll+000_sun.exr",
+        "OCS phase63_yaw090_pitch+000: camera_exr_path=00_validation/shadow_passes/yaw090_pitch+000_roll+000_camera.exr",
+        "OCS phase63_yaw090_pitch+000: sun_depth_exr_path=00_validation/shadow_passes/yaw090_pitch+000_roll+000_sun.exr",
+        "OCS phase63_yaw300_pitch-025: camera_exr_path=00_validation/shadow_passes/yaw300_pitch-025_roll+000_camera.exr",
+        "OCS phase63_yaw300_pitch-025: sun_depth_exr_path=00_validation/shadow_passes/yaw300_pitch-025_roll+000_sun.exr"
+      ]
+    },
+    {
+      "check": "ocs_paths_exist",
+      "status": "FAIL",
+      "missing_paths": [
+        "phase63_yaw180_pitch+000: camera_exr_path",
+        "phase63_yaw180_pitch+000: sun_depth_exr_path",
+        "phase63_yaw180_pitch+000: exr_path",
+        "phase63_yaw180_pitch+000: png_path",
+        "phase63_yaw150_pitch+025: camera_exr_path",
+        "phase63_yaw150_pitch+025: sun_depth_exr_path",
+        "phase63_yaw150_pitch+025: exr_path",
+        "phase63_yaw150_pitch+025: png_path",
+        "phase63_yaw000_pitch+000: camera_exr_path",
+        "phase63_yaw000_pitch+000: sun_depth_exr_path",
+        "phase63_yaw000_pitch+000: exr_path",
+        "phase63_yaw000_pitch+000: png_path",
+        "phase63_yaw090_pitch+000: camera_exr_path",
+        "phase63_yaw090_pitch+000: sun_depth_exr_path",
+        "phase63_yaw090_pitch+000: exr_path",
+        "phase63_yaw090_pitch+000: png_path",
+        "phase63_yaw300_pitch-025: camera_exr_path",
+        "phase63_yaw300_pitch-025: sun_depth_exr_path",
+        "phase63_yaw300_pitch-025: exr_path",
+        "phase63_yaw300_pitch-025: png_path"
+      ]
+    },
+    {
+      "check": "image_paths_exist",
+      "status": "FAIL",
+      "missing_paths": [
+        "phase63_yaw180_pitch+000: png_path",
+        "phase63_yaw180_pitch+000: exr_linear_path",
+        "phase63_yaw150_pitch+025: png_path",
+        "phase63_yaw150_pitch+025: exr_linear_path",
+        "phase63_yaw000_pitch+000: png_path",
+        "phase63_yaw000_pitch+000: exr_linear_path",
+        "phase63_yaw090_pitch+000: png_path",
+        "phase63_yaw090_pitch+000: exr_linear_path",
+        "phase63_yaw300_pitch-025: png_path",
+        "phase63_yaw300_pitch-025: exr_linear_path"
+      ]
+    },
+    {
+      "check": "camera_matrix_non_null_and_valid",
+      "status": "FAIL",
+      "invalid_matrix_records": [
+        {
+          "record_id": "phase63_yaw180_pitch+000",
+          "issues": [
+            "camera_matrix_world is null",
+            "sun_camera_matrix_world is null"
+          ]
+        },
+        {
+          "record_id": "phase63_yaw150_pitch+025",
+          "issues": [
+            "camera_matrix_world is null",
+            "sun_camera_matrix_world is null"
+          ]
+        },
+        {
+          "record_id": "phase63_yaw000_pitch+000",
+          "issues": [
+            "camera_matrix_world is null",
+            "sun_camera_matrix_world is null"
+          ]
+        },
+        {
+          "record_id": "phase63_yaw090_pitch+000",
+          "issues": [
+            "camera_matrix_world is null",
+            "sun_camera_matrix_world is null"
+          ]
+        },
+        {
+          "record_id": "phase63_yaw300_pitch-025",
+          "issues": [
+            "camera_matrix_world is null",
+            "sun_camera_matrix_world is null"
+          ]
+        }
+      ]
+    },
+    {
+      "check": "sun_visibility_mask_path_non_null_and_exists",
+      "status": "FAIL",
+      "missing_mask_records": [
+        {
+          "record_id": "phase63_yaw180_pitch+000",
+          "issue": "sun_visibility_mask_path is null"
+        },
+        {
+          "record_id": "phase63_yaw150_pitch+025",
+          "issue": "sun_visibility_mask_path is null"
+        },
+        {
+          "record_id": "phase63_yaw000_pitch+000",
+          "issue": "sun_visibility_mask_path is null"
+        },
+        {
+          "record_id": "phase63_yaw090_pitch+000",
+          "issue": "sun_visibility_mask_path is null"
+        },
+        {
+          "record_id": "phase63_yaw300_pitch-025",
+          "issue": "sun_visibility_mask_path is null"
+        }
+      ]
+    },
+    {
+      "check": "records_completeness",
+      "status": "INFO",
+      "n_total_expected": 5,
+      "n_records_ocs": 5,
+      "n_records_image": 5,
+      "completeness_ocs": "5/5",
+      "completeness_image": "5/5"
+    }
+  ],
+  "依据文件": [
+    "04_四路线分工区/00_总览与裁决/00_路线冻结文件区/04_BlenderOCS方法重建_全局方法冻结文件/14_v0.4数据与manifest字段规范_最终冻结版.md §8.1"
+  ]
+}

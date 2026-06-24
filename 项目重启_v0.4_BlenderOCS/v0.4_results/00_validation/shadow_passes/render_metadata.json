@@ -1,0 +1,259 @@
+{
+  "timestamp": "2026-06-23T19:57:58.314670",
+  "resolution": 256,
+  "samples": 1,
+  "attitudes_count": 20,
+  "sun_vector": [
+    1.0,
+    0.0,
+    0.3
+  ],
+  "det_vector": [
+    0.5,
+    -1.0,
+    0.1
+  ],
+  "r_max": 1.4726051706213208,
+  "results": [
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw000_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 15,
+        "roll": 0,
+        "label": "yaw000_pitch+015_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+015_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+015_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 30,
+        "roll": 0,
+        "label": "yaw000_pitch+030_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+030_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+030_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 45,
+        "roll": 0,
+        "label": "yaw000_pitch+045_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+045_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch+045_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": -15,
+        "roll": 0,
+        "label": "yaw000_pitch-015_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-015_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-015_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": -30,
+        "roll": 0,
+        "label": "yaw000_pitch-030_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-030_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-030_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 45,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw045_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw045_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw045_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 90,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw090_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw090_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw090_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 90,
+        "pitch": 30,
+        "roll": 0,
+        "label": "yaw090_pitch+030_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw090_pitch+030_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw090_pitch+030_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 135,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw135_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw135_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw135_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 180,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw180_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw180_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw180_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 180,
+        "pitch": 30,
+        "roll": 0,
+        "label": "yaw180_pitch+030_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw180_pitch+030_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw180_pitch+030_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 225,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw225_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw225_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw225_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 270,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw270_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw270_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw270_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 270,
+        "pitch": -30,
+        "roll": 0,
+        "label": "yaw270_pitch-030_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw270_pitch-030_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw270_pitch-030_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 315,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw315_pitch+000_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw315_pitch+000_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw315_pitch+000_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 30,
+        "pitch": 20,
+        "roll": 0,
+        "label": "yaw030_pitch+020_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw030_pitch+020_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw030_pitch+020_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 60,
+        "pitch": -20,
+        "roll": 0,
+        "label": "yaw060_pitch-020_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw060_pitch-020_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw060_pitch-020_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 150,
+        "pitch": 25,
+        "roll": 0,
+        "label": "yaw150_pitch+025_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw150_pitch+025_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw150_pitch+025_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 300,
+        "pitch": -25,
+        "roll": 0,
+        "label": "yaw300_pitch-025_roll+000"
+      },
+      "camera_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw300_pitch-025_roll+000_camera.exr",
+      "sun_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw300_pitch-025_roll+000_sun.exr",
+      "camera_exists": true,
+      "sun_exists": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "label": "yaw000_pitch-030_roll+000",
+  "status": "PASS",
+  "camera_exr": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-030_roll+000_camera.exr",
+  "sun_exr": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\shadow_passes\\yaw000_pitch-030_roll+000_sun.exr",
+  "resolution": [
+    256,
+    256
+  ],
+  "foreground_pixels": {
+    "camera": 6086,
+    "sun": 4169,
+    "total": 65536
+  },
+  "projection_stats": {
+    "camera_fg_count": 6086,
+    "projected_in_bounds_count": 6086,
+    "sun_foreground_matched_count": 2403
+  },
+  "depth_error": {
+    "matched_point_count": 2403,
+    "mean": -0.28775319885490436,
+    "std": 0.2987423596380729,
+    "abs_mean": 0.34902403391195014,
+    "abs_p95": 0.7511957379903895,
+    "abs_p99": 0.8436180682244787,
+    "abs_max": 0.8847823121444804
+  },
+  "pass_threshold_used": 0.001
+}

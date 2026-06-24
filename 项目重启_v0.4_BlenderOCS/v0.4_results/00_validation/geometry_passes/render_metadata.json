@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-06-23T19:02:25.675190",
+  "resolution": 256,
+  "samples": 1,
+  "attitudes": [
+    {
+      "yaw": 0,
+      "pitch": 0,
+      "roll": 0,
+      "label": "yaw000_pitch+000_roll+000"
+    },
+    {
+      "yaw": 90,
+      "pitch": 0,
+      "roll": 0,
+      "label": "yaw090_pitch+000_roll+000"
+    },
+    {
+      "yaw": 0,
+      "pitch": 45,
+      "roll": 0,
+      "label": "yaw000_pitch+045_roll+000"
+    }
+  ],
+  "sun_vector": [
+    1.0,
+    0.0,
+    0.3
+  ],
+  "det_vector": [
+    0.5,
+    -1.0,
+    0.1
+  ],
+  "r_max": 1.4726051706213208,
+  "results": [
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw000_pitch+000_roll+000"
+      },
+      "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw000_pitch+000_roll+000.exr",
+      "exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 90,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw090_pitch+000_roll+000"
+      },
+      "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw090_pitch+000_roll+000.exr",
+      "exists": true
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 45,
+        "roll": 0,
+        "label": "yaw000_pitch+045_roll+000"
+      },
+      "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw000_pitch+045_roll+000.exr",
+      "exists": true
+    }
+  ]
+}

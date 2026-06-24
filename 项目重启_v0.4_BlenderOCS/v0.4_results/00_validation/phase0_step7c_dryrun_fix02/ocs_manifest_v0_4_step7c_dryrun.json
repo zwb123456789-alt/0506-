@@ -1,0 +1,285 @@
+{
+  "geometry_version": "v0.4_phase0_step7c_dryrun",
+  "brdf_version": "v0.4_B0_phong_like_provisional",
+  "visibility_version": "v0.4_level2_sun_shadow_reprojection_step7c",
+  "ocs_integration_version": "v0.4_pixel_level_step7c",
+  "ocs_source": "Blender-derived pixel-level OCS v0.4",
+  "brdf_model": "phong_like_provisional_baseline",
+  "sampling": "Blender Cycles orthogonal projection, 256x256",
+  "ortho_scale_m": 3.239731375366906,
+  "pixel_area_m2": 0.00016015410437830724,
+  "resolution": 256,
+  "sun_visibility": "camera_visible_nol_plus_sun_shadow_pass",
+  "shadow_mapping_method": "sun_view_depth_reprojection",
+  "depth_epsilon_m": 0.7952109582768545,
+  "data_root": "D:/我的文件/研究生学术/光学项目/0506新/项目重启_v0.4_BlenderOCS",
+  "records": [
+    {
+      "record_id": "phase63_yaw045_pitch+000",
+      "yaw_deg": 45.0,
+      "pitch_deg": 0.0,
+      "geom_id": "phase63",
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "ocs_total": 0.037211499216333044,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.0360294145185569,
+        "taiyangnengban": 0.0011820843923064303,
+        "yinshenban": 0.0
+      },
+      "n_pixels_camera_visible": 5862,
+      "n_pixels_nol_positive": 4855,
+      "n_pixels_sun_visible": 5834,
+      "n_pixels_contributing": 4845,
+      "n_pixels_per_part": {
+        "jinshuzhuti": 4606,
+        "taiyangnengban": 239,
+        "yinshenban": 0
+      },
+      "camera_exr_path": "v0.4_results/00_validation/shadow_passes/yaw045_pitch+000_roll+000_camera.exr",
+      "position_exr_path": null,
+      "sun_depth_exr_path": "v0.4_results/00_validation/shadow_passes/yaw045_pitch+000_roll+000_sun.exr",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_v_sun_macro.png",
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_brdf.png",
+      "camera_matrix_world": [
+        [
+          0.8944271802902222,
+          -0.03984086588025093,
+          0.445435494184494,
+          3.279752254486084
+        ],
+        [
+          0.44721367955207825,
+          0.07968176156282425,
+          -0.8908708691596985,
+          -6.559504508972168
+        ],
+        [
+          -5.2638537084703785e-08,
+          0.996023952960968,
+          0.08908689767122269,
+          0.6559504866600037
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "sun_camera_matrix_world": [
+        [
+          -1.1296953772443885e-07,
+          -0.2873478829860687,
+          0.9578263759613037,
+          7.052499294281006
+        ],
+        [
+          1.0000001192092896,
+          -1.6328702656664973e-07,
+          1.6503364008713106e-08,
+          0.0
+        ],
+        [
+          8.413160657028129e-08,
+          0.9578263759613037,
+          0.28734782338142395,
+          2.1157498359680176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "record_id": "phase63_yaw270_pitch-030",
+      "yaw_deg": 270.0,
+      "pitch_deg": -30.0,
+      "geom_id": "phase63",
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "ocs_total": 0.019449674447215293,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.015731220967823978,
+        "taiyangnengban": 0.00035014809394323144,
+        "yinshenban": 0.0033683042399366633
+      },
+      "n_pixels_camera_visible": 5536,
+      "n_pixels_nol_positive": 4111,
+      "n_pixels_sun_visible": 5536,
+      "n_pixels_contributing": 4111,
+      "n_pixels_per_part": {
+        "jinshuzhuti": 3080,
+        "taiyangnengban": 115,
+        "yinshenban": 916
+      },
+      "camera_exr_path": "v0.4_results/00_validation/shadow_passes/yaw270_pitch-030_roll+000_camera.exr",
+      "position_exr_path": null,
+      "sun_depth_exr_path": "v0.4_results/00_validation/shadow_passes/yaw270_pitch-030_roll+000_sun.exr",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_v_sun_macro.png",
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_brdf.png",
+      "camera_matrix_world": [
+        [
+          0.8944271802902222,
+          -0.03984086588025093,
+          0.445435494184494,
+          3.279752254486084
+        ],
+        [
+          0.44721367955207825,
+          0.07968176156282425,
+          -0.8908708691596985,
+          -6.559504508972168
+        ],
+        [
+          -5.2638537084703785e-08,
+          0.996023952960968,
+          0.08908689767122269,
+          0.6559504866600037
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "sun_camera_matrix_world": [
+        [
+          -1.1296953772443885e-07,
+          -0.2873478829860687,
+          0.9578263759613037,
+          7.052499294281006
+        ],
+        [
+          1.0000001192092896,
+          -1.6328702656664973e-07,
+          1.6503364008713106e-08,
+          0.0
+        ],
+        [
+          8.413160657028129e-08,
+          0.9578263759613037,
+          0.28734782338142395,
+          2.1157498359680176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "record_id": "phase63_yaw135_pitch+000",
+      "yaw_deg": 135.0,
+      "pitch_deg": 0.0,
+      "geom_id": "phase63",
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "ocs_total": 0.026534790266841135,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.024940903072162568,
+        "taiyangnengban": 0.0010357411845482098,
+        "yinshenban": 0.0005581471174580634
+      },
+      "n_pixels_camera_visible": 5052,
+      "n_pixels_nol_positive": 3452,
+      "n_pixels_sun_visible": 5052,
+      "n_pixels_contributing": 3452,
+      "n_pixels_per_part": {
+        "jinshuzhuti": 3071,
+        "taiyangnengban": 238,
+        "yinshenban": 143
+      },
+      "camera_exr_path": "v0.4_results/00_validation/shadow_passes/yaw135_pitch+000_roll+000_camera.exr",
+      "position_exr_path": null,
+      "sun_depth_exr_path": "v0.4_results/00_validation/shadow_passes/yaw135_pitch+000_roll+000_sun.exr",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_v_sun_macro.png",
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_brdf.png",
+      "camera_matrix_world": [
+        [
+          0.8944271802902222,
+          -0.03984086588025093,
+          0.445435494184494,
+          3.279752254486084
+        ],
+        [
+          0.44721367955207825,
+          0.07968176156282425,
+          -0.8908708691596985,
+          -6.559504508972168
+        ],
+        [
+          -5.2638537084703785e-08,
+          0.996023952960968,
+          0.08908689767122269,
+          0.6559504866600037
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "sun_camera_matrix_world": [
+        [
+          -1.1296953772443885e-07,
+          -0.2873478829860687,
+          0.9578263759613037,
+          7.052499294281006
+        ],
+        [
+          1.0000001192092896,
+          -1.6328702656664973e-07,
+          1.6503364008713106e-08,
+          0.0
+        ],
+        [
+          8.413160657028129e-08,
+          0.9578263759613037,
+          0.28734782338142395,
+          2.1157498359680176
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  ]
+}

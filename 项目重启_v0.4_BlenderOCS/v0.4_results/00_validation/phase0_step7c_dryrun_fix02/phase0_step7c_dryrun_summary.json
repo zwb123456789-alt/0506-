@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-06-24T10:55:27.057454",
+  "task": "1C-E15-FIX02 Phase0 Step7c 3-pose physical dry-run",
+  "overall_status": "COMPLETE",
+  "scope": "B0 3-pose dry-run, NOT Step6 small-run poses, NOT full corpus",
+  "brdf_branch": "B0",
+  "brdf_note": "B0 phong_like_provisional_baseline as engineering baseline",
+  "depth_epsilon_m_final": 0.7952109582768545,
+  "r_max": 1.4726051706213208,
+  "ortho_scale_m": 3.239731375366906,
+  "resolution": 256,
+  "pixel_area_m2": 0.00016015410437830724,
+  "sun_vector": [
+    1.0,
+    0.0,
+    0.3
+  ],
+  "det_vector": [
+    0.5,
+    -1.0,
+    0.1
+  ],
+  "i_scale_smallrun": 0.5444863931551639,
+  "i_scale_policy": "fixed = i_scale_step5 from Phase0 Step5 5-attitude image impact validation; no per-frame normalization",
+  "i_scale_note": "Step 5 使用 5 个姿态校准，非 20 姿态校准（R31 §3.6 修正）",
+  "log1p_alpha": 10.0,
+  "geom_id": "phase63",
+  "n_dryrun_attitudes": 3,
+  "n_completed": 3,
+  "dryrun_attitudes": [
+    "yaw045_pitch+000_roll+000",
+    "yaw270_pitch-030_roll+000",
+    "yaw135_pitch+000_roll+000"
+  ],
+  "step6_smallrun_attitudes": [
+    "yaw180_pitch+000_roll+000",
+    "yaw150_pitch+025_roll+000",
+    "yaw000_pitch+000_roll+000",
+    "yaw090_pitch+000_roll+000",
+    "yaw300_pitch-025_roll+000"
+  ],
+  "non_overlap_note": "3 个 dry-run 姿态均非 Step 6 small-run 姿态，确保 dry-run 独立可验证",
+  "records": [
+    {
+      "label": "yaw045_pitch+000_roll+000",
+      "record_id": "phase63_yaw045_pitch+000",
+      "yaw_deg": 45.0,
+      "pitch_deg": 0.0,
+      "ocs_total": 0.037211499216333044,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.0360294145185569,
+        "taiyangnengban": 0.0011820843923064303,
+        "yinshenban": 0.0
+      },
+      "n_pixels_camera_visible": 5862,
+      "n_pixels_nol_positive": 4855,
+      "n_pixels_sun_visible": 5834,
+      "n_pixels_contributing": 4845,
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_brdf.png",
+      "ocs_json_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_v_sun_macro.png",
+      "status": "COMPLETE"
+    },
+    {
+      "label": "yaw270_pitch-030_roll+000",
+      "record_id": "phase63_yaw270_pitch-030",
+      "yaw_deg": 270.0,
+      "pitch_deg": -30.0,
+      "ocs_total": 0.019449674447215293,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.015731220967823978,
+        "taiyangnengban": 0.00035014809394323144,
+        "yinshenban": 0.0033683042399366633
+      },
+      "n_pixels_camera_visible": 5536,
+      "n_pixels_nol_positive": 4111,
+      "n_pixels_sun_visible": 5536,
+      "n_pixels_contributing": 4111,
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_brdf.png",
+      "ocs_json_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_v_sun_macro.png",
+      "status": "COMPLETE"
+    },
+    {
+      "label": "yaw135_pitch+000_roll+000",
+      "record_id": "phase63_yaw135_pitch+000",
+      "yaw_deg": 135.0,
+      "pitch_deg": 0.0,
+      "ocs_total": 0.026534790266841135,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.024940903072162568,
+        "taiyangnengban": 0.0010357411845482098,
+        "yinshenban": 0.0005581471174580634
+      },
+      "n_pixels_camera_visible": 5052,
+      "n_pixels_nol_positive": 3452,
+      "n_pixels_sun_visible": 5052,
+      "n_pixels_contributing": 3452,
+      "exr_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_linear.exr",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_brdf.png",
+      "ocs_json_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_v_sun_macro.png",
+      "status": "COMPLETE"
+    }
+  ],
+  "blockers": [],
+  "module_paths": {
+    "image_response": "06_v0.4_code/05_postprocess/image_response_v0_4.py",
+    "ocs_integration": "06_v0.4_code/05_postprocess/ocs_integration_v0_4.py"
+  },
+  "依据文件": [
+    "04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R33_Codex_审阅_1C-E15-FIX01通过并规划FIX02.md",
+    "04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R31_Codex_审阅_1C-E14_Step7b条件通过并要求Step7c.md"
+  ]
+}

@@ -39,7 +39,7 @@
 
 ```text
 v0.4 pixel-level 几何与可见性；
-五参数冯 / 书中材料参数主锚点；
+B0 工程 baseline 与 B1 书中改进冯模型待确认主线；
 GGX / Cook-Torrance mismatch 分支；
 OCS/image 双通道一致性分析；
 三轴小项目中的高亮/高信息构型搜索结果。

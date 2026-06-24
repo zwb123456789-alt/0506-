@@ -1,0 +1,366 @@
+{
+  "timestamp": "2026-06-23T19:05:11.801587",
+  "metadata": {
+    "sun_vector": [
+      1.0,
+      0.0,
+      0.3
+    ],
+    "r_max": 1.4726051706213208,
+    "attitudes": [
+      {
+        "yaw": 0,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw000_pitch+000_roll+000"
+      },
+      {
+        "yaw": 90,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw090_pitch+000_roll+000"
+      },
+      {
+        "yaw": 0,
+        "pitch": 45,
+        "roll": 0,
+        "label": "yaw000_pitch+045_roll+000"
+      }
+    ]
+  },
+  "results": [
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw000_pitch+000_roll+000"
+      },
+      "exr_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw000_pitch+000_roll+000.exr",
+      "channels_found": [
+        "Normal",
+        "Depth",
+        "IndexOB",
+        "Position",
+        "Combined"
+      ],
+      "normal": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 5949,
+        "Nx_range": [
+          -0.8655136227607727,
+          1.0
+        ],
+        "Ny_range": [
+          -1.0,
+          0.34405723214149475
+        ],
+        "Nz_range": [
+          -0.9807885885238647,
+          1.0
+        ],
+        "norm_magnitude": {
+          "min": 0.9999998807907104,
+          "max": 1.0000001192092896,
+          "mean": 1.0
+        }
+      },
+      "depth": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "depth_range": [
+          7.220905780792236,
+          10000000000.0
+        ],
+        "depth_mean": 9092254720.0,
+        "has_inf": false,
+        "has_nan": false
+      },
+      "indexob": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "unique_values": [
+          0.0,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "index_counts": {
+          "0.0": 59587,
+          "1.0": 5638,
+          "2.0": 247,
+          "3.0": 64
+        }
+      },
+      "position": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "x_range": [
+          -0.4884946048259735,
+          1.0237455368041992
+        ],
+        "y_range": [
+          0.0,
+          0.6896053552627563
+        ],
+        "z_range": [
+          -0.4851619005203247,
+          0.7692959904670715
+        ],
+        "r_range": [
+          0.0,
+          1.4079228639602661
+        ],
+        "r_max_expected": 1.4726051706213208,
+        "in_range": true
+      },
+      "sun_depth": {
+        "status": "PASS",
+        "valid_pixel_count": 65536,
+        "sun_depth_range": [
+          -0.5917798280715942,
+          1.187864065170288
+        ],
+        "sun_depth_mean": 0.010944484733045101,
+        "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\sun_depth_yaw000_pitch+000_roll+000.npy"
+      }
+    },
+    {
+      "attitude": {
+        "yaw": 90,
+        "pitch": 0,
+        "roll": 0,
+        "label": "yaw090_pitch+000_roll+000"
+      },
+      "exr_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw090_pitch+000_roll+000.exr",
+      "channels_found": [
+        "Normal",
+        "Depth",
+        "IndexOB",
+        "Position",
+        "Combined"
+      ],
+      "normal": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 5210,
+        "Nx_range": [
+          -0.8267406225204468,
+          1.0
+        ],
+        "Ny_range": [
+          -1.0,
+          0.389173686504364
+        ],
+        "Nz_range": [
+          -0.9450051784515381,
+          1.0
+        ],
+        "norm_magnitude": {
+          "min": 0.9999998807907104,
+          "max": 1.0000001192092896,
+          "mean": 1.0
+        }
+      },
+      "depth": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "depth_range": [
+          7.019672393798828,
+          10000000000.0
+        ],
+        "depth_mean": 9205017600.0,
+        "has_inf": false,
+        "has_nan": false
+      },
+      "indexob": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "unique_values": [
+          0.0,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "index_counts": {
+          "0.0": 60326,
+          "1.0": 4957,
+          "2.0": 252,
+          "3.0": 1
+        }
+      },
+      "position": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "x_range": [
+          -0.7078431248664856,
+          0.0
+        ],
+        "y_range": [
+          -0.4930363595485687,
+          1.0012401342391968
+        ],
+        "z_range": [
+          -0.48192089796066284,
+          0.7573010325431824
+        ],
+        "r_range": [
+          0.0,
+          1.3843919038772583
+        ],
+        "r_max_expected": 1.4726051706213208,
+        "in_range": true
+      },
+      "sun_depth": {
+        "status": "PASS",
+        "valid_pixel_count": 65536,
+        "sun_depth_range": [
+          -0.8082711100578308,
+          0.04724457859992981
+        ],
+        "sun_depth_mean": -0.01767861098051071,
+        "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\sun_depth_yaw090_pitch+000_roll+000.npy"
+      }
+    },
+    {
+      "attitude": {
+        "yaw": 0,
+        "pitch": 45,
+        "roll": 0,
+        "label": "yaw000_pitch+045_roll+000"
+      },
+      "exr_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\yaw000_pitch+045_roll+000.exr",
+      "channels_found": [
+        "Normal",
+        "Depth",
+        "IndexOB",
+        "Position",
+        "Combined"
+      ],
+      "normal": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 6045,
+        "Nx_range": [
+          -0.8191522359848022,
+          1.0
+        ],
+        "Ny_range": [
+          -1.0,
+          0.20602281391620636
+        ],
+        "Nz_range": [
+          -0.965926468372345,
+          0.9505783319473267
+        ],
+        "norm_magnitude": {
+          "min": 0.9999998807907104,
+          "max": 1.0000001192092896,
+          "mean": 1.0
+        }
+      },
+      "depth": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "depth_range": [
+          7.185420513153076,
+          10000000000.0
+        ],
+        "depth_mean": 9077606400.0,
+        "has_inf": false,
+        "has_nan": false
+      },
+      "indexob": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "unique_values": [
+          0.0,
+          1.0,
+          2.0,
+          3.0
+        ],
+        "index_counts": {
+          "0.0": 59491,
+          "1.0": 5751,
+          "2.0": 236,
+          "3.0": 58
+        }
+      },
+      "position": {
+        "status": "PASS",
+        "resolution": [
+          256,
+          256
+        ],
+        "valid_pixel_count": 65536,
+        "x_range": [
+          -0.6306552886962891,
+          1.2363238334655762
+        ],
+        "y_range": [
+          0.0,
+          0.6953913569450378
+        ],
+        "z_range": [
+          -0.6733648180961609,
+          0.6079879999160767
+        ],
+        "r_range": [
+          0.0,
+          1.4016292095184326
+        ],
+        "r_max_expected": 1.4726051706213208,
+        "in_range": true
+      },
+      "sun_depth": {
+        "status": "PASS",
+        "valid_pixel_count": 65536,
+        "sun_depth_range": [
+          -0.6042852401733398,
+          1.1276723146438599
+        ],
+        "sun_depth_mean": 0.009900315664708614,
+        "output_file": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\00_validation\\geometry_passes\\sun_depth_yaw000_pitch+045_roll+000.npy"
+      }
+    }
+  ]
+}

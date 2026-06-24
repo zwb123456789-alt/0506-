@@ -1,0 +1,21 @@
+{
+  "record_id": "phase63_yaw125_pitch-080",
+  "yaw_deg": 125.0,
+  "pitch_deg": -80.0,
+  "geom_id": "phase63",
+  "ocs_total": 0.01828105729810292,
+  "ocs_per_part": {
+    "jinshuzhuti": 0.017102268007580107,
+    "taiyangnengban": 0.0008665454821636664,
+    "yinshenban": 0.0003122434265220072
+  },
+  "n_pixels_camera_visible": 4267,
+  "n_pixels_nol_positive": 3182,
+  "n_pixels_sun_visible": 4148,
+  "n_pixels_contributing": 3083,
+  "n_pixels_per_part": {
+    "jinshuzhuti": 2854,
+    "taiyangnengban": 133,
+    "yinshenban": 96
+  }
+}

@@ -22,7 +22,7 @@ CLAUDE.md
 04_四路线分工区/05_路线四_LEO光学特性与姿态运动未来方向/00_路线冻结文件区/01_路线四_LEO光学特性与姿态运动特征关系_未来方向指导文件.md
 03_项目说明与规划材料/03_专家意见/00_专家三方向质疑原文_20260617.txt
 03_项目说明与规划材料/04_GEO数据库说明/01_GEO真实光度数据库信息整合_供回看确认.md
-06_书籍知识库/15_主线方法支撑与路线把控/00_书籍知识库对v0.4主线的方法支撑与路线把控辅助文件_20260622.md
+06_书籍知识库/13_书籍知识库对v0.4主线的方法支撑与路线把控.md
 ```
 
 其中部分旧文件在当前读取环境中出现编码损坏；本文只采用已在冻结/指导文件中清晰同步的稳定结论，不依赖乱码片段作新增判断。
@@ -55,7 +55,8 @@ CLAUDE.md
 
 ```text
 v0.4 pixel-level OCS-image 同源前向架构
-+ 五参数冯 / Phong-like BRDF 与书中典型材料参数主锚点
++ B0 工程 Phong-like baseline
++ B1 书中改进冯模型待确认 Method 目标
 + GGX / Cook-Torrance mismatch 对照分支
 + fixed-roll yaw-pitch 可观测性、互补性和置信一致性评估
 ```
@@ -68,7 +69,7 @@ v0.4 pixel-level OCS-image 同源前向架构
 
 ```text
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/00_路线冻结文件区/01_路线一_fixed-roll大论文主线与发刊答辩定位.md
-06_书籍知识库/15_主线方法支撑与路线把控/00_书籍知识库对v0.4主线的方法支撑与路线把控辅助文件_20260622.md
+06_书籍知识库/13_书籍知识库对v0.4主线的方法支撑与路线把控.md
 ```
 
 后续进入代码回归时，再读取路线一成果区中的代码与重跑历史，不在本规划文件中展开。
@@ -81,7 +82,7 @@ v0.4 pixel-level OCS-image 同源前向架构
 | 1C-P1 | 单姿态 smoke test | 单姿态运行记录与异常清单 | 渲染、OCS、图像、manifest、指标能端到端跑通 |
 | 1C-P2 | 资源估计 | 时间、显存/内存、存储、样本规模估计表 | 能决定 G1/G3/G5 与 roll 探针规模 |
 | 1C-P3 | 前向模型校验 | depth round-trip、Position/WorldCoord、sun-view depth、shadow validation 记录 | 基础几何和可见性不出现结构性错误 |
-| 1C-P4 | BRDF 主锚点实现规划 | 五参数冯/书中材料参数表与 GGX mismatch 对照方案 | Phong-like 为主线，GGX 为对照，不反客为主 |
+| 1C-P4 | BRDF 主锚点实现规划 | B0 工程 baseline、B1 书中改进冯模型待确认实现目标与 GGX mismatch 对照方案 | B0 不写成书中模型；B1 公式/参数经作者确认后进入 Method；GGX 为对照 |
 | 1C-P5 | G1/G3/G5 主实验设计 | 多几何实验矩阵 | G1 下界、G3 增益、G5 主线候选均定义清楚 |
 | 1C-P6 | 反演与置信指标设计 | OCS-only / image-only / fusion / consistency 指标表 | 输出 candidate distribution、top-k、entropy、margin、JS、overlap、reject/conflict |
 | 1C-P7 | roll sensitivity 小实验 | roll 扰动下 signature 漂移、混淆稳定性、最亮点迁移记录 | 能回答 fixed-roll 结论是否被 roll 扰动推翻 |
@@ -94,7 +95,7 @@ v0.4 pixel-level OCS-image 同源前向架构
 
 1. v0.4 pixel-level OCS/image 同源前向链路可审计跑通。
 2. G1/G3/G5 多几何主实验设计明确。
-3. 五参数冯/书中材料参数作为主锚点，GGX/Cook-Torrance 作为 mismatch 对照。
+3. B0 工程 baseline 可用于 smoke test；B1 书中改进冯模型经作者确认后作为正式 Method 目标，GGX/Cook-Torrance 作为 mismatch 对照。
 4. roll sensitivity 与资源估计并行完成，不能二选一。
 5. 输出候选分布和置信一致性指标，而不是只给误差表。
 6. H1-H5 硬补丁落实到代码任务与写作边界。
@@ -335,7 +336,7 @@ R3-C06：生成路线三是否并入主论文增强章的判定表。
 路线四未来可继承：
 
 - v0.4 pixel-level 几何和可见性链路。
-- 五参数冯/书中材料参数主锚点。
+- B0 工程 baseline 与 B1 书中改进冯模型待确认主线。
 - GGX/Cook-Torrance mismatch 分支。
 - OCS/image consistency 思路。
 - 三轴小项目输出的高亮、高信息构型。
@@ -413,4 +414,3 @@ R4-C04：生成论文 Future Work 边界表述。
 ```
 
 这三步完成后，再决定是否进入路线一 C 的代码任务清单小修。若需要写入任何代码任务文件、总览文件或 `CLAUDE.md`，必须另行列出拟修改文件、修改目的和修改范围，并经作者确认后执行。
-

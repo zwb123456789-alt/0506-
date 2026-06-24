@@ -1,0 +1,59 @@
+{
+  "test_type": "single_pose_smoke_test",
+  "timestamp": "2026-06-23 15:51:54",
+  "attitude": {
+    "yaw": 0,
+    "pitch": 0,
+    "roll": 0,
+    "record_id": "yaw000_pitch+000"
+  },
+  "stl_loading": {
+    "total_faces": 481502,
+    "load_time_seconds": 0.5727996826171875,
+    "decimate_ratio": 1.0
+  },
+  "mesh_info": {
+    "jinshuzhuti": {
+      "num_vertices": 227645,
+      "num_faces": 459634,
+      "bbox_mm": [
+        1521.7622375488281,
+        649.9999847412109,
+        1257.1781616210938
+      ],
+      "bbox_max_mm": 1521.7622375488281
+    },
+    "taiyangnengban": {
+      "num_vertices": 8160,
+      "num_faces": 16824,
+      "bbox_mm": [
+        784.4000244140625,
+        595.0,
+        44.0
+      ],
+      "bbox_max_mm": 784.4000244140625
+    },
+    "yinshenban": {
+      "num_vertices": 2462,
+      "num_faces": 5044,
+      "bbox_mm": [
+        380.0,
+        51.0,
+        800.0
+      ],
+      "bbox_max_mm": 800.0
+    }
+  },
+  "blender": {
+    "exe_path": "D:\\Program Files\\Blender Foundation\\Blender 4.2\\blender.exe",
+    "exists": true,
+    "callable": true
+  },
+  "notes": [
+    "本轮只执行 STL 加载和 Blender 可执行性检查",
+    "未生成 EXR/PNG/npy 数据",
+    "未运行 Blender 实际渲染",
+    "未训练模型",
+    "未进入论文结论"
+  ]
+}

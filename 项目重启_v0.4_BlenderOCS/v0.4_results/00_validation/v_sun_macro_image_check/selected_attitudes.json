@@ -1,0 +1,11 @@
+{
+  "selected": [
+    "yaw180_pitch+000_roll+000",
+    "yaw150_pitch+025_roll+000",
+    "yaw000_pitch+000_roll+000",
+    "yaw090_pitch+000_roll+000",
+    "yaw300_pitch-025_roll+000"
+  ],
+  "r_max": 1.4726051706213208,
+  "depth_epsilon_m_final": 0.7952109582768545
+}

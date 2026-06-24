@@ -1,0 +1,105 @@
+{
+  "task": "1C-E21 controlled baseline training",
+  "timestamp": "2026-06-24T15:57:07",
+  "config": {
+    "max_epochs": 20,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cpu",
+    "modes": [
+      "ocs_only",
+      "image_only",
+      "joint"
+    ]
+  },
+  "summary": {
+    "ocs_only": {
+      "mode": "ocs_only",
+      "n_params": 47725,
+      "elapsed_s": 32.295629024505615,
+      "best_epoch": 16,
+      "best_val_avg_acc": 0.08108107838779688,
+      "final_train_loss": 6.9540134343233975,
+      "checkpoint_mb": 0.5745267868041992,
+      "warnings": [],
+      "test_metrics": {
+        "test_random": {
+          "yaw_acc": 0.0878378376364708,
+          "pitch_acc": 0.0439189188182354,
+          "yaw_circular_mae_deg": 81.92567825317383,
+          "pitch_mae_deg": 54.64527130126953,
+          "loss": 7.011112689971924,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.054054055362939835,
+          "pitch_acc": 0.04054053872823715,
+          "yaw_circular_mae_deg": 48.462839126586914,
+          "pitch_mae_deg": 56.79054260253906,
+          "loss": 7.424169254302979,
+          "n_samples": 296
+        }
+      }
+    },
+    "image_only": {
+      "mode": "image_only",
+      "n_params": 3865613,
+      "elapsed_s": 327.520357131958,
+      "best_epoch": 18,
+      "best_val_avg_acc": 0.9555984437465668,
+      "final_train_loss": 0.24095371647766142,
+      "checkpoint_mb": 44.30144786834717,
+      "warnings": [
+        "random val_loss significantly larger than train_loss — possible overfit"
+      ],
+      "test_metrics": {
+        "test_random": {
+          "yaw_acc": 0.8175675868988037,
+          "pitch_acc": 0.8851351141929626,
+          "yaw_circular_mae_deg": 0.9121621400117874,
+          "pitch_mae_deg": 0.5912161991000175,
+          "loss": 0.9806808292865753,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.7736486196517944,
+          "pitch_acc": 0.9763513803482056,
+          "yaw_circular_mae_deg": 1.131756752729416,
+          "pitch_mae_deg": 0.1182432472705841,
+          "loss": 0.7118840634822845,
+          "n_samples": 296
+        }
+      }
+    },
+    "joint": {
+      "mode": "joint",
+      "n_params": 3913229,
+      "elapsed_s": 330.8211786746979,
+      "best_epoch": 20,
+      "best_val_avg_acc": 0.96138995885849,
+      "final_train_loss": 0.2143839935800343,
+      "checkpoint_mb": 44.85291576385498,
+      "warnings": [
+        "random val_loss significantly larger than train_loss — possible overfit"
+      ],
+      "test_metrics": {
+        "test_random": {
+          "yaw_acc": 0.8851351141929626,
+          "pitch_acc": 0.9358108043670654,
+          "yaw_circular_mae_deg": 0.5743243172764778,
+          "pitch_mae_deg": 0.32094594091176987,
+          "loss": 0.401091206073761,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.8513513803482056,
+          "pitch_acc": 0.9729729890823364,
+          "yaw_circular_mae_deg": 0.7432432472705841,
+          "pitch_mae_deg": 0.1351351384073496,
+          "loss": 0.35927364975214005,
+          "n_samples": 296
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026-06-23T21:40:35.470914",
+  "task": "1C-E10 Phase0 Step5 V_sun_macro image impact validation",
+  "overall_status": "COMPLETE",
+  "depth_epsilon_m_final": 0.7952109582768545,
+  "r_max": 1.4726051706213208,
+  "sun_vector": [
+    1.0,
+    0.0,
+    0.3
+  ],
+  "det_vector": [
+    0.5,
+    -1.0,
+    0.1
+  ],
+  "i_scale_step5": 0.5444863931551639,
+  "i_scale_policy": "fixed = max(I_without_vsun over 5 attitudes); no per-frame normalization",
+  "log1p_alpha": 10.0,
+  "brdf_branch": "B0_phong_like_provisional_baseline",
+  "brdf_proxy_note": "Step 5 validation proxy: B0 per-part f_r via IndexOB; NOT full BRDF post-processing chain (Step 6).",
+  "valid_pixel_rule": "camera_foreground AND NoV>1e-6 AND NoL>1e-6",
+  "shadow_zero_tol": 1e-07,
+  "visible_preserve_tol": 1e-06,
+  "selected_attitudes": [
+    "yaw180_pitch+000_roll+000",
+    "yaw150_pitch+025_roll+000",
+    "yaw000_pitch+000_roll+000",
+    "yaw090_pitch+000_roll+000",
+    "yaw300_pitch-025_roll+000"
+  ],
+  "per_attitude": [
+    {
+      "label": "yaw180_pitch+000_roll+000",
+      "foreground_count": 6000,
+      "valid_response_count": 2213,
+      "shadowed_valid_count": 0,
+      "sun_visible_valid_count": 2213,
+      "shadow_zero_violation_count": 0,
+      "visible_preserve_violation_count": 0,
+      "png_sync_max_abs_diff": 0.001959577049471528,
+      "v_mask_png_quant_err": 0.0,
+      "exr_written": true,
+      "status": "PASS"
+    },
+    {
+      "label": "yaw150_pitch+025_roll+000",
+      "foreground_count": 5855,
+      "valid_response_count": 3488,
+      "shadowed_valid_count": 53,
+      "sun_visible_valid_count": 3435,
+      "shadow_zero_violation_count": 0,
+      "visible_preserve_violation_count": 0,
+      "png_sync_max_abs_diff": 0.001938429970533312,
+      "v_mask_png_quant_err": 0.0,
+      "exr_written": true,
+      "status": "PASS"
+    },
+    {
+      "label": "yaw000_pitch+000_roll+000",
+      "foreground_count": 5949,
+      "valid_response_count": 1951,
+      "shadowed_valid_count": 66,
+      "sun_visible_valid_count": 1885,
+      "shadow_zero_violation_count": 0,
+      "visible_preserve_violation_count": 0,
+      "png_sync_max_abs_diff": 0.0019540532816453293,
+      "v_mask_png_quant_err": 0.0,
+      "exr_written": true,
+      "status": "PASS"
+    },
+    {
+      "label": "yaw090_pitch+000_roll+000",
+      "foreground_count": 5210,
+      "valid_response_count": 2785,
+      "shadowed_valid_count": 0,
+      "sun_visible_valid_count": 2785,
+      "shadow_zero_violation_count": 0,
+      "visible_preserve_violation_count": 0,
+      "png_sync_max_abs_diff": 0.0019592338332344306,
+      "v_mask_png_quant_err": 0.0,
+      "exr_written": true,
+      "status": "PASS"
+    },
+    {
+      "label": "yaw300_pitch-025_roll+000",
+      "foreground_count": 4589,
+      "valid_response_count": 2972,
+      "shadowed_valid_count": 0,
+      "sun_visible_valid_count": 2972,
+      "shadow_zero_violation_count": 0,
+      "visible_preserve_violation_count": 0,
+      "png_sync_max_abs_diff": 0.0019508367094192014,
+      "v_mask_png_quant_err": 0.0,
+      "exr_written": true,
+      "status": "PASS"
+    }
+  ],
+  "blockers": []
+}

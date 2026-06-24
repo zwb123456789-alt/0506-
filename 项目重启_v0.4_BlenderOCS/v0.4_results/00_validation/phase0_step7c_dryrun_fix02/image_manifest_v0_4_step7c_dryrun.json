@@ -1,0 +1,54 @@
+{
+  "geometry_version": "v0.4_phase0_step7c_dryrun",
+  "brdf_version": "v0.4_B0_phong_like_provisional",
+  "visibility_version": "v0.4_level2_sun_shadow_reprojection_step7c",
+  "image_preprocess_version": "v0.4_log1p_step7c",
+  "brdf_model": "phong_like_provisional_baseline",
+  "sun_visibility": "camera_visible_nol_plus_sun_shadow_pass",
+  "shadow_mapping_method": "sun_view_depth_reprojection",
+  "image_source": "Blender-derived pixel-level BRDF image v0.4",
+  "preprocessing": {
+    "log1p_alpha": 10.0,
+    "I_scale": 0.5444863931551639,
+    "input_range": [
+      0.0,
+      1.0
+    ],
+    "v_sun_macro_mode": "shadow_mask",
+    "v_sun_macro_applied_to_image": true
+  },
+  "resolution": 256,
+  "data_root": "D:/我的文件/研究生学术/光学项目/0506新/项目重启_v0.4_BlenderOCS",
+  "records": [
+    {
+      "record_id": "phase63_yaw045_pitch+000",
+      "yaw_deg": 45.0,
+      "pitch_deg": 0.0,
+      "geom_id": "phase63",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_brdf.png",
+      "exr_linear_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw045_pitch+000_roll+000_linear.exr",
+      "is_clean": true,
+      "I_scale_record": 0.5444863931551639
+    },
+    {
+      "record_id": "phase63_yaw270_pitch-030",
+      "yaw_deg": 270.0,
+      "pitch_deg": -30.0,
+      "geom_id": "phase63",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_brdf.png",
+      "exr_linear_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw270_pitch-030_roll+000_linear.exr",
+      "is_clean": true,
+      "I_scale_record": 0.5444863931551639
+    },
+    {
+      "record_id": "phase63_yaw135_pitch+000",
+      "yaw_deg": 135.0,
+      "pitch_deg": 0.0,
+      "geom_id": "phase63",
+      "png_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_brdf.png",
+      "exr_linear_path": "v0.4_results/00_validation/phase0_step7c_dryrun_fix02/yaw135_pitch+000_roll+000_linear.exr",
+      "is_clean": true,
+      "I_scale_record": 0.5444863931551639
+    }
+  ]
+}

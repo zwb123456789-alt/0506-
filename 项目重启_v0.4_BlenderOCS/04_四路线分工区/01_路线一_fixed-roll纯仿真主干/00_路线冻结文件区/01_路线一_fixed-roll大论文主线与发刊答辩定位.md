@@ -308,19 +308,20 @@ roll sensitivity and 3-DOF extensibility discussion
 
 ```text
 保留 v0.4 pixel-level OCS-image 同源前向架构；
-以五参数冯 / Phong-like BRDF 与书中典型材料参数作为主 BRDF 锚点；
+B0 仅作为工程 smoke test / 兜底 baseline；
+B1 书中改进冯模型在作者确认公式与材料对应关系后作为正式 Method 优先目标；
 以 GGX / Cook-Torrance 作为 BRDF mismatch、现代 PBR 对照和鲁棒性分支；
 反演继续降级为可观测性、互补性和置信一致性的验证工具。
 ```
 
-该裁决的含义是：路线一不退回 v0.3 face-center，也不完全复现书中独立面元链路；路线一 C 的优势在于把 v0.4 的像素级同源几何与书中已被接受的材料/BRDF 依据结合起来，降低“自造材料参数导致真实匹配风险”的质疑。
+该裁决的含义是：路线一不退回 v0.3 face-center，也不完全复现书中独立面元链路；路线一 C 的优势在于把 v0.4 的像素级同源几何与书中可核验的 BRDF/OCS 依据结合起来。书中改进冯模型和材料对应关系经作者确认前，不把 B0 或临时参数写成书中模型。
 
 ### 14.2 对旧路线一内容的补充
 
 后续路线一代码与论文指导必须补入以下细节：
 
-1. Method 中明确五参数冯模型、典型空间材料参数表和 v0.4 pixel-level 几何采样之间的关系。
-2. GGX 不作为唯一主线可信来源，而作为与五参数冯的模型差异 / mismatch 分支。
+1. Method 中明确 B0 工程 baseline、B1 书中改进冯模型待确认目标和 v0.4 pixel-level 几何采样之间的关系。
+2. GGX 不作为唯一主线可信来源，而作为与 B1 书中改进冯模型的模型差异 / mismatch 分支。
 3. 材料参数敏感性实验服务于“可观测性结构是否对材料参数稳定”。
 4. 反演输出仍要求候选分布、top-k、entropy、margin、JS、overlap、reject/conflict 等，而不是只给一个误差表。
 5. roll sensitivity 仍是路线一承重墙，但它不是三轴小项目的替代品。
