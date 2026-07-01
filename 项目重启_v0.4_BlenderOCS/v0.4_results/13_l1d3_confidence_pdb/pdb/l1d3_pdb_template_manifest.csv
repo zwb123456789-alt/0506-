@@ -1,0 +1,10 @@
+geom,degrade_level,n_template,geoms,flux_dim,template_source
+G1,clean,2109,phase63,1,train split only (no val/test leak)
+G3,clean,2109,phase24;phase63;phase120,3,train split only (no val/test leak)
+G5,clean,2109,phase24;phase45;phase63;phase90;phase120,5,train split only (no val/test leak)
+G1,degraded-mild,2109,phase63,1,train split only (no val/test leak)
+G3,degraded-mild,2109,phase24;phase63;phase120,3,train split only (no val/test leak)
+G5,degraded-mild,2109,phase24;phase45;phase63;phase90;phase120,5,train split only (no val/test leak)
+G1,degraded-moderate,2109,phase63,1,train split only (no val/test leak)
+G3,degraded-moderate,2109,phase24;phase63;phase120,3,train split only (no val/test leak)
+G5,degraded-moderate,2109,phase24;phase45;phase63;phase90;phase120,5,train split only (no val/test leak)

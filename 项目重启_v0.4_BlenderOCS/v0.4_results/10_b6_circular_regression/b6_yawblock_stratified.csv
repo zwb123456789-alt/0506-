@@ -1,0 +1,11 @@
+run,mode,aug,yaw_block_deg,n,yaw_cmae_deg,yaw_median_deg,yaw_hit@10,yaw_hit@30
+image_only_fold0_aug-none,image_only,none,"[0,45)",333,138.44,143.18,0.0,0.0
+image_only_fold0_aug-none,image_only,none,"[45,90)",222,32.98,19.8,0.2207,0.6937
+image_only_fold0_aug-standard,image_only,standard,"[0,45)",333,135.45,130.0,0.0,0.0
+image_only_fold0_aug-standard,image_only,standard,"[45,90)",222,167.43,167.5,0.0,0.0
+joint_fold0_aug-none,joint,none,"[0,45)",333,143.69,146.84,0.0,0.0
+joint_fold0_aug-none,joint,none,"[45,90)",222,33.55,26.36,0.1802,0.5856
+joint_fold0_aug-standard,joint,standard,"[0,45)",333,155.0,155.0,0.0,0.0
+joint_fold0_aug-standard,joint,standard,"[45,90)",222,167.5,167.5,0.0,0.0
+ocs_only_fold0_aug-none,ocs_only,none,"[0,45)",333,137.71,141.53,0.0,0.0
+ocs_only_fold0_aug-none,ocs_only,none,"[45,90)",222,73.57,71.44,0.0,0.0

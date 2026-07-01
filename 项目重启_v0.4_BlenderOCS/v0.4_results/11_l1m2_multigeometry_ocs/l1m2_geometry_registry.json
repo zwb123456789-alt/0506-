@@ -1,0 +1,226 @@
+{
+  "task": "1C-L1M2 geometry registry",
+  "generated": "2026-06-30T20:07:28",
+  "source_config": "06_v0.4_code/00_config/config_v0_4.py :: OBS_GEOMETRIES",
+  "numbering_note": "两套编号严格区分：'code_index'/'code_comment_id'(G0~G4) 来自 config 代码层；'L1-G1/L1-G3/L1-G5' 是实验组名(R114 §3)。二者不可混用。config 注释 G0~G4 ≠ 实验组 G1/G3/G5。",
+  "nested_design": {
+    "rule": "L1-G1 ⊂ L1-G3 ⊂ L1-G5",
+    "ok": true
+  },
+  "existing_data_status": {
+    "phase63_backscatter": "已渲染（01_fullrun, 2664 姿态），即 L1-G1 baseline",
+    "phase24_near_backscatter": "未渲染（缺口）",
+    "phase120_forward_scatter": "未渲染（缺口）",
+    "phase90_side": "未渲染（缺口）",
+    "phase45_overhead": "未渲染（缺口）"
+  },
+  "code_layer_geometries": [
+    {
+      "code_index": 0,
+      "code_comment_id": "G0",
+      "label": "phase63_backscatter",
+      "geom_id": "phase63",
+      "sun_vector": [
+        1.0,
+        0.0,
+        0.3
+      ],
+      "det_vector": [
+        0.5,
+        -1.0,
+        0.1
+      ],
+      "phase_angle_deg": 63.112,
+      "phase_angle_cos": 0.452249
+    },
+    {
+      "code_index": 1,
+      "code_comment_id": "G1",
+      "label": "phase24_near_backscatter",
+      "geom_id": "phase24",
+      "sun_vector": [
+        0.5,
+        -1.0,
+        0.5
+      ],
+      "det_vector": [
+        0.2,
+        -1.0,
+        0.1
+      ],
+      "phase_angle_deg": 23.603,
+      "phase_angle_cos": 0.916342
+    },
+    {
+      "code_index": 2,
+      "code_comment_id": "G2",
+      "label": "phase120_forward_scatter",
+      "geom_id": "phase120",
+      "sun_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "det_vector": [
+        -0.5,
+        0.866,
+        0.0
+      ],
+      "phase_angle_deg": 120.001,
+      "phase_angle_cos": -0.500011
+    },
+    {
+      "code_index": 3,
+      "code_comment_id": "G3",
+      "label": "phase90_side",
+      "geom_id": "phase90",
+      "sun_vector": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "det_vector": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "phase_angle_deg": 90.0,
+      "phase_angle_cos": 0.0
+    },
+    {
+      "code_index": 4,
+      "code_comment_id": "G4",
+      "label": "phase45_overhead",
+      "geom_id": "phase45",
+      "sun_vector": [
+        0.707,
+        0.0,
+        0.707
+      ],
+      "det_vector": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "phase_angle_deg": 45.0,
+      "phase_angle_cos": 0.707107
+    }
+  ],
+  "experiment_groups": {
+    "L1-G1": {
+      "n_geometries": 1,
+      "members": [
+        {
+          "label": "phase63_backscatter",
+          "code_index": 0,
+          "geom_id": "phase63",
+          "phase_angle_deg": 63.112
+        }
+      ],
+      "members_by_phase_angle": [
+        "phase63_backscatter"
+      ],
+      "geom_ids": [
+        "phase63"
+      ],
+      "feature_vector_layout": [
+        "total_flux_phase63"
+      ]
+    },
+    "L1-G3": {
+      "n_geometries": 3,
+      "members": [
+        {
+          "label": "phase24_near_backscatter",
+          "code_index": 1,
+          "geom_id": "phase24",
+          "phase_angle_deg": 23.603
+        },
+        {
+          "label": "phase63_backscatter",
+          "code_index": 0,
+          "geom_id": "phase63",
+          "phase_angle_deg": 63.112
+        },
+        {
+          "label": "phase120_forward_scatter",
+          "code_index": 2,
+          "geom_id": "phase120",
+          "phase_angle_deg": 120.001
+        }
+      ],
+      "members_by_phase_angle": [
+        "phase24_near_backscatter",
+        "phase63_backscatter",
+        "phase120_forward_scatter"
+      ],
+      "geom_ids": [
+        "phase24",
+        "phase63",
+        "phase120"
+      ],
+      "feature_vector_layout": [
+        "total_flux_phase24",
+        "total_flux_phase63",
+        "total_flux_phase120"
+      ]
+    },
+    "L1-G5": {
+      "n_geometries": 5,
+      "members": [
+        {
+          "label": "phase24_near_backscatter",
+          "code_index": 1,
+          "geom_id": "phase24",
+          "phase_angle_deg": 23.603
+        },
+        {
+          "label": "phase45_overhead",
+          "code_index": 4,
+          "geom_id": "phase45",
+          "phase_angle_deg": 45.0
+        },
+        {
+          "label": "phase63_backscatter",
+          "code_index": 0,
+          "geom_id": "phase63",
+          "phase_angle_deg": 63.112
+        },
+        {
+          "label": "phase90_side",
+          "code_index": 3,
+          "geom_id": "phase90",
+          "phase_angle_deg": 90.0
+        },
+        {
+          "label": "phase120_forward_scatter",
+          "code_index": 2,
+          "geom_id": "phase120",
+          "phase_angle_deg": 120.001
+        }
+      ],
+      "members_by_phase_angle": [
+        "phase24_near_backscatter",
+        "phase45_overhead",
+        "phase63_backscatter",
+        "phase90_side",
+        "phase120_forward_scatter"
+      ],
+      "geom_ids": [
+        "phase24",
+        "phase45",
+        "phase63",
+        "phase90",
+        "phase120"
+      ],
+      "feature_vector_layout": [
+        "total_flux_phase24",
+        "total_flux_phase45",
+        "total_flux_phase63",
+        "total_flux_phase90",
+        "total_flux_phase120"
+      ]
+    }
+  },
+  "conflicts": []
+}

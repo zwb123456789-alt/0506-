@@ -1,0 +1,22 @@
+{
+  "task": "1C-B6_circular_regression",
+  "mode": "ocs_only",
+  "fold": 0,
+  "aug": "none",
+  "smoke": false,
+  "max_epochs": 20,
+  "lr": 0.001,
+  "seed": 42,
+  "batch_size": 32,
+  "norm_weight": 0.1,
+  "target": "[yaw_sin,yaw_cos,pitch_sin,pitch_cos]",
+  "loss": "sincos_mse + unit_norm_penalty",
+  "aug_params": null,
+  "manifest": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold0.json",
+  "n_params": 34180,
+  "device": "cuda",
+  "n_train": 1850,
+  "n_val": 259,
+  "n_test": 555,
+  "timestamp": "2026-06-30T09:03:00"
+}

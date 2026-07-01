@@ -1,0 +1,32 @@
+{
+  "train_manifest": {
+    "manifest": "v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold1.json",
+    "method": "circ_yaw_block",
+    "train_n": 1850,
+    "val_n": 259,
+    "test_n": 555,
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "train_val_overlap_pct_val": 0.0,
+    "train_test_overlap_pct_test": 0.0,
+    "val_test_overlap_pct_test": 0.0,
+    "is_strict": true
+  },
+  "cross_train_vs_random": {
+    "train_manifest_train ∩ random_train": 1469,
+    "train_manifest_train ∩ random_val": 171,
+    "train_manifest_train ∩ random_test": 210,
+    "train_manifest_all ∩ random_all": 2664,
+    "train_manifest_n_total": 2664,
+    "random_n_total": 2664
+  },
+  "cross_train_vs_yaw_block": {
+    "train_manifest_train ∩ yaw_block_train": 1295,
+    "train_manifest_train ∩ yaw_block_val": 259,
+    "train_manifest_train ∩ yaw_block_test": 296,
+    "train_manifest_all ∩ yaw_block_all": 2664,
+    "train_manifest_n_total": 2664,
+    "yaw_block_n_total": 2664
+  }
+}

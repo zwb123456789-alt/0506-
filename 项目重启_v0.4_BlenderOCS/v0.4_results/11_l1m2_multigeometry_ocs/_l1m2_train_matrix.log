@@ -1,0 +1,371 @@
+==== L1M2 train matrix start Tue Jun 30 22:23:33     2026 epochs=30 seed=42 ====
+---- G1 / ocs_only ----
+================================================================
+L1M2 | P-INT_G1_ocs_only_seed42
+geoms=['phase63'] ocs_dim=1 device=cuda params=33,796
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.5448 val_cmae=82.0 pitch_mae=46.3 hit@10=0.089  *best
+  ep 2 loss=0.5183 val_cmae=82.4 pitch_mae=46.4 hit@10=0.170
+  ep 3 loss=0.5151 val_cmae=79.3 pitch_mae=46.1 hit@10=0.243  *best
+  ep 4 loss=0.5117 val_cmae=75.4 pitch_mae=46.2 hit@10=0.100  *best
+  ep 5 loss=0.5085 val_cmae=75.2 pitch_mae=46.1 hit@10=0.108  *best
+  ep 6 loss=0.5061 val_cmae=75.8 pitch_mae=46.3 hit@10=0.197
+  ep 7 loss=0.5035 val_cmae=74.2 pitch_mae=46.2 hit@10=0.139  *best
+  ep 8 loss=0.5030 val_cmae=74.9 pitch_mae=46.2 hit@10=0.108
+  ep 9 loss=0.4984 val_cmae=70.4 pitch_mae=46.2 hit@10=0.174  *best
+  ep10 loss=0.4982 val_cmae=72.4 pitch_mae=46.1 hit@10=0.151
+  ep11 loss=0.4974 val_cmae=69.2 pitch_mae=45.9 hit@10=0.193  *best
+  ep12 loss=0.4988 val_cmae=75.4 pitch_mae=46.1 hit@10=0.147
+  ep13 loss=0.4973 val_cmae=69.3 pitch_mae=46.2 hit@10=0.185
+  ep14 loss=0.4961 val_cmae=78.1 pitch_mae=45.9 hit@10=0.147
+  ep15 loss=0.4956 val_cmae=70.1 pitch_mae=45.5 hit@10=0.166
+  ep16 loss=0.4929 val_cmae=71.2 pitch_mae=45.4 hit@10=0.139
+  ep17 loss=0.4919 val_cmae=69.5 pitch_mae=45.2 hit@10=0.181
+  ep18 loss=0.4930 val_cmae=69.5 pitch_mae=44.8 hit@10=0.208
+  ep19 loss=0.4910 val_cmae=69.7 pitch_mae=44.9 hit@10=0.185
+  ep20 loss=0.4917 val_cmae=72.2 pitch_mae=44.7 hit@10=0.166
+  ep21 loss=0.4912 val_cmae=74.2 pitch_mae=45.2 hit@10=0.185
+  ep22 loss=0.4899 val_cmae=74.2 pitch_mae=44.8 hit@10=0.143
+  ep23 loss=0.4869 val_cmae=71.3 pitch_mae=44.4 hit@10=0.139
+  ep24 loss=0.4872 val_cmae=70.9 pitch_mae=44.6 hit@10=0.127
+  ep25 loss=0.4882 val_cmae=70.2 pitch_mae=44.3 hit@10=0.201
+  ep26 loss=0.4859 val_cmae=69.9 pitch_mae=44.2 hit@10=0.212
+  ep27 loss=0.4873 val_cmae=74.3 pitch_mae=44.2 hit@10=0.174
+  ep28 loss=0.4858 val_cmae=70.9 pitch_mae=44.6 hit@10=0.139
+  ep29 loss=0.4873 val_cmae=70.6 pitch_mae=45.0 hit@10=0.154
+  ep30 loss=0.4863 val_cmae=70.8 pitch_mae=44.3 hit@10=0.139
+
+[TEST final] cmae=78.31 hit@30=0.267 coarse90=0.338 pitch_mae=45.27
+[TEST best ] (ep11) cmae=76.56 hit@30=0.277 coarse90=0.372 pitch_mae=45.95
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G1_ocs_only_seed42
+   rc=0 Tue Jun 30 22:23:42     2026
+---- G1 / image_only ----
+================================================================
+L1M2 | P-INT_G1_image_only_seed42
+geoms=['phase63'] ocs_dim=1 device=cuda params=3,838,628
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=1.0141 val_cmae=76.9 pitch_mae=57.2 hit@10=0.097  *best
+  ep 2 loss=0.8243 val_cmae=53.0 pitch_mae=57.2 hit@10=0.197  *best
+  ep 3 loss=0.7584 val_cmae=33.8 pitch_mae=57.2 hit@10=0.201  *best
+  ep 4 loss=0.6786 val_cmae=86.4 pitch_mae=57.1 hit@10=0.154
+  ep 5 loss=0.3359 val_cmae=38.3 pitch_mae=52.4 hit@10=0.228
+  ep 6 loss=0.2469 val_cmae=21.1 pitch_mae=26.3 hit@10=0.363  *best
+  ep 7 loss=0.1618 val_cmae=94.9 pitch_mae=47.0 hit@10=0.116
+  ep 8 loss=0.1192 val_cmae=19.8 pitch_mae=44.4 hit@10=0.305  *best
+  ep 9 loss=0.1120 val_cmae=10.9 pitch_mae=17.4 hit@10=0.548  *best
+  ep10 loss=0.0861 val_cmae=55.2 pitch_mae=81.0 hit@10=0.185
+  ep11 loss=0.0706 val_cmae=21.8 pitch_mae=18.8 hit@10=0.471
+  ep12 loss=0.0562 val_cmae=40.6 pitch_mae=58.5 hit@10=0.143
+  ep13 loss=0.0727 val_cmae=69.0 pitch_mae=22.2 hit@10=0.147
+  ep14 loss=0.0590 val_cmae=80.5 pitch_mae=28.5 hit@10=0.081
+  ep15 loss=0.0588 val_cmae=23.1 pitch_mae=38.1 hit@10=0.297
+  ep16 loss=0.0401 val_cmae=8.8 pitch_mae=14.1 hit@10=0.664  *best
+  ep17 loss=0.0342 val_cmae=9.3 pitch_mae=9.3 hit@10=0.676
+  ep18 loss=0.0346 val_cmae=54.7 pitch_mae=89.7 hit@10=0.093
+  ep19 loss=0.0237 val_cmae=20.6 pitch_mae=46.6 hit@10=0.313
+  ep20 loss=0.0228 val_cmae=52.2 pitch_mae=24.3 hit@10=0.135
+  ep21 loss=0.0256 val_cmae=66.9 pitch_mae=19.0 hit@10=0.066
+  ep22 loss=0.0196 val_cmae=7.7 pitch_mae=9.1 hit@10=0.687  *best
+  ep23 loss=0.0129 val_cmae=13.2 pitch_mae=33.0 hit@10=0.436
+  ep24 loss=0.0086 val_cmae=4.3 pitch_mae=3.6 hit@10=0.915  *best
+  ep25 loss=0.0073 val_cmae=42.5 pitch_mae=92.9 hit@10=0.154
+  ep26 loss=0.0059 val_cmae=4.0 pitch_mae=6.3 hit@10=0.950  *best
+  ep27 loss=0.0034 val_cmae=4.3 pitch_mae=2.3 hit@10=0.954
+  ep28 loss=0.0026 val_cmae=16.3 pitch_mae=36.3 hit@10=0.328
+  ep29 loss=0.0024 val_cmae=2.4 pitch_mae=2.0 hit@10=0.985  *best
+  ep30 loss=0.0024 val_cmae=11.5 pitch_mae=14.5 hit@10=0.510
+
+[TEST final] cmae=12.06 hit@30=0.963 coarse90=0.774 pitch_mae=15.00
+[TEST best ] (ep29) cmae=2.44 hit@30=1.000 coarse90=0.946 pitch_mae=2.04
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G1_image_only_seed42
+   rc=0 Tue Jun 30 22:33:59     2026
+---- G1 / joint ----
+================================================================
+L1M2 | P-INT_G1_joint_seed42
+geoms=['phase63'] ocs_dim=1 device=cuda params=3,872,420
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.5979 val_cmae=86.6 pitch_mae=46.7 hit@10=0.100  *best
+  ep 2 loss=0.3955 val_cmae=55.9 pitch_mae=39.0 hit@10=0.120  *best
+  ep 3 loss=0.3577 val_cmae=36.2 pitch_mae=35.8 hit@10=0.143  *best
+  ep 4 loss=0.2129 val_cmae=16.8 pitch_mae=36.8 hit@10=0.452  *best
+  ep 5 loss=0.1528 val_cmae=22.9 pitch_mae=24.8 hit@10=0.359
+  ep 6 loss=0.1409 val_cmae=39.8 pitch_mae=58.2 hit@10=0.151
+  ep 7 loss=0.0831 val_cmae=12.9 pitch_mae=12.4 hit@10=0.440  *best
+  ep 8 loss=0.0585 val_cmae=37.1 pitch_mae=68.1 hit@10=0.197
+  ep 9 loss=0.0513 val_cmae=89.7 pitch_mae=49.2 hit@10=0.062
+  ep10 loss=0.0541 val_cmae=38.7 pitch_mae=61.9 hit@10=0.127
+  ep11 loss=0.0666 val_cmae=29.7 pitch_mae=60.8 hit@10=0.290
+  ep12 loss=0.0487 val_cmae=11.8 pitch_mae=6.3 hit@10=0.737  *best
+  ep13 loss=0.0523 val_cmae=8.1 pitch_mae=5.4 hit@10=0.664  *best
+  ep14 loss=0.0260 val_cmae=5.0 pitch_mae=5.8 hit@10=0.880  *best
+  ep15 loss=0.0170 val_cmae=4.1 pitch_mae=5.4 hit@10=0.934  *best
+  ep16 loss=0.0167 val_cmae=5.8 pitch_mae=5.9 hit@10=0.869
+  ep17 loss=0.0208 val_cmae=5.3 pitch_mae=5.9 hit@10=0.923
+  ep18 loss=0.0202 val_cmae=4.1 pitch_mae=7.5 hit@10=0.934  *best
+  ep19 loss=0.0158 val_cmae=4.1 pitch_mae=5.1 hit@10=0.915  *best
+  ep20 loss=0.0130 val_cmae=3.6 pitch_mae=3.6 hit@10=0.927  *best
+  ep21 loss=0.0101 val_cmae=4.0 pitch_mae=2.9 hit@10=0.946
+  ep22 loss=0.0093 val_cmae=4.1 pitch_mae=4.7 hit@10=0.969
+  ep23 loss=0.0097 val_cmae=4.2 pitch_mae=3.2 hit@10=0.923
+  ep24 loss=0.0069 val_cmae=2.8 pitch_mae=3.7 hit@10=0.981  *best
+  ep25 loss=0.0050 val_cmae=2.7 pitch_mae=3.9 hit@10=0.969  *best
+  ep26 loss=0.0039 val_cmae=2.3 pitch_mae=2.9 hit@10=0.988  *best
+  ep27 loss=0.0033 val_cmae=3.3 pitch_mae=2.7 hit@10=0.977
+  ep28 loss=0.0027 val_cmae=2.0 pitch_mae=2.2 hit@10=0.992  *best
+  ep29 loss=0.0022 val_cmae=2.2 pitch_mae=2.4 hit@10=0.992
+  ep30 loss=0.0022 val_cmae=2.1 pitch_mae=2.2 hit@10=0.985
+
+[TEST final] cmae=2.10 hit@30=1.000 coarse90=0.936 pitch_mae=2.08
+[TEST best ] (ep28) cmae=2.11 hit@30=1.000 coarse90=0.929 pitch_mae=2.15
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G1_joint_seed42
+   rc=0 Tue Jun 30 22:41:45     2026
+---- G3 / ocs_only ----
+================================================================
+L1M2 | P-INT_G3_ocs_only_seed42
+geoms=['phase24', 'phase63', 'phase120'] ocs_dim=3 device=cuda params=34,052
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.5312 val_cmae=76.9 pitch_mae=46.5 hit@10=0.031  *best
+  ep 2 loss=0.4718 val_cmae=68.5 pitch_mae=46.3 hit@10=0.178  *best
+  ep 3 loss=0.4499 val_cmae=66.1 pitch_mae=46.3 hit@10=0.147  *best
+  ep 4 loss=0.4313 val_cmae=61.7 pitch_mae=45.6 hit@10=0.104  *best
+  ep 5 loss=0.4186 val_cmae=59.3 pitch_mae=45.9 hit@10=0.124  *best
+  ep 6 loss=0.4024 val_cmae=57.4 pitch_mae=46.0 hit@10=0.147  *best
+  ep 7 loss=0.3940 val_cmae=55.0 pitch_mae=45.8 hit@10=0.154  *best
+  ep 8 loss=0.3844 val_cmae=55.4 pitch_mae=45.7 hit@10=0.166
+  ep 9 loss=0.3809 val_cmae=52.3 pitch_mae=45.5 hit@10=0.174  *best
+  ep10 loss=0.3716 val_cmae=48.8 pitch_mae=45.0 hit@10=0.216  *best
+  ep11 loss=0.3633 val_cmae=47.1 pitch_mae=44.9 hit@10=0.205  *best
+  ep12 loss=0.3595 val_cmae=52.5 pitch_mae=44.4 hit@10=0.212
+  ep13 loss=0.3549 val_cmae=49.7 pitch_mae=44.2 hit@10=0.208
+  ep14 loss=0.3487 val_cmae=47.1 pitch_mae=44.2 hit@10=0.220  *best
+  ep15 loss=0.3450 val_cmae=46.0 pitch_mae=43.7 hit@10=0.255  *best
+  ep16 loss=0.3392 val_cmae=46.9 pitch_mae=43.3 hit@10=0.263
+  ep17 loss=0.3387 val_cmae=45.8 pitch_mae=43.8 hit@10=0.239  *best
+  ep18 loss=0.3332 val_cmae=44.4 pitch_mae=43.1 hit@10=0.313  *best
+  ep19 loss=0.3322 val_cmae=44.3 pitch_mae=42.0 hit@10=0.236  *best
+  ep20 loss=0.3260 val_cmae=44.3 pitch_mae=42.8 hit@10=0.328
+  ep21 loss=0.3227 val_cmae=43.5 pitch_mae=42.3 hit@10=0.290  *best
+  ep22 loss=0.3269 val_cmae=42.8 pitch_mae=41.9 hit@10=0.367  *best
+  ep23 loss=0.3159 val_cmae=41.6 pitch_mae=41.8 hit@10=0.301  *best
+  ep24 loss=0.3121 val_cmae=42.0 pitch_mae=42.6 hit@10=0.309
+  ep25 loss=0.3123 val_cmae=42.3 pitch_mae=42.5 hit@10=0.305
+  ep26 loss=0.3075 val_cmae=40.8 pitch_mae=41.2 hit@10=0.371  *best
+  ep27 loss=0.3075 val_cmae=41.5 pitch_mae=41.8 hit@10=0.324
+  ep28 loss=0.3068 val_cmae=43.2 pitch_mae=40.9 hit@10=0.340
+  ep29 loss=0.3069 val_cmae=39.3 pitch_mae=41.0 hit@10=0.386  *best
+  ep30 loss=0.3016 val_cmae=40.8 pitch_mae=40.4 hit@10=0.347
+
+[TEST final] cmae=38.56 hit@30=0.635 coarse90=0.632 pitch_mae=42.20
+[TEST best ] (ep29) cmae=38.22 hit@30=0.672 coarse90=0.659 pitch_mae=41.79
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G3_ocs_only_seed42
+   rc=0 Tue Jun 30 22:41:51     2026
+---- G3 / image_only ----
+================================================================
+L1M2 | P-INT_G3_image_only_seed42
+geoms=['phase24', 'phase63', 'phase120'] ocs_dim=3 device=cuda params=3,838,628
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=1.0141 val_cmae=76.5 pitch_mae=57.2 hit@10=0.089  *best
+  ep 2 loss=0.8203 val_cmae=58.8 pitch_mae=57.2 hit@10=0.181  *best
+  ep 3 loss=0.8302 val_cmae=57.1 pitch_mae=52.7 hit@10=0.097  *best
+  ep 4 loss=0.5869 val_cmae=85.4 pitch_mae=51.3 hit@10=0.058
+  ep 5 loss=0.3627 val_cmae=94.7 pitch_mae=60.9 hit@10=0.058
+  ep 6 loss=0.2091 val_cmae=90.1 pitch_mae=51.4 hit@10=0.093
+  ep 7 loss=0.1571 val_cmae=85.6 pitch_mae=53.0 hit@10=0.089
+  ep 8 loss=0.1595 val_cmae=12.4 pitch_mae=19.3 hit@10=0.517  *best
+  ep 9 loss=0.1456 val_cmae=92.6 pitch_mae=57.3 hit@10=0.097
+  ep10 loss=0.1333 val_cmae=91.2 pitch_mae=75.2 hit@10=0.081
+  ep11 loss=0.1100 val_cmae=34.7 pitch_mae=58.5 hit@10=0.193
+  ep12 loss=0.0824 val_cmae=117.8 pitch_mae=56.1 hit@10=0.042
+  ep13 loss=0.1265 val_cmae=38.2 pitch_mae=53.7 hit@10=0.181
+  ep14 loss=0.1281 val_cmae=19.1 pitch_mae=32.9 hit@10=0.309
+  ep15 loss=0.1061 val_cmae=16.3 pitch_mae=19.8 hit@10=0.340
+  ep16 loss=0.0597 val_cmae=13.6 pitch_mae=19.3 hit@10=0.429
+  ep17 loss=0.0629 val_cmae=89.7 pitch_mae=84.2 hit@10=0.093
+  ep18 loss=0.0623 val_cmae=6.3 pitch_mae=7.7 hit@10=0.799  *best
+  ep19 loss=0.0824 val_cmae=67.0 pitch_mae=86.0 hit@10=0.085
+  ep20 loss=0.0702 val_cmae=25.6 pitch_mae=27.7 hit@10=0.274
+  ep21 loss=0.0791 val_cmae=17.4 pitch_mae=86.5 hit@10=0.382
+  ep22 loss=0.0526 val_cmae=5.1 pitch_mae=7.4 hit@10=0.873  *best
+  ep23 loss=0.0422 val_cmae=15.7 pitch_mae=21.8 hit@10=0.425
+  ep24 loss=0.0380 val_cmae=64.3 pitch_mae=40.2 hit@10=0.069
+  ep25 loss=0.0344 val_cmae=16.6 pitch_mae=12.7 hit@10=0.324
+  ep26 loss=0.0370 val_cmae=95.4 pitch_mae=54.5 hit@10=0.081
+  ep27 loss=0.0298 val_cmae=33.9 pitch_mae=26.3 hit@10=0.181
+  ep28 loss=0.0288 val_cmae=16.3 pitch_mae=12.0 hit@10=0.336
+  ep29 loss=0.0203 val_cmae=5.3 pitch_mae=4.7 hit@10=0.884
+  ep30 loss=0.0116 val_cmae=4.5 pitch_mae=3.6 hit@10=0.892  *best
+
+[TEST final] cmae=4.95 hit@30=1.000 coarse90=0.912 pitch_mae=3.64
+[TEST best ] (ep30) cmae=4.95 hit@30=1.000 coarse90=0.912 pitch_mae=3.64
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G3_image_only_seed42
+   rc=0 Tue Jun 30 22:49:20     2026
+---- G3 / joint ----
+================================================================
+L1M2 | P-INT_G3_joint_seed42
+geoms=['phase24', 'phase63', 'phase120'] ocs_dim=3 device=cuda params=3,872,676
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.6139 val_cmae=87.4 pitch_mae=46.7 hit@10=0.039  *best
+  ep 2 loss=0.3452 val_cmae=38.7 pitch_mae=37.4 hit@10=0.181  *best
+  ep 3 loss=0.2356 val_cmae=28.9 pitch_mae=23.3 hit@10=0.255  *best
+  ep 4 loss=0.1939 val_cmae=26.4 pitch_mae=31.4 hit@10=0.259  *best
+  ep 5 loss=0.1495 val_cmae=12.1 pitch_mae=25.2 hit@10=0.471  *best
+  ep 6 loss=0.1587 val_cmae=97.5 pitch_mae=49.8 hit@10=0.085
+  ep 7 loss=0.1385 val_cmae=9.8 pitch_mae=24.4 hit@10=0.622  *best
+  ep 8 loss=0.1192 val_cmae=9.0 pitch_mae=26.3 hit@10=0.649  *best
+  ep 9 loss=0.1071 val_cmae=16.1 pitch_mae=43.7 hit@10=0.375
+  ep10 loss=0.1227 val_cmae=35.5 pitch_mae=47.4 hit@10=0.189
+  ep11 loss=0.1044 val_cmae=8.1 pitch_mae=21.3 hit@10=0.649  *best
+  ep12 loss=0.0967 val_cmae=6.3 pitch_mae=21.2 hit@10=0.834  *best
+  ep13 loss=0.0955 val_cmae=5.7 pitch_mae=21.9 hit@10=0.853  *best
+  ep14 loss=0.0911 val_cmae=8.2 pitch_mae=22.0 hit@10=0.637
+  ep15 loss=0.0892 val_cmae=8.3 pitch_mae=19.2 hit@10=0.664
+  ep16 loss=0.0489 val_cmae=10.7 pitch_mae=16.5 hit@10=0.602
+  ep17 loss=0.0295 val_cmae=6.6 pitch_mae=11.6 hit@10=0.772
+  ep18 loss=0.0163 val_cmae=5.3 pitch_mae=5.7 hit@10=0.880  *best
+  ep19 loss=0.0106 val_cmae=5.4 pitch_mae=5.9 hit@10=0.892
+  ep20 loss=0.0071 val_cmae=8.1 pitch_mae=12.4 hit@10=0.695
+  ep21 loss=0.0041 val_cmae=2.7 pitch_mae=2.7 hit@10=0.973  *best
+  ep22 loss=0.0034 val_cmae=3.2 pitch_mae=4.0 hit@10=0.965
+  ep23 loss=0.0032 val_cmae=3.1 pitch_mae=4.7 hit@10=0.969
+  ep24 loss=0.0033 val_cmae=3.2 pitch_mae=5.2 hit@10=0.988
+  ep25 loss=0.0028 val_cmae=2.8 pitch_mae=2.8 hit@10=0.996
+  ep26 loss=0.0027 val_cmae=8.2 pitch_mae=12.7 hit@10=0.683
+  ep27 loss=0.0030 val_cmae=14.3 pitch_mae=59.0 hit@10=0.398
+  ep28 loss=0.0033 val_cmae=19.0 pitch_mae=72.2 hit@10=0.228
+  ep29 loss=0.0024 val_cmae=2.4 pitch_mae=3.0 hit@10=0.985  *best
+  ep30 loss=0.0024 val_cmae=2.1 pitch_mae=3.1 hit@10=1.000  *best
+
+[TEST final] cmae=2.03 hit@30=1.000 coarse90=0.936 pitch_mae=2.85
+[TEST best ] (ep30) cmae=2.03 hit@30=1.000 coarse90=0.936 pitch_mae=2.85
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G3_joint_seed42
+   rc=0 Tue Jun 30 22:56:50     2026
+---- G5 / ocs_only ----
+================================================================
+L1M2 | P-INT_G5_ocs_only_seed42
+geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] ocs_dim=5 device=cuda params=34,308
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.5170 val_cmae=76.1 pitch_mae=46.5 hit@10=0.062  *best
+  ep 2 loss=0.4696 val_cmae=71.1 pitch_mae=46.2 hit@10=0.104  *best
+  ep 3 loss=0.4494 val_cmae=64.5 pitch_mae=46.6 hit@10=0.143  *best
+  ep 4 loss=0.4309 val_cmae=61.7 pitch_mae=46.5 hit@10=0.143  *best
+  ep 5 loss=0.4080 val_cmae=60.1 pitch_mae=46.5 hit@10=0.093  *best
+  ep 6 loss=0.3930 val_cmae=55.2 pitch_mae=46.1 hit@10=0.174  *best
+  ep 7 loss=0.3724 val_cmae=54.2 pitch_mae=46.3 hit@10=0.185  *best
+  ep 8 loss=0.3574 val_cmae=50.1 pitch_mae=46.1 hit@10=0.193  *best
+  ep 9 loss=0.3470 val_cmae=45.9 pitch_mae=46.0 hit@10=0.201  *best
+  ep10 loss=0.3309 val_cmae=44.6 pitch_mae=45.0 hit@10=0.197  *best
+  ep11 loss=0.3230 val_cmae=43.3 pitch_mae=45.0 hit@10=0.216  *best
+  ep12 loss=0.3163 val_cmae=41.4 pitch_mae=45.1 hit@10=0.205  *best
+  ep13 loss=0.3055 val_cmae=37.9 pitch_mae=44.8 hit@10=0.259  *best
+  ep14 loss=0.2899 val_cmae=37.5 pitch_mae=43.7 hit@10=0.212  *best
+  ep15 loss=0.2811 val_cmae=35.3 pitch_mae=43.1 hit@10=0.313  *best
+  ep16 loss=0.2768 val_cmae=34.3 pitch_mae=42.2 hit@10=0.290  *best
+  ep17 loss=0.2640 val_cmae=31.9 pitch_mae=42.5 hit@10=0.278  *best
+  ep18 loss=0.2576 val_cmae=28.3 pitch_mae=41.4 hit@10=0.324  *best
+  ep19 loss=0.2524 val_cmae=28.4 pitch_mae=41.1 hit@10=0.344
+  ep20 loss=0.2404 val_cmae=26.7 pitch_mae=40.4 hit@10=0.398  *best
+  ep21 loss=0.2344 val_cmae=26.2 pitch_mae=39.8 hit@10=0.359  *best
+  ep22 loss=0.2322 val_cmae=28.5 pitch_mae=38.4 hit@10=0.390
+  ep23 loss=0.2368 val_cmae=28.1 pitch_mae=39.0 hit@10=0.378
+  ep24 loss=0.2253 val_cmae=27.2 pitch_mae=38.5 hit@10=0.456
+  ep25 loss=0.2194 val_cmae=24.0 pitch_mae=37.7 hit@10=0.390  *best
+  ep26 loss=0.2123 val_cmae=23.5 pitch_mae=37.9 hit@10=0.425  *best
+  ep27 loss=0.2102 val_cmae=22.7 pitch_mae=38.3 hit@10=0.452  *best
+  ep28 loss=0.2150 val_cmae=27.0 pitch_mae=37.2 hit@10=0.317
+  ep29 loss=0.2083 val_cmae=25.0 pitch_mae=37.4 hit@10=0.452
+  ep30 loss=0.2008 val_cmae=22.5 pitch_mae=36.1 hit@10=0.456  *best
+
+[TEST final] cmae=22.77 hit@30=0.811 coarse90=0.750 pitch_mae=37.36
+[TEST best ] (ep30) cmae=22.77 hit@30=0.811 coarse90=0.750 pitch_mae=37.36
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G5_ocs_only_seed42
+   rc=0 Tue Jun 30 22:56:56     2026
+---- G5 / image_only ----
+================================================================
+L1M2 | P-INT_G5_image_only_seed42
+geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] ocs_dim=5 device=cuda params=3,838,628
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=1.0142 val_cmae=76.2 pitch_mae=57.2 hit@10=0.097  *best
+  ep 2 loss=0.8267 val_cmae=43.6 pitch_mae=57.2 hit@10=0.212  *best
+  ep 3 loss=0.8304 val_cmae=32.2 pitch_mae=57.2 hit@10=0.205  *best
+  ep 4 loss=0.7103 val_cmae=97.0 pitch_mae=57.1 hit@10=0.042
+  ep 5 loss=0.4184 val_cmae=97.1 pitch_mae=48.5 hit@10=0.081
+  ep 6 loss=0.2338 val_cmae=76.8 pitch_mae=55.6 hit@10=0.089
+  ep 7 loss=0.1692 val_cmae=91.3 pitch_mae=90.4 hit@10=0.085
+  ep 8 loss=0.1927 val_cmae=89.6 pitch_mae=88.0 hit@10=0.081
+  ep 9 loss=0.1404 val_cmae=87.9 pitch_mae=83.4 hit@10=0.089
+  ep10 loss=0.1570 val_cmae=83.8 pitch_mae=55.4 hit@10=0.077
+  ep11 loss=0.1091 val_cmae=10.1 pitch_mae=13.8 hit@10=0.610  *best
+  ep12 loss=0.0902 val_cmae=86.8 pitch_mae=68.3 hit@10=0.093
+  ep13 loss=0.0725 val_cmae=80.1 pitch_mae=75.8 hit@10=0.097
+  ep14 loss=0.0686 val_cmae=89.6 pitch_mae=85.5 hit@10=0.089
+  ep15 loss=0.0918 val_cmae=91.8 pitch_mae=87.7 hit@10=0.085
+  ep16 loss=0.0584 val_cmae=105.9 pitch_mae=84.2 hit@10=0.012
+  ep17 loss=0.0713 val_cmae=24.0 pitch_mae=30.2 hit@10=0.208
+  ep18 loss=0.0990 val_cmae=8.1 pitch_mae=7.3 hit@10=0.726  *best
+  ep19 loss=0.0868 val_cmae=10.3 pitch_mae=14.6 hit@10=0.575
+  ep20 loss=0.0621 val_cmae=56.7 pitch_mae=17.2 hit@10=0.170
+  ep21 loss=0.0434 val_cmae=91.4 pitch_mae=72.0 hit@10=0.085
+  ep22 loss=0.0348 val_cmae=18.0 pitch_mae=19.3 hit@10=0.290
+  ep23 loss=0.0508 val_cmae=14.7 pitch_mae=20.0 hit@10=0.459
+  ep24 loss=0.0412 val_cmae=83.4 pitch_mae=41.2 hit@10=0.081
+  ep25 loss=0.0303 val_cmae=113.9 pitch_mae=57.0 hit@10=0.077
+  ep26 loss=0.0344 val_cmae=67.9 pitch_mae=48.3 hit@10=0.127
+  ep27 loss=0.0308 val_cmae=20.6 pitch_mae=41.2 hit@10=0.324
+  ep28 loss=0.0330 val_cmae=16.7 pitch_mae=32.7 hit@10=0.371
+  ep29 loss=0.0313 val_cmae=23.0 pitch_mae=40.3 hit@10=0.274
+  ep30 loss=0.0350 val_cmae=9.4 pitch_mae=17.7 hit@10=0.571
+
+[TEST final] cmae=9.12 hit@30=0.997 coarse90=0.868 pitch_mae=16.80
+[TEST best ] (ep18) cmae=8.57 hit@30=0.993 coarse90=0.889 pitch_mae=8.25
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G5_image_only_seed42
+   rc=0 Tue Jun 30 23:04:29     2026
+---- G5 / joint ----
+================================================================
+L1M2 | P-INT_G5_joint_seed42
+geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] ocs_dim=5 device=cuda params=3,872,932
+train/val/test=2109/259/296
+================================================================
+  ep 1 loss=0.8128 val_cmae=83.7 pitch_mae=57.0 hit@10=0.069  *best
+  ep 2 loss=0.5545 val_cmae=113.3 pitch_mae=67.4 hit@10=0.062
+  ep 3 loss=0.2667 val_cmae=16.8 pitch_mae=27.7 hit@10=0.386  *best
+  ep 4 loss=0.2636 val_cmae=71.8 pitch_mae=35.5 hit@10=0.054
+  ep 5 loss=0.1596 val_cmae=85.8 pitch_mae=57.1 hit@10=0.085
+  ep 6 loss=0.0837 val_cmae=101.9 pitch_mae=46.4 hit@10=0.031
+  ep 7 loss=0.0838 val_cmae=70.3 pitch_mae=59.0 hit@10=0.081
+  ep 8 loss=0.0607 val_cmae=86.2 pitch_mae=42.8 hit@10=0.039
+  ep 9 loss=0.0801 val_cmae=14.4 pitch_mae=43.1 hit@10=0.409  *best
+  ep10 loss=0.0648 val_cmae=50.8 pitch_mae=76.4 hit@10=0.127
+  ep11 loss=0.0524 val_cmae=42.9 pitch_mae=70.2 hit@10=0.116
+  ep12 loss=0.0429 val_cmae=52.4 pitch_mae=75.5 hit@10=0.120
+  ep13 loss=0.0305 val_cmae=62.3 pitch_mae=45.4 hit@10=0.151
+  ep14 loss=0.0294 val_cmae=58.8 pitch_mae=87.7 hit@10=0.139
+  ep15 loss=0.0399 val_cmae=73.8 pitch_mae=57.2 hit@10=0.081
+  ep16 loss=0.0505 val_cmae=5.8 pitch_mae=7.2 hit@10=0.842  *best
+  ep17 loss=0.0207 val_cmae=6.6 pitch_mae=6.1 hit@10=0.799
+  ep18 loss=0.0137 val_cmae=6.8 pitch_mae=6.9 hit@10=0.730
+  ep19 loss=0.0122 val_cmae=5.4 pitch_mae=4.3 hit@10=0.819  *best
+  ep20 loss=0.0106 val_cmae=5.4 pitch_mae=3.3 hit@10=0.849  *best
+  ep21 loss=0.0103 val_cmae=27.1 pitch_mae=32.0 hit@10=0.208
+  ep22 loss=0.0078 val_cmae=5.6 pitch_mae=7.8 hit@10=0.846
+  ep23 loss=0.0050 val_cmae=3.6 pitch_mae=3.2 hit@10=0.973  *best
+  ep24 loss=0.0041 val_cmae=4.1 pitch_mae=5.1 hit@10=0.950
+  ep25 loss=0.0031 val_cmae=3.8 pitch_mae=5.3 hit@10=0.954
+  ep26 loss=0.0024 val_cmae=5.1 pitch_mae=8.7 hit@10=0.880
+  ep27 loss=0.0033 val_cmae=9.6 pitch_mae=8.5 hit@10=0.548
+  ep28 loss=0.0029 val_cmae=10.4 pitch_mae=11.1 hit@10=0.552
+  ep29 loss=0.0026 val_cmae=19.5 pitch_mae=35.0 hit@10=0.378
+  ep30 loss=0.0025 val_cmae=3.1 pitch_mae=4.2 hit@10=0.996  *best
+
+[TEST final] cmae=3.20 hit@30=1.000 coarse90=0.932 pitch_mae=4.01
+[TEST best ] (ep30) cmae=3.20 hit@30=1.000 coarse90=0.932 pitch_mae=4.01
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\11_l1m2_multigeometry_ocs\runs\P-INT_G5_joint_seed42
+   rc=0 Tue Jun 30 23:11:59     2026
+==== L1M2 train matrix DONE Tue Jun 30 23:12:00     2026 ====

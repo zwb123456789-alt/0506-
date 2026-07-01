@@ -1,0 +1,30 @@
+{
+  "sequence_5frame_window": {
+    "near(<=15)": {
+      "n": 0,
+      "mean_cos_sim": null,
+      "std_cos_sim": null
+    },
+    "mid(20-45)": {
+      "n": 64,
+      "mean_cos_sim": 0.9466239586472511,
+      "std_cos_sim": 0.05244568690055618
+    },
+    "far(>=50)": {
+      "n": 352,
+      "mean_cos_sim": 0.9507558074864474,
+      "std_cos_sim": 0.04085712397361166
+    }
+  },
+  "single_frame": {
+    "near_15": {
+      "n": 216,
+      "mean_cos_sim": 0.9995587661310479
+    },
+    "far_50": {
+      "n": 1908,
+      "mean_cos_sim": 0.9936797076551169
+    }
+  },
+  "note": "pseudo-light-curve probe only; not a light-curve experiment"
+}

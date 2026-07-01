@@ -1,0 +1,106 @@
+{
+  "task": "1C-E32 C2 OCS-only screening",
+  "config_name": "M5_pixelfrac_only_4d",
+  "fold_id": 0,
+  "config_id": 11,
+  "claim_class": "visibility control",
+  "feature_keys": [
+    "frac_jinshuzhuti",
+    "frac_taiyangnengban",
+    "frac_yinshenban",
+    "visibility_ratio"
+  ],
+  "feature_dim": 4,
+  "training_protocol": {
+    "max_epochs": 30,
+    "hidden_dim": 128,
+    "lr": 0.001,
+    "batch_size": 32,
+    "seed": 42,
+    "optimizer": "Adam",
+    "model_type": "MLP_3layer",
+    "n_layers": 3
+  },
+  "split_info": {
+    "split_manifest_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold0.json",
+    "split_method": "circ_yaw_block",
+    "n_train": 1850,
+    "n_val": 259,
+    "n_test": 555
+  },
+  "normalization_params": {
+    "computed_from": "train_split_only",
+    "mean": [
+      0.7247646450996399,
+      0.13435514271259308,
+      0.14088037610054016,
+      0.7307083606719971
+    ],
+    "std": [
+      0.19562283158302307,
+      0.20161467790603638,
+      0.13748089969158173,
+      0.17732882499694824
+    ]
+  },
+  "model_info": {
+    "n_params": 31213,
+    "checkpoint_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold0_checkpoint.pt",
+    "checkpoint_size_mb": 0.37276744842529297
+  },
+  "training_summary": {
+    "best_epoch": 1,
+    "best_val_avg_acc": 0.013513513840734959,
+    "final_train_loss": 4.619125045579056,
+    "elapsed_s": 375.7917206287384,
+    "warnings": []
+  },
+  "final_metrics": {
+    "val": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.023166023194789886,
+      "yaw_circular_mae_deg": 138.39768409729004,
+      "pitch_mae_deg": 71.42857074737549,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 6,
+      "yaw_within_1_bin_count": 31,
+      "yaw_within_1_bin_rate": 0.11969111859798431,
+      "yaw_within_3_bins_count": 53,
+      "yaw_within_3_bins_rate": 0.2046332061290741,
+      "yaw_within_5_bins_count": 53,
+      "yaw_within_5_bins_rate": 0.2046332061290741,
+      "pitch_within_1_bin_count": 17,
+      "pitch_within_1_bin_rate": 0.06563706696033478,
+      "pitch_within_3_bins_count": 33,
+      "pitch_within_3_bins_rate": 0.12741312384605408,
+      "pitch_within_5_bins_count": 58,
+      "pitch_within_5_bins_rate": 0.2239382266998291,
+      "loss": 27.55152808295356,
+      "n_samples": 259,
+      "epoch": 30
+    },
+    "test": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.0324324332177639,
+      "yaw_circular_mae_deg": 62.54054069519043,
+      "pitch_mae_deg": 61.44144058227539,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 18,
+      "yaw_within_1_bin_count": 35,
+      "yaw_within_1_bin_rate": 0.06306306272745132,
+      "yaw_within_3_bins_count": 99,
+      "yaw_within_3_bins_rate": 0.1783783733844757,
+      "yaw_within_5_bins_count": 151,
+      "yaw_within_5_bins_rate": 0.27207207679748535,
+      "pitch_within_1_bin_count": 56,
+      "pitch_within_1_bin_rate": 0.10090090334415436,
+      "pitch_within_3_bins_count": 119,
+      "pitch_within_3_bins_rate": 0.21441441774368286,
+      "pitch_within_5_bins_count": 171,
+      "pitch_within_5_bins_rate": 0.3081081211566925,
+      "loss": 27.199139700995552,
+      "n_samples": 555
+    }
+  },
+  "timestamp": "2026-06-26T03:58:28"
+}

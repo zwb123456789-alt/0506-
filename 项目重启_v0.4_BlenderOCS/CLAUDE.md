@@ -1,10 +1,10 @@
 ﻿# CLAUDE.md
 
-最后更新：2026-06-24
+最后更新：2026-07-01
 
 ## 1. 当前状态
 
-这是 OCS-光度图像联合仿真与姿态反演项目的 v0.4 重启工作区。当前文件夹整理、非归档区文件顺序化、有效入口路径同步与冻结文档路径修正已完成；`04_四路线分工区/` 已按当前执行链物理重排为“路线一 C -> 三轴小项目 -> 路线二 -> 路线三 -> 路线四未来方向”。路线一 fixed-roll 纯仿真主干、路线二 GEO 真实光度锚点、路线三暗室缩比独立验证均已完成 Codex 复审并同步为后续指导。路线一 C Phase 0 B0 full-run 2664 数据生成已经 R38 Codex 审阅通过；训练入口与数据切分准备已经 R39 Codex 审阅通过；最小训练 smoke 判据修正已经 R41 Codex 审阅通过。当前放行 1C-E21 受控 baseline 训练与评估；论文正文改写、B1/GGX 批量扩展、三轴小项目与路线二/三/四扩展仍未放行。
+这是 OCS-光度图像联合仿真与姿态反演项目的 v0.4 重启工作区。`04_四路线分工区/` 已按当前执行链物理重排为“路线一 C -> 三轴小项目 -> 路线二 -> 路线三 -> 路线四未来方向”。路线一 C 的 C1/C2/C3 负结果证据链、Results 非正文材料、图表/SI 规划、负结果到 24 号三问桥接材料已分别由 R69/R76/R77/R78/R80/R82/R83/R86/R88/R90 等审阅稳定；头A 已在 R90 达到 R05 定义的收口状态。头B 已完成 B1/B2/B3/P0/B4/P1-A/B5/B6-FIX01 的阶段性材料。R113 已审阅通过 Claude 102：B6 关闭 single-frame 同门判据/输出头补救轴，头B旧负结果追因阶段据此阶段性收束，旧 single-frame 负结果不再继续扩展；但这不等于路线一 C 整体闭口，也不触发头A/头B大合并裁决。R115 已审阅通过 Claude 103：L1(M2) clean / P-INT 第一阶段结果接收为路线一 C 当前主用成果，核心结论是 OCS-only 多观测总光度向量随几何数 L1-G1 -> L1-G3 -> L1-G5 呈单调增益；P-EXT yaw-block stress test 仍坍缩。R117 已审阅通过 Claude 104：R115 val per-attitude 与跨几何量纲审计缺口补齐，L1(M3) degraded 真实性轴通过，M-roll fixed-roll 边界探针通过，D3/P-DB/conformal 准备材料通过。R119 已审阅通过 Claude 105：L1D3 置信一致性与 P-DB 正式评估通过，P-DB 作为 model-known simulated template retrieval 证明多观测总光度向量含可检索 yaw 信息，且与 neural ocs_only 回归构成互补证据链；conformal set_size 随几何数收紧，但 neural margin 区分度弱与 image_only 欠覆盖必须保留为负向观察。当前不得回到旧 single-frame 负结果上继续碎片化补实验，不得把 B6、L1(M2)、L1(M3) 或 L1D3 写成路线一 C 整体闭口，不得启动 T3/L2 光变正式训练、三轴小项目、路线二/三/四扩展或论文正文正式改写；下一步优先由 Codex 另行下达路线一 C 阶段性 Results 非正文证据包任务，或另行放行 degraded-severe / P-INT-hard 小矩阵。
 
 当前顶层结构：
 
@@ -66,6 +66,60 @@ Python 验证脚本运行示例：
 - 路径中包含中文、空格或特殊字符时，命令必须给路径加英文双引号。
 - Claude 输出报告必须写入对应路线的 `02_Claude输出/`，不得写入 `04_Codex审阅/`。
 - Claude 不得生成以 `Codex`、`Rxx_Codex`、`验收`、`最终放行` 为名义的审阅裁决文件。
+
+## 1.2 R106 后执行记忆（高优先级）
+
+本节为 2026-06-29 R104-R106 后新增的执行记忆，优先级高于旧的“短提示词/小任务”习惯。凡涉及路线一 C 头B、B6、负结果补救、光变/真实数据、GEO 数据库、评价口径或下一步 Claude 任务下达，必须读取并遵守：
+
+```text
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/
+R104_Codex_审阅_100通过_头B转入A类同门真改进阶段.md
+R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
+R106_Codex_数据核验_GEO真实光度库支持稀疏光度时序主线.md
+R108_Codex_审阅_101_B6长程执行部分接收但不闭口需FIX01.md
+R109_Codex_任务单_1C-B6-FIX01多折补齐与foldmatched修正.md
+R110_Codex_阶段记忆_从现有结果复盘到路线一复位方向.md
+R111_Codex_原文保留_现有结果问答与路线一阶段分析.md
+R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
+R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
+R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
+R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+```
+
+当前不可遗忘的结论：
+
+```text
+1. 100/R104 不是头B闭口，而是把头B推进到 B6 真改进；R113 关闭 B6 判据/输出头补救轴，并据此让头B旧负结果追因阶段性收束。
+2. B6-FIX01 已完成 5-fold、fold-matched P1-A、final/best-val 审阅：circular regression 改善 image/joint cMAE，但没有解决 yaw-block 外推。
+3. exact-bin 作为评价口径太严苛已确认；exact-bin/classification 作为训练判据不是主要失败原因已由 R113 稳定为较强判断。
+4. R105/R106 已将真实数据方向上调为稀疏 GEO 光度时序 / 多帧多几何 photometric sequence。
+5. GEO 真实光度库有光度、有几何、有型号、有时间序列；但无三轴姿态真值，不能写成监督姿态反演数据集。
+6. B6 负结果不得写成“光度无用”；旧 single-frame 负结果不再继续扩展。R115 已给出 L1(M2) clean / P-INT 第一阶段正结果：OCS-only 多观测总光度向量随 L1-G1 -> L1-G3 -> L1-G5 单调增益。R117 已给出 L1(M3) 真实性与边界补强：OCS-only 多几何增益在 mild/moderate 物理退化下保持，M-roll 中 ±15° 未直接推翻 fixed-roll 结论、±30° 明显敏感。R119 已给出 L1D3 置信一致性与 P-DB 正式评估：P-DB 检索强于 neural ocs_only 回归并构成互补证据链，conformal set_size 随几何收紧。
+7. R110/R111 已将作者关于“现有结果、4维 OCS 现实性、yaw-block 外推、1C 目标、小项目目标、光变/时序方向”的问答和纠偏提升为后续审阅记忆；涉及这些问题时必须先读。
+8. 当前 C2 4维 per-part OCS 是 semi-oracle / diagnostic，不是现实主线输入；24 号主线 OCS 是 L1 跨几何多观测总光度向量。
+9. yaw-block 是 strict extrapolation stress test，不应独占路线一 C 主线；B6-FIX01 已闭判据/训练头问题，不能闭整个路线一 C。R115 中 P-EXT 仍坍缩，不能写成 yaw-block 外推已解决。
+10. clean P-INT 下 image_only 已近饱和，joint 增益受天花板限制；R117 中 best-val image/joint 在 degraded 下仍近饱和，但 final 口径出现 G5 joint moderate hit@30=0.189 的检查点选择敏感性。R119 进一步显示 neural margin 置信区分度弱、image_only conformal 略欠覆盖，因此 joint 强互补性与选择性预测强可用性仍不能宣称成立，需留给 P-INT-hard、更强 degraded 或专门置信头检验。
+```
+
+从 R106 起，长程任务、反碎片化叙事任务、Claude/Codex 输出篇幅限制和避免无用复核的统一规则，不在本文件重复展开；以 `AGENTS.md` 第 3 节“Claude 与 Codex 职能”为唯一权威入口。
+
+R119 后最新成果区入口：
+
+```text
+01_成果区/00_当前主用成果/00_B6-FIX01与single-frame负结果收口说明_R113通过.md
+01_成果区/00_当前主用成果/01_路线一C后续技术路线执行框架_R113通过.md
+01_成果区/00_当前主用成果/05_L1M2多几何OCS第一阶段正结果_R115通过.md
+01_成果区/00_当前主用成果/06_L1M3退化真实性与Mroll边界探针_R117通过.md
+01_成果区/00_当前主用成果/07_L1D3置信一致性与PDB正式评估_R119通过.md
+04_Codex审阅/R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
+04_Codex审阅/R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
+04_Codex审阅/R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
+04_Codex审阅/R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+v0.4_results/10_b6_circular_regression_fix01/
+v0.4_results/11_l1m2_multigeometry_ocs/
+v0.4_results/12_l1m3_degraded_mroll/
+v0.4_results/13_l1d3_confidence_pdb/
+```
 
 ## 2. 当前科学主线
 
@@ -144,6 +198,26 @@ CLAUDE.md
 03_项目说明与规划材料/04_GEO数据库说明/01_GEO真实光度数据库信息整合_供回看确认.md
 ```
 
+凡任务涉及路线一 C 头B、B6、负结果补救、评价口径、continuous/circular regression、图像噪声/增广、光变/光度时序、或后续 Claude 任务下达，必须增量读取：
+
+```text
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/
+R104_Codex_审阅_100通过_头B转入A类同门真改进阶段.md
+R106_Codex_数据核验_GEO真实光度库支持稀疏光度时序主线.md
+R108_Codex_审阅_101_B6长程执行部分接收但不闭口需FIX01.md
+R109_Codex_任务单_1C-B6-FIX01多折补齐与foldmatched修正.md
+R110_Codex_阶段记忆_从现有结果复盘到路线一复位方向.md
+R111_Codex_原文保留_现有结果问答与路线一阶段分析.md
+R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
+```
+
+若任务专门讨论光变曲线、真实数据主线或 GEO 数据适配，还需同时读取：
+
+```text
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/
+R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
+```
+
 若任务涉及路线审阅，按任务范围增量读取，不默认全量读取四条路线：
 
 ```text
@@ -208,9 +282,12 @@ CLAUDE.md
 - Claude 输出只能作为执行结果或候选材料，不得自行扩展路线设计、技术裁决或阶段门判断；发现冲突时只列出冲突点、证据路径和待裁决问题，交回 Codex / 作者处理。
 - 给 Claude 的提示词默认采用短提示词：只列关键目标、关键文件、关键红线、输出路径和必要格式；不一次性塞入过长上下文。
 - 给 Claude 的提示词必须提醒：若文件无法一次性写入、输出过长或上下文不足，必须按 `Part 1/2/3...` 分段写入或分段输出，直到文件完整。
+- 路线一 C 的 Claude 执行端已知问题与规避规则见 `04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R70_Codex_规则_Claude执行端已知问题与规避规则.md`；后续中文路径写入优先使用 `/d/...` 格式，执行报告遵循简短必要原则且不复述历史。
 - 后续所有 Claude 提示词沿用上述规则，除非作者明确要求某一轮改用长提示词或允许 Claude 参与方案设计。
 - 固定执行闭环：Claude 完成任务后，作者将 Claude 输出路径交给 Codex；Codex 必须先审阅该输出，再给出阶段判定、问题清单和下一步 Claude 执行提示词。
 - Codex 审阅意见必须直接落成 Markdown 文件，作为后续 Claude 执行或修改的依据；不能只在对话中口头审阅后跳到下一步。
+- 同一套 Codex 阶段门内采用风险分级简化：D 类只读诊断/指标重聚合/路径核验使用短提示词和短审阅；A 类成果区材料/Results 非正文材料/图表资产保持审阅分流但只写必要裁决；C 类新训练、split 变化、模型/超参变化或主 claim 改写必须另行放行并保持完整阶段门。该分级不是新规范，旧的防伪、防 inverse crime、成果区分流和红线继续有效。
+- 长程任务、反碎片化叙事任务、Claude/Codex 输出篇幅限制和避免无用复核统一以 `AGENTS.md` 第 3 节为准，本文件不重复规则原文。
 - Codex 审阅未通过、需要返工、存在阻塞或只形成问题清单时，审阅文件进入对应路线的 `04_Codex审阅/` 或候选目录中的 Codex 审阅文件，文件内容必须能直接交给 Claude 重新执行。
 - Codex 审阅通过且成果稳定时，成果本体进入对应路线的 `01_成果区/`；Codex 的审阅记录、阶段门判断、执行规划和下一步 Claude 提示词仍进入对应路线的 `04_Codex审阅/`。
 - `01_成果区/` 不存流程控制文件；`04_Codex审阅/` 不承担成果本体归档，除非该文件本身就是审阅/规划/提示词。
@@ -219,7 +296,8 @@ CLAUDE.md
 ## 6. 当前红线
 
 - 继续本项目时，只允许改动 `项目重启_v0.4_BlenderOCS/` 内部文件；不得修改该文件夹之外的任何文件。
-- 审阅过程中若需要更改任何文件，必须先列出拟修改文件、修改目的和修改范围，等待作者明确确认后，才能写入文件并继续下一步；未经确认不得小修、同步、冻结、更新总览或更新 `CLAUDE.md`。
+- Codex 审阅文件、返工单、阶段门判断和给 Claude 的下一步提示词，属于 Codex 审阅端职责内产物，可直接写入对应路线 `04_Codex审阅/`，不需要逐次询问；审阅不通过、需要返工、存在阻塞或只形成问题清单时，也应直接落成可交给 Claude 执行的 Markdown 文件。
+- 除上述 Codex 审阅端产物外，若需要更改 `CLAUDE.md`、冻结文件、成果区、代码、数据结果、论文正文、总览或其他非审阅文件，必须先列出拟修改文件、修改目的和修改范围，等待作者明确确认后才能写入；未经确认不得小修、同步、冻结或更新总览。
 - 需要使用外部材料时，只能复制或备份进 `项目重启_v0.4_BlenderOCS/` 内部，再在内部副本上整理、审阅或改写。
 - 新对话未完成轻量上下文恢复前，不得进行路线裁决、论文正文改写、实验代码生成、训练、结果解释或对外投稿表述。
 - 不把 v0.3 旧稿直接恢复为投稿稿；旧稿先评估是否解封。
@@ -233,23 +311,25 @@ CLAUDE.md
 - 不把路线二 GEO 真实光度锚点设置为路线一主干闭合的必做项；GEO 无姿态真值，不能写成监督姿态反演数据集。
 - 不把三轴小项目写成真实未知目标三轴姿态反演系统；它的定位是最亮构型、高信息姿态、低信息区域和观测规划。
 - 不把路线四动态光变/姿态运动方向并入当前路线一 C 或三轴小项目的必做闭环。
-- R41 仅放行 1C-E21 受控 baseline 训练与评估；论文正文改写、B1/GGX 批量扩展、三轴小项目与路线二/三/四扩展仍不得启动。
+- 当前状态以 R110/R111/R113/R115/R117/R119 为准：B6-FIX01 已通过并关闭 single-frame 判据/输出头补救轴；头B旧负结果追因阶段性收束，旧 single-frame 负结果不再继续扩展；R115 已通过 L1(M2) clean / P-INT 第一阶段，接收 OCS-only 多观测总光度向量 L1-G1 -> L1-G3 -> L1-G5 单调增益为当前主用成果；R117 已通过 L1(M3) degraded/M-roll/D3 准备阶段，接收 OCS-only 多几何增益在 mild/moderate 物理退化下保持、M-roll fixed-roll 边界探针、P-DB/conformal smoke 准备；R119 已通过 L1D3 置信一致性与 P-DB 正式评估，接收 P-DB 作为多观测总光度向量含 yaw 信息的非神经证据链、neural/P-DB 互补空间、conformal set_size 几何收紧与 hard-case index。未另行放行前，不触发头A/头B大合并裁决，不把 B6、L1(M2)、L1(M3) 或 L1D3 作为路线一 C 整体闭口，不启动 T3/L2 光变正式训练、三轴小项目或路线二/三/四扩展，不写论文正文，不把 4维 per-part OCS 当作现实主线输入，不把 P-EXT 写成已解决，不把 P-DB 写成真实观测反演成功率，不把 conformal 写成最终概率校准。
 - 13/14/24/25 不是绝对不可改；若它们与四路线总裁决 R01 或后续总指导冲突，应先列出冲突点、修改目的和影响范围，经作者确认后受控小修。
 
 ## 7. 当前下一步
 
-四路线总裁决 R01 已通过，2026-06-22 已补充路线一 C、三轴小项目和路线四未来方向；路线一 C Phase 0 B0 full-run 2664 数据生成已通过 R38 Codex 审阅并建立成果索引；训练入口与数据切分准备已通过 R39 Codex 审阅；训练 smoke 判据修正已通过 R41 Codex 审阅。当前允许执行 1C-E21 受控 baseline 训练与评估，但不进入论文正文改写、B1/GGX 批量扩展、三轴小项目或其他路线扩展。
+路线一 C 当前最新状态：头A 已由 R90 收口；头B 已完成 B1/B2/B3/P0/B4/P1-A/B5/B6-FIX01 的阶段性材料。R113 已审阅通过 Claude 102，裁定 B6 关闭 single-frame 判据/输出头补救轴；负结果可以作为条件性 single-frame 负结果收口，头B旧负结果追因阶段性收束，旧 single-frame 负结果不再继续扩展。R115 已审阅通过 Claude 103，裁定 L1(M2) clean / P-INT 第一阶段通过：OCS-only 多观测总光度向量随 L1-G1 -> L1-G3 -> L1-G5 单调增益；P-EXT yaw-block stress test 仍坍缩。R117 已审阅通过 Claude 104，裁定 R115 审计缺口补齐，OCS-only 多几何增益在 mild/moderate 物理退化下保持，M-roll fixed-roll 边界探针接收，D3/P-DB/conformal 准备接收。R119 已审阅通过 Claude 105，裁定 P-DB 正式评估、neural/P-DB 互补分析、conformal 正式评估与 hard-case index 接收。
+
+当前不是头A/头B大合并裁决点，不是路线一 C 整体闭口点，也不是 T3/L2、三轴小项目或路线二/三/四正式启动点。
 
 当前有效下一步：
 
 ```text
-1. 执行 1C-E21：受控 baseline 训练与评估。
-2. 允许训练 `ocs_only` / `image_only` / `joint` 三模式 baseline；epoch 上限建议不超过 30，每模式一组主配置，不做大规模超参搜索。
-3. 使用 random split 做 sanity，使用 yaw_block split 做严格泛化评估；必须区分两类结果。
-4. 固定 seed，使用 circular yaw MAE，记录 loss curve、yaw/pitch acc、per-yaw/per-pitch 指标、错误分布或 confusion matrix、checkpoint 与 NaN/Inf/过拟合情况。
-5. 输出到 `v0.4_results/03_training_baseline/e21_controlled_baseline/`。
-6. 1C-E21 报告写入 `02_Claude输出/43_1C-E21_受控baseline训练与评估_Claude执行报告.md`；不得把结果表述为论文最终结论。
-```
+1. R116 与 R118 已分别由 104/R117、105/R119 完成并通过，不再重复 L1(M2)、R116 审计/探针或 D3/P-DB/conformal 正式评估。
+2. 下一步优先由 Codex 下达路线一 C 阶段性 Results 非正文证据包任务，整合 R113/R115/R117/R119 的结果叙事、图表清单、claim 边界和待补实验清单。
+3. 若作者决定先补强互补性，则另行下达 degraded-severe / P-INT-hard 小矩阵任务；必须继续使用物理合理退化，不复用 B6 粗增广包作为正式真实性模型。
+4. M-roll 仍只作为路线一 C fixed-roll 边界探针，不替代三轴小项目，也不启动三轴小项目正式阶段；joint/full-2664 roll 仅按需扩展。
+5. 后续命名统一使用实验层 L1-G1/G3/G5；代码层 OBS_GEOMETRIES G0~G4 只在 registry、代码说明和方法附录中出现。
+6. 若后续讨论现有负结果、4维 OCS 现实性、yaw-block 外推、1C 目标、小项目目标、光变/时序方向、L1(M2)、L1(M3) 或 L1D3 结果，必须先读 R110/R111/R113/R115/R117/R119。
+ ```
 
 重要同步规则：
 
@@ -261,11 +341,22 @@ CLAUDE.md
 下一步具体入口：
 
 ```text
-04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R41_Codex_审阅_1C-E20-FIX01通过并放行E21受控训练.md
-06_v0.4_code/07_training/
-v0.4_results/01_fullrun/postprocess/split_manifest.json
-v0.4_results/01_fullrun/postprocess/split_manifest_yaw_block.json
-v0.4_results/03_training_baseline/e21_controlled_baseline/
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R104_Codex_审阅_100通过_头B转入A类同门真改进阶段.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R106_Codex_数据核验_GEO真实光度库支持稀疏光度时序主线.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R108_Codex_审阅_101_B6长程执行部分接收但不闭口需FIX01.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R109_Codex_任务单_1C-B6-FIX01多折补齐与foldmatched修正.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R110_Codex_阶段记忆_从现有结果复盘到路线一复位方向.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R111_Codex_原文保留_现有结果问答与路线一阶段分析.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/00_B6-FIX01与single-frame负结果收口说明_R113通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/01_路线一C后续技术路线执行框架_R113通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/05_L1M2多几何OCS第一阶段正结果_R115通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/06_L1M3退化真实性与Mroll边界探针_R117通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/07_L1D3置信一致性与PDB正式评估_R119通过.md
 ```
 
 

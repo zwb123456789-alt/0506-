@@ -1,0 +1,87 @@
+{
+  "task": "1C-E21 FIX01 controlled baseline training",
+  "protocol": "strict_yaw_block_holdout",
+  "train_manifest": "d:/我的文件/研究生学术/光学项目/0506新/项目重启_v0.4_BlenderOCS/v0.4_results/03_training_baseline/e25_multifold_yawblock/split_manifest_circ_yawblock_fold0.json",
+  "timestamp": "2026-06-26T20:46:56",
+  "config": {
+    "max_epochs": 1,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "modes": [
+      "joint"
+    ]
+  },
+  "overlap_check": {
+    "train_manifest": {
+      "manifest": "d:/我的文件/研究生学术/光学项目/0506新/项目重启_v0.4_BlenderOCS/v0.4_results/03_training_baseline/e25_multifold_yawblock/split_manifest_circ_yawblock_fold0.json",
+      "method": "circ_yaw_block",
+      "train_n": 1850,
+      "val_n": 259,
+      "test_n": 555,
+      "train_val_overlap": 0,
+      "train_test_overlap": 0,
+      "val_test_overlap": 0,
+      "train_val_overlap_pct_val": 0.0,
+      "train_test_overlap_pct_test": 0.0,
+      "val_test_overlap_pct_test": 0.0,
+      "is_strict": true
+    },
+    "cross_train_vs_random": {
+      "train_manifest_train ∩ random_train": 1460,
+      "train_manifest_train ∩ random_val": 184,
+      "train_manifest_train ∩ random_test": 206,
+      "train_manifest_all ∩ random_all": 2664,
+      "train_manifest_n_total": 2664,
+      "random_n_total": 2664
+    },
+    "cross_train_vs_yaw_block": {
+      "train_manifest_train ∩ yaw_block_train": 1554,
+      "train_manifest_train ∩ yaw_block_val": 259,
+      "train_manifest_train ∩ yaw_block_test": 37,
+      "train_manifest_all ∩ yaw_block_all": 2664,
+      "train_manifest_n_total": 2664,
+      "yaw_block_n_total": 2664
+    }
+  },
+  "summary": {
+    "joint": {
+      "mode": "joint",
+      "n_params": 3913229,
+      "elapsed_s": 3.543236017227173,
+      "best_epoch": 1,
+      "best_val_avg_acc": 0.2109375,
+      "final_train_loss": 6.5519899335400815,
+      "checkpoint_mb": 44.85407543182373,
+      "warnings": [
+        "primary val_loss significantly larger than train_loss — possible overfit"
+      ],
+      "test_metrics": {
+        "test_primary": {
+          "yaw_acc": 0.0,
+          "pitch_acc": 0.037837836891412735,
+          "yaw_circular_mae_deg": 115.27928352355957,
+          "pitch_mae_deg": 64.81981754302979,
+          "loss": 13.950969960954454,
+          "n_samples": 555
+        },
+        "test_random": {
+          "yaw_acc": 0.054054055362939835,
+          "pitch_acc": 0.05743243172764778,
+          "yaw_circular_mae_deg": 45.69256782531738,
+          "pitch_mae_deg": 57.19594478607178,
+          "loss": 9.75839319229126,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.006756756920367479,
+          "pitch_acc": 0.06756756454706192,
+          "yaw_circular_mae_deg": 50.16891956329346,
+          "pitch_mae_deg": 51.21621608734131,
+          "loss": 13.520769119262695,
+          "n_samples": 296
+        }
+      }
+    }
+  }
+}

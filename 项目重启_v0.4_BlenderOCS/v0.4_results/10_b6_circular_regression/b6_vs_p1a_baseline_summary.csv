@@ -1,0 +1,6 @@
+mode,aug,b6_yaw_cmae_deg,p1a_baseline_yaw_cmae_deg,random_yaw_cmae_deg,b6_yaw_hit@10,b6_yaw_within_2bin,p1a_baseline_within_2bin,random_within_2bin,b6_yaw_coarse90,p1a_baseline_coarse90,random_coarse90,b6_yaw_exact_sentinel,p1a_baseline_exact_bin,b6_pitch_mae_deg
+image_only,none,96.255,81.63,90.26,0.0883,0.1135,0.1231,0.0694,0.2703,0.2541,0.25,0.0144,0.0,14.889
+image_only,standard,148.244,81.63,90.26,0.0,0.0,0.1231,0.0694,0.0,0.2541,0.25,0.0,0.0,54.668
+joint,none,99.631,81.58,90.26,0.0721,0.0865,0.1295,0.0694,0.2757,0.2485,0.25,0.0198,0.0,15.699
+joint,standard,160.0,81.58,90.26,0.0,0.0,0.1295,0.0694,0.0,0.2485,0.25,0.0,0.0,57.013
+ocs_only,none,112.055,88.97,90.26,0.0,0.0,0.0571,0.0694,0.0,0.2444,0.25,0.0,0.0,46.339

@@ -1,0 +1,25 @@
+{
+  "task": "M-roll fixed-roll 边界探针几何注册",
+  "probe_type": "roll distribution-shift on clean roll-0 model",
+  "base_geometry": "phase63 (L1-G1 image + G1 OCS)",
+  "rolls_deg": [
+    0,
+    15,
+    -15,
+    30,
+    -30
+  ],
+  "roll0_source": "v0.4_results/01_fullrun (复用现有 fixed-roll)",
+  "subset": {
+    "design": "yaw step15 (24) × pitch step15 (13)",
+    "n_attitude": 312
+  },
+  "not_three_axis_project": true,
+  "note": "M-roll 只检验小 roll 扰动是否推翻 fixed-roll 结论；非三轴小项目，不启动最亮构型/观测规划",
+  "render_complete_counts": {
+    "roll+015": 312,
+    "roll-015": 312,
+    "roll+030": 312,
+    "roll-030": 312
+  }
+}

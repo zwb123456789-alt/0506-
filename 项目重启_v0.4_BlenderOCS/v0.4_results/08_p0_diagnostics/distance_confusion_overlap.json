@@ -1,0 +1,202 @@
+[
+  {
+    "true_yaw": 13,
+    "pred_yaw": 15,
+    "true_deg": 65,
+    "pred_deg": 75,
+    "angular_dist_deg": 10,
+    "confusion_count": 37,
+    "cos_dist": 6.176136065905169e-07,
+    "eucl_dist": 1.5878556320713015
+  },
+  {
+    "true_yaw": 14,
+    "pred_yaw": 15,
+    "true_deg": 70,
+    "pred_deg": 75,
+    "angular_dist_deg": 5,
+    "confusion_count": 37,
+    "cos_dist": 4.8768348581695875e-08,
+    "eucl_dist": 0.48303052518059675
+  },
+  {
+    "true_yaw": 56,
+    "pred_yaw": 58,
+    "true_deg": 280,
+    "pred_deg": 290,
+    "angular_dist_deg": 10,
+    "confusion_count": 37,
+    "cos_dist": 0.00208127056522478,
+    "eucl_dist": 0.5314045358700419
+  },
+  {
+    "true_yaw": 57,
+    "pred_yaw": 58,
+    "true_deg": 285,
+    "pred_deg": 290,
+    "angular_dist_deg": 5,
+    "confusion_count": 37,
+    "cos_dist": 0.0005693524203520539,
+    "eucl_dist": 0.256469960887044
+  },
+  {
+    "true_yaw": 60,
+    "pred_yaw": 50,
+    "true_deg": 300,
+    "pred_deg": 250,
+    "angular_dist_deg": 50,
+    "confusion_count": 37,
+    "cos_dist": 0.017629070865233798,
+    "eucl_dist": 3.022017478234404
+  },
+  {
+    "true_yaw": 61,
+    "pred_yaw": 50,
+    "true_deg": 305,
+    "pred_deg": 250,
+    "angular_dist_deg": 55,
+    "confusion_count": 37,
+    "cos_dist": 0.018191813197044437,
+    "eucl_dist": 2.996392100177322
+  },
+  {
+    "true_yaw": 62,
+    "pred_yaw": 50,
+    "true_deg": 310,
+    "pred_deg": 250,
+    "angular_dist_deg": 60,
+    "confusion_count": 37,
+    "cos_dist": 0.018977637001700076,
+    "eucl_dist": 2.9802259667769024
+  },
+  {
+    "true_yaw": 70,
+    "pred_yaw": 0,
+    "true_deg": 350,
+    "pred_deg": 0,
+    "angular_dist_deg": 10,
+    "confusion_count": 37,
+    "cos_dist": 0.00016300788432510593,
+    "eucl_dist": 0.29971148662192676
+  },
+  {
+    "true_yaw": 71,
+    "pred_yaw": 0,
+    "true_deg": 355,
+    "pred_deg": 0,
+    "angular_dist_deg": 5,
+    "confusion_count": 37,
+    "cos_dist": 4.215433086973697e-05,
+    "eucl_dist": 0.13885573790488187
+  },
+  {
+    "true_yaw": 12,
+    "pred_yaw": 15,
+    "true_deg": 60,
+    "pred_deg": 75,
+    "angular_dist_deg": 15,
+    "confusion_count": 36,
+    "cos_dist": 1.183436676899241e-05,
+    "eucl_dist": 2.8432741569503097
+  },
+  {
+    "true_yaw": 69,
+    "pred_yaw": 0,
+    "true_deg": 345,
+    "pred_deg": 0,
+    "angular_dist_deg": 15,
+    "confusion_count": 36,
+    "cos_dist": 0.00023095116495952528,
+    "eucl_dist": 0.4813878217643572
+  },
+  {
+    "true_yaw": 4,
+    "pred_yaw": 42,
+    "true_deg": 20,
+    "pred_deg": 210,
+    "angular_dist_deg": 170,
+    "confusion_count": 34,
+    "cos_dist": 0.0144618312203727,
+    "eucl_dist": 1.761572512418446
+  },
+  {
+    "true_yaw": 63,
+    "pred_yaw": 50,
+    "true_deg": 315,
+    "pred_deg": 250,
+    "angular_dist_deg": 65,
+    "confusion_count": 33,
+    "cos_dist": 0.01888760099096254,
+    "eucl_dist": 2.9570541877931187
+  },
+  {
+    "true_yaw": 29,
+    "pred_yaw": 30,
+    "true_deg": 145,
+    "pred_deg": 150,
+    "angular_dist_deg": 5,
+    "confusion_count": 32,
+    "cos_dist": 2.7622700384810628e-06,
+    "eucl_dist": 0.05784037258516159
+  },
+  {
+    "true_yaw": 43,
+    "pred_yaw": 44,
+    "true_deg": 215,
+    "pred_deg": 220,
+    "angular_dist_deg": 5,
+    "confusion_count": 32,
+    "cos_dist": 9.342964770253648e-05,
+    "eucl_dist": 0.43878045880209865
+  },
+  {
+    "true_yaw": 6,
+    "pred_yaw": 42,
+    "true_deg": 30,
+    "pred_deg": 210,
+    "angular_dist_deg": 180,
+    "confusion_count": 31,
+    "cos_dist": 0.015973804001409464,
+    "eucl_dist": 1.832774582074179
+  },
+  {
+    "true_yaw": 11,
+    "pred_yaw": 15,
+    "true_deg": 55,
+    "pred_deg": 75,
+    "angular_dist_deg": 20,
+    "confusion_count": 31,
+    "cos_dist": 8.696039992872606e-06,
+    "eucl_dist": 2.813154403485026
+  },
+  {
+    "true_yaw": 3,
+    "pred_yaw": 42,
+    "true_deg": 15,
+    "pred_deg": 210,
+    "angular_dist_deg": 165,
+    "confusion_count": 30,
+    "cos_dist": 0.01372384010175176,
+    "eucl_dist": 1.7568163886288124
+  },
+  {
+    "true_yaw": 68,
+    "pred_yaw": 0,
+    "true_deg": 340,
+    "pred_deg": 0,
+    "angular_dist_deg": 20,
+    "confusion_count": 30,
+    "cos_dist": 8.035486606772224e-06,
+    "eucl_dist": 0.8474732486367008
+  },
+  {
+    "true_yaw": 7,
+    "pred_yaw": 42,
+    "true_deg": 35,
+    "pred_deg": 210,
+    "angular_dist_deg": 175,
+    "confusion_count": 29,
+    "cos_dist": 0.016097042195751587,
+    "eucl_dist": 1.9023553011861203
+  }
+]

@@ -1,0 +1,533 @@
+=== --level degraded-mild --geom-group G1 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G1_ocs_only_seed42
+level=degraded-mild geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5453 val_cmae=81.7 hit@10=0.131  *best
+  ep 2 loss=0.5190 val_cmae=83.2 hit@10=0.181
+  ep 3 loss=0.5159 val_cmae=80.6 hit@10=0.236  *best
+  ep 4 loss=0.5127 val_cmae=75.8 hit@10=0.100  *best
+  ep 5 loss=0.5096 val_cmae=75.6 hit@10=0.112  *best
+  ep 6 loss=0.5069 val_cmae=76.2 hit@10=0.185
+  ep 7 loss=0.5050 val_cmae=71.8 hit@10=0.151  *best
+  ep 8 loss=0.5050 val_cmae=77.3 hit@10=0.127
+  ep 9 loss=0.5009 val_cmae=70.1 hit@10=0.120  *best
+  ep10 loss=0.5005 val_cmae=72.1 hit@10=0.135
+  ep11 loss=0.4997 val_cmae=70.5 hit@10=0.220
+  ep12 loss=0.5009 val_cmae=74.8 hit@10=0.143
+  ep13 loss=0.4998 val_cmae=70.2 hit@10=0.162
+  ep14 loss=0.4988 val_cmae=76.8 hit@10=0.162
+  ep15 loss=0.4988 val_cmae=71.4 hit@10=0.166
+  ep16 loss=0.4962 val_cmae=72.8 hit@10=0.166
+  ep17 loss=0.4952 val_cmae=71.3 hit@10=0.197
+  ep18 loss=0.4967 val_cmae=69.7 hit@10=0.185  *best
+  ep19 loss=0.4942 val_cmae=71.0 hit@10=0.181
+  ep20 loss=0.4952 val_cmae=73.3 hit@10=0.151
+  ep21 loss=0.4953 val_cmae=72.3 hit@10=0.197
+  ep22 loss=0.4938 val_cmae=74.4 hit@10=0.166
+  ep23 loss=0.4912 val_cmae=71.6 hit@10=0.170
+  ep24 loss=0.4916 val_cmae=71.5 hit@10=0.116
+  ep25 loss=0.4920 val_cmae=72.4 hit@10=0.166
+  ep26 loss=0.4909 val_cmae=70.8 hit@10=0.208
+  ep27 loss=0.4922 val_cmae=75.0 hit@10=0.181
+  ep28 loss=0.4912 val_cmae=72.5 hit@10=0.174
+  ep29 loss=0.4929 val_cmae=71.5 hit@10=0.174
+  ep30 loss=0.4916 val_cmae=72.8 hit@10=0.124
+[TEST final] cmae=78.25 hit@30=0.260
+[TEST best ] (ep18) cmae=76.78 hit@30=0.257
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_ocs_only_seed42
+=== --level degraded-mild --geom-group G3 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G3_ocs_only_seed42
+level=degraded-mild geoms=['phase24', 'phase63', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5312 val_cmae=76.2 hit@10=0.023  *best
+  ep 2 loss=0.4714 val_cmae=69.1 hit@10=0.174  *best
+  ep 3 loss=0.4495 val_cmae=65.6 hit@10=0.143  *best
+  ep 4 loss=0.4316 val_cmae=63.0 hit@10=0.081  *best
+  ep 5 loss=0.4207 val_cmae=59.8 hit@10=0.139  *best
+  ep 6 loss=0.4050 val_cmae=59.3 hit@10=0.158  *best
+  ep 7 loss=0.3975 val_cmae=56.6 hit@10=0.154  *best
+  ep 8 loss=0.3898 val_cmae=56.1 hit@10=0.178  *best
+  ep 9 loss=0.3861 val_cmae=54.3 hit@10=0.166  *best
+  ep10 loss=0.3767 val_cmae=52.4 hit@10=0.178  *best
+  ep11 loss=0.3689 val_cmae=49.9 hit@10=0.212  *best
+  ep12 loss=0.3661 val_cmae=53.8 hit@10=0.212
+  ep13 loss=0.3610 val_cmae=51.0 hit@10=0.224
+  ep14 loss=0.3553 val_cmae=49.1 hit@10=0.212  *best
+  ep15 loss=0.3533 val_cmae=48.0 hit@10=0.278  *best
+  ep16 loss=0.3484 val_cmae=48.7 hit@10=0.228
+  ep17 loss=0.3451 val_cmae=48.6 hit@10=0.251
+  ep18 loss=0.3423 val_cmae=47.2 hit@10=0.301  *best
+  ep19 loss=0.3412 val_cmae=49.9 hit@10=0.220
+  ep20 loss=0.3352 val_cmae=48.8 hit@10=0.305
+  ep21 loss=0.3332 val_cmae=47.6 hit@10=0.309
+  ep22 loss=0.3337 val_cmae=46.6 hit@10=0.317  *best
+  ep23 loss=0.3262 val_cmae=46.9 hit@10=0.317
+  ep24 loss=0.3229 val_cmae=47.2 hit@10=0.328
+  ep25 loss=0.3225 val_cmae=48.7 hit@10=0.293
+  ep26 loss=0.3181 val_cmae=47.0 hit@10=0.332
+  ep27 loss=0.3209 val_cmae=45.6 hit@10=0.301  *best
+  ep28 loss=0.3160 val_cmae=45.1 hit@10=0.347  *best
+  ep29 loss=0.3184 val_cmae=45.5 hit@10=0.344
+  ep30 loss=0.3130 val_cmae=45.6 hit@10=0.344
+[TEST final] cmae=40.76 hit@30=0.598
+[TEST best ] (ep28) cmae=40.15 hit@30=0.615
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G3_ocs_only_seed42
+=== --level degraded-mild --geom-group G5 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G5_ocs_only_seed42
+level=degraded-mild geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5175 val_cmae=75.7 hit@10=0.054  *best
+  ep 2 loss=0.4712 val_cmae=70.6 hit@10=0.116  *best
+  ep 3 loss=0.4515 val_cmae=64.2 hit@10=0.151  *best
+  ep 4 loss=0.4345 val_cmae=61.8 hit@10=0.127  *best
+  ep 5 loss=0.4129 val_cmae=61.1 hit@10=0.093  *best
+  ep 6 loss=0.4009 val_cmae=57.0 hit@10=0.135  *best
+  ep 7 loss=0.3780 val_cmae=55.5 hit@10=0.139  *best
+  ep 8 loss=0.3650 val_cmae=51.4 hit@10=0.208  *best
+  ep 9 loss=0.3522 val_cmae=49.2 hit@10=0.216  *best
+  ep10 loss=0.3400 val_cmae=46.7 hit@10=0.162  *best
+  ep11 loss=0.3317 val_cmae=42.8 hit@10=0.181  *best
+  ep12 loss=0.3224 val_cmae=44.5 hit@10=0.201
+  ep13 loss=0.3149 val_cmae=39.5 hit@10=0.220  *best
+  ep14 loss=0.3020 val_cmae=41.1 hit@10=0.243
+  ep15 loss=0.2963 val_cmae=39.6 hit@10=0.220
+  ep16 loss=0.3037 val_cmae=38.3 hit@10=0.270  *best
+  ep17 loss=0.2818 val_cmae=35.8 hit@10=0.336  *best
+  ep18 loss=0.2744 val_cmae=33.9 hit@10=0.340  *best
+  ep19 loss=0.2714 val_cmae=32.3 hit@10=0.286  *best
+  ep20 loss=0.2623 val_cmae=32.6 hit@10=0.320
+  ep21 loss=0.2595 val_cmae=34.1 hit@10=0.340
+  ep22 loss=0.2552 val_cmae=31.0 hit@10=0.317  *best
+  ep23 loss=0.2590 val_cmae=31.0 hit@10=0.340
+  ep24 loss=0.2430 val_cmae=29.0 hit@10=0.359  *best
+  ep25 loss=0.2451 val_cmae=27.8 hit@10=0.394  *best
+  ep26 loss=0.2356 val_cmae=29.5 hit@10=0.390
+  ep27 loss=0.2323 val_cmae=26.9 hit@10=0.417  *best
+  ep28 loss=0.2341 val_cmae=30.3 hit@10=0.378
+  ep29 loss=0.2269 val_cmae=27.9 hit@10=0.459
+  ep30 loss=0.2258 val_cmae=24.6 hit@10=0.479  *best
+[TEST final] cmae=27.83 hit@30=0.760
+[TEST best ] (ep30) cmae=27.83 hit@30=0.760
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_ocs_only_seed42
+=== --level degraded-mild --geom-group G1 --mode image_only ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G1_image_only_seed42
+level=degraded-mild geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.8093 val_cmae=91.6 hit@10=0.050  *best
+  ep 2 loss=0.7111 val_cmae=34.4 hit@10=0.239  *best
+  ep 3 loss=0.6509 val_cmae=20.5 hit@10=0.371  *best
+  ep 4 loss=0.6607 val_cmae=19.4 hit@10=0.347  *best
+  ep 5 loss=0.6084 val_cmae=12.4 hit@10=0.490  *best
+  ep 6 loss=0.6111 val_cmae=20.2 hit@10=0.398
+  ep 7 loss=0.5963 val_cmae=9.2 hit@10=0.606  *best
+  ep 8 loss=0.5846 val_cmae=13.7 hit@10=0.429
+  ep 9 loss=0.5738 val_cmae=10.1 hit@10=0.541
+  ep10 loss=0.5587 val_cmae=6.5 hit@10=0.799  *best
+  ep11 loss=0.5571 val_cmae=8.6 hit@10=0.707
+  ep12 loss=0.5575 val_cmae=7.9 hit@10=0.722
+  ep13 loss=0.5503 val_cmae=4.0 hit@10=0.969  *best
+  ep14 loss=0.5482 val_cmae=5.3 hit@10=0.911
+  ep15 loss=0.5548 val_cmae=7.1 hit@10=0.741
+  ep16 loss=0.5511 val_cmae=6.3 hit@10=0.803
+  ep17 loss=0.5437 val_cmae=7.9 hit@10=0.683
+  ep18 loss=0.2769 val_cmae=24.9 hit@10=0.355
+  ep19 loss=0.1197 val_cmae=9.9 hit@10=0.595
+  ep20 loss=0.0467 val_cmae=6.2 hit@10=0.803
+  ep21 loss=0.0268 val_cmae=4.5 hit@10=0.911
+  ep22 loss=0.0152 val_cmae=3.5 hit@10=0.977  *best
+  ep23 loss=0.0097 val_cmae=3.7 hit@10=0.969
+  ep24 loss=0.0069 val_cmae=2.8 hit@10=0.981  *best
+  ep25 loss=0.0058 val_cmae=2.8 hit@10=0.985  *best
+  ep26 loss=0.0046 val_cmae=2.6 hit@10=0.985  *best
+  ep27 loss=0.0048 val_cmae=3.5 hit@10=0.973
+  ep28 loss=0.0033 val_cmae=2.2 hit@10=1.000  *best
+  ep29 loss=0.0031 val_cmae=2.7 hit@10=0.973
+  ep30 loss=0.0032 val_cmae=1.7 hit@10=1.000  *best
+[TEST final] cmae=1.67 hit@30=1.000
+[TEST best ] (ep30) cmae=1.67 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_image_only_seed42
+=== --level degraded-mild --geom-group G1 --mode joint ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G1_joint_seed42
+level=degraded-mild geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5389 val_cmae=53.5 hit@10=0.081  *best
+  ep 2 loss=0.3081 val_cmae=29.5 hit@10=0.270  *best
+  ep 3 loss=0.1626 val_cmae=11.9 hit@10=0.463  *best
+  ep 4 loss=0.1312 val_cmae=10.3 hit@10=0.598  *best
+  ep 5 loss=0.1309 val_cmae=8.4 hit@10=0.656  *best
+  ep 6 loss=0.1164 val_cmae=6.5 hit@10=0.788  *best
+  ep 7 loss=0.1032 val_cmae=10.1 hit@10=0.641
+  ep 8 loss=0.1045 val_cmae=5.5 hit@10=0.880  *best
+  ep 9 loss=0.0954 val_cmae=4.4 hit@10=0.938  *best
+  ep10 loss=0.0930 val_cmae=5.4 hit@10=0.869
+  ep11 loss=0.0910 val_cmae=5.2 hit@10=0.884
+  ep12 loss=0.0891 val_cmae=5.8 hit@10=0.880
+  ep13 loss=0.0901 val_cmae=3.8 hit@10=0.973  *best
+  ep14 loss=0.0873 val_cmae=3.5 hit@10=0.981  *best
+  ep15 loss=0.0862 val_cmae=2.9 hit@10=0.985  *best
+  ep16 loss=0.0843 val_cmae=2.3 hit@10=1.000  *best
+  ep17 loss=0.0840 val_cmae=2.4 hit@10=0.985
+  ep18 loss=0.0838 val_cmae=1.9 hit@10=1.000  *best
+  ep19 loss=0.0842 val_cmae=3.5 hit@10=0.992
+  ep20 loss=0.0846 val_cmae=2.1 hit@10=0.996
+  ep21 loss=0.0842 val_cmae=2.0 hit@10=1.000
+  ep22 loss=0.0839 val_cmae=2.0 hit@10=1.000
+  ep23 loss=0.0835 val_cmae=2.5 hit@10=0.992
+  ep24 loss=0.0840 val_cmae=2.3 hit@10=1.000
+  ep25 loss=0.0835 val_cmae=2.1 hit@10=0.985
+  ep26 loss=0.0836 val_cmae=2.0 hit@10=1.000
+  ep27 loss=0.0851 val_cmae=3.6 hit@10=0.950
+  ep28 loss=0.0842 val_cmae=2.3 hit@10=0.988
+  ep29 loss=0.0847 val_cmae=3.0 hit@10=0.965
+  ep30 loss=0.0845 val_cmae=1.7 hit@10=1.000  *best
+[TEST final] cmae=1.91 hit@30=1.000
+[TEST best ] (ep30) cmae=1.91 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_joint_seed42
+=== --level degraded-mild --geom-group G5 --mode image_only ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G5_image_only_seed42
+level=degraded-mild geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.8827 val_cmae=80.8 hit@10=0.066  *best
+  ep 2 loss=0.8015 val_cmae=45.7 hit@10=0.170  *best
+  ep 3 loss=0.8434 val_cmae=99.3 hit@10=0.081
+  ep 4 loss=0.5616 val_cmae=42.0 hit@10=0.151  *best
+  ep 5 loss=0.4631 val_cmae=34.0 hit@10=0.290  *best
+  ep 6 loss=0.2220 val_cmae=30.1 hit@10=0.274  *best
+  ep 7 loss=0.1679 val_cmae=13.3 hit@10=0.502  *best
+  ep 8 loss=0.1171 val_cmae=24.0 hit@10=0.208
+  ep 9 loss=0.1784 val_cmae=19.6 hit@10=0.436
+  ep10 loss=0.1098 val_cmae=83.8 hit@10=0.069
+  ep11 loss=0.0797 val_cmae=32.7 hit@10=0.228
+  ep12 loss=0.0663 val_cmae=9.5 hit@10=0.726  *best
+  ep13 loss=0.0887 val_cmae=79.6 hit@10=0.124
+  ep14 loss=0.1228 val_cmae=18.9 hit@10=0.533
+  ep15 loss=0.1027 val_cmae=13.0 hit@10=0.490
+  ep16 loss=0.0959 val_cmae=53.6 hit@10=0.205
+  ep17 loss=0.0898 val_cmae=115.9 hit@10=0.077
+  ep18 loss=0.1182 val_cmae=14.4 hit@10=0.452
+  ep19 loss=0.0578 val_cmae=7.9 hit@10=0.707  *best
+  ep20 loss=0.0626 val_cmae=12.7 hit@10=0.359
+  ep21 loss=0.0593 val_cmae=6.5 hit@10=0.819  *best
+  ep22 loss=0.0513 val_cmae=13.4 hit@10=0.517
+  ep23 loss=0.0463 val_cmae=3.9 hit@10=0.965  *best
+  ep24 loss=0.0334 val_cmae=4.1 hit@10=0.950
+  ep25 loss=0.0326 val_cmae=6.2 hit@10=0.792
+  ep26 loss=0.0613 val_cmae=94.6 hit@10=0.077
+  ep27 loss=0.0424 val_cmae=5.5 hit@10=0.888
+  ep28 loss=0.0401 val_cmae=7.0 hit@10=0.830
+  ep29 loss=0.0354 val_cmae=4.5 hit@10=0.938
+  ep30 loss=0.0273 val_cmae=3.3 hit@10=0.973  *best
+[TEST final] cmae=3.50 hit@30=1.000
+[TEST best ] (ep30) cmae=3.50 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_image_only_seed42
+=== --level degraded-mild --geom-group G5 --mode joint ===
+================================================================
+L1M3-degraded | degraded-mild_P-INT_G5_joint_seed42
+level=degraded-mild geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.8186 val_cmae=85.5 hit@10=0.062  *best
+  ep 2 loss=0.6440 val_cmae=40.0 hit@10=0.151  *best
+  ep 3 loss=0.3417 val_cmae=18.0 hit@10=0.359  *best
+  ep 4 loss=0.1918 val_cmae=15.8 hit@10=0.417  *best
+  ep 5 loss=0.1315 val_cmae=15.6 hit@10=0.398  *best
+  ep 6 loss=0.1176 val_cmae=20.1 hit@10=0.278
+  ep 7 loss=0.0889 val_cmae=17.9 hit@10=0.301
+  ep 8 loss=0.0717 val_cmae=12.3 hit@10=0.486  *best
+  ep 9 loss=0.0612 val_cmae=6.9 hit@10=0.803  *best
+  ep10 loss=0.0360 val_cmae=6.2 hit@10=0.799  *best
+  ep11 loss=0.0354 val_cmae=10.7 hit@10=0.625
+  ep12 loss=0.0373 val_cmae=5.2 hit@10=0.876  *best
+  ep13 loss=0.0293 val_cmae=7.5 hit@10=0.792
+  ep14 loss=0.0244 val_cmae=4.4 hit@10=0.931  *best
+  ep15 loss=0.0186 val_cmae=4.3 hit@10=0.931  *best
+  ep16 loss=0.0189 val_cmae=5.5 hit@10=0.857
+  ep17 loss=0.0195 val_cmae=3.6 hit@10=0.954  *best
+  ep18 loss=0.0126 val_cmae=4.2 hit@10=0.923
+  ep19 loss=0.0091 val_cmae=4.5 hit@10=0.923
+  ep20 loss=0.0100 val_cmae=4.1 hit@10=0.927
+  ep21 loss=0.0096 val_cmae=4.3 hit@10=0.923
+  ep22 loss=0.0067 val_cmae=2.5 hit@10=0.981  *best
+  ep23 loss=0.0047 val_cmae=3.7 hit@10=0.942
+  ep24 loss=0.0036 val_cmae=3.5 hit@10=0.996
+  ep25 loss=0.0031 val_cmae=2.5 hit@10=1.000
+  ep26 loss=0.0019 val_cmae=2.3 hit@10=0.985  *best
+  ep27 loss=0.0020 val_cmae=1.8 hit@10=1.000  *best
+  ep28 loss=0.0016 val_cmae=1.8 hit@10=0.996  *best
+  ep29 loss=0.0016 val_cmae=1.8 hit@10=1.000
+  ep30 loss=0.0014 val_cmae=2.3 hit@10=1.000
+[TEST final] cmae=2.14 hit@30=1.000
+[TEST best ] (ep28) cmae=1.88 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_joint_seed42
+=== --level degraded-moderate --geom-group G1 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G1_ocs_only_seed42
+level=degraded-moderate geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5454 val_cmae=79.9 hit@10=0.112  *best
+  ep 2 loss=0.5192 val_cmae=83.5 hit@10=0.185
+  ep 3 loss=0.5167 val_cmae=80.6 hit@10=0.181
+  ep 4 loss=0.5140 val_cmae=77.3 hit@10=0.097  *best
+  ep 5 loss=0.5115 val_cmae=77.2 hit@10=0.097  *best
+  ep 6 loss=0.5098 val_cmae=77.2 hit@10=0.212  *best
+  ep 7 loss=0.5088 val_cmae=77.2 hit@10=0.124  *best
+  ep 8 loss=0.5093 val_cmae=78.1 hit@10=0.174
+  ep 9 loss=0.5067 val_cmae=77.5 hit@10=0.147
+  ep10 loss=0.5068 val_cmae=77.4 hit@10=0.166
+  ep11 loss=0.5067 val_cmae=78.0 hit@10=0.189
+  ep12 loss=0.5064 val_cmae=73.9 hit@10=0.100  *best
+  ep13 loss=0.5065 val_cmae=78.6 hit@10=0.162
+  ep14 loss=0.5065 val_cmae=74.9 hit@10=0.143
+  ep15 loss=0.5055 val_cmae=74.5 hit@10=0.120
+  ep16 loss=0.5040 val_cmae=73.1 hit@10=0.166  *best
+  ep17 loss=0.5031 val_cmae=77.1 hit@10=0.147
+  ep18 loss=0.5055 val_cmae=73.8 hit@10=0.147
+  ep19 loss=0.5029 val_cmae=72.6 hit@10=0.178  *best
+  ep20 loss=0.5044 val_cmae=73.8 hit@10=0.127
+  ep21 loss=0.5034 val_cmae=74.6 hit@10=0.170
+  ep22 loss=0.5030 val_cmae=74.1 hit@10=0.162
+  ep23 loss=0.5008 val_cmae=74.0 hit@10=0.124
+  ep24 loss=0.5011 val_cmae=74.0 hit@10=0.143
+  ep25 loss=0.5018 val_cmae=73.7 hit@10=0.174
+  ep26 loss=0.5009 val_cmae=73.4 hit@10=0.193
+  ep27 loss=0.5031 val_cmae=76.8 hit@10=0.189
+  ep28 loss=0.5013 val_cmae=74.0 hit@10=0.158
+  ep29 loss=0.5028 val_cmae=73.0 hit@10=0.201
+  ep30 loss=0.5010 val_cmae=76.2 hit@10=0.147
+[TEST final] cmae=80.36 hit@30=0.250
+[TEST best ] (ep19) cmae=78.48 hit@30=0.257
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_ocs_only_seed42
+=== --level degraded-moderate --geom-group G3 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G3_ocs_only_seed42
+level=degraded-moderate geoms=['phase24', 'phase63', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5320 val_cmae=74.7 hit@10=0.042  *best
+  ep 2 loss=0.4752 val_cmae=70.5 hit@10=0.139  *best
+  ep 3 loss=0.4578 val_cmae=67.3 hit@10=0.131  *best
+  ep 4 loss=0.4448 val_cmae=65.3 hit@10=0.093  *best
+  ep 5 loss=0.4380 val_cmae=63.8 hit@10=0.143  *best
+  ep 6 loss=0.4247 val_cmae=64.1 hit@10=0.139
+  ep 7 loss=0.4205 val_cmae=62.1 hit@10=0.147  *best
+  ep 8 loss=0.4169 val_cmae=61.4 hit@10=0.147  *best
+  ep 9 loss=0.4142 val_cmae=60.8 hit@10=0.127  *best
+  ep10 loss=0.4032 val_cmae=59.4 hit@10=0.139  *best
+  ep11 loss=0.3982 val_cmae=58.7 hit@10=0.147  *best
+  ep12 loss=0.3983 val_cmae=61.6 hit@10=0.151
+  ep13 loss=0.3936 val_cmae=56.9 hit@10=0.158  *best
+  ep14 loss=0.3882 val_cmae=56.6 hit@10=0.193  *best
+  ep15 loss=0.3843 val_cmae=55.3 hit@10=0.208  *best
+  ep16 loss=0.3807 val_cmae=58.3 hit@10=0.216
+  ep17 loss=0.3787 val_cmae=55.2 hit@10=0.220  *best
+  ep18 loss=0.3762 val_cmae=56.6 hit@10=0.212
+  ep19 loss=0.3758 val_cmae=57.6 hit@10=0.193
+  ep20 loss=0.3718 val_cmae=56.0 hit@10=0.216
+  ep21 loss=0.3720 val_cmae=53.4 hit@10=0.263  *best
+  ep22 loss=0.3687 val_cmae=55.2 hit@10=0.185
+  ep23 loss=0.3693 val_cmae=52.7 hit@10=0.263  *best
+  ep24 loss=0.3668 val_cmae=52.5 hit@10=0.259  *best
+  ep25 loss=0.3657 val_cmae=51.4 hit@10=0.313  *best
+  ep26 loss=0.3601 val_cmae=53.0 hit@10=0.293
+  ep27 loss=0.3639 val_cmae=55.3 hit@10=0.239
+  ep28 loss=0.3620 val_cmae=52.8 hit@10=0.278
+  ep29 loss=0.3607 val_cmae=53.8 hit@10=0.309
+  ep30 loss=0.3596 val_cmae=53.2 hit@10=0.313
+[TEST final] cmae=53.09 hit@30=0.524
+[TEST best ] (ep25) cmae=51.72 hit@30=0.541
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G3_ocs_only_seed42
+=== --level degraded-moderate --geom-group G5 --mode ocs_only ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G5_ocs_only_seed42
+level=degraded-moderate geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.5188 val_cmae=74.6 hit@10=0.058  *best
+  ep 2 loss=0.4754 val_cmae=70.3 hit@10=0.085  *best
+  ep 3 loss=0.4586 val_cmae=64.8 hit@10=0.147  *best
+  ep 4 loss=0.4456 val_cmae=64.6 hit@10=0.127  *best
+  ep 5 loss=0.4293 val_cmae=63.7 hit@10=0.093  *best
+  ep 6 loss=0.4247 val_cmae=61.2 hit@10=0.112  *best
+  ep 7 loss=0.4073 val_cmae=59.9 hit@10=0.120  *best
+  ep 8 loss=0.3956 val_cmae=56.5 hit@10=0.170  *best
+  ep 9 loss=0.3818 val_cmae=56.7 hit@10=0.166
+  ep10 loss=0.3763 val_cmae=53.0 hit@10=0.158  *best
+  ep11 loss=0.3686 val_cmae=50.6 hit@10=0.162  *best
+  ep12 loss=0.3628 val_cmae=52.6 hit@10=0.166
+  ep13 loss=0.3581 val_cmae=47.8 hit@10=0.232  *best
+  ep14 loss=0.3534 val_cmae=50.6 hit@10=0.151
+  ep15 loss=0.3428 val_cmae=47.6 hit@10=0.151  *best
+  ep16 loss=0.3440 val_cmae=46.2 hit@10=0.274  *best
+  ep17 loss=0.3345 val_cmae=46.4 hit@10=0.212
+  ep18 loss=0.3325 val_cmae=48.1 hit@10=0.239
+  ep19 loss=0.3341 val_cmae=46.8 hit@10=0.247
+  ep20 loss=0.3220 val_cmae=44.6 hit@10=0.208  *best
+  ep21 loss=0.3246 val_cmae=50.1 hit@10=0.216
+  ep22 loss=0.3263 val_cmae=42.5 hit@10=0.239  *best
+  ep23 loss=0.3202 val_cmae=44.0 hit@10=0.228
+  ep24 loss=0.3087 val_cmae=44.2 hit@10=0.181
+  ep25 loss=0.3147 val_cmae=44.5 hit@10=0.251
+  ep26 loss=0.3067 val_cmae=42.5 hit@10=0.236
+  ep27 loss=0.3062 val_cmae=39.7 hit@10=0.317  *best
+  ep28 loss=0.3009 val_cmae=43.7 hit@10=0.228
+  ep29 loss=0.2992 val_cmae=41.4 hit@10=0.290
+  ep30 loss=0.2977 val_cmae=39.9 hit@10=0.293
+[TEST final] cmae=40.62 hit@30=0.608
+[TEST best ] (ep27) cmae=38.46 hit@30=0.618
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_ocs_only_seed42
+=== --level degraded-moderate --geom-group G1 --mode image_only ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G1_image_only_seed42
+level=degraded-moderate geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=1.0184 val_cmae=94.5 hit@10=0.039  *best
+  ep 2 loss=0.6871 val_cmae=41.8 hit@10=0.232  *best
+  ep 3 loss=0.4595 val_cmae=38.2 hit@10=0.154  *best
+  ep 4 loss=0.2892 val_cmae=23.3 hit@10=0.336  *best
+  ep 5 loss=0.2297 val_cmae=19.7 hit@10=0.382  *best
+  ep 6 loss=0.2494 val_cmae=19.9 hit@10=0.390
+  ep 7 loss=0.1626 val_cmae=15.1 hit@10=0.429  *best
+  ep 8 loss=0.1267 val_cmae=12.8 hit@10=0.537  *best
+  ep 9 loss=0.1324 val_cmae=27.6 hit@10=0.224
+  ep10 loss=0.1181 val_cmae=16.6 hit@10=0.459
+  ep11 loss=0.0992 val_cmae=9.9 hit@10=0.622  *best
+  ep12 loss=0.0726 val_cmae=13.4 hit@10=0.548
+  ep13 loss=0.1165 val_cmae=13.2 hit@10=0.452
+  ep14 loss=0.1137 val_cmae=12.9 hit@10=0.552
+  ep15 loss=0.0782 val_cmae=9.2 hit@10=0.703  *best
+  ep16 loss=0.0786 val_cmae=75.8 hit@10=0.069
+  ep17 loss=0.0612 val_cmae=7.8 hit@10=0.707  *best
+  ep18 loss=0.0569 val_cmae=20.2 hit@10=0.595
+  ep19 loss=0.0586 val_cmae=5.8 hit@10=0.861  *best
+  ep20 loss=0.0658 val_cmae=7.6 hit@10=0.768
+  ep21 loss=0.0648 val_cmae=16.7 hit@10=0.398
+  ep22 loss=0.0449 val_cmae=4.2 hit@10=0.927  *best
+  ep23 loss=0.0498 val_cmae=8.9 hit@10=0.803
+  ep24 loss=0.0452 val_cmae=5.5 hit@10=0.884
+  ep25 loss=0.0307 val_cmae=3.7 hit@10=0.958  *best
+  ep26 loss=0.0497 val_cmae=7.6 hit@10=0.718
+  ep27 loss=0.0420 val_cmae=4.5 hit@10=0.923
+  ep28 loss=0.0721 val_cmae=17.7 hit@10=0.394
+  ep29 loss=0.0428 val_cmae=5.5 hit@10=0.857
+  ep30 loss=0.0288 val_cmae=4.6 hit@10=0.911
+[TEST final] cmae=4.21 hit@30=1.000
+[TEST best ] (ep25) cmae=3.69 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_image_only_seed42
+=== --level degraded-moderate --geom-group G1 --mode joint ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G1_joint_seed42
+level=degraded-moderate geoms=['phase63'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.8142 val_cmae=88.4 hit@10=0.073  *best
+  ep 2 loss=0.6957 val_cmae=86.5 hit@10=0.066  *best
+  ep 3 loss=0.3497 val_cmae=18.5 hit@10=0.448  *best
+  ep 4 loss=0.2288 val_cmae=14.2 hit@10=0.486  *best
+  ep 5 loss=0.1769 val_cmae=15.8 hit@10=0.452
+  ep 6 loss=0.1280 val_cmae=10.1 hit@10=0.595  *best
+  ep 7 loss=0.1124 val_cmae=19.8 hit@10=0.432
+  ep 8 loss=0.1020 val_cmae=7.6 hit@10=0.784  *best
+  ep 9 loss=0.0691 val_cmae=6.2 hit@10=0.826  *best
+  ep10 loss=0.0404 val_cmae=6.7 hit@10=0.749
+  ep11 loss=0.0463 val_cmae=4.9 hit@10=0.896  *best
+  ep12 loss=0.0586 val_cmae=5.6 hit@10=0.842
+  ep13 loss=0.0697 val_cmae=9.5 hit@10=0.552
+  ep14 loss=0.0492 val_cmae=5.9 hit@10=0.838
+  ep15 loss=0.0414 val_cmae=4.6 hit@10=0.934  *best
+  ep16 loss=0.0467 val_cmae=8.0 hit@10=0.761
+  ep17 loss=0.0433 val_cmae=7.9 hit@10=0.687
+  ep18 loss=0.0283 val_cmae=4.7 hit@10=0.927
+  ep19 loss=0.0226 val_cmae=4.3 hit@10=0.934  *best
+  ep20 loss=0.0115 val_cmae=3.5 hit@10=0.977  *best
+  ep21 loss=0.0052 val_cmae=2.9 hit@10=0.977  *best
+  ep22 loss=0.0033 val_cmae=2.3 hit@10=1.000  *best
+  ep23 loss=0.0026 val_cmae=2.5 hit@10=1.000
+  ep24 loss=0.0021 val_cmae=1.7 hit@10=1.000  *best
+  ep25 loss=0.0019 val_cmae=2.1 hit@10=0.996
+  ep26 loss=0.0018 val_cmae=2.1 hit@10=1.000
+  ep27 loss=0.0017 val_cmae=1.6 hit@10=1.000  *best
+  ep28 loss=0.0014 val_cmae=2.3 hit@10=1.000
+  ep29 loss=0.0016 val_cmae=1.8 hit@10=1.000
+  ep30 loss=0.0019 val_cmae=2.0 hit@10=1.000
+[TEST final] cmae=1.95 hit@30=1.000
+[TEST best ] (ep27) cmae=1.86 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_joint_seed42
+=== --level degraded-moderate --geom-group G5 --mode image_only ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G5_image_only_seed42
+level=degraded-moderate geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.8409 val_cmae=88.4 hit@10=0.069  *best
+  ep 2 loss=0.7251 val_cmae=93.0 hit@10=0.035
+  ep 3 loss=0.4088 val_cmae=17.7 hit@10=0.390  *best
+  ep 4 loss=0.2767 val_cmae=77.0 hit@10=0.100
+  ep 5 loss=0.2109 val_cmae=16.4 hit@10=0.514  *best
+  ep 6 loss=0.1703 val_cmae=91.9 hit@10=0.081
+  ep 7 loss=0.1661 val_cmae=14.9 hit@10=0.405  *best
+  ep 8 loss=0.1366 val_cmae=65.1 hit@10=0.124
+  ep 9 loss=0.1321 val_cmae=10.3 hit@10=0.579  *best
+  ep10 loss=0.0985 val_cmae=6.0 hit@10=0.853  *best
+  ep11 loss=0.0774 val_cmae=7.3 hit@10=0.861
+  ep12 loss=0.0638 val_cmae=8.9 hit@10=0.641
+  ep13 loss=0.0616 val_cmae=6.9 hit@10=0.830
+  ep14 loss=0.0793 val_cmae=14.0 hit@10=0.502
+  ep15 loss=0.0748 val_cmae=5.6 hit@10=0.869  *best
+  ep16 loss=0.0575 val_cmae=6.2 hit@10=0.819
+  ep17 loss=0.0435 val_cmae=6.0 hit@10=0.865
+  ep18 loss=0.0598 val_cmae=7.8 hit@10=0.749
+  ep19 loss=0.0403 val_cmae=5.5 hit@10=0.857  *best
+  ep20 loss=0.0496 val_cmae=7.1 hit@10=0.784
+  ep21 loss=0.0402 val_cmae=5.7 hit@10=0.846
+  ep22 loss=0.0436 val_cmae=15.7 hit@10=0.282
+  ep23 loss=0.0642 val_cmae=4.6 hit@10=0.942  *best
+  ep24 loss=0.0357 val_cmae=4.2 hit@10=0.946  *best
+  ep25 loss=0.0269 val_cmae=4.9 hit@10=0.923
+  ep26 loss=0.0263 val_cmae=3.3 hit@10=0.965  *best
+  ep27 loss=0.0237 val_cmae=2.6 hit@10=0.981  *best
+  ep28 loss=0.0251 val_cmae=4.0 hit@10=0.923
+  ep29 loss=0.0256 val_cmae=4.2 hit@10=0.919
+  ep30 loss=0.0240 val_cmae=6.2 hit@10=0.811
+[TEST final] cmae=6.21 hit@30=1.000
+[TEST best ] (ep27) cmae=2.71 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_image_only_seed42
+=== --level degraded-moderate --geom-group G5 --mode joint ===
+================================================================
+L1M3-degraded | degraded-moderate_P-INT_G5_joint_seed42
+level=degraded-moderate geoms=['phase24', 'phase45', 'phase63', 'phase90', 'phase120'] device=cuda train/val/test=2109/259/296 epochs=30
+================================================================
+  ep 1 loss=0.7562 val_cmae=77.1 hit@10=0.054  *best
+  ep 2 loss=0.6344 val_cmae=39.0 hit@10=0.112  *best
+  ep 3 loss=0.6297 val_cmae=16.1 hit@10=0.359  *best
+  ep 4 loss=0.5925 val_cmae=12.3 hit@10=0.498  *best
+  ep 5 loss=0.5858 val_cmae=9.5 hit@10=0.614  *best
+  ep 6 loss=0.5685 val_cmae=9.4 hit@10=0.629  *best
+  ep 7 loss=0.5548 val_cmae=7.1 hit@10=0.734  *best
+  ep 8 loss=0.5589 val_cmae=7.7 hit@10=0.710
+  ep 9 loss=0.5562 val_cmae=10.2 hit@10=0.583
+  ep10 loss=0.5594 val_cmae=15.3 hit@10=0.440
+  ep11 loss=0.5601 val_cmae=7.5 hit@10=0.730
+  ep12 loss=0.5496 val_cmae=8.0 hit@10=0.672
+  ep13 loss=0.5451 val_cmae=3.4 hit@10=0.981  *best
+  ep14 loss=0.5461 val_cmae=5.1 hit@10=0.888
+  ep15 loss=0.5442 val_cmae=2.6 hit@10=1.000  *best
+  ep16 loss=0.5430 val_cmae=2.7 hit@10=1.000
+  ep17 loss=0.5433 val_cmae=2.7 hit@10=0.981
+  ep18 loss=0.5427 val_cmae=2.9 hit@10=0.985
+  ep19 loss=0.5426 val_cmae=2.2 hit@10=1.000  *best
+  ep20 loss=0.5428 val_cmae=2.2 hit@10=1.000  *best
+  ep21 loss=0.5424 val_cmae=3.0 hit@10=0.992
+  ep22 loss=0.5426 val_cmae=2.7 hit@10=0.988
+  ep23 loss=0.5422 val_cmae=4.4 hit@10=0.915
+  ep24 loss=0.5424 val_cmae=3.1 hit@10=0.973
+  ep25 loss=0.5428 val_cmae=4.4 hit@10=0.876
+  ep26 loss=0.5437 val_cmae=2.6 hit@10=1.000
+  ep27 loss=0.5432 val_cmae=3.3 hit@10=1.000
+  ep28 loss=0.5421 val_cmae=2.0 hit@10=1.000  *best
+  ep29 loss=0.5415 val_cmae=2.7 hit@10=1.000
+  ep30 loss=0.4903 val_cmae=82.3 hit@10=0.050
+[TEST final] cmae=81.17 hit@30=0.189
+[TEST best ] (ep28) cmae=2.02 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_joint_seed42
+[MATRIX DONE]

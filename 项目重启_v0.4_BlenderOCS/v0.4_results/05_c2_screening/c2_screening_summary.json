@@ -1,0 +1,1032 @@
+{
+  "task": "1C-E32 C2 OCS-only screening",
+  "execution_date": "2026-06-25",
+  "protocol": "fixed_protocol_no_hyperparam_search",
+  "n_configs": 13,
+  "n_folds": 5,
+  "feature_source": {
+    "npz_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\04_ocs_features\\enhanced_ocs_features.npz",
+    "definitions_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\04_ocs_features\\feature_definitions.json",
+    "summary_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\04_ocs_features\\feature_extraction_run_summary.json",
+    "n_records": 2664
+  },
+  "training_protocol_template": {
+    "max_epochs": 30,
+    "hidden_dim": 128,
+    "lr": 0.001,
+    "batch_size": 32,
+    "seed": 42,
+    "optimizer": "Adam",
+    "model_type": "MLP_3layer",
+    "n_layers": 3
+  },
+  "results_summary": [
+    {
+      "config_name": "baseline_4dim",
+      "config_id": 1,
+      "claim_class": "photometric OCS",
+      "feature_dim": 4,
+      "feature_keys": [
+        "ocs_total",
+        "ocs_jinshuzhuti",
+        "ocs_taiyangnengban",
+        "ocs_yinshenban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim\\baseline_4dim_fold0_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.027027027681469917
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim\\baseline_4dim_fold1_result.json",
+          "best_val_avg_acc": 0.013513513840734959,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.04324324429035187
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim\\baseline_4dim_fold2_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.019305018708109856
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim\\baseline_4dim_fold3_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.027027027681469917
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim\\baseline_4dim_fold4_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.011583011597394943
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.018146718107163905,
+        "std_val_avg_acc": 0.002618660155161482,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.0256370659917593,
+        "std_test_pitch_acc": 0.01050193095579744,
+        "mean_test_yaw_circular_mae_deg": 89.25160884857178,
+        "std_test_yaw_circular_mae_deg": 33.59087931366156,
+        "mean_test_yaw_within_1_bin_rate": 0.03567567691206932,
+        "std_test_yaw_within_1_bin_rate": 0.030136658385525,
+        "mean_test_yaw_within_3_bins_rate": 0.08164736330509186,
+        "std_test_yaw_within_3_bins_rate": 0.07106795528620449,
+        "mean_test_yaw_within_5_bins_rate": 0.12980695217847824,
+        "std_test_yaw_within_5_bins_rate": 0.12255441538170588,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 13.8,
+        "std_test_pitch_correct_count": 6.013318551349164,
+        "mean_test_pitch_within_1_bin_rate": 0.07595881447196007,
+        "std_test_pitch_within_1_bin_rate": 0.0269917521974127,
+        "mean_test_pitch_within_3_bins_rate": 0.16625482589006424,
+        "std_test_pitch_within_3_bins_rate": 0.040506767749236026,
+        "mean_test_pitch_within_5_bins_rate": 0.2506306320428848,
+        "std_test_pitch_within_5_bins_rate": 0.04906129516590607
+      }
+    },
+    {
+      "config_name": "R_ratio_2d",
+      "config_id": 2,
+      "claim_class": "photometric OCS",
+      "feature_dim": 2,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d\\R_ratio_2d_fold0_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.018018018454313278
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d\\R_ratio_2d_fold1_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.027027027681469917
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d\\R_ratio_2d_fold2_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03281853348016739
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d\\R_ratio_2d_fold3_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021235521882772446
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d\\R_ratio_2d_fold4_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.028957528993487358
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.019691119715571404,
+        "std_val_avg_acc": 0.0014446556953580066,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.025611326098442078,
+        "std_test_pitch_acc": 0.005328247489418069,
+        "mean_test_yaw_circular_mae_deg": 84.14594554901123,
+        "std_test_yaw_circular_mae_deg": 32.71910719138077,
+        "mean_test_yaw_within_1_bin_rate": 0.01737451795488596,
+        "std_test_yaw_within_1_bin_rate": 0.02768100253133802,
+        "mean_test_yaw_within_3_bins_rate": 0.0631402838975191,
+        "std_test_yaw_within_3_bins_rate": 0.07577400240672254,
+        "mean_test_yaw_within_5_bins_rate": 0.15294723212718964,
+        "std_test_yaw_within_5_bins_rate": 0.10938846893570385,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 13.6,
+        "std_test_pitch_correct_count": 2.6532998322843198,
+        "mean_test_pitch_within_1_bin_rate": 0.07191763222217559,
+        "std_test_pitch_within_1_bin_rate": 0.009991109636988517,
+        "mean_test_pitch_within_3_bins_rate": 0.1655341073870659,
+        "std_test_pitch_within_3_bins_rate": 0.02952218247973251,
+        "mean_test_pitch_within_5_bins_rate": 0.27961390018463134,
+        "std_test_pitch_within_5_bins_rate": 0.04201759555946723
+      }
+    },
+    {
+      "config_name": "R_ratio_3d",
+      "config_id": 3,
+      "claim_class": "photometric OCS",
+      "feature_dim": 3,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "r_yinshenban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d\\R_ratio_3d_fold0_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.019819820299744606
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d\\R_ratio_3d_fold1_result.json",
+          "best_val_avg_acc": 0.013513513840734959,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.036036036908626556
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d\\R_ratio_3d_fold2_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.04054053872823715
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d\\R_ratio_3d_fold3_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d\\R_ratio_3d_fold4_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.009652509354054928
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.020463320799171923,
+        "std_val_avg_acc": 0.003580547619153379,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.026229085959494115,
+        "std_test_pitch_acc": 0.011118797065942003,
+        "mean_test_yaw_circular_mae_deg": 80.36074542999268,
+        "std_test_yaw_circular_mae_deg": 31.17816271637253,
+        "mean_test_yaw_within_1_bin_rate": 0.03150579258799553,
+        "std_test_yaw_within_1_bin_rate": 0.030975360294363437,
+        "mean_test_yaw_within_3_bins_rate": 0.10445302464067936,
+        "std_test_yaw_within_3_bins_rate": 0.08379470020314195,
+        "mean_test_yaw_within_5_bins_rate": 0.19006435126066207,
+        "std_test_yaw_within_5_bins_rate": 0.12738747810715007,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 14.0,
+        "std_test_pitch_correct_count": 5.932958789676531,
+        "mean_test_pitch_within_1_bin_rate": 0.06705276593565941,
+        "std_test_pitch_within_1_bin_rate": 0.027975748050273384,
+        "mean_test_pitch_within_3_bins_rate": 0.15462033599615096,
+        "std_test_pitch_within_3_bins_rate": 0.05094721601200479,
+        "mean_test_pitch_within_5_bins_rate": 0.25583011507987974,
+        "std_test_pitch_within_5_bins_rate": 0.07458899665013626
+      }
+    },
+    {
+      "config_name": "I_interpart_1d",
+      "config_id": 4,
+      "claim_class": "photometric OCS",
+      "feature_dim": 1,
+      "feature_keys": [
+        "ratio_j_t"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d\\I_interpart_1d_fold0_result.json",
+          "best_val_avg_acc": 0.025096524506807327,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.030630631372332573
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d\\I_interpart_1d_fold1_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0036036036908626556
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d\\I_interpart_1d_fold2_result.json",
+          "best_val_avg_acc": 0.025096524506807327,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.04440154507756233
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d\\I_interpart_1d_fold3_result.json",
+          "best_val_avg_acc": 0.025096524506807327,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0308880303055048
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d\\I_interpart_1d_fold4_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.02277992255985737,
+        "std_val_avg_acc": 0.0030888027511537285,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.026924066990613938,
+        "std_test_pitch_acc": 0.013282302398323505,
+        "mean_test_yaw_circular_mae_deg": 107.78056907653809,
+        "std_test_yaw_circular_mae_deg": 17.564356036617106,
+        "mean_test_yaw_within_1_bin_rate": 0.0,
+        "std_test_yaw_within_1_bin_rate": 0.0,
+        "mean_test_yaw_within_3_bins_rate": 0.027516088262200356,
+        "std_test_yaw_within_3_bins_rate": 0.027267959655091645,
+        "mean_test_yaw_within_5_bins_rate": 0.06507078446447849,
+        "std_test_yaw_within_5_bins_rate": 0.06412220111575152,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 14.2,
+        "std_test_pitch_correct_count": 6.910861017268399,
+        "mean_test_pitch_within_1_bin_rate": 0.0653796661645174,
+        "std_test_pitch_within_1_bin_rate": 0.025887736264495583,
+        "mean_test_pitch_within_3_bins_rate": 0.15369369238615035,
+        "std_test_pitch_within_3_bins_rate": 0.03774609487440978,
+        "mean_test_pitch_within_5_bins_rate": 0.2681338518857956,
+        "std_test_pitch_within_5_bins_rate": 0.03601705979397688
+      }
+    },
+    {
+      "config_name": "N_density_3d",
+      "config_id": 5,
+      "claim_class": "photometric OCS",
+      "feature_dim": 3,
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d\\N_density_3d_fold0_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.045045044273138046
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d\\N_density_3d_fold1_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.054054055362939835
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d\\N_density_3d_fold2_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d\\N_density_3d_fold3_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03667953610420227
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d\\N_density_3d_fold4_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.009652509354054928
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.0266409270465374,
+        "std_val_avg_acc": 0.00564816204321753,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.034105533920228484,
+        "std_test_pitch_acc": 0.0155135717537892,
+        "mean_test_yaw_circular_mae_deg": 120.25533866882324,
+        "std_test_yaw_circular_mae_deg": 9.31629078307483,
+        "mean_test_yaw_within_1_bin_rate": 0.01920205932110548,
+        "std_test_yaw_within_1_bin_rate": 0.016647927329554002,
+        "mean_test_yaw_within_3_bins_rate": 0.039562419056892395,
+        "std_test_yaw_within_3_bins_rate": 0.027348167521608114,
+        "mean_test_yaw_within_5_bins_rate": 0.04962676987051964,
+        "std_test_yaw_within_5_bins_rate": 0.03128462674793437,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 18.4,
+        "std_test_pitch_correct_count": 8.8,
+        "mean_test_pitch_within_1_bin_rate": 0.08972973078489303,
+        "std_test_pitch_within_1_bin_rate": 0.028374149419458174,
+        "mean_test_pitch_within_3_bins_rate": 0.188416987657547,
+        "std_test_pitch_within_3_bins_rate": 0.040264919065497604,
+        "mean_test_pitch_within_5_bins_rate": 0.2959073394536972,
+        "std_test_pitch_within_5_bins_rate": 0.05054448495795273
+      }
+    },
+    {
+      "config_name": "L_logratio_3d",
+      "config_id": 6,
+      "claim_class": "photometric OCS",
+      "feature_dim": 3,
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d\\L_logratio_3d_fold0_result.json",
+          "best_val_avg_acc": 0.0154440151527524,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.037837836891412735
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d\\L_logratio_3d_fold1_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.030630631372332573
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d\\L_logratio_3d_fold2_result.json",
+          "best_val_avg_acc": 0.013513513840734959,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03474903479218483
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d\\L_logratio_3d_fold3_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.028957528993487358
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d\\L_logratio_3d_fold4_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.027027027681469917
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.023552123829722403,
+        "std_val_avg_acc": 0.008226747670234819,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.03184041194617748,
+        "std_test_pitch_acc": 0.003933762678900297,
+        "mean_test_yaw_circular_mae_deg": 83.16975593566895,
+        "std_test_yaw_circular_mae_deg": 31.40890213691407,
+        "mean_test_yaw_within_1_bin_rate": 0.026409266516566277,
+        "std_test_yaw_within_1_bin_rate": 0.030218220270593857,
+        "mean_test_yaw_within_3_bins_rate": 0.07701415542978793,
+        "std_test_yaw_within_3_bins_rate": 0.07920982427929116,
+        "mean_test_yaw_within_5_bins_rate": 0.14393822103738785,
+        "std_test_yaw_within_5_bins_rate": 0.12558126871067168,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 17.0,
+        "std_test_pitch_correct_count": 2.449489742783178,
+        "mean_test_pitch_within_1_bin_rate": 0.08960102945566177,
+        "std_test_pitch_within_1_bin_rate": 0.011650424707080435,
+        "mean_test_pitch_within_3_bins_rate": 0.19765765964984894,
+        "std_test_pitch_within_3_bins_rate": 0.019372924964659033,
+        "mean_test_pitch_within_5_bins_rate": 0.3116602301597595,
+        "std_test_pitch_within_5_bins_rate": 0.029062369371068774
+      }
+    },
+    {
+      "config_name": "M1_ratio_log_5d",
+      "config_id": 7,
+      "claim_class": "photometric OCS",
+      "feature_dim": 5,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d\\M1_ratio_log_5d_fold0_result.json",
+          "best_val_avg_acc": 0.025096524506807327,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03423423320055008
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d\\M1_ratio_log_5d_fold1_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.036036036908626556
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d\\M1_ratio_log_5d_fold2_result.json",
+          "best_val_avg_acc": 0.011583011597394943,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0308880303055048
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d\\M1_ratio_log_5d_fold3_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.027027027681469917
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d\\M1_ratio_log_5d_fold4_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.02393822409212589,
+        "std_val_avg_acc": 0.006971224172372253,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.030656370520591735,
+        "std_test_pitch_acc": 0.004144384036259562,
+        "mean_test_yaw_circular_mae_deg": 83.04594612121582,
+        "std_test_yaw_circular_mae_deg": 30.560720495612287,
+        "mean_test_yaw_within_1_bin_rate": 0.027232947945594787,
+        "std_test_yaw_within_1_bin_rate": 0.02681421508314056,
+        "mean_test_yaw_within_3_bins_rate": 0.07830115854740143,
+        "std_test_yaw_within_3_bins_rate": 0.07101031746749485,
+        "mean_test_yaw_within_5_bins_rate": 0.15055341348052026,
+        "std_test_yaw_within_5_bins_rate": 0.11033396819426222,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 16.4,
+        "std_test_pitch_correct_count": 2.727636339397171,
+        "mean_test_pitch_within_1_bin_rate": 0.08571428507566452,
+        "std_test_pitch_within_1_bin_rate": 0.010159648826266063,
+        "mean_test_pitch_within_3_bins_rate": 0.18447876572608948,
+        "std_test_pitch_within_3_bins_rate": 0.025368701715535482,
+        "mean_test_pitch_within_5_bins_rate": 0.30324324369430544,
+        "std_test_pitch_within_5_bins_rate": 0.027674580804359153
+      }
+    },
+    {
+      "config_name": "M3_density_ratio_5d",
+      "config_id": 8,
+      "claim_class": "photometric OCS",
+      "feature_dim": 5,
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d\\M3_density_ratio_5d_fold0_result.json",
+          "best_val_avg_acc": 0.0154440151527524,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03963964059948921
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d\\M3_density_ratio_5d_fold1_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.05045045167207718
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d\\M3_density_ratio_5d_fold2_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021235521882772446
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d\\M3_density_ratio_5d_fold3_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.028957528993487358
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d\\M3_density_ratio_5d_fold4_result.json",
+          "best_val_avg_acc": 0.0308880303055048,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.017374517396092415
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.022779922746121884,
+        "std_val_avg_acc": 0.0057786214497823766,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.03153153210878372,
+        "std_test_pitch_acc": 0.012138544599139227,
+        "mean_test_yaw_circular_mae_deg": 97.47451877593994,
+        "std_test_yaw_circular_mae_deg": 24.3013942370374,
+        "mean_test_yaw_within_1_bin_rate": 0.04507078528404236,
+        "std_test_yaw_within_1_bin_rate": 0.02564207936561585,
+        "mean_test_yaw_within_3_bins_rate": 0.10514800362288952,
+        "std_test_yaw_within_3_bins_rate": 0.06735304563196556,
+        "mean_test_yaw_within_5_bins_rate": 0.1557786360383034,
+        "std_test_yaw_within_5_bins_rate": 0.09297048347657608,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 17.0,
+        "std_test_pitch_correct_count": 7.0710678118654755,
+        "mean_test_pitch_within_1_bin_rate": 0.08193050175905228,
+        "std_test_pitch_within_1_bin_rate": 0.022246679521048196,
+        "mean_test_pitch_within_3_bins_rate": 0.18146717846393584,
+        "std_test_pitch_within_3_bins_rate": 0.03768000516701464,
+        "mean_test_pitch_within_5_bins_rate": 0.27163449823856356,
+        "std_test_pitch_within_5_bins_rate": 0.04888190252397511
+      }
+    },
+    {
+      "config_name": "M4_log_density_ratio_9d",
+      "config_id": 9,
+      "claim_class": "photometric OCS",
+      "feature_dim": 9,
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d\\M4_log_density_ratio_9d_fold0_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03963964059948921
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d\\M4_log_density_ratio_9d_fold1_result.json",
+          "best_val_avg_acc": 0.0308880303055048,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.06306306272745132
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d\\M4_log_density_ratio_9d_fold2_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0308880303055048
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d\\M4_log_density_ratio_9d_fold3_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.052123550325632095
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d\\M4_log_density_ratio_9d_fold4_result.json",
+          "best_val_avg_acc": 0.028957528993487358,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03281853348016739
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.02664092667400837,
+        "std_val_avg_acc": 0.005648161763096369,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.04370656348764897,
+        "std_test_pitch_acc": 0.012205929562430209,
+        "mean_test_yaw_circular_mae_deg": 115.73989677429199,
+        "std_test_yaw_circular_mae_deg": 28.172045948938756,
+        "mean_test_yaw_within_1_bin_rate": 0.05884169787168503,
+        "std_test_yaw_within_1_bin_rate": 0.009416558557522523,
+        "mean_test_yaw_within_3_bins_rate": 0.1204633206129074,
+        "std_test_yaw_within_3_bins_rate": 0.04609772107835838,
+        "mean_test_yaw_within_5_bins_rate": 0.1561647340655327,
+        "std_test_yaw_within_5_bins_rate": 0.0746204861356667,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 23.4,
+        "std_test_pitch_correct_count": 7.002856560004639,
+        "mean_test_pitch_within_1_bin_rate": 0.10532818585634232,
+        "std_test_pitch_within_1_bin_rate": 0.017618028190059205,
+        "mean_test_pitch_within_3_bins_rate": 0.20934362709522247,
+        "std_test_pitch_within_3_bins_rate": 0.027362697777757763,
+        "mean_test_pitch_within_5_bins_rate": 0.2974259972572327,
+        "std_test_pitch_within_5_bins_rate": 0.031494478429580815
+      }
+    },
+    {
+      "config_name": "P_pixelfrac_3d",
+      "config_id": 10,
+      "claim_class": "visibility control",
+      "feature_dim": 3,
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d\\P_pixelfrac_3d_fold0_result.json",
+          "best_val_avg_acc": 0.0154440151527524,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0324324332177639
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d\\P_pixelfrac_3d_fold1_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021621622145175934
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d\\P_pixelfrac_3d_fold2_result.json",
+          "best_val_avg_acc": 0.0154440151527524,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0308880303055048
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d\\P_pixelfrac_3d_fold3_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.03281853348016739
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d\\P_pixelfrac_3d_fold4_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0154440151527524
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.020849420875310897,
+        "std_val_avg_acc": 0.005237320914513376,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.026640926860272883,
+        "std_test_pitch_acc": 0.006932625890995818,
+        "mean_test_yaw_circular_mae_deg": 98.15328216552734,
+        "std_test_yaw_circular_mae_deg": 42.19647816225213,
+        "mean_test_yaw_within_1_bin_rate": 0.057065638899803164,
+        "std_test_yaw_within_1_bin_rate": 0.018605713411393613,
+        "mean_test_yaw_within_3_bins_rate": 0.14787644818425177,
+        "std_test_yaw_within_3_bins_rate": 0.07325608617798636,
+        "mean_test_yaw_within_5_bins_rate": 0.21750321611762047,
+        "std_test_yaw_within_5_bins_rate": 0.12843836930153305,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 14.2,
+        "std_test_pitch_correct_count": 3.7094473981982814,
+        "mean_test_pitch_within_1_bin_rate": 0.07873873934149742,
+        "std_test_pitch_within_1_bin_rate": 0.0208985226259692,
+        "mean_test_pitch_within_3_bins_rate": 0.16785070598125457,
+        "std_test_pitch_within_3_bins_rate": 0.04408473579196094,
+        "mean_test_pitch_within_5_bins_rate": 0.2569626748561859,
+        "std_test_pitch_within_5_bins_rate": 0.06290546226998782
+      }
+    },
+    {
+      "config_name": "M5_pixelfrac_only_4d",
+      "config_id": 11,
+      "claim_class": "visibility control",
+      "feature_dim": 4,
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "frac_yinshenban",
+        "visibility_ratio"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold0_result.json",
+          "best_val_avg_acc": 0.013513513840734959,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.0324324332177639
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold1_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.019819820299744606
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold2_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.028957528993487358
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold3_result.json",
+          "best_val_avg_acc": 0.017374517396092415,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d\\M5_pixelfrac_only_4d_fold4_result.json",
+          "best_val_avg_acc": 0.0308880303055048,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.023166023194789886
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.020463320426642895,
+        "std_val_avg_acc": 0.005804361287196263,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.025894466042518615,
+        "std_test_pitch_acc": 0.004407035316266932,
+        "mean_test_yaw_circular_mae_deg": 95.75444221496582,
+        "std_test_yaw_circular_mae_deg": 41.24225842160828,
+        "mean_test_yaw_within_1_bin_rate": 0.05791505947709084,
+        "std_test_yaw_within_1_bin_rate": 0.020214526472495633,
+        "mean_test_yaw_within_3_bins_rate": 0.15567567571997643,
+        "std_test_yaw_within_3_bins_rate": 0.06760590208507679,
+        "mean_test_yaw_within_5_bins_rate": 0.2326898381114006,
+        "std_test_yaw_within_5_bins_rate": 0.12647735921077363,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 13.8,
+        "std_test_pitch_correct_count": 2.481934729198171,
+        "mean_test_pitch_within_1_bin_rate": 0.07539253681898117,
+        "std_test_pitch_within_1_bin_rate": 0.017417156061367622,
+        "mean_test_pitch_within_3_bins_rate": 0.16803088784217834,
+        "std_test_pitch_within_3_bins_rate": 0.030841513923540204,
+        "mean_test_pitch_within_5_bins_rate": 0.25742599964141843,
+        "std_test_pitch_within_5_bins_rate": 0.033121965600065716
+      }
+    },
+    {
+      "config_name": "M2_ratio_pixelfrac_5d",
+      "config_id": 12,
+      "claim_class": "mixed OCS+visibility",
+      "feature_dim": 5,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d\\M2_ratio_pixelfrac_5d_fold0_result.json",
+          "best_val_avg_acc": 0.0154440151527524,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.04324324429035187
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d\\M2_ratio_pixelfrac_5d_fold1_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.045045044273138046
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d\\M2_ratio_pixelfrac_5d_fold2_result.json",
+          "best_val_avg_acc": 0.013513513840734959,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021235521882772446
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d\\M2_ratio_pixelfrac_5d_fold3_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.028957528993487358
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d\\M2_ratio_pixelfrac_5d_fold4_result.json",
+          "best_val_avg_acc": 0.0308880303055048,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.023166023194789886
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.021235521137714385,
+        "std_val_avg_acc": 0.006687454810012612,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.03232947252690792,
+        "std_test_pitch_acc": 0.009992104149651938,
+        "mean_test_yaw_circular_mae_deg": 98.25366687774658,
+        "std_test_yaw_circular_mae_deg": 40.22927524248176,
+        "mean_test_yaw_within_1_bin_rate": 0.05546975769102573,
+        "std_test_yaw_within_1_bin_rate": 0.027121366222626633,
+        "mean_test_yaw_within_3_bins_rate": 0.14741312488913536,
+        "std_test_yaw_within_3_bins_rate": 0.07516526412608353,
+        "mean_test_yaw_within_5_bins_rate": 0.21449162773787975,
+        "std_test_yaw_within_5_bins_rate": 0.1190329508570393,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 17.4,
+        "std_test_pitch_correct_count": 5.953150426454887,
+        "mean_test_pitch_within_1_bin_rate": 0.09281853288412094,
+        "std_test_pitch_within_1_bin_rate": 0.020175057898276467,
+        "mean_test_pitch_within_3_bins_rate": 0.19225225150585173,
+        "std_test_pitch_within_3_bins_rate": 0.03836571313939871,
+        "mean_test_pitch_within_5_bins_rate": 0.3006435036659241,
+        "std_test_pitch_within_5_bins_rate": 0.05334213225942583
+      }
+    },
+    {
+      "config_name": "M6_all_nongeo_13d",
+      "config_id": 13,
+      "claim_class": "mixed OCS+visibility",
+      "feature_dim": 13,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "ratio_j_t",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total"
+      ],
+      "fold_results": [
+        {
+          "fold_id": 0,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold0_result.json",
+          "best_val_avg_acc": 0.03281853348016739,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.04324324429035187
+        },
+        {
+          "fold_id": 1,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold1_result.json",
+          "best_val_avg_acc": 0.021235521882772446,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.054054055362939835
+        },
+        {
+          "fold_id": 2,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold2_result.json",
+          "best_val_avg_acc": 0.019305018708109856,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021235521882772446
+        },
+        {
+          "fold_id": 3,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold3_result.json",
+          "best_val_avg_acc": 0.023166023194789886,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.025096524506807327
+        },
+        {
+          "fold_id": 4,
+          "result_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold4_result.json",
+          "best_val_avg_acc": 0.027027027681469917,
+          "test_yaw_acc": 0.0,
+          "test_pitch_acc": 0.021235521882772446
+        }
+      ],
+      "aggregate_metrics": {
+        "mean_val_avg_acc": 0.0247104249894619,
+        "std_val_avg_acc": 0.004791380112251908,
+        "mean_test_yaw_acc": 0.0,
+        "std_test_yaw_acc": 0.0,
+        "mean_test_pitch_acc": 0.03297297358512878,
+        "std_test_pitch_acc": 0.013322645865555437,
+        "mean_test_yaw_circular_mae_deg": 107.17876529693604,
+        "std_test_yaw_circular_mae_deg": 32.15997702098715,
+        "mean_test_yaw_within_1_bin_rate": 0.059613899886608125,
+        "std_test_yaw_within_1_bin_rate": 0.012928413402108282,
+        "mean_test_yaw_within_3_bins_rate": 0.14602316468954085,
+        "std_test_yaw_within_3_bins_rate": 0.04470395651907186,
+        "mean_test_yaw_within_5_bins_rate": 0.18473616540431975,
+        "std_test_yaw_within_5_bins_rate": 0.06755943346184666,
+        "mean_test_yaw_correct_count": 0.0,
+        "std_test_yaw_correct_count": 0.0,
+        "mean_test_pitch_correct_count": 17.8,
+        "std_test_pitch_correct_count": 7.782030583337488,
+        "mean_test_pitch_within_1_bin_rate": 0.09047618955373764,
+        "std_test_pitch_within_1_bin_rate": 0.022956294659389753,
+        "mean_test_pitch_within_3_bins_rate": 0.17729729861021043,
+        "std_test_pitch_within_3_bins_rate": 0.05513664921626962,
+        "mean_test_pitch_within_5_bins_rate": 0.2673101663589478,
+        "std_test_pitch_within_5_bins_rate": 0.06938662737091192
+      }
+    }
+  ],
+  "output_structure": {
+    "base_dir": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening",
+    "per_config_folders": [
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\baseline_4dim",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_2d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\R_ratio_3d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\I_interpart_1d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\N_density_3d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\L_logratio_3d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M1_ratio_log_5d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M3_density_ratio_5d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M4_log_density_ratio_9d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\P_pixelfrac_3d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M5_pixelfrac_only_4d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M2_ratio_pixelfrac_5d",
+      "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d"
+    ]
+  },
+  "exclusions": {
+    "excluded_configs": [
+      "constant_check_1d"
+    ],
+    "exclusion_reason": "constant sanity check, not for C2 evaluation"
+  }
+}

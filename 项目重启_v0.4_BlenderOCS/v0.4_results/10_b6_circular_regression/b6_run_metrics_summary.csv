@@ -1,0 +1,6 @@
+run,mode,fold,aug,n_test,yaw_cmae_deg,yaw_median_deg,yaw_p90_deg,yaw_hit@5,yaw_hit@10,yaw_hit@30,yaw_within_1bin,yaw_within_2bin,yaw_within_6bin,yaw_exact_sentinel,yaw_coarse45,yaw_coarse90,pitch_mae_deg,pitch_hit@5,pitch_hit@10,pitch_hit@30,pitch_exact_sentinel
+image_only_fold0_aug-none,image_only,0,none,555,96.255,109.085,170.743,0.0378,0.0883,0.2775,0.0559,0.1135,0.2811,0.0144,0.2703,0.2703,14.889,0.2432,0.4613,0.8703,0.1297
+image_only_fold0_aug-standard,image_only,0,standard,555,148.244,155.001,175.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,54.668,0.0793,0.1351,0.3514,0.027
+joint_fold0_aug-none,joint,0,none,555,99.631,119.848,171.331,0.0414,0.0721,0.2342,0.0505,0.0865,0.2505,0.0198,0.2757,0.2757,15.699,0.2378,0.4288,0.8486,0.1171
+joint_fold0_aug-standard,joint,0,standard,555,160.0,160.0,175.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,57.013,0.0811,0.1351,0.3514,0.027
+ocs_only_fold0_aug-none,ocs_only,0,none,555,112.055,106.4,165.391,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,46.339,0.0541,0.1081,0.3243,0.027

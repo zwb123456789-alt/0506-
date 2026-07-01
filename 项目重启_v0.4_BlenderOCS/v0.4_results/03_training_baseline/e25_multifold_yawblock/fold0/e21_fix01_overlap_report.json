@@ -1,0 +1,34 @@
+{
+  "manifest": "split_manifest_circ_yawblock_fold0.json",
+  "method": "circ_yaw_block",
+  "train_n": 1850,
+  "val_n": 259,
+  "test_n": 555,
+  "train_val_overlap": 0,
+  "train_test_overlap": 0,
+  "val_test_overlap": 0,
+  "is_strict": true,
+  "test_yaw_bins": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "test_n_bins": 15,
+  "pitch_coverage": {
+    "train": 37,
+    "val": 37,
+    "test": 37
+  }
+}

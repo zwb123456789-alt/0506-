@@ -1,0 +1,6 @@
+mode,aug,select,n_folds,n_pooled,b6_yaw_cmae_deg,p1a_pooled_yaw_cmae_deg,delta_yaw_cmae_deg,random_yaw_cmae_deg,b6_yaw_within_2bin,p1a_pooled_within_2bin,b6_yaw_coarse90,p1a_pooled_coarse90,random_coarse90,b6_yaw_hit@30,b6_pitch_mae_deg
+image_only,none,final,5,2664,62.9368,81.631,-18.6942,90.264,0.1216,0.1231,0.5116,0.2541,0.25,0.3112,25.6483
+image_only,standard,final,5,2664,130.3372,81.631,48.7062,90.264,0.0079,0.1231,0.0191,0.2541,0.25,0.0195,61.0393
+joint,none,final,5,2664,68.8766,81.5841,-12.7075,90.264,0.1468,0.1295,0.4764,0.2485,0.25,0.3108,17.8539
+joint,standard,final,5,2664,101.4734,81.5841,19.8893,90.264,0.1535,0.1295,0.247,0.2485,0.25,0.244,51.999
+ocs_only,none,final,5,2664,130.5691,88.9658,41.6033,90.264,0.0,0.0571,0.0176,0.2444,0.25,0.0,48.6894

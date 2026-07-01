@@ -1,0 +1,29 @@
+{
+  "task": "1C-L1M2 postprocess metrics aggregation",
+  "n_run_rows": 18,
+  "n_ok": 18,
+  "n_missing": 0,
+  "groups": [
+    "G1",
+    "G3",
+    "G5"
+  ],
+  "modes": [
+    "ocs_only",
+    "image_only",
+    "joint"
+  ],
+  "protocol": "P-INT",
+  "outputs": [
+    "l1m2_run_matrix.csv",
+    "l1m2_run_matrix.json",
+    "l1m2_metrics_summary_final.csv",
+    "l1m2_metrics_summary_best.csv",
+    "l1m2_gain_curve_G1_G3_G5.csv",
+    "l1m2_gain_curve_G1_G3_G5.md",
+    "l1m2_confidence_consistency_summary.csv",
+    "l1m2_complementarity_summary.csv"
+  ],
+  "n_confidence_rows": 18,
+  "n_complementarity_rows": 6
+}

@@ -1,0 +1,5622 @@
+{
+  "c3_image_only": [
+    {
+      "true_yaw_bin": 0,
+      "true_yaw_deg": 0,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 54,
+          "pred_yaw_deg": 270,
+          "count": 14,
+          "frac": 0.3783783783783784
+        },
+        {
+          "pred_yaw_bin": 55,
+          "pred_yaw_deg": 275,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 53,
+          "pred_yaw_deg": 265,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 1,
+      "true_yaw_deg": 5,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 54,
+          "pred_yaw_deg": 270,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 28,
+          "pred_yaw_deg": 140,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 2,
+      "true_yaw_deg": 10,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 3,
+      "true_yaw_deg": 15,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 30,
+          "frac": 0.8108108108108109
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 4,
+      "true_yaw_deg": 20,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 34,
+          "frac": 0.918918918918919
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 5,
+      "true_yaw_deg": 25,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 27,
+          "frac": 0.7297297297297297
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 6,
+      "true_yaw_deg": 30,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 31,
+          "frac": 0.8378378378378378
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 7,
+      "true_yaw_deg": 35,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 29,
+          "frac": 0.7837837837837838
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 8,
+      "true_yaw_deg": 40,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 29,
+          "frac": 0.7837837837837838
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 9,
+      "true_yaw_deg": 45,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 25,
+          "frac": 0.6756756756756757
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 10,
+      "true_yaw_deg": 50,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 23,
+          "frac": 0.6216216216216216
+        },
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 14,
+          "frac": 0.3783783783783784
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 11,
+      "true_yaw_deg": 55,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 31,
+          "frac": 0.8378378378378378
+        },
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 12,
+      "true_yaw_deg": 60,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 36,
+          "frac": 0.972972972972973
+        },
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 13,
+      "true_yaw_deg": 65,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 14,
+      "true_yaw_deg": 70,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 15,
+      "true_yaw_deg": 75,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 20,
+          "frac": 0.5405405405405406
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 16,
+      "true_yaw_deg": 80,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 17,
+      "true_yaw_deg": 85,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 24,
+          "frac": 0.6486486486486487
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 18,
+      "true_yaw_deg": 90,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 19,
+      "true_yaw_deg": 95,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 19,
+          "frac": 0.5135135135135135
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 45,
+          "pred_yaw_deg": 225,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 20,
+      "true_yaw_deg": 100,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 18,
+          "frac": 0.4864864864864865
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 45,
+          "pred_yaw_deg": 225,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 21,
+      "true_yaw_deg": 105,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 22,
+      "true_yaw_deg": 110,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 23,
+      "true_yaw_deg": 115,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 20,
+          "frac": 0.5405405405405406
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 59,
+          "pred_yaw_deg": 295,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 24,
+      "true_yaw_deg": 120,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 16,
+          "frac": 0.43243243243243246
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 25,
+      "true_yaw_deg": 125,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 26,
+      "true_yaw_deg": 130,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 16,
+          "frac": 0.43243243243243246
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 27,
+      "true_yaw_deg": 135,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 21,
+          "frac": 0.5675675675675675
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 28,
+      "true_yaw_deg": 140,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 25,
+          "frac": 0.6756756756756757
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 29,
+      "true_yaw_deg": 145,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 30,
+      "true_yaw_deg": 150,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 17,
+          "pred_yaw_deg": 85,
+          "count": 16,
+          "frac": 0.43243243243243246
+        },
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 31,
+      "true_yaw_deg": 155,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 17,
+          "pred_yaw_deg": 85,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 46,
+          "pred_yaw_deg": 230,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 32,
+      "true_yaw_deg": 160,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 56,
+          "pred_yaw_deg": 280,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 33,
+      "true_yaw_deg": 165,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 56,
+          "pred_yaw_deg": 280,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 14,
+          "pred_yaw_deg": 70,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 34,
+      "true_yaw_deg": 170,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 56,
+          "pred_yaw_deg": 280,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 14,
+          "pred_yaw_deg": 70,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 35,
+      "true_yaw_deg": 175,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 62,
+          "pred_yaw_deg": 310,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 36,
+      "true_yaw_deg": 180,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 62,
+          "pred_yaw_deg": 310,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 37,
+      "true_yaw_deg": 185,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 61,
+          "pred_yaw_deg": 305,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 38,
+      "true_yaw_deg": 190,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 14,
+          "frac": 0.3783783783783784
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 39,
+      "true_yaw_deg": 195,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 40,
+      "true_yaw_deg": 200,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 41,
+      "true_yaw_deg": 205,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 19,
+          "frac": 0.5135135135135135
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 42,
+      "true_yaw_deg": 210,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 43,
+      "true_yaw_deg": 215,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 44,
+      "true_yaw_deg": 220,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 32,
+          "pred_yaw_deg": 160,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 36,
+          "pred_yaw_deg": 180,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 45,
+      "true_yaw_deg": 225,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 32,
+          "pred_yaw_deg": 160,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 46,
+      "true_yaw_deg": 230,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 16,
+          "frac": 0.43243243243243246
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 32,
+          "pred_yaw_deg": 160,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 47,
+      "true_yaw_deg": 235,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 28,
+          "pred_yaw_deg": 140,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 48,
+      "true_yaw_deg": 240,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 28,
+          "pred_yaw_deg": 140,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 49,
+      "true_yaw_deg": 245,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 59,
+          "pred_yaw_deg": 295,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 60,
+          "pred_yaw_deg": 300,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 50,
+      "true_yaw_deg": 250,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 61,
+          "pred_yaw_deg": 305,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 36,
+          "pred_yaw_deg": 180,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 68,
+          "pred_yaw_deg": 340,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 51,
+      "true_yaw_deg": 255,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 63,
+          "pred_yaw_deg": 315,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 68,
+          "pred_yaw_deg": 340,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 62,
+          "pred_yaw_deg": 310,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 61,
+          "pred_yaw_deg": 305,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 52,
+      "true_yaw_deg": 260,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 62,
+          "pred_yaw_deg": 310,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 53,
+      "true_yaw_deg": 265,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 54,
+      "true_yaw_deg": 270,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 18,
+          "frac": 0.4864864864864865
+        },
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 55,
+      "true_yaw_deg": 275,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 28,
+          "frac": 0.7567567567567568
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 66,
+          "pred_yaw_deg": 330,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 23,
+          "pred_yaw_deg": 115,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 56,
+      "true_yaw_deg": 280,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 57,
+      "true_yaw_deg": 285,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 58,
+      "true_yaw_deg": 290,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 59,
+      "true_yaw_deg": 295,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 20,
+          "frac": 0.5405405405405406
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 60,
+      "true_yaw_deg": 300,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 61,
+      "true_yaw_deg": 305,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 62,
+      "true_yaw_deg": 310,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 63,
+      "true_yaw_deg": 315,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 33,
+          "frac": 0.8918918918918919
+        },
+        {
+          "pred_yaw_bin": 37,
+          "pred_yaw_deg": 185,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 64,
+      "true_yaw_deg": 320,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 27,
+          "frac": 0.7297297297297297
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 37,
+          "pred_yaw_deg": 185,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 65,
+      "true_yaw_deg": 325,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 66,
+      "true_yaw_deg": 330,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 67,
+      "true_yaw_deg": 335,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 24,
+          "frac": 0.6486486486486487
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 68,
+      "true_yaw_deg": 340,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 30,
+          "frac": 0.8108108108108109
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 69,
+      "true_yaw_deg": 345,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 36,
+          "frac": 0.972972972972973
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 70,
+      "true_yaw_deg": 350,
+      "total_samples": 37,
+      "diag_in_top5": true,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 71,
+      "true_yaw_deg": 355,
+      "total_samples": 37,
+      "diag_in_top5": true,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    }
+  ],
+  "c3_joint": [
+    {
+      "true_yaw_bin": 0,
+      "true_yaw_deg": 0,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 54,
+          "pred_yaw_deg": 270,
+          "count": 26,
+          "frac": 0.7027027027027027
+        },
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 55,
+          "pred_yaw_deg": 275,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 28,
+          "pred_yaw_deg": 140,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 1,
+      "true_yaw_deg": 5,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 54,
+          "pred_yaw_deg": 270,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 55,
+          "pred_yaw_deg": 275,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 2,
+      "true_yaw_deg": 10,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 55,
+          "pred_yaw_deg": 275,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 3,
+      "true_yaw_deg": 15,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 23,
+          "frac": 0.6216216216216216
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 4,
+      "true_yaw_deg": 20,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 22,
+          "frac": 0.5945945945945946
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 5,
+      "true_yaw_deg": 25,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 25,
+          "frac": 0.6756756756756757
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 6,
+      "true_yaw_deg": 30,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 24,
+          "frac": 0.6486486486486487
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 7,
+      "true_yaw_deg": 35,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 23,
+          "frac": 0.6216216216216216
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 8,
+      "true_yaw_deg": 40,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 18,
+          "frac": 0.4864864864864865
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 9,
+      "true_yaw_deg": 45,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 18,
+          "frac": 0.4864864864864865
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 10,
+      "true_yaw_deg": 50,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 42,
+          "pred_yaw_deg": 210,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 11,
+      "true_yaw_deg": 55,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 12,
+      "true_yaw_deg": 60,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 13,
+      "true_yaw_deg": 65,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 14,
+      "true_yaw_deg": 70,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 15,
+      "true_yaw_deg": 75,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 28,
+          "frac": 0.7567567567567568
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 16,
+      "true_yaw_deg": 80,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 26,
+          "frac": 0.7027027027027027
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 51,
+          "pred_yaw_deg": 255,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 17,
+      "true_yaw_deg": 85,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 18,
+          "frac": 0.4864864864864865
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 51,
+          "pred_yaw_deg": 255,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 18,
+      "true_yaw_deg": 90,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 29,
+          "frac": 0.7837837837837838
+        },
+        {
+          "pred_yaw_bin": 51,
+          "pred_yaw_deg": 255,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 19,
+      "true_yaw_deg": 95,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 14,
+          "frac": 0.3783783783783784
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 45,
+          "pred_yaw_deg": 225,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 20,
+      "true_yaw_deg": 100,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 24,
+          "frac": 0.6486486486486487
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 21,
+      "true_yaw_deg": 105,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 32,
+          "pred_yaw_deg": 160,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 22,
+      "true_yaw_deg": 110,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 55,
+          "pred_yaw_deg": 275,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 32,
+          "pred_yaw_deg": 160,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 23,
+      "true_yaw_deg": 115,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 32,
+          "frac": 0.8648648648648649
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 24,
+      "true_yaw_deg": 120,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 21,
+          "frac": 0.5675675675675675
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 25,
+      "true_yaw_deg": 125,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 16,
+          "frac": 0.43243243243243246
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 39,
+          "pred_yaw_deg": 195,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 26,
+      "true_yaw_deg": 130,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 40,
+          "pred_yaw_deg": 200,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 31,
+          "pred_yaw_deg": 155,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 27,
+      "true_yaw_deg": 135,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 41,
+          "pred_yaw_deg": 205,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 28,
+      "true_yaw_deg": 140,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 26,
+          "frac": 0.7027027027027027
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 29,
+      "true_yaw_deg": 145,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 30,
+          "pred_yaw_deg": 150,
+          "count": 33,
+          "frac": 0.8918918918918919
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 30,
+      "true_yaw_deg": 150,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 17,
+          "pred_yaw_deg": 85,
+          "count": 22,
+          "frac": 0.5945945945945946
+        },
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 18,
+          "pred_yaw_deg": 90,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 31,
+      "true_yaw_deg": 155,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 16,
+          "pred_yaw_deg": 80,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 17,
+          "pred_yaw_deg": 85,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 18,
+          "pred_yaw_deg": 90,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 12,
+          "pred_yaw_deg": 60,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 32,
+      "true_yaw_deg": 160,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 14,
+          "pred_yaw_deg": 70,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 46,
+          "pred_yaw_deg": 230,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 45,
+          "pred_yaw_deg": 225,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 33,
+      "true_yaw_deg": 165,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 14,
+          "pred_yaw_deg": 70,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 46,
+          "pred_yaw_deg": 230,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 34,
+      "true_yaw_deg": 170,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 14,
+          "pred_yaw_deg": 70,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 22,
+          "pred_yaw_deg": 110,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 9,
+          "pred_yaw_deg": 45,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 35,
+      "true_yaw_deg": 175,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 15,
+          "pred_yaw_deg": 75,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 22,
+          "pred_yaw_deg": 110,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 36,
+      "true_yaw_deg": 180,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 60,
+          "pred_yaw_deg": 300,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 37,
+      "true_yaw_deg": 185,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 20,
+          "frac": 0.5405405405405406
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 9,
+          "pred_yaw_deg": 45,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 60,
+          "pred_yaw_deg": 300,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 38,
+      "true_yaw_deg": 190,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 23,
+          "frac": 0.6216216216216216
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 9,
+          "pred_yaw_deg": 45,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 39,
+      "true_yaw_deg": 195,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 22,
+          "frac": 0.5945945945945946
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 40,
+      "true_yaw_deg": 200,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 8,
+          "pred_yaw_deg": 40,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 41,
+      "true_yaw_deg": 205,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 57,
+          "pred_yaw_deg": 285,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 42,
+      "true_yaw_deg": 210,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 36,
+          "frac": 0.972972972972973
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 43,
+      "true_yaw_deg": 215,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 44,
+      "true_yaw_deg": 220,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 6,
+          "pred_yaw_deg": 30,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 45,
+      "true_yaw_deg": 225,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 20,
+          "frac": 0.5405405405405406
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 46,
+      "true_yaw_deg": 230,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 15,
+          "frac": 0.40540540540540543
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 47,
+      "true_yaw_deg": 235,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 12,
+          "frac": 0.32432432432432434
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 48,
+      "true_yaw_deg": 240,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 4,
+          "frac": 0.10810810810810811
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 49,
+      "true_yaw_deg": 245,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 3,
+          "pred_yaw_deg": 15,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 34,
+          "pred_yaw_deg": 170,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 2,
+          "pred_yaw_deg": 10,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 50,
+      "true_yaw_deg": 250,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 36,
+          "pred_yaw_deg": 180,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 7,
+          "pred_yaw_deg": 35,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 23,
+          "pred_yaw_deg": 115,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 51,
+      "true_yaw_deg": 255,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 6,
+          "frac": 0.16216216216216217
+        },
+        {
+          "pred_yaw_bin": 36,
+          "pred_yaw_deg": 180,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 21,
+          "pred_yaw_deg": 105,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 52,
+      "true_yaw_deg": 260,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 9,
+          "frac": 0.24324324324324326
+        },
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 20,
+          "pred_yaw_deg": 100,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 4,
+          "pred_yaw_deg": 20,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 33,
+          "pred_yaw_deg": 165,
+          "count": 3,
+          "frac": 0.08108108108108109
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 53,
+      "true_yaw_deg": 265,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 68,
+          "pred_yaw_deg": 340,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 13,
+          "frac": 0.35135135135135137
+        },
+        {
+          "pred_yaw_bin": 64,
+          "pred_yaw_deg": 320,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 65,
+          "pred_yaw_deg": 325,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 20,
+          "pred_yaw_deg": 100,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 54,
+      "true_yaw_deg": 270,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 25,
+          "frac": 0.6756756756756757
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 19,
+          "pred_yaw_deg": 95,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 21,
+          "pred_yaw_deg": 105,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 55,
+      "true_yaw_deg": 275,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 27,
+          "frac": 0.7297297297297297
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 21,
+          "pred_yaw_deg": 105,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 59,
+          "pred_yaw_deg": 295,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 56,
+      "true_yaw_deg": 280,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 31,
+          "frac": 0.8378378378378378
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 1,
+          "pred_yaw_deg": 5,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 57,
+      "true_yaw_deg": 285,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 58,
+          "pred_yaw_deg": 290,
+          "count": 35,
+          "frac": 0.9459459459459459
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 58,
+      "true_yaw_deg": 290,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 25,
+          "frac": 0.6756756756756757
+        },
+        {
+          "pred_yaw_bin": 45,
+          "pred_yaw_deg": 225,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 59,
+      "true_yaw_deg": 295,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 27,
+          "frac": 0.7297297297297297
+        },
+        {
+          "pred_yaw_bin": 43,
+          "pred_yaw_deg": 215,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 5,
+          "pred_yaw_deg": 25,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 60,
+      "true_yaw_deg": 300,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 36,
+          "frac": 0.972972972972973
+        },
+        {
+          "pred_yaw_bin": 44,
+          "pred_yaw_deg": 220,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 61,
+      "true_yaw_deg": 305,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 62,
+      "true_yaw_deg": 310,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 63,
+      "true_yaw_deg": 315,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 29,
+          "frac": 0.7837837837837838
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 64,
+      "true_yaw_deg": 320,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 17,
+          "frac": 0.4594594594594595
+        },
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 8,
+          "frac": 0.21621621621621623
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 7,
+          "frac": 0.1891891891891892
+        },
+        {
+          "pred_yaw_bin": 38,
+          "pred_yaw_deg": 190,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 2,
+          "frac": 0.05405405405405406
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 65,
+      "true_yaw_deg": 325,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 19,
+          "frac": 0.5135135135135135
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 50,
+          "pred_yaw_deg": 250,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 47,
+          "pred_yaw_deg": 235,
+          "count": 1,
+          "frac": 0.02702702702702703
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 66,
+      "true_yaw_deg": 330,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 22,
+          "frac": 0.5945945945945946
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 11,
+          "frac": 0.2972972972972973
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 4,
+          "frac": 0.10810810810810811
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 67,
+      "true_yaw_deg": 335,
+      "total_samples": 37,
+      "diag_in_top5": true,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 24,
+          "frac": 0.6486486486486487
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 10,
+          "frac": 0.2702702702702703
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 3,
+          "frac": 0.08108108108108109
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 68,
+      "true_yaw_deg": 340,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 30,
+          "frac": 0.8108108108108109
+        },
+        {
+          "pred_yaw_bin": 48,
+          "pred_yaw_deg": 240,
+          "count": 5,
+          "frac": 0.13513513513513514
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 69,
+      "true_yaw_deg": 345,
+      "total_samples": 37,
+      "diag_in_top5": false,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 35,
+          "frac": 0.9459459459459459
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 2,
+          "frac": 0.05405405405405406
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 70,
+      "true_yaw_deg": 350,
+      "total_samples": 37,
+      "diag_in_top5": true,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 36,
+          "frac": 0.972972972972973
+        },
+        {
+          "pred_yaw_bin": 49,
+          "pred_yaw_deg": 245,
+          "count": 1,
+          "frac": 0.02702702702702703
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    },
+    {
+      "true_yaw_bin": 71,
+      "true_yaw_deg": 355,
+      "total_samples": 37,
+      "diag_in_top5": true,
+      "diag_rank": null,
+      "top5_preds": [
+        {
+          "pred_yaw_bin": 0,
+          "pred_yaw_deg": 0,
+          "count": 37,
+          "frac": 1.0
+        },
+        {
+          "pred_yaw_bin": 71,
+          "pred_yaw_deg": 355,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 69,
+          "pred_yaw_deg": 345,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 70,
+          "pred_yaw_deg": 350,
+          "count": 0,
+          "frac": 0.0
+        },
+        {
+          "pred_yaw_bin": 67,
+          "pred_yaw_deg": 335,
+          "count": 0,
+          "frac": 0.0
+        }
+      ]
+    }
+  ]
+}

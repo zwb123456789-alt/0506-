@@ -1,0 +1,10 @@
+{
+  "random_circular_mae_bins": 18.0,
+  "random_exact_bin": 0.013888888888888888,
+  "random_within_1bin": 0.041666666666666664,
+  "random_within_2bins": 0.06944444444444445,
+  "random_within_3bins": 0.09722222222222222,
+  "random_within_6bins": 0.18055555555555555,
+  "random_coarse45": 0.125,
+  "random_coarse90": 0.25
+}

@@ -1,0 +1,161 @@
+{
+  "task": "1C-E25 multi-fold circular yaw_block",
+  "timestamp": "2026-06-25T00:00:00",
+  "config": {
+    "k_folds": 5,
+    "mode": "image_only",
+    "max_epochs": 20,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "num_workers": 4
+  },
+  "per_fold": {
+    "fold_0": {
+      "fold": 0,
+      "test_n_bins": 15,
+      "train_n": 1850,
+      "val_n": 259,
+      "test_n": 555,
+      "overlap_strict": true,
+      "test_primary": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.22522522509098053,
+        "yaw_circular_mae_deg": 105.45044898986816,
+        "pitch_mae_deg": 36.1981987953186,
+        "n_samples": 555,
+        "yaw_within_0_bins": 0,
+        "yaw_within_1_bin": 37,
+        "yaw_within_3_bins": 110,
+        "yaw_within_5_bins": 160
+      },
+      "test_random": {
+        "yaw_acc": 0.6790540814399719,
+        "pitch_acc": 0.7567567825317383
+      },
+      "elapsed_s": 508.2233805656433,
+      "best_epoch": 17,
+      "test_yaw_range": "0-70 deg"
+    },
+    "fold_1": {
+      "fold": 1,
+      "test_n_bins": 15,
+      "train_n": 1850,
+      "val_n": 259,
+      "test_n": 555,
+      "overlap_strict": true,
+      "test_primary": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.13513512909412384,
+        "yaw_circular_mae_deg": 71.22522354125977,
+        "pitch_mae_deg": 37.18918800354004,
+        "n_samples": 555,
+        "yaw_within_0_bins": 0,
+        "yaw_within_1_bin": 37,
+        "yaw_within_3_bins": 96,
+        "yaw_within_5_bins": 126
+      },
+      "test_random": {
+        "yaw_acc": 0.6790540814399719,
+        "pitch_acc": 0.712837815284729
+      },
+      "elapsed_s": 504.7728326320648,
+      "best_epoch": 13,
+      "test_yaw_range": "75-145 deg"
+    },
+    "fold_2": {
+      "fold": 2,
+      "test_n_bins": 14,
+      "train_n": 1887,
+      "val_n": 259,
+      "test_n": 518,
+      "overlap_strict": true,
+      "test_primary": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.1853281855583191,
+        "yaw_circular_mae_deg": 114.89381790161133,
+        "pitch_mae_deg": 44.8552131652832,
+        "n_samples": 518,
+        "yaw_within_0_bins": 0,
+        "yaw_within_1_bin": 29,
+        "yaw_within_3_bins": 46,
+        "yaw_within_5_bins": 53
+      },
+      "test_random": {
+        "yaw_acc": 0.5777027010917664,
+        "pitch_acc": 0.6959459185600281
+      },
+      "elapsed_s": 508.2622289657593,
+      "best_epoch": 18,
+      "test_yaw_range": "150-215 deg"
+    },
+    "fold_3": {
+      "fold": 3,
+      "test_n_bins": 14,
+      "train_n": 1887,
+      "val_n": 259,
+      "test_n": 518,
+      "overlap_strict": true,
+      "test_primary": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.18339768052101135,
+        "yaw_circular_mae_deg": 80.6563663482666,
+        "pitch_mae_deg": 35.91698884963989,
+        "n_samples": 518,
+        "yaw_within_0_bins": 0,
+        "yaw_within_1_bin": 37,
+        "yaw_within_3_bins": 94,
+        "yaw_within_5_bins": 110
+      },
+      "test_random": {
+        "yaw_acc": 0.6891891956329346,
+        "pitch_acc": 0.7668918967247009
+      },
+      "elapsed_s": 507.0813534259796,
+      "best_epoch": 19,
+      "test_yaw_range": "220-285 deg"
+    },
+    "fold_4": {
+      "fold": 4,
+      "test_n_bins": 14,
+      "train_n": 1887,
+      "val_n": 259,
+      "test_n": 518,
+      "overlap_strict": true,
+      "test_primary": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.3050193190574646,
+        "yaw_circular_mae_deg": 45.17374515533447,
+        "pitch_mae_deg": 26.5444016456604,
+        "n_samples": 518,
+        "yaw_within_0_bins": 0,
+        "yaw_within_1_bin": 37,
+        "yaw_within_3_bins": 111,
+        "yaw_within_5_bins": 166
+      },
+      "test_random": {
+        "yaw_acc": 0.6452702879905701,
+        "pitch_acc": 0.7635135054588318
+      },
+      "elapsed_s": 504.3613419532776,
+      "best_epoch": 19,
+      "test_yaw_range": "290-355 deg"
+    }
+  },
+  "aggregate": {
+    "yaw_acc_mean": 0.0,
+    "yaw_acc_std_population": 0.0,
+    "yaw_acc_std_sample": 0.0,
+    "pitch_acc_mean": 0.20682110786437988,
+    "pitch_acc_std_population": 0.05679979299685195,
+    "pitch_acc_std_sample": 0.06350409912443873,
+    "yaw_cmae_mean_deg": 83.47992038726807,
+    "yaw_cmae_std_population_deg": 24.879912368083858,
+    "yaw_cmae_std_sample_deg": 27.81658766463664,
+    "pitch_mae_mean_deg": 36.14079809188843,
+    "pitch_mae_std_population_deg": 5.816946993898277,
+    "pitch_mae_std_sample_deg": 6.5035444499348,
+    "folds_with_yaw_gt_0": 0,
+    "conclusion": "5-fold cross-validation: mean yaw_acc=0.00%, all folds=0%. Cross-yaw zero-shot generalization fails robustly."
+  }
+}

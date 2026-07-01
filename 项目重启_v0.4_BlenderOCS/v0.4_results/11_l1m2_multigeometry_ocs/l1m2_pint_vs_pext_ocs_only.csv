@@ -1,0 +1,7 @@
+protocol,geom_group,mode,yaw_cmae_deg,yaw_hit@30,yaw_coarse90
+P-INT,G1,ocs_only,76.56,0.277,0.372
+P-INT,G3,ocs_only,38.22,0.672,0.659
+P-INT,G5,ocs_only,22.77,0.811,0.75
+P-EXT,G1,ocs_only,154.58,0.0,0.0
+P-EXT,G3,ocs_only,146.19,0.081,0.088
+P-EXT,G5,ocs_only,157.25,0.0,0.0

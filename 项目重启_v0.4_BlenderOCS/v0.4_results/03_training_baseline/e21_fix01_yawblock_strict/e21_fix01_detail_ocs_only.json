@@ -1,0 +1,1915 @@
+{
+  "mode": "ocs_only",
+  "n_params": 47725,
+  "max_epochs": 1,
+  "lr": 0.001,
+  "seed": 42,
+  "elapsed_s": 36.08343052864075,
+  "best_epoch": 1,
+  "best_val_avg_acc": 0.019999999552965164,
+  "checkpoint_path": "v0.4_results/03_training_baseline/e21_fix01_yawblock_strict\\checkpoint_ocs_only.pt",
+  "checkpoint_size_mb": 0.5735578536987305,
+  "warnings": [],
+  "final_train_loss": 7.809508822181008,
+  "final_eval": {
+    "val_primary": {
+      "metrics": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.019999999552965164,
+        "yaw_circular_mae_deg": 168.70000839233398,
+        "pitch_mae_deg": 82.20000267028809,
+        "loss": 10.00931453704834,
+        "n_samples": 50
+      },
+      "per_yaw": {
+        "57": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "58": {
+          "n": 13,
+          "acc": 0.0,
+          "circular_mae_deg": 165.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "3": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 165.0
+        },
+        "4": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "5": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 155.0
+        },
+        "6": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 150.0
+        },
+        "7": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "14": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 110.0
+        },
+        "15": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 105.0
+        },
+        "16": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "17": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 95.0
+        },
+        "18": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "19": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 85.0
+        },
+        "20": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 80.0
+        },
+        "21": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "25": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 55.0
+        },
+        "26": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "29": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 35.0
+        },
+        "30": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 30.0
+        },
+        "31": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 1,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 0,
+          "within_1_bin": 0,
+          "within_3_bins": 0,
+          "within_5_bins": 0,
+          "total": 50
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 1,
+          "within_1_bin": 2,
+          "within_3_bins": 4,
+          "within_5_bins": 6,
+          "total": 50
+        }
+      }
+    },
+    "val_random": {
+      "metrics": {
+        "yaw_acc": 0.019999999552965164,
+        "pitch_acc": 0.019999999552965164,
+        "yaw_circular_mae_deg": 89.39999580383301,
+        "pitch_mae_deg": 86.49999618530273,
+        "loss": 8.23638105392456,
+        "n_samples": 50
+      },
+      "per_yaw": {
+        "0": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 95.0
+        },
+        "1": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 90.0
+        },
+        "5": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 70.0
+        },
+        "6": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 65.0
+        },
+        "7": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 60.0
+        },
+        "9": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 50.0
+        },
+        "10": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 45.0
+        },
+        "12": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 35.0
+        },
+        "13": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 30.0
+        },
+        "14": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 25.0
+        },
+        "16": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 15.0
+        },
+        "18": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 5.0
+        },
+        "19": {
+          "n": 1,
+          "acc": 1.0,
+          "circular_mae_deg": 0.0
+        },
+        "21": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 10.0
+        },
+        "23": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 20.0
+        },
+        "24": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 25.0
+        },
+        "25": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 30.0
+        },
+        "27": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 40.0
+        },
+        "30": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 55.0
+        },
+        "32": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 65.0
+        },
+        "33": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 70.0
+        },
+        "36": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 85.0
+        },
+        "37": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 90.0
+        },
+        "39": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 100.0
+        },
+        "40": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 105.0
+        },
+        "42": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "43": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "48": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 145.0
+        },
+        "51": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 160.0
+        },
+        "53": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "56": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 175.0
+        },
+        "57": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "60": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 155.0
+        },
+        "63": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 140.0
+        },
+        "64": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 135.0
+        },
+        "65": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 130.0
+        },
+        "67": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "68": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "69": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 110.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "4": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "7": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 4,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "16": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "18": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "21": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "26": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "31": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 3,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 1,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 1,
+          "within_1_bin": 2,
+          "within_3_bins": 4,
+          "within_5_bins": 7,
+          "total": 50
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 1,
+          "within_1_bin": 3,
+          "within_3_bins": 7,
+          "within_5_bins": 10,
+          "total": 50
+        }
+      }
+    },
+    "val_yaw_block": {
+      "metrics": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.019999999552965164,
+        "yaw_circular_mae_deg": 168.70000839233398,
+        "pitch_mae_deg": 82.20000267028809,
+        "loss": 10.00931453704834,
+        "n_samples": 50
+      },
+      "per_yaw": {
+        "57": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "58": {
+          "n": 13,
+          "acc": 0.0,
+          "circular_mae_deg": 165.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "3": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 165.0
+        },
+        "4": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "5": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 155.0
+        },
+        "6": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 150.0
+        },
+        "7": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "14": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 110.0
+        },
+        "15": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 105.0
+        },
+        "16": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "17": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 95.0
+        },
+        "18": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "19": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 85.0
+        },
+        "20": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 80.0
+        },
+        "21": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "25": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 55.0
+        },
+        "26": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "29": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 35.0
+        },
+        "30": {
+          "n": 2,
+          "acc": 0.0,
+          "mae_deg": 30.0
+        },
+        "31": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 1,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 1,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 0,
+          "within_1_bin": 0,
+          "within_3_bins": 0,
+          "within_5_bins": 0,
+          "total": 50
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 1,
+          "within_1_bin": 2,
+          "within_3_bins": 4,
+          "within_5_bins": 6,
+          "total": 50
+        }
+      }
+    },
+    "test_primary": {
+      "metrics": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.027027027681469917,
+        "yaw_circular_mae_deg": 117.5,
+        "pitch_mae_deg": 90.0,
+        "loss": 10.023205184936524,
+        "n_samples": 296
+      },
+      "per_yaw": {
+        "64": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 135.0
+        },
+        "65": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 130.0
+        },
+        "66": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 125.0
+        },
+        "67": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "68": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "69": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 110.0
+        },
+        "70": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 105.0
+        },
+        "71": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 100.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "3": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 165.0
+        },
+        "4": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "5": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 155.0
+        },
+        "6": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 150.0
+        },
+        "7": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "14": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 110.0
+        },
+        "15": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 105.0
+        },
+        "16": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "17": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 95.0
+        },
+        "18": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "19": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 85.0
+        },
+        "20": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 80.0
+        },
+        "21": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "25": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 55.0
+        },
+        "26": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "29": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 35.0
+        },
+        "30": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 30.0
+        },
+        "31": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 8,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 0,
+          "within_1_bin": 0,
+          "within_3_bins": 0,
+          "within_5_bins": 0,
+          "total": 296
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 8,
+          "within_1_bin": 16,
+          "within_3_bins": 32,
+          "within_5_bins": 48,
+          "total": 296
+        }
+      }
+    },
+    "test_random": {
+      "metrics": {
+        "yaw_acc": 0.01689189113676548,
+        "pitch_acc": 0.027027027681469917,
+        "yaw_circular_mae_deg": 92.65202522277832,
+        "pitch_mae_deg": 90.0,
+        "loss": 8.214943885803223,
+        "n_samples": 296
+      },
+      "per_yaw": {
+        "0": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 95.0
+        },
+        "1": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 90.0
+        },
+        "2": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 85.0
+        },
+        "3": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 80.0
+        },
+        "4": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 75.0
+        },
+        "5": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 70.0
+        },
+        "6": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 65.0
+        },
+        "7": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 60.0
+        },
+        "8": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 55.0
+        },
+        "9": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 50.0
+        },
+        "10": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 45.0
+        },
+        "11": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 40.0
+        },
+        "12": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 35.0
+        },
+        "13": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 30.0
+        },
+        "14": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 25.0
+        },
+        "15": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 20.0
+        },
+        "16": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 15.0
+        },
+        "17": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 10.0
+        },
+        "18": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 5.0
+        },
+        "19": {
+          "n": 5,
+          "acc": 1.0,
+          "circular_mae_deg": 0.0
+        },
+        "20": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 5.0
+        },
+        "21": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 10.0
+        },
+        "22": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 15.0
+        },
+        "23": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 20.0
+        },
+        "24": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 25.0
+        },
+        "25": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 30.0
+        },
+        "26": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 35.0
+        },
+        "27": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 40.0
+        },
+        "28": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 45.0
+        },
+        "29": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 50.0
+        },
+        "30": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 55.0
+        },
+        "31": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 60.0
+        },
+        "32": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 65.0
+        },
+        "33": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 70.0
+        },
+        "34": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 75.0
+        },
+        "35": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 80.0
+        },
+        "36": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 85.0
+        },
+        "37": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 90.0
+        },
+        "38": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 95.0
+        },
+        "39": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 100.0
+        },
+        "40": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 105.0
+        },
+        "41": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 110.0
+        },
+        "42": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "43": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "44": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 125.0
+        },
+        "45": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 130.0
+        },
+        "46": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 135.0
+        },
+        "48": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 145.0
+        },
+        "49": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 150.0
+        },
+        "50": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 155.0
+        },
+        "51": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 160.0
+        },
+        "52": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 165.0
+        },
+        "53": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "54": {
+          "n": 10,
+          "acc": 0.0,
+          "circular_mae_deg": 175.0
+        },
+        "55": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 180.0
+        },
+        "56": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 175.0
+        },
+        "57": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 170.0
+        },
+        "58": {
+          "n": 2,
+          "acc": 0.0,
+          "circular_mae_deg": 165.0
+        },
+        "59": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 160.0
+        },
+        "60": {
+          "n": 5,
+          "acc": 0.0,
+          "circular_mae_deg": 155.0
+        },
+        "61": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 150.0
+        },
+        "62": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 145.0
+        },
+        "63": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 140.0
+        },
+        "64": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 135.0
+        },
+        "65": {
+          "n": 6,
+          "acc": 0.0,
+          "circular_mae_deg": 130.0
+        },
+        "66": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 125.0
+        },
+        "67": {
+          "n": 7,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "68": {
+          "n": 1,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "69": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 110.0
+        },
+        "70": {
+          "n": 3,
+          "acc": 0.0,
+          "circular_mae_deg": 105.0
+        },
+        "71": {
+          "n": 4,
+          "acc": 0.0,
+          "circular_mae_deg": 100.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "3": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 165.0
+        },
+        "4": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "5": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 155.0
+        },
+        "6": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 150.0
+        },
+        "7": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "14": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 110.0
+        },
+        "15": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 105.0
+        },
+        "16": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "17": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 95.0
+        },
+        "18": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "19": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 85.0
+        },
+        "20": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 80.0
+        },
+        "21": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "25": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 55.0
+        },
+        "26": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "29": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 35.0
+        },
+        "30": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 30.0
+        },
+        "31": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 8,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 5,
+          "within_1_bin": 11,
+          "within_3_bins": 24,
+          "within_5_bins": 40,
+          "total": 296
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 8,
+          "within_1_bin": 16,
+          "within_3_bins": 32,
+          "within_5_bins": 48,
+          "total": 296
+        }
+      }
+    },
+    "test_yaw_block": {
+      "metrics": {
+        "yaw_acc": 0.0,
+        "pitch_acc": 0.027027027681469917,
+        "yaw_circular_mae_deg": 117.5,
+        "pitch_mae_deg": 90.0,
+        "loss": 10.023205184936524,
+        "n_samples": 296
+      },
+      "per_yaw": {
+        "64": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 135.0
+        },
+        "65": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 130.0
+        },
+        "66": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 125.0
+        },
+        "67": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 120.0
+        },
+        "68": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 115.0
+        },
+        "69": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 110.0
+        },
+        "70": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 105.0
+        },
+        "71": {
+          "n": 37,
+          "acc": 0.0,
+          "circular_mae_deg": 100.0
+        }
+      },
+      "per_pitch": {
+        "0": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 180.0
+        },
+        "1": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 175.0
+        },
+        "2": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 170.0
+        },
+        "3": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 165.0
+        },
+        "4": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 160.0
+        },
+        "5": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 155.0
+        },
+        "6": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 150.0
+        },
+        "7": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 145.0
+        },
+        "8": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 140.0
+        },
+        "9": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 135.0
+        },
+        "10": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 130.0
+        },
+        "11": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 125.0
+        },
+        "12": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 120.0
+        },
+        "13": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 115.0
+        },
+        "14": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 110.0
+        },
+        "15": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 105.0
+        },
+        "16": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 100.0
+        },
+        "17": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 95.0
+        },
+        "18": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 90.0
+        },
+        "19": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 85.0
+        },
+        "20": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 80.0
+        },
+        "21": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 75.0
+        },
+        "22": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 70.0
+        },
+        "23": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 65.0
+        },
+        "24": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 60.0
+        },
+        "25": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 55.0
+        },
+        "26": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 50.0
+        },
+        "27": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 45.0
+        },
+        "28": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 40.0
+        },
+        "29": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 35.0
+        },
+        "30": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 30.0
+        },
+        "31": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 25.0
+        },
+        "32": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 20.0
+        },
+        "33": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 15.0
+        },
+        "34": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 10.0
+        },
+        "35": {
+          "n": 8,
+          "acc": 0.0,
+          "mae_deg": 5.0
+        },
+        "36": {
+          "n": 8,
+          "acc": 1.0,
+          "mae_deg": 0.0
+        }
+      },
+      "confusion_summary": {
+        "yaw_error_bin_distribution": {
+          "within_0_bins": 0,
+          "within_1_bin": 0,
+          "within_3_bins": 0,
+          "within_5_bins": 0,
+          "total": 296
+        },
+        "pitch_error_bin_distribution": {
+          "within_0_bins": 8,
+          "within_1_bin": 16,
+          "within_3_bins": 32,
+          "within_5_bins": 48,
+          "total": 296
+        }
+      }
+    }
+  },
+  "train_loss_curve": [
+    7.809508822181008
+  ],
+  "val_loss_curves": {
+    "primary": [
+      10.00931453704834
+    ],
+    "random": [
+      8.23638105392456
+    ],
+    "yaw_block": [
+      10.00931453704834
+    ]
+  }
+}

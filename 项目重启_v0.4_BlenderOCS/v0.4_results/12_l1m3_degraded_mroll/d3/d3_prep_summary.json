@@ -1,0 +1,28 @@
+{
+  "task": "R116-D D3/P-DB/conformal preparation + smoke",
+  "n_index_rows": 104,
+  "pdb_smoke": [
+    {
+      "top1_yaw_cmae": 19.12162162162162,
+      "top1_yaw_hit@30": 0.8783783783783784,
+      "top1_pitch_mae": 37.888513513513516,
+      "topk_best_yaw_cmae": 1.8412162162162162,
+      "topk_best_yaw_hit@30": 0.9864864864864865,
+      "similarity": "cosine",
+      "n_template": 2109,
+      "n_query_test": 296
+    },
+    {
+      "top1_yaw_cmae": 8.192567567567568,
+      "top1_yaw_hit@30": 0.9493243243243243,
+      "top1_pitch_mae": 31.95945945945946,
+      "topk_best_yaw_cmae": 0.47297297297297297,
+      "topk_best_yaw_hit@30": 0.9966216216216216,
+      "similarity": "neg_L2",
+      "n_template": 2109,
+      "n_query_test": 296
+    }
+  ],
+  "n_conformal_rows": 6,
+  "note": "posterior-like 是工程候选分数；conformal/P-DB 均为 smoke，非最终置信校准"
+}

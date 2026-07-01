@@ -713,3 +713,146 @@
   keywords  = {photometry, light curves, scintillation, atmospheric turbulence, resident space object, angular velocity},
   relevance = {首次研究大气闪烁噪声对运动 RSO 测光的影响，推导随角速度变化的噪声方差，Airbus Robotic Telescope 实测验证；精准支撑 OCS-noise 实验的真实物理依据}
 }
+
+% ============================================================
+% 2026-06-29 B-1 文献检索补充：光变反演 / 可观测性 / sim-to-real / 置信校准
+% ============================================================
+
+@article{kaasalainen2001_lightcurve_inversion_i,
+  title     = {Optimization Methods for Asteroid Lightcurve Inversion I. Shape Determination},
+  author    = {Kaasalainen, M.},
+  journal   = {Icarus},
+  volume    = {153},
+  number    = {1},
+  pages     = {24--36},
+  year      = {2001},
+  doi       = {10.1006/icar.2001.6673},
+  keywords  = {lightcurve inversion, asteroid, shape determination, photometry},
+  relevance = {光变曲线反演经典源头，支撑单帧光度不足、多几何/时序光度才是主流信息形态的方法背景}
+}
+
+@article{kaasalainen2001_lightcurve_inversion_ii,
+  title     = {Optimization Methods for Asteroid Lightcurve Inversion II. The Complete Inverse Problem},
+  author    = {Kaasalainen, M.},
+  journal   = {Icarus},
+  volume    = {153},
+  number    = {1},
+  pages     = {37--51},
+  year      = {2001},
+  doi       = {10.1006/icar.2001.6674},
+  keywords  = {lightcurve inversion, inverse problem, spin state, photometry},
+  relevance = {完整光变反问题经典源头，支撑可观测性、歧义性和多历元光度反演边界讨论}
+}
+
+@article{wetterer2009_attitude_light_curves,
+  title     = {Attitude Determination from Light Curves},
+  author    = {Wetterer, Charles J. and Jah, Moriba},
+  journal   = {Journal of Guidance, Control, and Dynamics},
+  volume    = {32},
+  number    = {5},
+  pages     = {1648--1651},
+  year      = {2009},
+  doi       = {10.2514/1.44254},
+  keywords  = {space object, light curves, attitude determination, photometry},
+  relevance = {空间目标光变定姿早期关键文献，支撑头B光变曲线而非单帧OCS的方法源头}
+}
+
+@article{linares2014_shape_lightcurve_angles,
+  title     = {Space Object Shape Characterization and Tracking Using Light Curve and Angles Data},
+  author    = {Linares, Richard and Jah, Moriba K. and Crassidis, John L. and Nebelecky, Christopher K.},
+  journal   = {Journal of Guidance, Control, and Dynamics},
+  volume    = {37},
+  number    = {1},
+  pages     = {13--25},
+  year      = {2014},
+  doi       = {10.2514/1.62986},
+  keywords  = {space object characterization, light curve, angles data, shape tracking},
+  relevance = {光变曲线与角度数据融合进行空间目标形状表征和跟踪，支撑SSA多源观测融合背景}
+}
+
+@article{gerwe2003_cramer_rao_orientation,
+  title     = {Cramer-Rao Analysis of Orientation Estimation: Viewing Geometry Influences on the Information Conveyed by Target Features},
+  author    = {Gerwe, David R. and Idell, Paul S.},
+  journal   = {Journal of the Optical Society of America A},
+  volume    = {20},
+  number    = {5},
+  pages     = {797},
+  year      = {2003},
+  doi       = {10.1364/JOSAA.20.000797},
+  keywords  = {orientation estimation, Cramer-Rao bound, viewing geometry, optical features},
+  relevance = {可观测性/信息量理论工具，可用于解释几何视角对姿态估计信息量的影响}
+}
+
+@article{piergentili2017_attitude_lightcurve,
+  title     = {Attitude Determination of Orbiting Objects from Lightcurve Measurements},
+  author    = {Piergentili, Fabrizio and Santoni, Fabio and Seitzer, Patrick},
+  journal   = {IEEE Transactions on Aerospace and Electronic Systems},
+  year      = {2017},
+  doi       = {10.1109/TAES.2017.2649240},
+  keywords  = {orbiting objects, lightcurve measurements, attitude determination},
+  relevance = {轨道目标光变定姿代表性文献，支撑空间目标光度反演的工程背景}
+}
+
+@article{clark2022_rso_light_curves,
+  title     = {Resident Space Object (RSO) Attitude and Optical Property Estimation from Space-Based Light Curves},
+  author    = {Clark, Ryan and Fu, Yanchun and Dave, Siddharth and Lee, Regina S. K.},
+  journal   = {Advances in Space Research},
+  volume    = {70},
+  number    = {11},
+  pages     = {3271--3280},
+  year      = {2022},
+  doi       = {10.1016/j.asr.2022.08.068},
+  keywords  = {resident space object, light curve, attitude estimation, optical properties},
+  relevance = {RSO光变姿态与光学属性联合估计，已下载PDF，可作为光变曲线姿态反演主参考}
+}
+
+@inproceedings{park2022_speedplus,
+  title     = {SPEED+: Next-Generation Dataset for Spacecraft Pose Estimation across Domain Gap},
+  author    = {Park, Tae Ha and Martens, Marcus and Lecuyer, Gurvan and Izzo, Dario and D'Amico, Simone},
+  booktitle = {2022 IEEE Aerospace Conference},
+  year      = {2022},
+  doi       = {10.1109/AERO53065.2022.9843439},
+  keywords  = {spacecraft pose estimation, synthetic data, domain gap, benchmark},
+  relevance = {空间器姿态估计sim-to-real/domain gap基准，支撑v0.4合成基准不可外推真实的红线}
+}
+
+@article{park2024_domain_gap_pose,
+  title     = {Robust Multi-Task Learning and Online Refinement for Spacecraft Pose Estimation across Domain Gap},
+  author    = {Park, Tae Ha and D'Amico, Simone},
+  journal   = {Advances in Space Research},
+  year      = {2024},
+  doi       = {10.1016/j.asr.2023.03.036},
+  keywords  = {spacecraft pose estimation, domain gap, synthetic-to-real, online refinement},
+  relevance = {空间器图像姿态估计跨域差距处理，支撑后续方法改正必须显式考虑sim-to-real}
+}
+
+@article{rondao2022_chinet,
+  title     = {ChiNet: Deep Recurrent Convolutional Learning for Multimodal Spacecraft Pose Estimation},
+  author    = {Rondao, Duarte and Aouf, Nabil and Richardson, Mark A.},
+  journal   = {IEEE Transactions on Aerospace and Electronic Systems},
+  year      = {2022},
+  doi       = {10.1109/TAES.2022.3193085},
+  keywords  = {multimodal spacecraft pose estimation, recurrent convolutional network, fusion},
+  relevance = {空间器多模态/序列姿态估计网络，支撑头B对early concat之外融合结构的检索依据}
+}
+
+@inproceedings{guo2017_calibration_modern_nn,
+  title     = {On Calibration of Modern Neural Networks},
+  author    = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q.},
+  booktitle = {Proceedings of the 34th International Conference on Machine Learning},
+  year      = {2017},
+  eprint    = {1706.04599},
+  archivePrefix = {arXiv},
+  keywords  = {confidence calibration, expected calibration error, neural networks},
+  relevance = {置信校准基础文献，约束exact-bin sentinel不能写成已实现拒识或可信置信机制}
+}
+
+@article{angelopoulos2023_conformal_prediction,
+  title     = {Conformal Prediction: A Gentle Introduction},
+  author    = {Angelopoulos, Anastasios N. and Bates, Stephen},
+  journal   = {Foundations and Trends in Machine Learning},
+  year      = {2023},
+  doi       = {10.1561/2200000101},
+  keywords  = {conformal prediction, uncertainty quantification, distribution-free prediction sets},
+  relevance = {拒识/置信输出后续设计的基础参考；当前未实现时不得用其术语包装现有结果}
+}

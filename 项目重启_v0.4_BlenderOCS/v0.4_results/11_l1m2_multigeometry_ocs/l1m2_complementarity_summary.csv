@@ -1,0 +1,7 @@
+select,geom_group,n_common,ocs_only_hit30,image_only_hit30,joint_hit30,img_only_correct_ocs_wrong,ocs_only_correct_img_wrong,both_correct,both_wrong,joint_minus_best_single_hit30
+final,G1,296,0.2669,0.9628,1.0,0.6993,0.0034,0.2635,0.0338,0.0338
+final,G3,296,0.6351,1.0,1.0,0.3649,0.0,0.6351,0.0,0.0
+final,G5,296,0.8108,0.9966,1.0,0.1858,0.0,0.8108,0.0034,0.0034
+best,G1,296,0.277,1.0,1.0,0.723,0.0,0.277,0.0,0.0
+best,G3,296,0.6723,1.0,1.0,0.3277,0.0,0.6723,0.0,0.0
+best,G5,296,0.8108,0.9932,1.0,0.1892,0.0068,0.8041,0.0,0.0

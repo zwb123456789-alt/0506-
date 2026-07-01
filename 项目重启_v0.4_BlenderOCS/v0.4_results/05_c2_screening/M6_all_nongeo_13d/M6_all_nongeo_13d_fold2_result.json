@@ -1,0 +1,133 @@
+{
+  "task": "1C-E32 C2 OCS-only screening",
+  "config_name": "M6_all_nongeo_13d",
+  "fold_id": 2,
+  "config_id": 13,
+  "claim_class": "mixed OCS+visibility",
+  "feature_keys": [
+    "r_jinshuzhuti",
+    "r_taiyangnengban",
+    "ratio_j_t",
+    "ocs_density_total",
+    "ocs_density_jinshuzhuti",
+    "ocs_density_taiyangnengban",
+    "frac_jinshuzhuti",
+    "frac_taiyangnengban",
+    "visibility_ratio",
+    "log_r_jinshuzhuti",
+    "log_r_taiyangnengban",
+    "log_ratio_j_t",
+    "log_ocs_total"
+  ],
+  "feature_dim": 13,
+  "training_protocol": {
+    "max_epochs": 30,
+    "hidden_dim": 128,
+    "lr": 0.001,
+    "batch_size": 32,
+    "seed": 42,
+    "optimizer": "Adam",
+    "model_type": "MLP_3layer",
+    "n_layers": 3
+  },
+  "split_info": {
+    "split_manifest_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold2.json",
+    "split_method": "circ_yaw_block",
+    "n_train": 1887,
+    "n_val": 259,
+    "n_test": 518
+  },
+  "normalization_params": {
+    "computed_from": "train_split_only",
+    "mean": [
+      0.8703252077102661,
+      0.07476936280727386,
+      46.064456939697266,
+      7.583100796182407e-06,
+      8.286111551569775e-06,
+      6.01687179369037e-06,
+      0.8081828355789185,
+      0.10367752611637115,
+      0.7174296379089355,
+      -0.16149397194385529,
+      -3.3553433418273926,
+      3.193850040435791,
+      -3.686556100845337
+    ],
+    "std": [
+      0.15175840258598328,
+      0.14406374096870422,
+      357.75518798828125,
+      5.767076800111681e-06,
+      6.103282885305816e-06,
+      3.870880846079672e-06,
+      0.19602525234222412,
+      0.1779840588569641,
+      0.18045350909233093,
+      0.2381361573934555,
+      0.9992277026176453,
+      1.1905614137649536,
+      0.46643301844596863
+    ]
+  },
+  "model_info": {
+    "n_params": 32365,
+    "checkpoint_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold2_checkpoint.pt",
+    "checkpoint_size_mb": 0.38595104217529297
+  },
+  "training_summary": {
+    "best_epoch": 23,
+    "best_val_avg_acc": 0.019305018708109856,
+    "final_train_loss": 3.160959627668736,
+    "elapsed_s": 382.0739793777466,
+    "warnings": []
+  },
+  "final_metrics": {
+    "val": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.0154440151527524,
+      "yaw_circular_mae_deg": 154.90347862243652,
+      "pitch_mae_deg": 91.67953491210938,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 4,
+      "yaw_within_1_bin_count": 17,
+      "yaw_within_1_bin_rate": 0.06563706696033478,
+      "yaw_within_3_bins_count": 31,
+      "yaw_within_3_bins_rate": 0.11969111859798431,
+      "yaw_within_5_bins_count": 31,
+      "yaw_within_5_bins_rate": 0.11969111859798431,
+      "pitch_within_1_bin_count": 11,
+      "pitch_within_1_bin_rate": 0.04247104376554489,
+      "pitch_within_3_bins_count": 25,
+      "pitch_within_3_bins_rate": 0.09652509540319443,
+      "pitch_within_5_bins_count": 35,
+      "pitch_within_5_bins_rate": 0.13513512909412384,
+      "loss": 35.23078367445204,
+      "n_samples": 259,
+      "epoch": 30
+    },
+    "test": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.021235521882772446,
+      "yaw_circular_mae_deg": 113.62934112548828,
+      "pitch_mae_deg": 78.87065410614014,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 11,
+      "yaw_within_1_bin_count": 37,
+      "yaw_within_1_bin_rate": 0.0714285746216774,
+      "yaw_within_3_bins_count": 105,
+      "yaw_within_3_bins_rate": 0.20270270109176636,
+      "yaw_within_5_bins_count": 123,
+      "yaw_within_5_bins_rate": 0.2374517321586609,
+      "pitch_within_1_bin_count": 36,
+      "pitch_within_1_bin_rate": 0.06949806958436966,
+      "pitch_within_3_bins_count": 88,
+      "pitch_within_3_bins_rate": 0.16988417506217957,
+      "pitch_within_5_bins_count": 121,
+      "pitch_within_5_bins_rate": 0.2335907369852066,
+      "loss": 37.435105828677905,
+      "n_samples": 518
+    }
+  },
+  "timestamp": "2026-06-26T05:15:46"
+}

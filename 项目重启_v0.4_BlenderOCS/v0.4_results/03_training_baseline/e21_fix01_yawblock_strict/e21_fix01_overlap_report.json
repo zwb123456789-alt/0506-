@@ -1,0 +1,32 @@
+{
+  "train_manifest": {
+    "manifest": "v0.4_results/01_fullrun/postprocess/split_manifest_yaw_block.json",
+    "method": "yaw_block",
+    "train_n": 2109,
+    "val_n": 259,
+    "test_n": 296,
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "train_val_overlap_pct_val": 0.0,
+    "train_test_overlap_pct_test": 0.0,
+    "val_test_overlap_pct_test": 0.0,
+    "is_strict": true
+  },
+  "cross_train_vs_random": {
+    "train_manifest_train ∩ random_train": 1672,
+    "train_manifest_train ∩ random_val": 207,
+    "train_manifest_train ∩ random_test": 230,
+    "train_manifest_all ∩ random_all": 2664,
+    "train_manifest_n_total": 2664,
+    "random_n_total": 2664
+  },
+  "cross_train_vs_yaw_block": {
+    "train_manifest_train ∩ yaw_block_train": 2109,
+    "train_manifest_train ∩ yaw_block_val": 0,
+    "train_manifest_train ∩ yaw_block_test": 0,
+    "train_manifest_all ∩ yaw_block_all": 2664,
+    "train_manifest_n_total": 2664,
+    "yaw_block_n_total": 2664
+  }
+}

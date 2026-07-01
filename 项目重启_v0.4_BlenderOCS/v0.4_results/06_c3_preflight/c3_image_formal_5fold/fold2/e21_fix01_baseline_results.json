@@ -1,0 +1,89 @@
+{
+  "task": "1C-E21 FIX01 controlled baseline training",
+  "protocol": "strict_yaw_block_holdout",
+  "train_manifest": "v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold2.json",
+  "timestamp": "2026-06-26T21:49:53",
+  "config": {
+    "max_epochs": 20,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "modes": [
+      "image_only"
+    ]
+  },
+  "overlap_check": {
+    "train_manifest": {
+      "manifest": "v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold2.json",
+      "method": "circ_yaw_block",
+      "train_n": 1887,
+      "val_n": 259,
+      "test_n": 518,
+      "train_val_overlap": 0,
+      "train_test_overlap": 0,
+      "val_test_overlap": 0,
+      "train_val_overlap_pct_val": 0.0,
+      "train_test_overlap_pct_test": 0.0,
+      "val_test_overlap_pct_test": 0.0,
+      "is_strict": true
+    },
+    "cross_train_vs_random": {
+      "train_manifest_train ∩ random_train": 1493,
+      "train_manifest_train ∩ random_val": 192,
+      "train_manifest_train ∩ random_test": 202,
+      "train_manifest_all ∩ random_all": 2664,
+      "train_manifest_n_total": 2664,
+      "random_n_total": 2664
+    },
+    "cross_train_vs_yaw_block": {
+      "train_manifest_train ∩ yaw_block_train": 1332,
+      "train_manifest_train ∩ yaw_block_val": 259,
+      "train_manifest_train ∩ yaw_block_test": 296,
+      "train_manifest_all ∩ yaw_block_all": 2664,
+      "train_manifest_n_total": 2664,
+      "yaw_block_n_total": 2664
+    }
+  },
+  "summary": {
+    "image_only": {
+      "mode": "image_only",
+      "n_params": 3865613,
+      "elapsed_s": 493.4326775074005,
+      "best_epoch": 18,
+      "best_val_avg_acc": 0.992277979850769,
+      "final_train_loss": 0.2636214023045564,
+      "checkpoint_mb": 44.311686515808105,
+      "warnings": [
+        "primary val_loss significantly larger than train_loss — possible overfit",
+        "random val_loss significantly larger than train_loss — possible overfit",
+        "yaw_block val_loss significantly larger than train_loss — possible overfit"
+      ],
+      "test_metrics": {
+        "test_primary": {
+          "yaw_acc": 0.0,
+          "pitch_acc": 0.15830115973949432,
+          "yaw_circular_mae_deg": 107.86679267883301,
+          "pitch_mae_deg": 56.361002922058105,
+          "loss": 49.60806476368624,
+          "n_samples": 518
+        },
+        "test_random": {
+          "yaw_acc": 0.5,
+          "pitch_acc": 0.6587837934494019,
+          "yaw_circular_mae_deg": 34.358108043670654,
+          "pitch_mae_deg": 16.824324131011963,
+          "loss": 14.971251106262207,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.5608108043670654,
+          "pitch_acc": 0.8817567825317383,
+          "yaw_circular_mae_deg": 10.050675868988037,
+          "pitch_mae_deg": 1.5540540218353271,
+          "loss": 1.453204870223999,
+          "n_samples": 296
+        }
+      }
+    }
+  }
+}

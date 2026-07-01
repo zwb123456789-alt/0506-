@@ -1,0 +1,1059 @@
+============================================================
+1C-E31/E32 C2 OCS-only Screening
+Mode: TRAINING
+Device: cuda (GPU=True, workers=4)
+Output: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\05_c2_screening
+============================================================
+
+Loading feature definitions...
+  Found 13 C2 participant configs
+
+[FIXED PROTOCOL - NO HYPERPARAM SEARCH]
+  max_epochs: 30
+  hidden_dim: 128
+  lr: 0.001
+  batch_size: 32
+  seed: 42
+  optimizer: Adam
+  model_type: MLP_3layer
+  n_layers: 3
+
+[TRAINING MODE]
+Training 13 configs × 5 folds = 65 runs
+
+
+============================================================
+Training: baseline_4dim | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7212 | val_loss=18.8653 yaw_acc=0.0000 pitch_acc=0.0039
+  Epoch 10/30: train_loss=5.2927 | val_loss=20.6326 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=5.0664 | val_loss=20.8755 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=4.8982 | val_loss=20.8320 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.7703 | val_loss=20.5653 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=4.6582 | val_loss=20.3736 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0174 at epoch 16
+  Elapsed: 398.4s
+
+============================================================
+Training: baseline_4dim | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7648 | val_loss=19.3224 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.2901 | val_loss=21.9559 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.0314 | val_loss=23.0155 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.8442 | val_loss=22.8564 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.7017 | val_loss=23.1760 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=4.5965 | val_loss=22.9423 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0135 at epoch 1
+  Elapsed: 419.5s
+
+============================================================
+Training: baseline_4dim | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.6324 | val_loss=19.3525 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.2353 | val_loss=21.7302 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=5.0601 | val_loss=22.2237 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=4.9374 | val_loss=22.2350 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.8295 | val_loss=21.8973 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=4.7574 | val_loss=21.6260 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0212 at epoch 8
+  Elapsed: 434.7s
+
+============================================================
+Training: baseline_4dim | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.8135 | val_loss=68.4453 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.3565 | val_loss=80.9840 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=5.1187 | val_loss=90.3237 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.9705 | val_loss=99.2859 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=4.8362 | val_loss=104.4769 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=4.7498 | val_loss=107.8549 yaw_acc=0.0000 pitch_acc=0.0386
+  Best val avg_acc=0.0193 at epoch 21
+  Elapsed: 419.2s
+
+============================================================
+Training: baseline_4dim | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.5981 | val_loss=18.5048 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.1379 | val_loss=24.0959 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=4.9174 | val_loss=26.7498 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.7877 | val_loss=28.7111 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.6893 | val_loss=29.9353 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.6149 | val_loss=30.4773 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0193 at epoch 4
+  Elapsed: 409.6s
+
+============================================================
+Training: R_ratio_2d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 2
+  Model params: 30,957
+  Epoch  5/30: train_loss=6.4141 | val_loss=15.6522 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.0779 | val_loss=17.4001 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 15/30: train_loss=5.9152 | val_loss=18.1048 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 20/30: train_loss=5.7975 | val_loss=18.1093 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 25/30: train_loss=5.7065 | val_loss=18.4551 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 30/30: train_loss=5.6400 | val_loss=19.0167 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0193 at epoch 14
+  Elapsed: 420.0s
+
+============================================================
+Training: R_ratio_2d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 2
+  Model params: 30,957
+  Epoch  5/30: train_loss=6.4285 | val_loss=17.8842 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.0685 | val_loss=19.6568 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=5.8804 | val_loss=20.9047 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=5.7530 | val_loss=21.4853 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=5.6409 | val_loss=22.0554 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=5.5652 | val_loss=22.4677 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0174 at epoch 28
+  Elapsed: 423.3s
+
+============================================================
+Training: R_ratio_2d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 2
+  Model params: 30,957
+  Epoch  5/30: train_loss=6.4820 | val_loss=15.5581 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=6.1906 | val_loss=17.6123 yaw_acc=0.0000 pitch_acc=0.0039
+  Epoch 15/30: train_loss=6.0495 | val_loss=18.0138 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 20/30: train_loss=5.9478 | val_loss=18.7203 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=5.8475 | val_loss=19.5052 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 30/30: train_loss=5.7780 | val_loss=19.8766 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0193 at epoch 5
+  Elapsed: 422.7s
+
+============================================================
+Training: R_ratio_2d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 2
+  Model params: 30,957
+  Epoch  5/30: train_loss=7.0469 | val_loss=13.2319 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.8451 | val_loss=16.7413 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=6.7263 | val_loss=19.4834 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=6.6081 | val_loss=24.7883 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=6.4942 | val_loss=30.2473 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=6.4037 | val_loss=35.9753 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0212 at epoch 22
+  Elapsed: 418.7s
+
+============================================================
+Training: R_ratio_2d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 2
+  Model params: 30,957
+  Epoch  5/30: train_loss=6.4778 | val_loss=16.8859 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=6.1923 | val_loss=21.3254 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=6.0297 | val_loss=24.7433 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=5.9136 | val_loss=27.6557 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 25/30: train_loss=5.8014 | val_loss=30.1725 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=5.7231 | val_loss=32.0887 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0212 at epoch 6
+  Elapsed: 421.6s
+
+============================================================
+Training: R_ratio_3d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.2689 | val_loss=15.8547 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.9122 | val_loss=17.1122 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 15/30: train_loss=5.7496 | val_loss=17.2613 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 20/30: train_loss=5.6471 | val_loss=17.4928 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 25/30: train_loss=5.5665 | val_loss=18.0858 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=5.5030 | val_loss=18.0087 yaw_acc=0.0000 pitch_acc=0.0039
+  Best val avg_acc=0.0212 at epoch 2
+  Elapsed: 422.4s
+
+============================================================
+Training: R_ratio_3d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.2617 | val_loss=16.5058 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.8436 | val_loss=19.0306 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.6646 | val_loss=19.0471 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=5.5530 | val_loss=19.7094 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 25/30: train_loss=5.4615 | val_loss=20.7157 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=5.3937 | val_loss=21.8088 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0135 at epoch 1
+  Elapsed: 420.5s
+
+============================================================
+Training: R_ratio_3d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4259 | val_loss=15.3893 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.0851 | val_loss=17.6488 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 15/30: train_loss=5.9324 | val_loss=18.7478 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 20/30: train_loss=5.8254 | val_loss=19.4027 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.7426 | val_loss=20.0255 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=5.6611 | val_loss=20.9766 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0232 at epoch 10
+  Elapsed: 422.3s
+
+============================================================
+Training: R_ratio_3d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.5038 | val_loss=69.1019 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=6.2420 | val_loss=83.7828 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 15/30: train_loss=6.0895 | val_loss=92.0551 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 20/30: train_loss=5.9801 | val_loss=101.2028 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.8793 | val_loss=107.9183 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=5.7894 | val_loss=113.1963 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0232 at epoch 10
+  Elapsed: 431.4s
+
+============================================================
+Training: R_ratio_3d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.3141 | val_loss=18.6110 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.9407 | val_loss=22.6222 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.7651 | val_loss=23.9535 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 20/30: train_loss=5.6419 | val_loss=24.2923 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 25/30: train_loss=5.5518 | val_loss=24.1788 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=5.4721 | val_loss=23.8685 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0212 at epoch 6
+  Elapsed: 424.6s
+
+============================================================
+Training: I_interpart_1d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 1
+  Model params: 30,829
+  Epoch  5/30: train_loss=7.5278 | val_loss=11.8768 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=7.3023 | val_loss=12.8474 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=7.1931 | val_loss=13.5980 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 20/30: train_loss=7.1179 | val_loss=14.5850 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 25/30: train_loss=7.0694 | val_loss=15.3677 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=7.0281 | val_loss=15.9647 yaw_acc=0.0000 pitch_acc=0.0116
+  Best val avg_acc=0.0251 at epoch 19
+  Elapsed: 425.0s
+
+============================================================
+Training: I_interpart_1d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 1
+  Model params: 30,829
+  Epoch  5/30: train_loss=7.2776 | val_loss=13.1129 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 10/30: train_loss=7.1248 | val_loss=14.5478 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=7.0606 | val_loss=15.5627 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=7.0207 | val_loss=16.5105 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=6.9802 | val_loss=17.0948 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=6.9487 | val_loss=17.9987 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0212 at epoch 2
+  Elapsed: 432.0s
+
+============================================================
+Training: I_interpart_1d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 1
+  Model params: 30,829
+  Epoch  5/30: train_loss=7.5414 | val_loss=11.8494 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=7.3268 | val_loss=12.8333 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=7.1471 | val_loss=13.9981 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=7.0400 | val_loss=15.1555 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=6.9751 | val_loss=16.0335 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 30/30: train_loss=6.9338 | val_loss=16.5958 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0251 at epoch 17
+  Elapsed: 441.8s
+
+============================================================
+Training: I_interpart_1d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 1
+  Model params: 30,829
+  Epoch  5/30: train_loss=7.5076 | val_loss=11.8319 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=7.2177 | val_loss=12.6558 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=7.0929 | val_loss=13.3978 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 20/30: train_loss=7.0068 | val_loss=14.3223 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 25/30: train_loss=6.9534 | val_loss=14.9963 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=6.9130 | val_loss=15.3964 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0251 at epoch 18
+  Elapsed: 452.8s
+
+============================================================
+Training: I_interpart_1d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 1
+  Model params: 30,829
+  Epoch  5/30: train_loss=7.4952 | val_loss=11.9520 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 10/30: train_loss=7.1835 | val_loss=13.4022 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 15/30: train_loss=7.0719 | val_loss=14.2866 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 20/30: train_loss=6.9916 | val_loss=15.1560 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 25/30: train_loss=6.9340 | val_loss=16.1562 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=6.8764 | val_loss=16.7597 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0174 at epoch 4
+  Elapsed: 443.1s
+
+============================================================
+Training: N_density_3d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4630 | val_loss=16.3529 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 10/30: train_loss=6.1206 | val_loss=18.1219 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 15/30: train_loss=5.8555 | val_loss=19.1930 yaw_acc=0.0000 pitch_acc=0.0579
+  Epoch 20/30: train_loss=5.6578 | val_loss=20.3946 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.5075 | val_loss=20.9126 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=5.3697 | val_loss=21.7463 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0328 at epoch 28
+  Elapsed: 439.8s
+
+============================================================
+Training: N_density_3d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4227 | val_loss=15.5914 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.0608 | val_loss=17.3855 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=5.7913 | val_loss=18.0370 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 20/30: train_loss=5.5360 | val_loss=18.5224 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.3446 | val_loss=19.2778 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=5.2093 | val_loss=19.7537 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0212 at epoch 6
+  Elapsed: 454.6s
+
+============================================================
+Training: N_density_3d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.3326 | val_loss=18.8965 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 10/30: train_loss=5.8676 | val_loss=20.5872 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.5724 | val_loss=21.4086 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=5.3584 | val_loss=21.7605 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 25/30: train_loss=5.2101 | val_loss=22.1313 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 30/30: train_loss=5.0896 | val_loss=22.3522 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0193 at epoch 2
+  Elapsed: 447.3s
+
+============================================================
+Training: N_density_3d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.5521 | val_loss=15.6445 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 10/30: train_loss=6.1975 | val_loss=18.6045 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=5.9839 | val_loss=20.3953 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 20/30: train_loss=5.8173 | val_loss=21.2720 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=5.6881 | val_loss=22.2776 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=5.5698 | val_loss=22.6881 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0270 at epoch 16
+  Elapsed: 441.4s
+
+============================================================
+Training: N_density_3d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.2351 | val_loss=15.6537 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.7128 | val_loss=17.7438 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 15/30: train_loss=5.3145 | val_loss=19.0058 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 20/30: train_loss=5.0802 | val_loss=19.6197 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.9296 | val_loss=19.9876 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=4.7983 | val_loss=20.5696 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0328 at epoch 29
+  Elapsed: 441.9s
+
+============================================================
+Training: L_logratio_3d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4352 | val_loss=14.9644 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 10/30: train_loss=6.0790 | val_loss=16.9029 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 15/30: train_loss=5.9116 | val_loss=17.9090 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 20/30: train_loss=5.7809 | val_loss=18.4220 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 25/30: train_loss=5.6786 | val_loss=19.2445 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=5.5973 | val_loss=19.6255 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0154 at epoch 4
+  Elapsed: 428.5s
+
+============================================================
+Training: L_logratio_3d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4259 | val_loss=17.0691 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.0435 | val_loss=19.9097 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 15/30: train_loss=5.8401 | val_loss=20.8609 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=5.6921 | val_loss=21.8373 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=5.5746 | val_loss=22.3750 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=5.4783 | val_loss=23.3823 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0232 at epoch 23
+  Elapsed: 422.6s
+
+============================================================
+Training: L_logratio_3d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.3889 | val_loss=17.6695 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=6.0874 | val_loss=20.5807 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 15/30: train_loss=5.9244 | val_loss=21.4888 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 20/30: train_loss=5.8120 | val_loss=22.1055 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=5.7295 | val_loss=22.2819 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 30/30: train_loss=5.6551 | val_loss=22.3667 yaw_acc=0.0000 pitch_acc=0.0116
+  Best val avg_acc=0.0135 at epoch 1
+  Elapsed: 426.3s
+
+============================================================
+Training: L_logratio_3d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.9550 | val_loss=11.9342 yaw_acc=0.0000 pitch_acc=0.0618
+  Epoch 10/30: train_loss=6.7879 | val_loss=12.7330 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 15/30: train_loss=6.6903 | val_loss=12.9606 yaw_acc=0.0000 pitch_acc=0.0541
+  Epoch 20/30: train_loss=6.6200 | val_loss=13.6394 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 25/30: train_loss=6.5366 | val_loss=15.2645 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 30/30: train_loss=6.4444 | val_loss=17.6655 yaw_acc=0.0000 pitch_acc=0.0502
+  Best val avg_acc=0.0328 at epoch 8
+  Elapsed: 416.3s
+
+============================================================
+Training: L_logratio_3d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.4265 | val_loss=14.8935 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=6.1246 | val_loss=17.7204 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=5.9517 | val_loss=20.2682 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 20/30: train_loss=5.8250 | val_loss=22.5711 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.7247 | val_loss=25.2809 yaw_acc=0.0000 pitch_acc=0.0618
+  Epoch 30/30: train_loss=5.6334 | val_loss=27.0943 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0328 at epoch 16
+  Elapsed: 420.3s
+
+============================================================
+Training: M1_ratio_log_5d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.3037 | val_loss=15.3524 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=5.9416 | val_loss=17.3379 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 15/30: train_loss=5.7535 | val_loss=17.9960 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=5.6214 | val_loss=18.4445 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 25/30: train_loss=5.5147 | val_loss=19.0686 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=5.4435 | val_loss=19.2802 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0251 at epoch 2
+  Elapsed: 420.1s
+
+============================================================
+Training: M1_ratio_log_5d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.2582 | val_loss=18.0155 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=5.8513 | val_loss=20.3959 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=5.6252 | val_loss=22.3657 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 20/30: train_loss=5.4776 | val_loss=22.8651 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=5.3623 | val_loss=23.8683 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=5.2689 | val_loss=23.7129 yaw_acc=0.0000 pitch_acc=0.0386
+  Best val avg_acc=0.0232 at epoch 8
+  Elapsed: 422.5s
+
+============================================================
+Training: M1_ratio_log_5d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.2886 | val_loss=16.7028 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 10/30: train_loss=5.9689 | val_loss=18.9551 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 15/30: train_loss=5.7815 | val_loss=19.5728 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 20/30: train_loss=5.6598 | val_loss=19.7589 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 25/30: train_loss=5.5603 | val_loss=20.3150 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 30/30: train_loss=5.4847 | val_loss=20.7134 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0116 at epoch 6
+  Elapsed: 421.3s
+
+============================================================
+Training: M1_ratio_log_5d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.9355 | val_loss=12.1196 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=6.7151 | val_loss=14.1009 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=6.5089 | val_loss=19.1891 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 20/30: train_loss=6.3201 | val_loss=27.8883 yaw_acc=0.0000 pitch_acc=0.0579
+  Epoch 25/30: train_loss=6.1614 | val_loss=35.2434 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 30/30: train_loss=6.0648 | val_loss=41.7781 yaw_acc=0.0000 pitch_acc=0.0502
+  Best val avg_acc=0.0328 at epoch 17
+  Elapsed: 425.4s
+
+============================================================
+Training: M1_ratio_log_5d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.3227 | val_loss=16.3458 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 10/30: train_loss=5.9871 | val_loss=20.8624 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=5.7665 | val_loss=24.3065 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=5.6211 | val_loss=27.7406 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 25/30: train_loss=5.5049 | val_loss=30.3004 yaw_acc=0.0000 pitch_acc=0.0541
+  Epoch 30/30: train_loss=5.4214 | val_loss=32.8803 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0270 at epoch 19
+  Elapsed: 426.9s
+
+============================================================
+Training: M3_density_ratio_5d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.7345 | val_loss=17.7914 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 10/30: train_loss=5.2543 | val_loss=20.1346 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 15/30: train_loss=4.9756 | val_loss=21.1907 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.7564 | val_loss=21.9452 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.5664 | val_loss=22.9715 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=4.4192 | val_loss=23.2244 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0154 at epoch 1
+  Elapsed: 418.4s
+
+============================================================
+Training: M3_density_ratio_5d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.6645 | val_loss=18.1672 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 10/30: train_loss=5.1068 | val_loss=21.4365 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 15/30: train_loss=4.7738 | val_loss=22.9791 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 20/30: train_loss=4.5227 | val_loss=23.6562 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.3173 | val_loss=25.0767 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.1372 | val_loss=26.1458 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0232 at epoch 19
+  Elapsed: 416.9s
+
+============================================================
+Training: M3_density_ratio_5d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.6010 | val_loss=20.0642 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 10/30: train_loss=5.1227 | val_loss=22.7711 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=4.8675 | val_loss=24.0242 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.6848 | val_loss=24.7589 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 25/30: train_loss=4.5119 | val_loss=25.5851 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=4.3863 | val_loss=26.4585 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0174 at epoch 6
+  Elapsed: 419.9s
+
+============================================================
+Training: M3_density_ratio_5d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.2313 | val_loss=15.9343 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 10/30: train_loss=5.6826 | val_loss=19.0031 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.3429 | val_loss=21.7963 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=5.1002 | val_loss=24.6874 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.8913 | val_loss=27.2388 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.7228 | val_loss=31.0831 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0270 at epoch 7
+  Elapsed: 424.4s
+
+============================================================
+Training: M3_density_ratio_5d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.4663 | val_loss=18.7756 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 10/30: train_loss=4.9266 | val_loss=23.1965 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=4.6467 | val_loss=26.3993 yaw_acc=0.0000 pitch_acc=0.0541
+  Epoch 20/30: train_loss=4.4428 | val_loss=29.0416 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 25/30: train_loss=4.2778 | val_loss=31.0402 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 30/30: train_loss=4.1413 | val_loss=33.0170 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0309 at epoch 18
+  Elapsed: 419.9s
+
+============================================================
+Training: M4_log_density_ratio_9d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 9
+  Model params: 31,853
+  Epoch  5/30: train_loss=5.4024 | val_loss=18.7633 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=4.7425 | val_loss=22.1000 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=4.3894 | val_loss=23.9086 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 20/30: train_loss=4.1259 | val_loss=25.2361 yaw_acc=0.0000 pitch_acc=0.0618
+  Epoch 25/30: train_loss=3.8875 | val_loss=26.2115 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 30/30: train_loss=3.6922 | val_loss=27.2311 yaw_acc=0.0000 pitch_acc=0.0579
+  Best val avg_acc=0.0328 at epoch 22
+  Elapsed: 391.7s
+
+============================================================
+Training: M4_log_density_ratio_9d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 9
+  Model params: 31,853
+  Epoch  5/30: train_loss=5.2787 | val_loss=20.7131 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=4.5071 | val_loss=25.9808 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=4.0998 | val_loss=28.0891 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=3.8043 | val_loss=30.0350 yaw_acc=0.0000 pitch_acc=0.0463
+  Epoch 25/30: train_loss=3.5567 | val_loss=32.1788 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 30/30: train_loss=3.3327 | val_loss=33.8362 yaw_acc=0.0000 pitch_acc=0.0463
+  Best val avg_acc=0.0309 at epoch 28
+  Elapsed: 377.5s
+
+============================================================
+Training: M4_log_density_ratio_9d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 9
+  Model params: 31,853
+  Epoch  5/30: train_loss=5.1377 | val_loss=22.5585 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=4.4061 | val_loss=28.3789 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=4.0508 | val_loss=31.2985 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 20/30: train_loss=3.8105 | val_loss=32.9685 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=3.6348 | val_loss=34.1102 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=3.4599 | val_loss=36.0109 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0174 at epoch 1
+  Elapsed: 377.3s
+
+============================================================
+Training: M4_log_density_ratio_9d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 9
+  Model params: 31,853
+  Epoch  5/30: train_loss=5.6719 | val_loss=15.5517 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=4.8454 | val_loss=19.1498 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=4.4462 | val_loss=21.2246 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 20/30: train_loss=4.1880 | val_loss=22.3408 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=3.9911 | val_loss=23.8596 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=3.8195 | val_loss=24.9620 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0232 at epoch 22
+  Elapsed: 376.4s
+
+============================================================
+Training: M4_log_density_ratio_9d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 9
+  Model params: 31,853
+  Epoch  5/30: train_loss=5.1260 | val_loss=19.0045 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 10/30: train_loss=4.3263 | val_loss=24.8015 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=3.9354 | val_loss=28.8760 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 20/30: train_loss=3.6865 | val_loss=32.0508 yaw_acc=0.0000 pitch_acc=0.0541
+  Epoch 25/30: train_loss=3.5194 | val_loss=34.6412 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 30/30: train_loss=3.3564 | val_loss=36.2264 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0290 at epoch 29
+  Elapsed: 379.3s
+
+============================================================
+Training: P_pixelfrac_3d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=5.8508 | val_loss=20.2685 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.4525 | val_loss=23.5293 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 15/30: train_loss=5.2327 | val_loss=25.5768 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 20/30: train_loss=5.0724 | val_loss=26.2870 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 25/30: train_loss=4.9401 | val_loss=27.2022 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=4.8078 | val_loss=28.0109 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0154 at epoch 4
+  Elapsed: 377.5s
+
+============================================================
+Training: P_pixelfrac_3d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=5.7075 | val_loss=16.4999 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.2590 | val_loss=20.5190 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.0261 | val_loss=22.3109 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 20/30: train_loss=4.8540 | val_loss=23.4537 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.7058 | val_loss=24.0054 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.5931 | val_loss=25.0009 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0270 at epoch 11
+  Elapsed: 377.0s
+
+============================================================
+Training: P_pixelfrac_3d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=5.8435 | val_loss=15.8060 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=5.4464 | val_loss=17.7704 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.2203 | val_loss=19.0624 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=5.0530 | val_loss=19.9698 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 25/30: train_loss=4.9353 | val_loss=20.3234 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 30/30: train_loss=4.8233 | val_loss=20.8884 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0154 at epoch 14
+  Elapsed: 378.4s
+
+============================================================
+Training: P_pixelfrac_3d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=6.2509 | val_loss=16.0575 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 10/30: train_loss=5.7190 | val_loss=21.9885 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.4653 | val_loss=28.1120 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=5.3083 | val_loss=32.0665 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=5.1869 | val_loss=36.3998 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=5.0784 | val_loss=40.1715 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0193 at epoch 1
+  Elapsed: 378.3s
+
+============================================================
+Training: P_pixelfrac_3d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 3
+  Model params: 31,085
+  Epoch  5/30: train_loss=5.7719 | val_loss=17.7380 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=5.4433 | val_loss=20.7755 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 15/30: train_loss=5.2170 | val_loss=22.8099 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 20/30: train_loss=5.0619 | val_loss=24.0895 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 25/30: train_loss=4.9388 | val_loss=25.0785 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=4.8504 | val_loss=25.9149 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0270 at epoch 17
+  Elapsed: 377.1s
+
+============================================================
+Training: M5_pixelfrac_only_4d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7710 | val_loss=20.8173 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.3362 | val_loss=23.8548 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=5.0848 | val_loss=25.1269 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=4.8936 | val_loss=26.5600 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=4.7542 | val_loss=27.2631 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=4.6191 | val_loss=27.5515 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0135 at epoch 1
+  Elapsed: 375.6s
+
+============================================================
+Training: M5_pixelfrac_only_4d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.6608 | val_loss=17.9138 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.1870 | val_loss=21.4254 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=4.9139 | val_loss=23.3386 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 20/30: train_loss=4.7146 | val_loss=24.7504 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.5659 | val_loss=25.1216 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.4260 | val_loss=25.6158 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0193 at epoch 13
+  Elapsed: 378.8s
+
+============================================================
+Training: M5_pixelfrac_only_4d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7352 | val_loss=15.4157 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.3055 | val_loss=17.5794 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 15/30: train_loss=5.0972 | val_loss=19.2304 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=4.9457 | val_loss=20.0202 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=4.8169 | val_loss=21.0103 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.7128 | val_loss=21.8334 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0212 at epoch 14
+  Elapsed: 380.4s
+
+============================================================
+Training: M5_pixelfrac_only_4d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.6874 | val_loss=104.0313 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.3100 | val_loss=129.2612 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.0850 | val_loss=138.8856 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.8892 | val_loss=149.7646 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.7187 | val_loss=159.3574 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=4.5809 | val_loss=169.3401 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0174 at epoch 8
+  Elapsed: 379.3s
+
+============================================================
+Training: M5_pixelfrac_only_4d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7224 | val_loss=16.9350 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 10/30: train_loss=5.3451 | val_loss=20.2904 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 15/30: train_loss=5.1341 | val_loss=22.0562 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 20/30: train_loss=4.9736 | val_loss=23.5573 yaw_acc=0.0000 pitch_acc=0.0579
+  Epoch 25/30: train_loss=4.8417 | val_loss=25.0510 yaw_acc=0.0000 pitch_acc=0.0502
+  Epoch 30/30: train_loss=4.7434 | val_loss=26.5710 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0309 at epoch 4
+  Elapsed: 382.7s
+
+============================================================
+Training: M2_ratio_pixelfrac_5d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.7527 | val_loss=21.2861 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.2220 | val_loss=24.9416 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=4.9267 | val_loss=26.3809 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=4.7182 | val_loss=27.3841 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.5407 | val_loss=28.4457 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.4174 | val_loss=28.8642 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0154 at epoch 5
+  Elapsed: 377.9s
+
+============================================================
+Training: M2_ratio_pixelfrac_5d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.5919 | val_loss=18.5209 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=4.9947 | val_loss=22.6422 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 15/30: train_loss=4.6807 | val_loss=25.4309 yaw_acc=0.0000 pitch_acc=0.0541
+  Epoch 20/30: train_loss=4.4620 | val_loss=26.5121 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.2944 | val_loss=27.1615 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.1610 | val_loss=27.9807 yaw_acc=0.0000 pitch_acc=0.0541
+  Best val avg_acc=0.0270 at epoch 15
+  Elapsed: 377.1s
+
+============================================================
+Training: M2_ratio_pixelfrac_5d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.7859 | val_loss=16.9007 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 10/30: train_loss=5.2826 | val_loss=19.7739 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 15/30: train_loss=5.0222 | val_loss=21.2649 yaw_acc=0.0000 pitch_acc=0.0154
+  Epoch 20/30: train_loss=4.8423 | val_loss=22.3396 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 25/30: train_loss=4.6868 | val_loss=22.6104 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 30/30: train_loss=4.5532 | val_loss=23.2246 yaw_acc=0.0000 pitch_acc=0.0116
+  Best val avg_acc=0.0135 at epoch 13
+  Elapsed: 378.4s
+
+============================================================
+Training: M2_ratio_pixelfrac_5d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=6.1248 | val_loss=17.5553 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 10/30: train_loss=5.5212 | val_loss=25.5859 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.1984 | val_loss=32.1662 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=5.0039 | val_loss=38.5685 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.8453 | val_loss=42.8414 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.7376 | val_loss=49.2396 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0193 at epoch 5
+  Elapsed: 385.0s
+
+============================================================
+Training: M2_ratio_pixelfrac_5d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 5
+  Model params: 31,341
+  Epoch  5/30: train_loss=5.6793 | val_loss=18.5218 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 10/30: train_loss=5.2286 | val_loss=22.7273 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=4.9342 | val_loss=25.5830 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 20/30: train_loss=4.7377 | val_loss=27.8880 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=4.5723 | val_loss=29.6434 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=4.4509 | val_loss=30.9530 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0309 at epoch 16
+  Elapsed: 379.6s
+
+============================================================
+Training: M6_all_nongeo_13d | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 13
+  Model params: 32,365
+  Epoch  5/30: train_loss=5.2010 | val_loss=21.1672 yaw_acc=0.0000 pitch_acc=0.0000
+  Epoch 10/30: train_loss=4.4645 | val_loss=25.4304 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 15/30: train_loss=4.0681 | val_loss=27.4584 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=3.7168 | val_loss=29.9580 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 25/30: train_loss=3.4581 | val_loss=31.7832 yaw_acc=0.0000 pitch_acc=0.0425
+  Epoch 30/30: train_loss=3.2489 | val_loss=33.6243 yaw_acc=0.0000 pitch_acc=0.0579
+  Best val avg_acc=0.0328 at epoch 28
+  Elapsed: 380.4s
+
+============================================================
+Training: M6_all_nongeo_13d | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 13
+  Model params: 32,365
+  Epoch  5/30: train_loss=5.0511 | val_loss=21.6256 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=4.3076 | val_loss=27.4603 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=3.8985 | val_loss=31.1694 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 20/30: train_loss=3.5904 | val_loss=34.6650 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=3.3480 | val_loss=36.2498 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=3.1432 | val_loss=38.0592 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0212 at epoch 18
+  Elapsed: 381.2s
+
+============================================================
+Training: M6_all_nongeo_13d | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 13
+  Model params: 32,365
+  Epoch  5/30: train_loss=4.9968 | val_loss=22.0247 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 10/30: train_loss=4.2778 | val_loss=27.4873 yaw_acc=0.0000 pitch_acc=0.0077
+  Epoch 15/30: train_loss=3.8685 | val_loss=30.5188 yaw_acc=0.0000 pitch_acc=0.0116
+  Epoch 20/30: train_loss=3.5617 | val_loss=32.9160 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=3.3574 | val_loss=34.4287 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 30/30: train_loss=3.1610 | val_loss=35.2308 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0193 at epoch 23
+  Elapsed: 381.7s
+
+============================================================
+Training: M6_all_nongeo_13d | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 13
+  Model params: 32,365
+  Epoch  5/30: train_loss=5.4388 | val_loss=17.4909 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 10/30: train_loss=4.6268 | val_loss=21.8663 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=4.1805 | val_loss=24.9894 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=3.8238 | val_loss=28.1851 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=3.6017 | val_loss=30.3750 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=3.4049 | val_loss=32.3253 yaw_acc=0.0000 pitch_acc=0.0347
+  Best val avg_acc=0.0232 at epoch 2
+  Elapsed: 383.4s
+
+============================================================
+Training: M6_all_nongeo_13d | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 13
+  Model params: 32,365
+  Epoch  5/30: train_loss=5.0209 | val_loss=18.4931 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=4.2744 | val_loss=24.4852 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=3.8717 | val_loss=28.1663 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 20/30: train_loss=3.5427 | val_loss=31.2842 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 25/30: train_loss=3.3309 | val_loss=34.0213 yaw_acc=0.0000 pitch_acc=0.0386
+  Epoch 30/30: train_loss=3.1415 | val_loss=36.5021 yaw_acc=0.0000 pitch_acc=0.0309
+  Best val avg_acc=0.0270 at epoch 29
+  Elapsed: 380.9s
+
+============================================================
+C2 Screening Complete
+============================================================
+Summary -> D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\05_c2_screening\c2_screening_summary.json
+
+Results Summary:
+  baseline_4dim                  [photometric OCS]
+    val_acc=0.0181±0.0026
+    test_yaw_acc=0.0000±0.0000 | cmae=89.25±33.59deg | within3=0.0816±0.0711
+    test_pitch_acc=0.0256±0.0105
+  R_ratio_2d                     [photometric OCS]
+    val_acc=0.0197±0.0014
+    test_yaw_acc=0.0000±0.0000 | cmae=84.15±32.72deg | within3=0.0631±0.0758
+    test_pitch_acc=0.0256±0.0053
+  R_ratio_3d                     [photometric OCS]
+    val_acc=0.0205±0.0036
+    test_yaw_acc=0.0000±0.0000 | cmae=80.36±31.18deg | within3=0.1045±0.0838
+    test_pitch_acc=0.0262±0.0111
+  I_interpart_1d                 [photometric OCS]
+    val_acc=0.0228±0.0031
+    test_yaw_acc=0.0000±0.0000 | cmae=107.78±17.56deg | within3=0.0275±0.0273
+    test_pitch_acc=0.0269±0.0133
+  N_density_3d                   [photometric OCS]
+    val_acc=0.0266±0.0056
+    test_yaw_acc=0.0000±0.0000 | cmae=120.26±9.32deg | within3=0.0396±0.0273
+    test_pitch_acc=0.0341±0.0155
+  L_logratio_3d                  [photometric OCS]
+    val_acc=0.0236±0.0082
+    test_yaw_acc=0.0000±0.0000 | cmae=83.17±31.41deg | within3=0.0770±0.0792
+    test_pitch_acc=0.0318±0.0039
+  M1_ratio_log_5d                [photometric OCS]
+    val_acc=0.0239±0.0070
+    test_yaw_acc=0.0000±0.0000 | cmae=83.05±30.56deg | within3=0.0783±0.0710
+    test_pitch_acc=0.0307±0.0041
+  M3_density_ratio_5d            [photometric OCS]
+    val_acc=0.0228±0.0058
+    test_yaw_acc=0.0000±0.0000 | cmae=97.47±24.30deg | within3=0.1051±0.0674
+    test_pitch_acc=0.0315±0.0121
+  M4_log_density_ratio_9d        [photometric OCS]
+    val_acc=0.0266±0.0056
+    test_yaw_acc=0.0000±0.0000 | cmae=115.74±28.17deg | within3=0.1205±0.0461
+    test_pitch_acc=0.0437±0.0122
+  P_pixelfrac_3d                 [visibility control]
+    val_acc=0.0208±0.0052
+    test_yaw_acc=0.0000±0.0000 | cmae=98.15±42.20deg | within3=0.1479±0.0733
+    test_pitch_acc=0.0266±0.0069
+  M5_pixelfrac_only_4d           [visibility control]
+    val_acc=0.0205±0.0058
+    test_yaw_acc=0.0000±0.0000 | cmae=95.75±41.24deg | within3=0.1557±0.0676
+    test_pitch_acc=0.0259±0.0044
+  M2_ratio_pixelfrac_5d          [mixed OCS+visibility]
+    val_acc=0.0212±0.0067
+    test_yaw_acc=0.0000±0.0000 | cmae=98.25±40.23deg | within3=0.1474±0.0752
+    test_pitch_acc=0.0323±0.0100
+  M6_all_nongeo_13d              [mixed OCS+visibility]
+    val_acc=0.0247±0.0048
+    test_yaw_acc=0.0000±0.0000 | cmae=107.18±32.16deg | within3=0.1460±0.0447
+    test_pitch_acc=0.0330±0.0133
+
+[DONE] 1C-E32 C2 screening complete.

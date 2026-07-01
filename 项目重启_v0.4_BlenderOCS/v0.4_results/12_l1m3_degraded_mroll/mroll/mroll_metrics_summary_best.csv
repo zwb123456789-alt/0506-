@@ -1,0 +1,11 @@
+geom_group,mode,roll_deg,n,yaw_cmae,yaw_hit@30,yaw_coarse90,pitch_mae,cmae_drift_vs_roll0,hit30_drift_vs_roll0,source
+G1,image_only,0,312,2.346,1.0,0.9455,1.837,,,roll0 baseline (01_fullrun subset)
+G1,image_only,15,312,14.78,0.9359,0.8494,8.84,12.434,-0.0641,mroll +15 (12_l1m3 subset)
+G1,image_only,-15,312,12.323,0.9744,0.8462,15.309,9.977,-0.0256,mroll -15 (12_l1m3 subset)
+G1,image_only,30,312,33.15,0.5481,0.6699,15.457,30.804,-0.4519,mroll +30 (12_l1m3 subset)
+G1,image_only,-30,312,24.452,0.6474,0.7244,31.454,22.106,-0.3526,mroll -30 (12_l1m3 subset)
+G5,image_only,0,312,8.684,0.9904,0.9038,7.195,,,roll0 baseline (01_fullrun subset)
+G5,image_only,15,312,17.533,0.8429,0.8333,16.139,8.85,-0.1474,mroll +15 (12_l1m3 subset)
+G5,image_only,-15,312,19.665,0.8301,0.7532,19.415,10.981,-0.1603,mroll -15 (12_l1m3 subset)
+G5,image_only,30,312,32.99,0.5865,0.6923,20.146,24.307,-0.4038,mroll +30 (12_l1m3 subset)
+G5,image_only,-30,312,28.692,0.5673,0.6955,36.453,20.009,-0.4231,mroll -30 (12_l1m3 subset)

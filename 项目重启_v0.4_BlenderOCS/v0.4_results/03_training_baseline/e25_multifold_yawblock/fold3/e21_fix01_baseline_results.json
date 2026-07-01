@@ -1,0 +1,58 @@
+{
+  "task": "1C-E21 FIX01 controlled baseline training",
+  "protocol": "strict_yaw_block_holdout",
+  "train_manifest": "v0.4_results/03_training_baseline/e25_multifold_yawblock/split_manifest_circ_yawblock_fold3.json",
+  "timestamp": "2026-06-24T23:39:00",
+  "config": {
+    "max_epochs": 20,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "modes": [
+      "image_only"
+    ]
+  },
+  "overlap_check": {},
+  "summary": {
+    "image_only": {
+      "mode": "image_only",
+      "n_params": 3865613,
+      "elapsed_s": 507.0813534259796,
+      "best_epoch": 19,
+      "best_val_avg_acc": 0.9131274223327637,
+      "final_train_loss": 0.09493753231935582,
+      "checkpoint_mb": 44.311686515808105,
+      "warnings": [
+        "primary val_loss significantly larger than train_loss — possible overfit",
+        "random val_loss significantly larger than train_loss — possible overfit",
+        "yaw_block val_loss significantly larger than train_loss — possible overfit"
+      ],
+      "test_metrics": {
+        "test_primary": {
+          "yaw_acc": 0.0,
+          "pitch_acc": 0.18339768052101135,
+          "yaw_circular_mae_deg": 80.6563663482666,
+          "pitch_mae_deg": 35.91698884963989,
+          "loss": 27.42170805089614,
+          "n_samples": 518
+        },
+        "test_random": {
+          "yaw_acc": 0.6891891956329346,
+          "pitch_acc": 0.7668918967247009,
+          "yaw_circular_mae_deg": 24.34121608734131,
+          "pitch_mae_deg": 10.236486196517944,
+          "loss": 9.47865858078003,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.9898648858070374,
+          "pitch_acc": 0.9966216087341309,
+          "yaw_circular_mae_deg": 0.05067567341029644,
+          "pitch_mae_deg": 0.0168918923009187,
+          "loss": 0.07732570692896842,
+          "n_samples": 296
+        }
+      }
+    }
+  }
+}

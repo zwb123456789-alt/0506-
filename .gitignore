@@ -1,6 +1,23 @@
 # 运行产物 - 大文件
 结果/
 
+# Blender/渲染大体积二进制产物（可由代码重新生成，不入库）
+*.exr
+*.npy
+*.npz
+*.pt
+*.pth
+# 逐样本渲染/后处理产物目录
+**/postprocess/
+**/shadow_passes/
+**/runs/
+# 散落的渲染 PNG 忽略，但保留 figures/ 下的成图
+*.png
+!**/figures/**
+
+# 超大批处理日志（>100MB，超 GitHub 单文件上限）
+项目重启_v0.4_BlenderOCS/v0.4_results/11_l1m2_multigeometry_ocs/_l1m2_batch.log
+
 # Python
 __pycache__/
 *.py[cod]

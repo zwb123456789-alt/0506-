@@ -1,0 +1,274 @@
+{
+  "task": "1C-E29 OCS feature extraction — pre-registered definitions",
+  "pre_registered_date": "2026-06-25",
+  "source_manifest": "ocs_manifest_v0_4_fullrun.json",
+  "expected_n_records": 2664,
+  "pre_registered_constants": {
+    "epsilon": 1e-8,
+    "ratio_clip_min": 1e-8,
+    "ratio_clip_max": 1e8,
+    "log_clip_min": -18.4,
+    "log_clip_max": 18.4,
+    "min_pixels": 1,
+    "uniform_prior": 0.3333333333333333,
+    "note": "All constants are pre-registered. No data-driven tuning allowed."
+  },
+  "claim_classes": {
+    "photometric OCS": "Features derived from OCS photometric values. Sub-types: (a) Direct OCS or OCS ratios/logs (baseline/R/I/L groups) — pure photometric, no pixel-count dependency. (b) OCS photometric values normalized by visibility pixel counts (N/M3/M4 groups containing density features) — photometric signal modulated by geometry. Positive results from sub-type (a) can be attributed to pure OCS photometric channel; positive results from sub-type (b) must be described as 'OCS photometric values normalized by visibility pixel counts' and cannot claim independence from visibility information.",
+    "visibility control": "Features derived from pixel-count / visibility fields only. No OCS photometric values. Used to isolate geometry/visibility contribution from photometric contribution. Positive results CANNOT be attributed to OCS photometric channel.",
+    "mixed OCS+visibility": "Features combining photometric OCS and visibility/pixel-count fields. Positive results MUST be decomposed by channel — cannot be attributed to a single channel without additional ablation.",
+    "constant sanity check": "Feature expected to be constant in phase63 fixed-roll data (sun_dir and det_dir are dataset-wide constants). Used only for C1 code self-check. Does NOT participate in C2 evaluation. If output is non-constant, code has a bug."
+  },
+  "raw_feature_fields": [
+    "ocs_total",
+    "ocs_jinshuzhuti",
+    "ocs_taiyangnengban",
+    "ocs_yinshenban",
+    "r_jinshuzhuti",
+    "r_taiyangnengban",
+    "r_yinshenban",
+    "r_valid",
+    "ratio_j_t",
+    "ocs_density_total",
+    "ocs_density_jinshuzhuti",
+    "ocs_density_taiyangnengban",
+    "ocs_density_yinshenban",
+    "frac_jinshuzhuti",
+    "frac_taiyangnengban",
+    "frac_yinshenban",
+    "visibility_ratio",
+    "sun_vis_ratio",
+    "log_r_jinshuzhuti",
+    "log_r_taiyangnengban",
+    "log_ratio_j_t",
+    "log_ocs_total",
+    "log_density_total",
+    "phase_angle_cos"
+  ],
+  "configs": [
+    {
+      "config_id": 1,
+      "config_name": "baseline_4dim",
+      "claim_class": "photometric OCS",
+      "dim": 4,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "ocs_total",
+        "ocs_jinshuzhuti",
+        "ocs_taiyangnengban",
+        "ocs_yinshenban"
+      ],
+      "description": "Baseline: raw 4-dim integrated OCS. Control reference for all other configs."
+    },
+    {
+      "config_id": 2,
+      "config_name": "R_ratio_2d",
+      "claim_class": "photometric OCS",
+      "dim": 2,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "description": "Per-part/total ratios for two main parts. Scale-invariant. Excludes yinshenban (near-zero OCS)."
+    },
+    {
+      "config_id": 3,
+      "config_name": "R_ratio_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "r_yinshenban"
+      ],
+      "description": "Per-part/total ratios for all three parts. Includes yinshenban (may be near-constant)."
+    },
+    {
+      "config_id": 4,
+      "config_name": "I_interpart_1d",
+      "claim_class": "photometric OCS",
+      "dim": 1,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "ratio_j_t"
+      ],
+      "description": "Inter-part OCS ratio: jinshuzhuti / taiyangnengban. Eliminates total as intermediate variable."
+    },
+    {
+      "config_id": 5,
+      "config_name": "N_density_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban"
+      ],
+      "description": "Per-pixel average OCS (OCS photometric values normalized by visibility pixel counts). Positive results represent photometric signal modulated by geometry, not pure photometric-only evidence."
+    },
+    {
+      "config_id": 6,
+      "config_name": "L_logratio_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "description": "Log-stabilized ratios. Compresses dynamic range, symmetrizes ratios."
+    },
+    {
+      "config_id": 7,
+      "config_name": "M1_ratio_log_5d",
+      "claim_class": "photometric OCS",
+      "dim": 5,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "description": "Compact combination: raw ratios + log-stabilized ratios."
+    },
+    {
+      "config_id": 8,
+      "config_name": "M3_density_ratio_5d",
+      "claim_class": "photometric OCS",
+      "dim": 5,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "description": "Compact combination: per-pixel densities (visibility-normalized) + raw ratios. Includes OCS photometric values normalized by visibility pixel counts."
+    },
+    {
+      "config_id": 9,
+      "config_name": "M4_log_density_ratio_9d",
+      "claim_class": "photometric OCS",
+      "dim": 9,
+      "c2_participant": true,
+      "group": "A",
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "description": "Extended combination: log features + density features + raw ratios. Includes OCS photometric values normalized by visibility pixel counts; positive results must not be claimed as pure photometric-only evidence."
+    },
+    {
+      "config_id": 10,
+      "config_name": "P_pixelfrac_3d",
+      "claim_class": "visibility control",
+      "dim": 3,
+      "c2_participant": true,
+      "group": "B",
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "description": "Pure visibility/pixel-fraction features. Zero OCS photometric information. Tests whether geometry alone enables cross-yaw generalization."
+    },
+    {
+      "config_id": 11,
+      "config_name": "M5_pixelfrac_only_4d",
+      "claim_class": "visibility control",
+      "dim": 4,
+      "c2_participant": true,
+      "group": "B",
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "frac_yinshenban",
+        "visibility_ratio"
+      ],
+      "description": "Extended visibility-only. Includes yinshenban fraction. Pure geometry control."
+    },
+    {
+      "config_id": 12,
+      "config_name": "M2_ratio_pixelfrac_5d",
+      "claim_class": "mixed OCS+visibility",
+      "dim": 5,
+      "c2_participant": true,
+      "group": "C",
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "description": "Mixed: photometric OCS ratios + visibility pixel fractions. If positive, requires decomposition of OCS vs visibility contribution."
+    },
+    {
+      "config_id": 13,
+      "config_name": "M6_all_nongeo_13d",
+      "claim_class": "mixed OCS+visibility",
+      "dim": 13,
+      "c2_participant": true,
+      "group": "C",
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "ratio_j_t",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total"
+      ],
+      "description": "Maximum non-geometric information. Combines all photometric OCS derived features + visibility features. Highest dimension (13). Risk of overfitting for OCS-only MLP on ~1850 training samples."
+    },
+    {
+      "config_id": 14,
+      "config_name": "constant_check_1d",
+      "claim_class": "constant sanity check",
+      "dim": 1,
+      "c2_participant": false,
+      "group": "D",
+      "feature_keys": [
+        "phase_angle_cos"
+      ],
+      "description": "Constant sanity check. phase_angle_cos = dot(sun_dir, det_dir). EXPECTED CONSTANT in phase63 fixed-roll data (sun_dir and det_dir are dataset-wide constants). If output is non-constant, the feature extraction code has a bug. Does NOT participate in C2 evaluation."
+    }
+  ],
+  "sanity_check_expected": {
+    "check_name": "constant_check_1d",
+    "expected_is_constant": true,
+    "expected_unique_values": 1,
+    "pass_message": "PASS: phase_angle_cos is constant (as expected in phase63 fixed-roll).",
+    "fail_message": "WARNING: phase_angle_cos has >1 unique values. Expected constant. Check sun_dir/det_dir extraction logic."
+  },
+  "c2_exclusion_configs": ["constant_check_1d"],
+  "c2_evaluation_note": "Only configs with c2_participant=true (config_id 1-13) participate in C2 screening. constant_check_1d is excluded from C2 evaluation — it is only for C1 code self-check."
+}

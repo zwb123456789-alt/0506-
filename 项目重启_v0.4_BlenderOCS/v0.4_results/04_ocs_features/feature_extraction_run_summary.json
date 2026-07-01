@@ -1,0 +1,234 @@
+{
+  "task": "1C-E29 OCS feature extraction — runtime summary",
+  "execution_date": "2026-06-25",
+  "source_manifest": "ocs_manifest_v0_4_fullrun.json",
+  "source_manifest_full_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\01_fullrun\\postprocess\\ocs_manifest_v0_4_fullrun.json",
+  "n_records": 2664,
+  "expected_n_records": 2664,
+  "record_count_match": true,
+  "record_id_unique": true,
+  "record_id_count": 2664,
+  "raw_feature_fields": [
+    "ocs_total",
+    "ocs_jinshuzhuti",
+    "ocs_taiyangnengban",
+    "ocs_yinshenban",
+    "r_jinshuzhuti",
+    "r_taiyangnengban",
+    "r_yinshenban",
+    "r_valid",
+    "ratio_j_t",
+    "ocs_density_total",
+    "ocs_density_jinshuzhuti",
+    "ocs_density_taiyangnengban",
+    "ocs_density_yinshenban",
+    "frac_jinshuzhuti",
+    "frac_taiyangnengban",
+    "frac_yinshenban",
+    "visibility_ratio",
+    "sun_vis_ratio",
+    "log_r_jinshuzhuti",
+    "log_r_taiyangnengban",
+    "log_ratio_j_t",
+    "log_ocs_total",
+    "log_density_total",
+    "phase_angle_cos"
+  ],
+  "sanity_check": {
+    "is_constant": true,
+    "unique_values": 1,
+    "value": 0.4522487223148346,
+    "message": "PASS: phase_angle_cos is constant (as expected in phase63 fixed-roll)."
+  },
+  "configs_summary": [
+    {
+      "config_name": "baseline_4dim",
+      "claim_class": "photometric OCS",
+      "dim": 4,
+      "feature_keys": [
+        "ocs_total",
+        "ocs_jinshuzhuti",
+        "ocs_taiyangnengban",
+        "ocs_yinshenban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "R_ratio_2d",
+      "claim_class": "photometric OCS",
+      "dim": 2,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "R_ratio_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "r_yinshenban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "I_interpart_1d",
+      "claim_class": "photometric OCS",
+      "dim": 1,
+      "feature_keys": [
+        "ratio_j_t"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "N_density_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "L_logratio_3d",
+      "claim_class": "photometric OCS",
+      "dim": 3,
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M1_ratio_log_5d",
+      "claim_class": "photometric OCS",
+      "dim": 5,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M3_density_ratio_5d",
+      "claim_class": "photometric OCS",
+      "dim": 5,
+      "feature_keys": [
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M4_log_density_ratio_9d",
+      "claim_class": "photometric OCS",
+      "dim": 9,
+      "feature_keys": [
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "r_jinshuzhuti",
+        "r_taiyangnengban"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "P_pixelfrac_3d",
+      "claim_class": "visibility control",
+      "dim": 3,
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M5_pixelfrac_only_4d",
+      "claim_class": "visibility control",
+      "dim": 4,
+      "feature_keys": [
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "frac_yinshenban",
+        "visibility_ratio"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M2_ratio_pixelfrac_5d",
+      "claim_class": "mixed OCS+visibility",
+      "dim": 5,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "M6_all_nongeo_13d",
+      "claim_class": "mixed OCS+visibility",
+      "dim": 13,
+      "feature_keys": [
+        "r_jinshuzhuti",
+        "r_taiyangnengban",
+        "ratio_j_t",
+        "ocs_density_total",
+        "ocs_density_jinshuzhuti",
+        "ocs_density_taiyangnengban",
+        "frac_jinshuzhuti",
+        "frac_taiyangnengban",
+        "visibility_ratio",
+        "log_r_jinshuzhuti",
+        "log_r_taiyangnengban",
+        "log_ratio_j_t",
+        "log_ocs_total"
+      ],
+      "c2_participant": true,
+      "n_records": 2664
+    },
+    {
+      "config_name": "constant_check_1d",
+      "claim_class": "constant sanity check",
+      "dim": 1,
+      "feature_keys": [
+        "phase_angle_cos"
+      ],
+      "c2_participant": false,
+      "n_records": 2664
+    }
+  ],
+  "npz_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\04_ocs_features\\enhanced_ocs_features.npz",
+  "pre_registered_definitions_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\04_ocs_features\\feature_definitions.json"
+}

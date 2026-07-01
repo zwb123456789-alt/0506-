@@ -1,0 +1,85 @@
+{
+  "task": "1C-E21 FIX01 controlled baseline training",
+  "protocol": "strict_yaw_block_holdout",
+  "train_manifest": "v0.4_results/01_fullrun/postprocess/split_manifest_yaw_block.json",
+  "timestamp": "2026-06-24T22:10:34",
+  "config": {
+    "max_epochs": 1,
+    "lr": 0.001,
+    "seed": 42,
+    "device": "cuda",
+    "modes": [
+      "ocs_only"
+    ]
+  },
+  "overlap_check": {
+    "train_manifest": {
+      "manifest": "v0.4_results/01_fullrun/postprocess/split_manifest_yaw_block.json",
+      "method": "yaw_block",
+      "train_n": 2109,
+      "val_n": 259,
+      "test_n": 296,
+      "train_val_overlap": 0,
+      "train_test_overlap": 0,
+      "val_test_overlap": 0,
+      "train_val_overlap_pct_val": 0.0,
+      "train_test_overlap_pct_test": 0.0,
+      "val_test_overlap_pct_test": 0.0,
+      "is_strict": true
+    },
+    "cross_train_vs_random": {
+      "train_manifest_train ∩ random_train": 1672,
+      "train_manifest_train ∩ random_val": 207,
+      "train_manifest_train ∩ random_test": 230,
+      "train_manifest_all ∩ random_all": 2664,
+      "train_manifest_n_total": 2664,
+      "random_n_total": 2664
+    },
+    "cross_train_vs_yaw_block": {
+      "train_manifest_train ∩ yaw_block_train": 2109,
+      "train_manifest_train ∩ yaw_block_val": 0,
+      "train_manifest_train ∩ yaw_block_test": 0,
+      "train_manifest_all ∩ yaw_block_all": 2664,
+      "train_manifest_n_total": 2664,
+      "yaw_block_n_total": 2664
+    }
+  },
+  "summary": {
+    "ocs_only": {
+      "mode": "ocs_only",
+      "n_params": 47725,
+      "elapsed_s": 36.08343052864075,
+      "best_epoch": 1,
+      "best_val_avg_acc": 0.019999999552965164,
+      "final_train_loss": 7.809508822181008,
+      "checkpoint_mb": 0.5735578536987305,
+      "warnings": [],
+      "test_metrics": {
+        "test_primary": {
+          "yaw_acc": 0.0,
+          "pitch_acc": 0.027027027681469917,
+          "yaw_circular_mae_deg": 117.5,
+          "pitch_mae_deg": 90.0,
+          "loss": 10.023205184936524,
+          "n_samples": 296
+        },
+        "test_random": {
+          "yaw_acc": 0.01689189113676548,
+          "pitch_acc": 0.027027027681469917,
+          "yaw_circular_mae_deg": 92.65202522277832,
+          "pitch_mae_deg": 90.0,
+          "loss": 8.214943885803223,
+          "n_samples": 296
+        },
+        "test_yaw_block": {
+          "yaw_acc": 0.0,
+          "pitch_acc": 0.027027027681469917,
+          "yaw_circular_mae_deg": 117.5,
+          "pitch_mae_deg": 90.0,
+          "loss": 10.023205184936524,
+          "n_samples": 296
+        }
+      }
+    }
+  }
+}

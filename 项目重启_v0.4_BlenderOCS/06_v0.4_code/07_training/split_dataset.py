@@ -116,6 +116,60 @@ def split_yaw_block(table, train_ratio=0.8, val_ratio=0.1):
     return train, val, test
 
 
+def split_circ_yaw_block(table, n_folds=5, fold=0, val_size=7):
+    """
+    k-fold circular yaw_block split (E24/E25)。
+
+    将全部 72 个 yaw bin 在圆上等距分布为 k 个 test 窗口，每折 test
+    窗口互斥、合计覆盖全部 yaw bin。val 取 test 窗口低 yaw 侧相邻的
+    val_size 个 yaw bin。train 为其余 yaw bin。
+
+    Args:
+        table: record 列表
+        n_folds: 折数 (default 5)
+        fold: 当前折编号 (0..n_folds-1)
+        val_size: val yaw bin 数 (default 7)
+
+    Returns:
+        (train, val, test) 三个 record 列表
+    """
+    yaw_sorted = sorted(set(r["yaw_idx"] for r in table))  # 0..71
+    n_yaw = len(yaw_sorted)
+
+    if n_yaw != 72:
+        raise ValueError(f"Expected 72 yaw bins, got {n_yaw}")
+
+    # 每折 test bin 分配：尽量均匀，前 (n_yaw % n_folds) 折多 1 个
+    test_sizes = [n_yaw // n_folds + (1 if i < n_yaw % n_folds else 0)
+                  for i in range(n_folds)]
+
+    # Fold 的 test 起始 bin
+    start_bin = sum(test_sizes[:fold]) % n_yaw
+    end_bin = (start_bin + test_sizes[fold]) % n_yaw
+
+    # 构建 test yaw bin 集合 (circular)
+    if end_bin > start_bin:
+        test_bins = set(range(start_bin, end_bin))
+    else:
+        test_bins = set(range(start_bin, n_yaw)) | set(range(0, end_bin))
+
+    # val yaw bin 集合: test 窗口低 yaw 侧相邻 val_size 个 bin (circular)
+    val_start = (start_bin - val_size) % n_yaw
+    if val_start < start_bin:
+        val_bins = set(range(val_start, start_bin))
+    else:
+        val_bins = set(range(val_start, n_yaw)) | set(range(0, start_bin))
+
+    train_bins = set(yaw_sorted) - test_bins - val_bins
+
+    # 按 yaw_idx 筛选
+    train = [r for r in table if r["yaw_idx"] in train_bins]
+    val = [r for r in table if r["yaw_idx"] in val_bins]
+    test = [r for r in table if r["yaw_idx"] in test_bins]
+
+    return train, val, test
+
+
 def compute_split_stats(train, val, test):
     """计算各切分的分布统计"""
     def stats(recs, name):
@@ -168,24 +222,43 @@ def build_split_manifest(train, val, test, method, seed, stats_list):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="1C-E19 数据切分")
-    parser.add_argument("--method", choices=["random", "yaw_block"], default="random",
-                        help="切分方法 (default: random)")
+    parser = argparse.ArgumentParser(description="1C-E19/E25 数据切分")
+    parser.add_argument("--method", choices=["random", "yaw_block", "circ_yaw_block"],
+                        default="random",
+                        help="切分方法 (default: random; E25: circ_yaw_block)")
     parser.add_argument("--seed", type=int, default=42, help="随机种子 (default: 42)")
     parser.add_argument("--train-ratio", type=float, default=0.8)
     parser.add_argument("--val-ratio", type=float, default=0.1)
+    parser.add_argument("--n-folds", type=int, default=5,
+                        help="circ_yaw_block 折数 (default: 5)")
+    parser.add_argument("--fold", type=int, default=0,
+                        help="circ_yaw_block 当前折编号 0..n_folds-1")
     parser.add_argument("--output", type=str, default=str(SPLIT_OUTPUT_PATH))
     args = parser.parse_args()
 
-    assert args.train_ratio + args.val_ratio < 1.0, \
-        "train_ratio + val_ratio must be < 1.0"
+    if args.method == "circ_yaw_block":
+        is_circ = True
+        out_dir = (RESULTS_DIR.parents[1] / "03_training_baseline"
+                   / "e25_multifold_yawblock")
+        os.makedirs(out_dir, exist_ok=True)
+        output_path = str(
+            out_dir / f"split_manifest_circ_yawblock_fold{args.fold}.json"
+        )
+    else:
+        is_circ = False
+        assert args.train_ratio + args.val_ratio < 1.0, \
+            "train_ratio + val_ratio must be < 1.0"
+        output_path = args.output
 
     print("=" * 60)
-    print("1C-E19 数据切分脚本")
+    print("1C-E19/E25 数据切分脚本")
     print(f"方法: {args.method}")
-    print(f"种子: {args.seed}")
-    print(f"比例: train={args.train_ratio}, val={args.val_ratio}, "
-          f"test={1 - args.train_ratio - args.val_ratio:.2f}")
+    if is_circ:
+        print(f"折数: {args.n_folds}, 当前折: {args.fold}")
+    else:
+        print(f"种子: {args.seed}")
+        print(f"比例: train={args.train_ratio}, val={args.val_ratio}, "
+              f"test={1 - args.train_ratio - args.val_ratio:.2f}")
     print("=" * 60)
 
     # 加载
@@ -199,9 +272,11 @@ def main():
     if args.method == "random":
         train, val, test = split_random(table, args.train_ratio,
                                         args.val_ratio, args.seed)
-    else:
+    elif args.method == "yaw_block":
         train, val, test = split_yaw_block(table, args.train_ratio,
                                            args.val_ratio)
+    else:  # circ_yaw_block
+        train, val, test = split_circ_yaw_block(table, args.n_folds, args.fold)
 
     print(f"\n[SPLIT] train: {len(train)}")
     print(f"[SPLIT] val:   {len(val)}")
@@ -222,11 +297,11 @@ def main():
     # 输出
     manifest = build_split_manifest(train, val, test, args.method,
                                     args.seed, stats_list)
-    os.makedirs(os.path.dirname(args.output), exist_ok=True)
-    with open(args.output, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
 
-    print(f"\n[DONE] Split manifest -> {args.output}")
+    print(f"\n[DONE] Split manifest -> {output_path}")
     print(f"[DONE] 总切分数: {manifest['n_total']}")
 
 

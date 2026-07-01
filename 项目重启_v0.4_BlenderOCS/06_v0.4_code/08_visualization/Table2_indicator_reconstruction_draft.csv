@@ -1,0 +1,8 @@
+﻿Indicator,Chance,C2 OCS-only (65-run mean),C2 SEM,C3 image_only (5-fold mean),C3 image_only SEM,C3 joint (5-fold mean),C3 joint SEM,Random split reference
+exact-bin yaw_acc,1.39%,0.00%,0.00%,0.00%,0.00%,0.00%,0.00%,approx. 65-70%
+yaw CMAE (deg),90.0 deg,97.0,4.2,81.4,11.0,81.4,9.6,n/a
+yaw within-3,9.72%,9.96%,0.96%,17.12%,2.00%,17.74%,1.29%,n/a
+yaw within-6,18.06%,18.89%,1.72%,25.57%,3.55%,26.51%,3.83%,n/a
+yaw coarse45,12.50%,14.53%,1.75%,17.96%,5.29%,18.16%,5.64%,n/a
+pitch exact,2.70%,3.03%,0.14%,21.20%,2.44%,19.42%,2.75%,n/a
+pitch within-3,18.92%,17.75%,0.52%,56.07%,6.48%,51.77%,5.96%,n/a

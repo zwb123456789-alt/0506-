@@ -1,0 +1,158 @@
+=== B6 fold0 formal matrix start Tue Jun 30 08:53:41     2026 ===
+
+########## RUN mode=image_only aug=none ##########
+============================================================
+1C-B6 circular regression | image_only_fold0_aug-none
+manifest: split_manifest_circ_yawblock_fold0.json
+device=cuda params=3,838,628 aug=none
+train/val/test = 1850/259/555
+============================================================
+  ep 1/20 loss=0.8417 grad=1.24 | val_yaw_cmae=125.6 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 2/20 loss=0.6550 grad=1.80 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 3/20 loss=0.2969 grad=1.52 | val_yaw_cmae=98.0 hit@10=0.000 pitch_mae=35.8 yaw_exact=0.000
+  ep 4/20 loss=0.1778 grad=1.13 | val_yaw_cmae=131.0 hit@10=0.000 pitch_mae=53.2 yaw_exact=0.000
+  ep 5/20 loss=0.1526 grad=1.97 | val_yaw_cmae=114.9 hit@10=0.000 pitch_mae=63.0 yaw_exact=0.000
+  ep 6/20 loss=0.1299 grad=1.42 | val_yaw_cmae=123.3 hit@10=0.000 pitch_mae=35.7 yaw_exact=0.000
+  ep 7/20 loss=0.1650 grad=1.31 | val_yaw_cmae=87.5 hit@10=0.000 pitch_mae=77.7 yaw_exact=0.000
+  ep 8/20 loss=0.1056 grad=0.81 | val_yaw_cmae=80.3 hit@10=0.000 pitch_mae=33.8 yaw_exact=0.000
+  ep 9/20 loss=0.0751 grad=0.33 | val_yaw_cmae=76.0 hit@10=0.000 pitch_mae=23.9 yaw_exact=0.000
+  ep10/20 loss=0.0908 grad=0.60 | val_yaw_cmae=65.1 hit@10=0.000 pitch_mae=26.0 yaw_exact=0.000
+  ep11/20 loss=0.0913 grad=0.41 | val_yaw_cmae=69.7 hit@10=0.000 pitch_mae=16.6 yaw_exact=0.000
+  ep12/20 loss=0.1081 grad=1.14 | val_yaw_cmae=91.3 hit@10=0.000 pitch_mae=30.9 yaw_exact=0.000
+  ep13/20 loss=0.0866 grad=0.60 | val_yaw_cmae=84.1 hit@10=0.000 pitch_mae=63.7 yaw_exact=0.000
+  ep14/20 loss=0.0963 grad=0.46 | val_yaw_cmae=60.3 hit@10=0.000 pitch_mae=20.2 yaw_exact=0.000
+  ep15/20 loss=0.1126 grad=0.80 | val_yaw_cmae=57.6 hit@10=0.000 pitch_mae=20.7 yaw_exact=0.000
+  ep16/20 loss=0.0721 grad=0.43 | val_yaw_cmae=76.8 hit@10=0.000 pitch_mae=22.4 yaw_exact=0.000
+  ep17/20 loss=0.0589 grad=0.29 | val_yaw_cmae=63.7 hit@10=0.000 pitch_mae=21.6 yaw_exact=0.000
+  ep18/20 loss=0.0704 grad=0.25 | val_yaw_cmae=53.5 hit@10=0.062 pitch_mae=19.5 yaw_exact=0.008
+  ep19/20 loss=0.1023 grad=0.59 | val_yaw_cmae=44.4 hit@10=0.062 pitch_mae=39.6 yaw_exact=0.000
+  ep20/20 loss=0.0684 grad=0.35 | val_yaw_cmae=48.3 hit@10=0.000 pitch_mae=20.7 yaw_exact=0.000
+
+[TEST] yaw_cmae=96.25deg hit@10=0.088 hit@30=0.277 coarse90=0.270 yaw_exact=0.014 | pitch_mae=14.89
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\10_b6_circular_regression\image_only_fold0_aug-none
+
+########## RUN mode=joint aug=none ##########
+============================================================
+1C-B6 circular regression | joint_fold0_aug-none
+manifest: split_manifest_circ_yawblock_fold0.json
+device=cuda params=3,872,804 aug=none
+train/val/test = 1850/259/555
+============================================================
+  ep 1/20 loss=0.7243 grad=3.53 | val_yaw_cmae=152.8 hit@10=0.000 pitch_mae=46.6 yaw_exact=0.000
+  ep 2/20 loss=0.3246 grad=2.94 | val_yaw_cmae=74.7 hit@10=0.000 pitch_mae=30.3 yaw_exact=0.000
+  ep 3/20 loss=0.2196 grad=1.99 | val_yaw_cmae=134.7 hit@10=0.027 pitch_mae=51.5 yaw_exact=0.000
+  ep 4/20 loss=0.1607 grad=1.45 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=57.0 yaw_exact=0.000
+  ep 5/20 loss=0.1196 grad=0.83 | val_yaw_cmae=111.2 hit@10=0.000 pitch_mae=54.2 yaw_exact=0.000
+  ep 6/20 loss=0.1198 grad=1.31 | val_yaw_cmae=114.2 hit@10=0.000 pitch_mae=81.7 yaw_exact=0.000
+  ep 7/20 loss=0.1118 grad=1.06 | val_yaw_cmae=62.8 hit@10=0.000 pitch_mae=18.9 yaw_exact=0.000
+  ep 8/20 loss=0.1093 grad=1.46 | val_yaw_cmae=114.7 hit@10=0.000 pitch_mae=78.1 yaw_exact=0.000
+  ep 9/20 loss=0.1055 grad=0.86 | val_yaw_cmae=109.4 hit@10=0.000 pitch_mae=80.2 yaw_exact=0.000
+  ep10/20 loss=0.0718 grad=0.79 | val_yaw_cmae=70.1 hit@10=0.000 pitch_mae=21.3 yaw_exact=0.000
+  ep11/20 loss=0.0677 grad=0.60 | val_yaw_cmae=65.6 hit@10=0.000 pitch_mae=17.1 yaw_exact=0.000
+  ep12/20 loss=0.0661 grad=0.68 | val_yaw_cmae=59.7 hit@10=0.023 pitch_mae=16.2 yaw_exact=0.000
+  ep13/20 loss=0.1119 grad=1.17 | val_yaw_cmae=107.6 hit@10=0.000 pitch_mae=76.0 yaw_exact=0.000
+  ep14/20 loss=0.0640 grad=0.56 | val_yaw_cmae=112.7 hit@10=0.000 pitch_mae=61.6 yaw_exact=0.000
+  ep15/20 loss=0.0531 grad=0.69 | val_yaw_cmae=69.8 hit@10=0.000 pitch_mae=16.8 yaw_exact=0.000
+  ep16/20 loss=0.0565 grad=0.88 | val_yaw_cmae=105.6 hit@10=0.000 pitch_mae=68.2 yaw_exact=0.000
+  ep17/20 loss=0.0429 grad=0.74 | val_yaw_cmae=57.8 hit@10=0.000 pitch_mae=16.7 yaw_exact=0.000
+  ep18/20 loss=0.0314 grad=0.68 | val_yaw_cmae=47.5 hit@10=0.019 pitch_mae=13.8 yaw_exact=0.000
+  ep19/20 loss=0.0231 grad=0.69 | val_yaw_cmae=47.2 hit@10=0.012 pitch_mae=13.0 yaw_exact=0.000
+  ep20/20 loss=0.0241 grad=0.71 | val_yaw_cmae=48.7 hit@10=0.008 pitch_mae=15.3 yaw_exact=0.000
+
+[TEST] yaw_cmae=99.63deg hit@10=0.072 hit@30=0.234 coarse90=0.276 yaw_exact=0.020 | pitch_mae=15.70
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\10_b6_circular_regression\joint_fold0_aug-none
+
+########## RUN mode=ocs_only aug=none ##########
+============================================================
+1C-B6 circular regression | ocs_only_fold0_aug-none
+manifest: split_manifest_circ_yawblock_fold0.json
+device=cuda params=34,180 aug=none
+train/val/test = 1850/259/555
+============================================================
+  ep 1/20 loss=0.4683 grad=0.40 | val_yaw_cmae=152.0 hit@10=0.000 pitch_mae=46.4 yaw_exact=0.000
+  ep 2/20 loss=0.4447 grad=0.24 | val_yaw_cmae=138.7 hit@10=0.000 pitch_mae=46.3 yaw_exact=0.000
+  ep 3/20 loss=0.4445 grad=0.26 | val_yaw_cmae=140.2 hit@10=0.000 pitch_mae=46.5 yaw_exact=0.000
+  ep 4/20 loss=0.4442 grad=0.24 | val_yaw_cmae=133.9 hit@10=0.000 pitch_mae=46.5 yaw_exact=0.000
+  ep 5/20 loss=0.4421 grad=0.21 | val_yaw_cmae=152.2 hit@10=0.000 pitch_mae=46.4 yaw_exact=0.000
+  ep 6/20 loss=0.4437 grad=0.22 | val_yaw_cmae=140.2 hit@10=0.000 pitch_mae=46.3 yaw_exact=0.000
+  ep 7/20 loss=0.4428 grad=0.21 | val_yaw_cmae=147.6 hit@10=0.000 pitch_mae=46.3 yaw_exact=0.000
+  ep 8/20 loss=0.4435 grad=0.22 | val_yaw_cmae=149.0 hit@10=0.000 pitch_mae=46.3 yaw_exact=0.000
+  ep 9/20 loss=0.4424 grad=0.20 | val_yaw_cmae=140.2 hit@10=0.000 pitch_mae=46.3 yaw_exact=0.000
+  ep10/20 loss=0.4416 grad=0.23 | val_yaw_cmae=137.3 hit@10=0.000 pitch_mae=46.4 yaw_exact=0.000
+  ep11/20 loss=0.4411 grad=0.21 | val_yaw_cmae=151.2 hit@10=0.000 pitch_mae=46.4 yaw_exact=0.000
+  ep12/20 loss=0.4399 grad=0.24 | val_yaw_cmae=153.2 hit@10=0.000 pitch_mae=46.7 yaw_exact=0.000
+  ep13/20 loss=0.4386 grad=0.26 | val_yaw_cmae=146.7 hit@10=0.000 pitch_mae=46.7 yaw_exact=0.000
+  ep14/20 loss=0.4364 grad=0.40 | val_yaw_cmae=140.2 hit@10=0.000 pitch_mae=47.0 yaw_exact=0.000
+  ep15/20 loss=0.4300 grad=0.43 | val_yaw_cmae=166.2 hit@10=0.000 pitch_mae=46.7 yaw_exact=0.000
+  ep16/20 loss=0.4192 grad=0.85 | val_yaw_cmae=169.7 hit@10=0.000 pitch_mae=47.0 yaw_exact=0.000
+  ep17/20 loss=0.4015 grad=1.27 | val_yaw_cmae=168.6 hit@10=0.000 pitch_mae=47.1 yaw_exact=0.000
+  ep18/20 loss=0.3825 grad=2.01 | val_yaw_cmae=167.1 hit@10=0.000 pitch_mae=46.9 yaw_exact=0.000
+  ep19/20 loss=0.3681 grad=2.40 | val_yaw_cmae=146.1 hit@10=0.000 pitch_mae=47.2 yaw_exact=0.000
+  ep20/20 loss=0.3592 grad=2.92 | val_yaw_cmae=154.6 hit@10=0.000 pitch_mae=47.0 yaw_exact=0.000
+
+[TEST] yaw_cmae=112.06deg hit@10=0.000 hit@30=0.000 coarse90=0.000 yaw_exact=0.000 | pitch_mae=46.34
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\10_b6_circular_regression\ocs_only_fold0_aug-none
+
+########## RUN mode=image_only aug=standard ##########
+============================================================
+1C-B6 circular regression | image_only_fold0_aug-standard
+manifest: split_manifest_circ_yawblock_fold0.json
+device=cuda params=3,838,628 aug=standard
+train/val/test = 1850/259/555
+============================================================
+  ep 1/20 loss=0.8615 grad=0.90 | val_yaw_cmae=115.5 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 2/20 loss=0.7984 grad=1.22 | val_yaw_cmae=121.2 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 3/20 loss=0.4037 grad=1.94 | val_yaw_cmae=143.5 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 4/20 loss=0.2379 grad=1.33 | val_yaw_cmae=155.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 5/20 loss=0.1618 grad=1.22 | val_yaw_cmae=116.3 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 6/20 loss=0.1786 grad=1.03 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=61.4 yaw_exact=0.000
+  ep 7/20 loss=0.1226 grad=1.30 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=60.0 yaw_exact=0.000
+  ep 8/20 loss=0.0892 grad=0.70 | val_yaw_cmae=147.1 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 9/20 loss=0.0790 grad=0.99 | val_yaw_cmae=149.3 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep10/20 loss=0.0828 grad=0.60 | val_yaw_cmae=145.5 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep11/20 loss=0.0764 grad=0.62 | val_yaw_cmae=149.4 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep12/20 loss=0.1067 grad=0.66 | val_yaw_cmae=68.2 hit@10=0.000 pitch_mae=20.6 yaw_exact=0.000
+  ep13/20 loss=0.1439 grad=0.98 | val_yaw_cmae=155.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep14/20 loss=0.1054 grad=0.71 | val_yaw_cmae=149.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep15/20 loss=0.0841 grad=0.79 | val_yaw_cmae=149.8 hit@10=0.000 pitch_mae=48.5 yaw_exact=0.000
+  ep16/20 loss=0.0694 grad=0.63 | val_yaw_cmae=147.4 hit@10=0.000 pitch_mae=51.9 yaw_exact=0.000
+  ep17/20 loss=0.0621 grad=0.43 | val_yaw_cmae=150.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep18/20 loss=0.0692 grad=0.49 | val_yaw_cmae=146.9 hit@10=0.000 pitch_mae=57.3 yaw_exact=0.000
+  ep19/20 loss=0.0501 grad=0.55 | val_yaw_cmae=147.6 hit@10=0.000 pitch_mae=52.9 yaw_exact=0.000
+  ep20/20 loss=0.0411 grad=0.27 | val_yaw_cmae=150.0 hit@10=0.000 pitch_mae=54.2 yaw_exact=0.000
+
+[TEST] yaw_cmae=148.24deg hit@10=0.000 hit@30=0.000 coarse90=0.000 yaw_exact=0.000 | pitch_mae=54.67
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\10_b6_circular_regression\image_only_fold0_aug-standard
+
+########## RUN mode=joint aug=standard ##########
+============================================================
+1C-B6 circular regression | joint_fold0_aug-standard
+manifest: split_manifest_circ_yawblock_fold0.json
+device=cuda params=3,872,804 aug=standard
+train/val/test = 1850/259/555
+============================================================
+  ep 1/20 loss=0.7149 grad=3.14 | val_yaw_cmae=151.9 hit@10=0.000 pitch_mae=57.7 yaw_exact=0.000
+  ep 2/20 loss=0.3368 grad=2.50 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=43.3 yaw_exact=0.000
+  ep 3/20 loss=0.2124 grad=1.63 | val_yaw_cmae=71.6 hit@10=0.046 pitch_mae=57.1 yaw_exact=0.000
+  ep 4/20 loss=0.1573 grad=1.23 | val_yaw_cmae=117.4 hit@10=0.000 pitch_mae=44.4 yaw_exact=0.000
+  ep 5/20 loss=0.1477 grad=1.15 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=83.4 yaw_exact=0.000
+  ep 6/20 loss=0.1731 grad=1.44 | val_yaw_cmae=102.8 hit@10=0.039 pitch_mae=57.2 yaw_exact=0.000
+  ep 7/20 loss=0.1106 grad=0.91 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=56.0 yaw_exact=0.000
+  ep 8/20 loss=0.1251 grad=1.20 | val_yaw_cmae=144.5 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep 9/20 loss=0.0993 grad=0.83 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=54.5 yaw_exact=0.000
+  ep10/20 loss=0.0935 grad=1.09 | val_yaw_cmae=144.1 hit@10=0.000 pitch_mae=38.0 yaw_exact=0.000
+  ep11/20 loss=0.0903 grad=0.91 | val_yaw_cmae=155.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep12/20 loss=0.1154 grad=0.82 | val_yaw_cmae=115.4 hit@10=0.000 pitch_mae=78.9 yaw_exact=0.000
+  ep13/20 loss=0.0821 grad=0.68 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=50.3 yaw_exact=0.000
+  ep14/20 loss=0.0700 grad=0.50 | val_yaw_cmae=135.6 hit@10=0.000 pitch_mae=57.1 yaw_exact=0.000
+  ep15/20 loss=0.0505 grad=0.64 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=57.2 yaw_exact=0.000
+  ep16/20 loss=0.0723 grad=0.84 | val_yaw_cmae=119.1 hit@10=0.000 pitch_mae=57.0 yaw_exact=0.000
+  ep17/20 loss=0.0610 grad=0.48 | val_yaw_cmae=119.1 hit@10=0.000 pitch_mae=55.9 yaw_exact=0.000
+  ep18/20 loss=0.0425 grad=0.43 | val_yaw_cmae=115.1 hit@10=0.000 pitch_mae=56.8 yaw_exact=0.000
+  ep19/20 loss=0.0440 grad=0.34 | val_yaw_cmae=116.4 hit@10=0.000 pitch_mae=56.8 yaw_exact=0.000
+  ep20/20 loss=0.0370 grad=0.41 | val_yaw_cmae=115.0 hit@10=0.000 pitch_mae=53.5 yaw_exact=0.000
+
+[TEST] yaw_cmae=160.00deg hit@10=0.000 hit@30=0.000 coarse90=0.000 yaw_exact=0.000 | pitch_mae=57.01
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\10_b6_circular_regression\joint_fold0_aug-standard
+
+=== B6 fold0 formal matrix done Tue Jun 30 09:16:56     2026 ===

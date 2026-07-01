@@ -1,0 +1,133 @@
+{
+  "task": "1C-E32 C2 OCS-only screening",
+  "config_name": "M6_all_nongeo_13d",
+  "fold_id": 3,
+  "config_id": 13,
+  "claim_class": "mixed OCS+visibility",
+  "feature_keys": [
+    "r_jinshuzhuti",
+    "r_taiyangnengban",
+    "ratio_j_t",
+    "ocs_density_total",
+    "ocs_density_jinshuzhuti",
+    "ocs_density_taiyangnengban",
+    "frac_jinshuzhuti",
+    "frac_taiyangnengban",
+    "visibility_ratio",
+    "log_r_jinshuzhuti",
+    "log_r_taiyangnengban",
+    "log_ratio_j_t",
+    "log_ocs_total"
+  ],
+  "feature_dim": 13,
+  "training_protocol": {
+    "max_epochs": 30,
+    "hidden_dim": 128,
+    "lr": 0.001,
+    "batch_size": 32,
+    "seed": 42,
+    "optimizer": "Adam",
+    "model_type": "MLP_3layer",
+    "n_layers": 3
+  },
+  "split_info": {
+    "split_manifest_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\03_training_baseline\\e25_multifold_yawblock\\split_manifest_circ_yawblock_fold3.json",
+    "split_method": "circ_yaw_block",
+    "n_train": 1887,
+    "n_val": 259,
+    "n_test": 518
+  },
+  "normalization_params": {
+    "computed_from": "train_split_only",
+    "mean": [
+      0.8716505765914917,
+      0.11787796020507812,
+      39.112396240234375,
+      8.019146662263665e-06,
+      8.505116056767292e-06,
+      5.8826572058023885e-06,
+      0.8245043754577637,
+      0.15376126766204834,
+      0.6875125765800476,
+      -0.17972585558891296,
+      -3.007356882095337,
+      2.8276333808898926,
+      -3.735407829284668
+    ],
+    "std": [
+      0.19224821031093597,
+      0.19212138652801514,
+      345.2112731933594,
+      7.322383680730127e-06,
+      7.722922418906819e-06,
+      3.8454559216916095e-06,
+      0.2170373797416687,
+      0.2164134979248047,
+      0.19601915776729584,
+      0.3384096622467041,
+      1.1925740242004395,
+      1.4848730564117432,
+      0.48474571108818054
+    ]
+  },
+  "model_info": {
+    "n_params": 32365,
+    "checkpoint_path": "D:\\我的文件\\研究生学术\\光学项目\\0506新\\项目重启_v0.4_BlenderOCS\\v0.4_results\\05_c2_screening\\M6_all_nongeo_13d\\M6_all_nongeo_13d_fold3_checkpoint.pt",
+    "checkpoint_size_mb": 0.38595104217529297
+  },
+  "training_summary": {
+    "best_epoch": 2,
+    "best_val_avg_acc": 0.023166023194789886,
+    "final_train_loss": 3.4048606217917747,
+    "elapsed_s": 383.5956904888153,
+    "warnings": []
+  },
+  "final_metrics": {
+    "val": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.03474903479218483,
+      "yaw_circular_mae_deg": 100.94594955444336,
+      "pitch_mae_deg": 61.254825592041016,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 9,
+      "yaw_within_1_bin_count": 0,
+      "yaw_within_1_bin_rate": 0.0,
+      "yaw_within_3_bins_count": 0,
+      "yaw_within_3_bins_rate": 0.0,
+      "yaw_within_5_bins_count": 0,
+      "yaw_within_5_bins_rate": 0.0,
+      "pitch_within_1_bin_count": 20,
+      "pitch_within_1_bin_rate": 0.07722007483243942,
+      "pitch_within_3_bins_count": 46,
+      "pitch_within_3_bins_rate": 0.17760618031024933,
+      "pitch_within_5_bins_count": 76,
+      "pitch_within_5_bins_rate": 0.29343628883361816,
+      "loss": 32.32527944776747,
+      "n_samples": 259,
+      "epoch": 30
+    },
+    "test": {
+      "yaw_acc": 0.0,
+      "pitch_acc": 0.025096524506807327,
+      "yaw_circular_mae_deg": 70.22200584411621,
+      "pitch_mae_deg": 64.78764533996582,
+      "yaw_correct_count": 0,
+      "pitch_correct_count": 13,
+      "yaw_within_1_bin_count": 35,
+      "yaw_within_1_bin_rate": 0.06756756454706192,
+      "yaw_within_3_bins_count": 96,
+      "yaw_within_3_bins_rate": 0.1853281855583191,
+      "yaw_within_5_bins_count": 137,
+      "yaw_within_5_bins_rate": 0.26447877287864685,
+      "pitch_within_1_bin_count": 42,
+      "pitch_within_1_bin_rate": 0.0810810774564743,
+      "pitch_within_3_bins_count": 72,
+      "pitch_within_3_bins_rate": 0.13899613916873932,
+      "pitch_within_5_bins_count": 114,
+      "pitch_within_5_bins_rate": 0.22007721662521362,
+      "loss": 27.399887982536764,
+      "n_samples": 518
+    }
+  },
+  "timestamp": "2026-06-26T05:22:16"
+}

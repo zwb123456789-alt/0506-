@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 """
 train_baseline.py —— 1C-E21: 受控 baseline 训练与评估
+                   + 1C-E21-FIX01: 严格 yaw_block holdout 支持
 
 训练 ocs_only / image_only / joint 三模式 baseline。
-训练数据使用 random split，评估同时覆盖 random split 和 yaw_block split。
 
-使用：
+E21 原始用法（random train）：
     python train_baseline.py --train --mode ocs_only --max-epochs 20
-    python train_baseline.py --train --mode image_only --max-epochs 20
-    python train_baseline.py --train --mode joint --max-epochs 20
     python train_baseline.py --train --mode all --max-epochs 20
+
+FIX01 严格 yaw_block 用法：
+    python train_baseline.py --train --mode all --max-epochs 20 \
+        --train-split-manifest <yaw_block_manifest> \
+        --eval-random-manifest <random_manifest> \
+        --outdir <fix01_outdir>
 
 红线：
     - 必须传 --train 才启动训练
@@ -51,6 +55,10 @@ DEFAULT_SPLIT_YAWB = str(
 DEFAULT_OUTDIR = str(
     PROJECT_ROOT / "v0.4_results" / "03_training_baseline"
     / "e21_controlled_baseline"
+)
+DEFAULT_OUTDIR_FIX01 = str(
+    PROJECT_ROOT / "v0.4_results" / "03_training_baseline"
+    / "e21_fix01_yawblock_strict"
 )
 
 MAX_EPOCHS_HARD = 30
@@ -237,6 +245,96 @@ def confusion_summary(yaw_logits, pitch_logits, yaw_true, pitch_true,
 
 
 # ═══════════════════════════════════════════════════════
+# 数据 overlap 检查 (FIX01)
+# ═══════════════════════════════════════════════════════
+
+def check_record_overlap(manifest_path):
+    """检查一个 manifest 内 train/val/test 的 record_id 重叠。
+
+    Args:
+        manifest_path: split manifest JSON 路径
+
+    Returns:
+        dict: overlap 统计，包含 is_strict 布尔值
+    """
+    with open(manifest_path, "r", encoding="utf-8") as f:
+        manifest = json.load(f)
+
+    train_ids = set(r["record_id"] for r in manifest.get("train", []))
+    val_ids = set(r["record_id"] for r in manifest.get("val", []))
+    test_ids = set(r["record_id"] for r in manifest.get("test", []))
+
+    train_val = len(train_ids & val_ids)
+    train_test = len(train_ids & test_ids)
+    val_test = len(val_ids & test_ids)
+
+    result = {
+        "manifest": manifest_path,
+        "method": manifest.get("method", "unknown"),
+        "train_n": len(train_ids),
+        "val_n": len(val_ids),
+        "test_n": len(test_ids),
+        "train_val_overlap": train_val,
+        "train_test_overlap": train_test,
+        "val_test_overlap": val_test,
+        "train_val_overlap_pct_val": train_val / max(len(val_ids), 1),
+        "train_test_overlap_pct_test": train_test / max(len(test_ids), 1),
+        "val_test_overlap_pct_test": val_test / max(len(test_ids), 1),
+        "is_strict": (train_val == 0 and train_test == 0 and val_test == 0),
+    }
+    return result
+
+
+def check_cross_manifest_overlap(manifest_a, manifest_b, label_a="A", label_b="B"):
+    """检查两个 manifest 之间的 record_id 重叠。
+
+    Returns:
+        dict: 交叉重叠统计
+    """
+    with open(manifest_a, "r", encoding="utf-8") as f:
+        a = json.load(f)
+    with open(manifest_b, "r", encoding="utf-8") as f:
+        b = json.load(f)
+
+    a_all = set(r["record_id"] for r in (a.get("train", []) + a.get("val", []) + a.get("test", [])))
+    b_all = set(r["record_id"] for r in (b.get("train", []) + b.get("val", []) + b.get("test", [])))
+
+    # 重点是：manifest A 的 train 与 manifest B 各 split 的重叠
+    a_train_ids = set(r["record_id"] for r in a.get("train", []))
+    b_train_ids = set(r["record_id"] for r in b.get("train", []))
+    b_val_ids = set(r["record_id"] for r in b.get("val", []))
+    b_test_ids = set(r["record_id"] for r in b.get("test", []))
+
+    return {
+        f"{label_a}_train ∩ {label_b}_train": len(a_train_ids & b_train_ids),
+        f"{label_a}_train ∩ {label_b}_val": len(a_train_ids & b_val_ids),
+        f"{label_a}_train ∩ {label_b}_test": len(a_train_ids & b_test_ids),
+        f"{label_a}_all ∩ {label_b}_all": len(a_all & b_all),
+        f"{label_a}_n_total": len(a_all),
+        f"{label_b}_n_total": len(b_all),
+    }
+
+
+def print_overlap_report(overlap):
+    """Pretty-print overlap 检查结果"""
+    print(f"\n{'='*50}")
+    print(f"Record-ID Overlap Check: {overlap['manifest']}")
+    print(f"  Method: {overlap['method']}")
+    print(f"  Train: {overlap['train_n']}, Val: {overlap['val_n']}, Test: {overlap['test_n']}")
+    print(f"  Train & Val:  {overlap['train_val_overlap']} "
+          f"({overlap['train_val_overlap_pct_val']*100:.1f}% of val)")
+    print(f"  Train & Test: {overlap['train_test_overlap']} "
+          f"({overlap['train_test_overlap_pct_test']*100:.1f}% of test)")
+    print(f"  Val & Test:   {overlap['val_test_overlap']} "
+          f"({overlap['val_test_overlap_pct_test']*100:.1f}% of test)")
+    if overlap["is_strict"]:
+        print(f"  [PASS] STRICT: train/val/test 无重叠。")
+    else:
+        print(f"  [FAIL] NON-STRICT: 存在重叠！不可作为严格 holdout 泛化证据。")
+    print(f"{'='*50}\n")
+
+
+# ═══════════════════════════════════════════════════════
 # 训练与评估
 # ═══════════════════════════════════════════════════════
 
@@ -318,7 +416,7 @@ def train_one_epoch(model, loader, optimizer, crit_yaw, crit_pitch, device):
 
 
 def run_training(mode, train_ds, val_loaders, test_loaders, device,
-                 max_epochs, lr, seed, outdir):
+                 max_epochs, lr, seed, outdir, num_workers=4, pin_memory=True):
     """完整训练流程"""
     print(f"\n{'='*60}")
     print(f"Training: {mode}")
@@ -333,7 +431,8 @@ def run_training(mode, train_ds, val_loaders, test_loaders, device,
     n_params = sum(p.numel() for p in model.parameters())
     print(f"Parameters: {n_params:,}")
 
-    train_loader = DataLoader(train_ds, batch_size=32, shuffle=True, num_workers=0)
+    train_loader = DataLoader(train_ds, batch_size=32, shuffle=True,
+                               num_workers=num_workers, pin_memory=pin_memory)
     optimizer = optim.Adam(model.parameters(), lr=lr)
     crit_yaw = nn.CrossEntropyLoss()
     crit_pitch = nn.CrossEntropyLoss()
@@ -439,7 +538,10 @@ def make_infinite(val_ds, max_n=200):
 # ═══════════════════════════════════════════════════════
 
 def main():
-    parser = argparse.ArgumentParser(description="1C-E21 受控 baseline 训练")
+    parser = argparse.ArgumentParser(
+        description="1C-E21 / FIX01 受控 baseline 训练与评估",
+        epilog="FIX01: 使用 --train-split-manifest 指定训练用 manifest 以进行严格 holdout 评估。"
+    )
     parser.add_argument("--train", action="store_true",
                         help="[REQUIRED] 显式放行训练")
     parser.add_argument("--mode", type=str, default="all",
@@ -447,12 +549,28 @@ def main():
     parser.add_argument("--max-epochs", type=int, default=20)
     parser.add_argument("--lr", type=float, default=1e-3)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--split-random", type=str, default=DEFAULT_SPLIT_RANDOM)
-    parser.add_argument("--split-yawb", type=str, default=DEFAULT_SPLIT_YAWB)
-    parser.add_argument("--outdir", type=str, default=DEFAULT_OUTDIR)
-    parser.add_argument("--device", type=str, default="cpu")
+    parser.add_argument("--split-random", type=str, default=DEFAULT_SPLIT_RANDOM,
+                        help="Random split manifest（E21 默认训练源）")
+    parser.add_argument("--split-yawb", type=str, default=DEFAULT_SPLIT_YAWB,
+                        help="Yaw_block split manifest（E21 补充评估）")
+    parser.add_argument("--train-split-manifest", type=str, default=None,
+                        help="[FIX01] 训练用 split manifest。指定后，train/val/test "
+                             "均使用此 manifest，实现严格 holdout。")
+    parser.add_argument("--eval-random-manifest", type=str, default=None,
+                        help="[FIX01] 额外评估用 random split manifest")
+    parser.add_argument("--eval-yaw-block-manifest", type=str, default=None,
+                        help="[FIX01] 额外评估用 yaw_block split manifest")
+    parser.add_argument("--outdir", type=str, default=None,
+                        help="输出目录（默认：E21 -> e21_controlled_baseline；"
+                             "FIX01 -> e21_fix01_yawblock_strict）")
+    parser.add_argument("--device", type=str, default="auto",
+                        help="设备：auto（自动检测GPU）/ cpu / cuda")
     parser.add_argument("--val-max", type=int, default=500,
                         help="Val/test subset max size (0=full)")
+    parser.add_argument("--num-workers", type=int, default=4,
+                        help="DataLoader worker 数 (0=单线程, 建议 4-8)")
+    parser.add_argument("--skip-overlap-check", action="store_true",
+                        help="跳过 record_id overlap 检查")
     args = parser.parse_args()
 
     if not args.train:
@@ -462,49 +580,146 @@ def main():
         print(f"[BLOCKED] --max-epochs={args.max_epochs} > {MAX_EPOCHS_HARD}")
         sys.exit(1)
 
-    device = torch.device(args.device if torch.cuda.is_available() else "cpu")
+    # ── 设备选择 ──
+    if args.device == "auto":
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    else:
+        device = torch.device(args.device)
+    use_gpu = (device.type == "cuda")
+    num_workers = args.num_workers if use_gpu else min(args.num_workers, 0)
+    pin_memory = use_gpu
+
     modes = ["ocs_only", "image_only", "joint"] if args.mode == "all" else [args.mode]
 
-    print(f"1C-E21 Controlled Baseline Training")
+    # ── 确定训练协议：FIX01 还是 E21 ──
+    is_fix01 = args.train_split_manifest is not None
+
+    # 自动选择输出目录
+    if args.outdir is None:
+        args.outdir = DEFAULT_OUTDIR_FIX01 if is_fix01 else DEFAULT_OUTDIR
+
+    train_manifest = args.train_split_manifest if is_fix01 else args.split_random
+
+    print(f"{'='*60}")
+    print(f"1C-E21{' FIX01' if is_fix01 else ''} Controlled Baseline Training")
+    print(f"Protocol: {'STRICT yaw_block holdout' if is_fix01 else 'E21 random train'}")
+    print(f"Train manifest: {train_manifest}")
     print(f"Modes: {modes}")
     print(f"Epochs: {args.max_epochs}, LR: {args.lr}, Seed: {args.seed}")
-    print(f"Device: {device}")
+    print(f"Device: {device} (GPU={use_gpu}, workers={num_workers}, pin_memory={pin_memory})")
     print(f"Output: {args.outdir}")
+    print(f"{'='*60}")
 
+    # ═══════════════════════════════════════════════════════
+    # Overlap 检查
+    # ═══════════════════════════════════════════════════════
+    overlap_report = {}
+    if not args.skip_overlap_check:
+        print("\n── Record-ID Overlap 检查 ──")
+
+        # 1. 训练 manifest 内部 overlap
+        train_overlap = check_record_overlap(train_manifest)
+        print_overlap_report(train_overlap)
+        overlap_report["train_manifest"] = train_overlap
+
+        if not train_overlap["is_strict"]:
+            print("[WARN] 训练 manifest 内部存在 record_id 重叠！")
+            if is_fix01:
+                print("[WARN] FIX01 要求严格无重叠 — 请检查 manifest 是否正确。")
+
+        # 2. 交叉重叠：训练 manifest vs 额外评估 manifest
+        for eval_label, eval_path in [
+            ("random", args.eval_random_manifest or args.split_random),
+            ("yaw_block", args.eval_yaw_block_manifest or args.split_yawb),
+        ]:
+            if eval_path and eval_path != train_manifest:
+                cross = check_cross_manifest_overlap(
+                    train_manifest, eval_path,
+                    label_a="train_manifest", label_b=eval_label,
+                )
+                overlap_report[f"cross_train_vs_{eval_label}"] = cross
+                print(f"  Cross: train_manifest vs {eval_label}:")
+                for k, v in cross.items():
+                    print(f"    {k}: {v}")
+
+        # 3. 如果额外指定了 eval-random 和 eval-yaw-block，也检查它们的内部 overlap
+        for eval_label, eval_path in [
+            ("eval_random", args.eval_random_manifest),
+            ("eval_yaw_block", args.eval_yaw_block_manifest),
+        ]:
+            if eval_path:
+                eo = check_record_overlap(eval_path)
+                overlap_report[eval_label] = eo
+                print_overlap_report(eo)
+    else:
+        print("\n[SKIP] Overlap check skipped (--skip-overlap-check)")
+
+    # ═══════════════════════════════════════════════════════
+    # 数据加载
+    # ═══════════════════════════════════════════════════════
     os.makedirs(args.outdir, exist_ok=True)
+
+    # 保存 overlap 报告
+    overlap_path = os.path.join(args.outdir, "e21_fix01_overlap_report.json")
+    with open(overlap_path, "w", encoding="utf-8") as f:
+        json.dump(overlap_report, f, indent=2, ensure_ascii=False)
+    print(f"Overlap report -> {overlap_path}")
 
     all_results = {}
     for mode in modes:
-        # Datasets: train on random split
-        train_ds = OCSImageDataset(args.split_random, split="train", mode=mode)
+        # ── 训练集：从 train_manifest 读取 ──
+        train_ds = OCSImageDataset(train_manifest, split="train", mode=mode)
 
-        # Val loaders: random + yaw_block
+        # ── Val loaders ──
         val_loaders = {}
-        val_loaders["random"] = DataLoader(
-            OCSImageDataset(args.split_random, split="val", mode=mode)
-            if args.val_max == 0 else
-            make_infinite(OCSImageDataset(args.split_random, split="val", mode=mode),
-                          args.val_max),
-            batch_size=32, shuffle=False, num_workers=0)
 
-        val_loaders["yaw_block"] = DataLoader(
-            OCSImageDataset(args.split_yawb, split="val", mode=mode)
+        # 主 val：始终从 train_manifest 读取（严格 holdout）
+        val_loaders["primary"] = DataLoader(
+            OCSImageDataset(train_manifest, split="val", mode=mode)
             if args.val_max == 0 else
-            make_infinite(OCSImageDataset(args.split_yawb, split="val", mode=mode),
+            make_infinite(OCSImageDataset(train_manifest, split="val", mode=mode),
                           args.val_max),
-            batch_size=32, shuffle=False, num_workers=0)
+            batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
 
-        # Test loaders: random + yaw_block
+        # 补充 eval：random manifest
+        random_eval_path = args.eval_random_manifest or args.split_random
+        if random_eval_path and random_eval_path != train_manifest:
+            val_loaders["random"] = DataLoader(
+                OCSImageDataset(random_eval_path, split="val", mode=mode)
+                if args.val_max == 0 else
+                make_infinite(OCSImageDataset(random_eval_path, split="val", mode=mode),
+                              args.val_max),
+                batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
+
+        # 补充 eval：yaw_block manifest
+        yawb_eval_path = args.eval_yaw_block_manifest or args.split_yawb
+        if yawb_eval_path and yawb_eval_path != train_manifest:
+            val_loaders["yaw_block"] = DataLoader(
+                OCSImageDataset(yawb_eval_path, split="val", mode=mode)
+                if args.val_max == 0 else
+                make_infinite(OCSImageDataset(yawb_eval_path, split="val", mode=mode),
+                              args.val_max),
+                batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
+
+        # ── Test loaders ──
         test_loaders = {}
-        test_loaders["random"] = DataLoader(
-            OCSImageDataset(args.split_random, split="test", mode=mode),
-            batch_size=32, shuffle=False, num_workers=0)
 
-        test_loaders["yaw_block"] = DataLoader(
-            OCSImageDataset(args.split_yawb, split="test", mode=mode),
-            batch_size=32, shuffle=False, num_workers=0)
+        # 主 test：始终从 train_manifest 读取
+        test_loaders["primary"] = DataLoader(
+            OCSImageDataset(train_manifest, split="test", mode=mode),
+            batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
 
-        print(f"\n  Train: {len(train_ds)} samples")
+        if random_eval_path and random_eval_path != train_manifest:
+            test_loaders["random"] = DataLoader(
+                OCSImageDataset(random_eval_path, split="test", mode=mode),
+                batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
+
+        if yawb_eval_path and yawb_eval_path != train_manifest:
+            test_loaders["yaw_block"] = DataLoader(
+                OCSImageDataset(yawb_eval_path, split="test", mode=mode),
+                batch_size=32, shuffle=False, num_workers=num_workers, pin_memory=pin_memory)
+
+        print(f"\n  Train: {len(train_ds)} samples (from {Path(train_manifest).name})")
         for vn, vl in val_loaders.items():
             print(f"  Val/{vn}: {len(vl.dataset)} samples")
         for tn, tl in test_loaders.items():
@@ -512,12 +727,13 @@ def main():
 
         result = run_training(mode, train_ds, val_loaders, test_loaders,
                               device, args.max_epochs, args.lr, args.seed,
-                              args.outdir)
+                              args.outdir, num_workers=num_workers,
+                              pin_memory=pin_memory)
         all_results[mode] = result
 
     # ── 汇总输出 ──
     print(f"\n{'='*60}")
-    print("E21 Baseline Summary")
+    print(f"E21{' FIX01' if is_fix01 else ''} Baseline Summary")
     print(f"{'='*60}")
 
     summary = {}
@@ -561,27 +777,30 @@ def main():
                       f"yaw_within3bins={yaw_within3}/{yaw_total} "
                       f"({100*yaw_within3/max(yaw_total,1):.0f}%)")
 
-    # ── 写入完整结果 ──
-    output_path = os.path.join(args.outdir, "e21_baseline_results.json")
-    # Convert history to lighter format for JSON
+    # ── 写入结果 JSON ──
+    result_basename = "e21_fix01_baseline_results" if is_fix01 else "e21_baseline_results"
+    output_path = os.path.join(args.outdir, f"{result_basename}.json")
     output_data = {
-        "task": "1C-E21 controlled baseline training",
+        "task": f"1C-E21{' FIX01' if is_fix01 else ''} controlled baseline training",
+        "protocol": "strict_yaw_block_holdout" if is_fix01 else "random_train",
+        "train_manifest": train_manifest,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "config": {
             "max_epochs": args.max_epochs, "lr": args.lr,
             "seed": args.seed, "device": str(device), "modes": modes,
         },
+        "overlap_check": overlap_report,
         "summary": summary,
     }
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2, ensure_ascii=False)
     print(f"\nSummary -> {output_path}")
 
-    # Per-mode detailed results (excluding full history for size)
+    # Per-mode detailed results
+    detail_prefix = "e21_fix01_detail" if is_fix01 else "e21_detail"
     for mode, r in all_results.items():
-        detail_path = os.path.join(args.outdir, f"e21_detail_{mode}.json")
+        detail_path = os.path.join(args.outdir, f"{detail_prefix}_{mode}.json")
         detail = {k: v for k, v in r.items() if k != "history"}
-        # Convert history to minimal format
         detail["train_loss_curve"] = [h["loss"] for h in r["history"]["train"]]
         detail["val_loss_curves"] = {
             vname: [h["loss"] for h in r["history"]["val"][vname]]
@@ -591,7 +810,7 @@ def main():
             json.dump(detail, f, indent=2, ensure_ascii=False)
         print(f"Detail ({mode}) -> {detail_path}")
 
-    print(f"\n[DONE] 1C-E21 controlled baseline training complete.")
+    print(f"\n[DONE] 1C-E21{' FIX01' if is_fix01 else ''} training complete.")
     return 0
 
 

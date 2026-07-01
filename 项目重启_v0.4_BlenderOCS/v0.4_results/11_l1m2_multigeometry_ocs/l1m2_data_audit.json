@@ -1,0 +1,82 @@
+{
+  "task": "1C-L1M2 data audit",
+  "groups": {
+    "G1": {
+      "n_attitude": 2664,
+      "geoms": [
+        "phase63"
+      ],
+      "flux_dim": 1,
+      "flux_mean": [
+        0.027049
+      ],
+      "flux_min": [
+        0.010628
+      ],
+      "flux_max": [
+        0.177881
+      ]
+    },
+    "G3": {
+      "n_attitude": 2664,
+      "geoms": [
+        "phase24",
+        "phase63",
+        "phase120"
+      ],
+      "flux_dim": 3,
+      "flux_mean": [
+        0.039388,
+        0.027049,
+        0.01173
+      ],
+      "flux_min": [
+        0.02164,
+        0.010628,
+        0.000108
+      ],
+      "flux_max": [
+        0.254686,
+        0.177881,
+        0.115355
+      ]
+    },
+    "G5": {
+      "n_attitude": 2664,
+      "geoms": [
+        "phase24",
+        "phase45",
+        "phase63",
+        "phase90",
+        "phase120"
+      ],
+      "flux_dim": 5,
+      "flux_mean": [
+        0.039388,
+        0.032158,
+        0.027049,
+        0.027677,
+        0.01173
+      ],
+      "flux_min": [
+        0.02164,
+        0.017422,
+        0.010628,
+        0.000661,
+        0.000108
+      ],
+      "flux_max": [
+        0.254686,
+        0.228133,
+        0.177881,
+        0.229765,
+        0.115355
+      ]
+    }
+  },
+  "render_source": {
+    "phase63": "01_fullrun (existing)",
+    "phase24/45/90/120": "11_l1m2_multigeometry_ocs/postprocess (new this round, 2664 each)"
+  },
+  "note": "所有几何 2664 姿态内连接对齐成功；多几何 flux 均值各异，向量含实质信息。"
+}

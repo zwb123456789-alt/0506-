@@ -1,0 +1,57 @@
+=== --level degraded-mild --geom-group G1 --mode ocs_only ===
+[TEST final] cmae=78.25 hit@30=0.260
+[TEST best ] (ep18) cmae=76.78 hit@30=0.257
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_ocs_only_seed42
+=== --level degraded-mild --geom-group G3 --mode ocs_only ===
+[TEST final] cmae=40.76 hit@30=0.598
+[TEST best ] (ep28) cmae=40.15 hit@30=0.615
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G3_ocs_only_seed42
+=== --level degraded-mild --geom-group G5 --mode ocs_only ===
+[TEST final] cmae=27.83 hit@30=0.760
+[TEST best ] (ep30) cmae=27.83 hit@30=0.760
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_ocs_only_seed42
+=== --level degraded-mild --geom-group G1 --mode image_only ===
+[TEST final] cmae=1.67 hit@30=1.000
+[TEST best ] (ep30) cmae=1.67 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_image_only_seed42
+=== --level degraded-mild --geom-group G1 --mode joint ===
+[TEST final] cmae=1.91 hit@30=1.000
+[TEST best ] (ep30) cmae=1.91 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G1_joint_seed42
+=== --level degraded-mild --geom-group G5 --mode image_only ===
+[TEST final] cmae=3.50 hit@30=1.000
+[TEST best ] (ep30) cmae=3.50 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_image_only_seed42
+=== --level degraded-mild --geom-group G5 --mode joint ===
+[TEST final] cmae=2.14 hit@30=1.000
+[TEST best ] (ep28) cmae=1.88 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-mild_P-INT_G5_joint_seed42
+=== --level degraded-moderate --geom-group G1 --mode ocs_only ===
+[TEST final] cmae=80.36 hit@30=0.250
+[TEST best ] (ep19) cmae=78.48 hit@30=0.257
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_ocs_only_seed42
+=== --level degraded-moderate --geom-group G3 --mode ocs_only ===
+[TEST final] cmae=53.09 hit@30=0.524
+[TEST best ] (ep25) cmae=51.72 hit@30=0.541
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G3_ocs_only_seed42
+=== --level degraded-moderate --geom-group G5 --mode ocs_only ===
+[TEST final] cmae=40.62 hit@30=0.608
+[TEST best ] (ep27) cmae=38.46 hit@30=0.618
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_ocs_only_seed42
+=== --level degraded-moderate --geom-group G1 --mode image_only ===
+[TEST final] cmae=4.21 hit@30=1.000
+[TEST best ] (ep25) cmae=3.69 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_image_only_seed42
+=== --level degraded-moderate --geom-group G1 --mode joint ===
+[TEST final] cmae=1.95 hit@30=1.000
+[TEST best ] (ep27) cmae=1.86 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G1_joint_seed42
+=== --level degraded-moderate --geom-group G5 --mode image_only ===
+[TEST final] cmae=6.21 hit@30=1.000
+[TEST best ] (ep27) cmae=2.71 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_image_only_seed42
+=== --level degraded-moderate --geom-group G5 --mode joint ===
+[TEST final] cmae=81.17 hit@30=0.189
+[TEST best ] (ep28) cmae=2.02 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\12_l1m3_degraded_mroll\degraded\runs\degraded-moderate_P-INT_G5_joint_seed42
+[MATRIX DONE]

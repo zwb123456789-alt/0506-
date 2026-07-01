@@ -1,0 +1,3 @@
+config,total_samples,diag_sum,diag_nonzero_bins,diag_exact_yaw_accuracy
+C3_image_only,2664,0,0,0.0
+C3_joint,2664,0,0,0.0

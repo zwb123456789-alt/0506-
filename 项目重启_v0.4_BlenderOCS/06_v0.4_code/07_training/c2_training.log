@@ -1,0 +1,108 @@
+============================================================
+1C-E31/E32 C2 OCS-only Screening
+Mode: TRAINING
+Device: cuda (GPU=True, workers=4)
+Output: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\05_c2_screening
+============================================================
+
+Loading feature definitions...
+  Found 13 C2 participant configs
+
+[FIXED PROTOCOL - NO HYPERPARAM SEARCH]
+  max_epochs: 30
+  hidden_dim: 128
+  lr: 0.001
+  batch_size: 32
+  seed: 42
+  optimizer: Adam
+  model_type: MLP_3layer
+  n_layers: 3
+
+[TRAINING MODE]
+Training 13 configs × 5 folds = 65 runs
+
+
+============================================================
+Training: baseline_4dim | Fold 0
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7212 | val_loss=18.8653 yaw_acc=0.0000 pitch_acc=0.0039
+  Epoch 10/30: train_loss=5.2927 | val_loss=20.6326 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=5.0664 | val_loss=20.8755 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 20/30: train_loss=4.8982 | val_loss=20.8320 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.7703 | val_loss=20.5653 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 30/30: train_loss=4.6582 | val_loss=20.3736 yaw_acc=0.0000 pitch_acc=0.0232
+  Best val avg_acc=0.0174 at epoch 16
+  Elapsed: 343.3s
+
+============================================================
+Training: baseline_4dim | Fold 1
+============================================================
+  Train: 1850, Val: 259, Test: 555
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.7648 | val_loss=19.3224 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.2901 | val_loss=21.9559 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 15/30: train_loss=5.0314 | val_loss=23.0155 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.8442 | val_loss=22.8564 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.7017 | val_loss=23.1760 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 30/30: train_loss=4.5965 | val_loss=22.9423 yaw_acc=0.0000 pitch_acc=0.0270
+  Best val avg_acc=0.0135 at epoch 1
+  Elapsed: 347.6s
+
+============================================================
+Training: baseline_4dim | Fold 2
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.6324 | val_loss=19.3525 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.2353 | val_loss=21.7302 yaw_acc=0.0000 pitch_acc=0.0193
+  Epoch 15/30: train_loss=5.0601 | val_loss=22.2237 yaw_acc=0.0000 pitch_acc=0.0232
+  Epoch 20/30: train_loss=4.9374 | val_loss=22.2350 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 25/30: train_loss=4.8295 | val_loss=21.8973 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=4.7574 | val_loss=21.6260 yaw_acc=0.0000 pitch_acc=0.0154
+  Best val avg_acc=0.0212 at epoch 8
+  Elapsed: 358.9s
+
+============================================================
+Training: baseline_4dim | Fold 3
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.8135 | val_loss=68.4453 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 10/30: train_loss=5.3565 | val_loss=80.9840 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=5.1187 | val_loss=90.3237 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.9705 | val_loss=99.2859 yaw_acc=0.0000 pitch_acc=0.0347
+  Epoch 25/30: train_loss=4.8362 | val_loss=104.4769 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 30/30: train_loss=4.7498 | val_loss=107.8549 yaw_acc=0.0000 pitch_acc=0.0386
+  Best val avg_acc=0.0193 at epoch 21
+  Elapsed: 376.9s
+
+============================================================
+Training: baseline_4dim | Fold 4
+============================================================
+  Train: 1887, Val: 259, Test: 518
+  Feature dim: 4
+  Model params: 31,213
+  Epoch  5/30: train_loss=5.5981 | val_loss=18.5048 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 10/30: train_loss=5.1379 | val_loss=24.0959 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 15/30: train_loss=4.9174 | val_loss=26.7498 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 20/30: train_loss=4.7877 | val_loss=28.7111 yaw_acc=0.0000 pitch_acc=0.0309
+  Epoch 25/30: train_loss=4.6893 | val_loss=29.9353 yaw_acc=0.0000 pitch_acc=0.0270
+  Epoch 30/30: train_loss=4.6149 | val_loss=30.4773 yaw_acc=0.0000 pitch_acc=0.0193
+  Best val avg_acc=0.0193 at epoch 4
+  Elapsed: 358.0s
+Traceback (most recent call last):
+  File "D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\06_v0.4_code\07_training\train_c2_screening.py", line 710, in <module>
+    sys.exit(main())
+  File "D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\06_v0.4_code\07_training\train_c2_screening.py", line 620, in main
+    full_result = json.load(f)
+  File "C:\Users\97466\.conda\envs\ocs_sim\lib\json\__init__.py", line 293, in load
+    return loads(fp.read(),
+  File "C:\Users\97466\.conda\envs\ocs_sim\lib\codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xce in position 559: invalid continuation byte
