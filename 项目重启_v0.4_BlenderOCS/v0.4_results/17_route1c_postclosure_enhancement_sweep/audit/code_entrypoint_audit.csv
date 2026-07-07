@@ -1,0 +1,6 @@
+subtask,entrypoint,reuse,seed_control,split_control,action
+B_multiseed,07_training/train_l1m2_multigeometry.py,派生 wrapper 复用,torch.manual_seed/np.random.seed(--seed); cuda seed,"split_pint(table, seed=args.seed) —— split 与训练 seed 共用 --seed（不可分离）","新增 wrapper 固定 split seed=42，仅改模型初始化/训练随机性 seed∈{7,123}"
+C_degraded_severe,07_training/train_l1m3_degraded.py + degrade_l1m3_images.py,派生 wrapper 注入 severe 档,同上 --seed；退化按 record_id 派生确定性种子,split_pint(seed=42) 复用,wrapper 注入 DEGRADE_LEVELS['degraded-severe']，跑 9 run seed42
+C_pint_hard_subset,13_l1d3/hardcases/l1d3_hardcase_index.csv + clean/degraded samples,只读复算，无训练,n/a,复用既有 test samples 分区,按 hardcase 类别对既有预测分区重算指标
+D_mroll_full2664,02_blender/render_mroll_probe.py(+driver render_full_2664_shadow.py) / 05_postprocess/run_mroll_probe_postprocess.py / 07_training/eval_mroll_probe.py,复用渲染+后处理+eval 入口,渲染确定性(无随机),distribution-shift evaluation，用 clean roll=0 模型，不重训,"render_mroll_probe 全2664网格(--start-index/--count 分批，skip_existing 跳过312已渲)，roll∈{-30,-15,+15,+30}"
+E_conformal_alpha,07_training/eval_l1d3_conformal.py 输出 l1d3_conformal_summary.csv,直接复用既有输出（已含 α 三档）,n/a,val 校准/test 评估，既有 split,从 13 号 conformal_summary.csv 重组 α=0.05/0.10/0.20 敏感性表/图，不新训练

@@ -1,0 +1,1001 @@
+region,category,yaw,pitch,roll,label,camera_exr_exists,sun_exr_exists,source,source_seed
+R3_low_info,low-info/ocs-hard,55,60,-60,yaw055_pitch+060_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,-45,yaw055_pitch+060_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,-30,yaw055_pitch+060_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,-15,yaw055_pitch+060_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,15,yaw055_pitch+060_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,30,yaw055_pitch+060_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,45,yaw055_pitch+060_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,60,60,yaw055_pitch+060_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,-60,yaw055_pitch+065_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,-45,yaw055_pitch+065_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,-30,yaw055_pitch+065_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,-15,yaw055_pitch+065_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,15,yaw055_pitch+065_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,30,yaw055_pitch+065_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,45,yaw055_pitch+065_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,65,60,yaw055_pitch+065_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,-60,yaw055_pitch+070_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,-45,yaw055_pitch+070_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,-30,yaw055_pitch+070_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,-15,yaw055_pitch+070_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,15,yaw055_pitch+070_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,30,yaw055_pitch+070_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,45,yaw055_pitch+070_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,70,60,yaw055_pitch+070_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,-60,yaw055_pitch+075_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,-45,yaw055_pitch+075_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,-30,yaw055_pitch+075_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,-15,yaw055_pitch+075_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,15,yaw055_pitch+075_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,30,yaw055_pitch+075_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,45,yaw055_pitch+075_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,75,60,yaw055_pitch+075_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,-60,yaw055_pitch+080_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,-45,yaw055_pitch+080_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,-30,yaw055_pitch+080_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,-15,yaw055_pitch+080_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,15,yaw055_pitch+080_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,30,yaw055_pitch+080_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,45,yaw055_pitch+080_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,55,80,60,yaw055_pitch+080_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,-60,yaw060_pitch+060_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,-45,yaw060_pitch+060_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,-30,yaw060_pitch+060_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,-15,yaw060_pitch+060_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,15,yaw060_pitch+060_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,30,yaw060_pitch+060_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,45,yaw060_pitch+060_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,60,60,yaw060_pitch+060_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,-60,yaw060_pitch+065_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,-45,yaw060_pitch+065_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,-30,yaw060_pitch+065_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,-15,yaw060_pitch+065_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,15,yaw060_pitch+065_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,30,yaw060_pitch+065_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,45,yaw060_pitch+065_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,65,60,yaw060_pitch+065_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,-60,yaw060_pitch+070_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,-45,yaw060_pitch+070_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,-30,yaw060_pitch+070_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,-15,yaw060_pitch+070_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,15,yaw060_pitch+070_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,30,yaw060_pitch+070_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,45,yaw060_pitch+070_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,70,60,yaw060_pitch+070_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,-60,yaw060_pitch+075_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,-45,yaw060_pitch+075_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,-30,yaw060_pitch+075_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,-15,yaw060_pitch+075_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,15,yaw060_pitch+075_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,30,yaw060_pitch+075_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,45,yaw060_pitch+075_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,75,60,yaw060_pitch+075_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,-60,yaw060_pitch+080_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,-45,yaw060_pitch+080_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,-30,yaw060_pitch+080_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,-15,yaw060_pitch+080_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,15,yaw060_pitch+080_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,30,yaw060_pitch+080_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,45,yaw060_pitch+080_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,60,80,60,yaw060_pitch+080_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,-60,yaw065_pitch+060_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,-45,yaw065_pitch+060_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,-30,yaw065_pitch+060_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,-15,yaw065_pitch+060_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,15,yaw065_pitch+060_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,30,yaw065_pitch+060_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,45,yaw065_pitch+060_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,60,60,yaw065_pitch+060_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,-60,yaw065_pitch+065_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,-45,yaw065_pitch+065_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,-30,yaw065_pitch+065_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,-15,yaw065_pitch+065_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,15,yaw065_pitch+065_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,30,yaw065_pitch+065_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,45,yaw065_pitch+065_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,65,60,yaw065_pitch+065_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,-60,yaw065_pitch+070_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,-45,yaw065_pitch+070_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,-30,yaw065_pitch+070_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,-15,yaw065_pitch+070_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,15,yaw065_pitch+070_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,30,yaw065_pitch+070_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,45,yaw065_pitch+070_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,70,60,yaw065_pitch+070_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,-60,yaw065_pitch+075_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,-45,yaw065_pitch+075_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,-30,yaw065_pitch+075_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,-15,yaw065_pitch+075_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,15,yaw065_pitch+075_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,30,yaw065_pitch+075_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,45,yaw065_pitch+075_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,75,60,yaw065_pitch+075_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,-60,yaw065_pitch+080_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,-45,yaw065_pitch+080_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,-30,yaw065_pitch+080_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,-15,yaw065_pitch+080_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,15,yaw065_pitch+080_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,30,yaw065_pitch+080_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,45,yaw065_pitch+080_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,65,80,60,yaw065_pitch+080_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,-60,yaw070_pitch+060_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,-45,yaw070_pitch+060_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,-30,yaw070_pitch+060_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,-15,yaw070_pitch+060_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,15,yaw070_pitch+060_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,30,yaw070_pitch+060_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,45,yaw070_pitch+060_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,60,60,yaw070_pitch+060_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,-60,yaw070_pitch+065_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,-45,yaw070_pitch+065_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,-30,yaw070_pitch+065_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,-15,yaw070_pitch+065_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,15,yaw070_pitch+065_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,30,yaw070_pitch+065_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,45,yaw070_pitch+065_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,65,60,yaw070_pitch+065_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,-60,yaw070_pitch+070_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,-45,yaw070_pitch+070_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,-30,yaw070_pitch+070_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,-15,yaw070_pitch+070_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,15,yaw070_pitch+070_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,30,yaw070_pitch+070_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,45,yaw070_pitch+070_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,70,60,yaw070_pitch+070_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,-60,yaw070_pitch+075_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,-45,yaw070_pitch+075_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,-30,yaw070_pitch+075_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,-15,yaw070_pitch+075_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,15,yaw070_pitch+075_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,30,yaw070_pitch+075_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,45,yaw070_pitch+075_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,75,60,yaw070_pitch+075_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,-60,yaw070_pitch+080_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,-45,yaw070_pitch+080_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,-30,yaw070_pitch+080_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,-15,yaw070_pitch+080_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,15,yaw070_pitch+080_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,30,yaw070_pitch+080_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,45,yaw070_pitch+080_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,70,80,60,yaw070_pitch+080_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,-60,yaw075_pitch+060_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,-45,yaw075_pitch+060_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,-30,yaw075_pitch+060_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,-15,yaw075_pitch+060_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,15,yaw075_pitch+060_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,30,yaw075_pitch+060_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,45,yaw075_pitch+060_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,60,60,yaw075_pitch+060_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,-60,yaw075_pitch+065_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,-45,yaw075_pitch+065_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,-30,yaw075_pitch+065_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,-15,yaw075_pitch+065_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,15,yaw075_pitch+065_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,30,yaw075_pitch+065_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,45,yaw075_pitch+065_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,65,60,yaw075_pitch+065_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,-60,yaw075_pitch+070_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,-45,yaw075_pitch+070_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,-30,yaw075_pitch+070_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,-15,yaw075_pitch+070_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,15,yaw075_pitch+070_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,30,yaw075_pitch+070_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,45,yaw075_pitch+070_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,70,60,yaw075_pitch+070_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,-60,yaw075_pitch+075_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,-45,yaw075_pitch+075_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,-30,yaw075_pitch+075_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,-15,yaw075_pitch+075_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,15,yaw075_pitch+075_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,30,yaw075_pitch+075_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,45,yaw075_pitch+075_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,75,60,yaw075_pitch+075_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,-60,yaw075_pitch+080_roll-060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,-45,yaw075_pitch+080_roll-045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,-30,yaw075_pitch+080_roll-030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,-15,yaw075_pitch+080_roll-015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,15,yaw075_pitch+080_roll+015,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,30,yaw075_pitch+080_roll+030,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,45,yaw075_pitch+080_roll+045,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R3_low_info,low-info/ocs-hard,75,80,60,yaw075_pitch+080_roll+060,True,True,20_pack,low-info/ocs-hard-seed yaw065 pitch+70/+75
+R4_bright_robust,bright/robust-easy,140,5,-60,yaw140_pitch+005_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,-45,yaw140_pitch+005_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,-30,yaw140_pitch+005_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,-15,yaw140_pitch+005_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,15,yaw140_pitch+005_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,30,yaw140_pitch+005_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,45,yaw140_pitch+005_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,5,60,yaw140_pitch+005_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,-60,yaw140_pitch+010_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,-45,yaw140_pitch+010_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,-30,yaw140_pitch+010_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,-15,yaw140_pitch+010_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,15,yaw140_pitch+010_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,30,yaw140_pitch+010_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,45,yaw140_pitch+010_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,10,60,yaw140_pitch+010_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,-60,yaw140_pitch+015_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,-45,yaw140_pitch+015_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,-30,yaw140_pitch+015_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,-15,yaw140_pitch+015_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,15,yaw140_pitch+015_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,30,yaw140_pitch+015_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,45,yaw140_pitch+015_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,15,60,yaw140_pitch+015_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,-60,yaw140_pitch+020_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,-45,yaw140_pitch+020_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,-30,yaw140_pitch+020_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,-15,yaw140_pitch+020_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,15,yaw140_pitch+020_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,30,yaw140_pitch+020_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,45,yaw140_pitch+020_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,20,60,yaw140_pitch+020_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,-60,yaw140_pitch+025_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,-45,yaw140_pitch+025_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,-30,yaw140_pitch+025_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,-15,yaw140_pitch+025_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,15,yaw140_pitch+025_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,30,yaw140_pitch+025_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,45,yaw140_pitch+025_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,140,25,60,yaw140_pitch+025_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,-60,yaw145_pitch+005_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,-45,yaw145_pitch+005_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,-30,yaw145_pitch+005_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,-15,yaw145_pitch+005_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,15,yaw145_pitch+005_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,30,yaw145_pitch+005_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,45,yaw145_pitch+005_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,5,60,yaw145_pitch+005_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,-60,yaw145_pitch+010_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,-45,yaw145_pitch+010_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,-30,yaw145_pitch+010_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,-15,yaw145_pitch+010_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,15,yaw145_pitch+010_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,30,yaw145_pitch+010_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,45,yaw145_pitch+010_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,10,60,yaw145_pitch+010_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,-60,yaw145_pitch+015_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,-45,yaw145_pitch+015_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,-30,yaw145_pitch+015_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,-15,yaw145_pitch+015_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,15,yaw145_pitch+015_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,30,yaw145_pitch+015_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,45,yaw145_pitch+015_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,15,60,yaw145_pitch+015_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,-60,yaw145_pitch+020_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,-45,yaw145_pitch+020_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,-30,yaw145_pitch+020_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,-15,yaw145_pitch+020_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,15,yaw145_pitch+020_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,30,yaw145_pitch+020_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,45,yaw145_pitch+020_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,20,60,yaw145_pitch+020_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,-60,yaw145_pitch+025_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,-45,yaw145_pitch+025_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,-30,yaw145_pitch+025_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,-15,yaw145_pitch+025_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,15,yaw145_pitch+025_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,30,yaw145_pitch+025_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,45,yaw145_pitch+025_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,145,25,60,yaw145_pitch+025_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,-60,yaw150_pitch+005_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,-45,yaw150_pitch+005_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,-30,yaw150_pitch+005_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,-15,yaw150_pitch+005_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,15,yaw150_pitch+005_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,30,yaw150_pitch+005_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,45,yaw150_pitch+005_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,5,60,yaw150_pitch+005_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,-60,yaw150_pitch+010_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,-45,yaw150_pitch+010_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,-30,yaw150_pitch+010_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,-15,yaw150_pitch+010_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,15,yaw150_pitch+010_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,30,yaw150_pitch+010_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,45,yaw150_pitch+010_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,10,60,yaw150_pitch+010_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,-60,yaw150_pitch+015_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,-45,yaw150_pitch+015_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,-30,yaw150_pitch+015_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,-15,yaw150_pitch+015_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,15,yaw150_pitch+015_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,30,yaw150_pitch+015_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,45,yaw150_pitch+015_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,15,60,yaw150_pitch+015_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,-60,yaw150_pitch+020_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,-45,yaw150_pitch+020_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,-30,yaw150_pitch+020_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,-15,yaw150_pitch+020_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,15,yaw150_pitch+020_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,30,yaw150_pitch+020_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,45,yaw150_pitch+020_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,20,60,yaw150_pitch+020_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,-60,yaw150_pitch+025_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,-45,yaw150_pitch+025_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,-30,yaw150_pitch+025_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,-15,yaw150_pitch+025_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,15,yaw150_pitch+025_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,30,yaw150_pitch+025_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,45,yaw150_pitch+025_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,150,25,60,yaw150_pitch+025_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,-60,yaw155_pitch+005_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,-45,yaw155_pitch+005_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,-30,yaw155_pitch+005_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,-15,yaw155_pitch+005_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,15,yaw155_pitch+005_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,30,yaw155_pitch+005_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,45,yaw155_pitch+005_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,5,60,yaw155_pitch+005_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,-60,yaw155_pitch+010_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,-45,yaw155_pitch+010_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,-30,yaw155_pitch+010_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,-15,yaw155_pitch+010_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,15,yaw155_pitch+010_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,30,yaw155_pitch+010_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,45,yaw155_pitch+010_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,10,60,yaw155_pitch+010_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,-60,yaw155_pitch+015_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,-45,yaw155_pitch+015_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,-30,yaw155_pitch+015_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,-15,yaw155_pitch+015_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,15,yaw155_pitch+015_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,30,yaw155_pitch+015_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,45,yaw155_pitch+015_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,15,60,yaw155_pitch+015_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,-60,yaw155_pitch+020_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,-45,yaw155_pitch+020_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,-30,yaw155_pitch+020_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,-15,yaw155_pitch+020_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,15,yaw155_pitch+020_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,30,yaw155_pitch+020_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,45,yaw155_pitch+020_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,20,60,yaw155_pitch+020_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,-60,yaw155_pitch+025_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,-45,yaw155_pitch+025_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,-30,yaw155_pitch+025_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,-15,yaw155_pitch+025_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,15,yaw155_pitch+025_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,30,yaw155_pitch+025_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,45,yaw155_pitch+025_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,155,25,60,yaw155_pitch+025_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,-60,yaw160_pitch+005_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,-45,yaw160_pitch+005_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,-30,yaw160_pitch+005_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,-15,yaw160_pitch+005_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,15,yaw160_pitch+005_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,30,yaw160_pitch+005_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,45,yaw160_pitch+005_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,5,60,yaw160_pitch+005_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,-60,yaw160_pitch+010_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,-45,yaw160_pitch+010_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,-30,yaw160_pitch+010_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,-15,yaw160_pitch+010_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,15,yaw160_pitch+010_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,30,yaw160_pitch+010_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,45,yaw160_pitch+010_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,10,60,yaw160_pitch+010_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,-60,yaw160_pitch+015_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,-45,yaw160_pitch+015_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,-30,yaw160_pitch+015_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,-15,yaw160_pitch+015_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,15,yaw160_pitch+015_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,30,yaw160_pitch+015_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,45,yaw160_pitch+015_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,15,60,yaw160_pitch+015_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,-60,yaw160_pitch+020_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,-45,yaw160_pitch+020_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,-30,yaw160_pitch+020_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,-15,yaw160_pitch+020_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,15,yaw160_pitch+020_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,30,yaw160_pitch+020_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,45,yaw160_pitch+020_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,20,60,yaw160_pitch+020_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,-60,yaw160_pitch+025_roll-060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,-45,yaw160_pitch+025_roll-045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,-30,yaw160_pitch+025_roll-030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,-15,yaw160_pitch+025_roll-015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,15,yaw160_pitch+025_roll+015,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,30,yaw160_pitch+025_roll+030,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,45,yaw160_pitch+025_roll+045,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R4_bright_robust,bright/robust-easy,160,25,60,yaw160_pitch+025_roll+060,True,True,20_pack,bright/robust-easy-seed yaw145/150 pitch+10/+15
+R5_neutral,neutral-control,190,-10,-60,yaw190_pitch-010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,-45,yaw190_pitch-010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,-30,yaw190_pitch-010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,-15,yaw190_pitch-010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,15,yaw190_pitch-010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,30,yaw190_pitch-010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,45,yaw190_pitch-010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-10,60,yaw190_pitch-010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,-60,yaw190_pitch-005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,-45,yaw190_pitch-005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,-30,yaw190_pitch-005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,-15,yaw190_pitch-005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,15,yaw190_pitch-005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,30,yaw190_pitch-005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,45,yaw190_pitch-005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,-5,60,yaw190_pitch-005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,-60,yaw190_pitch+000_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,-45,yaw190_pitch+000_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,-30,yaw190_pitch+000_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,-15,yaw190_pitch+000_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,15,yaw190_pitch+000_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,30,yaw190_pitch+000_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,45,yaw190_pitch+000_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,0,60,yaw190_pitch+000_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,-60,yaw190_pitch+005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,-45,yaw190_pitch+005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,-30,yaw190_pitch+005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,-15,yaw190_pitch+005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,15,yaw190_pitch+005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,30,yaw190_pitch+005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,45,yaw190_pitch+005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,5,60,yaw190_pitch+005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,-60,yaw190_pitch+010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,-45,yaw190_pitch+010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,-30,yaw190_pitch+010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,-15,yaw190_pitch+010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,15,yaw190_pitch+010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,30,yaw190_pitch+010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,45,yaw190_pitch+010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,190,10,60,yaw190_pitch+010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,-60,yaw195_pitch-010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,-45,yaw195_pitch-010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,-30,yaw195_pitch-010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,-15,yaw195_pitch-010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,15,yaw195_pitch-010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,30,yaw195_pitch-010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,45,yaw195_pitch-010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-10,60,yaw195_pitch-010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,-60,yaw195_pitch-005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,-45,yaw195_pitch-005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,-30,yaw195_pitch-005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,-15,yaw195_pitch-005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,15,yaw195_pitch-005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,30,yaw195_pitch-005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,45,yaw195_pitch-005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,-5,60,yaw195_pitch-005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,-60,yaw195_pitch+000_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,-45,yaw195_pitch+000_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,-30,yaw195_pitch+000_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,-15,yaw195_pitch+000_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,15,yaw195_pitch+000_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,30,yaw195_pitch+000_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,45,yaw195_pitch+000_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,0,60,yaw195_pitch+000_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,-60,yaw195_pitch+005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,-45,yaw195_pitch+005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,-30,yaw195_pitch+005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,-15,yaw195_pitch+005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,15,yaw195_pitch+005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,30,yaw195_pitch+005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,45,yaw195_pitch+005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,5,60,yaw195_pitch+005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,-60,yaw195_pitch+010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,-45,yaw195_pitch+010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,-30,yaw195_pitch+010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,-15,yaw195_pitch+010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,15,yaw195_pitch+010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,30,yaw195_pitch+010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,45,yaw195_pitch+010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,195,10,60,yaw195_pitch+010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,-60,yaw200_pitch-010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,-45,yaw200_pitch-010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,-30,yaw200_pitch-010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,-15,yaw200_pitch-010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,15,yaw200_pitch-010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,30,yaw200_pitch-010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,45,yaw200_pitch-010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-10,60,yaw200_pitch-010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,-60,yaw200_pitch-005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,-45,yaw200_pitch-005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,-30,yaw200_pitch-005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,-15,yaw200_pitch-005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,15,yaw200_pitch-005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,30,yaw200_pitch-005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,45,yaw200_pitch-005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,-5,60,yaw200_pitch-005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,-60,yaw200_pitch+000_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,-45,yaw200_pitch+000_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,-30,yaw200_pitch+000_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,-15,yaw200_pitch+000_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,15,yaw200_pitch+000_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,30,yaw200_pitch+000_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,45,yaw200_pitch+000_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,0,60,yaw200_pitch+000_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,-60,yaw200_pitch+005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,-45,yaw200_pitch+005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,-30,yaw200_pitch+005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,-15,yaw200_pitch+005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,15,yaw200_pitch+005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,30,yaw200_pitch+005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,45,yaw200_pitch+005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,5,60,yaw200_pitch+005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,-60,yaw200_pitch+010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,-45,yaw200_pitch+010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,-30,yaw200_pitch+010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,-15,yaw200_pitch+010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,15,yaw200_pitch+010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,30,yaw200_pitch+010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,45,yaw200_pitch+010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,200,10,60,yaw200_pitch+010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,-60,yaw205_pitch-010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,-45,yaw205_pitch-010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,-30,yaw205_pitch-010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,-15,yaw205_pitch-010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,15,yaw205_pitch-010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,30,yaw205_pitch-010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,45,yaw205_pitch-010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-10,60,yaw205_pitch-010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,-60,yaw205_pitch-005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,-45,yaw205_pitch-005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,-30,yaw205_pitch-005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,-15,yaw205_pitch-005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,15,yaw205_pitch-005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,30,yaw205_pitch-005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,45,yaw205_pitch-005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,-5,60,yaw205_pitch-005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,-60,yaw205_pitch+000_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,-45,yaw205_pitch+000_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,-30,yaw205_pitch+000_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,-15,yaw205_pitch+000_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,15,yaw205_pitch+000_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,30,yaw205_pitch+000_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,45,yaw205_pitch+000_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,0,60,yaw205_pitch+000_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,-60,yaw205_pitch+005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,-45,yaw205_pitch+005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,-30,yaw205_pitch+005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,-15,yaw205_pitch+005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,15,yaw205_pitch+005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,30,yaw205_pitch+005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,45,yaw205_pitch+005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,5,60,yaw205_pitch+005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,-60,yaw205_pitch+010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,-45,yaw205_pitch+010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,-30,yaw205_pitch+010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,-15,yaw205_pitch+010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,15,yaw205_pitch+010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,30,yaw205_pitch+010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,45,yaw205_pitch+010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,205,10,60,yaw205_pitch+010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,-60,yaw210_pitch-010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,-45,yaw210_pitch-010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,-30,yaw210_pitch-010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,-15,yaw210_pitch-010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,15,yaw210_pitch-010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,30,yaw210_pitch-010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,45,yaw210_pitch-010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-10,60,yaw210_pitch-010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,-60,yaw210_pitch-005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,-45,yaw210_pitch-005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,-30,yaw210_pitch-005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,-15,yaw210_pitch-005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,15,yaw210_pitch-005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,30,yaw210_pitch-005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,45,yaw210_pitch-005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,-5,60,yaw210_pitch-005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,-60,yaw210_pitch+000_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,-45,yaw210_pitch+000_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,-30,yaw210_pitch+000_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,-15,yaw210_pitch+000_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,15,yaw210_pitch+000_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,30,yaw210_pitch+000_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,45,yaw210_pitch+000_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,0,60,yaw210_pitch+000_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,-60,yaw210_pitch+005_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,-45,yaw210_pitch+005_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,-30,yaw210_pitch+005_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,-15,yaw210_pitch+005_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,15,yaw210_pitch+005_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,30,yaw210_pitch+005_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,45,yaw210_pitch+005_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,5,60,yaw210_pitch+005_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,-60,yaw210_pitch+010_roll-060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,-45,yaw210_pitch+010_roll-045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,-30,yaw210_pitch+010_roll-030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,-15,yaw210_pitch+010_roll-015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,15,yaw210_pitch+010_roll+015,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,30,yaw210_pitch+010_roll+030,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,45,yaw210_pitch+010_roll+045,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R5_neutral,neutral-control,210,10,60,yaw210_pitch+010_roll+060,True,True,20_pack,fullrun 中等亮度/中等 contrast 背景对照
+R1_high_info,high-info,230,15,-60,yaw230_pitch+015_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,-45,yaw230_pitch+015_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,-30,yaw230_pitch+015_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,-15,yaw230_pitch+015_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,15,yaw230_pitch+015_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,30,yaw230_pitch+015_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,45,yaw230_pitch+015_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,15,60,yaw230_pitch+015_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,-60,yaw230_pitch+020_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,-45,yaw230_pitch+020_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,-30,yaw230_pitch+020_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,-15,yaw230_pitch+020_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,15,yaw230_pitch+020_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,30,yaw230_pitch+020_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,45,yaw230_pitch+020_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,20,60,yaw230_pitch+020_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,-60,yaw230_pitch+025_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,-45,yaw230_pitch+025_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,-30,yaw230_pitch+025_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,-15,yaw230_pitch+025_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,15,yaw230_pitch+025_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,30,yaw230_pitch+025_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,45,yaw230_pitch+025_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,25,60,yaw230_pitch+025_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,-60,yaw230_pitch+030_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,-45,yaw230_pitch+030_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,-30,yaw230_pitch+030_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,-15,yaw230_pitch+030_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,15,yaw230_pitch+030_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,30,yaw230_pitch+030_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,45,yaw230_pitch+030_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,30,60,yaw230_pitch+030_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,-60,yaw230_pitch+035_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,-45,yaw230_pitch+035_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,-30,yaw230_pitch+035_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,-15,yaw230_pitch+035_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,15,yaw230_pitch+035_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,30,yaw230_pitch+035_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,45,yaw230_pitch+035_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,230,35,60,yaw230_pitch+035_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,-60,yaw235_pitch+015_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,-45,yaw235_pitch+015_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,-30,yaw235_pitch+015_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,-15,yaw235_pitch+015_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,15,yaw235_pitch+015_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,30,yaw235_pitch+015_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,45,yaw235_pitch+015_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,15,60,yaw235_pitch+015_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,-60,yaw235_pitch+020_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,-45,yaw235_pitch+020_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,-30,yaw235_pitch+020_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,-15,yaw235_pitch+020_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,15,yaw235_pitch+020_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,30,yaw235_pitch+020_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,45,yaw235_pitch+020_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,20,60,yaw235_pitch+020_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,-60,yaw235_pitch+025_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,-45,yaw235_pitch+025_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,-30,yaw235_pitch+025_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,-15,yaw235_pitch+025_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,15,yaw235_pitch+025_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,30,yaw235_pitch+025_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,45,yaw235_pitch+025_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,25,60,yaw235_pitch+025_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,-60,yaw235_pitch+030_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,-45,yaw235_pitch+030_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,-30,yaw235_pitch+030_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,-15,yaw235_pitch+030_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,15,yaw235_pitch+030_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,30,yaw235_pitch+030_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,45,yaw235_pitch+030_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,30,60,yaw235_pitch+030_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,-60,yaw235_pitch+035_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,-45,yaw235_pitch+035_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,-30,yaw235_pitch+035_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,-15,yaw235_pitch+035_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,15,yaw235_pitch+035_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,30,yaw235_pitch+035_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,45,yaw235_pitch+035_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,235,35,60,yaw235_pitch+035_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,-60,yaw240_pitch+015_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,-45,yaw240_pitch+015_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,-30,yaw240_pitch+015_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,-15,yaw240_pitch+015_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,15,yaw240_pitch+015_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,30,yaw240_pitch+015_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,45,yaw240_pitch+015_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,15,60,yaw240_pitch+015_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,-60,yaw240_pitch+020_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,-45,yaw240_pitch+020_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,-30,yaw240_pitch+020_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,-15,yaw240_pitch+020_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,15,yaw240_pitch+020_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,30,yaw240_pitch+020_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,45,yaw240_pitch+020_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,20,60,yaw240_pitch+020_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,-60,yaw240_pitch+025_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,-45,yaw240_pitch+025_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,-30,yaw240_pitch+025_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,-15,yaw240_pitch+025_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,15,yaw240_pitch+025_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,30,yaw240_pitch+025_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,45,yaw240_pitch+025_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,25,60,yaw240_pitch+025_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,-60,yaw240_pitch+030_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,-45,yaw240_pitch+030_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,-30,yaw240_pitch+030_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,-15,yaw240_pitch+030_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,15,yaw240_pitch+030_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,30,yaw240_pitch+030_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,45,yaw240_pitch+030_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,30,60,yaw240_pitch+030_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,-60,yaw240_pitch+035_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,-45,yaw240_pitch+035_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,-30,yaw240_pitch+035_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,-15,yaw240_pitch+035_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,15,yaw240_pitch+035_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,30,yaw240_pitch+035_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,45,yaw240_pitch+035_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,240,35,60,yaw240_pitch+035_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,-60,yaw245_pitch+015_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,-45,yaw245_pitch+015_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,-30,yaw245_pitch+015_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,-15,yaw245_pitch+015_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,15,yaw245_pitch+015_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,30,yaw245_pitch+015_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,45,yaw245_pitch+015_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,15,60,yaw245_pitch+015_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,-60,yaw245_pitch+020_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,-45,yaw245_pitch+020_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,-30,yaw245_pitch+020_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,-15,yaw245_pitch+020_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,15,yaw245_pitch+020_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,30,yaw245_pitch+020_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,45,yaw245_pitch+020_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,20,60,yaw245_pitch+020_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,-60,yaw245_pitch+025_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,-45,yaw245_pitch+025_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,-30,yaw245_pitch+025_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,-15,yaw245_pitch+025_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,15,yaw245_pitch+025_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,30,yaw245_pitch+025_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,45,yaw245_pitch+025_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,25,60,yaw245_pitch+025_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,-60,yaw245_pitch+030_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,-45,yaw245_pitch+030_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,-30,yaw245_pitch+030_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,-15,yaw245_pitch+030_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,15,yaw245_pitch+030_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,30,yaw245_pitch+030_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,45,yaw245_pitch+030_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,30,60,yaw245_pitch+030_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,-60,yaw245_pitch+035_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,-45,yaw245_pitch+035_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,-30,yaw245_pitch+035_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,-15,yaw245_pitch+035_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,15,yaw245_pitch+035_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,30,yaw245_pitch+035_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,45,yaw245_pitch+035_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,245,35,60,yaw245_pitch+035_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,-60,yaw250_pitch+015_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,-45,yaw250_pitch+015_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,-30,yaw250_pitch+015_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,-15,yaw250_pitch+015_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,15,yaw250_pitch+015_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,30,yaw250_pitch+015_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,45,yaw250_pitch+015_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,15,60,yaw250_pitch+015_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,-60,yaw250_pitch+020_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,-45,yaw250_pitch+020_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,-30,yaw250_pitch+020_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,-15,yaw250_pitch+020_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,15,yaw250_pitch+020_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,30,yaw250_pitch+020_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,45,yaw250_pitch+020_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,20,60,yaw250_pitch+020_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,-60,yaw250_pitch+025_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,-45,yaw250_pitch+025_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,-30,yaw250_pitch+025_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,-15,yaw250_pitch+025_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,15,yaw250_pitch+025_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,30,yaw250_pitch+025_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,45,yaw250_pitch+025_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,25,60,yaw250_pitch+025_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,-60,yaw250_pitch+030_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,-45,yaw250_pitch+030_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,-30,yaw250_pitch+030_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,-15,yaw250_pitch+030_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,15,yaw250_pitch+030_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,30,yaw250_pitch+030_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,45,yaw250_pitch+030_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,30,60,yaw250_pitch+030_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,-60,yaw250_pitch+035_roll-060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,-45,yaw250_pitch+035_roll-045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,-30,yaw250_pitch+035_roll-030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,-15,yaw250_pitch+035_roll-015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,15,yaw250_pitch+035_roll+015,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,30,yaw250_pitch+035_roll+030,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,45,yaw250_pitch+035_roll+045,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R1_high_info,high-info,250,35,60,yaw250_pitch+035_roll+060,True,True,20_pack,high-info-seed yaw240 pitch+20/+30
+R2_dark_rollsens,dark/roll-sensitive,275,-85,-60,yaw275_pitch-085_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,-45,yaw275_pitch-085_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,-30,yaw275_pitch-085_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,-15,yaw275_pitch-085_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,15,yaw275_pitch-085_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,30,yaw275_pitch-085_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,45,yaw275_pitch-085_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-85,60,yaw275_pitch-085_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,-60,yaw275_pitch-080_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,-45,yaw275_pitch-080_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,-30,yaw275_pitch-080_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,-15,yaw275_pitch-080_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,15,yaw275_pitch-080_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,30,yaw275_pitch-080_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,45,yaw275_pitch-080_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-80,60,yaw275_pitch-080_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,-60,yaw275_pitch-075_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,-45,yaw275_pitch-075_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,-30,yaw275_pitch-075_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,-15,yaw275_pitch-075_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,15,yaw275_pitch-075_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,30,yaw275_pitch-075_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,45,yaw275_pitch-075_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-75,60,yaw275_pitch-075_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,-60,yaw275_pitch-070_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,-45,yaw275_pitch-070_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,-30,yaw275_pitch-070_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,-15,yaw275_pitch-070_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,15,yaw275_pitch-070_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,30,yaw275_pitch-070_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,45,yaw275_pitch-070_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-70,60,yaw275_pitch-070_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,-60,yaw275_pitch-065_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,-45,yaw275_pitch-065_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,-30,yaw275_pitch-065_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,-15,yaw275_pitch-065_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,15,yaw275_pitch-065_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,30,yaw275_pitch-065_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,45,yaw275_pitch-065_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,275,-65,60,yaw275_pitch-065_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,-60,yaw280_pitch-085_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,-45,yaw280_pitch-085_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,-30,yaw280_pitch-085_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,-15,yaw280_pitch-085_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,15,yaw280_pitch-085_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,30,yaw280_pitch-085_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,45,yaw280_pitch-085_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-85,60,yaw280_pitch-085_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,-60,yaw280_pitch-080_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,-45,yaw280_pitch-080_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,-30,yaw280_pitch-080_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,-15,yaw280_pitch-080_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,15,yaw280_pitch-080_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,30,yaw280_pitch-080_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,45,yaw280_pitch-080_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-80,60,yaw280_pitch-080_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,-60,yaw280_pitch-075_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,-45,yaw280_pitch-075_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,-30,yaw280_pitch-075_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,-15,yaw280_pitch-075_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,15,yaw280_pitch-075_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,30,yaw280_pitch-075_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,45,yaw280_pitch-075_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-75,60,yaw280_pitch-075_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,-60,yaw280_pitch-070_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,-45,yaw280_pitch-070_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,-30,yaw280_pitch-070_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,-15,yaw280_pitch-070_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,15,yaw280_pitch-070_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,30,yaw280_pitch-070_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,45,yaw280_pitch-070_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-70,60,yaw280_pitch-070_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,-60,yaw280_pitch-065_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,-45,yaw280_pitch-065_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,-30,yaw280_pitch-065_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,-15,yaw280_pitch-065_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,15,yaw280_pitch-065_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,30,yaw280_pitch-065_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,45,yaw280_pitch-065_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,280,-65,60,yaw280_pitch-065_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,-60,yaw285_pitch-085_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,-45,yaw285_pitch-085_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,-30,yaw285_pitch-085_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,-15,yaw285_pitch-085_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,15,yaw285_pitch-085_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,30,yaw285_pitch-085_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,45,yaw285_pitch-085_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-85,60,yaw285_pitch-085_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,-60,yaw285_pitch-080_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,-45,yaw285_pitch-080_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,-30,yaw285_pitch-080_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,-15,yaw285_pitch-080_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,15,yaw285_pitch-080_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,30,yaw285_pitch-080_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,45,yaw285_pitch-080_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-80,60,yaw285_pitch-080_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,-60,yaw285_pitch-075_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,-45,yaw285_pitch-075_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,-30,yaw285_pitch-075_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,-15,yaw285_pitch-075_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,15,yaw285_pitch-075_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,30,yaw285_pitch-075_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,45,yaw285_pitch-075_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-75,60,yaw285_pitch-075_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,-60,yaw285_pitch-070_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,-45,yaw285_pitch-070_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,-30,yaw285_pitch-070_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,-15,yaw285_pitch-070_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,15,yaw285_pitch-070_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,30,yaw285_pitch-070_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,45,yaw285_pitch-070_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-70,60,yaw285_pitch-070_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,-60,yaw285_pitch-065_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,-45,yaw285_pitch-065_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,-30,yaw285_pitch-065_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,-15,yaw285_pitch-065_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,15,yaw285_pitch-065_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,30,yaw285_pitch-065_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,45,yaw285_pitch-065_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,285,-65,60,yaw285_pitch-065_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,-60,yaw290_pitch-085_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,-45,yaw290_pitch-085_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,-30,yaw290_pitch-085_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,-15,yaw290_pitch-085_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,15,yaw290_pitch-085_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,30,yaw290_pitch-085_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,45,yaw290_pitch-085_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-85,60,yaw290_pitch-085_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,-60,yaw290_pitch-080_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,-45,yaw290_pitch-080_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,-30,yaw290_pitch-080_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,-15,yaw290_pitch-080_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,15,yaw290_pitch-080_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,30,yaw290_pitch-080_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,45,yaw290_pitch-080_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-80,60,yaw290_pitch-080_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,-60,yaw290_pitch-075_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,-45,yaw290_pitch-075_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,-30,yaw290_pitch-075_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,-15,yaw290_pitch-075_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,15,yaw290_pitch-075_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,30,yaw290_pitch-075_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,45,yaw290_pitch-075_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-75,60,yaw290_pitch-075_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,-60,yaw290_pitch-070_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,-45,yaw290_pitch-070_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,-30,yaw290_pitch-070_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,-15,yaw290_pitch-070_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,15,yaw290_pitch-070_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,30,yaw290_pitch-070_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,45,yaw290_pitch-070_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-70,60,yaw290_pitch-070_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,-60,yaw290_pitch-065_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,-45,yaw290_pitch-065_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,-30,yaw290_pitch-065_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,-15,yaw290_pitch-065_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,15,yaw290_pitch-065_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,30,yaw290_pitch-065_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,45,yaw290_pitch-065_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,290,-65,60,yaw290_pitch-065_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,-60,yaw295_pitch-085_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,-45,yaw295_pitch-085_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,-30,yaw295_pitch-085_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,-15,yaw295_pitch-085_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,15,yaw295_pitch-085_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,30,yaw295_pitch-085_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,45,yaw295_pitch-085_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-85,60,yaw295_pitch-085_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,-60,yaw295_pitch-080_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,-45,yaw295_pitch-080_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,-30,yaw295_pitch-080_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,-15,yaw295_pitch-080_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,15,yaw295_pitch-080_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,30,yaw295_pitch-080_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,45,yaw295_pitch-080_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-80,60,yaw295_pitch-080_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,-60,yaw295_pitch-075_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,-45,yaw295_pitch-075_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,-30,yaw295_pitch-075_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,-15,yaw295_pitch-075_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,15,yaw295_pitch-075_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,30,yaw295_pitch-075_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,45,yaw295_pitch-075_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-75,60,yaw295_pitch-075_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,-60,yaw295_pitch-070_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,-45,yaw295_pitch-070_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,-30,yaw295_pitch-070_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,-15,yaw295_pitch-070_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,15,yaw295_pitch-070_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,30,yaw295_pitch-070_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,45,yaw295_pitch-070_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-70,60,yaw295_pitch-070_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,-60,yaw295_pitch-065_roll-060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,-45,yaw295_pitch-065_roll-045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,-30,yaw295_pitch-065_roll-030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,-15,yaw295_pitch-065_roll-015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,15,yaw295_pitch-065_roll+015,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,30,yaw295_pitch-065_roll+030,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,45,yaw295_pitch-065_roll+045,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85
+R2_dark_rollsens,dark/roll-sensitive,295,-65,60,yaw295_pitch-065_roll+060,True,True,20_pack,dark/roll-sensitive-seed yaw285 pitch-70/-85

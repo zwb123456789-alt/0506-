@@ -1,0 +1,9 @@
+item,status,evidence,detail
+multi-seed sanity,通过,3/3 seed G5优于G1；full单调 3/3,"P-INT clean ocs_only, split seed固定42, model seed∈{42,7,123}"
+P-INT-hard subset,通过,clean 六子集分区重算完成；image 天花板下 joint≈image,robust-easy/ambiguous-flux/ocs-hard/image-hard/disagreement-hard 分区
+degraded-severe,通过,9/9 run；joint 稳定增量=False,blur2.0/downsample x4/flux12%；image_only 仍近饱和
+joint complementarity,不支持,clean 与 severe 下 image_only 均近饱和，joint 增量≤+0.0034,joint 强互补性仍未被支持（诚实负向观察，与 R125 D2 一致）
+M-roll full-2664,小roll稳健/大roll敏感,"G1 image hit@30 roll+15=0.9339, roll+30=0.5537（±15稳健，±30敏感）",phase63 全2664×4 roll 渲染+后处理+distribution-shift eval 完成
+conformal alpha,通过(SI增强),α=0.05/0.10/0.20 三档 coverage/set_size；set_size 随α增大收窄、随几何收紧,split-conformal 工程覆盖，非概率校准
+对路线一C论文claim影响,增强不变,OCS 多几何单调增益经 multi-seed 稳健；joint 天花板/P-EXT 边界不变,不修正 R125 闭口结论；joint 强互补性仍不宣称
+对三轴小项目启动影响,四类增强清账完毕,B/C/D/E 全部完成并有可审计表图；交 R127 裁决是否放行三轴,本轮不启动三轴小项目

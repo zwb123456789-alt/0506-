@@ -1,0 +1,7 @@
+interface_id,region,role,representative_candidates,yaw_range,pitch_range,key_metrics,r128_test_scenario,test_purpose,deployment_priority
+R128-I01,R1_high_info,high-info-roll-sensitive,C01/C02/C07,yaw245-247.5,pitch+30~40,"roll_sens=3.69-3.85; info_rank=7-24/107; nc=1.03-1.11",真实图像退化测试（高信息区）；joint互补性测试,验证在真实图像退化条件下高roll敏感区的OCS+图像joint可观测性是否互补,1（最高）
+R128-I02,R4_bright_info_boundary,bright-info-tradeoff,C09/C10,yaw152.5-155,pitch+20,"info_rank=1-11/107; brightness_rank=24-31/107; nc=1.08-1.20",亮-信息折中场景真实观测测试,验证中等亮度+最高信息proxy点在真实图像中的可观测性与joint协作效果,2
+R128-I03,R4_bright_cluster_caution,bright-but-low-info-caution,yaw147.5/+12.5（caution）,yaw145-150,pitch+10~15,"brightness_rank=1/107; info_rank=104/107; saturation=HIGH",高亮-低信息-饱和风险场景退化测试,验证最亮但低信息点在真实图像中是否确实退化严重；作为joint信息互补性测试的极端负面对照,3
+R128-I04,R3_low_info_connectivity,low-info-negative-control,C11/C12,yaw55-57.5,pitch+60~62.5,"info_rank=39-48/107; nc=0.81-0.90; connectivity=0.60",低信息区真实图像退化测试；joint互补性测试负面对照,验证低信息区OCS+图像joint是否仍有互补；作为负面基准确认低信息区不适合作主要观测目标,4
+R128-I05,R2_R5_control,dark-neutral-control,C13-C16,yaw210/280-285,pitch-85~-5,"utility≤0.001; 极暗/中性",暗/中性场景极值对照,确认极暗或中性场景的joint互补性基线；验证最差情形,5（低优先级）
+NOTE,—,说明,本清单仅列 R128 候选接口；R128 本身仍挂起不启动,—,—,—,等待 Codex 005 裁决三轴小项目收口后再决策 R128 启动时机,—

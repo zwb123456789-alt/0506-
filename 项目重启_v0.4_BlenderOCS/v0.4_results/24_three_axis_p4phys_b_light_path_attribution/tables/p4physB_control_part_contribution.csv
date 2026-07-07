@@ -1,0 +1,4 @@
+pose,role,ocs_total,metal_body,dark_panel,solar_panel,n_metal_px,n_dark_px
+R1_top1,fixed-geometry top-1,0.208890,0.198497,0.008775,0.001619,2653,1408
+R4_robust,roll-robust high-brightness contrast,0.201146,0.198721,0.000931,0.001494,2581,152
+R3_neg,low-info / negative contrast,0.066258,0.065266,0.000000,0.000991,4045,0

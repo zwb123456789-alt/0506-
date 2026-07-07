@@ -1,0 +1,11 @@
+redline,verdict
+no_training,PASS
+no_R128_no_route234,PASS
+no_full_sunview_or_pose_search,PASS (3x3x3 pose grid + 3x3 microgrid only)
+render_units<=80,PASS (76)
+source_pkgs_20_21_23A_23B_24_25_26_27_readonly,PASS
+no_write_chengguoqu_no_claude_md_change,PASS
+no_codex_named_files,PASS
+no_global_claim_from_microgrid,PASS (claim boundary table)
+material_proxy_not_claimed_real,PASS
+boundary_case_no_self_expansion,"PASS (returned to Codex, no second-round grid)"

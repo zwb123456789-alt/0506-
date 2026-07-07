@@ -1,0 +1,18 @@
+priority_rank,candidate_id,region,role,yaw_deg,pitch_deg,observation_goal,info_utility,brightness_utility,roll_utility,overall_p4_priority_score,deployment_context,caution_flag
+1,C01,R1_high_info,high-info-roll-sensitive,247.5,+37.5,验证roll对姿态可观测性的影响；高信息区采样,HIGH,MED,VERY_HIGH,0.462,roll-aware观测设计；joint互补性测试候选,HIGH-RISK(glint+sat)
+2,C02,R1_high_info,high-info-roll-sensitive,247.5,+40.0,验证高pitch+yaw240系roll敏感峰稳定性,HIGH,MED,VERY_HIGH,0.460,与C01配套；高pitch极值点,HIGH-RISK(glint+sat)
+3,C03,R1_high_info,high-info-roll-sensitive,247.5,+35.0,高信息区内部梯度采样,HIGH,MED,VERY_HIGH,0.452,补充C01/C02，增强pitch梯度,HIGH-RISK(glint+sat)
+4,C04,R1_high_info,high-info-roll-sensitive,247.5,+32.5,高信息区低pitch边界,HIGH,MED,VERY_HIGH,0.448,信息区低pitch端确认,HIGH-RISK(glint+sat)
+5,C05,R1_high_info,high-info-roll-sensitive,247.5,+30.0,R1区最低pitch高信息验证,HIGH,MED,HIGH,0.441,R1信息区下边界,HIGH-RISK(glint+sat)
+6,C06,R1_high_info,high-info-roll-sensitive,245.0,+37.5,R1不同yaw点验证横向稳定性,HIGH,MED,VERY_HIGH,0.441,横向稳定性验证；saturation风险稍低,MED-RISK(glint only)
+7,C07,R1_high_info,high-info-roll-sensitive,245.0,+35.0,P2整数点验证（最高roll_sens=3.85）,HIGH,MED,VERY_HIGH,0.440,P2→P3升格点；最高单点roll_sens,HIGH-RISK(glint+sat)
+8,C08,R1_high_info,high-info-roll-sensitive,245.0,+32.5,R1区角点稳定性,HIGH,MED,VERY_HIGH,0.435,R1高信息边界确认,HIGH-RISK(glint+sat)
+9,C09,R4_bright_info_boundary,bright-info-tradeoff,155.0,+20.0,亮-信息折中；测试moderate亮度+高信息，info_rank=1,HIGH,HIGH,LOW,0.427,亮度可接受+信息最高；无glint/saturation风险；最优综合候选,LOW-RISK
+10,C10,R4_bright_info_boundary,bright-info-tradeoff,152.5,+20.0,亮-信息折中备选；亮度更高但信息次高,HIGH,VERY_HIGH,LOW,0.415,亮度备选；与C09配套,LOW-RISK
+11,C11,R3_low_info_connectivity,low-info-negative-control,57.5,+62.5,低信息区负面对照采样，验证观测规划有效性,LOW,LOW,MED,0.237,负面对照；验证低信息区连通性,MED-RISK(glint)
+12,C12,R3_low_info_connectivity,low-info-negative-control,55.0,+60.0,P2整数验证点；低信息区负面对照,LOW,LOW,MED,0.231,负面对照；P2验证点,MED-RISK(glint)
+13,C13,R2_control,dark-neutral-control,285.0,-85.0,dark对照参照，不纳入主观测规划,VERY_LOW,VERY_LOW,MED,0.045,仅作dark极值参照,MED-RISK
+14,C14,R2_control,dark-neutral-control,280.0,-85.0,dark对照参照备选,VERY_LOW,VERY_LOW,MED,0.041,dark极值参照,MED-RISK
+15,C15,R5_control,dark-neutral-control,210.0,-5.0,neutral背景对照，utility<0，优先级最低,VERY_LOW,VERY_LOW,LOW,-0.115,背景中性参照仅,MED-RISK
+16,C16,R5_control,dark-neutral-control,210.0,-10.0,neutral背景对照，utility<0，优先级最低,VERY_LOW,VERY_LOW,LOW,-0.117,背景中性参照仅,MED-RISK
+CAUTION,R4_bright_cluster_caution,bright-but-low-info-caution,147.5,+12.5,不列入主规划；仅作亮度饱和风险参考上限,VERY_LOW,VERY_HIGH(sat风险),VERY_LOW,N/A（不列主规划）,brightness peak caution only,VERY_HIGH(sat+glint)

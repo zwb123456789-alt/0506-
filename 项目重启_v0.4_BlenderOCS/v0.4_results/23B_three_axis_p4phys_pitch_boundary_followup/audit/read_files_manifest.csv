@@ -1,0 +1,12 @@
+file,type
+CLAUDE.md,context
+00_路线冻结文件区/01_三轴小项目_最亮构型与观测规划指导文件.md,spec
+01_成果区/00_当前主用成果/05_三轴小项目最亮构型与光路解释技术路线_R144依据.md,spec
+04_Codex审阅/R141_Codex_任务单_P4PHYS-A_top1与roll局部确认.md,codex
+04_Codex审阅/R143_Codex_规划_R141_R142后固定几何最亮姿态确认执行方案.md,codex
+04_Codex审阅/R144_Codex_技术路线_三轴小项目最亮构型与光路解释.md,codex
+04_Codex审阅/R146_Codex_审阅_006A最低接收但需pitch边界追加.md,codex
+04_Codex审阅/R147_Codex_任务单_P4PHYS-A2_pitch边界追加确认.md,task
+02_Claude输出/006A_P4PHYS_top1_roll_confirmation_Claude执行报告.md,report
+23A/tables/p4physA_refined_topN.csv,data
+23A/tables/p4physA_final_top1_decision.csv,data

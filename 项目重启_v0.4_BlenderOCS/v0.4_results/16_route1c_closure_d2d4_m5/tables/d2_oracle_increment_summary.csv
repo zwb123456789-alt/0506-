@@ -1,0 +1,4 @@
+geom,n,image_only,ocs_only,joint,oracle_image∪ocs,oracle_image∪joint,oracle_ocs∪joint,oracle_all3,joint_minus_best_single,joint_only_correct,image_only_correct,ocs_only_correct
+G1,296,1.0,0.277,1.0,1.0,1.0,1.0,1.0,0.0,0,0,0
+G3,296,1.0,0.6723,1.0,1.0,1.0,1.0,1.0,0.0,0,0,0
+G5,296,0.9932,0.8108,1.0,1.0,1.0,1.0,1.0,0.0068,0,0,0

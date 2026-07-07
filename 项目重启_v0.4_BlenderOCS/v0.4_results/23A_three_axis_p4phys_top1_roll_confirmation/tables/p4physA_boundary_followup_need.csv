@@ -1,0 +1,2 @@
+direction,current_boundary,proposed_extension,roll_for_extension,yaw_for_extension,n_units_estimate,priority,reason
+pitch_minus,27.5,"pitch ∈ {22.5, 25.0}",+15 only (peak roll confirmed),"245.0 (± 242.5, 247.5 optional)",2~6,HIGH,"ocs at pitch=27.5 > pitch=30.0, trend suggests peak below 27.5"

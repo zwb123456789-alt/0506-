@@ -1,0 +1,11 @@
+type,statement,basis_or_path
+允许写,OCS 多几何 G1->G3->G5 单调增益，经 multi-seed(42/7/123) 稳健,multiseed_monotonicity_check.csv
+允许写,fixed-roll 结论对 ±15° roll 稳健、对 ±30° roll 敏感（full-2664）,mroll_full2664_metrics.csv
+允许写,clean 与 severe 下 image_only 近饱和，joint 无稳定增量（诚实负向）,degraded_severe_joint_increment.csv
+允许写,split-conformal set_size 随几何收紧、随 α 增大收窄,conformal_alpha_coverage_setsize.csv
+禁止写,joint 强互补性已证明,severe 下仍无稳定增量
+禁止写,真实观测/望远镜姿态反演成功,全部 model-known simulated
+禁止写,P-EXT yaw-block 已解决,本轮未触及 P-EXT 外推
+禁止写,M-roll full-2664 = 三轴小项目完成,仅 fixed-roll roll-sensitivity 探针
+禁止写,conformal = Bayesian posterior / 最终概率校准,仅工程覆盖区间
+禁止写,degraded-severe = operational robustness 验证,仿真物理退化

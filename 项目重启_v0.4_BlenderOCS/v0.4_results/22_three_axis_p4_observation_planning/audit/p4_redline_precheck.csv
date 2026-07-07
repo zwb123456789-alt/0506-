@@ -1,0 +1,13 @@
+check_id,category,check_description,result,note
+RC-01,no_render,本轮不新增Blender渲染或后处理,PASS,P4只综合P1/P2/P3已有数据
+RC-02,no_train,不训练任何模型,PASS,无新训练任务
+RC-03,no_R128,不启动R128,PASS,R128继续挂起
+RC-04,no_route234,不启动路线二/三/四,PASS,仅三轴小项目路线内
+RC-05,no_old_modify,不改旧脚本/旧目录10-21,PASS,只写22号包
+RC-06,no_results_area,不写成果区,PASS,22号包不在成果区
+RC-07,no_codex_file,不生成Codex审阅文件,PASS,004_Codex审阅文件不在22号包内
+RC-08,no_claude_md,不改CLAUDE.md,PASS,不修改任何CLAUDE.md
+RC-09,no_real_target,不把P4写成真实未知目标三轴姿态反演系统,PASS,明确限定model-known simulated
+RC-10,proxy_boundary,不把neighbor_contrast_ypr写成最终模型级信息量证明,PASS,所有指标标注为proxy级
+RC-11,scope_check,P4只综合P1/P2/P3，不新增分析以外的扩展,PASS,严格按R137任务单
+RC-12,no_T3_L2,不启动T3/L2,PASS,本任务单内无此内容

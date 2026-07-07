@@ -1,0 +1,30 @@
+{
+  "n_regions": 5,
+  "n_unique_poses": 125,
+  "n_total_pose_roll_units": 1125,
+  "n_roll0_reuse": 125,
+  "n_nonzero_render_units": 1000,
+  "scale_ok": true,
+  "roll0_coverage_ok": true,
+  "rolls": [
+    -60,
+    -45,
+    -30,
+    -15,
+    0,
+    15,
+    30,
+    45,
+    60
+  ],
+  "nonzero_rolls": [
+    -60,
+    -45,
+    -30,
+    -15,
+    15,
+    30,
+    45,
+    60
+  ]
+}

@@ -1,0 +1,16 @@
+region,category,priority,yaw_deg,pitch_deg,grid_type,ocs_mean,ocs_roll0,brightness_rank,info_rank,neighbor_contrast_mean,roll_sensitivity_score,max_rank_shift,pixel_contrast_mean,any_glint,any_saturation,image_usable_all
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+12.5,half2p5,1.980887e-01,2.011461e-01,1,104,0.161473,0.052620,9,0.455562,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+15.0,half2p5,1.873481e-01,1.902424e-01,2,98,0.324763,0.064529,14,0.446834,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+12.5,half2p5,1.854490e-01,1.883958e-01,3,96,0.338968,0.065167,14,0.459237,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+12.5,half2p5,1.849325e-01,1.864211e-01,4,106,0.157427,0.056708,14,0.444958,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+10.0,half2p5,1.835687e-01,1.855153e-01,5,105,0.160601,0.066466,14,0.469533,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+15.0,integer5,1.761335e-01,1.774126e-01,6,93,0.484464,0.069819,17,0.449367,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+15.0,integer5,1.752863e-01,1.778806e-01,7,99,0.320398,0.052048,17,0.443697,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+10.0,integer5,1.717528e-01,1.749517e-01,8,97,0.337105,0.065676,18,0.472917,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+10.0,integer5,1.715869e-01,1.735689e-01,9,107,0.156516,0.054179,18,0.445356,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+17.5,half2p5,1.546048e-01,1.567501e-01,10,82,0.579695,0.071806,22,0.441806,0,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,152.5,+12.5,half2p5,1.538566e-01,1.559515e-01,11,83,0.573626,0.082084,20,0.457036,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,152.5,+15.0,half2p5,1.456137e-01,1.476620e-01,12,74,0.699415,0.070382,22,0.446153,0,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+17.5,half2p5,1.455575e-01,1.472228e-01,13,72,0.723823,0.068249,22,0.444991,0,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+17.5,half2p5,1.448783e-01,1.458012e-01,14,84,0.571560,0.057587,22,0.436044,0,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,152.5,+10.0,half2p5,1.424588e-01,1.446893e-01,15,85,0.571033,0.070625,22,0.470714,0,0,1

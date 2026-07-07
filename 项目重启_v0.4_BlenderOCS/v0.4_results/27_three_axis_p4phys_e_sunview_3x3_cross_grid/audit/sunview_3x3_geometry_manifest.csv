@@ -1,0 +1,10 @@
+geom_id,sun_offset_deg,view_offset_deg,kind,sun_dir,det_dir,sun_ang_from_base_deg,det_ang_from_base_deg,camera_source,sun_source,anchor_26_geom,note
+H00_baseline,0,0,baseline,"[0.957826,0.000000,0.287348]","[0.445435,-0.890871,0.089087]",0.000,0.000,baseline,baseline,G0_baseline,sun_offset=+0 view_offset=+0; cam<-baseline sun<-baseline
+Hsp_v0,7,0,pure_sun,"[0.985706,0.000000,0.168476]","[0.445435,-0.890871,0.089087]",7.000,0.000,baseline,26_G1_sun_plus,G1_sun_plus,sun_offset=+7 view_offset=+0; cam<-baseline sun<-26_G1_sun_plus
+Hsm_v0,-7,0,pure_sun,"[0.915668,0.000000,0.401936]","[0.445435,-0.890871,0.089087]",7.000,0.000,baseline,26_G2_sun_minus,G2_sun_minus,sun_offset=-7 view_offset=+0; cam<-baseline sun<-26_G2_sun_minus
+Hs0_vp,0,7,pure_view,"[0.957826,0.000000,0.287348]","[0.437260,-0.874520,0.209808]",0.000,7.000,26_G3_view_plus,baseline,G3_view_plus,sun_offset=+0 view_offset=+7; cam<-26_G3_view_plus sun<-baseline
+Hs0_vm,0,-7,pure_view,"[0.957826,0.000000,0.287348]","[0.446971,-0.893941,-0.032962]",0.000,7.000,26_G4_view_minus,baseline,G4_view_minus,sun_offset=+0 view_offset=-7; cam<-26_G4_view_minus sun<-baseline
+Hsp_vp,7,7,cross_corner,"[0.985706,0.000000,0.168476]","[0.437260,-0.874520,0.209808]",7.000,7.000,26_G3_view_plus,26_G1_sun_plus,,sun_offset=+7 view_offset=+7; cam<-26_G3_view_plus sun<-26_G1_sun_plus
+Hsp_vm,7,-7,cross_corner,"[0.985706,0.000000,0.168476]","[0.446971,-0.893941,-0.032962]",7.000,7.000,26_G4_view_minus,26_G1_sun_plus,,sun_offset=+7 view_offset=-7; cam<-26_G4_view_minus sun<-26_G1_sun_plus
+Hsm_vp,-7,7,cross_corner,"[0.915668,0.000000,0.401936]","[0.437260,-0.874520,0.209808]",7.000,7.000,26_G3_view_plus,26_G2_sun_minus,,sun_offset=-7 view_offset=+7; cam<-26_G3_view_plus sun<-26_G2_sun_minus
+Hsm_vm,-7,-7,cross_corner,"[0.915668,0.000000,0.401936]","[0.446971,-0.893941,-0.032962]",7.000,7.000,26_G4_view_minus,26_G2_sun_minus,,sun_offset=-7 view_offset=-7; cam<-26_G4_view_minus sun<-26_G2_sun_minus

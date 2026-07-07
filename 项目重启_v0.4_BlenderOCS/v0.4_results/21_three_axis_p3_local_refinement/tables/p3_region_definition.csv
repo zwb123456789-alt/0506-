@@ -1,0 +1,6 @@
+region,priority,category,yaw_range_deg,pitch_range_deg,step_deg,n_grid_poses,n_pose_roll_units,p2_basis,rationale
+R1_high_info,primary,high-info,240.0..250.0,+30.0..+40.0,2.5,25,225,P2 R1 roll_sens peak yaw245 pitch+30/+35 (mean_rs=2.66),加密确认 roll-sensitive peak 是否稳定在 yaw245/pitch+30~35 邻域
+R4_bright_info_boundary,primary,bright/robust-easy + info-boundary,145.0..160.0,+10.0..+25.0,2.5,49,441,P2 R4 brightest yaw150/+15 (b_rank=1) 与 info-max yaw155/+20 (info_rank=1),加密确认最亮点是否迁移，及亮-高对比边界(yaw155/+20)是否稳定可利用
+R3_low_info_connectivity,primary,low-info/ocs-hard,55.0..65.0,+60.0..+70.0,2.5,25,225,P2 R3 low-info yaw55~65 pitch+60~70 (mean_nc 最低=0.798),加密确认低信息区是否连通，作为观测规划负面对照
+R2_control,control,dark/roll-sensitive-control,280.0..285.0,-85.0..-80.0,5.0,4,36,P2 R2 dark/roll-sens yaw285 pitch-85/-80 (utility<0),少量暗/roll-sensitive 对照点，不扩大为主任务
+R5_control,control,neutral-control,205.0..210.0,-10.0..-5.0,5.0,4,36,P2 R5 neutral yaw205/210 pitch-5/-10 (utility 最低),少量中性区对照点，不扩大为主任务

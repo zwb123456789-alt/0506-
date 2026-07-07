@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-07-06T21:43:18.687765",
+  "n_poses": 6,
+  "new_render_units_estimate": 24,
+  "poses": [
+    {
+      "pose_id": "C_R3",
+      "label": "yaw055_pitch+060_roll+000",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "is_new": false
+    },
+    {
+      "pose_id": "S1_best[B_y35_p75_r-20]",
+      "label": "yaw035_pitch+075_roll-020",
+      "yaw": 35.0,
+      "pitch": 75.0,
+      "roll": -20.0,
+      "is_new": true
+    },
+    {
+      "pose_id": "A_top1",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "is_new": false
+    },
+    {
+      "pose_id": "D5_roll125",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "is_new": false
+    },
+    {
+      "pose_id": "D6_roll175",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "is_new": false
+    },
+    {
+      "pose_id": "B_R4",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "is_new": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+redline,status,evidence
+R1 不启动全量三轴渲染,PASS,全部脚本只读 json/csv; 无 blender 调用
+R2 不启动三轴训练,PASS,无训练脚本调用
+R3 不改旧脚本/metrics/samples/结果目录10-17,PASS,只读打开; 全部写 18 号包
+R4 不改姿态网格/OBS_GEOMETRIES/split/backbone/超参,PASS,未写 config/代码层
+R5 不启动R128/真实图像难度审计/GEO/路线二三四/T3L2,PASS,本轮仅准备包; R128 记为不执行
+R6 不写成果区/不生成Codex审阅文件/不改CLAUDE.md,PASS,输出仅 18 号包 + 02_Claude输出/001 报告
+R7 不写成真实未知目标三轴姿态反演系统,PASS,claims 表 forbidden 明列; 定位为规划
+R8 区分最亮与最优反演/brightness与information,PASS,boundary 文档 corr≈-0.09; registry info_class 分列
+R9 报告写入正确路径 02_Claude输出/,PASS,001 报告写入 02_Claude输出/ 非 04_Codex审阅/
+R10 P1-P4 本轮不执行,PASS,sampling 计划标注仅设计; P1 需Codex放行

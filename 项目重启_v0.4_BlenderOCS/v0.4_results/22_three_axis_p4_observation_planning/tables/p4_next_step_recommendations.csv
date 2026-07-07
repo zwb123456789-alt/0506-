@@ -1,0 +1,7 @@
+rec_id,priority,recommendation,rationale,trigger_condition,blocking_condition
+REC-01,HIGH,Codex 005 审阅裁决三轴小项目是否阶段性收口,P1/P2/P3/P4 证据链已完整；需 Codex 决策是否收口进入论文候选材料,P4 完成（当前已完成）,无
+REC-02,HIGH,若收口通过：回看 R128 候选规划（新路线二真实观测难度/图像退化/joint互补性）,P4 提供了 R128 需要的候选场景接口（R1/R4/R3区域），R128 继续挂起至此,Codex 005 通过三轴小项目收口,R128 必须在 Codex 批准后才可启动
+REC-03,HIGH,若收口通过：将 P4 候选资产（C09/C01-C08/C11-C12）纳入论文 Results/SI 候选材料清单,C09 是最优综合观测候选；R1区提供 roll-aware 证据；R3 提供负面对照,Codex 005 通过三轴小项目收口,需 Codex 明确候选资产范围
+REC-04,MEDIUM,若需补充诊断：可考虑 R1 区高 |pitch| 边界（pitch>40）的小规模验证（<20 pose）,R1 候选集中 pitch 范围为 30-40；若需拓展可小规模补充，但不强制,Codex 005 明确需要补充,需 Codex 明确放行；不自行启动
+REC-05,LOW,roll-aware neural model 作为后续阶段门（C 类新训练）,当前 proxy 级 roll_sensitivity 证据可为后续 roll-aware 训练提供候选场景，但不放行,Codex 在后续路线决策中明确放行,需单独阶段门；当前不启动
+REC-06,LOW,R3 负面对照区可用于后续真实图像退化测试,R3 低信息连通区可作为 joint 互补性测试中的"低信息对照"基准,R128 启动后,依赖 R128 启动

@@ -1,0 +1,97 @@
+﻿scope,category,ref_id,path,role_or_size,status
+upstream_14,codex_review,R113,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md,链1审阅:B6判据轴闭口,OK
+upstream_14,codex_review,R115,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md,链2审阅:clean/P-INT多几何增益,OK
+upstream_14,codex_review,R117,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md,链3审阅:degraded/M-roll,OK
+upstream_14,codex_review,R119,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md,链4审阅:D3/P-DB/conformal,OK
+upstream_14,codex_review,R120,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R120_Codex_任务单_1C阶段性Results非正文证据包.md,本轮任务单,OK
+upstream_14,claude_report,102,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/02_Claude输出/102_1C-B6-FIX01_多折补齐与foldmatched修正_Claude执行报告.md,链1来源报告,OK
+upstream_14,claude_report,103,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/02_Claude输出/103_1C-L1M2_多几何OCS主线长程执行_Claude执行报告.md,链2来源报告,OK
+upstream_14,claude_report,104,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/02_Claude输出/104_1C-L1M3Mroll_退化真实性与roll边界探针_Claude执行报告.md,链3来源报告,OK
+upstream_14,claude_report,105,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/02_Claude输出/105_1C-L1D3_置信一致性与PDB正式评估_Claude执行报告.md,链4来源报告,OK
+upstream_14,claude_report,106,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/02_Claude输出/106_1C阶段性Results非正文证据包_Claude执行报告.md,本轮执行报告(将写入),PENDING
+upstream_14,result_area,00,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/00_B6-FIX01与single-frame负结果收口说明_R113通过.md,链1成果摘要,OK
+upstream_14,result_area,01,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/01_路线一C后续技术路线执行框架_R113通过.md,后续技术路线框架,OK
+upstream_14,result_area,05,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/05_L1M2多几何OCS第一阶段正结果_R115通过.md,链2成果摘要,OK
+upstream_14,result_area,06,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/06_L1M3退化真实性与Mroll边界探针_R117通过.md,链3成果摘要,OK
+upstream_14,result_area,07,04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/07_L1D3置信一致性与PDB正式评估_R119通过.md,链4成果摘要,OK
+upstream_14,result_dir,10,v0.4_results/10_b6_circular_regression_fix01/,链1结果目录,OK
+upstream_14,result_dir,11,v0.4_results/11_l1m2_multigeometry_ocs/,链2结果目录,OK
+upstream_14,result_dir,12,v0.4_results/12_l1m3_degraded_mroll/,链3结果目录,OK
+upstream_14,result_dir,13,v0.4_results/13_l1d3_confidence_pdb/,链4结果目录,OK
+upstream_14,result_dir,14,v0.4_results/14_route1c_stage_results_pack/,本轮证据包目录,OK
+upstream_14,data_csv,10-fm,v0.4_results/10_b6_circular_regression_fix01/b6_foldmatched_vs_p1a_best.csv,链1 fold-matched对照,OK
+upstream_14,data_csv,10-yb,v0.4_results/10_b6_circular_regression_fix01/b6_yawblock_stratified_best.csv,链1 yaw-block分层,OK
+upstream_14,data_csv,10-rm,v0.4_results/10_b6_circular_regression_fix01/b6_run_metrics_summary_best.csv,链1 25run汇总,OK
+upstream_14,data_csv,11-gc,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_gain_curve_G1_G3_G5.csv,链2增益曲线,OK
+upstream_14,data_csv,11-ms,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_metrics_summary_best.csv,链2指标汇总,OK
+upstream_14,data_csv,11-pp,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_pint_vs_pext_ocs_only.csv,链2 P-INT vs P-EXT,OK
+upstream_14,data_csv,11-cp,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_complementarity_summary.csv,链2互补性汇总,OK
+upstream_14,data_json,11-gr,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_geometry_registry.json,几何注册(L1-G1/G3/G5),OK
+upstream_14,data_png,11-fig,v0.4_results/11_l1m2_multigeometry_ocs/figures/l1m2_gain_curve_best.png,链2增益曲线图,OK
+upstream_14,data_csv,12-db,v0.4_results/12_l1m3_degraded_mroll/degraded/l1m3_degraded_metrics_summary_best.csv,链3退化best,OK
+upstream_14,data_csv,12-df,v0.4_results/12_l1m3_degraded_mroll/degraded/l1m3_degraded_metrics_summary_final.csv,链3退化final(检查点敏感),OK
+upstream_14,data_md,12-dg,v0.4_results/12_l1m3_degraded_mroll/degraded/l1m3_degraded_gain_and_drop_summary.md,链3增益与退化摘要,OK
+upstream_14,data_csv,12-mb,v0.4_results/12_l1m3_degraded_mroll/mroll/mroll_metrics_summary_best.csv,链3 M-roll指标,OK
+upstream_14,data_md,12-ms,v0.4_results/12_l1m3_degraded_mroll/mroll/mroll_roll_sensitivity_summary.md,链3 roll敏感性摘要,OK
+upstream_14,data_json,12-me,v0.4_results/12_l1m3_degraded_mroll/mroll/mroll_eval_results.json,链3 M-roll原始结果,OK
+upstream_14,data_csv,12-gs,v0.4_results/12_l1m3_degraded_mroll/audit/l1m2_geometry_scale_consistency.csv,量纲一致性核验,OK
+upstream_14,data_csv,12-vr,v0.4_results/12_l1m3_degraded_mroll/audit/l1m2_val_samples_recovery_summary.csv,val samples恢复审计,OK
+upstream_14,data_json,12-lk,v0.4_results/12_l1m3_degraded_mroll/audit/l1m2_transform_leakage_check.json,泄漏检查,OK
+upstream_14,data_csv,13-pdb,v0.4_results/13_l1d3_confidence_pdb/pdb/l1d3_pdb_retrieval_summary.csv,链4 P-DB检索汇总,OK
+upstream_14,data_csv,13-ec,v0.4_results/13_l1d3_confidence_pdb/consistency/l1d3_error_correlation_summary.csv,链4误差相关(互补),OK
+upstream_14,data_csv,13-rc,v0.4_results/13_l1d3_confidence_pdb/consistency/l1d3_risk_coverage.csv,链4 risk-coverage,OK
+upstream_14,data_csv,13-cf,v0.4_results/13_l1d3_confidence_pdb/conformal/l1d3_conformal_summary.csv,链4 conformal汇总,OK
+upstream_14,data_csv,13-hc,v0.4_results/13_l1d3_confidence_pdb/hardcases/l1d3_hardcase_index.csv,链4 hard-case索引(1231行),OK
+upstream_14,data_md,13-hd,v0.4_results/13_l1d3_confidence_pdb/hardcases/l1d3_recommended_pinthard_design.md,链4 P-INT-hard设计建议,OK
+upstream_14,data_csv,13-im,v0.4_results/13_l1d3_confidence_pdb/audit/l1d3_input_manifest.csv,链4输入审计manifest(104行),OK
+upstream_14,data_png,13-pg,v0.4_results/13_l1d3_confidence_pdb/figures/pdb_gain_curve.png,链4 P-DB增益图,OK
+upstream_14,data_png,13-cq,v0.4_results/13_l1d3_confidence_pdb/figures/complementarity_quadrants.png,链4互补四象限图,OK
+upstream_14,data_png,13-rc,v0.4_results/13_l1d3_confidence_pdb/figures/risk_coverage_curves.png,链4 risk-coverage图,OK
+upstream_14,pack_table,A,v0.4_results/14_route1c_stage_results_pack/tables/route1c_evidence_chain.csv,证据链总表,OK
+upstream_14,pack_text,A,v0.4_results/14_route1c_stage_results_pack/text/route1c_evidence_chain.md,证据链总表MD,OK
+upstream_14,pack_table,B,v0.4_results/14_route1c_stage_results_pack/tables/route1c_figure_plan.csv,图表与SI清单,OK
+upstream_14,pack_text,B,v0.4_results/14_route1c_stage_results_pack/text/route1c_figure_plan.md,图表与SI清单MD,OK
+upstream_14,pack_text,C,v0.4_results/14_route1c_stage_results_pack/text/route1c_results_narrative_skeleton.md,非正文叙事骨架,OK
+upstream_14,pack_table,D,v0.4_results/14_route1c_stage_results_pack/tables/route1c_claim_boundary_table.csv,claim边界表,OK
+upstream_14,pack_text,D,v0.4_results/14_route1c_stage_results_pack/text/route1c_claim_boundary_table.md,claim边界表MD,OK
+upstream_14,pack_table,E,v0.4_results/14_route1c_stage_results_pack/tables/route1c_next_experiment_options.csv,待补实验建议表,OK
+upstream_14,pack_text,E,v0.4_results/14_route1c_stage_results_pack/text/route1c_next_experiment_options.md,待补实验建议表MD,OK
+upstream_14,pack_audit,F,v0.4_results/14_route1c_stage_results_pack/audit/route1c_stage_results_manifest.csv,路径manifest(本文件),OK
+upstream_14,pack_audit,F,v0.4_results/14_route1c_stage_results_pack/audit/route1c_stage_results_manifest.md,路径manifest MD,OK
+upstream_14,pack_figures,copy,v0.4_results/14_route1c_stage_results_pack/figures/,复用图副本(copy_R115/R119前缀共7张),OK
+new_15,pack_file,0a6bf4fe,v0.4_results/15_route1c_results_si_preparation_pack/audit/generated_files_manifest.csv,1991B,OK
+new_15,pack_file,72716876,v0.4_results/15_route1c_results_si_preparation_pack/audit/generated_files_manifest.md,2581B,OK
+new_15,pack_file,6aea6c4a,v0.4_results/15_route1c_results_si_preparation_pack/audit/numeric_consistency_check.csv,3795B,OK
+new_15,pack_file,fe5d2d0b,v0.4_results/15_route1c_results_si_preparation_pack/audit/numeric_consistency_check.md,4824B,OK
+new_15,pack_file,6910dcc6,v0.4_results/15_route1c_results_si_preparation_pack/audit/redline_self_check.csv,1401B,OK
+new_15,pack_file,3821d0d4,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig1_protocol_schematic.pdf,39712B,OK
+new_15,pack_file,1dbb3730,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig1_protocol_schematic.png,167486B,OK
+new_15,pack_file,36e6ade6,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig2_clean_pint_ocs_gain.pdf,21502B,OK
+new_15,pack_file,3f1f918b,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig2_clean_pint_ocs_gain.png,112789B,OK
+new_15,pack_file,3c170932,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig3_degraded_ocs_gain.pdf,18931B,OK
+new_15,pack_file,35bb3149,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig3_degraded_ocs_gain.png,129562B,OK
+new_15,pack_file,92b66b79,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig4_pdb_neural_complementarity.pdf,21583B,OK
+new_15,pack_file,c3a2ef59,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig4_pdb_neural_complementarity.png,141206B,OK
+new_15,pack_file,7110ee1e,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig5_conformal_geometry_confidence.pdf,23280B,OK
+new_15,pack_file,e88072bf,v0.4_results/15_route1c_results_si_preparation_pack/figures_main/Fig5_conformal_geometry_confidence.png,166987B,OK
+new_15,pack_file,1f041f32,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI1_b6_single_frame_closure.pdf,18048B,OK
+new_15,pack_file,4e990e19,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI1_b6_single_frame_closure.png,76809B,OK
+new_15,pack_file,2a437de0,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI2_pint_vs_pext_stress.pdf,19363B,OK
+new_15,pack_file,0b781d57,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI2_pint_vs_pext_stress.png,71215B,OK
+new_15,pack_file,16788dd9,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI3_mroll_boundary_probe.pdf,21832B,OK
+new_15,pack_file,4315d8bb,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI3_mroll_boundary_probe.png,151011B,OK
+new_15,pack_file,3e654029,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI4_hardcase_index.pdf,16590B,OK
+new_15,pack_file,5e9cbe4e,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SI4_hardcase_index.png,91465B,OK
+new_15,pack_file,792141a6,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SIx1_neural_vs_pdb_error_scatter.png,68555B,OK
+new_15,pack_file,e5f70cd4,v0.4_results/15_route1c_results_si_preparation_pack/figures_si/SIx2_confidence_decile_error.png,60022B,OK
+new_15,pack_file,422d6516,v0.4_results/15_route1c_results_si_preparation_pack/scripts/make_audit.py,11204B,OK
+new_15,pack_file,1f35a30f,v0.4_results/15_route1c_results_si_preparation_pack/scripts/make_figures.py,19605B,OK
+new_15,pack_file,c093012b,v0.4_results/15_route1c_results_si_preparation_pack/tables/SI5_manifest_table.csv,13225B,OK
+new_15,pack_file,cebcc9f5,v0.4_results/15_route1c_results_si_preparation_pack/tables/claim_figure_table_map.csv,2162B,OK
+new_15,pack_file,f904cc20,v0.4_results/15_route1c_results_si_preparation_pack/tables/main_figure_source_map.csv,2161B,OK
+new_15,pack_file,5fc2c8f1,v0.4_results/15_route1c_results_si_preparation_pack/tables/paragraph_claim_evidence_map.csv,1727B,OK
+new_15,pack_file,bd4b4e4b,v0.4_results/15_route1c_results_si_preparation_pack/tables/si_figure_source_map.csv,2228B,OK
+new_15,pack_file,150135a0,v0.4_results/15_route1c_results_si_preparation_pack/text/codex_review_checklist_for_107.md,3354B,OK
+new_15,pack_file,7a7010fd,v0.4_results/15_route1c_results_si_preparation_pack/text/main_figure_captions_draft.md,5577B,OK
+new_15,pack_file,a40b6b1f,v0.4_results/15_route1c_results_si_preparation_pack/text/results_candidate_draft_controlled.md,10592B,OK
+new_15,pack_file,92a89332,v0.4_results/15_route1c_results_si_preparation_pack/text/si_captions_draft.md,4190B,OK

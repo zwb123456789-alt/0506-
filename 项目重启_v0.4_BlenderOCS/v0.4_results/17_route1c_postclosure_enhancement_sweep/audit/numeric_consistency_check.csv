@@ -1,0 +1,12 @@
+check,result,value
+multiseed seed42 基线 G5 cMAE≈R125 22.77,PASS,22.77
+multiseed seed42 基线 G5 hit@30≈R125 0.811,PASS,0.811
+multiseed 3/3 seed G5优于G1,PASS,3/3
+degraded-severe 完成 9 run,PASS,9/9
+severe image_only 全几何 hit@30>0.95,PASS,near-saturated
+severe joint 增量≤0.01(强互补性不成立),PASS,max=0.0034
+mroll G1 image ±15 hit@30>0.8,PASS,0.9339
+mroll G1 image +30 hit@30<0.7,PASS,0.5537
+mroll full 各 roll n=2664,PASS,2664
+conformal ocs_only clean a0.10 set_size G5<G1,PASS,"G1=321.8,G5=126.18"
+conformal G5 ocs set_size a0.20<a0.05,PASS,"a05=207.63,a20=56.18"

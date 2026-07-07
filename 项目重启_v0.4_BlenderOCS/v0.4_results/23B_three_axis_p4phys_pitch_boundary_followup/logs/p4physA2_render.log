@@ -1,0 +1,29 @@
+# 23B / P4-PHYS-A2 渲染日志（自 render_metadata.json 汇总）
+
+timestamp        : 2026-07-06T15:30:53
+geometry         : phase63 / L1-G1 (fixed sun/view)
+resolution       : 256
+samples          : 1
+sun_vector       : [1.0, 0.0, 0.3]
+det_vector       : [0.5, -1.0, 0.1]
+r_max            : 1.4726051706213208
+selection_mode   : full
+total_grid_size  : 6
+selected_count   : 6
+rendered_count   : 5
+skipped_count    : 1   (SKIPPED_EXISTING: yaw2425_pitchp0225_roll+015)
+partial_count    : 0
+failed_count     : 0
+
+## 逐点状态
+
+| label | yaw | pitch | roll | status | camera | sun |
+|---|---|---|---|---|---|---|
+| yaw2425_pitchp0225_roll+015 | 242.5 | 22.5 | +15 | SKIPPED_EXISTING | ok | ok |
+| yaw2425_pitchp0250_roll+015 | 242.5 | 25.0 | +15 | RENDERED | ok | ok |
+| yaw2450_pitchp0225_roll+015 | 245.0 | 22.5 | +15 | RENDERED | ok | ok |
+| yaw2450_pitchp0250_roll+015 | 245.0 | 25.0 | +15 | RENDERED | ok | ok |
+| yaw2475_pitchp0225_roll+015 | 247.5 | 22.5 | +15 | RENDERED | ok | ok |
+| yaw2475_pitchp0250_roll+015 | 247.5 | 25.0 | +15 | RENDERED | ok | ok |
+
+结论：6/6 camera+sun EXR 全部存在，failed=0。详见同目录 render_metadata.json。

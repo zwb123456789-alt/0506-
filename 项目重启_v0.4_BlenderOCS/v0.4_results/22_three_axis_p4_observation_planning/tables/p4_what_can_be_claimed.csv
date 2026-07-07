@@ -1,0 +1,9 @@
+claim_id,claim_statement,evidence_ids,evidence_source,condition,proxy_level,notes
+CAN-01,在phase63/L1-G1 model-known条件下，三轴姿态空间存在roll敏感性显著差异的区域,EV-01/EV-04/EV-06/EV-12,P1→P2→P3全链路验证,model-known simulated only,proxy,P1 smoke→P2 regional→P3 local refinement三级确认
+CAN-02,R1区域（yaw245-247.5，pitch+30~40）具有最高roll敏感性（roll_sens 3.69-3.85），局部稳定（迁移0.0度）,EV-12,P3 p3_p4_planning_candidates.csv / p3_stability_assessment.csv,model-known; proxy; 2.5度分辨率,proxy,roll_sensitivity_score为proxy级；glint/sat风险高
+CAN-03,R4区域存在明确的brightness与information解耦边界：最亮点(yaw147.5/+12.5) info_rank=104/107，信息边界点(yaw155/+20) info_rank=1,EV-10/EV-11,P3 p3_p4_planning_candidates.csv,model-known; proxy,proxy,P2初步确认(EV-08/EV-09)，P3 2.5度加密下更尖锐
+CAN-04,R3低信息区（yaw55-65，pitch+60~70）low_info_connectivity=0.60，局部信息结构均匀，适合作负面对照,EV-13,P3 p3_stability_assessment.csv,model-known; proxy,proxy,连通性指标proxy级；不代表绝对无信息
+CAN-05,基于三proxy指标（brightness/neighbor_contrast_ypr/roll_sensitivity），可建立5类规划区域，供观测优先级参考,EV-05~EV-14,P1-P3全阶段,model-known simulated,proxy,区域分类非最优化结果；为观测设计参考框架
+CAN-06,yaw155/+20（C09）为综合最优观测候选：info_rank=1/无glint-saturation/brightness中等,EV-11,P3 p3_p4_planning_candidates.csv,model-known; proxy,proxy,为亮-信息折中最优综合点
+CAN-07,C01-C08为高信息-roll敏感候选集，适合roll-aware观测设计与R128 joint互补性测试候选接口,EV-12,P3稳定性验证,model-known; proxy; glint/sat风险高,proxy,需注意全区成像风险；仅为接口候选清单
+CAN-08,R2/R5区域可作为dark/neutral对照定位参照，不具备正向观测优先级,EV-14,P2/P3区域汇总,model-known,proxy,utility≤0.001；仅对照用途

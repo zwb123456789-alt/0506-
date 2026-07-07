@@ -1,0 +1,371 @@
+{
+  "timestamp": "2026-07-06T21:43:45.462697",
+  "mode": "stageC",
+  "r_max": 1.4726051706213208,
+  "units": [
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw055_pitch+060_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw055_pitch+060_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "sun",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw055_pitch+060_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "sun",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw055_pitch+060_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw035_pitch+075_roll-020",
+      "view": "camera",
+      "yaw": 35.0,
+      "pitch": 75.0,
+      "roll": -20.0,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw035_pitch+075_roll-020_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw035_pitch+075_roll-020",
+      "view": "camera",
+      "yaw": 35.0,
+      "pitch": 75.0,
+      "roll": -20.0,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw035_pitch+075_roll-020_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw035_pitch+075_roll-020",
+      "view": "sun",
+      "yaw": 35.0,
+      "pitch": 75.0,
+      "roll": -20.0,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw035_pitch+075_roll-020_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw035_pitch+075_roll-020",
+      "view": "sun",
+      "yaw": 35.0,
+      "pitch": 75.0,
+      "roll": -20.0,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw035_pitch+075_roll-020_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw2450_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw2450_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw2450_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw2450_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw2450_pitchp0275_roll+0125_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw2450_pitchp0275_roll+0125_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw2450_pitchp0275_roll+0125_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw2450_pitchp0275_roll+0125_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw2475_pitchp0300_roll+0175_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw2475_pitchp0300_roll+0175_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw2475_pitchp0300_roll+0175_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw2475_pitchp0300_roll+0175_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm5",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "direction": [
+        0.44721275490428064,
+        -0.8944255098085613,
+        0.0019388797330328195
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm5/yaw1475_pitchp0125_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "cam_vm9",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "direction": [
+        0.44618385248653036,
+        -0.8923677049730607,
+        -0.06782218590837812
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm9/yaw1475_pitchp0125_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp5",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "direction": [
+        0.9792254854237269,
+        0.0,
+        0.20277437879738713
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp5/yaw1475_pitchp0125_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp9",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "direction": [
+        0.9909849669874968,
+        0.0,
+        0.13397311373850282
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp9/yaw1475_pitchp0125_roll+000_sun.exr",
+      "status": "OK"
+    }
+  ],
+  "n_units": 24,
+  "n_ok": 24,
+  "n_failed": 0,
+  "cumulative_new_renders": 76
+}

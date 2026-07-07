@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-07-06T19:06:52.143670",
+  "mode": "smoke",
+  "n_total": 3,
+  "n_complete": 3,
+  "records": [
+    {
+      "geom_id": "G3_view_plus",
+      "pose_id": "A_top1",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "role": "top1",
+      "group": "mandatory",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "camera_exr_src": "NEW_26",
+      "sun_exr_src": "REUSED_BASELINE",
+      "status": "COMPLETE",
+      "ocs_total": 0.1875115931034088,
+      "ocs_metal": 0.1772422194480896,
+      "ocs_dark": 0.008827890269458294,
+      "ocs_solar": 0.0014414817560464144,
+      "n_pixels_camera_visible": 6266,
+      "n_pixels_contributing": 4231,
+      "image_usable": true,
+      "failed_reason": ""
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "pose_id": "B_R4",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "role": "R4_robust",
+      "group": "mandatory",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "camera_exr_src": "NEW_26",
+      "sun_exr_src": "REUSED_BASELINE",
+      "status": "COMPLETE",
+      "ocs_total": 0.1689455658197403,
+      "ocs_metal": 0.16650128364562988,
+      "ocs_dark": 0.0009527914808131754,
+      "ocs_solar": 0.001491502858698368,
+      "n_pixels_camera_visible": 5441,
+      "n_pixels_contributing": 3091,
+      "image_usable": true,
+      "failed_reason": ""
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "pose_id": "C_R3",
+      "label": "yaw055_pitch+060_roll+000",
+      "role": "R3_negative",
+      "group": "mandatory",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "camera_exr_src": "NEW_26",
+      "sun_exr_src": "REUSED_BASELINE",
+      "status": "COMPLETE",
+      "ocs_total": 0.03979351371526718,
+      "ocs_metal": 0.03887146711349487,
+      "ocs_dark": 0.0,
+      "ocs_solar": 0.0009220456704497337,
+      "n_pixels_camera_visible": 6330,
+      "n_pixels_contributing": 4096,
+      "image_usable": true,
+      "failed_reason": ""
+    }
+  ]
+}

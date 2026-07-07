@@ -1,0 +1,4 @@
+seed,cmae_G1,cmae_G3,cmae_G5,hit30_G1,hit30_G3,hit30_G5,cmae_monotonic_G1>G3>G5,hit30_monotonic_G1<G3<G5,G5_better_than_G1,cmae_gain_G1_to_G5_deg
+42_baseline,76.56,38.22,22.77,0.277,0.672,0.811,True,True,True,53.79
+7,80.76,39.88,19.01,0.294,0.639,0.834,True,True,True,61.75
+123,76.76,38.2,20.1,0.274,0.659,0.834,True,True,True,56.66

@@ -1,0 +1,9 @@
+redline,status,evidence
+不启动全量三轴渲染,PASS,本脚本只读 json/csv，无渲染调用
+不启动三轴训练,PASS,无训练调用
+不改旧脚本/旧metrics/旧samples/旧结果目录10-17,PASS,只读打开，全部写入 18 号包
+不改姿态网格/OBS_GEOMETRIES/split/backbone/超参,PASS,未写入任何 config/代码
+不启动R128/真实图像难度审计/GEO/路线二三四/T3L2,PASS,本轮仅准备包
+不写成果区/不生成Codex审阅文件/不改CLAUDE.md,PASS,输出仅 18 号包与 001 报告
+区分brightness与information,PASS,指标 registry 与 seed 分类显式区分
+不写成真实未知目标三轴姿态反演系统,PASS,定位为最亮/高信息/低信息/观测规划

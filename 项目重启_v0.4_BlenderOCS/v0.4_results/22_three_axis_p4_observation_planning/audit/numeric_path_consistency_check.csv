@@ -1,0 +1,14 @@
+check_id,check_type,description,expected_value,actual_value,result,note
+NPC-01,P3数值一致性,R4最亮点ocs_mean（p3_p4_planning_candidates vs成果摘要）,yaw147.5/+12.5: ~1.98e-01,"p3_p4_planning_candidates.csv行未直接列出yaw147.5/+12.5（已在caution栏说明）；p3_local_refinement_summary.md: ""ocs_mean=1.98e-01""",PASS,最亮点数值一致
+NPC-02,P3数值一致性,R4 info rank=1的pose（p3 candidates vs摘要）,yaw155/+20 info_rank=1,"p3_p4_planning_candidates.csv: C09 yaw155/+20 info_rank=1; p3_local_refinement_summary.md Q2: info rank=1在yaw155/+20",PASS,一致
+NPC-03,P3数值一致性,R1 roll_sensitivity_score范围（C01-C08）,3.69-3.85,"p3_p4_planning_candidates.csv: C07=3.853 C08=3.855 C01=3.804 C02=3.803（范围3.692-3.855）",PASS,范围内一致
+NPC-04,P3数值一致性,R3 low_info_connectivity（stability assessment vs摘要）,0.60,"p3_stability_assessment.csv: R3 low_info_connectivity=0.6000; p3_local_refinement_summary.md: 0.60",PASS,一致
+NPC-05,P3数值一致性,R1 utility (p3_region_summary vs stability),"utility=0.4566（region_summary）","p3_region_summary.csv: R1 region_utility_score=0.456599",PASS,四舍五入一致
+NPC-06,P3数值一致性,R4 utility (p3_region_summary),"utility=0.3017（region_summary）","p3_region_summary.csv: R4 region_utility_score=0.301651",PASS,一致
+NPC-07,P2数值一致性,R4 P2 utility（p2_region_summary vs成果摘要）,0.251,"p2_region_summary.csv: R4_bright_robust region_utility_score=0.250969",PASS,一致
+NPC-08,P2数值一致性,R1 P2 mean_roll_sensitivity,"2.661 (p2_region_summary)","p2_region_summary.csv: R1_high_info mean_roll_sensitivity=2.661120",PASS,一致
+NPC-09,P1数值一致性,high-info yaw240系roll_sensitivity（P1 summary vs table），3.2-3.6,"p1_roll_sensitivity_summary.csv: yaw240_pitch+030=3.2378; yaw240_pitch+020=3.5808",PASS,范围内一致
+NPC-10,P4数值一致性,C09 p4_planning_utility_score（planning_candidate_roles vs candidates table）,0.4268,"p4_planning_candidate_roles.csv: C09=0.4268; 源自p3_p4_planning_candidates.csv: yaw155/+20 p4_planning_utility_score=0.4268",PASS,完全一致
+NPC-11,P4数值一致性,brightness_rank C09（roles table vs p3 candidates）,31,"p4_planning_candidate_roles.csv: C09 brightness_rank_p3=31; p3_p4_planning_candidates.csv: yaw155/+20 brightness_rank=31",PASS,一致
+NPC-12,路径引用一致性,p4_r128_interface_candidates.csv引用的路线文件路径,04_四路线分工区/00_总览与裁决/04_Codex审阅/R128_Codex_候选规划_...，无启动,文件中标注R128挂起；路径描述仅作参考说明,PASS,无误引用
+NPC-13,总行数一致性,p3_p4_planning_candidates.csv行数（含header）,17（16候选+1header）,"p3_p4_planning_candidates.csv: 实际读取16行data",PASS,16候选与Codex R136描述"16个"一致

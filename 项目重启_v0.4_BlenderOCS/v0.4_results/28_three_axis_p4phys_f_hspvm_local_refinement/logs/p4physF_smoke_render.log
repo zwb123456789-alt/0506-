@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-07-06T21:41:17.491423",
+  "mode": "smoke",
+  "r_max": 1.4726051706213208,
+  "units": [
+    {
+      "subdir": "cam_vm7",
+      "label": "yaw055_pitch+060_roll+020",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 20.0,
+      "direction": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/cam_vm7/yaw055_pitch+060_roll+020_camera.exr",
+      "status": "OK"
+    },
+    {
+      "subdir": "sun_sp7",
+      "label": "yaw055_pitch+060_roll+020",
+      "view": "sun",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 20.0,
+      "direction": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "out": "v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/render/sun_sp7/yaw055_pitch+060_roll+020_sun.exr",
+      "status": "OK"
+    }
+  ],
+  "n_units": 2,
+  "n_ok": 2,
+  "n_failed": 0,
+  "cumulative_new_renders": 2
+}

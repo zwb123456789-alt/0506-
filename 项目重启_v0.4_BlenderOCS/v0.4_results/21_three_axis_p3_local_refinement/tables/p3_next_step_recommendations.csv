@@ -1,0 +1,8 @@
+item,recommendation,rationale
+P4 observation planning synthesis,P3 后由 Codex 裁决,P3 已加密确认 R1 roll-sensitive peak、R4 亮-信息折中边界、R3 低信息连通性; P4 汇总观测规划建议由 Codex 单独放行
+R4 亮-信息折中候选,推荐纳入 P4,R4 utility=0.302; 最亮点与高信息边界点在 2.5度加密下的稳定性见 stability_assessment
+R1 roll-sensitive peak,推荐纳入 P4,R1 utility=0.457; 高|pitch|/yaw240系 roll 敏感峰加密确认
+R3 低信息连通区,作为 P4 负面对照,R3 utility=0.195; 低信息连通性见 p3_low_information_connectivity
+R2/R5 对照,P4 中降权,R2/R5 效用低，仅作 dark/neutral 对照，不作为 P4 主规划落点
+information proxy 升级,P4/单独阶段门,neighbor_contrast_ypr 仍是 smoke/proxy 级; P-DB/margin/entropy/conformal 需模型，须另行阶段门
+R128 继续挂起,维持挂起,三轴小项目 P4 完成后再回看 R128 接口

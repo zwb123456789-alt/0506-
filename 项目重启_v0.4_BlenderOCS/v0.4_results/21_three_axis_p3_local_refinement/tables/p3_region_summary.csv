@@ -1,0 +1,6 @@
+region,category,priority,n_poses,mean_ocs,mean_neighbor_contrast,mean_roll_sensitivity,risk_frac,usable_frac,norm_info,norm_roll_sens,norm_brightness,region_utility_score
+R3_low_info_connectivity,low-info/ocs-hard,primary,25,0.027744,0.771448,1.841360,1.000000,1.000000,0.590241,0.470563,0.057883,0.194630
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,49,0.097615,0.714158,0.093045,0.244898,1.000000,0.535251,0.010782,0.444319,0.301651
+R5_control,neutral-control,control,4,0.018491,0.167484,0.451059,1.000000,1.000000,0.010528,0.104934,0.006711,-0.162295
+R1_high_info,high-info,primary,25,0.045626,1.036288,3.496903,1.000000,1.000000,0.844446,0.905947,0.156787,0.456599
+R2_control,dark/roll-sensitive-control,control,4,0.022101,0.468595,0.981511,1.000000,1.000000,0.299549,0.244435,0.026679,0.001154

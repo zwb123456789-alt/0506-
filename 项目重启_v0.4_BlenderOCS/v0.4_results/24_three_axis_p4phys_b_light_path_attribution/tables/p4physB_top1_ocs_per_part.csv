@@ -1,0 +1,10 @@
+pose,role,part_name,part_en,ocs_per_part_m2,contrib_pct,n_contrib_pixels,I_linear_sum
+R1_top1,fixed-geometry top-1,jinshuzhuti,Metal body,0.19849659,95.024,2653,1.239410e+03
+R1_top1,fixed-geometry top-1,taiyangnengban,Solar panel,0.00161930,0.775,80,1.011086e+01
+R1_top1,fixed-geometry top-1,yinshenban,Dark panel,0.00877461,4.201,1408,5.478855e+01
+R4_robust,roll-robust high-brightness contrast,jinshuzhuti,Metal body,0.19872104,98.794,2581,1.240811e+03
+R4_robust,roll-robust high-brightness contrast,taiyangnengban,Solar panel,0.00149416,0.743,75,9.329509e+00
+R4_robust,roll-robust high-brightness contrast,yinshenban,Dark panel,0.00093093,0.463,152,5.812699e+00
+R3_neg,low-info / negative contrast,jinshuzhuti,Metal body,0.06526623,98.504,4045,4.075214e+02
+R3_neg,low-info / negative contrast,taiyangnengban,Solar panel,0.00099140,1.496,76,6.190287e+00
+R3_neg,low-info / negative contrast,yinshenban,Dark panel,0.00000000,0.000,0,0.000000e+00

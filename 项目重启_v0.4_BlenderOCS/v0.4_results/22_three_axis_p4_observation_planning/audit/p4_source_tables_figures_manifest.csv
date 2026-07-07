@@ -1,0 +1,25 @@
+asset_id,stage,asset_type,path,description,key_columns_or_content
+TBL-P1-01,P1,table,v0.4_results/19_three_axis_p1_seed_roll_scan/tables/p1_roll_sensitivity_summary.csv,P1 12种子roll敏感度汇总,"seed_record_id,category,ocs_roll0,roll_sensitivity_score,any_glint,any_saturation"
+TBL-P1-02,P1,table,v0.4_results/19_three_axis_p1_seed_roll_scan/tables/p1_brightness_information_smoke.csv,P1 brightness vs information smoke表,"category,brightness_rank,contrast_rank"
+TBL-P1-03,P1,table,v0.4_results/19_three_axis_p1_seed_roll_scan/tables/p1_seed_roll_ocs_table.csv,P1 完整OCS矩阵(12×9),"yaw,pitch,roll,ocs_total"
+TBL-P2-01,P2,table,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_region_summary.csv,P2 5区域汇总,"region,mean_ocs,mean_neighbor_contrast,mean_roll_sensitivity,region_utility_score"
+TBL-P2-02,P2,table,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_high_brightness_candidates.csv,P2高亮候选,"yaw,pitch,brightness_rank,roll_sensitivity"
+TBL-P2-03,P2,table,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_high_information_candidates.csv,P2高信息候选,"yaw,pitch,info_rank,neighbor_contrast"
+TBL-P2-04,P2,table,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_p3_refinement_candidates.csv,P2→P3局部加密候选(14点),"yaw,pitch,region,priority_reason"
+TBL-P3-01,P3,table,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_p4_planning_candidates.csv,P3 P4规划候选(16点),"region,yaw_deg,pitch_deg,brightness_rank,info_rank,roll_sensitivity_score,p4_plan_role"
+TBL-P3-02,P3,table,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_region_summary.csv,P3区域汇总(5区域),"region,mean_ocs,mean_neighbor_contrast,mean_roll_sensitivity,region_utility_score"
+TBL-P3-03,P3,table,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_stability_assessment.csv,P3稳定性评估,"region,local_peak_migration_deg,local_information_stability,low_info_connectivity,mean_roll_sensitivity"
+TBL-P3-04,P3,table,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_high_brightness_refined_candidates.csv,P3加密后亮度TOP候选,"yaw_deg,pitch_deg,brightness_rank,info_rank"
+TBL-P3-05,P3,table,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_high_information_refined_candidates.csv,P3加密后信息TOP候选,"yaw_deg,pitch_deg,info_rank,brightness_rank"
+FIG-P1-01,P1,figure,v0.4_results/19_three_axis_p1_seed_roll_scan/figures/p1_seed_roll_brightness_curves.png,P1各种子OCS随roll变化曲线,n/a
+FIG-P1-02,P1,figure,v0.4_results/19_three_axis_p1_seed_roll_scan/figures/p1_roll_heatmap_seed_by_roll.png,P1 seed×roll OCS热图,n/a
+FIG-P1-03,P1,figure,v0.4_results/19_three_axis_p1_seed_roll_scan/figures/p1_category_roll_sensitivity_panel.png,P1类别roll敏感度面板,n/a
+FIG-P2-01,P2,figure,v0.4_results/20_three_axis_p2_sparse_grid/figures/p2_sparse_grid_brightness_map.png,P2稀疏网格亮度分布图,n/a
+FIG-P2-02,P2,figure,v0.4_results/20_three_axis_p2_sparse_grid/figures/p2_sparse_grid_information_proxy_map.png,P2稀疏网格信息代理分布图,n/a
+FIG-P2-03,P2,figure,v0.4_results/20_three_axis_p2_sparse_grid/figures/p2_brightness_vs_information_scatter.png,P2亮度vs信息散点图,n/a
+FIG-P2-04,P2,figure,v0.4_results/20_three_axis_p2_sparse_grid/figures/p2_region_roll_sensitivity_panel.png,P2区域roll敏感度面板,n/a
+FIG-P3-01,P3,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_refined_brightness_map.png,P3加密后亮度精细图,n/a
+FIG-P3-02,P3,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_refined_information_proxy_map.png,P3加密后信息代理精细图,n/a
+FIG-P3-03,P3,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_peak_migration_panel.png,P3峰值迁移面板,n/a
+FIG-P3-04,P3,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_planning_candidate_scatter.png,P3规划候选散点图,n/a
+FIG-P3-05,P3,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_low_info_connectivity_panel.png,P3低信息连通性面板,n/a

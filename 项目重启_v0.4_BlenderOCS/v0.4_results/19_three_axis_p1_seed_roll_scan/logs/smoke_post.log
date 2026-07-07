@@ -1,0 +1,11 @@
+[P1-POST] geom=phase63 roll=+15 n_seed=1
+  SHADOW=D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015
+  OUTPUT=D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\postprocess\phase63\roll+015
+  r_max=1.472605 i_scale=5.444864e-01 pixel_area=1.601541e-04
+
+--- yaw145_pitch+015_roll+015 (bright-seed) ---
+  [COMPLETE] OCS_total=1.752967e-01 visible=5498 contrib=2757
+
+========================================================================
+OVERALL(roll+15): COMPLETE  1/1
+Summary: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\postprocess\phase63\roll+015\p1_postprocess_summary.json

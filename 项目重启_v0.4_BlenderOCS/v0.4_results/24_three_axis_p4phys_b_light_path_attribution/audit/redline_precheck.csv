@@ -1,0 +1,4 @@
+part_name,part_en,objectID_mapping,material_level,brdf_proxy_params
+jinshuzhuti,Metal body,IndexOB->part=YES,material_pass=NO (proxy only),"B0 params rho_d=0.2,rho_s=0.6,n=80"
+taiyangnengban,Solar panel,IndexOB->part=YES,material_pass=NO (proxy only),"B0 params rho_d=0.15,rho_s=0.1,n=20"
+yinshenban,Dark panel,IndexOB->part=YES,material_pass=NO (proxy only),"B0 params rho_d=0.08,rho_s=0.02,n=10"

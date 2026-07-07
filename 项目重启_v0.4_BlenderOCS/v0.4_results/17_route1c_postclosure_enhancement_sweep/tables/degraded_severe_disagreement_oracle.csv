@@ -1,0 +1,4 @@
+geom,n,ocs_hit30,image_hit30,joint_hit30,single_oracle_hit30,three_channel_oracle_hit30,oracle_cmae
+G1,296,0.1791,0.9966,1.0,1.0,1.0,1.753
+G3,296,0.473,1.0,1.0,1.0,1.0,1.487
+G5,296,0.5068,0.9966,1.0,1.0,1.0,1.585

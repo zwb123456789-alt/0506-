@@ -1,0 +1,17 @@
+region,category,priority,yaw_deg,pitch_deg,grid_type,ocs_mean,ocs_roll0,brightness_rank,info_rank,neighbor_contrast_mean,roll_sensitivity_score,max_rank_shift,pixel_contrast_mean,any_glint,any_saturation,image_usable_all,p4_planning_utility_score,p4_plan_role
+R1_high_info,high-info,primary,247.5,+37.5,half2p5,4.860032e-02,3.509893e-02,39,7,1.114210,3.803542,87,0.690619,1,1,1,0.4617,high-info-roll-sensitive
+R1_high_info,high-info,primary,247.5,+40.0,half2p5,4.818270e-02,3.511555e-02,45,8,1.110790,3.802700,85,0.664537,1,1,1,0.4599,high-info-roll-sensitive
+R1_high_info,high-info,primary,247.5,+35.0,half2p5,4.861534e-02,3.598768e-02,38,9,1.100309,3.725903,80,0.701646,1,1,1,0.4519,high-info-roll-sensitive
+R1_high_info,high-info,primary,247.5,+32.5,half2p5,4.855602e-02,3.579356e-02,40,10,1.085318,3.736347,82,0.673948,1,1,1,0.4475,high-info-roll-sensitive
+R1_high_info,high-info,primary,247.5,+30.0,half2p5,4.794561e-02,3.558360e-02,47,13,1.075980,3.692265,80,0.663608,1,1,1,0.4406,high-info-roll-sensitive
+R1_high_info,high-info,primary,245.0,+37.5,half2p5,4.738114e-02,4.068319e-02,49,18,1.059187,3.787655,74,0.689166,1,0,1,0.4405,high-info-roll-sensitive
+R1_high_info,high-info,primary,245.0,+35.0,integer5,4.805105e-02,4.067748e-02,46,24,1.040686,3.852806,80,0.709463,1,1,1,0.4395,high-info-roll-sensitive
+R1_high_info,high-info,primary,245.0,+32.5,half2p5,4.842657e-02,4.091531e-02,42,26,1.026500,3.854539,78,0.667909,1,1,1,0.4353,high-info-roll-sensitive
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,155.0,+20.0,integer5,7.007102e-02,7.199395e-02,31,1,1.198349,0.110177,26,0.440956,0,0,1,0.4268,bright-info-tradeoff
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,152.5,+20.0,half2p5,9.060075e-02,9.206339e-02,24,11,1.084134,0.082810,25,0.452366,0,0,1,0.4150,bright-info-tradeoff
+R3_low_info_connectivity,low-info/ocs-hard,primary,57.5,+62.5,half2p5,2.948851e-02,6.947678e-02,80,39,0.900750,1.879156,65,0.898188,1,0,1,0.2370,low-info-negative-control
+R3_low_info_connectivity,low-info/ocs-hard,primary,55.0,+60.0,integer5,3.289301e-02,6.625763e-02,72,48,0.814107,2.154159,57,0.690096,1,0,1,0.2307,low-info-negative-control
+R2_control,dark/roll-sensitive-control,control,285.0,-85.0,integer5,2.291369e-02,1.139125e-02,101,87,0.515838,1.070117,62,0.682000,1,0,1,0.0454,dark/neutral-control
+R2_control,dark/roll-sensitive-control,control,280.0,-85.0,integer5,2.314271e-02,1.188527e-02,100,91,0.509808,1.027388,58,0.690303,1,0,1,0.0409,dark/neutral-control
+R5_control,neutral-control,control,210.0,-5.0,integer5,1.926039e-02,2.091657e-02,105,102,0.165099,0.498121,21,0.850940,1,0,1,-0.1150,dark/neutral-control
+R5_control,neutral-control,control,210.0,-10.0,integer5,1.962972e-02,2.108413e-02,104,101,0.168036,0.440399,21,0.888581,1,0,1,-0.1173,dark/neutral-control

@@ -1,10 +1,18 @@
 ﻿# CLAUDE.md
 
-最后更新：2026-07-01
+最后更新：2026-07-07
 
 ## 1. 当前状态
 
-这是 OCS-光度图像联合仿真与姿态反演项目的 v0.4 重启工作区。`04_四路线分工区/` 已按当前执行链物理重排为“路线一 C -> 三轴小项目 -> 路线二 -> 路线三 -> 路线四未来方向”。路线一 C 的 C1/C2/C3 负结果证据链、Results 非正文材料、图表/SI 规划、负结果到 24 号三问桥接材料已分别由 R69/R76/R77/R78/R80/R82/R83/R86/R88/R90 等审阅稳定；头A 已在 R90 达到 R05 定义的收口状态。头B 已完成 B1/B2/B3/P0/B4/P1-A/B5/B6-FIX01 的阶段性材料。R113 已审阅通过 Claude 102：B6 关闭 single-frame 同门判据/输出头补救轴，头B旧负结果追因阶段据此阶段性收束，旧 single-frame 负结果不再继续扩展；但这不等于路线一 C 整体闭口，也不触发头A/头B大合并裁决。R115 已审阅通过 Claude 103：L1(M2) clean / P-INT 第一阶段结果接收为路线一 C 当前主用成果，核心结论是 OCS-only 多观测总光度向量随几何数 L1-G1 -> L1-G3 -> L1-G5 呈单调增益；P-EXT yaw-block stress test 仍坍缩。R117 已审阅通过 Claude 104：R115 val per-attitude 与跨几何量纲审计缺口补齐，L1(M3) degraded 真实性轴通过，M-roll fixed-roll 边界探针通过，D3/P-DB/conformal 准备材料通过。R119 已审阅通过 Claude 105：L1D3 置信一致性与 P-DB 正式评估通过，P-DB 作为 model-known simulated template retrieval 证明多观测总光度向量含可检索 yaw 信息，且与 neural ocs_only 回归构成互补证据链；conformal set_size 随几何数收紧，但 neural margin 区分度弱与 image_only 欠覆盖必须保留为负向观察。当前不得回到旧 single-frame 负结果上继续碎片化补实验，不得把 B6、L1(M2)、L1(M3) 或 L1D3 写成路线一 C 整体闭口，不得启动 T3/L2 光变正式训练、三轴小项目、路线二/三/四扩展或论文正文正式改写；下一步优先由 Codex 另行下达路线一 C 阶段性 Results 非正文证据包任务，或另行放行 degraded-severe / P-INT-hard 小矩阵。
+这是 OCS-光度图像联合仿真与姿态反演项目的 v0.4 重启工作区。`04_四路线分工区/` 已按当前执行链物理重排为“路线一 C -> 三轴小项目 -> 路线二 -> 路线三 -> 路线四未来方向”。路线一 C 已由 R125/R127 裁定主干实验与闭口后增强项均收口，旧 single-frame 负结果不再继续扩展。
+
+三轴小项目当前最高口径已由 2026-07-06 版指导文件重置：唯一且最高目标是在已知卫星模型和前向光学模型下，找出卫星在哪个 yaw/pitch/roll 姿态、哪个太阳入射几何和哪个探测器观测几何下最亮，并解释这束光从哪里入射、照到卫星哪个部位/材料/表面，再沿哪个方向进入探测器；高信息、低信息、易混淆和观测规划只作为辅助标注。
+
+R144 是当前主用技术路线依据。R148 已确认 fixed phase63/L1-G1 下局部加密 top-1 为 yaw=245.0、pitch=+27.5、roll=+15、ocs_total=0.2088904828；R150 确认该 top-1 的主光路机制为金属主体大面元近镜面对齐探测器；R152 裁定 fixed 几何下机制普遍性为 PARTIAL_GENERALITY；R154 接收 009/26 包并裁定 P4-PHYS-D 为 SUNVIEW_DEPENDENT_BUT_MECHANISTIC；R156 接收 010/27 包并裁定 P4-PHYS-E 为 NEED_LOCAL_STEP_REFINEMENT。
+
+R158 已接收 011/28 包，裁定 P4-PHYS-F 按受控采样包络收口并停止继续追角落：在本项目受控采样包络内，当前最高亮构型为 yaw=35、pitch=75、roll=-20 @ sp5_vm7(sun+5, view-7)，OCS≈0.27194；其机制为金属宽瓣/几何因子高亮，不是严格 near_specular_metal。包络外沿 yaw↓ / pitch↑ / roll↓ / sun→baseline 方向未检验，严禁写成全局最亮。
+
+R159 已接收 017-020 D 类四合一为候选/阻塞材料：017/018 可作写作骨架与术语映射候选，019 只作正式审阅链索引迁移草稿，020 确认 GEO 数据本体缺失导致真实 GEO 两图与 N5 glint 检索阻塞。当前正式下一步是执行 R160/P4-PHYS-G：只读整理三轴小项目 P4-PHYS 总收口材料包，输出 29 号包与 012 报告；不得新增渲染、不得继续加密、不得训练、不得启动 R128 或路线二/三/四。
 
 当前顶层结构：
 
@@ -84,6 +92,35 @@ R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
 R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
 R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
 R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+R121_Codex_审阅_106通过_1C阶段性Results非正文证据包.md
+R123_Codex_审阅_107通过_1C-ResultsSI图表与写作准备包.md
+R125_Codex_审阅_108通过_路线一C实验主干闭口并放行三轴小项目准备.md
+R126_Codex_任务单_1C闭口后增强实验清账_multiSeed_PINTHard_MrollFull_ConformalAlpha.md
+R127_Codex_审阅_109通过_闭口后增强实验清账完成并放行三轴小项目准备.md
+R134_Codex_审阅_003通过_P2_sparse_grid接收并放行P3_local_refinement.md
+R136_Codex_审阅_004通过_P3_local_refinement接收并放行P4_planning.md
+R138_Codex_补充校正_三轴小项目最亮构型主目标与roll遍历口径.md
+R139_Codex_审阅_005不通过_旧P4需按最亮构型光路机制返工.md
+R140_Codex_任务单_P4PHYS最亮构型物理光路归因长程任务.md
+R141_Codex_任务单_P4PHYS-A_top1与roll局部确认.md
+R142_Codex_审阅_R141讨论稿部分采纳但不替代006A执行.md
+R143_Codex_规划_R141_R142后固定几何最亮姿态确认执行方案.md
+R144_Codex_技术路线_三轴小项目最亮构型与光路解释.md
+R146_Codex_审阅_006A最低接收但需pitch边界追加.md
+R147_Codex_任务单_P4PHYS-A2_pitch边界追加确认.md
+R148_Codex_审阅_006B通过_fixed几何top1闭口并放行P4PHYSB.md
+R149_Codex_任务单_P4PHYS-B_top1物理光路归因.md
+R150_Codex_审阅_007通过_P4PHYSB光路归因接收并放行P4PHYSC.md
+R151_Codex_任务单_P4PHYS-C_高亮机制普遍性检验.md
+R152_Codex_审阅_008通过_PARTIAL_GENERALITY并放行P4PHYSD.md
+R153_Codex_任务单_P4PHYS-D_sunview小矩阵扩展阶段门.md
+R154_Codex_审阅_009通过_P4PHYSD小矩阵接收并放行P4PHYSE.md
+R155_Codex_任务单_P4PHYS-E_sunview3x3组合小网格补齐.md
+R156_Codex_审阅_010通过_NEED_LOCAL_STEP_REFINEMENT并放行P4PHYSF.md
+R157_Codex_任务单_P4PHYS-F_Hspvm角落局部姿态与几何加密.md
+R158_Codex_审阅_011通过_P4PHYSF采样包络收口并停止追角落.md
+R160_Codex_任务单_P4PHYS-G三轴小项目总收口材料包.md
+04_四路线分工区/00_总览与裁决/04_Codex审阅/R159_Codex_审阅_017-020_D类四合一接收与分流.md
 ```
 
 当前不可遗忘的结论：
@@ -94,7 +131,7 @@ R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
 3. exact-bin 作为评价口径太严苛已确认；exact-bin/classification 作为训练判据不是主要失败原因已由 R113 稳定为较强判断。
 4. R105/R106 已将真实数据方向上调为稀疏 GEO 光度时序 / 多帧多几何 photometric sequence。
 5. GEO 真实光度库有光度、有几何、有型号、有时间序列；但无三轴姿态真值，不能写成监督姿态反演数据集。
-6. B6 负结果不得写成“光度无用”；旧 single-frame 负结果不再继续扩展。R115 已给出 L1(M2) clean / P-INT 第一阶段正结果：OCS-only 多观测总光度向量随 L1-G1 -> L1-G3 -> L1-G5 单调增益。R117 已给出 L1(M3) 真实性与边界补强：OCS-only 多几何增益在 mild/moderate 物理退化下保持，M-roll 中 ±15° 未直接推翻 fixed-roll 结论、±30° 明显敏感。R119 已给出 L1D3 置信一致性与 P-DB 正式评估：P-DB 检索强于 neural ocs_only 回归并构成互补证据链，conformal set_size 随几何收紧。
+6. B6 负结果不得写成“光度无用”；旧 single-frame 负结果不再继续扩展。R115 已给出 L1(M2) clean / P-INT 第一阶段正结果：OCS-only 多观测总光度向量随 L1-G1 -> L1-G3 -> L1-G5 单调增益。R117 已给出 L1(M3) 真实性与边界补强：OCS-only 多几何增益在 mild/moderate 物理退化下保持，M-roll 中 ±15° 未直接推翻 fixed-roll 结论、±30° 明显敏感。R119 已给出 L1D3 置信一致性与 P-DB 正式评估：P-DB 检索强于 neural ocs_only 回归并构成互补证据链，conformal set_size 随几何收紧。R121/R123 已把证据链推进为 Results 非正文证据包和 Results/SI 写作准备包。R125 已裁定 D2/D4/M5 通过，路线一 C 实验主干闭口。R127 已裁定 R126/109 闭口后增强实验清账完成：multi-seed 支持主结论，degraded-severe 下 joint 强互补性仍不支持，M-roll full-2664 确认小 roll 稳健/大 roll 敏感，conformal alpha 可作为 SI 增强；R125 闭口结论无需修正。R134 已裁定 P2 sparse 3-axis grid 通过。R136 已裁定 P3 local refinement 通过。R139 已裁定旧 P4 不通过；R144 已稳定为三轴小项目当前主用技术路线依据；R148 已接收 006B/23B，确认 fixed phase63/L1-G1 sun/view 下当前局部加密范围内 top-1 闭口：yaw=245.0、pitch=+27.5、roll=+15、ocs_total=0.2088904828。R150 已接收 007/24 包，确认该 top-1 的金属近镜面主光路解释和隐身板小增量解释。R152 已接收 008/25 包，确认金属近镜面对齐机制在 fixed 几何高亮 top 分位强富集，但隐身板增量不是普遍机制。R154 已接收 009/26 包，裁定 P4-PHYS-D 为 SUNVIEW_DEPENDENT_BUT_MECHANISTIC。R156 已接收 010/27 包，裁定 P4-PHYS-E 为 NEED_LOCAL_STEP_REFINEMENT；R158 已接收 011/28 包并按受控采样包络收口，停止继续追角落：当前受控包络最高亮为 yaw=35、pitch=75、roll=-20 @ sp5_vm7(sun+5, view-7)，OCS≈0.27194，机制为金属宽瓣/几何因子高亮，不是严格 near_specular_metal，包络外沿 yaw↓ / pitch↑ / roll↓ / sun→baseline 未检验，严禁写成全局最亮。R159 已接收 017-020 D 类四合一为候选/阻塞材料。当前下一步为 R160/P4-PHYS-G，只读整理三轴小项目总收口材料包。
 7. R110/R111 已将作者关于“现有结果、4维 OCS 现实性、yaw-block 外推、1C 目标、小项目目标、光变/时序方向”的问答和纠偏提升为后续审阅记忆；涉及这些问题时必须先读。
 8. 当前 C2 4维 per-part OCS 是 semi-oracle / diagnostic，不是现实主线输入；24 号主线 OCS 是 L1 跨几何多观测总光度向量。
 9. yaw-block 是 strict extrapolation stress test，不应独占路线一 C 主线；B6-FIX01 已闭判据/训练头问题，不能闭整个路线一 C。R115 中 P-EXT 仍坍缩，不能写成 yaw-block 外推已解决。
@@ -103,7 +140,7 @@ R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
 
 从 R106 起，长程任务、反碎片化叙事任务、Claude/Codex 输出篇幅限制和避免无用复核的统一规则，不在本文件重复展开；以 `AGENTS.md` 第 3 节“Claude 与 Codex 职能”为唯一权威入口。
 
-R119 后最新成果区入口：
+R158 后最新成果区入口：
 
 ```text
 01_成果区/00_当前主用成果/00_B6-FIX01与single-frame负结果收口说明_R113通过.md
@@ -111,14 +148,66 @@ R119 后最新成果区入口：
 01_成果区/00_当前主用成果/05_L1M2多几何OCS第一阶段正结果_R115通过.md
 01_成果区/00_当前主用成果/06_L1M3退化真实性与Mroll边界探针_R117通过.md
 01_成果区/00_当前主用成果/07_L1D3置信一致性与PDB正式评估_R119通过.md
+01_成果区/00_当前主用成果/08_路线一C阶段性Results非正文证据包_R121通过.md
+01_成果区/00_当前主用成果/09_路线一C-ResultsSI图表与写作准备包_R123通过.md
+01_成果区/00_当前主用成果/10_路线一C实验主干闭口_D2D4M5_R125通过.md
+01_成果区/00_当前主用成果/11_路线一C闭口后增强实验清账_R127通过.md
 04_Codex审阅/R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
 04_Codex审阅/R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
 04_Codex审阅/R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
 04_Codex审阅/R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+04_Codex审阅/R121_Codex_审阅_106通过_1C阶段性Results非正文证据包.md
+04_Codex审阅/R123_Codex_审阅_107通过_1C-ResultsSI图表与写作准备包.md
+04_Codex审阅/R125_Codex_审阅_108通过_路线一C实验主干闭口并放行三轴小项目准备.md
+04_Codex审阅/R127_Codex_审阅_109通过_闭口后增强实验清账完成并放行三轴小项目准备.md
+04_Codex审阅/R134_Codex_审阅_003通过_P2_sparse_grid接收并放行P3_local_refinement.md
+04_Codex审阅/R136_Codex_审阅_004通过_P3_local_refinement接收并放行P4_planning.md
+04_Codex审阅/R138_Codex_补充校正_三轴小项目最亮构型主目标与roll遍历口径.md
+04_Codex审阅/R139_Codex_审阅_005不通过_旧P4需按最亮构型光路机制返工.md
+04_Codex审阅/R140_Codex_任务单_P4PHYS最亮构型物理光路归因长程任务.md
+04_Codex审阅/R141_Codex_任务单_P4PHYS-A_top1与roll局部确认.md
+04_Codex审阅/R142_Codex_审阅_R141讨论稿部分采纳但不替代006A执行.md
+04_Codex审阅/R143_Codex_规划_R141_R142后固定几何最亮姿态确认执行方案.md
+04_Codex审阅/R144_Codex_技术路线_三轴小项目最亮构型与光路解释.md
+04_Codex审阅/R146_Codex_审阅_006A最低接收但需pitch边界追加.md
+04_Codex审阅/R147_Codex_任务单_P4PHYS-A2_pitch边界追加确认.md
+04_Codex审阅/R148_Codex_审阅_006B通过_fixed几何top1闭口并放行P4PHYSB.md
+04_Codex审阅/R149_Codex_任务单_P4PHYS-B_top1物理光路归因.md
+04_Codex审阅/R150_Codex_审阅_007通过_P4PHYSB光路归因接收并放行P4PHYSC.md
+04_Codex审阅/R151_Codex_任务单_P4PHYS-C_高亮机制普遍性检验.md
+04_Codex审阅/R152_Codex_审阅_008通过_PARTIAL_GENERALITY并放行P4PHYSD.md
+04_Codex审阅/R153_Codex_任务单_P4PHYS-D_sunview小矩阵扩展阶段门.md
+04_Codex审阅/R154_Codex_审阅_009通过_P4PHYSD小矩阵接收并放行P4PHYSE.md
+04_Codex审阅/R155_Codex_任务单_P4PHYS-E_sunview3x3组合小网格补齐.md
+04_Codex审阅/R156_Codex_审阅_010通过_NEED_LOCAL_STEP_REFINEMENT并放行P4PHYSF.md
+04_Codex审阅/R157_Codex_任务单_P4PHYS-F_Hspvm角落局部姿态与几何加密.md
+04_Codex审阅/R158_Codex_审阅_011通过_P4PHYSF采样包络收口并停止追角落.md
+04_Codex审阅/R160_Codex_任务单_P4PHYS-G三轴小项目总收口材料包.md
+04_四路线分工区/00_总览与裁决/04_Codex审阅/R159_Codex_审阅_017-020_D类四合一接收与分流.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/05_三轴小项目最亮构型与光路解释技术路线_R144依据.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/06_P4PHYS-A_fixed几何top1确认_R148通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/07_P4PHYS-B_top1光路归因_R150通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/08_P4PHYS-C_机制普遍性_PARTIAL_GENERALITY_R152通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/09_P4PHYS-D_sunview小矩阵扩展_R154通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/10_P4PHYS-E_sunview3x3组合小网格_R156通过_需局部加密.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/11_P4PHYS-F_Hspvm局部加密_采样包络收口_R158通过.md
 v0.4_results/10_b6_circular_regression_fix01/
 v0.4_results/11_l1m2_multigeometry_ocs/
 v0.4_results/12_l1m3_degraded_mroll/
 v0.4_results/13_l1d3_confidence_pdb/
+v0.4_results/14_route1c_stage_results_pack/
+v0.4_results/15_route1c_results_si_preparation_pack/
+v0.4_results/16_route1c_closure_d2d4_m5/
+v0.4_results/17_route1c_postclosure_enhancement_sweep/
+v0.4_results/20_three_axis_p2_sparse_grid/
+v0.4_results/21_three_axis_p3_local_refinement/
+v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation/
+v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/
+v0.4_results/24_three_axis_p4phys_b_light_path_attribution/
+v0.4_results/25_three_axis_p4phys_c_mechanism_generality/
+v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/
+v0.4_results/27_three_axis_p4phys_e_sunview_3x3_cross_grid/
+v0.4_results/28_three_axis_p4phys_f_hspvm_local_refinement/
 ```
 
 ## 2. 当前科学主线
@@ -154,13 +243,13 @@ model-known 条件下，独立 OCS 光度通道与图像成像通道共享同一
 ```text
 路线零（旧路线投稿） = v0.3 旧稿封存待解封评估，不阻塞 v0.4
 路线一 C = 必选主干，v0.4 pixel-level 同源架构 + B1 书中改进冯模型待确认主线 + B0 工程 baseline + GGX 对照
-三轴小项目 = 路线一 C 后必做桥接层，寻找三轴最亮构型、高信息姿态和低信息观测区域
+三轴小项目 = 路线一 C 后必做桥接层，唯一最高目标是先寻找三轴 top-1 最亮姿态-几何构型，再解释入射-表面-探测器光路并检验同类机制是否普遍高亮
 路线二 = GEO 真实光度趋势/分布/多帧几何锚点，服务路线一 C 与三轴小项目
 路线三 = 条件触发增强层，暗室缩比系统内真实光度 + 姿态真值闭环；验证三轴构型但不外推在轨
 路线四 = LEO 光学特性与姿态运动特征关系，作为未来独立方向
 ```
 
-路线一阶段结论已经 Codex 复审通过并同步；2026-06-23 书籍知识库 R2-Codex 正式覆盖后，路线一按“路线一 C”执行：保留 v0.4 pixel-level 同源架构，B0 仅作为工程 smoke test / 兜底 baseline，B1 书中改进冯模型在作者确认公式与材料对应关系后作为正式 Method 优先目标，GGX 作为对照与 mismatch 分支。三轴小项目在路线一 C 后必做，用于价值三的观测规划落点。路线二不得写成真实监督姿态反演路线；路线三不得外推为 GEO / 在轨反演验证；路线四只作为未来方向。
+路线一阶段结论已经 Codex 复审通过并同步；2026-06-23 书籍知识库 R2-Codex 正式覆盖后，路线一按“路线一 C”执行：保留 v0.4 pixel-level 同源架构，B0 仅作为工程 smoke test / 兜底 baseline，B1 书中改进冯模型在作者确认公式与材料对应关系后作为正式 Method 优先目标，GGX 作为对照与 mismatch 分支。三轴小项目在路线一 C 后必做，用于寻找最亮姿态-几何构型及其光路/材料/探测器解释；高信息和观测规划只作为辅助标注。路线二不得写成真实监督姿态反演路线；路线三不得外推为 GEO / 在轨反演验证；路线四只作为未来方向。
 
 ## 4. 新对话上下文恢复与默认读取规则
 
@@ -216,6 +305,46 @@ R113_Codex_审阅_102通过_B6判据轴闭口并放行L1M2阶段门.md
 ```text
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/
 R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
+```
+
+若任务涉及三轴小项目、最亮构型、光路解释、材料/表面响应、探测器接收路径、辅助高信息/低信息标注或后续 Claude 任务下达，必须增量读取：
+
+```text
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/00_路线冻结文件区/01_三轴小项目_最亮构型与观测规划指导文件.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R134_Codex_审阅_003通过_P2_sparse_grid接收并放行P3_local_refinement.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R135_Codex_任务单_P3_local_refinement.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R136_Codex_审阅_004通过_P3_local_refinement接收并放行P4_planning.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R138_Codex_补充校正_三轴小项目最亮构型主目标与roll遍历口径.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R139_Codex_审阅_005不通过_旧P4需按最亮构型光路机制返工.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R140_Codex_任务单_P4PHYS最亮构型物理光路归因长程任务.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R141_Codex_任务单_P4PHYS-A_top1与roll局部确认.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R142_Codex_审阅_R141讨论稿部分采纳但不替代006A执行.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R143_Codex_规划_R141_R142后固定几何最亮姿态确认执行方案.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R144_Codex_技术路线_三轴小项目最亮构型与光路解释.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R146_Codex_审阅_006A最低接收但需pitch边界追加.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R147_Codex_任务单_P4PHYS-A2_pitch边界追加确认.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R148_Codex_审阅_006B通过_fixed几何top1闭口并放行P4PHYSB.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R149_Codex_任务单_P4PHYS-B_top1物理光路归因.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R150_Codex_审阅_007通过_P4PHYSB光路归因接收并放行P4PHYSC.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R151_Codex_任务单_P4PHYS-C_高亮机制普遍性检验.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R152_Codex_审阅_008通过_PARTIAL_GENERALITY并放行P4PHYSD.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R153_Codex_任务单_P4PHYS-D_sunview小矩阵扩展阶段门.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R154_Codex_审阅_009通过_P4PHYSD小矩阵接收并放行P4PHYSE.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R155_Codex_任务单_P4PHYS-E_sunview3x3组合小网格补齐.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R156_Codex_审阅_010通过_NEED_LOCAL_STEP_REFINEMENT并放行P4PHYSF.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R157_Codex_任务单_P4PHYS-F_Hspvm角落局部姿态与几何加密.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R158_Codex_审阅_011通过_P4PHYSF采样包络收口并停止追角落.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R160_Codex_任务单_P4PHYS-G三轴小项目总收口材料包.md
+04_四路线分工区/00_总览与裁决/04_Codex审阅/R159_Codex_审阅_017-020_D类四合一接收与分流.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/03_P2_sparse_3axis_grid_R134通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/04_P3_local_refinement_R136通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/05_三轴小项目最亮构型与光路解释技术路线_R144依据.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/06_P4PHYS-A_fixed几何top1确认_R148通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/07_P4PHYS-B_top1光路归因_R150通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/08_P4PHYS-C_机制普遍性_PARTIAL_GENERALITY_R152通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/09_P4PHYS-D_sunview小矩阵扩展_R154通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/10_P4PHYS-E_sunview3x3组合小网格_R156通过_需局部加密.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/11_P4PHYS-F_Hspvm局部加密_采样包络收口_R158通过.md
 ```
 
 若任务涉及路线审阅，按任务范围增量读取，不默认全量读取四条路线：
@@ -309,26 +438,27 @@ R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
 - 不把路线三暗室实验设置为阻塞路线一主干闭合的必做项，除非后续总裁决明确改变路线。
 - 不把 ISAR 双站在轨图像写成光度确认、姿态真值、GEO 监督标签或路线三暗室 pilot 的必做项；其具体用法待后续数据处理确认。
 - 不把路线二 GEO 真实光度锚点设置为路线一主干闭合的必做项；GEO 无姿态真值，不能写成监督姿态反演数据集。
-- 不把三轴小项目写成真实未知目标三轴姿态反演系统；它的定位是最亮构型、高信息姿态、低信息区域和观测规划。
+- 不把三轴小项目写成真实未知目标三轴姿态反演系统；它的唯一最高定位是寻找最亮姿态-几何构型并解释入射-表面-探测器光路，高信息/低信息/观测规划只作为辅助标注。
 - 不把路线四动态光变/姿态运动方向并入当前路线一 C 或三轴小项目的必做闭环。
-- 当前状态以 R110/R111/R113/R115/R117/R119 为准：B6-FIX01 已通过并关闭 single-frame 判据/输出头补救轴；头B旧负结果追因阶段性收束，旧 single-frame 负结果不再继续扩展；R115 已通过 L1(M2) clean / P-INT 第一阶段，接收 OCS-only 多观测总光度向量 L1-G1 -> L1-G3 -> L1-G5 单调增益为当前主用成果；R117 已通过 L1(M3) degraded/M-roll/D3 准备阶段，接收 OCS-only 多几何增益在 mild/moderate 物理退化下保持、M-roll fixed-roll 边界探针、P-DB/conformal smoke 准备；R119 已通过 L1D3 置信一致性与 P-DB 正式评估，接收 P-DB 作为多观测总光度向量含 yaw 信息的非神经证据链、neural/P-DB 互补空间、conformal set_size 几何收紧与 hard-case index。未另行放行前，不触发头A/头B大合并裁决，不把 B6、L1(M2)、L1(M3) 或 L1D3 作为路线一 C 整体闭口，不启动 T3/L2 光变正式训练、三轴小项目或路线二/三/四扩展，不写论文正文，不把 4维 per-part OCS 当作现实主线输入，不把 P-EXT 写成已解决，不把 P-DB 写成真实观测反演成功率，不把 conformal 写成最终概率校准。
+- 当前状态以 R110/R111/R113/R115/R117/R119/R121/R123/R125/R127/R130/R132/R134/R136/R138/R139/R140/R141/R142/R143/R144/R146/R147/R148/R149/R150/R151/R152/R153/R154/R155/R156/R157/R158/R159/R160 与三轴小项目冻结指导文件 2026-07-06 版为准：B6-FIX01 已通过并关闭 single-frame 判据/输出头补救轴；头B旧负结果追因阶段性收束，旧 single-frame 负结果不再继续扩展；路线一 C 实验主干与闭口后增强项已由 R125/R127 收口。三轴小项目当前唯一最高标准是找出最亮 yaw/pitch/roll + sun/view 构型，并解释光从哪里入射、照到哪个部位/材料/表面、如何进入探测器；执行顺序必须是先确认 top-1，再检验同类光路机制是否普遍对应高亮候选簇。R144 是当前主用技术路线依据；R148 已接收 006B/23B 并确认 fixed phase63/L1-G1 下 top-1 闭口；R150 已接收 007/24 包并确认 top-1 光路归因；R152 已接收 008/25 包并裁定 PARTIAL_GENERALITY；R154 已接收 009/26 包并裁定 SUNVIEW_DEPENDENT_BUT_MECHANISTIC；R156 已接收 010/27 包并裁定 NEED_LOCAL_STEP_REFINEMENT；R158 已接收 011/28 包并裁定 CONTROLLED_ENVELOPE_LOCAL_OPTIMUM_STOP，受控采样包络最高亮为 yaw=35、pitch=75、roll=-20 @ sp5_vm7(sun+5, view-7)，OCS≈0.27194，但包络外沿未检验，不能写成全局最亮。R159 已接收 017-020 D 类材料并完成分流。当前可执行任务是 R160/P4-PHYS-G：只读整理三轴小项目总收口材料包，输出 29 号包与 012 报告。未另行放行前，不触发头A/头B大合并裁决，不启动 T3/L2 光变正式训练或路线二/三/四扩展，不启动 R128/roll-aware 训练，不做全 sun/view 全姿态搜索，不继续姿态/几何加密，不新增渲染，不写最终论文正文，不把 4维 per-part OCS 当作现实主线输入，不把 P-EXT 写成已解决，不把 P-DB 写成真实观测反演成功率，不把 conformal 写成最终概率校准，不把 joint 强互补性写成已证明，不把三轴小项目写成全局搜索完成。
 - 13/14/24/25 不是绝对不可改；若它们与四路线总裁决 R01 或后续总指导冲突，应先列出冲突点、修改目的和影响范围，经作者确认后受控小修。
 
 ## 7. 当前下一步
 
-路线一 C 当前最新状态：头A 已由 R90 收口；头B 已完成 B1/B2/B3/P0/B4/P1-A/B5/B6-FIX01 的阶段性材料。R113 已审阅通过 Claude 102，裁定 B6 关闭 single-frame 判据/输出头补救轴；负结果可以作为条件性 single-frame 负结果收口，头B旧负结果追因阶段性收束，旧 single-frame 负结果不再继续扩展。R115 已审阅通过 Claude 103，裁定 L1(M2) clean / P-INT 第一阶段通过：OCS-only 多观测总光度向量随 L1-G1 -> L1-G3 -> L1-G5 单调增益；P-EXT yaw-block stress test 仍坍缩。R117 已审阅通过 Claude 104，裁定 R115 审计缺口补齐，OCS-only 多几何增益在 mild/moderate 物理退化下保持，M-roll fixed-roll 边界探针接收，D3/P-DB/conformal 准备接收。R119 已审阅通过 Claude 105，裁定 P-DB 正式评估、neural/P-DB 互补分析、conformal 正式评估与 hard-case index 接收。
+路线一 C 当前最新状态：头A 已由 R90 收口；头B 已完成 B1/B2/B3/P0/B4/P1-A/B5/B6-FIX01 的阶段性材料。R125/R127 已裁定路线一 C 主干实验与闭口后增强项均收口。三轴小项目当前由 R130/R132/R134/R136/R138/R139/R140/R141/R142/R143/R144/R146/R147/R148/R149/R150/R151/R152/R153/R154/R155/R156/R157/R158/R160 推进：18 号准备包接收，19 号 P1 seed-roll smoke 接收，20 号 P2 sparse grid 接收，21 号 P3 local refinement 接收；旧 005/22 号包已由 R139 裁定不接收为当前 P4；R140 仅作 P4-PHYS 总路线图；R144 已进入成果区作为当前主用技术路线依据；R148 已接收 006B/23B，确认 fixed phase63/L1-G1 sun/view 下 top-1 闭口；R150 已接收 007/24 包，确认 top-1 光路归因；R152 已接收 008/25 包，裁定 PARTIAL_GENERALITY；R154 已接收 009/26 包，裁定 SUNVIEW_DEPENDENT_BUT_MECHANISTIC；R156 已接收 010/27 包，裁定 NEED_LOCAL_STEP_REFINEMENT；R158 已接收 011/28 包，裁定 P4-PHYS-F 按受控采样包络收口并停止继续追角落。R159 已接收 017-020 D 类四合一为候选/阻塞材料。当前下一步不是 R128、不是全 sun/view 全姿态搜索、不是继续局部加密，而是执行 R160/P4-PHYS-G：只读整理三轴小项目总收口材料包，并输出 29 号包与 012 报告。
 
-当前不是头A/头B大合并裁决点，不是路线一 C 整体闭口点，也不是 T3/L2、三轴小项目或路线二/三/四正式启动点。
+当前不是头A/头B大合并裁决点，不是 T3/L2、路线二/三/四正式启动点，也不是三轴小项目全局搜索完成状态。R158 已停止继续追角落，P4-PHYS-G 只做总收口材料包；R144 的技术路线顺序已推进到 P4-PHYS 总结归档，不再新增姿态/几何搜索。
 
 当前有效下一步：
 
 ```text
-1. R116 与 R118 已分别由 104/R117、105/R119 完成并通过，不再重复 L1(M2)、R116 审计/探针或 D3/P-DB/conformal 正式评估。
-2. 下一步优先由 Codex 下达路线一 C 阶段性 Results 非正文证据包任务，整合 R113/R115/R117/R119 的结果叙事、图表清单、claim 边界和待补实验清单。
-3. 若作者决定先补强互补性，则另行下达 degraded-severe / P-INT-hard 小矩阵任务；必须继续使用物理合理退化，不复用 B6 粗增广包作为正式真实性模型。
-4. M-roll 仍只作为路线一 C fixed-roll 边界探针，不替代三轴小项目，也不启动三轴小项目正式阶段；joint/full-2664 roll 仅按需扩展。
-5. 后续命名统一使用实验层 L1-G1/G3/G5；代码层 OBS_GEOMETRIES G0~G4 只在 registry、代码说明和方法附录中出现。
-6. 若后续讨论现有负结果、4维 OCS 现实性、yaw-block 外推、1C 目标、小项目目标、光变/时序方向、L1(M2)、L1(M3) 或 L1D3 结果，必须先读 R110/R111/R113/R115/R117/R119。
+1. 路线一 C 主干实验补齐不再重复；D2/D4/M5 已由 R125 接收，16 号闭口包进入当前主用成果；R127 已接收 17 号闭口后增强包。
+2. 三轴小项目 18 号准备包、19 号 P1 smoke、20 号 P2 sparse grid 与 21 号 P3 local refinement 已由 R130/R132/R134/R136 接收；冻结指导文件已校正最高目标，三轴小项目尚未完成。
+3. 当前下一步是执行 R160：P4-PHYS-G 三轴小项目总收口材料包。输出应为 `v0.4_results/29_three_axis_p4phys_g_closure_pack/` 与 `02_Claude输出/012_P4PHYS_G_closure_pack_Claude执行报告.md`。本轮只读汇总 R144/R148/R150/R152/R154/R156/R158 及 23A/23B/24/25/26/27/28 包，不新增渲染，不继续加密，不训练，不启动 R128，不启动路线二/三/四。
+4. 三轴小项目完成并经 Codex 审阅通过后，必须回看 `04_四路线分工区/00_总览与裁决/04_Codex审阅/R128_Codex_候选规划_新路线二真实观测难度图像退化与joint互补性.md`，再裁决是否采纳新路线二与路线结构顺延；当前只记住，不执行、不改结构。
+5. 论文 Results/SI 写作可以并行或后置；它不是启动三轴小项目前置条件。写作时继续保留 model-known simulated、P-EXT 坍缩、joint 天花板、neural margin 弱、image_only 欠覆盖等边界。
+6. 后续命名统一使用实验层 L1-G1/G3/G5；代码层 OBS_GEOMETRIES G0~G4 只在 registry、代码说明和方法附录中出现。
+7. 若后续讨论现有负结果、4维 OCS 现实性、yaw-block 外推、1C 目标、小项目目标、光变/时序方向、L1(M2)、L1(M3)、L1D3、Results 证据包、Results/SI 写作准备包、路线一 C 实验闭口或闭口后增强实验清账，必须先读 R110/R111/R113/R115/R117/R119/R121/R123/R125/R127。
  ```
 
 重要同步规则：
@@ -352,11 +482,53 @@ R105_Codex_补充裁决_光变曲线上调为头B真实场景主线.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R115_Codex_审阅_103通过_L1M2多几何OCS第一阶段正结果.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R117_Codex_审阅_104通过_L1M3退化真实性与Mroll边界探针.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R119_Codex_审阅_105通过_L1D3置信一致性与PDB正式评估.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R121_Codex_审阅_106通过_1C阶段性Results非正文证据包.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R123_Codex_审阅_107通过_1C-ResultsSI图表与写作准备包.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R125_Codex_审阅_108通过_路线一C实验主干闭口并放行三轴小项目准备.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R126_Codex_任务单_1C闭口后增强实验清账_multiSeed_PINTHard_MrollFull_ConformalAlpha.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/04_Codex审阅/R127_Codex_审阅_109通过_闭口后增强实验清账完成并放行三轴小项目准备.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/00_B6-FIX01与single-frame负结果收口说明_R113通过.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/01_路线一C后续技术路线执行框架_R113通过.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/05_L1M2多几何OCS第一阶段正结果_R115通过.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/06_L1M3退化真实性与Mroll边界探针_R117通过.md
 04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/07_L1D3置信一致性与PDB正式评估_R119通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/08_路线一C阶段性Results非正文证据包_R121通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/09_路线一C-ResultsSI图表与写作准备包_R123通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/10_路线一C实验主干闭口_D2D4M5_R125通过.md
+04_四路线分工区/01_路线一_fixed-roll纯仿真主干/01_成果区/00_当前主用成果/11_路线一C闭口后增强实验清账_R127通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R130_Codex_审阅_001通过_三轴小项目准备阶段门接收并放行P1_seed_roll_smoke.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R132_Codex_审阅_002通过_P1_seed_roll_smoke接收并放行P2_sparse_grid.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R133_Codex_任务单_P2_sparse_3axis_grid.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R134_Codex_审阅_003通过_P2_sparse_grid接收并放行P3_local_refinement.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R135_Codex_任务单_P3_local_refinement.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R136_Codex_审阅_004通过_P3_local_refinement接收并放行P4_planning.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R138_Codex_补充校正_三轴小项目最亮构型主目标与roll遍历口径.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R139_Codex_审阅_005不通过_旧P4需按最亮构型光路机制返工.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R140_Codex_任务单_P4PHYS最亮构型物理光路归因长程任务.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R141_Codex_任务单_P4PHYS-A_top1与roll局部确认.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R142_Codex_审阅_R141讨论稿部分采纳但不替代006A执行.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R143_Codex_规划_R141_R142后固定几何最亮姿态确认执行方案.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R144_Codex_技术路线_三轴小项目最亮构型与光路解释.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R146_Codex_审阅_006A最低接收但需pitch边界追加.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R147_Codex_任务单_P4PHYS-A2_pitch边界追加确认.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R148_Codex_审阅_006B通过_fixed几何top1闭口并放行P4PHYSB.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R149_Codex_任务单_P4PHYS-B_top1物理光路归因.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R150_Codex_审阅_007通过_P4PHYSB光路归因接收并放行P4PHYSC.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R151_Codex_任务单_P4PHYS-C_高亮机制普遍性检验.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R152_Codex_审阅_008通过_PARTIAL_GENERALITY并放行P4PHYSD.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R153_Codex_任务单_P4PHYS-D_sunview小矩阵扩展阶段门.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R154_Codex_审阅_009通过_P4PHYSD小矩阵接收并放行P4PHYSE.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R155_Codex_任务单_P4PHYS-E_sunview3x3组合小网格补齐.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/00_三轴小项目准备阶段门设计_R130通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/01_P1_seed_roll_smoke_R132通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/02_三轴小项目后续技术路线执行框架_R132通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/03_P2_sparse_3axis_grid_R134通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/04_P3_local_refinement_R136通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/05_三轴小项目最亮构型与光路解释技术路线_R144依据.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/06_P4PHYS-A_fixed几何top1确认_R148通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/07_P4PHYS-B_top1光路归因_R150通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/08_P4PHYS-C_机制普遍性_PARTIAL_GENERALITY_R152通过.md
+04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/09_P4PHYS-D_sunview小矩阵扩展_R154通过.md
 ```
 
 

@@ -1,0 +1,9 @@
+key,value
+stage2_best_geom,sp5_vm7
+stage2_best_sun_offset,5
+stage2_best_view_offset,-7
+stage2_best_pose_id,S1_best[B_y35_p75_r-20]
+stage2_best_label,yaw035_pitch+075_roll-020
+stage2_best_ocs_total,0.2719396055
+stage2_best_on_geom_edge,True
+hsp_vm_center_is_geom_best,False

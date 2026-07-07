@@ -1,0 +1,15 @@
+gate,status,note
+27_package_exists,PASS,audit/tables/figures/text/scripts/logs/postprocess
+010_report_exists,PENDING,written after finalize
+geom_3x3,PASS,9
+pose_same_14,PASS,14
+new_render_zero,PASS,0
+postprocess_all_complete,PASS,126/126
+anchor_consistency_26,PASS,"70/70 OK, max_rel=0.0e+00"
+numeric_consistency,PASS,"126/126 OK, max_rel=1.4e-07"
+mechanism_reuse_24_25_26,PASS,"same signature algo, per-combo H"
+cross_geometry_tables,PASS,rank/top_summary/stability/signature written
+heatmap_and_toppose_figures,PASS,3x3 heatmap + top_pose_by_geometry (png+pdf)
+decision_label_given,PASS,NEED_LOCAL_STEP_REFINEMENT
+not_global_sunview_claim,PASS,scope=3x3 combo grid only
+material_proxy_only,PASS,"B0, no material pass"

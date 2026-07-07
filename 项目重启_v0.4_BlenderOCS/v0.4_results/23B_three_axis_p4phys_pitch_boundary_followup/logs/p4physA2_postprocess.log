@@ -1,0 +1,146 @@
+{
+  "timestamp": "2026-07-06T15:31:56.101773",
+  "total": 6,
+  "complete": 6,
+  "failed": 0,
+  "records": [
+    {
+      "label": "yaw2425_pitchp0225_roll+015",
+      "record_id": "phase63_yaw242_pitch+022",
+      "yaw_deg": 242.5,
+      "pitch_deg": 22.5,
+      "ocs_total": 0.20368336141109467,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.19327542185783386,
+        "taiyangnengban": 0.0016338954446837306,
+        "yinshenban": 0.008774029091000557
+      },
+      "n_pixels_camera_visible": 6033,
+      "n_pixels_nol_positive": 4150,
+      "n_pixels_sun_visible": 5984,
+      "n_pixels_contributing": 4146,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0225_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0225_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0225_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2425_pitchp0225_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    },
+    {
+      "label": "yaw2425_pitchp0250_roll+015",
+      "record_id": "phase63_yaw242_pitch+025",
+      "yaw_deg": 242.5,
+      "pitch_deg": 25.0,
+      "ocs_total": 0.20202982425689697,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.19164752960205078,
+        "taiyangnengban": 0.0016502690268680453,
+        "yinshenban": 0.008732018060982227
+      },
+      "n_pixels_camera_visible": 6092,
+      "n_pixels_nol_positive": 4180,
+      "n_pixels_sun_visible": 6058,
+      "n_pixels_contributing": 4178,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0250_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0250_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2425_pitchp0250_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2425_pitchp0250_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    },
+    {
+      "label": "yaw2450_pitchp0225_roll+015",
+      "record_id": "phase63_yaw245_pitch+022",
+      "yaw_deg": 245.0,
+      "pitch_deg": 22.5,
+      "ocs_total": 0.20067910850048065,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.1903761923313141,
+        "taiyangnengban": 0.0015279846265912056,
+        "yinshenban": 0.008774944581091404
+      },
+      "n_pixels_camera_visible": 6078,
+      "n_pixels_nol_positive": 4060,
+      "n_pixels_sun_visible": 6035,
+      "n_pixels_contributing": 4058,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0225_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0225_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0225_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2450_pitchp0225_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    },
+    {
+      "label": "yaw2450_pitchp0250_roll+015",
+      "record_id": "phase63_yaw245_pitch+025",
+      "yaw_deg": 245.0,
+      "pitch_deg": 25.0,
+      "ocs_total": 0.20322741568088531,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.1928253471851349,
+        "taiyangnengban": 0.001646331395022571,
+        "yinshenban": 0.008755774237215519
+      },
+      "n_pixels_camera_visible": 6129,
+      "n_pixels_nol_positive": 4062,
+      "n_pixels_sun_visible": 6093,
+      "n_pixels_contributing": 4062,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0250_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0250_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2450_pitchp0250_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2450_pitchp0250_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    },
+    {
+      "label": "yaw2475_pitchp0225_roll+015",
+      "record_id": "phase63_yaw247_pitch+022",
+      "yaw_deg": 247.5,
+      "pitch_deg": 22.5,
+      "ocs_total": 0.1742192804813385,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.16409169137477875,
+        "taiyangnengban": 0.0015417347894981503,
+        "yinshenban": 0.00858583115041256
+      },
+      "n_pixels_camera_visible": 6103,
+      "n_pixels_nol_positive": 3961,
+      "n_pixels_sun_visible": 6070,
+      "n_pixels_contributing": 3960,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0225_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0225_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0225_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2475_pitchp0225_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    },
+    {
+      "label": "yaw2475_pitchp0250_roll+015",
+      "record_id": "phase63_yaw247_pitch+025",
+      "yaw_deg": 247.5,
+      "pitch_deg": 25.0,
+      "ocs_total": 0.18273191154003143,
+      "ocs_per_part": {
+        "jinshuzhuti": 0.17265839874744415,
+        "taiyangnengban": 0.0014460866805166006,
+        "yinshenban": 0.008627427741885185
+      },
+      "n_pixels_camera_visible": 6150,
+      "n_pixels_nol_positive": 3978,
+      "n_pixels_sun_visible": 6115,
+      "n_pixels_contributing": 3978,
+      "exr_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0250_roll+015_linear.exr",
+      "png_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0250_roll+015_brdf.png",
+      "ocs_json_path": "v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup/postprocess/phase63/roll+015/yaw2475_pitchp0250_roll+015_ocs.json",
+      "sun_visibility_mask_path": "v0.4_results/01_fullrun/postprocess/yaw2475_pitchp0250_roll+015_v_sun_macro.png",
+      "status": "COMPLETE",
+      "roll_deg": 15.0,
+      "cluster": "R1_pitch_boundary"
+    }
+  ]
+}

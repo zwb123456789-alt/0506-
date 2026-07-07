@@ -1,0 +1,50 @@
+[MROLL FULL2664 START] Wed Jul  1 16:58:33     2026
+=== RENDER phase63 roll+015 (full 2664, skip existing) ===
+  selected_count: 2664
+  RENDERED:          2320
+  SKIPPED_EXISTING:  344
+  FAILED:            0
+[SUCCESS] 2320 rendered + 344 skipped = 全部完成
+=== POSTPROCESS phase63 roll+015 (full 2664) ===
+  [COMPLETE] OCS_total=4.425295e-02 visible=5461 contrib=1977
+  [COMPLETE] OCS_total=3.973605e-02 visible=5414 contrib=2032
+  [COMPLETE] OCS_total=2.862428e-02 visible=5497 contrib=2175
+  [COMPLETE] OCS_total=2.135375e-02 visible=5586 contrib=2330
+OVERALL: COMPLETE
+=== RENDER phase63 roll-015 (full 2664, skip existing) ===
+  selected_count: 2664
+  RENDERED:          2352
+  SKIPPED_EXISTING:  312
+  FAILED:            0
+[SUCCESS] 2352 rendered + 312 skipped = 全部完成
+=== POSTPROCESS phase63 roll-015 (full 2664) ===
+  [COMPLETE] OCS_total=1.797323e-02 visible=5688 contrib=5324
+  [COMPLETE] OCS_total=1.751142e-02 visible=5625 contrib=5280
+  [COMPLETE] OCS_total=1.722654e-02 visible=5723 contrib=5330
+  [COMPLETE] OCS_total=1.812928e-02 visible=5824 contrib=5447
+OVERALL: COMPLETE
+=== RENDER phase63 roll+030 (full 2664, skip existing) ===
+  selected_count: 2664
+  RENDERED:          2352
+  SKIPPED_EXISTING:  312
+  FAILED:            0
+[SUCCESS] 2352 rendered + 312 skipped = 全部完成
+=== POSTPROCESS phase63 roll+030 (full 2664) ===
+  [COMPLETE] OCS_total=1.492492e-01 visible=4825 contrib=2318
+  [COMPLETE] OCS_total=1.303240e-01 visible=4793 contrib=2430
+  [COMPLETE] OCS_total=7.594070e-02 visible=4881 contrib=2515
+  [COMPLETE] OCS_total=3.837591e-02 visible=4971 contrib=2677
+OVERALL: COMPLETE
+=== RENDER phase63 roll-030 (full 2664, skip existing) ===
+  selected_count: 2664
+  RENDERED:          2352
+  SKIPPED_EXISTING:  312
+  FAILED:            0
+[SUCCESS] 2352 rendered + 312 skipped = 全部完成
+=== POSTPROCESS phase63 roll-030 (full 2664) ===
+  [COMPLETE] OCS_total=2.517544e-02 visible=5296 contrib=5037
+  [COMPLETE] OCS_total=2.465844e-02 visible=5219 contrib=5018
+  [COMPLETE] OCS_total=2.326591e-02 visible=5302 contrib=5069
+  [COMPLETE] OCS_total=2.273327e-02 visible=5378 contrib=5132
+OVERALL: COMPLETE
+[MROLL FULL2664 DONE] Wed Jul  1 18:55:43     2026

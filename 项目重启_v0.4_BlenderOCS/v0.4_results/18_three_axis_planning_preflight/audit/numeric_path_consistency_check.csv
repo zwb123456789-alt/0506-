@@ -1,0 +1,15 @@
+check,result,detail
+seed_total==66,PASS,got 66
+seed_categories==9,PASS,all 9
+master_rows==2664,PASS,got 2664
+derived_master==2664,PASS,got 2664
+derived_has_contrast_glint,PASS,fields present
+p1_matrix==96,PASS,got 96
+p1_no_roll0,PASS,roll=0 reused not rendered
+p1_unique_seeds==12,PASS,got 12
+registry==11,PASS,got 11
+stage_matrix==4,PASS,got 4
+resource_est==4,PASS,got 4
+resource_P1==96units,PASS,P1 units=96
+input_manifest_all_OK,PASS,16/16 OK
+seed_ids_traceable_to_master,PASS,all traceable

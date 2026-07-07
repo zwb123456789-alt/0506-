@@ -1,0 +1,11 @@
+redline,status,note
+no_training,PASS,只读 EXR/JSON + 逐像素重算，无训练
+no_R128,PASS,未触及 R128 / roll-aware 训练
+no_route_234,PASS,仅三轴小项目内部
+no_sunview_expand,PASS,仅 phase63/L1-G1 SUN=[1,0,0.3] DET=[0.5,-1,0.1]
+no_new_render,PASS,仅发现并复用既有 EXR/JSON/npy
+no_new_pose_search,PASS,候选池全部来自既有 20/21/23A/23B/01
+no_modify_source_pkgs,PASS,20/21/23A/23B/24 只读；新脚本/表写入 25 包
+no_results_area_no_claudemd_no_codex_file,PASS,仅写 25 包与 02_Claude输出/008 报告
+no_global_sunview_claim,PASS,结论限定 fixed phase63/L1-G1
+material_proxy_not_real_attribution,PASS,全程标注 B0 proxy，无 material pass

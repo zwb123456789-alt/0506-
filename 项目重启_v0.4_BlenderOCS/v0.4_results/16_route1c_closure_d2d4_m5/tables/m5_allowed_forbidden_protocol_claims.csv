@@ -1,0 +1,5 @@
+protocol,allowed,forbidden
+P-INT,多几何 OCS-only 在 clean/model-known simulated 下随 L1-G1→G3→G5 yaw hit@30 单调增益,真实未知目标姿态反演成功 / 真实望远镜验证
+P-EXT,strict yaw-block extrapolation 仍坍缩，多几何不能救 held-out yaw block,P-EXT yaw-block 已解决 / 多几何解决了外推
+P-DB,model-known simulated template retrieval 显示多观测光度向量含可检索 yaw 信息，检索命中随几何提升,P-DB 是真实观测反演成功率 / P-DB top-k oracle 是无监督可达命中
+cross,P-INT 回归与 P-DB 检索构成互补证据链，同指向多观测 OCS 含姿态信息,joint 强互补性已证明 / 三协议已完成真实反演 / 路线一 C 整体闭口

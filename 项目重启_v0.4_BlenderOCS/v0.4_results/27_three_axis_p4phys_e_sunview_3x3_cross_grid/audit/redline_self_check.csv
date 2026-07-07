@@ -1,0 +1,12 @@
+redline,status,note
+no_training,PASS,只 OCS 积分 + 机制重算
+no_R128,PASS,未触及
+no_route_234,PASS,未触及
+no_full_sunview_full_pose_search,PASS,9 组合几何×14 固定姿态，非全局
+no_new_render,PASS,0 新增渲染，全部复用 26/baseline EXR
+no_new_pose,PASS,复用 26 包同源 14 姿态候选
+no_edit_source_pkgs,PASS,只写 27 包，不改 20/21/23A/23B/24/25/26
+no_result_area_no_claudemd_no_codex_file,PASS,仅 27 包与 010 报告
+not_global_conclusion,PASS,结论限定 ±7° 3×3 组合小网格
+material_proxy_not_real_attribution,PASS,B0 proxy 明确标注
+material_proxy_not_material_level,PASS,未写 material-level attribution

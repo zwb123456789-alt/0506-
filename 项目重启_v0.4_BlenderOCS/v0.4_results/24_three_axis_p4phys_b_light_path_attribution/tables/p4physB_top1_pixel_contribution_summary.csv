@@ -1,0 +1,4 @@
+pose,n_contrib_pixels,I_max,I_mean,I_median,n_pixels_for_50pct_OCS,pct_pixels_for_50pct_OCS
+R1_top1,4141,5.659108e-01,3.149745e-01,5.657585e-01,1153,27.84
+R4_robust,2808,5.642929e-01,4.472769e-01,5.642165e-01,1114,39.67
+R3_neg,4121,3.638771e-01,1.003911e-01,1.086156e-01,1875,45.50

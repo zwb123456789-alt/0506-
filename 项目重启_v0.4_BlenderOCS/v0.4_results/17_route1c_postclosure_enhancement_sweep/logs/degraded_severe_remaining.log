@@ -1,0 +1,30 @@
+[SEVERE REMAINING START] Wed Jul  1 17:17:47     2026
+--- G1 joint Wed Jul  1 17:17:47     2026 ---
+[TEST final] cmae=2.36 hit@30=1.000
+[TEST best ] (ep29) cmae=2.28 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G1_joint_seed42
+--- G3 ocs_only Wed Jul  1 17:25:59     2026 ---
+[TEST final] cmae=60.51 hit@30=0.436
+[TEST best ] (ep29) cmae=57.87 hit@30=0.473
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G3_ocs_only_seed42
+--- G3 image_only Wed Jul  1 17:26:09     2026 ---
+[TEST final] cmae=3.65 hit@30=1.000
+[TEST best ] (ep29) cmae=3.66 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G3_image_only_seed42
+--- G3 joint Wed Jul  1 17:35:00     2026 ---
+[TEST final] cmae=2.79 hit@30=1.000
+[TEST best ] (ep25) cmae=2.04 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G3_joint_seed42
+--- G5 ocs_only Wed Jul  1 17:43:34     2026 ---
+[TEST final] cmae=51.88 hit@30=0.507
+[TEST best ] (ep30) cmae=51.88 hit@30=0.507
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G5_ocs_only_seed42
+--- G5 image_only Wed Jul  1 17:43:45     2026 ---
+[TEST final] cmae=5.00 hit@30=0.997
+[TEST best ] (ep28) cmae=3.88 hit@30=0.997
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G5_image_only_seed42
+--- G5 joint Wed Jul  1 17:51:56     2026 ---
+[TEST final] cmae=2.89 hit@30=1.000
+[TEST best ] (ep27) cmae=2.22 hit@30=1.000
+[DONE] D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\17_route1c_postclosure_enhancement_sweep\pint_hard_degraded_severe\runs\degraded-severe_P-INT_G5_joint_seed42
+[SEVERE REMAINING DONE] Wed Jul  1 17:59:41     2026

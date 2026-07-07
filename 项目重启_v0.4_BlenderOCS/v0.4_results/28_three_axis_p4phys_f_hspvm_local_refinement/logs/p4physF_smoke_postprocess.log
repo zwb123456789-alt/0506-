@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-07-06T21:41:32.859068",
+  "stage": "smoke",
+  "n_total": 1,
+  "n_complete": 1,
+  "records": [
+    {
+      "geom_id": "sp7_vm7",
+      "sun_offset": 7,
+      "view_offset": -7,
+      "pose_id": "B_y55_p60_r+20",
+      "label": "yaw055_pitch+060_roll+020",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 20.0,
+      "is_new_pose": true,
+      "on_grid_edge": true,
+      "camera_exr_src": "28/cam_vm7",
+      "sun_exr_src": "28/sun_sp7",
+      "status": "COMPLETE",
+      "ocs_total": 0.0290535856038332,
+      "ocs_metal": 0.02850527875125408,
+      "ocs_dark": 0.0,
+      "ocs_solar": 0.000548307376448065,
+      "n_pixels_contributing": 4670,
+      "image_usable": true,
+      "failed_reason": ""
+    }
+  ]
+}

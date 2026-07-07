@@ -1,0 +1,17 @@
+field,value,note
+task,R155 / P4-PHYS-E sun/view 3x3 cross grid,
+upstream,"R154 accept 009/26, P4-PHYS-D = SUNVIEW_DEPENDENT_BUT_MECHANISTIC",
+baseline_geometry,phase63 / L1-G1,"SUN=[1,0,0.3] DET=[0.5,-1,0.1] inertial"
+r_max_m,1.4726051706,"model-only const, from 26 cfg"
+pixel_area_m2,1.601541e-04,"(2.2*r_max/256)^2, from 26 cfg"
+depth_epsilon_m,0.7952109583,"shared shadow eps, from 26 cfg"
+i_scale,0.5444863932,"step5 fixed i_scale (image only, OCS unaffected)"
+brdf_branch,B0 phong_like_provisional_baseline,"material proxy, no material pass"
+indexob_map,1=jinshuzhuti 2=taiyangnengban 3=yinshenban 0=bg,
+sun_offsets,"{-7,0,+7} deg",sun_dir from 26 baseline/G1/G2
+view_offsets,"{-7,0,+7} deg",det_dir from 26 baseline/G3/G4
+n_geometries,9,3x3 combos
+n_poses,14,"same 14 as 26, no new pose search"
+n_combos,126,9x14=126
+new_render_units,0,"camera EXR<-view_offset, sun EXR<-sun_offset, all from 26/baseline"
+reuse_principle,camera pass sun-independent => cam EXR by view_offset; sun pass detector-independent => sun EXR by sun_offset,physically exact reuse of 26 rendered EXR

@@ -1,0 +1,9 @@
+signature_field,value,note
+dominant_part,jinshuzhuti,95.0% of OCS
+dominant_material_proxy,"B0 metal (rho_s=0.60,n=80) high-specular","proxy, no material pass"
+second_part,yinshenban,4.2% (dark panel edge/grazing)
+sun_normal_angle_bin,~31deg,weighted metal normal vs sun
+view_normal_angle_bin,~32deg,weighted metal normal vs det
+reflection_alignment_proxy,avgN_vs_H=0.6deg,small angle => near-specular alignment
+saturation_state,"saturation_flag=1, glint_flag=0",from 23A refined topN
+mean_NoH_pow_n_metal,8.106e-01,specular term strength

@@ -1,0 +1,12 @@
+check,status,detail
+locked matrix = 96 行,PASS,96
+render manifest = 96 行,PASS,96
+postprocess manifest = 96 行,PASS,96
+render manifest camera 全 True,PASS,
+render manifest sun 全 True,PASS,
+postprocess ocs_json 全 True,PASS,
+ocs table = 108 行(含baseline),PASS,108
+roll_curve = 108 行,PASS,108
+EXR 实际数 = 192(96cam+96sun),PASS,192
+linear.exr 实际数 = 96,PASS,96
+所有输出在 19 号包内,PASS,wrapper OUTPUT 固定 19_three_axis_p1_seed_roll_scan

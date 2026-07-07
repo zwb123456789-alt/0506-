@@ -1,0 +1,6 @@
+file,status,rows,note
+v0.4_results/19_three_axis_p1_seed_roll_scan/tables/p1_seed_roll_ocs_table.csv,EXISTS,108,P1 seed-roll scan
+v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_sparse_grid_metrics.csv,EXISTS,1125,P2 sparse 3-axis grid
+v0.4_results/21_three_axis_p3_local_refinement/tables/p3_local_refinement_metrics.csv,EXISTS,963,P3 local refinement main
+v0.4_results/21_three_axis_p3_local_refinement/tables/p3_high_brightness_refined_candidates.csv,EXISTS,15,P3 high-brightness roll-aggregated
+v0.4_results/21_three_axis_p3_local_refinement/tables/p3_region_summary.csv,EXISTS,5,P3 region summary

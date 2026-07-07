@@ -1,0 +1,21 @@
+subtask,run_id,type,protocol,geom,mode,degrade,seed,est_note
+B_multiseed,P-INT_G1_ocs_only_seed7,train,P-INT,G1,ocs_only,clean,7,ocs_only 30ep GPU 约1-2分钟/run
+B_multiseed,P-INT_G1_ocs_only_seed123,train,P-INT,G1,ocs_only,clean,123,ocs_only 30ep GPU 约1-2分钟/run
+B_multiseed,P-INT_G3_ocs_only_seed7,train,P-INT,G3,ocs_only,clean,7,ocs_only 30ep GPU 约1-2分钟/run
+B_multiseed,P-INT_G3_ocs_only_seed123,train,P-INT,G3,ocs_only,clean,123,ocs_only 30ep GPU 约1-2分钟/run
+B_multiseed,P-INT_G5_ocs_only_seed7,train,P-INT,G5,ocs_only,clean,7,ocs_only 30ep GPU 约1-2分钟/run
+B_multiseed,P-INT_G5_ocs_only_seed123,train,P-INT,G5,ocs_only,clean,123,ocs_only 30ep GPU 约1-2分钟/run
+C_degraded_severe,degraded-severe_P-INT_G1_ocs_only_seed42,train,P-INT,G1,ocs_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G1_image_only_seed42,train,P-INT,G1,image_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G1_joint_seed42,train,P-INT,G1,joint,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G3_ocs_only_seed42,train,P-INT,G3,ocs_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G3_image_only_seed42,train,P-INT,G3,image_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G3_joint_seed42,train,P-INT,G3,joint,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G5_ocs_only_seed42,train,P-INT,G5,ocs_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G5_image_only_seed42,train,P-INT,G5,image_only,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+C_degraded_severe,degraded-severe_P-INT_G5_joint_seed42,train,P-INT,G5,joint,degraded-severe,42,image/joint 含图像退化，约2-5分钟/run；ocs_only 约1分钟
+D_mroll_full2664,phase63_roll-030_full2664,render+postprocess,distribution-shift,phase63,image_only/ocs_only(G1),clean,-,约2352新姿态/roll(312已渲)，~1s/帧渲染+后处理
+D_mroll_full2664,phase63_roll-015_full2664,render+postprocess,distribution-shift,phase63,image_only/ocs_only(G1),clean,-,约2352新姿态/roll(312已渲)，~1s/帧渲染+后处理
+D_mroll_full2664,phase63_roll+015_full2664,render+postprocess,distribution-shift,phase63,image_only/ocs_only(G1),clean,-,约2352新姿态/roll(312已渲)，~1s/帧渲染+后处理
+D_mroll_full2664,phase63_roll+030_full2664,render+postprocess,distribution-shift,phase63,image_only/ocs_only(G1),clean,-,约2352新姿态/roll(312已渲)，~1s/帧渲染+后处理
+E_conformal_alpha,conformal_alpha_recompute,recompute,P-INT,G1/G3/G5,all,clean(+可选degraded),42,复用既有 summary，秒级

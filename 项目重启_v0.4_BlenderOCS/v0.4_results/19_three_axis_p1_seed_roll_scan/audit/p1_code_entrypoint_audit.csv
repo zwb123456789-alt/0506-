@@ -1,0 +1,6 @@
+entrypoint,role,note
+p1_render_seed_roll.py,YES,派生自 render_full_2664_shadow.py; 覆盖姿态生成为 12 seed×roll; 写 19 号包; 不改旧 driver
+render_full_2664_shadow.py(driver),REUSE-READONLY,提供场景/渲染/EXR 输出; --labels/roll 由 wrapper 注入
+p1_postprocess_seed_roll.py,YES,派生自 run_full_postprocess.py; 覆盖 SHADOW/OUTPUT/GEOM; 写 19 号包
+run_full_postprocess.py(driver),REUSE-READONLY,提供 process_one_attitude: BRDF→mask→OCS→image; 参数继承 fullrun
+config_v0_4.py,REUSE-READONLY,"phase63/L1-G1 SUN/DET, 与 01_fullrun baseline 一致, 量纲可比"

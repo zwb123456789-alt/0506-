@@ -1,0 +1,13 @@
+gate_item,status,evidence
+输入资产是否齐,PASS,audit/input_manifest.csv 16/16 OK; phase63+24/45/90/120 各 2664
+指标是否可计算,PASS,tables/three_axis_metric_registry.csv 11 指标; A-direct 6类已用于种子, B-derived 2类已算(local_contrast/glint_flag), C类标注需roll渲染
+种子覆盖 bright,PASS,bright-seed 8
+种子覆盖 high-info,PASS,high-info-seed 8
+种子覆盖 low-info,PASS,low-info-seed 8
+种子覆盖 hardcase,PASS,ocs-hard 8/image-hard 2/disagreement 8
+种子覆盖 roll-sensitive,PASS,roll-sensitive-seed 8
+采样阶段是否可执行,PASS,tables/three_axis_stage_matrix.csv P1-P4 含接收/停止/扩展条件
+资源估计是否合理,PASS,resources/render_train_storage_estimate.csv 基于17号实测1.0s/姿态基准
+下一轮P1是否可直接下达,PASS,text/next_task_draft_P1_seed_roll_scan.md + p1预注册矩阵96单位
+brightness与information区分,PASS,text/brightness_vs_information_boundary.md corr≈-0.09; registry info_class分列
+需Codex裁决事项,SEE,text/codex_review_checklist_for_001.md 列出待裁决问题

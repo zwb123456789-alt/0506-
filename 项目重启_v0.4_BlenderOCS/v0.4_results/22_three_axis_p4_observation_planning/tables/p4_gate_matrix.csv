@@ -1,0 +1,17 @@
+gate_id,gate_category,gate_description,check_method,result,evidence
+G01,directory,22号包目录存在,ls/find验证,PASS,v0.4_results/22_three_axis_p4_observation_planning/已创建
+G02,no_new_render,未新增Blender渲染或后处理,核查所有输出文件类型（无.exr/.json渲染产物）,PASS,22号包内只有CSV/MD/PNG/PDF/PY；无新渲染
+G03,no_train,未训练任何模型,核查无训练代码/checkpoint/模型输出,PASS,22号包无训练相关文件
+G04,no_R128,未启动R128,核查未引用或执行R128任务单,PASS,R128仅列于接口候选清单（p4_r128_interface_candidates.csv）；未启动
+G05,role_stratification,P4角色分层完成（5类），优先级矩阵完成，风险边界矩阵完成,核查3个表的行数与覆盖范围,PASS,"p4_region_role_summary.csv(6行含caution); p4_observation_priority_matrix.csv(17行含caution); p4_risk_and_boundary_matrix.csv(10行)"
+G06,stage_summary,stage summary/claim boundary/must-not-claim表完成,核查3个文件存在且覆盖全部声明,PASS,"p4_three_axis_project_stage_summary.md; p4_stage_claim_boundary_table.csv(12行); p4_what_can_be_claimed.csv(8行); p4_what_must_not_be_claimed.csv(10行)"
+G07,r128_interface_only,R128接口候选只列清单不启动,核查p4_r128_interface_candidates.csv内容,PASS,5个接口候选+NOTE行说明R128挂起；无启动动作
+G08,figures_complete,P4综合图完成（4图PNG+PDF），,核查figures目录,PASS,"p4_observation_role_map/p4_brightness_information_decoupling_summary/p4_planning_candidate_panel/p4_stage_evidence_flow各.png/.pdf"
+G09,manifest,generated_files_manifest完成,核查manifest文件存在,PASS,audit/generated_files_manifest.csv（本gate完成后生成）
+G10,path_consistency,路径一致性检查完成,核查audit/numeric_path_consistency_check.csv,PASS,audit/numeric_path_consistency_check.csv（本gate完成后生成）
+G11,redline_self_check,红线自检完成,核查audit/redline_self_check.csv,PASS,audit/redline_self_check.csv（本gate完成后生成）
+G12,no_results_area,未写成果区（01_成果区）,核查未在成果区新建文件,PASS,22号包仅在v0.4_results/22_...；未触及01_成果区
+G13,no_codex_file,未生成Codex审阅文件,核查04_Codex审阅目录未新增文件,PASS,R137任务单仍在04_Codex审阅；22号包未生成新Codex文件
+G14,no_claude_md_change,未改CLAUDE.md,核查git status中CLAUDE.md无修改,PASS,仅修改了22号包内文件
+G15,not_real_target,未把P4写成真实未知目标反演系统,核查所有文档边界声明,PASS,所有文件明确标注model-known simulated / proxy级
+G16,codex_checklist,Codex 005 审阅清单生成,核查text/codex_review_checklist_for_005.md,PASS（待完成）,本gate完成后生成

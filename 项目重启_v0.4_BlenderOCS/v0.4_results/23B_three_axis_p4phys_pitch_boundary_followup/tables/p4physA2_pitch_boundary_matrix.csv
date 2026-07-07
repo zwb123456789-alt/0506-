@@ -1,0 +1,7 @@
+cluster,yaw_deg,pitch_deg,roll,label,geometry,render_needed,reuse_from,ocs_existing,sun_x,sun_y,sun_z,det_x,det_y,det_z
+R1_pitch_boundary,242.5,22.5,15.0,yaw2425_pitchp0225_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1
+R1_pitch_boundary,242.5,25.0,15.0,yaw2425_pitchp0250_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1
+R1_pitch_boundary,245.0,22.5,15.0,yaw2450_pitchp0225_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1
+R1_pitch_boundary,245.0,25.0,15.0,yaw2450_pitchp0250_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1
+R1_pitch_boundary,247.5,22.5,15.0,yaw2475_pitchp0225_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1
+R1_pitch_boundary,247.5,25.0,15.0,yaw2475_pitchp0250_roll+015,phase63_L1G1,YES,,,1.0,0.0,0.3,0.5,-1.0,0.1

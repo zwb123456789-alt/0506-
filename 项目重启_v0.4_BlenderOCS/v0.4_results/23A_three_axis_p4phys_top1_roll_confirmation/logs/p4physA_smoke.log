@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-07-06T13:09:13.550582",
+  "task": "23A p4physA smoke test",
+  "roll": 5.0,
+  "n_smoke": 3,
+  "rendered": 3,
+  "failed": 0,
+  "result": "PASS",
+  "labels": [
+    "yaw2425_pitchp0275_roll+005",
+    "yaw2425_pitchp0300_roll+005",
+    "yaw2425_pitchp0325_roll+005"
+  ]
+}

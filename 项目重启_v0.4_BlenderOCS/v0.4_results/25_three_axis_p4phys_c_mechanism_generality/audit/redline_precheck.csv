@@ -1,0 +1,10 @@
+check,status,note
+fixed_geometry_only,PASS,"只用 phase63/L1-G1 既有渲染，SUN=[1,0,0.3] DET=[0.5,-1,0.1]"
+no_new_render,PASS,仅发现既有 EXR/JSON/npy，未触发渲染
+no_sunview_expand,PASS,未扩展 sun/view
+no_new_pose_search,PASS,未搜索新姿态
+no_training,PASS,无训练
+not_modify_source_pkgs,PASS,20/21/23A/23B/24 只读
+material_proxy_only,PASS,material-level 仍为 B0 proxy，无 material pass
+pool_size_le_200,PASS,selected=159 cap=200
+pool_size_ge_30,PASS,selected=159 min=30

@@ -1,0 +1,7 @@
+entrypoint,exists,roll_parameterizable,note
+02_blender/render_mroll_probe.py,True,YES,R116 已注入非零 roll 并生成 roll{+NNN} label；证明 Blender 渲染可扩展到 roll 轴
+02_blender/render_full_2664_shadow.py,True,PARTIAL,主 driver 固定 roll=0；mroll probe 以包装器方式覆盖姿态生成，不改本 driver
+01_geometry/attitude_grid.py,True,PARTIAL,默认 72yaw×37pitch=2664 且 roll 固定 0；三轴需新增 roll 维度或复用 mroll 注入逻辑
+01_geometry/geometry_loader.py,True,N/A,几何加载，不涉及 roll
+05_postprocess,False,PARTIAL,postprocess 产出 *_ocs.json 已带 roll tag 结构（label 含 roll），字段可扩展
+07_training,False,PARTIAL,训练入口当前按 yaw/pitch 目标；roll-aware 需新增 roll 标签字段，本轮不做

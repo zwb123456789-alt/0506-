@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-07-06T13:09:13.550582",
+  "batches": [
+    {
+      "roll": 5.0,
+      "rendered": 9,
+      "skipped": 3,
+      "failed": 0
+    },
+    {
+      "roll": 10.0,
+      "rendered": 12,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "roll": 12.5,
+      "rendered": 12,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "roll": 15.0,
+      "rendered": 3,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "roll": 17.5,
+      "rendered": 12,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "roll": 20.0,
+      "rendered": 12,
+      "skipped": 0,
+      "failed": 0
+    },
+    {
+      "roll": 25.0,
+      "rendered": 12,
+      "skipped": 0,
+      "failed": 0
+    }
+  ],
+  "total_rendered": 72,
+  "total_skipped": 3,
+  "total_new": 75,
+  "total_reuse_P3": 14,
+  "total_units": 89,
+  "all_failed": 0,
+  "result": "ALL_COMPLETE"
+}

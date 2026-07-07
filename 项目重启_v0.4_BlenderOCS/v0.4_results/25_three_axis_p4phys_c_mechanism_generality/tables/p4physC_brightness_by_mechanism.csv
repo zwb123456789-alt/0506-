@@ -1,0 +1,3 @@
+group,n,mean_ocs,median_ocs,min_ocs,max_ocs
+near_specular_metal=1,25,0.201656,0.201582,0.191399,0.208890
+near_specular_metal=0,134,0.063034,0.030069,0.010628,0.199275

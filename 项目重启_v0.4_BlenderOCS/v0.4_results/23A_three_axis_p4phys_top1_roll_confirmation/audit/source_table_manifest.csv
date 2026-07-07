@@ -1,0 +1,4 @@
+pack,table,geometry,ocs_col,comparable,note
+P1 (19号包),p1_seed_roll_ocs_table.csv,phase63/L1-G1,ocs_total,True,seed roll scan
+P2 (20号包),p2_sparse_grid_metrics.csv,phase63/L1-G1,ocs_total,True,sparse 3-axis grid 5deg
+P3 (21号包),p3_local_refinement_metrics.csv,phase63/L1-G1,ocs_total,True,local refinement 2.5deg

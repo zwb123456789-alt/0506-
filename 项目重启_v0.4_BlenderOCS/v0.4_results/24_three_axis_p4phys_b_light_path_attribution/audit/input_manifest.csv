@@ -1,0 +1,9 @@
+field,value,note
+fixed_geometry,phase63 / L1-G1,"SUN=[1,0,0.3] DET=[0.5,-1,0.1] (inertial, shared)"
+top1_pose,yaw2450_pitchp0275_roll+015,yaw=245.0 pitch=27.5 roll=+15
+R4_control,yaw1475_pitchp0125_roll+000,yaw=147.5 pitch=12.5 roll=0
+R3_control,yaw055_pitch+060_roll+000,yaw=55.0 pitch=60.0 roll=0
+r_max_m,1.4726051706,from shadow_validation_summary
+pixel_area_m2,1.601541e-04,(2.2*r_max/256)^2
+indexob_map,1=jinshuzhuti 2=taiyangnengban 3=yinshenban 0=bg,INDEXOB_TO_PART
+brdf_branch,B0 phong_like_provisional_baseline,"material proxy, no material pass"

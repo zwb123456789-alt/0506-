@@ -1,0 +1,6 @@
+criterion,value,threshold,triggered,note
+top1_vs_top2_rel_diff_pct,0.224%,< 5%,True,0.224% < 5% → 触发
+top1_vs_R4top_rel_diff_pct,3.146%,< 5%,True,3.146% < 5% → 触发
+R1_roll_sharpness_ratio,5.10x,> 3x,True,~5x → 触发：峰值相邻均约0.04
+unsampled_roll_possible_peak,True,True,True,+10/+12.5/+17.5/+20未采样，峰可能偏移
+FINAL_DECISION,TRIGGER_REFINEMENT,any gate triggers,True,所有4个触发门均满足

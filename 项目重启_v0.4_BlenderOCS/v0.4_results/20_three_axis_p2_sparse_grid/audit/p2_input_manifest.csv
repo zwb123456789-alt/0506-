@@ -1,0 +1,9 @@
+asset,path,exists,note
+p1_pre_registered_matrix,v0.4_results/18_three_axis_planning_preflight/tables/p1_seed_roll_pre_registered_matrix.csv,True,P1 seed 中心来源（12 seed）
+render_driver,06_v0.4_code/02_blender/render_full_2664_shadow.py,True,"旧 driver, 只读复用"
+postprocess_driver,06_v0.4_code/05_postprocess/run_full_postprocess.py,True,"旧 driver, 只读复用 process_one_attitude"
+config_geometry,06_v0.4_code/00_config/config_v0_4.py,True,"phase63/L1-G1 SUN[1,0,.3] DET[.5,-1,.1]"
+p1_render_wrapper_template,v0.4_results/19_three_axis_p1_seed_roll_scan/scripts/p1_render_seed_roll.py,True,P2 渲染 wrapper 派生模板
+p1_postprocess_wrapper_template,v0.4_results/19_three_axis_p1_seed_roll_scan/scripts/p1_postprocess_seed_roll.py,True,P2 后处理 wrapper 派生模板
+roll0_baseline_fullrun_post,v0.4_results/01_fullrun/postprocess,True,roll=0 复用源; 覆盖 125/125 唯一姿态
+roll0_baseline_fullrun_shadow,v0.4_results/01_fullrun/shadow_passes,True,roll=0 camera/sun EXR 源

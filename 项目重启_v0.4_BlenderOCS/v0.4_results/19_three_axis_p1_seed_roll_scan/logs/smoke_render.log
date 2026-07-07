@@ -1,0 +1,168 @@
+TBBmalloc: skip allocation functions replacement in ucrtbase.dll: unknown prologue for function _msize
+Blender 4.2.3 LTS (hash 0e22e4fcea03 built 2024-10-15 01:37:33)
+Timer 'STL Import' took 123.52 ms
+Timer 'STL Import' took 5.89 ms
+Timer 'STL Import' took 2.77 ms
+Fra:1 Mem:34.97M (Peak 34.97M) | Time:00:00.34 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | jinshuzhuti
+Fra:1 Mem:34.97M (Peak 34.97M) | Time:00:00.34 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | yinshenban
+帧:1 内存:75.69M (峰值 79.16M) | 时间:00:00.35 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:75.33M (Peak 79.16M) | Time:00:00.35 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:75.34M (Peak 79.16M) | Time:00:00.36 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:75.34M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:75.34M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:82.77M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.56 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.56 | Mem:2.74M, Peak:2.74M | Scene, ViewLayer | Updating Geometry BVH yinshenban 3/3 | Building BVH
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.56 | Mem:2.74M, Peak:2.74M | Scene, ViewLayer | Updating Geometry BVH yinshenban 3/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.59M (Peak 102.60M) | Time:00:00.56 | Mem:2.83M, Peak:2.83M | Scene, ViewLayer | Updating Geometry BVH taiyangnengban 2/3 | Building BVH
+Fra:1 Mem:85.59M (Peak 102.60M) | Time:00:00.56 | Mem:2.83M, Peak:2.83M | Scene, ViewLayer | Updating Geometry BVH taiyangnengban 2/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.78M (Peak 102.60M) | Time:00:00.56 | Mem:2.83M, Peak:2.83M | Scene, ViewLayer | Updating Geometry BVH jinshuzhuti 1/3 | Building BVH
+Fra:1 Mem:85.78M (Peak 102.60M) | Time:00:00.56 | Mem:2.83M, Peak:2.83M | Scene, ViewLayer | Updating Geometry BVH jinshuzhuti 1/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.57 | Mem:11.73M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.57 | Mem:11.73M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Building OptiX acceleration structure
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.57 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:85.50M (Peak 102.60M) | Time:00:00.57 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.58 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:101.96M (Peak 102.60M) | Time:00:00.58 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:101.96M (Peak 102.60M) | Time:00:00.58 | Mem:28.28M, Peak:43.96M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:101.96M (Peak 102.60M) | Time:00:00.58 | Mem:28.28M, Peak:43.96M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:105.96M (Peak 105.96M) | Time:00:00.59 | Mem:360.28M, Peak:360.28M | Scene, ViewLayer | Sample 0/1
+Fra:1 Mem:113.22M (Peak 117.22M) | Time:00:00.60 | Mem:364.53M, Peak:364.53M | Scene, ViewLayer | Sample 1/1
+Fra:1 Mem:113.22M (Peak 117.22M) | Time:00:00.60 | Mem:364.53M, Peak:364.53M | Scene, ViewLayer | Finished
+Saved: 'D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\yaw145_pitch+015_roll+015_camera.exr'
+Time: 00:00.66 (Saving: 00:00.00)
+
+Fra:1 Mem:56.97M (Peak 56.97M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | jinshuzhuti
+Fra:1 Mem:56.97M (Peak 56.97M) | Time:00:00.07 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Synchronizing object | yinshenban
+帧:1 内存:75.69M (峰值 79.16M) | 时间:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Initializing
+Fra:1 Mem:75.33M (Peak 79.16M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Waiting for render to start
+Fra:1 Mem:75.33M (Peak 79.16M) | Time:00:00.08 | Mem:0.00M, Peak:0.00M | Scene, ViewLayer | Loading render kernels (may take a few minutes the first time)
+Fra:1 Mem:75.33M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Scene
+Fra:1 Mem:75.33M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Shaders
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Procedurals
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Background
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Camera
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes Flags
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Copying Transformations to device
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Objects | Applying Static Transformations
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Particle Systems
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Particle Systems | Copying Particles to device
+Fra:1 Mem:75.42M (Peak 102.60M) | Time:00:00.21 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Meshes
+Fra:1 Mem:82.76M (Peak 102.60M) | Time:00:00.22 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Mesh | Computing attributes
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.22 | Mem:0.01M, Peak:0.01M | Scene, ViewLayer | Updating Mesh | Copying Attributes to device
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.22 | Mem:2.74M, Peak:2.74M | Scene, ViewLayer | Updating Geometry BVH yinshenban 3/3 | Building BVH
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.22 | Mem:2.74M, Peak:2.74M | Scene, ViewLayer | Updating Geometry BVH yinshenban 3/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.55M (Peak 102.60M) | Time:00:00.22 | Mem:2.74M, Peak:2.74M | Scene, ViewLayer | Updating Geometry BVH taiyangnengban 2/3 | Building BVH
+Fra:1 Mem:85.59M (Peak 102.60M) | Time:00:00.22 | Mem:2.79M, Peak:2.79M | Scene, ViewLayer | Updating Geometry BVH taiyangnengban 2/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.90M (Peak 102.60M) | Time:00:00.22 | Mem:3.63M, Peak:3.63M | Scene, ViewLayer | Updating Geometry BVH jinshuzhuti 1/3 | Building BVH
+Fra:1 Mem:85.90M (Peak 102.60M) | Time:00:00.22 | Mem:3.63M, Peak:3.63M | Scene, ViewLayer | Updating Geometry BVH jinshuzhuti 1/3 | Building OptiX acceleration structure
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.23 | Mem:11.73M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Building
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.23 | Mem:11.73M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Building OptiX acceleration structure
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.23 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Scene BVH | Copying BVH to device
+Fra:1 Mem:85.49M (Peak 102.60M) | Time:00:00.23 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Mesh | Computing normals
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:11.74M, Peak:43.96M | Scene, ViewLayer | Updating Mesh | Copying Mesh to device
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Objects Flags
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Primitive Offsets
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Images
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Camera Volume
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.23 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Lights
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Lights | Computing tree
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Integrator
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.27M, Peak:43.96M | Scene, ViewLayer | Updating Film
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.19M, Peak:43.96M | Scene, ViewLayer | Updating Lookup Tables
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.28M, Peak:43.96M | Scene, ViewLayer | Updating Baking
+Fra:1 Mem:101.95M (Peak 102.60M) | Time:00:00.24 | Mem:28.28M, Peak:43.96M | Scene, ViewLayer | Updating Device | Writing constant memory
+Fra:1 Mem:105.95M (Peak 105.95M) | Time:00:00.25 | Mem:360.28M, Peak:360.28M | Scene, ViewLayer | Sample 0/1
+Fra:1 Mem:111.21M (Peak 114.21M) | Time:00:00.25 | Mem:363.53M, Peak:363.53M | Scene, ViewLayer | Sample 1/1
+Fra:1 Mem:111.21M (Peak 114.21M) | Time:00:00.25 | Mem:363.53M, Peak:363.53M | Scene, ViewLayer | Finished
+Saved: 'D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\yaw145_pitch+015_roll+015_sun.exr'
+Time: 00:00.30 (Saving: 00:00.00)
+
+[P1-RENDER] geom=phase63/L1-G1 roll=+15 n_seed=1
+  OUTPUT_DIR=D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015
+================================================================================
+全量 2664 姿态 shadow pass 渲染 driver
+================================================================================
+开始时间: 2026-07-01 21:25:06
+输出目录: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015
+
+清空场景...
+  导入 STL 文件...
+    [jinshuzhuti] pass_index=1
+    [taiyangnengban] pass_index=2
+    [yinshenban] pass_index=3
+
+边界框半径: 1.472605 m
+
+设置相机...
+
+相机矩阵日志: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\camera_matrices_blender.json
+
+全量姿态网格: 1 个 (72 yaw × 37 pitch)
+
+选择模式: smoke
+  smoke_n: 1
+  total_grid_size: 1
+  selected_count: 1
+  selection_mode: smoke
+skip_existing: True
+force: False
+
+姿态列表:
+  yaw145_pitch+015_roll+015
+
+================================================================================
+预扫描：检查已存在产物
+================================================================================
+  [RENDER] yaw145_pitch+015_roll+015
+
+  RENDER: 1 | SKIP: 0 | PARTIAL: 0
+
+================================================================================
+开始渲染 1 个姿态
+================================================================================
+
+[1/1] yaw145_pitch+015_roll+015
+  GPU backend: OPTIX
+
+  [camera] yaw145_pitch+015_roll+015  yaw=145 pitch=15
+    输出: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\yaw145_pitch+015_roll+015_camera.exr
+  GPU backend: OPTIX
+
+  [sun] yaw145_pitch+015_roll+015  yaw=145 pitch=15
+    输出: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\yaw145_pitch+015_roll+015_sun.exr
+
+================================================================================
+渲染完成
+================================================================================
+  RENDERED:          1
+  SKIPPED_EXISTING:  0
+  PARTIAL_EXISTING:  0
+  FAILED:            0
+
+  [RENDERED] [OK] camera | [OK] sun | yaw145_pitch+015_roll+015
+
+元数据: D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\19_three_axis_p1_seed_roll_scan\render\shadow_passes\phase63\roll+015\render_metadata.json
+
+[SUCCESS] 1 rendered + 0 skipped = 全部完成

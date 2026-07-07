@@ -1,0 +1,19 @@
+protocol,method,geom,yaw_cMAE,yaw_hit@30,n,note
+P-INT,neural_ocs_only,G1,76.559,0.277,296,clean interpolation main task
+P-INT,neural_image_only,G1,2.436,1.0,296,clean interpolation main task
+P-INT,neural_joint,G1,2.114,1.0,296,clean interpolation main task
+P-EXT,neural_ocs_only,G1,154.584,0.0,296,strict yaw-block extrapolation stress test
+P-DB,retrieval_top1(neg-L2),G1,83.733,0.2905,296,"model-known simulated template retrieval, top1"
+P-DB,retrieval_topk5_oracle,G1,22.922,0.723,296,"top-5 oracle upper bound, NOT unsupervised success"
+P-INT,neural_ocs_only,G3,38.225,0.6723,296,clean interpolation main task
+P-INT,neural_image_only,G3,4.945,1.0,296,clean interpolation main task
+P-INT,neural_joint,G3,2.032,1.0,296,clean interpolation main task
+P-EXT,neural_ocs_only,G3,146.191,0.0811,296,strict yaw-block extrapolation stress test
+P-DB,retrieval_top1(neg-L2),G3,26.334,0.8209,296,"model-known simulated template retrieval, top1"
+P-DB,retrieval_topk5_oracle,G3,4.003,0.9628,296,"top-5 oracle upper bound, NOT unsupervised success"
+P-INT,neural_ocs_only,G5,22.769,0.8108,296,clean interpolation main task
+P-INT,neural_image_only,G5,8.573,0.9932,296,clean interpolation main task
+P-INT,neural_joint,G5,3.197,1.0,296,clean interpolation main task
+P-EXT,neural_ocs_only,G5,157.252,0.0,296,strict yaw-block extrapolation stress test
+P-DB,retrieval_top1(neg-L2),G5,8.193,0.9493,296,"model-known simulated template retrieval, top1"
+P-DB,retrieval_topk5_oracle,G5,0.473,0.9966,296,"top-5 oracle upper bound, NOT unsupervised success"

@@ -1,0 +1,11 @@
+check_id,redline_item,status,evidence
+RL1,未新训练/新渲染/新后处理矩阵,PASS,本轮仅读现有10/11/12/13 CSV/JSON制图;make_figures.py/make_audit.py无训练无渲染调用
+RL2,未改旧脚本/旧metrics/旧samples/旧结果目录10-14,PASS,新增文件全部位于15号包与本报告;10/11/12/13/14 目录未写入
+RL3,未写成果区/未生成Codex审阅文件/未改CLAUDE.md,PASS,输出仅在15号包与02_Claude输出/107报告;无成果区/04_Codex审阅/CLAUDE.md写入
+RL4,未写最终论文正文/投稿摘要,PASS,Results为受控草案(R0-R5);无Abstract/Intro/Discussion全文;无投稿语气
+RL5,所有claim限定model-known simulated,PASS,草案与图注全程带simulated/clean P-INT/current split/template retrieval限定
+RL6,保留P-EXT坍缩/joint天花板检查点敏感/neural margin弱/image_only欠覆盖,PASS,R4负向观察段+Fig.5(b)+SI-2/SI-x2显式保留
+RL7,未把P-DB写成真实观测反演成功率,PASS,P-DB全程写为simulated template retrieval;oracle标为上界
+RL8,未把conformal写成Bayesian posterior或最终概率校准,PASS,conformal写为当前simulated split下集合宽度/校准
+RL9,未把路线一C写成整体闭口,PASS,无整体闭口表述;R5明确列未解决项与需另行阶段门
+RL10,未启动三轴小项目/T3-L2/路线二三四扩展,PASS,M-roll标为fixed-roll边界探针非三轴;扩展均标为future work需阶段门

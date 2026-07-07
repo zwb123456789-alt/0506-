@@ -1,0 +1,11 @@
+check,status,detail
+矩阵 96 行,PASS,96 行
+唯一 seed = 12,PASS,12 seed
+非零 roll = 8,PASS,"[-60, -45, -30, -15, 15, 30, 45, 60]"
+roll=0 不在渲染集,PASS,roll=0 复用 01_fullrun
+12/12 baseline 就位,PASS,12/12
+几何仅 phase63/L1-G1,PASS,"单几何 smoke, 不做多几何"
+输出仅写 19 号包,PASS,wrapper OUTPUT 固定 19_three_axis_p1_seed_roll_scan
+不改旧目录 10-18,PASS,wrapper 不写 10-18
+不训练 roll-aware,PASS,"仅渲染+后处理+指标, 无训练调用"
+不启动 P2/P3/P4/R128,PASS,仅 P1 smoke

@@ -1,0 +1,2 @@
+corr(log10_ocs_brightness_phase63, gain_g1_to_g5) = -0.0882
+n_attitudes_with_both = 296

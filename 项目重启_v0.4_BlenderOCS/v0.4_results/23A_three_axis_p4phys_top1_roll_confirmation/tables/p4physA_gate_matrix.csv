@@ -1,0 +1,17 @@
+gate,result,evidence
+输入表存在且可读,PASS,"P1=108行, P2=1125行, P3=963行"
+P1/P2/P3量纲/几何边界明确,PASS,"phase63/L1-G1, SUN=[1,0,0.3], DET=[0.5,-1,0.1]"
+current sampled-grid top-1已输出,PASS,"yaw=245,pitch=30,roll=+15,ocs=0.208377 Codex核验MATCH"
+top-N已输出,PASS,p4physA_existing_global_topN.csv
+R1 roll profile已输出,PASS,p4physA_top1_roll_profile.csv; sharpness=5.10x
+R4 roll profile已输出,PASS,p4physA_R4_robust_bright_roll_profile.csv
+加密触发门已计算,PASS,"4个门均触发: top1/2差0.224%<5%, top1/R4差3.15%<5%, sharpness>3x, 未采样roll"
+触发加密: smoke已完成,PASS,"smoke 3点 roll=+5, RENDERED=3 FAILED=0"
+触发加密: 正式矩阵已完成,PASS,"75新渲+14复用=89点, 全批FAILED=0, POST COMPLETE=75/75"
+refined top-1已输出,PASS,"yaw=245.0,pitch=27.5,roll=+15,ocs=0.208890"
+边界follow-up是否需要已判断,PASS,"pitch=27.5是下边界，ocs随pitch减小上升→需追加pitch∈{22.5,25.0}"
+光路归因字段可行性已预检,PASS,EXR已含IndexOB/Normal/Depth/Position; 追加pitch边界后可启动P4-PHYS-B
+未训练,PASS,本轮无任何训练操作
+未启动R128,PASS,R128继续挂起
+未启动路线二/三/四,PASS,未涉及
+未写成果区/CLAUDE.md/Codex文件,PASS,只写23A包和006A执行报告

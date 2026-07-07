@@ -1,0 +1,10 @@
+redline,status,note
+no_training,PASS,只渲染几何 pass + OCS 积分
+no_R128,PASS,未触及
+no_route_234,PASS,未触及
+no_full_sunview_full_pose_search,PASS,5 几何×14 姿态小矩阵，非全局
+new_render_le_80,PASS,56 ≤ 80
+no_edit_20_21_23A_23B_24_25,PASS,只写 26 包
+no_result_area_no_claudemd_no_codex_file,PASS,仅 26 包与 009 报告
+not_global_conclusion,PASS,结论限定 ±7° 小矩阵
+material_proxy_not_real_attribution,PASS,B0 proxy 明确标注

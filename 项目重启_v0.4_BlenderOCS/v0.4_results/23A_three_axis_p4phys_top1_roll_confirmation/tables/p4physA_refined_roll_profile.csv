@@ -1,0 +1,8 @@
+yaw_deg,pitch_deg,roll,label,cluster,ocs_total,glint_flag,saturation_flag,source,ocs_ok
+245.0,30.0,5.0,yaw2450_pitchp0300_roll+005,R1_top,0.08474087715148926,0.0,0.0,23A_new,True
+245.0,30.0,10.0,yaw2450_pitchp0300_roll+010,R1_top,0.1649530529975891,0.0,0.0,23A_new,True
+245.0,30.0,12.5,yaw2450_pitchp0300_roll+0125,R1_top,0.19776536524295807,0.0,1.0,23A_new,True
+245.0,30.0,15.0,yaw2450_pitchp0300_roll+015,R1_top,0.208377,0.0,1.0,P3_reuse,True
+245.0,30.0,17.5,yaw2450_pitchp0300_roll+0175,R1_top,0.1915687620639801,0.0,0.0,23A_new,True
+245.0,30.0,20.0,yaw2450_pitchp0300_roll+020,R1_top,0.15754501521587372,0.0,0.0,23A_new,True
+245.0,30.0,25.0,yaw2450_pitchp0300_roll+025,R1_top,0.07964949309825897,0.0,0.0,23A_new,True

@@ -1,0 +1,13 @@
+field,value,note
+task,R153 / P4-PHYS-D sun/view small matrix stage gate,
+baseline_geometry,phase63 / L1-G1,"SUN=[1,0,0.3] DET=[0.5,-1,0.1] inertial"
+r_max_m,1.4726051706,"model-only const, view-independent"
+pixel_area_m2,1.601541e-04,(2.2*r_max/256)^2
+depth_epsilon_m,0.7952109583,shared shadow eps (=run_full_postprocess)
+i_scale,0.5444863932,"step5 fixed i_scale (image only, OCS unaffected)"
+brdf_branch,B0 phong_like_provisional_baseline,"material proxy, no material pass"
+indexob_map,1=jinshuzhuti 2=taiyangnengban 3=yinshenban 0=bg,
+n_geometries,5,<=5
+n_poses,14,<=16
+perturb_deg,7.0,5-10 deg range
+reuse_principle,sun-perturb reuse camera EXR; view-perturb reuse sun EXR,geometry pass is光照无关 => 物理精确复用

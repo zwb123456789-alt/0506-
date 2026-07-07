@@ -1,0 +1,9 @@
+gate_item,status,detail
+96 渲染单位是否完成,PASS,"camera 96/96, sun 96/96"
+后处理是否完成,PASS,"ocs 96/96, linear 96/96"
+OCS total 是否可用,PASS,"96 非零roll行, 全部有限且>0=True"
+roll=0 baseline 是否对齐,PASS,12 seed baseline 来源 01_fullrun
+图像路径是否有效,PASS,所有 linear.exr 非空
+roll 曲线是否可计算,PASS,curve rows 108/108
+是否满足 P1 正式扩展条件,PASS,"smoke 链路跑通、指标可算, 满足强接收标准"
+是否需要返工,NO,无缺失

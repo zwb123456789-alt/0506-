@@ -1,0 +1,2 @@
+geom_id,sun_offset,view_offset,pose_id,label,yaw,pitch,roll,is_new_pose,on_grid_edge,camera_exr_src,sun_exr_src,ocs_total,ocs_metal,ocs_dark,ocs_solar,n_pixels_contributing,image_usable,anchor_ref,anchor_ref_ocs_total,anchor_rel_diff,status,failed_reason
+sp7_vm7,7,-7,B_y55_p60_r+20,yaw055_pitch+060_roll+020,55.0,60.0,20.0,True,True,28/cam_vm7,28/sun_sp7,0.0290535856038332,0.02850527875125408,0.0,0.000548307376448065,4670,True,,,,COMPLETE,

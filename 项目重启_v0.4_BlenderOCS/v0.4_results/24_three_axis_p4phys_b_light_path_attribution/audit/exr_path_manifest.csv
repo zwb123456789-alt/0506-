@@ -1,0 +1,13 @@
+pose,role,file_tag,rel_path,status
+R1_top1,fixed-geometry top-1,camera_exr,v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation/render/shadow_passes/phase63/roll+015/yaw2450_pitchp0275_roll+015_camera.exr,EXISTS
+R1_top1,fixed-geometry top-1,sun_exr,v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation/render/shadow_passes/phase63/roll+015/yaw2450_pitchp0275_roll+015_sun.exr,EXISTS
+R1_top1,fixed-geometry top-1,v_sun_macro_npy,v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation/postprocess/phase63/roll+015/yaw2450_pitchp0275_roll+015_v_sun_macro.npy,EXISTS
+R1_top1,fixed-geometry top-1,ocs_json,v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation/postprocess/phase63/roll+015/yaw2450_pitchp0275_roll+015_ocs.json,EXISTS
+R4_robust,roll-robust high-brightness contrast,camera_exr,v0.4_results/21_three_axis_p3_local_refinement/render/shadow_passes/phase63/roll+000/yaw1475_pitchp0125_roll+000_camera.exr,EXISTS
+R4_robust,roll-robust high-brightness contrast,sun_exr,v0.4_results/21_three_axis_p3_local_refinement/render/shadow_passes/phase63/roll+000/yaw1475_pitchp0125_roll+000_sun.exr,EXISTS
+R4_robust,roll-robust high-brightness contrast,v_sun_macro_npy,v0.4_results/21_three_axis_p3_local_refinement/postprocess/phase63/roll+000/yaw1475_pitchp0125_roll+000_v_sun_macro.npy,EXISTS
+R4_robust,roll-robust high-brightness contrast,ocs_json,v0.4_results/21_three_axis_p3_local_refinement/postprocess/phase63/roll+000/yaw1475_pitchp0125_roll+000_ocs.json,EXISTS
+R3_neg,low-info / negative contrast,camera_exr,v0.4_results/01_fullrun/shadow_passes/yaw055_pitch+060_roll+000_camera.exr,EXISTS
+R3_neg,low-info / negative contrast,sun_exr,v0.4_results/01_fullrun/shadow_passes/yaw055_pitch+060_roll+000_sun.exr,EXISTS
+R3_neg,low-info / negative contrast,v_sun_macro_npy,v0.4_results/01_fullrun/postprocess/yaw055_pitch+060_roll+000_v_sun_macro.npy,EXISTS
+R3_neg,low-info / negative contrast,ocs_json,v0.4_results/01_fullrun/postprocess/yaw055_pitch+060_roll+000_ocs.json,EXISTS

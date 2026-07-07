@@ -1,0 +1,12 @@
+gate,status,note
+25_package_exists,PASS,created
+candidate_pool_ge_30,PASS,n=159
+candidate_pool_le_200,PASS,n=159<=200
+signature_reuses_24_pipeline,PASS,same load_pose/ocs_breakdown/HSPEC as 24 pkg
+numeric_consistency,PASS,max rel_diff<1e-4 (see audit)
+near_specular_enriched_in_bright,PASS,top10% enrichment x6.36
+non_mechanism_systematically_darker,PASS,mean ocs nsm=1 0.2017 vs nsm=0 0.0630
+dark_panel_increment_scope_resolved,PASS,"R1-cluster general, not universal (see test table)"
+material_proxy_flagged,PASS,"B0 proxy, no material pass"
+no_train_no_render_no_sunview,PASS,read-only reuse
+no_source_pkg_modified,PASS,20/21/23A/23B/24 untouched

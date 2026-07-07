@@ -1,0 +1,13 @@
+seed_record_id,category,ocs_mean_allroll,brightness_rank_mean,contrast_mean_allroll,contrast_rank,brightness_info_decoupled,note
+yaw145_pitch+015,bright-seed,1.752863e-01,2,0.443697,12,1,亮度高信息低
+yaw150_pitch+015,bright-seed,1.761335e-01,1,0.449367,11,1,亮度高信息低
+yaw240_pitch+030,high-info-seed,4.282420e-02,5,0.654383,7,0,
+yaw240_pitch+020,high-info-seed,4.730535e-02,4,0.722762,5,0,
+yaw285_pitch-085,roll-sensitive-seed,2.291369e-02,9,0.682000,6,1,
+yaw150_pitch+085,roll-sensitive-seed,1.981052e-02,11,0.628365,9,0,
+yaw065_pitch+070,low-info-seed,2.521254e-02,7,0.938582,1,1,
+yaw065_pitch+075,ocs-hard-seed,2.553655e-02,6,0.865273,2,1,
+yaw250_pitch-010,disagreement-seed,2.385786e-02,8,0.639232,8,0,
+yaw165_pitch-020,image-hard-seed,2.033193e-02,10,0.862223,3,1,暗但对比高
+yaw285_pitch-070,dark-seed,1.928186e-02,12,0.774109,4,1,暗但对比高
+yaw150_pitch+010,robust-easy-seed,1.717528e-01,3,0.472917,10,1,亮度高信息低

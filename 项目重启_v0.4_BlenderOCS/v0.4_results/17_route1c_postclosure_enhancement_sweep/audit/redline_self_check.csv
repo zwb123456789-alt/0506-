@@ -1,0 +1,13 @@
+id,redline,status,evidence
+RL1,不改旧脚本/旧结果目录10-16,PASS,新脚本仅读10-16、写17号包与12号mroll渲染产物(探针目录内扩展)
+RL2,不改 split/姿态网格/OBS_GEOMETRIES,PASS,multiseed 固定split42；mroll沿用2664网格与phase63几何
+RL3,不换 backbone,PASS,复用 L1M2RegModel
+RL4,不做开放超参搜索,PASS,沿用 lr1e-3/30ep/batch64
+RL5,degraded-severe 非真实观测验证,PASS,标注 model-known simulated
+RL6,M-roll full-2664 非三轴小项目完成,PASS,定位 fixed-roll roll-sensitivity 探针
+RL7,P-DB/conformal 非真实概率,PASS,仅工程覆盖/set_size
+RL8,不写成果区/不生成Codex审阅文件/不改CLAUDE.md,PASS,报告写02_Claude输出/109，结果写17号包
+RL9,不写论文正文/投稿摘要,PASS,仅增强证据包
+RL10,不启动三轴/T3/L2/路线二三四,PASS,仅四类增强项
+RL11,不复用B6粗增广作正式退化,PASS,severe 基于物理退化管线延伸
+RL12,joint强互补性未过度宣称,PASS,severe 下仍标为不支持

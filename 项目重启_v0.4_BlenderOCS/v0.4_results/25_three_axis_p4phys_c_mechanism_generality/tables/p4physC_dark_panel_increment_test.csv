@@ -1,0 +1,5 @@
+subgroup,n,mean_dark_contrib,median_dark_contrib,frac_dark_increment
+high_bright_all(ocs>=0.18),49,0.006815,0.008718,0.755
+high_bright_roll+15(R1-like),23,0.008392,0.008725,0.957
+high_bright_other_roll,26,0.005420,0.008687,0.577
+high_bright_near_specular,25,0.005924,0.008719,0.640

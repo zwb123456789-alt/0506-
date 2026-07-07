@@ -1,0 +1,11 @@
+field,value,note
+final_top1_yaw,245.0,fixed-geometry top-1 after 23A+23B
+final_top1_pitch,27.5,interior
+final_top1_roll,15.0,roll=+15 (23A confirmed peak roll)
+final_top1_ocs,0.20889,source=23A_new/23A
+final_top1_label,yaw2450_pitchp0275_roll+015,
+at_pitch_boundary,0,pitch_min_all=22.5
+at_yaw_edge,0,"yaw in {242.5,247.5}?"
+pitch_interior_confirmed,1,both neighbors darker
+verdict,PITCH_BOUNDARY_CLOSED,top-1 pitch=27.5 内部化：pitch=25.0(0.20323) 与 pitch=30.0(0.20838) 均低于 pitch=27.5(0.20889)；可建议进入 P4-PHYS-B。
+can_enter_p4phys_b,1,

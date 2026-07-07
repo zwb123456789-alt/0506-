@@ -1,0 +1,37 @@
+{
+  "task": "R135 P3 local refinement preregister",
+  "n_regions": 5,
+  "n_primary_regions": 3,
+  "n_unique_poses": 107,
+  "n_integer_poses": 42,
+  "n_half_poses": 65,
+  "n_total_pose_roll_units": 963,
+  "n_roll0_reuse_fullrun": 42,
+  "n_roll0_halfdeg_new_render": 65,
+  "n_nonzero_roll_new_render": 856,
+  "n_total_new_render_units": 921,
+  "scale_ok": true,
+  "roll0_integer_coverage_ok": true,
+  "rolls": [
+    -60,
+    -45,
+    -30,
+    -15,
+    0,
+    15,
+    30,
+    45,
+    60
+  ],
+  "nonzero_rolls": [
+    -60,
+    -45,
+    -30,
+    -15,
+    15,
+    30,
+    45,
+    60
+  ],
+  "n_overlap_poses": 0
+}

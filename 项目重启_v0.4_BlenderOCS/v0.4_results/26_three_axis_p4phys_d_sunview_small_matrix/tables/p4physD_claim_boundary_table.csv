@@ -1,0 +1,12 @@
+claim,verdict,note
+mechanism_type,metal body near-specular alignment,"graded (continuous), not binary-only"
+top1_stable_as_global_brightest,NO,A_top1 只在 baseline 最亮，扰动下退居 rank 4-7
+brightest_migrates,YES,最亮点随 sun/view 迁移到 top-1 roll 邻域簇 (D5/D6)
+migration_stays_mechanistic,YES,所有几何最亮点 metal% ~95、金属主导、近镜面分级对齐
+strict_nsm_binary_stable,NO,±7° 使 baseline 定制阈值多翻为0（阈值敏感，非机制消失）
+metal_dominance_stable,YES,全 70 组合 dominant=metal，metal% 92.7-99.3
+R4_same_cluster,YES,各几何下 R4 仍金属主导高亮
+R3_negative_contrast,YES,各几何下 R3 near_specular_metal=0，非近镜面
+dark_panel_increment,ORDERING_ONLY,roll+15 簇特征，随几何保持但非普遍机制
+scope,5-geom small matrix (±7°) only,NOT global sun/view search
+material_level,B0 proxy,no material pass

@@ -1,0 +1,6 @@
+region,center_yaw,center_pitch,category,yaw_range,pitch_range,n_grid_poses,n_pose_roll_units,p1_basis,rationale
+R1_high_info,240,25,high-info,230..250 (center 240),15..35,25,225,high-info-seed yaw240 pitch+20/+30,P1 观察 roll_sensitivity_score 约 3.2-3.6，信息变化大，加密验证局部邻域
+R2_dark_rollsens,285,-75,dark/roll-sensitive,275..295 (center 285),-85..-65,25,225,dark/roll-sensitive-seed yaw285 pitch-70/-85,P1 观察高|pitch|暗构型 roll 敏感，验证暗区 roll 敏感性是否在邻域保持
+R3_low_info,65,70,low-info/ocs-hard,55..75 (center 65),60..80,25,225,low-info/ocs-hard-seed yaw065 pitch+70/+75,P1 观察 roll_sensitivity_score 约 1.5-1.6，验证低信息区是否连通
+R4_bright_robust,150,15,bright/robust-easy,140..160 (center 150),5..25,25,225,bright/robust-easy-seed yaw145/150 pitch+10/+15,P1 观察最亮构型 roll 稳健(span 5-7%)但低对比/饱和风险，作正对照
+R5_neutral,200,0,neutral-control,190..210 (center 200),-10..10,25,225,fullrun 中等亮度/中等 contrast 背景对照,中性背景对照，非 P1 seed 类别，验证非极端区 roll 响应基线

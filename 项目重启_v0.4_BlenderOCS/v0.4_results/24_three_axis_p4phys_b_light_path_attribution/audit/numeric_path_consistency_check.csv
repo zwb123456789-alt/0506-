@@ -1,0 +1,4 @@
+pose,recomputed_ocs_total,json_ocs_total,abs_diff,rel_diff,verdict
+R1_top1,0.2088904942,0.2088904828,1.146e-08,5.488e-08,OK
+R4_robust,0.2011461250,0.2011461258,8.407e-10,4.180e-09,OK
+R3_neg,0.0662576315,0.0662576317,2.565e-10,3.872e-09,OK

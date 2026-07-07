@@ -1,0 +1,13 @@
+module,requirement,status,evidence,classification,evidence_path
+M1/F1 单几何下界,F1=G1 单几何总光通量 baseline,DONE,L1-G1 覆盖(P-INT G1 ocs_only),非BLOCKER(已完成),11_l1m2_multigeometry_ocs/runs/P-INT_G1_ocs_only_seed42/; R115
+M2/L1 多几何主线,G1⊂G3⊂G5 嵌套单调增益,DONE,ocs_only hit@30 0.277→0.672→0.811 单调增益,非BLOCKER(已完成),R115; 11号; 16号 m5表
+M3 clean/degraded 真实性,mild/moderate 物理退化下增益保持,DONE(mild/moderate),R117 通过；severe 未做属增强,"非BLOCKER(mild/moderate完成), severe=ENHANCEMENT",12_l1m3_degraded_mroll/degraded/; R117
+M4-D1 per-part 归因,semi-oracle 诊断,DONE(diagnostic),C2 per-part 已作 semi-oracle，不作现实主线输入,非BLOCKER(诊断性),05_c2_screening/; R110/R111
+M4-D2 互补性,image/ocs/joint top-k overlap/disagreement,DONE(closed this round),本轮 D2：三通道 overlap/disagreement/oracle 完成；joint 无稳定增量(clean 天花板),闭口完成；joint 强互补=ENHANCEMENT(需P-INT-hard),16号 tables/d2_*; text/d2_complementarity_closure_summary.md
+M4-D3 置信一致性,entropy/margin/conformal,DONE,R119 通过；conformal set_size 随几何收紧，neural margin 弱/image欠覆盖保留,非BLOCKER(已完成),13_l1d3_confidence_pdb/conformal/; R119
+M4-D4 可观测性地图,姿态空间可观测/易混淆/低信息区,DONE(closed this round),本轮 D4：误差地图/区域分类/几何增益(mean 53.8°救回)/易混淆区/hardcase交叉 完成,闭口完成,16号 tables/d4_*; figures/d4_*; text/d4_observability_map_closure_summary.md
+M5 三协议对比门,P-EXT/P-INT/P-DB 对比闭口,DONE(closed this round),本轮 M5：P-INT正/P-EXT坍缩/P-DB可检索 边界矩阵完成,闭口完成,16号 tables/m5_*; text/m5_protocol_gate_closure_summary.md
+M-roll 边界探针,roll±15/±30 fixed-roll 边界,DONE(probe),R117 通过：±15°未推翻，±30°敏感；joint/full-2664 未做,"非BLOCKER(探针完成), full-2664=ENHANCEMENT",12_l1m3_degraded_mroll/mroll/; R117
+L2/T3 光变时序,条件触发分支,NOT_STARTED(by design),R113 明确条件触发，不阻塞主干闭口,FUTURE_ROUTE,R105/R106
+三轴小项目,最亮构型/高信息姿态/观测规划,NOT_STARTED,D4 地图可作接口，但本轮不启动,FUTURE_ROUTE(候选下一阶段),16号 D4 地图
+multi-seed/fold 稳健性,seed=42 之外稳健性,NOT_DONE,R115/R123 标 seed=42；多证据链交叉但未补多seed,裁决点：接受交叉验证 or ENHANCEMENT(minimal multi-seed sanity),R115/R123 限制说明

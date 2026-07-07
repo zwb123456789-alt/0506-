@@ -1,0 +1,15 @@
+claim_type,claim,rationale
+allowed,三轴小项目从路线一C的可观测性地图/亮度/hardcase/M-roll中提取了可追溯的搜索种子,基于11/13/16/17已通过结果
+allowed,fixed-roll下最亮姿态与高信息(可救回)姿态基本解耦(corr≈-0.09),18号实证
+allowed,给出了brightness/local contrast/entropy/margin/nn-ambiguity/overlap/glint/geometry-utility/roll-sensitivity三轴指标定义与数据源映射,registry
+allowed,给出P1-P4分阶段采样计划与基于实测的资源估计,stage matrix + resource estimate
+allowed,P1 seed-roll scan可作为下一轮smoke任务(96渲染单位,仅phase63),预注册矩阵
+allowed,部分三轴指标(roll维brightness/contrast/entropy)需roll渲染或roll-aware训练才能补齐,registry C类标注
+forbidden,三轴小项目已完成,本轮仅准备阶段门设计
+forbidden,最亮姿态就是最优反演姿态,brightness≠information
+forbidden,已实现真实未知目标三轴姿态反演系统,定位为最亮/高信息/低信息/观测规划
+forbidden,P-EXT yaw-block已解决,路线一C边界保留
+forbidden,joint强互补性已证明,clean/severe下均未支持
+forbidden,GEO数据验证了三轴姿态真值,GEO无三轴姿态真值
+forbidden,暗室三轴结果可直接外推在轨目标,路线三红线
+forbidden,已启动R128新路线二/三轴渲染/三轴训练,本轮只设计不执行

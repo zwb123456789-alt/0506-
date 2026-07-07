@@ -1,0 +1,16 @@
+gate,status,note
+26_package_exists,PASS,8 subdirs created
+009_report_exists,PASS,written to 02_Claude输出/009_...
+geom_le_5,PASS,5
+pose_le_16,PASS,14
+new_render_le_80,PASS,56
+smoke_before_formal,PASS,smoke G3×3 OK then formal
+render_all_ok,PASS,56/56
+postprocess_all_complete,PASS,70/70
+baseline_ocs_reproduced,PASS,G0 rel_diff≈0 vs existing ocs.json
+numeric_consistency,PASS,"70/70 OK, max_rel=1.4e-07"
+mechanism_reuse_24_25,PASS,"same signature algo, per-geometry H"
+cross_geometry_tables,PASS,rank/stability/signature tables written
+decision_label_given,PASS,SUNVIEW_DEPENDENT_BUT_MECHANISTIC
+not_global_sunview_claim,PASS,scope=5-geom small matrix only
+material_proxy_only,PASS,"B0, no material pass"

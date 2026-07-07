@@ -1,0 +1,15 @@
+redline,status,detail
+只做 phase63/L1-G1 单几何,PASS,无多几何渲染
+只做 P2 sparse grid 受控规模（1000 非零 roll 单位）,PASS,125 unique pose × 8 roll = 1000 < 2500
+未训练/无 roll-aware 训练,PASS,无训练脚本调用
+未改旧脚本,PASS,仅新增派生 wrapper，driver 只读复用
+未改旧结果目录 10-19,PASS,输出仅写 20 号包
+roll=0 未重渲,PASS,roll=0 复用 01_fullrun
+未改姿态网格/OBS_GEOMETRIES/split/backbone/超参,PASS,wrapper 仅覆盖姿态子集与输出目录
+未启动 P3/P4,PASS,仅 P2；P3 候选仅供裁决参考
+未启动 R128/路线二三四/T3/L2,PASS,无相关调用
+未写成果区/未生成Codex审阅/未改CLAUDE.md,PASS,输出限 20 号包 + 003 报告
+未把 P2 写成三轴小项目完成,PASS,summary 明确 P2 为局部三轴邻域验证，不是三轴最终结论
+最亮姿态未写成最优观测/反演姿态,PASS,brightness ≠ information 边界在局部三轴邻域中维持
+未声称真实未知目标反演系统,PASS,"model-known simulated, phase63/L1-G1 条件下的可观测性 proxy"
+neighbor_contrast_ypr 未升格为模型级信息量,PASS,明确标注 smoke/proxy 级，P-DB/margin/entropy 需另行阶段门

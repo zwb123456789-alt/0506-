@@ -1,0 +1,2 @@
+yaw_deg,pitch_deg,peak_roll,peak_ocs,left_roll,left_ocs,right_roll,right_ocs,sharpness_ratio,sharp_peak_confirmed,note
+245.0,30.0,15,0.208377,0,0.04084094,30,0.04084572,5.101562660665548,True,peak at roll=+15; ratio vs neighbors >5x; very sharp

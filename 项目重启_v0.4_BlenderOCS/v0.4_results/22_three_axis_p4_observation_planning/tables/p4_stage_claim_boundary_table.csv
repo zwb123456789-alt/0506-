@@ -1,0 +1,13 @@
+claim_id,claim_type,claim_statement,evidence_chain,stage_supported,constraint,status
+CL-01,can_claim,在phase63/L1-G1几何、model-known条件下，三轴姿态空间中存在roll敏感性显著不同的区域,EV-04/EV-06/EV-12：P1 smoke→P2区域验证→P3局部加密确认,P1+P2+P3,仅限model-known simulated；proxy级指标，ACCEPT
+CL-02,can_claim,R1区域（yaw245-247.5，pitch+30~40）的roll_sensitivity_score在2.5度局部邻域内稳定约3.69-3.85，迁移0.0度,EV-12：P3 p3_p4_planning_candidates.csv / p3_stability_assessment.csv,P3,proxy级(neighbor_contrast_ypr)；glint/saturation风险高,ACCEPT
+CL-03,can_claim,R4区域brightness≠information边界在2.5度加密下更尖锐：最亮点(yaw147.5/+12.5)info_rank=104/107，信息峰(yaw155/+20)brightness_rank=31/107,EV-10/EV-11：P3精细分析，P2初步分析EV-08/EV-09支撑,P2+P3,proxy级；不升格为模型级可分性证明,ACCEPT
+CL-04,can_claim,R3低信息区（yaw55-65，pitch+60~70）low_info_connectivity=0.60，local_information_stability=0.92，适合作为观测规划的负面对照区域,EV-13：P3 p3_stability_assessment.csv,P3,连通性指标为proxy级；不等于"绝对无信息",ACCEPT
+CL-05,can_claim,基于brightness/neighbor_contrast_ypr/roll_sensitivity三指标，可将三轴姿态空间分为5类规划区域（R1高信息/R4亮折中/R3低信息负面对照/R2暗对照/R5中性对照）,EV-05~EV-14：P1-P3全阶段,P1+P2+P3,区域分类基于proxy指标；非模型级最优化结果,ACCEPT
+CL-06,can_claim,C09（yaw155/+20）是综合最优观测候选：info_rank=1/brightness_rank=31/无glint-saturation风险,EV-11：P3 p3_p4_planning_candidates.csv,P3,proxy级信息指标；brightness属中等水平,ACCEPT
+CL-07,can_claim,C01-C08（R1区）为高信息-roll敏感候选集；适合roll-aware观测设计与joint信息互补性测试候选,EV-12：P3稳定性验证,P3,需注意全区glint/saturation风险,ACCEPT
+CL-08,must_not_claim,最亮姿态(yaw147.5/+12.5)是最优观测或反演姿态,BND-01/BND-02,N/A,brightness≠information为核心边界,REJECT
+CL-09,must_not_claim,neighbor_contrast_ypr等价于模型级可分性(P-DB/margin/entropy/conformal set_size),BND-04,N/A,proxy边界，Codex已多次明确,REJECT
+CL-10,must_not_claim,本研究为真实未知目标三轴姿态反演系统,BND-05,N/A,model-known simulated边界，红线,REJECT
+CL-11,must_not_claim,P4结论经真实望远镜验证或field-proven,BND-05,N/A,仅Blender仿真数据,REJECT
+CL-12,must_not_claim,roll-aware neural model已建立或已证明其可行性,BND-04,N/A,roll-aware训练未放行,REJECT

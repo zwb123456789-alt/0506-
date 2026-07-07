@@ -1,0 +1,6 @@
+pkg,root_rel,layout,n_discovered,n_json_ok,n_exr_ok,n_vsun_ok,n_full_triple
+23A,v0.4_results/23A_three_axis_p4phys_top1_roll_confirmation,phase63,75,75,75,75,75
+23B,v0.4_results/23B_three_axis_p4phys_pitch_boundary_followup,phase63,6,6,6,6,6
+P3,v0.4_results/21_three_axis_p3_local_refinement,phase63,921,921,921,921,921
+P2,v0.4_results/20_three_axis_p2_sparse_grid,phase63,1000,1000,1000,1000,1000
+01,v0.4_results/01_fullrun,flat,2664,2664,2664,2664,2664

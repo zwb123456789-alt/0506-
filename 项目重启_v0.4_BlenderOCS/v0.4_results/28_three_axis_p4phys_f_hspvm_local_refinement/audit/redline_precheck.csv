@@ -1,0 +1,10 @@
+check,value,verdict
+stageB_units<=52,52,PASS
+stageC_units<=24,24,PASS
+total_units<=80,76,PASS
+upstream_inputs_available,missing=0,PASS
+no_training,no training in any script,PASS
+no_R128_no_route234,not started,PASS
+no_full_sunview_search,microgrid only (±2deg around Hsp_vm),PASS
+source_pkgs_readonly,20/21/23A/23B/24/25/26/27 only read,PASS
+writes_only_28_and_claude_output,D:\我的文件\研究生学术\光学项目\0506新\项目重启_v0.4_BlenderOCS\v0.4_results\28_three_axis_p4phys_f_hspvm_local_refinement,PASS

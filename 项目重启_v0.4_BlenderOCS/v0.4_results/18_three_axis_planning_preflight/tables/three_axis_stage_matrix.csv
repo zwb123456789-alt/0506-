@@ -1,0 +1,5 @@
+stage,desc,n_seeds,roll_grid,n_roll_nonzero,n_geom,new_render,new_train,outputs,min_accept,stop_expand
+P1_seed_roll_scan,围绕少量种子点扫描 roll,12,"{-60,-45,-30,-15,0,15,30,45,60} (roll=0 复用)",8,1,YES (仅非零 roll),NO,"OCS magnitude, image 可用性, local contrast, roll sensitivity per seed",12 种子 × 8 roll 渲染完成且 OCS/图像非空; roll 迁移曲线可画,若最亮/可分点在 roll 下不迁移->缩减; 若显著迁移->P2 扩几何
+P2_sparse_3axis_grid,粗三轴网格 / 拉丁超立方采样,0,roll ∈ {-60..60 step 30} × 稀疏 yaw/pitch (每 15°),4,3,YES,可选 (roll-aware 需另行放行),"三轴高亮/高信息候选集初稿, utility map 粗图",覆盖 yaw/pitch/roll 三轴; 候选集含高亮+高信息+低信息三类,候选集稳定->P3; 若空间过大->改自适应采样
+P3_local_refinement,对最亮/高信息/低信息候选局部加密,0,候选邻域 roll/yaw/pitch step 5-10°,8,5,YES,可选,最亮构型 + 最优可观测姿态精定位,每类候选局部加密完成; 最亮/高信息点定位收敛,定位收敛->P4; 若不收敛->回 P2 补采样
+P4_observation_planning_synthesis,输出几何/姿态组合 utility map,0,汇总 P1-P3，不新增采样,0,5,NO,NO,"observation planning utility map, 值得/低价值/风险几何清单",utility map + 三类几何清单 + 与路线二/三接口说明,交 Codex 审阅是否作为三轴小项目成果

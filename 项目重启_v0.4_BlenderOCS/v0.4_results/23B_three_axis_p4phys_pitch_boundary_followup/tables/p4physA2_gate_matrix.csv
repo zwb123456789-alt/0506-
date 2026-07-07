@@ -1,0 +1,12 @@
+gate,status,evidence
+23B_package_exists,PASS,23B_three_axis_p4phys_pitch_boundary_followup
+min_two_points_done,PASS,"yaw=245 pitch={22.5,25.0} rendered+post"
+recommended_6pt_done,PASS,6/6 COMPLETE
+merged_with_23A,PASS,p4physA2_combined_topN_with_23A.csv
+pitch_boundary_verdict,PITCH_BOUNDARY_CLOSED,top-1 pitch=27.5 内部化：pitch=25.0(0.20323) 与 pitch=30.0(0.20838) 均低于 pitch=27.5(0.20889)；可建议进入 P4-PHYS-B。
+top1_at_boundary,NO,
+can_enter_p4phys_b,YES,
+trained,NO,red-line
+r128_started,NO,red-line
+wrote_results_area,NO,red-line
+modified_claude_md,NO,red-line

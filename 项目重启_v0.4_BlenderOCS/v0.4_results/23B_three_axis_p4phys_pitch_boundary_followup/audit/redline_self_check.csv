@@ -1,0 +1,11 @@
+check,status,note
+no_training,PASS,本轮无训练调用
+no_r128,PASS,未启动新路线二规划执行
+no_route234,PASS,未启动路线二/三/四
+no_full_lightpath_attribution,PASS,仅 EXR 通道可读性 smoke，无 part/material 归因
+no_new_sun_view,PASS,sun/view 固定 phase63/L1-G1
+no_global_search,PASS,仅 pitch 边界极小矩阵
+no_modify_prior_pkgs,PASS,只读 23A/P3，未改 19/20/21/22/23A
+no_results_area_write,PASS,仅写 23B 结果包与 02_Claude输出
+no_claude_md_change,PASS,未改 CLAUDE.md
+no_codex_file,PASS,未生成 Codex 审阅文件

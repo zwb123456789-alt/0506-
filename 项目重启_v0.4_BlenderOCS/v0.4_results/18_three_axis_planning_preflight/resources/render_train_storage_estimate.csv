@@ -1,0 +1,5 @@
+stage,est_render_units,new_render,est_render_hours@1s,est_storage_MB,new_train,note
+P1_seed_roll_scan,96,YES (仅非零 roll),0.03,25.2,NO,roll=0 复用不计
+P2_sparse_3axis_grid,3744,YES,1.04,982.8,可选 (roll-aware 需另行放行),
+P3_local_refinement,32400,YES,9.0,8505.0,可选,
+P4_observation_planning_synthesis,0,NO,0.0,0.0,NO,

@@ -1,0 +1,15 @@
+pose_id,group,role,label,yaw,pitch,roll,src_pkg,cluster_tag,baseline_camera,baseline_sun,baseline_ocs_json
+A_top1,mandatory,top1,yaw2450_pitchp0275_roll+015,245.0,27.5,15.0,23A_three_axis_p4phys_top1_roll_confirmation,core_top1_roll_neighborhood,OK,OK,OK
+B_R4,mandatory,R4_robust,yaw1475_pitchp0125_roll+000,147.5,12.5,0.0,21_three_axis_p3_local_refinement,control,OK,OK,OK
+C_R3,mandatory,R3_negative,yaw055_pitch+060_roll+000,55.0,60.0,0.0,01_fullrun,control,OK,OK,OK
+D1,top1_neighbor,top1_neighbor,yaw2450_pitchp0300_roll+015,245.0,30.0,15.0,21_three_axis_p3_local_refinement,core_top1_roll_neighborhood,OK,OK,OK
+D2,top1_neighbor,top1_neighbor,yaw2450_pitchp0325_roll+015,245.0,32.5,15.0,21_three_axis_p3_local_refinement,core_top1_roll_neighborhood,OK,OK,OK
+D3,top1_neighbor,top1_neighbor,yaw2475_pitchp0375_roll+015,247.5,37.5,15.0,21_three_axis_p3_local_refinement,core_top1_roll_neighborhood,OK,OK,OK
+D4,top1_neighbor,top1_neighbor,yaw2425_pitchp0225_roll+015,242.5,22.5,15.0,23B_three_axis_p4phys_pitch_boundary_followup,core_top1_roll_neighborhood,OK,OK,OK
+D5_roll125,top1_neighbor,top1_neighbor_roll125,yaw2450_pitchp0275_roll+0125,245.0,27.5,12.5,23A_three_axis_p4phys_top1_roll_confirmation,primary_shift_target,OK,OK,OK
+D6_roll175,top1_neighbor,top1_neighbor_roll175,yaw2475_pitchp0300_roll+0175,247.5,30.0,17.5,23A_three_axis_p4phys_top1_roll_confirmation,primary_shift_target,OK,OK,OK
+E1_R4roll-15,R4_cluster,R4_cluster_nsm1,yaw1475_pitchp0125_roll-015,147.5,12.5,-15.0,21_three_axis_p3_local_refinement,other,OK,OK,OK
+E2_R4roll+15,R4_cluster,R4_cluster_nsm1,yaw1475_pitchp0125_roll+015,147.5,12.5,15.0,21_three_axis_p3_local_refinement,other,OK,OK,OK
+F1_edge,bright_edge,bright_edge_nsm0,yaw2425_pitchp0275_roll+015,242.5,27.5,15.0,23A_three_axis_p4phys_top1_roll_confirmation,core_top1_roll_neighborhood,OK,OK,OK
+F2_edge,bright_edge,bright_edge_nsm0,yaw2475_pitchp0300_roll+015,247.5,30.0,15.0,21_three_axis_p3_local_refinement,core_top1_roll_neighborhood,OK,OK,OK
+F3_edge,bright_edge,bright_edge_nsm0,yaw240_pitch+015_roll+015,240.0,15.0,15.0,20_three_axis_p2_sparse_grid,core_top1_roll_neighborhood,OK,OK,OK

@@ -1,0 +1,9 @@
+asset,path,exists,note
+pre_registered_matrix,v0.4_results/18_three_axis_planning_preflight/tables/p1_seed_roll_pre_registered_matrix.csv,True,96 行 (期望 96)
+seed_candidates_table,v0.4_results/18_three_axis_planning_preflight/seeds/three_axis_seed_candidates.csv,True,66 seed 来源表
+render_driver,06_v0.4_code/02_blender/render_full_2664_shadow.py,True,"旧 driver, 只读复用"
+postprocess_driver,06_v0.4_code/05_postprocess/run_full_postprocess.py,True,"旧 driver, 只读复用"
+config_geometry,06_v0.4_code/00_config/config_v0_4.py,True,"phase63=G0 SUN[1,0,.3] DET[.5,-1,.1]"
+p1_render_wrapper,v0.4_results/19_three_axis_p1_seed_roll_scan/scripts/p1_render_seed_roll.py,True,"新增派生 wrapper, 写 19 号包"
+p1_postprocess_wrapper,v0.4_results/19_three_axis_p1_seed_roll_scan/scripts/p1_postprocess_seed_roll.py,True,"新增派生 wrapper, 写 19 号包"
+roll0_baseline_fullrun,v0.4_results/01_fullrun/postprocess,True,12/12 seed baseline OK=12

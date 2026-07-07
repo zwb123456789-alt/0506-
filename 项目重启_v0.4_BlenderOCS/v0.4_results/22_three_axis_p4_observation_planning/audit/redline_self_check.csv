@@ -1,0 +1,16 @@
+check_id,redline,check_result,note
+RL-01,未新增Blender渲染或后处理,PASS,22号包仅CSV/MD/PNG/PDF/PY文件；无.exr/.json渲染产物
+RL-02,未训练任何模型（不做roll-aware neural model）,PASS,无训练代码/checkpoint/模型权重
+RL-03,未启动R128,PASS,R128仅列于接口候选清单（p4_r128_interface_candidates.csv）；未执行任何R128内容
+RL-04,未启动新路线二/三/四或T3/L2,PASS,本轮仅在三轴小项目路线内完成P4综合
+RL-05,未修改旧脚本、旧metrics、旧samples、旧结果目录10-21,PASS,所有写入仅在22号包目录内
+RL-06,未写成果区（01_成果区）,PASS,22号包在v0.4_results/22_...；未在01_成果区新建任何文件
+RL-07,未生成Codex审阅文件（未写入04_Codex审阅目录）,PASS,R137任务单本身已在04_Codex审阅；P4不新增Codex审阅文件
+RL-08,未改CLAUDE.md（任何层级）,PASS,本轮未触及任何CLAUDE.md
+RL-09,未把P4写成真实未知目标三轴姿态反演系统,PASS,所有文件明确声明model-known simulated；proxy级指标
+RL-10,未把neighbor_contrast_ypr写成最终模型级信息量证明,PASS,所有信息相关结论标注proxy级；explicitly禁止升格
+RL-11,P4只综合P1/P2/P3已有数据，未扩展新分析类型,PASS,P4所有数值均可追溯到19/20/21号包已有CSV文件
+RL-12,未把最亮构型写成最优观测姿态,PASS,yaw147.5/+12.5在所有文件中标注为caution/not-recommended；不列P4主规划落点
+RL-13,未把三轴小项目写成三轴最终完成,PASS,所有文件明确标注"阶段性收口候选"；最终收口需Codex 005裁决
+RL-14,未自行把P4结果升级到成果区,PASS,22号包不在成果区；不自行升级
+RL-15,P4完成后只提交22号包和005报告,PASS,本任务单内无其他提交内容

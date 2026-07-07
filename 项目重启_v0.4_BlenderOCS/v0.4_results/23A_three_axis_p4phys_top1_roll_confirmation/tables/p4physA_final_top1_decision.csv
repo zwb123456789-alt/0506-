@@ -1,0 +1,10 @@
+field,value,note
+refined_top1_yaw,245.0,fixed-geometry top-1 after 23A refinement
+refined_top1_pitch,27.5,PITCH BOUNDARY of refinement grid
+refined_top1_roll,15.0,"interior roll (roll=+15, between +5 and +25)"
+refined_top1_ocs,0.20889,higher than sampled-grid top-1 (0.208377)
+at_yaw_boundary,0,"yaw=245.0, interior"
+at_pitch_boundary,1,pitch=27.5 = pitch_min of grid
+at_roll_boundary,0,"roll=+15, interior"
+pitch_trend_toward_boundary,1,"ocs at 27.5 > ocs at 30.0, peak may be below 27.5"
+verdict,PITCH_BOUNDARY_FOLLOWUP_NEEDED,pitch下边界（27.5），且ocs随pitch减小而上升，需追加pitch≤25.0一小圈

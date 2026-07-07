@@ -1,0 +1,5 @@
+protocol,condition,geom_trend,verdict,claim
+P-INT,"clean interpolation, OCS-only",hit@30 G1/G3/G5=0.277/0.6723/0.8108,HOLDS: 多几何 OCS 单调增益,多观测总光度向量随几何数单调增益（simulated）
+P-EXT,"strict yaw-block extrapolation, OCS-only",hit@30 G1/G3/G5=0.0/0.0811/0.0,COLLAPSES: 加几何不能救 strict extrapolation,P-EXT yaw-block 仍坍缩，未解决
+P-DB,"model-known simulated template retrieval, top1",hit@30 G1/G3/G5=0.2905/0.8209/0.9493,RETRIEVABLE: 多几何下检索命中随几何提升,多观测光度向量含可检索 yaw 信息（template retrieval，非真实反演成功率）
+P-INT,"clean interpolation, image_only (对照)",hit@30 G1/G3/G5=1.0/1.0/0.9932,SATURATED: image 通道 clean 下近饱和，掩盖 joint 增量,image_only clean 近饱和，不作为 OCS 主线结论，仅通道对照

@@ -1,0 +1,19 @@
+claim_id,writable_id,claim_short,figure_ids,table_ids,key_numbers,risk_tag
+C1.1,W6,single-frame 条件性负结果非光度无用,SI-1,main_figure_source_map;si_figure_source_map,image_only cMAE=60.273°(delta −21.167°),low
+C1.2,W6,exact-bin 过严;判据非主因,SI-1,si_figure_source_map,image_only 60.273/joint 72.740/ocs_only 143.805°(fold-mean no-aug),low
+C1.3,W8,主线复位到多观测可观测性,(motivation),paragraph_claim_evidence_map,—,low
+C2.1,W1,clean/P-INT OCS-only 多几何单调增益,Fig.2,main_figure_source_map,cMAE 76.56/38.22/22.77°;hit@30 0.277/0.672/0.811,low
+C2.2,W1,image_only 近饱和;joint 天花板,Fig.2,main_figure_source_map,clean 上界;不主张强互补,low
+C3.1,W2,degraded 下增益保持并优雅收缩,Fig.3,main_figure_source_map,G5 clean/mild/moderate=22.77/27.83/38.46°,low
+C3.2,W2,审计缺口补齐;无泄漏;量纲一致,(SI methods),SI5_manifest_table,cmae_delta=0.0,low
+C3.3,W5,M-roll ±15° 未推翻;±30° 敏感,SI-3,si_figure_source_map,G5 0/±15/±30=8.68/17.5-19.7/33.0-28.7°,low
+C4.1,W1,P-DB 含可检索 yaw 信息,Fig.4,main_figure_source_map,top1 hit@30 clean G1/G3/G5=0.291/0.821/0.949,medium
+C4.2,W3,P-DB 强于 neural 且互补,Fig.4,main_figure_source_map,8.19° vs 22.77°;四象限237/3/44/12;oracle=0.960;Spearman≈0,medium
+C4.3,W4,conformal set_size 随几何收紧,Fig.5,main_figure_source_map,set_size G1/G3/G5=321.8/245.7/126.2°;cov≈0.90,medium
+C5.1,F4,P-EXT yaw-block 仍坍缩,SI-2,si_figure_source_map,cMAE≈146-157°,low
+C5.2,F5,joint 天花板;检查点敏感,Fig.5(b),main_figure_source_map,G5 joint moderate hit@30=0.189,low
+C5.3,F8;F13,neural margin 弱;image_only 欠覆盖,Fig.5(b);SI-x2,main_figure_source_map;si_figure_source_map,image_only coverage≈0.83-0.85,low
+C5.4,F13,image_only 欠覆盖;joint 无稳定增量,Fig.5(b),si_figure_source_map,image-hard 仅2行,low
+C6.1,—,degraded-severe/P-INT-hard 候选,SI-4,si_figure_source_map,hardcase index 1231行,low
+C6.2,F3,GEO 只可作光度锚点无姿态真值,(future work),paragraph_claim_evidence_map,—,low
+C6.3,F10,三轴小项目未启动,SI-4,paragraph_claim_evidence_map,M-roll 非三轴替代,low

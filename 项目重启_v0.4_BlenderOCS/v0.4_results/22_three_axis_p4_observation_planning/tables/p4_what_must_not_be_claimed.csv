@@ -1,0 +1,11 @@
+forbidden_id,forbidden_statement,reason,relevant_boundary,consequence_if_violated
+MUST-NOT-01,最亮姿态(yaw147.5/+12.5)是最优观测或反演姿态,brightness_rank=1但info_rank=104/107；最亮≠最高信息,BND-01/BND-02,误导观测规划；把低信息pose作为优先候选
+MUST-NOT-02,本项目提供真实未知目标三轴姿态反演成功率,model-known simulated限定；不涉及真实未知目标,BND-05,过度声明；违反项目红线
+MUST-NOT-03,neighbor_contrast_ypr等价于模型级可分性（P-DB/margin/entropy/conformal set_size）,proxy级指标边界；Codex已在R130/R132/R134/R136明确,BND-04,指标级别混用；可能误导后续阶段结论
+MUST-NOT-04,P4观测规划在真实望远镜数据中验证或field-proven,无真实数据；仅Blender phase63仿真,BND-05,声明超越数据来源
+MUST-NOT-05,roll-aware neural model已建立或可行性已证明,roll-aware训练未放行；P4不含训练,P4任务单 §1禁止项,混淆计划接口与已完成结论
+MUST-NOT-06,R128已启动或R128候选规划已执行,R128继续挂起；P4仅列接口候选清单,R136裁决/R137任务单,超前执行挂起任务
+MUST-NOT-07,P4结论等价于三轴小项目最终完成，所有roll-aware可观测性问题已解决,P4是三轴小项目阶段性收口候选，非最终完成,R137 §8成功判据,过早宣告完成；关闭后续验证空间
+MUST-NOT-08,三轴小项目是路线一fixed-roll主线的替代，或与路线一C结论混写,三轴小项目是路线一C的补充扩展，不替代,项目框架文件,混淆路线层级与结论归属
+MUST-NOT-09,P4阶段可作为论文正文Results的最终定稿依据（无需Codex裁决）,P4需经Codex 005审阅才能确认是否阶段性收口,R137 §8,绕过审阅门；破坏质控流程
+MUST-NOT-10,低信息区(R3)完全无观测价值，不能用于任何研究目的,R3适合负面对照；有特定研究价值，只是不适合作正向最优观测目标,BND-08,过度否定负面对照区域的合法用途

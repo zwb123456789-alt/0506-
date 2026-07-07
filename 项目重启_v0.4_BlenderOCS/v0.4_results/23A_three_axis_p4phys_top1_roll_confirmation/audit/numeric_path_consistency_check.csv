@@ -1,0 +1,9 @@
+field,found,expected,note,match
+P3 sampled-grid top-1 yaw,245.0,245.0,,True
+P3 sampled-grid top-1 pitch,30.0,30.0,,True
+P3 sampled-grid top-1 roll,15.0,15.0,,True
+P3 sampled-grid top-1 ocs,0.208377,0.208377,±1e-5,True
+Refined top-1 ocs from manifest,0.20889,0.20889,23A新点,True
+R4 top ocs,0.201822,0.201822,来自P3,True
+top-1 vs top-2 rel diff %,0.224,0.224,,True
+top-1 vs R4 rel diff %,3.146,3.146,,True

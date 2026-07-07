@@ -1,0 +1,7 @@
+item,recommendation,rationale
+P2 sparse 3-axis grid,推荐,"在 |pitch|>=70 与 yaw~240/285 邻域加密, 这些区 roll 敏感/信息变化大"
+high-info/low-info/dark/roll-sensitive seed,进入 P1 正式或 P2,"OCS 随 roll 相对变化 100-360%, 排名漂移大"
+bright-seed/robust-easy-seed,保留作正对照,"roll 稳健(span 5-7%), 亮但低对比且有饱和风险"
+information proxy 升级,P1 正式/P2 前,"当前 local_contrast 仅 smoke proxy, 需补 P-DB/margin/entropy(需模型)"
+image-hard 场景扩充,按需/退化路线,"clean/P-INT 下 image-hard 天然稀少, 当前仅确认其暗但对比高特征"
+roll-aware 训练,暂不,"C 类变更, 需完整阶段门, 本轮及 P2 前不启动"

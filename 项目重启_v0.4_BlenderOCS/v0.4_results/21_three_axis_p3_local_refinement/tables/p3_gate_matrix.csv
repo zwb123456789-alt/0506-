@@ -1,0 +1,20 @@
+gate_item,status,detail
+21 号包目录存在,PASS,v0.4_results/21_three_axis_p3_local_refinement/ 已建立
+P3 预注册矩阵存在且规模受控,PASS,107 唯一 pose × 9 roll = 963；非零 roll 新渲染 856 <= 2000
+非零 roll 渲染单位完成 (8×107),PASS,camera(nonzero) 856/856
+半度点 roll=0 新渲染完成 (65),PASS,"camera 65/65, sun 65/65"
+后处理完成 (新渲染 921),PASS,"ocs 921/921, linear 921/921"
+OCS total 可用（有限且>0）,PASS,"963 行, 全部有限且>0=True"
+neighbor_contrast_ypr 全计算,PASS,"963 行, 无nan=True"
+roll_sensitivity_score 全计算,PASS,"963 行, 无nan=True"
+整数点 roll=0 来源为 01_fullrun,PASS,"42 整数 roll0 行, 全 01_fullrun=True"
+半度点 roll=0 来源为 21_pack(不静默缺失),PASS,"65/65 半度 roll0 行, 全 21_pack=True"
+全部 pose-roll 图像可用(image_usable=1),PASS,963/963
+R1/R4/R3 primary 三区加密完成,PASS,R1(25)+R4(49)+R3(25) 2.5度加密; R2/R5 各4对照
+指标表完整（7 required tables）,PASS,p3_local_refinement_metrics.csv; p3_region_summary.csv; p3_stability_assessment.csv; p3_high_brightness_refined_candidates.csv; p3_high_information_refined_candidates.csv; p3_low_information_connectivity.csv; p3_p4_planning_candidates.csv
+稳定性评估表存在,PASS,p3_stability_assessment.csv
+P4 planning candidates 存在且规模可控,PASS,16 个 P4 候选（受控）
+5 张图表完成,PASS,p3_refined_brightness_map.png; p3_refined_information_proxy_map.png; p3_peak_migration_panel.png; p3_low_info_connectivity_panel.png; p3_planning_candidate_scatter.png
+summary.md + metric definitions 完成,PASS,text/p3_local_refinement_summary.md; metrics/p3_metric_definitions_used.md
+未写成果区/未生成Codex审阅/未改CLAUDE.md,PASS,输出仅写 21 号包 + 004 报告
+未启动 P4/R128/训练,PASS,仅 P3 local refinement

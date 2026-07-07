@@ -1,0 +1,12 @@
+geom_id,sun_offset,view_offset,kind,brightest_pose,brightest_role,brightest_cluster,ocs_total,metal_pct,near_specular_metal,in_top1_roll_neighborhood
+H00_baseline,0,0,baseline,A_top1,top1,core_top1_roll_neighborhood,0.20889049,95.02,1,YES
+Hsp_v0,7,0,pure_sun,D5_roll125,top1_neighbor_roll125,primary_shift_target,0.19528240,94.66,0,YES
+Hsm_v0,-7,0,pure_sun,D6_roll175,top1_neighbor_roll175,primary_shift_target,0.19493062,94.78,0,YES
+Hs0_vp,0,7,pure_view,D6_roll175,top1_neighbor_roll175,primary_shift_target,0.20491531,94.86,1,YES
+Hs0_vm,0,-7,pure_view,D5_roll125,top1_neighbor_roll125,primary_shift_target,0.18548740,94.64,0,YES
+Hsp_vp,7,7,cross_corner,A_top1,top1,core_top1_roll_neighborhood,0.21039591,95.09,1,YES
+Hsp_vm,7,-7,cross_corner,C_R3,R3_negative,control,0.22555675,99.51,0,NO
+Hsm_vp,-7,7,cross_corner,D6_roll175,top1_neighbor_roll175,primary_shift_target,0.14991522,93.20,0,YES
+Hsm_vm,-7,-7,cross_corner,D2,top1_neighbor,core_top1_roll_neighborhood,0.20011107,95.04,1,YES
+
+GLOBAL_BEST,7,-7,Hsp_vm,C_R3,R3_negative,control,0.22555675,99.51,0,

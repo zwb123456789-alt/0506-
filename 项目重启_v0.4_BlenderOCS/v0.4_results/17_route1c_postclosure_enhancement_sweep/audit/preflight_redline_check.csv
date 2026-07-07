@@ -1,0 +1,12 @@
+id,redline,status,evidence
+RL1,不改旧脚本/旧 metrics/旧 samples/旧结果目录10-16,PASS,只新增派生 wrapper 与汇总脚本，写入 17 号包；旧目录只读
+RL2,不改 split 定义/姿态网格/OBS_GEOMETRIES 语义,PASS,multi-seed 固定 split seed=42；degraded-severe/mroll 复用既有 split 与 2664 网格
+RL3,不换 backbone/不引入未预注册大模型,PASS,复用 L1M2RegModel(ImageEncoder/OCSEncoder) 同容量
+RL4,不做开放超参搜索,PASS,"沿用 lr=1e-3, 30ep, batch64, norm_weight=0.1"
+RL5,degraded-severe 不写成真实观测验证,PASS,标注 model-known simulated severe degradation
+RL6,M-roll full-2664 不写成三轴小项目完成,PASS,定位为 fixed-roll roll-sensitivity 增强探针
+RL7,P-DB/conformal 不写成真实概率/Bayesian posterior,PASS,conformal 只写工程覆盖/set_size
+RL8,不写成果区/不生成 Codex 审阅文件/不改 CLAUDE.md,PASS,报告写入 02_Claude输出/109，结果写 17 号包
+RL9,不写最终论文正文/投稿摘要,PASS,只产出增强证据包与执行报告
+RL10,不启动三轴小项目/T3/L2/路线二三四扩展,PASS,仅执行 R126 四类增强项
+RL11,不复用 B6 粗增广作为正式退化模型,PASS,degraded-severe 基于物理退化管线延伸，非 B6 σ=0.01 包

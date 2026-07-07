@@ -1,0 +1,10 @@
+geom,pair,k,n,mean_topk_jaccard,median_topk_jaccard,frac_zero_overlap
+G1,image_only|ocs_only,5,296,0.0058,0.0,0.973
+G1,image_only|joint,5,296,0.4795,0.4286,0.0236
+G1,ocs_only|joint,5,296,0.0035,0.0,0.9865
+G3,image_only|ocs_only,5,296,0.0095,0.0,0.9662
+G3,image_only|joint,5,296,0.3124,0.25,0.1858
+G3,ocs_only|joint,5,296,0.0117,0.0,0.9662
+G5,image_only|ocs_only,5,296,0.0143,0.0,0.9595
+G5,image_only|joint,5,296,0.1109,0.0,0.5845
+G5,ocs_only|joint,5,296,0.0114,0.0,0.9392

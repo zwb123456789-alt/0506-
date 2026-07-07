@@ -1,0 +1,4 @@
+pack,n_poses,n_regions,max_ocs,note
+P1,108,9,0.1911182,seed roll scan
+P2,1125,5,0.208377,sparse 3-axis grid 5deg
+P3,963,5,0.208377,local refinement 2.5deg

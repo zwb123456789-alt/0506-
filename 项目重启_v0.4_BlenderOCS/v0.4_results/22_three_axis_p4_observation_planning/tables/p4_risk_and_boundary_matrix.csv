@@ -1,0 +1,11 @@
+boundary_id,boundary_type,description,affected_region,affected_candidates,source_stage,source_evidence,implication_for_planning
+BND-01,brightness_neq_information,最亮姿态不等于最高信息姿态；brightness与information在全局和局部邻域持续解耦,R4,R4最亮点yaw147.5/+12.5 (brightness_rank=1 info_rank=104/107),P1/P2/P3,EV-08 EV-09 EV-10 EV-11,最亮点不可直接用作最优观测姿态；需区分brightness目标与information目标
+BND-02,bright_but_low_info_caution,R4最亮点(yaw147.5/+12.5)亮度rank=1但info_rank=104/107；不列为P4主规划落点,R4,yaw147.5/+12.5,P3,EV-10,该点适合作为saturation/glint风险基准测试，不适合作为可观测性分析目标
+BND-03,glint_saturation_risk_R1,R1区域全部候选any_glint=1且多点any_saturation=1；high-info优势需与成像可用性风险平衡,R1,C01-C08,P1/P2/P3,EV-03 EV-04 EV-12,R1候选在真实仪器中需考虑glint/saturation；模拟条件下image_usable=1但真实观测需额外评估
+BND-04,proxy_level_information,neighbor_contrast_ypr为proxy级局部信息指标；不等同于模型级可分性(P-DB/margin/entropy),全部区域,全部候选,P1/P2/P3,EV-15,P4所有信息相关结论均受此限定；不能升格为真实目标可观测性证明
+BND-05,model_known_boundary,所有结论限定在model-known simulated条件；phase63/L1-G1几何；不外推到真实未知目标,全部区域,全部候选,P1/P2/P3,所有Codex审阅,不能声称真实望远镜验证、field-proven或operational-ready
+BND-06,roll_sensitivity_R1_stable,R1 roll-sensitive peak在2.5度加密下迁移0.0度；pitch+30~40×yaw245-247.5结论稳定,R1,C01-C08,P3,EV-12,roll敏感峰稳定性为P3最强结论；但仍限于proxy级局部可观测性
+BND-07,bright_info_tradeoff_R4_boundary,R4亮-信息折中点yaw155/+20稳定(info_rank=1/brightness_rank=31)；R4区域整体信息rank中等偏低,R4,C09 C10,P3,EV-11,C09是最优综合候选(亮度中等+信息最高+无glint/saturation)；但"信息最高"仍为proxy级nc指标
+BND-08,R3_negative_control_boundary,R3低信息连通性0.60适合负面对照；不等于"无法观测"，仅表示局部信息proxy较低且结构均匀,R3,C11 C12,P3,EV-13,R3候选用于验证低信息区观测规划的效果；不能声称R3姿态无任何可观测信息
+BND-09,R2_R5_depriority,R2/R5 utility≤0.001；不具备观测优先级；仅作dark/neutral参照,R2 R5,C13-C16,P2/P3,EV-14,P4规划中R2/R5候选仅用于对照，不作为任何正向观测推荐
+BND-10,no_new_rendering,P4不新增渲染；所有数值来自P1/P2/P3已完成包；不扩展三轴网格,全部,全部,R137任务单,RC-01,P4综合结论受现有网格分辨率限制(最小2.5度步长)

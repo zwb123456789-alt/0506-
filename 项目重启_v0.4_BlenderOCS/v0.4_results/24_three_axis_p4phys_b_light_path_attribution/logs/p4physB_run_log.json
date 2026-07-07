@@ -1,0 +1,132 @@
+{
+  "log": {
+    "geometry": {
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "half_vector_H": [
+        0.8233854134595648,
+        -0.5227321698476944,
+        0.2208790155454847
+      ],
+      "r_max": 1.4726051706213208,
+      "pixel_area_m2": 0.00016015410437830724
+    },
+    "poses": {
+      "R1_top1": {
+        "ocs_total": 0.2088904942462107,
+        "per_part": {
+          "jinshuzhuti": 0.1984965865046176,
+          "taiyangnengban": 0.0016192959873345268,
+          "yinshenban": 0.008774611754258553
+        },
+        "npix_part": {
+          "jinshuzhuti": 2653,
+          "taiyangnengban": 80,
+          "yinshenban": 1408
+        },
+        "n_contributing": 4141
+      },
+      "R4_robust": {
+        "ocs_total": 0.201146124952754,
+        "per_part": {
+          "jinshuzhuti": 0.19872103818795467,
+          "taiyangnengban": 0.001494159123263115,
+          "yinshenban": 0.0009309276415362276
+        },
+        "npix_part": {
+          "jinshuzhuti": 2581,
+          "taiyangnengban": 75,
+          "yinshenban": 152
+        },
+        "n_contributing": 2808
+      },
+      "R3_neg": {
+        "ocs_total": 0.06625763148569964,
+        "per_part": {
+          "jinshuzhuti": 0.06526623166077157,
+          "taiyangnengban": 0.0009913998249280833,
+          "yinshenban": 0.0
+        },
+        "npix_part": {
+          "jinshuzhuti": 4045,
+          "taiyangnengban": 76,
+          "yinshenban": 0
+        },
+        "n_contributing": 4121
+      }
+    }
+  },
+  "consistency": {
+    "R1_top1": {
+      "recomputed_ocs_total": 0.2088904942462107,
+      "json_ocs_total": 0.20889048278331757,
+      "abs_diff": 1.1462893134694951e-08,
+      "rel_diff": 5.4875133524323505e-08,
+      "per_part_recomputed": {
+        "jinshuzhuti": 0.1984965865046176,
+        "taiyangnengban": 0.0016192959873345268,
+        "yinshenban": 0.008774611754258553
+      },
+      "per_part_json": {
+        "jinshuzhuti": 0.19849658012390137,
+        "taiyangnengban": 0.0016192957991734147,
+        "yinshenban": 0.008774611167609692
+      },
+      "npix_part": {
+        "jinshuzhuti": 2653,
+        "taiyangnengban": 80,
+        "yinshenban": 1408
+      }
+    },
+    "R4_robust": {
+      "recomputed_ocs_total": 0.201146124952754,
+      "json_ocs_total": 0.20114612579345703,
+      "abs_diff": 8.407030349655287e-10,
+      "rel_diff": 4.179563646325399e-09,
+      "per_part_recomputed": {
+        "jinshuzhuti": 0.19872103818795467,
+        "taiyangnengban": 0.001494159123263115,
+        "yinshenban": 0.0009309276415362276
+      },
+      "per_part_json": {
+        "jinshuzhuti": 0.1987210363149643,
+        "taiyangnengban": 0.001494159223511815,
+        "yinshenban": 0.0009309276356361806
+      },
+      "npix_part": {
+        "jinshuzhuti": 2581,
+        "taiyangnengban": 75,
+        "yinshenban": 152
+      }
+    },
+    "R3_neg": {
+      "recomputed_ocs_total": 0.06625763148569964,
+      "json_ocs_total": 0.06625763174222254,
+      "abs_diff": 2.565229001438851e-10,
+      "rel_diff": 3.871597782756494e-09,
+      "per_part_recomputed": {
+        "jinshuzhuti": 0.06526623166077157,
+        "taiyangnengban": 0.0009913998249280833,
+        "yinshenban": 0.0
+      },
+      "per_part_json": {
+        "jinshuzhuti": 0.06526622856996567,
+        "taiyangnengban": 0.000991399964824901,
+        "yinshenban": 0.0
+      },
+      "npix_part": {
+        "jinshuzhuti": 4045,
+        "taiyangnengban": 76,
+        "yinshenban": 0
+      }
+    }
+  }
+}

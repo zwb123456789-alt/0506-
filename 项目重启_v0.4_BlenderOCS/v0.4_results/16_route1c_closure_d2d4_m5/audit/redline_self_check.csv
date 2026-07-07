@@ -1,0 +1,11 @@
+redline,status,evidence
+1 未新训练/新渲染/新后处理大矩阵,PASS,只读 10-15 现有 CSV/NPZ/JSON，无训练/渲染调用
+2 未改旧脚本/旧metrics/旧samples/旧结果目录,PASS,仅写入 16 号新目录，未触碰 10-15
+3 未写成果区/未生成Codex审阅文件/未改CLAUDE.md,PASS,输出限 16号包 + 待写108(02_Claude输出)
+4 未写最终论文正文/投稿摘要,PASS,仅闭口汇总表/图/summary
+5 未启动三轴小项目/T3/L2/路线二三四,PASS,D4仅标为接口，明确不启动
+6 未把路线一C写成已闭口，只写闭口候选,PASS,候选总结明确'等待R125裁决'
+7 未把P-EXT写成已解决,PASS,M5/D4 均写坍缩、未解决
+8 未把P-DB写成真实观测反演成功率,PASS,统一标 model-known simulated template retrieval
+9 未把conformal写成最终概率校准,PASS,本轮未新算conformal，引用R119并保留欠覆盖
+10 保留joint是否有增量的诚实结论,PASS,D2明确 joint 无稳定增量+天花板效应+需P-INT-hard

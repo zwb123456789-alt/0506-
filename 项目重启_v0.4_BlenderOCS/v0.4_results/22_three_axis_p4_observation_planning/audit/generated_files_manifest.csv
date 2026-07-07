@@ -1,0 +1,31 @@
+file_path,file_type,subtask,description,status
+audit/p4_input_manifest.csv,csv,A,必读文件清单（14条），DONE
+audit/p4_source_tables_figures_manifest.csv,csv,A,上游P1/P2/P3表格与图表清单（23条），DONE
+audit/p4_redline_precheck.csv,csv,A,红线预检（12条），DONE
+tables/p4_evidence_index.csv,csv,A,P1/P2/P3核心证据索引（15条），DONE
+tables/p4_planning_candidate_roles.csv,csv,B,16候选+caution完整角色信息，DONE
+tables/p4_region_role_summary.csv,csv,B,6区域（含caution）角色汇总，DONE
+tables/p4_observation_priority_matrix.csv,csv,B,17行优先级矩阵（含caution），DONE
+tables/p4_risk_and_boundary_matrix.csv,csv,B,10条风险边界矩阵，DONE
+text/p4_three_axis_project_stage_summary.md,markdown,C,三轴小项目阶段性收口候选材料，DONE
+tables/p4_stage_claim_boundary_table.csv,csv,C,12条声明边界表（can/must-not合并），DONE
+tables/p4_what_can_be_claimed.csv,csv,C,8条可声明内容，DONE
+tables/p4_what_must_not_be_claimed.csv,csv,C,10条禁止声明内容，DONE
+figures/p4_observation_role_map.png,png,D,候选姿态角色分布图，DONE
+figures/p4_observation_role_map.pdf,pdf,D,候选姿态角色分布图（PDF），DONE
+figures/p4_brightness_information_decoupling_summary.png,png,D,brightness vs information rank散点，DONE
+figures/p4_brightness_information_decoupling_summary.pdf,pdf,D,brightness vs information rank散点（PDF），DONE
+figures/p4_planning_candidate_panel.png,png,D,4角色候选Panel，DONE
+figures/p4_planning_candidate_panel.pdf,pdf,D,4角色候选Panel（PDF），DONE
+figures/p4_stage_evidence_flow.png,png,D,P1→P4阶段门证据流图，DONE
+figures/p4_stage_evidence_flow.pdf,pdf,D,P1→P4阶段门证据流图（PDF），DONE
+text/p4_observation_planning_summary.md,markdown,D,观测规划可解释摘要，DONE
+tables/p4_next_step_recommendations.csv,csv,E,下一步建议（6条），DONE
+tables/p4_r128_interface_candidates.csv,csv,E,R128接口候选清单（5条+note），DONE
+tables/p4_results_si_candidate_assets.csv,csv,E,Results/SI候选资产清单（13条），DONE
+tables/p4_gate_matrix.csv,csv,E,验收门矩阵（16条），DONE
+audit/generated_files_manifest.csv,csv,E,本文件，DONE
+audit/numeric_path_consistency_check.csv,csv,E,路径一致性检查，DONE（见下）
+audit/redline_self_check.csv,csv,E,红线自检，DONE（见下）
+text/codex_review_checklist_for_005.md,markdown,E,Codex 005审阅清单，DONE（见下）
+scripts/generate_p4_figures.py,python,D,图表生成脚本，DONE

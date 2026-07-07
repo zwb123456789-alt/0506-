@@ -1,0 +1,12 @@
+metric_id,concept,formula_or_field,source_pack,availability,roll_extend_need,info_class
+brightness,OCS magnitude / 最亮最暗,ocs_total (per geom),01_fullrun; 11_l1m2,A-direct,needs roll render,brightness (not information)
+local_contrast,姿态邻域可区分性,mean|ocs_total(a)-ocs_total(nbr)| over yaw/pitch +-5,derived in 18,B-derived,needs roll neighbors,information
+nn_ambiguity,最近邻光度混淆,pdb nearest_distance / margin,13_l1d3 pdb,A-direct,needs roll retrieval,information(low=ambiguous)
+candidate_entropy,候选分布集中度,neural_entropy,13_l1d3 joined,A-direct,needs roll-aware model,information
+candidate_margin,top1-top2 间隔,neural_margin,13_l1d3 joined,A-direct,needs roll-aware model,information
+topk_stability,扰动下最优候选稳定性,topk10_idx overlap under perturb,13_l1d3 pdb,A-direct(prior),needs roll perturb,information
+ocs_image_overlap,通道 top-k 一致,d2_pairwise_topk_overlap,16_closure d2,A-direct,needs roll predictions,consistency
+ocs_image_js,通道分布冲突,d2_pairwise_disagreement (JS/disagree),16_closure d2,A-direct,needs roll predictions,consistency
+glint_flag,亮但不可用风险,ocs_total>=P99 AND n_contrib<=P10,derived in 18,B-derived,needs roll render,risk
+geometry_utility,几何是否值得观测,d4 gain_g1_to_g5 / region frac_low,16_closure d4,A-direct,recompute with roll,planning
+roll_sensitivity,fixed-roll 结论 roll 迁移,mroll yaw_err(+-30) - yaw_err(+-15),17_postclosure mroll,A-direct(prior),P1 densify,roll-migration

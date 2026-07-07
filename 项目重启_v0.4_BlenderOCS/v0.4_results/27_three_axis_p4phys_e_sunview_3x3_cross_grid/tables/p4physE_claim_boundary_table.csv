@@ -1,0 +1,15 @@
+claim,verdict,note
+scope,"sun/view 3x3 combo grid (±7°), 9 geom × 14 fixed poses",NOT global sun/view/pose search
+new_render,0,"camera EXR by view_offset, sun EXR by sun_offset, all reused from 26/baseline"
+anchor_consistency,EXACT,"5 anchorable combos reproduce 26 G0-G4 OCS, 70/70, rel_diff=0"
+metal_dominance_stable,YES,"all 126 combos dominant=metal, metal% 87.6-99.5"
+baseline_top1_global_brightest,NO,A_top1 not global max; global max=Hsp_vm/C_R3=0.22556 > baseline 0.20889
+global_max_location,GRID_CORNER,"Hsp_vm (sun+7,view-7) — combined-shift corner"
+global_max_in_top1_cluster,NO,"global max pose = C_R3 (control), cluster=control"
+per_geom_brightest_in_cluster,8/9,"8 in cluster (pure/same-sign), 1 corner led by R3"
+strict_nsm_binary_stable,NO,nsm=1 only 29/126; anti-diagonal corners all nsm=0
+near_specular_explains_all_brightest,NO,corner brightest (R3) is non-specular metal diffuse/broad-lobe
+R4_stable_same_mechanism_control,NO,R4 drops to ~0.10 on anti-diagonal corners
+R3_stable_negative_control,NO,"R3 swings 0.033-0.226, becomes global max at Hsp_vm"
+dark_panel_increment,ORDERING_ONLY,"top-1 roll cluster feature only, not general mechanism"
+material_level,B0 proxy,no material pass

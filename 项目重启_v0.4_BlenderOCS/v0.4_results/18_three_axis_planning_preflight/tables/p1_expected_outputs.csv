@@ -1,0 +1,7 @@
+expected_output,description,kind
+p1_seed_roll_ocs_curves.csv,每种子 OCS magnitude vs roll 曲线,table
+p1_seed_roll_contrast.csv,每种子 local contrast vs roll,table
+p1_seed_roll_sensitivity.csv,roll 迁移量: 最亮/可分点是否随 roll 移动,table
+p1_image_usability_flags.csv,每 seed×roll 图像渲染是否可用(非空/未饱和),table
+p1_seed_roll_curves.png,OCS/contrast vs roll 多子图,figure
+p1_seed_roll_summary.md,P1 smoke 结论: fixed-roll 是否被 roll 推翻,text

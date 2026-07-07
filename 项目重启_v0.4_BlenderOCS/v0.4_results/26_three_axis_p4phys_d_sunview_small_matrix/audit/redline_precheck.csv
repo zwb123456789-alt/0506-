@@ -1,0 +1,12 @@
+check,status,note
+geom_count_le_5,PASS,5
+pose_count_le_16,PASS,14
+new_render_units_le_80,PASS,56
+no_full_sunview_search,PASS,只 baseline ±7° 小矩阵，非全局搜索
+no_new_pose_search,PASS,全部姿态来自 01/20/21/23A/23B 既有渲染
+no_training,PASS,只渲染几何 pass + OCS 积分
+no_R128,PASS,未触及
+no_route234,PASS,未触及
+material_proxy_only,PASS,B0 proxy，无 material pass
+no_source_pkg_edit,PASS,只写 26 包，不改 20/21/23A/23B/24/25
+perturb_in_5_10_deg,PASS,7.0 deg

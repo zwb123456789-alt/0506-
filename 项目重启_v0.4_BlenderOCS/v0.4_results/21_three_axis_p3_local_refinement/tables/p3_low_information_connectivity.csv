@@ -1,0 +1,16 @@
+region,category,priority,yaw_deg,pitch_deg,grid_type,ocs_mean,ocs_roll0,brightness_rank,info_rank,neighbor_contrast_mean,roll_sensitivity_score,max_rank_shift,pixel_contrast_mean,any_glint,any_saturation,image_usable_all
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+10.0,integer5,1.715869e-01,1.735689e-01,9,107,0.156516,0.054179,18,0.445356,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+12.5,half2p5,1.849325e-01,1.864211e-01,4,106,0.157427,0.056708,14,0.444958,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+10.0,half2p5,1.835687e-01,1.855153e-01,5,105,0.160601,0.066466,14,0.469533,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+12.5,half2p5,1.980887e-01,2.011461e-01,1,104,0.161473,0.052620,9,0.455562,0,1,1
+R5_control,neutral-control,control,205.0,-5.0,integer5,1.727764e-02,1.863161e-02,107,103,0.163570,0.450523,21,0.918240,1,0,1
+R5_control,neutral-control,control,210.0,-5.0,integer5,1.926039e-02,2.091657e-02,105,102,0.165099,0.498121,21,0.850940,1,0,1
+R5_control,neutral-control,control,210.0,-10.0,integer5,1.962972e-02,2.108413e-02,104,101,0.168036,0.440399,21,0.888581,1,0,1
+R5_control,neutral-control,control,205.0,-10.0,integer5,1.779622e-02,1.864380e-02,106,100,0.173232,0.415195,21,0.832116,1,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,145.0,+15.0,integer5,1.752863e-01,1.778806e-01,7,99,0.320398,0.052048,17,0.443697,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,147.5,+15.0,half2p5,1.873481e-01,1.902424e-01,2,98,0.324763,0.064529,14,0.446834,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+10.0,integer5,1.717528e-01,1.749517e-01,8,97,0.337105,0.065676,18,0.472917,0,1,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+12.5,half2p5,1.854490e-01,1.883958e-01,3,96,0.338968,0.065167,14,0.459237,0,1,1
+R2_control,dark/roll-sensitive-control,control,280.0,-80.0,integer5,2.127940e-02,1.180178e-02,102,95,0.417873,0.872831,55,0.741316,1,0,1
+R2_control,dark/roll-sensitive-control,control,285.0,-80.0,integer5,2.106999e-02,1.143705e-02,103,94,0.430864,0.955708,57,0.748138,1,0,1
+R4_bright_info_boundary,bright/robust-easy + info-boundary,primary,150.0,+15.0,integer5,1.761335e-01,1.774126e-01,6,93,0.484464,0.069819,17,0.449367,0,1,1

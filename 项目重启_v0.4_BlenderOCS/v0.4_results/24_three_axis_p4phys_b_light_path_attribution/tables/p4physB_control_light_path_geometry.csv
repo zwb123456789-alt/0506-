@@ -1,0 +1,4 @@
+pose,scope,n_pixels,avgN_sun_angle_deg,avgN_det_angle_deg,avgN_halfvec_angle_deg,w_mean_NoL,w_mean_NoV,w_mean_NoH,max_NoH_pow_n
+R1_top1,metal_body,2653,31.14,31.98,0.57,0.8540,0.8464,0.9977,0.9998
+R4_robust,metal_body,2581,31.61,31.50,0.19,0.8497,0.8508,0.9978,0.9992
+R3_neg,metal_body,4045,37.98,28.85,12.45,0.7813,0.8682,0.9679,0.6440

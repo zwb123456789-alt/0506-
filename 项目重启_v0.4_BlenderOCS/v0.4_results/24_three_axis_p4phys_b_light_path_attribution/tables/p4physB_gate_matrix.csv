@@ -1,0 +1,9 @@
+gate,status,note
+24_package_exists,PASS,created
+top1_paths_correct,PASS,"uses 23A yaw2450_pitchp0275_roll+015, not 23B smoke"
+ocs_json_reproduced,PASS,recomputed vs json rel_diff < 1e-4
+per_part_breakdown,PASS,3 parts + pixel counts
+channel_chain_auditable,PASS,IndexOB/Normal/Position/Depth read logged
+direct_vs_proxy_separated,PASS,material-level = proxy (no material pass)
+R4_R3_minimal_contrast,PASS,done
+no_training_no_R128_no_sunview_expand,PASS,read-only attribution

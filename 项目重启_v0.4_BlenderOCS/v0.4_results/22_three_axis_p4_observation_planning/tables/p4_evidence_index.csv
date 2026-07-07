@@ -1,0 +1,16 @@
+evidence_id,conclusion,stage,source_file,source_table,key_field,key_value,stability_level,note
+EV-01,最亮构型roll稳健（roll_sensitivity≈0.05-0.07）,P1,19_three_axis_p1_seed_roll_scan,p1_roll_sensitivity_summary.csv,roll_sensitivity_score,"yaw145/150_pitch+15: 0.052-0.070",stable,已在P2/P3局部邻域验证保持
+EV-02,最亮构型亮度排名漂移≤1,P1,19_three_axis_p1_seed_roll_scan,p1_roll_sensitivity_summary.csv,max_abs_rank_shift,"bright-seed: 1",stable,P2 R4区域验证一致
+EV-03,最亮构型触发saturation_flag，局部对比较低,P1,19_three_axis_p1_seed_roll_scan,p1_roll_sensitivity_summary.csv,any_saturation+contrast_rank,"bright-seed: saturation=1，contrast末尾",stable,P2/P3均确认
+EV-04,高信息yaw240系roll_sensitivity≈3.2-3.6（smoke级）,P1,19_three_axis_p1_seed_roll_scan,p1_roll_sensitivity_summary.csv,roll_sensitivity_score,"yaw240_pitch+030: 3.24; yaw240_pitch+020: 3.58",stable,P2均值2.661/P3均值3.497验证升格
+EV-05,R4区域P2 utility=0.251（5区域最高），brightness最强,P2,20_three_axis_p2_sparse_grid,p2_region_summary.csv,region_utility_score,"R4_bright_robust: 0.251",stable,P3更新为0.302
+EV-06,R1区域P2 utility=0.234，roll_sensitivity均值2.661,P2,20_three_axis_p2_sparse_grid,p2_region_summary.csv,"region_utility_score,mean_roll_sensitivity","R1_high_info: 0.234 / 2.661",stable,P3更新为0.457 / 3.497
+EV-07,R3区域P2低信息连通性初步观察，utility=0.063,P2,20_three_axis_p2_sparse_grid,p2_region_summary.csv,region_utility_score,"R3_low_info: 0.063",stable,P3验证connectivity=0.60
+EV-08,P2 brightness rank=1（yaw150/+15）info_rank=60/125,P2,20_three_axis_p2_sparse_grid,p2_sparse_grid_metrics.csv,brightness_rank vs info_rank,yaw150/+15: brightness=1 / info=60,stable,brightness≠information在局部邻域保持
+EV-09,P2 info rank=1（yaw155/+20）brightness_rank=13/125,P2,20_three_axis_p2_sparse_grid,p2_high_information_candidates.csv,info_rank vs brightness_rank,yaw155/+20: info=1 / brightness=13,stable,P3验证info=1不变、brightness升至31/107
+EV-10,R4最亮点yaw147.5/+12.5（P3加密后），info_rank=104/107,P3,21_three_axis_p3_local_refinement,p3_p4_planning_candidates.csv,"ocs_mean,info_rank","yaw147.5/+12.5: ocs=1.98e-01 / info_rank=104",stable,brightness≠information在2.5度加密下更尖锐
+EV-11,R4亮-信息折中点yaw155/+20，info_rank=1/info boundary稳定，brightness_rank=31,P3,21_three_axis_p3_local_refinement,p3_p4_planning_candidates.csv,"info_rank,brightness_rank,neighbor_contrast_mean","yaw155/+20: info=1 / bright=31 / nc=1.198",stable,P4 bright-info-tradeoff主候选
+EV-12,R1 roll-sensitive peak稳定在yaw245-247.5×pitch+30~40，roll_sens≈3.69-3.85,P3,21_three_axis_p3_local_refinement,p3_p4_planning_candidates.csv,roll_sensitivity_score,"yaw247.5/+37.5: 3.804; yaw247.5/+40.0: 3.803",stable,P3迁移0.0度（完全稳定）
+EV-13,R3低信息连通性=0.60，local_info_stability=0.92，适合负面对照,P3,21_three_axis_p3_local_refinement,p3_stability_assessment.csv,"low_info_connectivity,local_information_stability","R3: 0.60 / 0.92",stable,候选负面对照
+EV-14,R2/R5 utility低（0.001/-0.162），P4应降权,P3,21_three_axis_p3_local_refinement,p3_region_summary.csv,region_utility_score,"R2: 0.001; R5: -0.162",stable,仅作dark/neutral对照
+EV-15,neighbor_contrast_ypr为proxy级指标，非最终模型级信息量证明,P1/P2/P3,多阶段Codex审阅,多审阅文件,指标级别声明,proxy级（已在R132/R134/R136明确）,proxy,不能升格为模型级可分性指标

@@ -1,0 +1,10 @@
+asset,path,exists,note
+p2_p3_refinement_candidates,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_p3_refinement_candidates.csv,True,P3 区域中心来源（P2 14 候选）
+p2_region_summary,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_region_summary.csv,True,P2 区域效用排名参考
+render_driver,06_v0.4_code/02_blender/render_full_2664_shadow.py,True,"旧 driver, 只读复用 euler_to_matrix4 支持浮点角度"
+postprocess_driver,06_v0.4_code/05_postprocess/run_full_postprocess.py,True,"旧 driver, 只读复用 process_one_attitude(label 定位 EXR)"
+config_geometry,06_v0.4_code/00_config/config_v0_4.py,True,"phase63/L1-G1 SUN[1,0,.3] DET[.5,-1,.1]"
+p2_render_wrapper_template,v0.4_results/20_three_axis_p2_sparse_grid/scripts/p2_render_sparse_grid.py,True,P3 渲染 wrapper 派生模板
+p2_postprocess_wrapper_template,v0.4_results/20_three_axis_p2_sparse_grid/scripts/p2_postprocess_sparse_grid.py,True,P3 后处理 wrapper 派生模板
+roll0_baseline_fullrun_post,v0.4_results/01_fullrun/postprocess,True,整数点 roll=0 复用源; 覆盖 42/42 整数唯一姿态
+roll0_baseline_fullrun_shadow,v0.4_results/01_fullrun/shadow_passes,True,整数点 roll=0 camera/sun EXR 源

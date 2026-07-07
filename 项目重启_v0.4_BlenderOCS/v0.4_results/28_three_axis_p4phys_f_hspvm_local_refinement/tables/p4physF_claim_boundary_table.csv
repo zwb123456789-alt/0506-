@@ -1,0 +1,8 @@
+type,claim
+ALLOWED,在本轮采样包络内（姿态网格 yaw35-75/pitch45-75/roll-20..+20，几何 microgrid sun+5..+9/view-9..-5），最高构型为 yaw=35/pitch=75/roll=-20 @ sp5_vm7，OCS=0.27194
+ALLOWED,该最高点为金属主体主导（99.5%）的宽瓣/几何因子高亮：weighted_NoL_NoV≈0.709，avgN_vs_H≈3.55°、reflect_vs_det≈7.11°，接近但不满足严格 near_specular_metal 阈值(2°/4°)
+ALLOWED,"C_R3 不再是本区域最高点；Hsp_vm 角落高亮沿 (yaw↓,pitch↑,roll↓) 方向继续上升，姿态与几何边界均未闭合"
+FORBIDDEN,写成所有 sun/view 几何下的全局最亮
+FORBIDDEN,把宽瓣/几何因子高亮写成严格近镜面对齐（nsm=0）
+FORBIDDEN,把 B0 part/material proxy 写成真实 material-level attribution
+FORBIDDEN,据此收口三轴小项目、启动 R128/路线二三四/训练/论文正文最终改写

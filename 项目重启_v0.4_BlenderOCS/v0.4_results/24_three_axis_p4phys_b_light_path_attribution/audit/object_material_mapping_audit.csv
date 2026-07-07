@@ -1,0 +1,12 @@
+pose,indexob_id,part_name,part_en,n_pixels_total
+R1_top1,0,background,Background,59379
+R1_top1,1,jinshuzhuti,Metal body,4344
+R1_top1,2,taiyangnengban,Solar panel,283
+R1_top1,3,yinshenban,Dark panel,1530
+R4_robust,0,background,Background,59948
+R4_robust,1,jinshuzhuti,Metal body,4080
+R4_robust,2,taiyangnengban,Solar panel,489
+R4_robust,3,yinshenban,Dark panel,1019
+R3_neg,0,background,Background,59209
+R3_neg,1,jinshuzhuti,Metal body,5087
+R3_neg,2,taiyangnengban,Solar panel,1240

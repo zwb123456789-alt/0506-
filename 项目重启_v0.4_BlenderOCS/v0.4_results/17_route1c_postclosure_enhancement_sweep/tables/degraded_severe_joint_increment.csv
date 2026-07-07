@@ -1,0 +1,4 @@
+geom,ocs_hit30,image_hit30,joint_hit30,best_single_hit30,joint_increment_hit30,ocs_cmae,image_cmae,joint_cmae,best_single_cmae,joint_cmae_gain
+G1,0.1791,0.9966,1.0,0.9966,0.0034,79.867,4.273,2.277,4.273,1.996
+G3,0.473,1.0,1.0,1.0,0.0,57.871,3.656,2.036,3.656,1.62
+G5,0.5068,0.9966,1.0,0.9966,0.0034,51.875,3.876,2.222,3.876,1.654

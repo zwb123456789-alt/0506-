@@ -1,0 +1,14 @@
+check,status,detail
+区域数 = 5,PASS,5 区域
+yaw offsets = 5 值,PASS,"[-10, -5, 0, 5, 10]"
+pitch offsets = 5 值,PASS,"[-10, -5, 0, 5, 10]"
+roll = 9 值(含0),PASS,"[-60, -45, -30, -15, 0, 15, 30, 45, 60]"
+非零 roll = 8 值,PASS,"[-60, -45, -30, -15, 15, 30, 45, 60]"
+所有中心对齐 5 度网格,PASS,roll=0 可复用 fullrun
+规模受控(非零渲染<=2500),PASS,非零 roll 渲染单位 1000 <= 2500，规模受控，无需裁剪
+roll=0 fullrun 覆盖完整,PASS,缺失 0: []
+几何仅 phase63/L1-G1,PASS,"单几何, 不做多几何"
+输出仅写 20 号包,PASS,wrapper OUTPUT 固定 20_three_axis_p2_sparse_grid
+不改旧目录 10-19,PASS,不写 10-19
+不训练/无 roll-aware,PASS,仅渲染+后处理+指标
+不启动 P3/P4/R128,PASS,仅 P2 sparse grid

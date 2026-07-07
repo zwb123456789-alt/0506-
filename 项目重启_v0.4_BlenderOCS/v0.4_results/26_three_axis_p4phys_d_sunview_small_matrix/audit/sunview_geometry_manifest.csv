@@ -1,0 +1,6 @@
+geom_id,kind,sun_dir,det_dir,sun_ang_from_base_deg,det_ang_from_base_deg,render_view,camera_source,sun_source,note
+G0_baseline,baseline,"[0.957826,0.000000,0.287348]","[0.445435,-0.890871,0.089087]",0.000,0.000,none,baseline,baseline,phase63/L1-G1 baseline，两视角全复用，用于复现 ocs.json
+G1_sun_plus,sun_perturb,"[0.985706,0.000000,0.168476]","[0.445435,-0.890871,0.089087]",7.000,0.000,sun,baseline,new_26,太阳方向绕世界Y +7°；camera 复用 baseline，sun 新渲染
+G2_sun_minus,sun_perturb,"[0.915668,0.000000,0.401936]","[0.445435,-0.890871,0.089087]",7.000,0.000,sun,baseline,new_26,太阳方向绕世界Y -7°；camera 复用 baseline，sun 新渲染
+G3_view_plus,view_perturb,"[0.957826,0.000000,0.287348]","[0.437260,-0.874520,0.209808]",0.000,7.000,camera,new_26,baseline,探测器方向绕(det×Z) +7°；sun 复用 baseline，camera 新渲染
+G4_view_minus,view_perturb,"[0.957826,0.000000,0.287348]","[0.446971,-0.893941,-0.032962]",0.000,7.000,camera,new_26,baseline,探测器方向绕(det×Z) -7°；sun 复用 baseline，camera 新渲染

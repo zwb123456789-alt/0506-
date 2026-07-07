@@ -1,0 +1,6 @@
+claim,status,evidence
+near_specular_metal_general,SUPPORTED,"near_specular n=25, top10% enrichment x6.36; mean ocs 0.2017 vs 0.0630"
+non_specular_darker,SUPPORTED,non near_specular mean ocs 0.0630 << near_specular 0.2017
+R4_same_cluster_as_top1,SUPPORTED,"R4 near_specular=1, both metal near-specular"
+dark_panel_increment_universal,NOT_SUPPORTED,dark panel increment tied to R1 roll+15 cluster; R4(roll0) lacks it -> top-1>R4 is a ranking increment
+material_level_direct,NO,"material is B0 proxy; part-level direct, material-level proxy only"

@@ -1,0 +1,2 @@
+direction,current_status,followup_needed,reason
+pitch_minus,pitch=27.5,NO,top-1 pitch=27.5 内部化：pitch=25.0(0.20323) 与 pitch=30.0(0.20838) 均低于 pitch=27.5(0.20889)；可建议进入 P4-PHYS-B。

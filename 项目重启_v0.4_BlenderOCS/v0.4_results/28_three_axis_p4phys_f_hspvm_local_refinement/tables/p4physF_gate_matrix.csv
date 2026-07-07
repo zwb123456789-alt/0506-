@@ -1,0 +1,13 @@
+gate,value,verdict
+smoke,R3L_smoke render+postprocess+channels,PASS
+render_budget,units=76 (52 stageB + 24 stageC) <= 80,PASS
+stage1_best,yaw035_pitch+075_roll-020 OCS=0.27080873,DONE
+stage1_on_edge,yaw=35(edge) pitch=75(edge) roll=-20(edge),True
+stage1_exceeds_C_R3,True,INFO
+stage1_exceeds_A_top1,True,INFO
+stage2_best,sp5_vm7/yaw035_pitch+075_roll-020 OCS=0.27193961,DONE
+stage2_on_geom_edge,sun_offset=5,True
+anchor_consistency_27pkg,5/5 rel_diff=0,PASS
+numeric_consistency,79/79 max_rel<1e-4,PASS
+mechanism_class_of_best,metal_wide_lobe_geometric_factor,INFO
+recommendation_label,NEED_SECOND_STEP_REFINEMENT,FINAL

@@ -1,0 +1,10 @@
+{
+  "n": 159,
+  "n_near_specular_metal": 25,
+  "mean_ocs_near_specular": 0.20165612919999998,
+  "mean_ocs_non_specular": 0.06303406335820895,
+  "top10pct_enrichment": 6.36,
+  "top1_dark_contrib": 0.00877461,
+  "R4_dark_contrib": 0.00093093,
+  "verdict": "PARTIAL_GENERALITY"
+}

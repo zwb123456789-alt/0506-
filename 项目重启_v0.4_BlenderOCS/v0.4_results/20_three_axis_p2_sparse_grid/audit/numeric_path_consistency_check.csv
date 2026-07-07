@@ -1,0 +1,13 @@
+check,status,detail
+预注册矩阵行数 = 1125,PASS,1125
+render manifest = 1000 行,PASS,1000
+postprocess manifest = 1000 行,PASS,1000
+render manifest camera 全 True,PASS,
+render manifest sun 全 True,PASS,
+postprocess manifest ocs 全 True,PASS,
+metrics 表 = 1125 行(含baseline),PASS,1125
+EXR 渲染产物 = 2000(1000cam+1000sun),PASS,2000
+linear.exr 产物 = 1000,PASS,1000
+roll=0 baseline 行来源全为 01_fullrun,PASS,125 行
+P3 候选行数 > 0 且 <= 30,PASS,14
+所有输出在 20 号包内,PASS,wrapper OUTPUT 固定 20_three_axis_p2_sparse_grid

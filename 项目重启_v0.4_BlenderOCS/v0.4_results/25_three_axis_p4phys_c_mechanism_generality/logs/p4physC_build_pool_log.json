@@ -1,0 +1,25 @@
+{
+  "n_raw_discovered": 4666,
+  "n_unique_poses": 4353,
+  "n_geometry_eligible": 4353,
+  "n_selected": 159,
+  "cap": 200,
+  "top1_in_pool": true,
+  "R4_in_pool": true,
+  "R3_in_pool": true,
+  "region_counts": {
+    "R1_top": 16,
+    "R4_control": 4,
+    "R3_low_info_connectivity": 13,
+    "R1_pitch_boundary": 6,
+    "R1_high_info": 12,
+    "R4_bright_info_boundary": 12,
+    "unlabeled": 12,
+    "R5_control": 12,
+    "R2_control": 12,
+    "R3_low_info": 12,
+    "R4_bright_robust": 12,
+    "R5_neutral": 12,
+    "R2_dark_rollsens": 24
+  }
+}

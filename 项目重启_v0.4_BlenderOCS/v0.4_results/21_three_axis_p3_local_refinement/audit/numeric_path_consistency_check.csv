@@ -1,0 +1,14 @@
+check,status,detail
+预注册矩阵行数 = 963,PASS,963
+render manifest = 921 行(新渲染),PASS,921
+postprocess manifest = 921 行,PASS,921
+render manifest camera 全 True,PASS,
+render manifest sun 全 True,PASS,
+postprocess manifest ocs 全 True,PASS,
+metrics 表 = 963 行(含整数点baseline),PASS,963
+EXR 新渲染产物 = 1842(cam+sun),PASS,1842
+linear.exr 产物 = 921,PASS,921
+整数点 roll=0 来源全为 01_fullrun,PASS,42 行
+半度点 roll=0 来源全为 21_pack,PASS,65 行
+P4 候选行数 > 0 且 <= 20,PASS,16
+所有输出在 21 号包内,PASS,wrapper OUTPUT 固定 21_three_axis_p3_local_refinement

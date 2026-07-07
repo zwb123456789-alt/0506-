@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-07-06T19:06:37.277419",
+  "mode": "smoke",
+  "r_max": 1.4726051706213208,
+  "units": [
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2450_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw1475_pitchp0125_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw055_pitch+060_roll+000_camera.exr",
+      "status": "OK"
+    }
+  ],
+  "n_units": 3,
+  "n_ok": 3,
+  "n_failed": 0
+}

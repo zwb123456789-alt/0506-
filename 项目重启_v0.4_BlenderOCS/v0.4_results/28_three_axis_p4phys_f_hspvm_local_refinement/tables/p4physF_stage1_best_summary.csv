@@ -1,0 +1,2 @@
+stage1_best_pose_id,stage1_best_label,yaw,pitch,roll,ocs_total,on_grid_edge,exceeds_C_R3,C_R3_ocs_total,rel_gain_vs_C_R3,A_top1_baseline_ocs,exceeds_A_top1_baseline
+B_y35_p75_r-20,yaw035_pitch+075_roll-020,35.0,75.0,-20.0,0.27080872654914856,True,True,0.22555673122406006,0.20062356410076174,0.2088904828,True

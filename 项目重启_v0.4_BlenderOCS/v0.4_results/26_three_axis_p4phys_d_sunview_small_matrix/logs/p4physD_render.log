@@ -1,0 +1,1130 @@
+{
+  "timestamp": "2026-07-06T19:07:27.873193",
+  "mode": "formal",
+  "r_max": 1.4726051706213208,
+  "units": [
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2450_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw1475_pitchp0125_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "sun",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw055_pitch+060_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2450_pitchp0300_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2450_pitchp0300_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2450_pitchp0325_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 32.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2450_pitchp0325_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2475_pitchp0375_roll+015",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 37.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2475_pitchp0375_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2425_pitchp0225_roll+015",
+      "view": "sun",
+      "yaw": 242.5,
+      "pitch": 22.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2425_pitchp0225_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2450_pitchp0275_roll+0125_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2475_pitchp0300_roll+0175_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw1475_pitchp0125_roll-015",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": -15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw1475_pitchp0125_roll-015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw1475_pitchp0125_roll+015",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw1475_pitchp0125_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2425_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 242.5,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2425_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw2475_pitchp0300_roll+015",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw2475_pitchp0300_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G1_sun_plus",
+      "label": "yaw240_pitch+015_roll+015",
+      "view": "sun",
+      "yaw": 240.0,
+      "pitch": 15.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.985705691479985,
+        0.0,
+        0.16847637752505384
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G1_sun_plus/yaw240_pitch+015_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2450_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw1475_pitchp0125_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "sun",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw055_pitch+060_roll+000_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2450_pitchp0300_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2450_pitchp0300_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2450_pitchp0325_roll+015",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 32.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2450_pitchp0325_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2475_pitchp0375_roll+015",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 37.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2475_pitchp0375_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2425_pitchp0225_roll+015",
+      "view": "sun",
+      "yaw": 242.5,
+      "pitch": 22.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2425_pitchp0225_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "sun",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2450_pitchp0275_roll+0125_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2475_pitchp0300_roll+0175_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw1475_pitchp0125_roll-015",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": -15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw1475_pitchp0125_roll-015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw1475_pitchp0125_roll+015",
+      "view": "sun",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw1475_pitchp0125_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2425_pitchp0275_roll+015",
+      "view": "sun",
+      "yaw": 242.5,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2425_pitchp0275_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw2475_pitchp0300_roll+015",
+      "view": "sun",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw2475_pitchp0300_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G2_sun_minus",
+      "label": "yaw240_pitch+015_roll+015",
+      "view": "sun",
+      "yaw": 240.0,
+      "pitch": 15.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.915667895194329,
+        0.0,
+        0.4019356984772403
+      ],
+      "det_dir": [
+        0.44543540318737396,
+        -0.8908708063747479,
+        0.0890870806374748
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G2_sun_minus/yaw240_pitch+015_roll+015_sun.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2450_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw1475_pitchp0125_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw055_pitch+060_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2450_pitchp0300_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2450_pitchp0300_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2450_pitchp0325_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 32.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2450_pitchp0325_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2475_pitchp0375_roll+015",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 37.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2475_pitchp0375_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2425_pitchp0225_roll+015",
+      "view": "camera",
+      "yaw": 242.5,
+      "pitch": 22.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2425_pitchp0225_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2450_pitchp0275_roll+0125_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2475_pitchp0300_roll+0175_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw1475_pitchp0125_roll-015",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": -15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw1475_pitchp0125_roll-015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw1475_pitchp0125_roll+015",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw1475_pitchp0125_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2425_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 242.5,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2425_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw2475_pitchp0300_roll+015",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw2475_pitchp0300_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G3_view_plus",
+      "label": "yaw240_pitch+015_roll+015",
+      "view": "camera",
+      "yaw": 240.0,
+      "pitch": 15.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.437259804377141,
+        -0.874519608754282,
+        0.20980781057987746
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G3_view_plus/yaw240_pitch+015_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2450_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2450_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw1475_pitchp0125_roll+000",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw1475_pitchp0125_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw055_pitch+060_roll+000",
+      "view": "camera",
+      "yaw": 55.0,
+      "pitch": 60.0,
+      "roll": 0.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw055_pitch+060_roll+000_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2450_pitchp0300_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2450_pitchp0300_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2450_pitchp0325_roll+015",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 32.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2450_pitchp0325_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2475_pitchp0375_roll+015",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 37.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2475_pitchp0375_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2425_pitchp0225_roll+015",
+      "view": "camera",
+      "yaw": 242.5,
+      "pitch": 22.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2425_pitchp0225_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2450_pitchp0275_roll+0125",
+      "view": "camera",
+      "yaw": 245.0,
+      "pitch": 27.5,
+      "roll": 12.5,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2450_pitchp0275_roll+0125_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2475_pitchp0300_roll+0175",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 17.5,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2475_pitchp0300_roll+0175_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw1475_pitchp0125_roll-015",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": -15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw1475_pitchp0125_roll-015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw1475_pitchp0125_roll+015",
+      "view": "camera",
+      "yaw": 147.5,
+      "pitch": 12.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw1475_pitchp0125_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2425_pitchp0275_roll+015",
+      "view": "camera",
+      "yaw": 242.5,
+      "pitch": 27.5,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2425_pitchp0275_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw2475_pitchp0300_roll+015",
+      "view": "camera",
+      "yaw": 247.5,
+      "pitch": 30.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw2475_pitchp0300_roll+015_camera.exr",
+      "status": "OK"
+    },
+    {
+      "geom_id": "G4_view_minus",
+      "label": "yaw240_pitch+015_roll+015",
+      "view": "camera",
+      "yaw": 240.0,
+      "pitch": 15.0,
+      "roll": 15.0,
+      "sun_dir": [
+        0.9578262852211513,
+        0.0,
+        0.2873478855663454
+      ],
+      "det_dir": [
+        0.44697058609971635,
+        -0.8939411721994327,
+        -0.032961732484506
+      ],
+      "out": "v0.4_results/26_three_axis_p4phys_d_sunview_small_matrix/render/G4_view_minus/yaw240_pitch+015_roll+015_camera.exr",
+      "status": "OK"
+    }
+  ],
+  "n_units": 56,
+  "n_ok": 56,
+  "n_failed": 0
+}

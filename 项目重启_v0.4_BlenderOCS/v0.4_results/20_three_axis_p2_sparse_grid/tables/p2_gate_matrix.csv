@@ -1,0 +1,17 @@
+gate_item,status,detail
+20 号包目录存在,PASS,v0.4_results/20_three_axis_p2_sparse_grid/ 已建立
+P2 预注册矩阵存在且规模受控,PASS,125 唯一 pose × 9 roll = 1125；非零 roll 渲染单位 1000 <= 2500
+1000 非零 roll 渲染单位完成,PASS,"camera 1000/1000, sun 1000/1000"
+后处理完成,PASS,"ocs 1000/1000, linear 1000/1000"
+OCS total 可用（有限且>0）,PASS,"1000 非零 roll 行, 全部有限且>0=True"
+neighbor_contrast_ypr 全计算,PASS,"1125 行, 无nan=True"
+roll_sensitivity_score 全计算,PASS,"1125 行, 无nan=True"
+roll=0 baseline 125 点对齐 01_fullrun,PASS,"125/125 行, 全 01_fullrun=True"
+全部 pose-roll 图像可用(image_usable=1),PASS,1125/1125
+R1/R2/R3/R4/R5 五类区域渲染/后处理完成,PASS,5 区域各 25 pose × 8 roll 全完成
+指标表完整（7 required tables）,PASS,6 candidate/summary tables
+P3 refinement candidates 存在且规模可控,PASS,14 个 P3 候选（受控）
+4 张图表完成,PASS,p2_sparse_grid_brightness_map.png; p2_sparse_grid_information_proxy_map.png; p2_region_roll_sensitivity_panel.png; p2_brightness_vs_information_scatter.png
+summary.md 完成,PASS,text/p2_sparse_grid_summary.md
+未写成果区/未生成Codex审阅/未改CLAUDE.md,PASS,输出仅写 20 号包 + 003 报告
+未启动 P3/P4/R128/训练,PASS,仅 P2 sparse grid

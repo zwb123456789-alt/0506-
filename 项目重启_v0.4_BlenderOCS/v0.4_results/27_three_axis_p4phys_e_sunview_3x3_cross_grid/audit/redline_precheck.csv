@@ -1,0 +1,14 @@
+check,status,note
+geom_count_3x3,PASS,9
+pose_count_same_14,PASS,14
+new_render_units_zero,PASS,0
+all_exr_reachable,PASS,missing=0
+no_full_sunview_search,PASS,只 baseline ±7° 3x3 组合网格，非全局搜索
+no_new_pose_search,PASS,全部姿态复用 26 包同源 14 候选
+no_training,PASS,只 OCS 积分 + 机制重算，无训练
+no_R128,PASS,未触及
+no_route234,PASS,未触及
+material_proxy_only,PASS,B0 proxy，无 material pass
+no_source_pkg_edit,PASS,只写 27 包，不改 20/21/23A/23B/24/25/26
+perturb_in_5_10_deg,PASS,7.0 deg
+reuse_counts,INFO,reuse_baseline=84 reuse_26=168 new=0

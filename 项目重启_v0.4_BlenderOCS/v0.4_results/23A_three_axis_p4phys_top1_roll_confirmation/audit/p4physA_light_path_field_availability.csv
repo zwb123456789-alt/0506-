@@ -1,0 +1,13 @@
+field,available,status,note
+ocs_total,True,已有,来自 *_ocs.json
+per_part_ocs,True,已有,ocs_per_part 字段，来自 *_ocs.json
+glint_flag,True,已有,来自后处理 linear.exr 计算
+saturation_flag,True,已有,来自后处理 linear.exr 计算
+camera_visibility,True,已有,n_pixels_camera_visible
+sun_visibility_mask,True,已有,_v_sun_macro.npy
+pixel_intensity_map,True,已有,_linear.exr
+object_id_pass,False,缺失,当前渲染只有 camera+sun EXR，无 IndexOB/ObjectID 专用 pass
+material_id_pass,False,缺失,未渲染 material pass
+normal_pass,False,缺失,未渲染 normal pass
+depth_pass,False,缺失,未渲染 depth pass
+per_pixel_part_map,False,部分,IndexOB 嵌入 camera EXR，需 read_indexob_pass 提取

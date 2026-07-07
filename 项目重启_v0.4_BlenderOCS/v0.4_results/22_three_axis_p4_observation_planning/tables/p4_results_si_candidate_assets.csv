@@ -1,0 +1,14 @@
+asset_id,asset_type,file_path,description,suitable_for,key_numbers,constraint
+SA-01,figure,v0.4_results/22_three_axis_p4_observation_planning/figures/p4_observation_role_map.png,P4观测角色分布图（yaw/pitch按角色着色）,Results / Discussion,5类规划区域空间分布,proxy级；model-known
+SA-02,figure,v0.4_results/22_three_axis_p4_observation_planning/figures/p4_brightness_information_decoupling_summary.png,brightness vs information rank散点图,Results / SI,brightness_rank=1 info_rank=104；info_rank=1 brightness_rank=31,proxy级；model-known
+SA-03,figure,v0.4_results/22_three_axis_p4_observation_planning/figures/p4_planning_candidate_panel.png,4角色候选Panel（2×2子图）,SI,C01-C16候选位置按角色分区展示,proxy级；model-known
+SA-04,figure,v0.4_results/22_three_axis_p4_observation_planning/figures/p4_stage_evidence_flow.png,P1→P2→P3→P4阶段门证据流图,Discussion / Methods,P1/P2/P3/P4阶段门与 Codex 审阅节点,workflow展示图
+SA-05,table,v0.4_results/22_three_axis_p4_observation_planning/tables/p4_planning_candidate_roles.csv,16候选完整数值表（yaw/pitch/brightness_rank/info_rank/roll_sens/p4_utility）,SI,16行完整候选数值,proxy级；model-known
+SA-06,table,v0.4_results/22_three_axis_p4_observation_planning/tables/p4_observation_priority_matrix.csv,优先级矩阵（16候选+亮度caution点）,SI,优先级排序+观测建议,proxy级
+SA-07,table,v0.4_results/22_three_axis_p4_observation_planning/tables/p4_region_role_summary.csv,5区域角色汇总表,Results / SI,R1/R4/R3/R2/R5角色+关键数值,proxy级；model-known
+SA-08,text,v0.4_results/22_three_axis_p4_observation_planning/text/p4_three_axis_project_stage_summary.md,三轴小项目阶段性收口候选文本材料,Discussion,P1→P4全链路结论综合,proxy级；model-known
+SA-09,table,v0.4_results/22_three_axis_p4_observation_planning/tables/p4_stage_claim_boundary_table.csv,收口声明边界表（can/must-not-claim）,Results / Discussion,12条声明边界,限定范围说明
+SA-10,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_peak_migration_panel.png,R4最亮点峰值迁移面板（P3成果），复用,SI,yaw150→147.5迁移3.54度,proxy级；P3成果
+SA-11,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_refined_brightness_map.png,P3加密后亮度精细分布图，复用,SI,107 pose亮度分布,proxy级；P3成果
+SA-12,figure,v0.4_results/21_three_axis_p3_local_refinement/figures/p3_refined_information_proxy_map.png,P3加密后信息代理分布图，复用,SI,107 pose信息代理分布,proxy级；P3成果
+SA-13,table,v0.4_results/22_three_axis_p4_observation_planning/tables/p4_risk_and_boundary_matrix.csv,风险与边界矩阵,Discussion / Methods,10条风险边界,说明文字

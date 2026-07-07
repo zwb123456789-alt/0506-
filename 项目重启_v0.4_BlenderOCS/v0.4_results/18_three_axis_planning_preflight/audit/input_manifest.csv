@@ -1,0 +1,17 @@
+asset,path,kind,count,reuse_for,status
+OCS per-attitude (phase24),v0.4_results/11_l1m2_multigeometry_ocs/postprocess/phase24,ocs_json_dir,2664,"brightness/OCS magnitude 种子, roll=0 基线",OK
+OCS per-attitude (phase45),v0.4_results/11_l1m2_multigeometry_ocs/postprocess/phase45,ocs_json_dir,2664,"brightness/OCS magnitude 种子, roll=0 基线",OK
+OCS per-attitude (phase90),v0.4_results/11_l1m2_multigeometry_ocs/postprocess/phase90,ocs_json_dir,2664,"brightness/OCS magnitude 种子, roll=0 基线",OK
+OCS per-attitude (phase120),v0.4_results/11_l1m2_multigeometry_ocs/postprocess/phase120,ocs_json_dir,2664,"brightness/OCS magnitude 种子, roll=0 基线",OK
+OCS per-attitude (phase63=L1-G1 baseline),v0.4_results/01_fullrun/postprocess,ocs_json_dir,2664,"brightness/OCS magnitude 种子, L1-G1 主几何",OK
+D4 geometry gain by attitude,v0.4_results/16_route1c_closure_d2d4_m5/tables/d4_geometry_gain_by_attitude.csv,csv,296,high-info/low-info/救回区/坍缩区 种子,OK
+D4 observability region stats,v0.4_results/16_route1c_closure_d2d4_m5/tables/d4_observability_region_stats.csv,csv,9,high-info/low-info/救回区/坍缩区 种子,OK
+D4 confusion regions,v0.4_results/16_route1c_closure_d2d4_m5/tables/d4_confusion_regions.csv,csv,630,high-info/low-info/救回区/坍缩区 种子,OK
+D4 hardcase region cross-tab,v0.4_results/16_route1c_closure_d2d4_m5/tables/d4_hardcase_region_cross_tab.csv,csv,36,high-info/low-info/救回区/坍缩区 种子,OK
+L1D3 hardcase index,v0.4_results/13_l1d3_confidence_pdb/hardcases/l1d3_hardcase_index.csv,csv,1231,ocs-hard/image-hard/disagreement-hard/robust-easy 种子,OK
+L1D3 PDB retrieval per query,v0.4_results/13_l1d3_confidence_pdb/pdb/l1d3_pdb_retrieval_per_query.csv,csv,24975,"nearest-neighbor ambiguity, margin, top-k 稳定性指标",OK
+L1D3 conformal per sample,v0.4_results/13_l1d3_confidence_pdb/conformal/l1d3_conformal_per_sample.csv,csv,18944,set_size / coverage 置信指标,OK
+L1D3 neural-pdb joined per attitude,v0.4_results/13_l1d3_confidence_pdb/consistency/l1d3_neural_pdb_joined_per_attitude.csv,csv,13616,entropy/margin/通道一致性 指标,OK
+M-roll full-2664 predictions,v0.4_results/17_route1c_postclosure_enhancement_sweep/mroll_full2664,csv_dir,22,"roll-sensitive 种子, roll 迁移先验",OK
+conformal alpha metrics,v0.4_results/17_route1c_postclosure_enhancement_sweep/conformal_alpha/conformal_alpha_metrics.csv,csv,96,alpha 敏感性 SI 参考,OK
+L1M2 geometry registry,v0.4_results/11_l1m2_multigeometry_ocs/l1m2_geometry_registry.json,json,5,5 何定义 / phase63=L1-G1 代表几何,OK

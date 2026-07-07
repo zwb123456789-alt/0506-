@@ -1,0 +1,8 @@
+item,recommendation,rationale
+P3 local refinement — R1_high_info 优先,推荐进入,"R1 utility=0.234, roll_sensitivity最高(2.661), yaw245±5, pitch+25/+35 邻域值得加密; 确认最敏感点是否稳定"
+P3 local refinement — R4_bright_robust 边界点,推荐进入,"R4 utility=0.251, yaw155±5, pitch+15/+20/+25 出现最高 neighbor_contrast; 验证亮-高对比边界是否稳定可利用"
+P3 local refinement — R3_low_info,可选,"R3 utility=0.063, 确认低信息区下边界(yaw55-75, pitch+60-80)连通性; 作为观测规划负面对照"
+P3 local refinement — R2/R5,低优先级,R2/R5 效用为负，主要用作 dark/neutral 对照; P3 阶段可酌情加密 R2 高 roll_sensitivity 点
+information proxy 升级,P2 后/单独阶段门,当前 neighbor_contrast_ypr 是 smoke-level proxy; 若需 P-DB/margin/entropy/conformal_set_size，需模型，必须另行阶段门
+P4 observation planning synthesis,P3 后,P4 在 P3 确认高亮/高信息/低信息/roll-sensitive 区域后汇总; 当前不启动
+R128 继续挂起,维持挂起,三轴小项目 P3/P4 完成后再回看 R128 接口

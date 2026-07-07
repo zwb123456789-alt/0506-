@@ -1,0 +1,4 @@
+mechanism,definition,threshold_source
+near_specular_metal,metal_body_pct>=80.0 AND avgN_vs_H_deg<=2.0 AND reflect_vs_det_deg<=4.0,"pool p25(avgN_H)=2.5, p25(reflect_det)=4.6; distribution knee, not top-1 tuned"
+strong_surface_highlight,pct_NoH>=0.99 >= 50.0 OR mean_NoH^80 >= 0.5,pct_NoH99 bimodal (med=0.74 vs p75=81); 50 splits the two modes
+dark_panel_increment,dark_panel_contrib>=0.004 OR dark_panel_pct>=2.0,dark_contrib p75=0.0069; 0.004 separates R1(roll+15) from R4(roll0)

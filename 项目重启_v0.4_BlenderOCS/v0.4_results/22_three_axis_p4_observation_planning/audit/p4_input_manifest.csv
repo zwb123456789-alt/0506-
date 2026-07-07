@@ -1,0 +1,15 @@
+file_id,stage,file_type,path,description,status,row_count
+IN-01,meta,markdown,项目重启_v0.4_BlenderOCS/CLAUDE.md,项目总控文件,VERIFIED,n/a
+IN-02,meta,markdown,项目重启_v0.4_BlenderOCS/04_四路线分工区/02_三轴小项目_最亮构型与观测规划/04_Codex审阅/R136_Codex_审阅_004通过_P3_local_refinement接收并放行P4_planning.md,R136审阅结论放行P4,VERIFIED,n/a
+IN-03,P3,markdown,04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/04_P3_local_refinement_R136通过.md,P3成果摘要,VERIFIED,n/a
+IN-04,P2,markdown,04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/03_P2_sparse_3axis_grid_R134通过.md,P2成果摘要,VERIFIED,n/a
+IN-05,framework,markdown,04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/02_三轴小项目后续技术路线执行框架_R132通过.md,三轴小项目执行框架,VERIFIED,n/a
+IN-06,P1,markdown,04_四路线分工区/02_三轴小项目_最亮构型与观测规划/01_成果区/00_当前主用成果/01_P1_seed_roll_smoke_R132通过.md,P1成果摘要,VERIFIED,n/a
+IN-07,P3,csv,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_p4_planning_candidates.csv,P3 P4候选表(16行),VERIFIED,16
+IN-08,P3,csv,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_region_summary.csv,P3区域汇总(5行),VERIFIED,5
+IN-09,P3,csv,v0.4_results/21_three_axis_p3_local_refinement/tables/p3_stability_assessment.csv,P3稳定性评估(5行),VERIFIED,5
+IN-10,P3,markdown,v0.4_results/21_three_axis_p3_local_refinement/text/p3_local_refinement_summary.md,P3可解释摘要,VERIFIED,n/a
+IN-11,P2,csv,v0.4_results/20_three_axis_p2_sparse_grid/tables/p2_region_summary.csv,P2区域汇总(5行),VERIFIED,5
+IN-12,P2,markdown,v0.4_results/20_three_axis_p2_sparse_grid/text/p2_sparse_grid_summary.md,P2可解释摘要,VERIFIED,n/a
+IN-13,P1,csv,v0.4_results/19_three_axis_p1_seed_roll_scan/tables/p1_roll_sensitivity_summary.csv,P1 roll敏感度汇总(12行),VERIFIED,12
+IN-14,P1,markdown,v0.4_results/19_three_axis_p1_seed_roll_scan/text/p1_seed_roll_smoke_summary.md,P1可解释摘要,VERIFIED,n/a
